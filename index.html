@@ -62,6 +62,107 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-QT信号与槽及其附属知识点-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/24/QT信号与槽及其附属知识点-md/" class="article-date">
+  <time datetime="2019-06-24T09:10:32.000Z" itemprop="datePublished">2019-06-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/QT/">QT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/24/QT信号与槽及其附属知识点-md/">QT信号与槽及其附属知识点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="QT常用函数概述"><a href="#QT常用函数概述" class="headerlink" title="QT常用函数概述"></a>QT常用函数概述</h2><ul>
+<li><p>setWindowTitle(“string”): 设置标题</p>
+</li>
+<li><p>setText(“string”)：给按钮设置内容</p>
+</li>
+<li><p>setParent(&amp;父对象)：设置父对象</p>
+</li>
+<li><p>构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）</p>
+</li>
+<li><p>move(x, y)：以左上角为坐标原点，移动x, y</p>
+</li>
+<li><p>show：显示对象所属控件</p>
+</li>
+<li><p>exec：进程一直显示，等待用户操作</p>
+</li>
+<li><p>connect(&amp;b1, &amp;QPushButton::pressed, this, &amp;MainWidget::close)</p>
+<ol>
+<li><p>&amp;b1: 信号发出者，指针类型</p>
+</li>
+<li><p>&amp;QPushButton::pressed：处理的信号，&amp;发送者的类名::信号的名字</p>
+</li>
+<li><p>this：信号接收者</p>
+</li>
+<li><p>&amp;MainWidget::close:  槽函数，信号处理函数  &amp;接收的类名::槽函数名字（接收对象在接收到信号之后所需要调用的函数）</p>
+</li>
+</ol>
+</li>
+<li><p>hide：对象所属控件隐藏</p>
+</li>
+<li><p>resize(x, y)：重新界定窗口大小</p>
+</li>
+</ul>
+<h2 id="信号与槽"><a href="#信号与槽" class="headerlink" title="信号与槽"></a>信号与槽</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>信号槽是 Qt 框架引以为豪的机制之一。所谓信号槽，实际就是观察者模式。当某个事件发生之后，比如，按钮检测到自己被点击了一下，它就会发出一个信号（signal）。这种发出是没有目的的，类似广播。如果有对象对这个信号感兴趣，它就会使用连接（connect）函数，意思是，将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。也就是说，当信号发出时，被连接的槽函数会自动被回调。这就类似观察者模式：当发生了感兴趣的事件，某一个操作就会被自动触发。（这里提一句，Qt 的信号槽使用了额外的处理来实现，并不是 GoF 经典的观察者模式的实现方式。）</p>
+<p>信号和槽是Qt特有的信息传输机制，是Qt设计程序的重要基础，它可以让互不干扰的对象建立一种联系。</p>
+<p>　　槽的本质是类的成员函数，其参数可以是任意类型的。和普通C++成员函数几乎没有区别，它可以是虚函数；也可以被重载；可以是公有的、保护的、私有的、也可以被其他C++成员函数调用。唯一区别的是：槽可以与信号连接在一起，每当和槽连接的信号被发射的时候，就会调用这个槽。</p>
+<h3 id="自定义槽"><a href="#自定义槽" class="headerlink" title="自定义槽"></a>自定义槽</h3><ol>
+<li><p>QT5：任意的成员函数，普通全局函数，静态函数</p>
+</li>
+<li><p>槽函数需要与信号一致</p>
+</li>
+<li><p>由于信号都是没有返回值，所以，槽函数一定没有返回值</p>
+</li>
+</ol>
+<h2 id="额外知识点"><a href="#额外知识点" class="headerlink" title="额外知识点"></a>额外知识点</h2><ul>
+<li><p>emit：意为发送，主要用于发送信号</p>
+</li>
+<li><p>signals：</p>
+<ol>
+<li><p>信号必须有signals关键字来声明</p>
+</li>
+<li><p>信号没有返回值，但可以有参数</p>
+</li>
+<li><p>信号就是函数的声明，只需声明，无需定义</p>
+</li>
+<li><p>使用：emit mySignal();</p>
+</li>
+</ol>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxa7na1n000e40w0npg1s7xn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/23/hello-world/" class="article-date">
@@ -101,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjx9mesrl000ccgw0pksx3rjr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjxa7na1u000n40w0dmyhmjct" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjx9mess70013cgw0xrg4sjkv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjxa7na1z000s40w0i275rol7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -239,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjx9mesrn000dcgw03oaf9poi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjxa7na1s000j40w02iikkebs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -312,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjx9mesr60003cgw0fs1uprl7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjxa7na12000140w08i9l7wmr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
@@ -394,7 +495,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjx9mesrs000kcgw0hg99tsz5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjxa7na1w000o40w0ctrs4aqm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -516,7 +617,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjx9mesrr000icgw08w1jiph6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjxa7na1r000i40w0oqv86wkl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -610,7 +711,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjx9mess90015cgw0sy2pfnfh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjxa7na22000z40w01j0e2gdl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -728,7 +829,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjx9mess40012cgw0n3jqsjc9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjxa7na20000u40w0wjm2j3bu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
@@ -788,88 +889,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjx9mesrj0009cgw06nysralo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjxa7na1p000h40w02shifsmw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-LeetCode-移位符" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/28/LeetCode-移位符/" class="article-date">
-  <time datetime="2019-03-28T06:15:37.000Z" itemprop="datePublished">2019-03-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/28/LeetCode-移位符/">LeetCode--移位符</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>不得不说，自己的算法是真的差，差的也不仅仅是算法，更多的还是自己上课期间忽略的基础知识。<br>LeetCode第29题，题目描述如下：</p>
-<blockquote>
-<p>给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。<br>返回被除数 dividend 除以除数 divisor 得到的商。</p>
-</blockquote>
-<blockquote>
-<p>示例 1:<br>输入: dividend = 10, divisor = 3<br>输出: 3<br>示例 2:<br>输入: dividend = 7, divisor = -3<br>输出: -2</p>
-</blockquote>
-<blockquote>
-<p>说明:<br>被除数和除数均为 32 位有符号整数。<br>除数不为 0。<br>假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。本题中，如果除法结果溢出，则返回 231 − 1。</p>
-</blockquote>
-<p>看到这道题，我的第一个想法：“一个数除以另一个数，可以转化成多次减法运算”。<br>然后我的第一个骚操作来了：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">soultion</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> dividend, <span class="keyword">int</span> divisor)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(dividend &gt;= divisor)&#123;</span><br><span class="line">			dividend = dividend - divisor;</span><br><span class="line">			result++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>现在看到这段代码，我自己都佩服我自己。（手动鼓掌）</p>
-<h3 id="其实这个想法还是没错的，错在于没考虑极端情况"><a href="#其实这个想法还是没错的，错在于没考虑极端情况" class="headerlink" title="其实这个想法还是没错的，错在于没考虑极端情况"></a>其实这个想法还是没错的，错在于没考虑极端情况</h3><p>举例子说明，比如第一组测试样例，10除以3这种“正常数字”（日常接触得到的计算量级）来说，这段代码并没有问题，可以正常运行，花费的时间也在可以接受的范围之内，但是现在问题来了：极端情况下会怎么样呢？</p>
-<p>我们给dividend取int的最大值（2的31次方-1），divisor取值1，执行这段代码需要耗时多久？<br>不难算出，while循环需要执行2的31次方-1次，也就是二十一亿多次，很明显时间上是不允许的。所以我们需要改进这个算法。</p>
-<p>在百度的帮助下，我认识了一个符号，叫移位符。好吧，这可能真的是很基础的东西，但是原谅我的菜，我真的是第一次听说这个东西。<br>简单介绍下移位符的作用：</p>
-<blockquote>
-<p>移位运算符在程序设计中，是位操作运算符的一种。移位运算符可以在二进制的基础上对数字进行平移。按照平移的方向和填充数字的规则分为三种：&lt;&lt;(左移)、&gt;&gt;(带符号右移)和&gt;&gt;&gt;(无符号右移)。</p>
-</blockquote>
-<p>拿右移<code>&gt;&gt;</code>举例子， <code>7&gt;&gt;1</code> 相当于 <code>7/2</code> <code>7&gt;&gt;2</code>相当于 <code>7/4</code>，即右移n位相当于除以2的n次方。<br>（从结果上看是这种效果）</p>
-<p>具体的运算例子 <code>11&gt;&gt;2</code></p>
-<blockquote>
-<p>11的二进制形式为：0000 0000 0000 0000 0000 0000 0000 1011，然后把低位的最后两个数字移出，因为该数字是正数，所以在高位补零。则得到的最终结果是0000 0000 0000 0000 0000 0000 0000 0010。转换为十进制是2。</p>
-</blockquote>
-<p>有了这个积累，我们再来看这道题。<br>我们现在需要做的事情，就是减少while循环的次数，怎么减少呢？当然就是每次循环多减一点啦！<br>先上代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> dividend, <span class="keyword">int</span> divisor)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> m,n;</span><br><span class="line">        m = Math.abs((<span class="keyword">long</span>)dividend);<span class="comment">//被除数的绝对值</span></span><br><span class="line">        n = Math.abs((<span class="keyword">long</span>)divisor);<span class="comment">//除数的绝对值</span></span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span> || (dividend == Integer.MIN_VALUE &amp;&amp; divisor == -<span class="number">1</span>))</span><br><span class="line">           <span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">           <span class="keyword">int</span> sign = ((dividend &lt; <span class="number">0</span>) ^ (divisor &lt; <span class="number">0</span>)) ? -<span class="number">1</span> : <span class="number">1</span>;</span><br><span class="line">         <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> (<span class="keyword">int</span>)((sign&gt;<span class="number">0</span>)? m:-m);</span><br><span class="line">           <span class="keyword">long</span> result = <span class="number">0</span>;</span><br><span class="line">           <span class="keyword">while</span>(m&gt;= n)&#123;</span><br><span class="line">                <span class="keyword">long</span> temp = n;</span><br><span class="line">                <span class="keyword">long</span> count = <span class="number">1</span>;</span><br><span class="line">               <span class="keyword">while</span>(m &gt; (temp&lt;&lt;<span class="number">1</span>))&#123;</span><br><span class="line">                   temp = temp&lt;&lt;<span class="number">1</span>;</span><br><span class="line">                   count = count&lt;&lt;<span class="number">1</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               result = result + count;</span><br><span class="line">               m = m - temp;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">return</span> (<span class="keyword">int</span>)((sign&gt;<span class="number">0</span>)? result:-result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>好了，现在我来解释下这个程序。</p>
-<p>首先看内层循环 <code>while(m &gt; (temp&lt;&lt;1))</code>里面的东西，<code>temp</code>等于除数，当m（被除数的绝对值）大于两倍的除数的时候，temp乘以二，count乘以二，循环到temp的两倍大于被除数m为止。这样循环的结果是循环次数会以指数级减少。<br>我们还是拿最开始的例子，dividend = pow（2，31）-1；divisor = 1；<br>第一次进入外层循环，然后进入内层循环，内层的while执行30次后结束，此时temp = 2的30次方，count = 2的30次方。接着向下执行第18和第19两行代码，整个循环第一次结束后，m = 1。</p>
-<h3 id="对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。"><a href="#对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。" class="headerlink" title="对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。"></a>对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。</h3><h3 id="但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。"><a href="#但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。" class="headerlink" title="但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。"></a>但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。</h3><p>前面还有十几次失败经验还没总结呢。</p>
-<p>首先第一个问题，变量声明里面的 <code>long</code> 为什么要用long？<br>还是上面那个极端的例子，在判断的时候 temp&lt;&lt;1，如果用int，会发生超出int最大值的问题，然后temp会变成一个负数，然后这个循环永远结束不了，然后就超时了。。。。。。</p>
-<p>第二个是边界值问题，在这个题目中，边界情况下只有一种可能会越界，就是当被除数为int最小值，除数为-1时，得到的商会大于int的最大值，所以我们需要考虑这种情况。</p>
-<p>最后就是符号判别问题，用异或判断被除数与除数是否相同，保证输出结果符号的正确性。（当然不想用异或运算的也可以使用if写明条件判断）</p>
-<p>当然按照这个思路做完以后，我也有个问题：为什么非要用移位运算符呢？<br>count = count + count不也一样么？<br>抱着这个疑问，我又改了改程序，又跑了一次。</p>
-<h2 id="结论是：确实可以，只不过会比移位运算符慢2ms"><a href="#结论是：确实可以，只不过会比移位运算符慢2ms" class="headerlink" title="结论是：确实可以，只不过会比移位运算符慢2ms"></a>结论是：确实可以，只不过会比移位运算符慢2ms</h2><p>至于为什么会慢2ms…我给自己留个坑吧，初步猜测是计算机处理二进制会更快一些，当然这只是猜测而已，具体什么原因我有空再去验证一下……</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="cjx9mesri0008cgw0i0ks7r63" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
 
     </footer>
   </div>
@@ -893,7 +916,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -903,7 +926,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -913,7 +936,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/Git/" style="font-size: 20px;">Git</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 15px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/Git/" style="font-size: 20px;">Git</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 10px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 15px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -935,6 +958,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/24/QT信号与槽及其附属知识点-md/">QT信号与槽及其附属知识点</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/23/hello-world/">Hello World</a>
           </li>
         
@@ -948,10 +975,6 @@
         
           <li>
             <a href="/2019/05/17/JSON格式-md/">JSON格式</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/16/XMLHttpRequest-md/">XMLHttpRequest</a>
           </li>
         
       </ul>

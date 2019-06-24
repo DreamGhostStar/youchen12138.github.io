@@ -5,20 +5,20 @@
   
 
   
-  <title>JS编写位置 | Hexo</title>
+  <title>QT信号与槽及其附属知识点 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="button标签中的onclick1&amp;lt;button onclick=&amp;quot;alert(&amp;apos;警告框内容&amp;apos;);&amp;quot;&amp;gt;按钮&amp;lt;/button&amp;gt;  a标签的超链接1&amp;lt;a href=&amp;quot;javascript:alert(&amp;apos;警告框内容&amp;apos;);&amp;quot;&amp;gt;超链接&amp;lt;/a&amp;gt;  script标签123&amp;lt;sc">
-<meta name="keywords" content="JavaScript">
+  <meta name="description" content="QT常用函数概述 setWindowTitle(“string”): 设置标题  setText(“string”)：给按钮设置内容  setParent(&amp;amp;父对象)：设置父对象  构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）  move(x, y)：以左上角为坐标原点，移动x, y  show：显示对象所属控件  exec：进程一直显示，等待用户操作  connect(">
+<meta name="keywords" content="QT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS编写位置">
-<meta property="og:url" content="http://yoursite.com/2019/04/07/JS编写位置/index.html">
+<meta property="og:title" content="QT信号与槽及其附属知识点">
+<meta property="og:url" content="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="button标签中的onclick1&amp;lt;button onclick=&amp;quot;alert(&amp;apos;警告框内容&amp;apos;);&amp;quot;&amp;gt;按钮&amp;lt;/button&amp;gt;  a标签的超链接1&amp;lt;a href=&amp;quot;javascript:alert(&amp;apos;警告框内容&amp;apos;);&amp;quot;&amp;gt;超链接&amp;lt;/a&amp;gt;  script标签123&amp;lt;sc">
+<meta property="og:description" content="QT常用函数概述 setWindowTitle(“string”): 设置标题  setText(“string”)：给按钮设置内容  setParent(&amp;amp;父对象)：设置父对象  构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）  move(x, y)：以左上角为坐标原点，移动x, y  show：显示对象所属控件  exec：进程一直显示，等待用户操作  connect(">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-07T10:53:08.414Z">
+<meta property="og:updated_time" content="2019-06-24T10:00:27.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS编写位置">
-<meta name="twitter:description" content="button标签中的onclick1&amp;lt;button onclick=&amp;quot;alert(&amp;apos;警告框内容&amp;apos;);&amp;quot;&amp;gt;按钮&amp;lt;/button&amp;gt;  a标签的超链接1&amp;lt;a href=&amp;quot;javascript:alert(&amp;apos;警告框内容&amp;apos;);&amp;quot;&amp;gt;超链接&amp;lt;/a&amp;gt;  script标签123&amp;lt;sc">
+<meta name="twitter:title" content="QT信号与槽及其附属知识点">
+<meta name="twitter:description" content="QT常用函数概述 setWindowTitle(“string”): 设置标题  setText(“string”)：给按钮设置内容  setParent(&amp;amp;父对象)：设置父对象  构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）  move(x, y)：以左上角为坐标原点，移动x, y  show：显示对象所属控件  exec：进程一直显示，等待用户操作  connect(">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,14 +65,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JS编写位置" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-QT信号与槽及其附属知识点-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/04/07/JS编写位置/" class="article-date">
-  <time datetime="2019-04-07T10:47:29.000Z" itemprop="datePublished">2019-04-07</time>
+    <a href="/2019/06/24/QT信号与槽及其附属知识点-md/" class="article-date">
+  <time datetime="2019-06-24T09:10:32.000Z" itemprop="datePublished">2019-06-24</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/QT/">QT</a>
   </div>
 
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JS编写位置
+      QT信号与槽及其附属知识点
     </h1>
   
 
@@ -91,32 +91,73 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="button标签中的onclick"><a href="#button标签中的onclick" class="headerlink" title="button标签中的onclick"></a>button标签中的onclick</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;alert(&apos;警告框内容&apos;);&quot;&gt;按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="a标签的超链接"><a href="#a标签的超链接" class="headerlink" title="a标签的超链接"></a>a标签的超链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;javascript:alert(&apos;警告框内容&apos;);&quot;&gt;超链接&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="script标签"><a href="#script标签" class="headerlink" title="script标签"></a>script标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    alert(&quot;警告框内容&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>此方法会在浏览器加载完之后马上出现。</p>
-<h2 id="外部文件"><a href="#外部文件" class="headerlink" title="外部文件"></a>外部文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;绝对路径&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>该路径下写下js文件的具体内容（推荐此方法）</p>
-<ul>
-<li>可以在不同文件内同时引用</li>
-<li>结构清晰</li>
-<li>script标签一旦用于引入外部文件，就不能再编写代码了，即使编写浏览器也会忽略</li>
-<li>如果需要，可以再创建一个script标签用于编写内部代码（执行顺序按代码位置，JS按代码从上到下执行）<blockquote>
-<h3 id="lt-script-gt-一般写在body标签下"><a href="#lt-script-gt-一般写在body标签下" class="headerlink" title="&lt;script&gt;一般写在body标签下"></a><code>&lt;script&gt;</code>一般写在body标签下</h3></blockquote>
+        <h2 id="QT常用函数概述"><a href="#QT常用函数概述" class="headerlink" title="QT常用函数概述"></a>QT常用函数概述</h2><ul>
+<li><p>setWindowTitle(“string”): 设置标题</p>
+</li>
+<li><p>setText(“string”)：给按钮设置内容</p>
+</li>
+<li><p>setParent(&amp;父对象)：设置父对象</p>
+</li>
+<li><p>构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）</p>
+</li>
+<li><p>move(x, y)：以左上角为坐标原点，移动x, y</p>
+</li>
+<li><p>show：显示对象所属控件</p>
+</li>
+<li><p>exec：进程一直显示，等待用户操作</p>
+</li>
+<li><p>connect(&amp;b1, &amp;QPushButton::pressed, this, &amp;MainWidget::close)</p>
+<ol>
+<li><p>&amp;b1: 信号发出者，指针类型</p>
+</li>
+<li><p>&amp;QPushButton::pressed：处理的信号，&amp;发送者的类名::信号的名字</p>
+</li>
+<li><p>this：信号接收者</p>
+</li>
+<li><p>&amp;MainWidget::close:  槽函数，信号处理函数  &amp;接收的类名::槽函数名字（接收对象在接收到信号之后所需要调用的函数）</p>
+</li>
+</ol>
+</li>
+<li><p>hide：对象所属控件隐藏</p>
+</li>
+<li><p>resize(x, y)：重新界定窗口大小</p>
+</li>
+</ul>
+<h2 id="信号与槽"><a href="#信号与槽" class="headerlink" title="信号与槽"></a>信号与槽</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>信号槽是 Qt 框架引以为豪的机制之一。所谓信号槽，实际就是观察者模式。当某个事件发生之后，比如，按钮检测到自己被点击了一下，它就会发出一个信号（signal）。这种发出是没有目的的，类似广播。如果有对象对这个信号感兴趣，它就会使用连接（connect）函数，意思是，将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。也就是说，当信号发出时，被连接的槽函数会自动被回调。这就类似观察者模式：当发生了感兴趣的事件，某一个操作就会被自动触发。（这里提一句，Qt 的信号槽使用了额外的处理来实现，并不是 GoF 经典的观察者模式的实现方式。）</p>
+<p>信号和槽是Qt特有的信息传输机制，是Qt设计程序的重要基础，它可以让互不干扰的对象建立一种联系。</p>
+<p>　　槽的本质是类的成员函数，其参数可以是任意类型的。和普通C++成员函数几乎没有区别，它可以是虚函数；也可以被重载；可以是公有的、保护的、私有的、也可以被其他C++成员函数调用。唯一区别的是：槽可以与信号连接在一起，每当和槽连接的信号被发射的时候，就会调用这个槽。</p>
+<h3 id="自定义槽"><a href="#自定义槽" class="headerlink" title="自定义槽"></a>自定义槽</h3><ol>
+<li><p>QT5：任意的成员函数，普通全局函数，静态函数</p>
+</li>
+<li><p>槽函数需要与信号一致</p>
+</li>
+<li><p>由于信号都是没有返回值，所以，槽函数一定没有返回值</p>
+</li>
+</ol>
+<h2 id="额外知识点"><a href="#额外知识点" class="headerlink" title="额外知识点"></a>额外知识点</h2><ul>
+<li><p>emit：意为发送，主要用于发送信号</p>
+</li>
+<li><p>signals：</p>
+<ol>
+<li><p>信号必须有signals关键字来声明</p>
+</li>
+<li><p>信号没有返回值，但可以有参数</p>
+</li>
+<li><p>信号就是函数的声明，只需声明，无需定义</p>
+</li>
+<li><p>使用：emit mySignal();</p>
+</li>
+</ol>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjxa7na1p000h40w02shifsmw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxa7na1n000e40w0npg1s7xn" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
 
     </footer>
   </div>
@@ -124,19 +165,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/04/07/类型强制转换/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          类型强制转换
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/28/LeetCode-移位符/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/06/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">LeetCode--移位符</div>
+      <div class="article-nav-title">Hello World</div>
     </a>
   
 </nav>
