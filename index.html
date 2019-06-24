@@ -122,7 +122,7 @@
 </ul>
 <h2 id="信号与槽"><a href="#信号与槽" class="headerlink" title="信号与槽"></a>信号与槽</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>信号槽是 Qt 框架引以为豪的机制之一。所谓信号槽，实际就是观察者模式。当某个事件发生之后，比如，按钮检测到自己被点击了一下，它就会发出一个信号（signal）。这种发出是没有目的的，类似广播。如果有对象对这个信号感兴趣，它就会使用连接（connect）函数，意思是，将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。也就是说，当信号发出时，被连接的槽函数会自动被回调。这就类似观察者模式：当发生了感兴趣的事件，某一个操作就会被自动触发。（这里提一句，Qt 的信号槽使用了额外的处理来实现，并不是 GoF 经典的观察者模式的实现方式。）</p>
 <p>信号和槽是Qt特有的信息传输机制，是Qt设计程序的重要基础，它可以让互不干扰的对象建立一种联系。</p>
-<p>　　槽的本质是类的成员函数，其参数可以是任意类型的。和普通C++成员函数几乎没有区别，它可以是虚函数；也可以被重载；可以是公有的、保护的、私有的、也可以被其他C++成员函数调用。唯一区别的是：槽可以与信号连接在一起，每当和槽连接的信号被发射的时候，就会调用这个槽。</p>
+<p>槽的本质是类的成员函数，其参数可以是任意类型的。和普通C++成员函数几乎没有区别，它可以是虚函数；也可以被重载；可以是公有的、保护的、私有的、也可以被其他C++成员函数调用。唯一区别的是：槽可以与信号连接在一起，每当和槽连接的信号被发射的时候，就会调用这个槽。</p>
 <h3 id="自定义槽"><a href="#自定义槽" class="headerlink" title="自定义槽"></a>自定义槽</h3><ol>
 <li><p>QT5：任意的成员函数，普通全局函数，静态函数</p>
 </li>
@@ -146,12 +146,37 @@
 </li>
 </ol>
 </li>
+<li><p>在发送带参数的命令时，字符串包含中文的话，要写成英文或带一个英文（原因不明）</p>
+</li>
+<li><p>重载信号用函数指针</p>
+</li>
+</ul>
+<p>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void (SubWidget::*funSignal)()=&amp;SubWidget::mySignal;</span><br><span class="line">void (SubWidget::*testSignal)(int, QString)=&amp;SubWidget::mySignal;</span><br><span class="line">connect(&amp;subWin, funSignal, this, &amp;MainWidget::dealSub);</span><br><span class="line">connect(&amp;subWin, testSignal, this, &amp;MainWidget::dealSolt);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>打印由Unicode编码转中文</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//str.toUtf8() -&gt; 字节数组QByteArray</span><br><span class="line">//...data() -&gt; QByteArray -&gt; char *</span><br><span class="line">qDebug()&lt;&lt;a&lt;&lt;str.toUtf8().data();</span><br><span class="line">//高版本可以直接用第二种方式</span><br><span class="line"></span><br><span class="line">//高版本QT可以直接打印中文</span><br><span class="line">qDebug()&lt;&lt;a&lt;&lt;str;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Lambda表达式: </p>
+<ol>
+<li><p>匿名函数对象</p>
+</li>
+<li><p>C++11增加的新特性，项目文件：CONFIG += C++11</p>
+</li>
+<li><p>QT配合信号一起使用</p>
+<p>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int a=10, b=100;</span><br><span class="line">connect(b4, &amp;QPushButton::released,</span><br><span class="line">        // = :把外部局部变量、类中所有成员以值传递方式</span><br><span class="line">        // this: 类中所有成员以值传递方式</span><br><span class="line">        // &amp; ：把外部所有局部变量（除类中定义的）</span><br><span class="line">        [=]() mutable   //将值传递的变量设为可改变</span><br><span class="line">        &#123;</span><br><span class="line">            b4-&gt;setText(&quot;123&quot;);</span><br><span class="line">            qDebug()&lt;&lt;&quot;1111&quot;;</span><br><span class="line">            qDebug()&lt;&lt;a&lt;&lt;b;</span><br><span class="line">            a=11;</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxa7na1n000e40w0npg1s7xn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxajpxk300063cw0l2x1tiyu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -202,7 +227,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjxa7na1u000n40w0dmyhmjct" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjxajpxkn000t3cw0e11oudqn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -284,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjxa7na1z000s40w0i275rol7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjxajpxmk00163cw0o9w8s1jp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -340,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjxa7na1s000j40w02iikkebs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjxajpxkm000s3cw05hht1ctr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -413,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjxa7na12000140w08i9l7wmr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjxajpxjr00013cw0dni7ppev" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
@@ -495,7 +520,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjxa7na1w000o40w0ctrs4aqm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjxajpxkq000w3cw0yagxtq91" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -617,7 +642,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjxa7na1r000i40w0oqv86wkl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjxajpxjy00033cw0sqoquu9v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -711,7 +736,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjxa7na22000z40w01j0e2gdl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjxajpxly00103cw0ajcpmptr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -829,7 +854,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjxa7na20000u40w0wjm2j3bu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjxajpxmn00173cw03e7lpflv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
@@ -889,7 +914,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjxa7na1p000h40w02shifsmw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjxajpxk100053cw0qyoipwy4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
