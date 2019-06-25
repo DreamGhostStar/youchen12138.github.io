@@ -105,7 +105,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjxb3cbtw000628w0hmzq0qnf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjxbga9pd0008p4w0idthml74" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -143,7 +143,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="QT常用函数概述"><a href="#QT常用函数概述" class="headerlink" title="QT常用函数概述"></a>QT常用函数概述</h2><ul>
+        <hr>
+<hr>
+<h2 id="QT常用函数概述"><a href="#QT常用函数概述" class="headerlink" title="QT常用函数概述"></a>QT常用函数概述</h2><ul>
 <li><p>setWindowTitle(“string”): 设置标题</p>
 </li>
 <li><p>setText(“string”)：给按钮设置内容</p>
@@ -176,6 +178,16 @@
 </li>
 <li><p>move(x, y)：相对于父窗口，子窗口移动(x, y)</p>
 </li>
+<li><p>menuBar：添加菜单栏</p>
+</li>
+<li><p>addMenu：添加菜单</p>
+</li>
+<li><p>addAction：添加菜单项，添加动作</p>
+</li>
+<li><p>addSeparator：添加分割线</p>
+</li>
+<li><p>addToolBar：添加菜单栏快捷方式</p>
+</li>
 </ul>
 <hr>
 <h2 id="信号与槽"><a href="#信号与槽" class="headerlink" title="信号与槽"></a>信号与槽</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>信号槽是 Qt 框架引以为豪的机制之一。所谓信号槽，实际就是观察者模式。当某个事件发生之后，比如，按钮检测到自己被点击了一下，它就会发出一个信号（signal）。这种发出是没有目的的，类似广播。如果有对象对这个信号感兴趣，它就会使用连接（connect）函数，意思是，将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。也就是说，当信号发出时，被连接的槽函数会自动被回调。这就类似观察者模式：当发生了感兴趣的事件，某一个操作就会被自动触发。（这里提一句，Qt 的信号槽使用了额外的处理来实现，并不是 GoF 经典的观察者模式的实现方式。）</p>
@@ -184,7 +196,7 @@
 <h3 id="自定义槽"><a href="#自定义槽" class="headerlink" title="自定义槽"></a>自定义槽</h3><ol>
 <li><p>QT5：任意的成员函数，普通全局函数，静态函数</p>
 </li>
-<li><p>槽函数需要与信号一致</p>
+<li><p>槽函数需要与信号一致（参数类型和参数个数一致）</p>
 </li>
 <li><p>由于信号都是没有返回值，所以，槽函数一定没有返回值</p>
 </li>
@@ -227,15 +239,38 @@
 </li>
 <li><p>QT配合信号一起使用</p>
 <p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int a=10, b=100;</span><br><span class="line">connect(b4, &amp;QPushButton::released,</span><br><span class="line">        // = :把外部局部变量、类中所有成员以值传递方式</span><br><span class="line">        // this: 类中所有成员以值传递方式</span><br><span class="line">        // &amp; ：把外部所有局部变量（除类中定义的）</span><br><span class="line">        [=]() mutable   //将值传递的变量设为可改变</span><br><span class="line">        &#123;</span><br><span class="line">            b4-&gt;setText(&quot;123&quot;);</span><br><span class="line">            qDebug()&lt;&lt;&quot;1111&quot;;</span><br><span class="line">            qDebug()&lt;&lt;a&lt;&lt;b;</span><br><span class="line">            a=11;</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int a=10, b=100;</span><br><span class="line">connect(b4, &amp;QPushButton::released,</span><br><span class="line">        // = :把外部局部变量、类中所有成员以值传递方式</span><br><span class="line">        // this: 类中所有成员以值传递方式</span><br><span class="line">        // &amp; ：把外部所有局部变量（除类中定义的）</span><br><span class="line">        [=]() mutable   //将值传递的变量设为可改变</span><br><span class="line">        &#123;</span><br><span class="line">            b4-&gt;setText(&quot;123&quot;);</span><br><span class="line">            qDebug()&lt;&lt;&quot;1111&quot;;</span><br><span class="line">            qDebug()&lt;&lt;a&lt;&lt;b;</span><br><span class="line">            a=11;</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
+</li>
+</ul>
+<h3 id="内存回收机制"><a href="#内存回收机制" class="headerlink" title="内存回收机制"></a>内存回收机制</h3><ul>
+<li><p>1）指定父对象后  2）直接或间接继承于QObject</p>
+</li>
+<li><p>子对象如果是动态分配空间的new，不需要手动释放delete</p>
+</li>
+<li><p>系统会自动释放</p>
+</li>
+</ul>
+<hr>
+<h2 id="QT头文件"><a href="#QT头文件" class="headerlink" title="QT头文件"></a>QT头文件</h2><ul>
+<li><p>QPushButton：按钮</p>
+</li>
+<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
+</li>
+<li><p>QMenu：菜单（添加菜单）</p>
+</li>
+<li><p>QAction：添加菜单项（添加动作）</p>
+</li>
+<li><p>QDebug：打印</p>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxb3cbui000n28w0k9w847vo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxbga9ph000cp4w0qfwrfjmm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -286,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjxb3cbv3000u28w0fyuzd1dx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjxbga9pm000ip4w0a3r09e0q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -368,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjxb3cbvb001328w040zdfezx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjxbga9px000vp4w0pf63mp20" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -424,7 +459,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjxb3cbul000q28w00egu3zun" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjxbga9pk000ep4w0k1dx4tt4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -497,7 +532,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjxb3cbtt000328w0f560g0w0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjxbga9os0001p4w0aqxo59g2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
@@ -579,7 +614,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjxb3cbv9001128w0rawx9ntk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjxbga9pq000np4w07i106gz0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -701,7 +736,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjxb3cbtq000128w0r3no3e25" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjxbga9pn000jp4w02uau9wlb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -795,7 +830,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjxb3cbve001728w0i1xs6pir" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjxbga9qm001mp4w0yjoypo5m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -913,7 +948,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjxb3cbv6000z28w0todtquw3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjxbga9pv000tp4w0u522x9pi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
