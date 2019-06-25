@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="QT常用函数概述 setWindowTitle(“string”): 设置标题  setText(“string”)：给按钮设置内容  setParent(&amp;amp;父对象)：设置父对象  构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）  move(x, y)：以左上角为坐标原点，移动x, y  show：显示对象所属控件  exec：进程一直显示，等待用户操作  connec">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-25T06:49:44.106Z">
+<meta property="og:updated_time" content="2019-06-25T15:48:41.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QT信号与槽及其附属知识点">
 <meta name="twitter:description" content="QT常用函数概述 setWindowTitle(“string”): 设置标题  setText(“string”)：给按钮设置内容  setParent(&amp;amp;父对象)：设置父对象  构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）  move(x, y)：以左上角为坐标原点，移动x, y  show：显示对象所属控件  exec：进程一直显示，等待用户操作  connec">
@@ -134,7 +134,67 @@
 </li>
 <li><p>addSeparator：添加分割线</p>
 </li>
-<li><p>addToolBar：添加菜单栏快捷方式</p>
+<li><p>addToolBar(“toolBar”)：添加菜单栏快捷方式</p>
+</li>
+<li><p>statusBar()：新建状态栏</p>
+</li>
+<li><p>QLabel：新建标签</p>
+</li>
+<li><p>addWidget：从左往右添加状态栏</p>
+</li>
+<li><p>addPermanentWidget：从右往左添加状态栏</p>
+</li>
+<li><p>QTextEdit：新建文本编辑框</p>
+</li>
+<li><p>setCentralWidget：为文本编辑框添加文本编辑功能</p>
+</li>
+<li><p>setWidget：给对应窗口设置文本编辑</p>
+<p>  例如：<code>this-&gt;setWidget(textEdit);</code>给当前窗口设置文本编辑</p>
+</li>
+<li><p>QMessageBox::about：创建关于对话框</p>
+</li>
+<li><p>QMessageBox::question：创建问题对话框</p>
+</li>
+</ul>
+<h3 id="按钮，框函数"><a href="#按钮，框函数" class="headerlink" title="按钮，框函数"></a>按钮，框函数</h3><ul>
+<li><p>triggered</p>
+</li>
+<li><p>pressed</p>
+</li>
+<li><p>clicked</p>
+</li>
+</ul>
+<p><strong>功能好像一样QAQ</strong></p>
+<hr>
+<h2 id="QT头文件"><a href="#QT头文件" class="headerlink" title="QT头文件"></a>QT头文件</h2><ul>
+<li><p>QPushButton：按钮</p>
+</li>
+<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
+</li>
+<li><p>QMenu：菜单（添加菜单）</p>
+</li>
+<li><p>QAction：添加菜单项（添加动作）</p>
+</li>
+<li><p>QDebug：打印</p>
+</li>
+<li><p>QToolBar：添加菜单项的快捷方式</p>
+</li>
+<li><p>QStatusBar：状态栏</p>
+</li>
+<li><p>QLabel：标签</p>
+</li>
+<li><p>QTextEdit：文本编辑框（也称核心控件）</p>
+</li>
+<li><p>QDockWidget：浮动窗口</p>
+</li>
+<li><p>QDialog：模态对话框</p>
+</li>
+<li><p>QMessageBox：对话框</p>
+</li>
+<li><p>QFileDialog：文件对话框</p>
+<p>  示例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">QAction *p5 = menu-&gt;addAction(QString::fromLocal8Bit(&quot;文件对话框&quot;));</span><br><span class="line">connect(p5, &amp;QAction::triggered,</span><br><span class="line">    [=]()</span><br><span class="line">    &#123;</span><br><span class="line">        QString path = QFileDialog::getOpenFileName(</span><br><span class="line">                    this,</span><br><span class="line">                    &quot;open&quot;,</span><br><span class="line">                    &quot;../&quot;,//打开文件对话框的位置（命令行）</span><br><span class="line">                    &quot;source(*.cpp *.h);;Text(*.txt);;All(*.*)&quot;//文件类型</span><br><span class="line">                    );</span><br><span class="line">        qDebug()&lt;&lt;path;</span><br><span class="line">    &#125;</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <hr>
@@ -165,7 +225,7 @@
 </li>
 </ol>
 </li>
-<li><p>在发送带参数的命令时，字符串包含中文的话，要写成英文或带一个英文（原因不明）</p>
+<li><p>在发送带参数的命令时，字符串包含中文的话，如果报错，请参照<a href="https://youchen12138.github.io/2019/06/25/QT%E4%B8%AD%E6%8F%90%E7%A4%BA%E2%80%9C%E5%B8%B8%E9%87%8F%E4%B8%AD%E6%9C%89%E6%8D%A2%E8%A1%8C%E7%AC%A6%E2%80%9D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" target="_blank" rel="noopener">QT中提示“常量中h有换行符”解决办法 </a>一文</p>
 </li>
 <li><p>重载信号用函数指针</p>
 </li>
@@ -201,24 +261,11 @@
 <li><p>系统会自动释放</p>
 </li>
 </ul>
-<hr>
-<h2 id="QT头文件"><a href="#QT头文件" class="headerlink" title="QT头文件"></a>QT头文件</h2><ul>
-<li><p>QPushButton：按钮</p>
-</li>
-<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
-</li>
-<li><p>QMenu：菜单（添加菜单）</p>
-</li>
-<li><p>QAction：添加菜单项（添加动作）</p>
-</li>
-<li><p>QDebug：打印</p>
-</li>
-</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxbga9ph000cp4w0qfwrfjmm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxbzjxp20005yow0xzmvr2h1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -299,6 +346,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/25/Qt之菜单概述/">Qt之菜单概述</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/25/QT中提示“常量中有换行符”解决办法/">QT中提示“常量中h有换行符”解决办法</a>
           </li>
         
@@ -312,10 +363,6 @@
         
           <li>
             <a href="/2019/05/25/跨域-md/">跨域</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/25/用jQuery实现Ajax-md/">用jQuery实现Ajax</a>
           </li>
         
       </ul>
