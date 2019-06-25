@@ -62,6 +62,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-QT中提示“常量中有换行符”解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/25/QT中提示“常量中有换行符”解决办法/" class="article-date">
+  <time datetime="2019-06-25T00:42:50.000Z" itemprop="datePublished">2019-06-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/QT/">QT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/25/QT中提示“常量中有换行符”解决办法/">QT中提示“常量中h有换行符”解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用QT编译界面时，免不了要使用中文，有会出现乱码，有时会提示“常量中有换行符”，而不能正常编译，因此可以通过下面的方法解决。</p>
+<p>PS：本文的环境，QT5.7.1，VS2015</p>
+<ol>
+<li>将文本编码设置为：如果编码是UTF-8则添加。</li>
+</ol>
+<p><img src="https://img-blog.csdn.net/20170530135801390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG92ZWx5YWlx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt></p>
+<ol start="2">
+<li>在界面中需要使用中文的地方，使用：</li>
+</ol>
+<p>QString::fromLocal8Bit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将 Unicode 编码转换为本地系统编码。</span><br></pre></td></tr></table></figure>
+
+<p>经过以上处理之后，编译期就不会再报“常量中有换行符”错误了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjxb3cbtw000628w0hmzq0qnf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-QT信号与槽及其附属知识点-md" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/24/QT信号与槽及其附属知识点-md/" class="article-date">
@@ -117,9 +172,12 @@
 </li>
 <li><p>hide：对象所属控件隐藏</p>
 </li>
-<li><p>resize(x, y)：重新界定窗口大小</p>
+<li><p>resize(x, y)：重新界定子窗口大小</p>
+</li>
+<li><p>move(x, y)：相对于父窗口，子窗口移动(x, y)</p>
 </li>
 </ul>
+<hr>
 <h2 id="信号与槽"><a href="#信号与槽" class="headerlink" title="信号与槽"></a>信号与槽</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>信号槽是 Qt 框架引以为豪的机制之一。所谓信号槽，实际就是观察者模式。当某个事件发生之后，比如，按钮检测到自己被点击了一下，它就会发出一个信号（signal）。这种发出是没有目的的，类似广播。如果有对象对这个信号感兴趣，它就会使用连接（connect）函数，意思是，将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。也就是说，当信号发出时，被连接的槽函数会自动被回调。这就类似观察者模式：当发生了感兴趣的事件，某一个操作就会被自动触发。（这里提一句，Qt 的信号槽使用了额外的处理来实现，并不是 GoF 经典的观察者模式的实现方式。）</p>
 <p>信号和槽是Qt特有的信息传输机制，是Qt设计程序的重要基础，它可以让互不干扰的对象建立一种联系。</p>
 <p>槽的本质是类的成员函数，其参数可以是任意类型的。和普通C++成员函数几乎没有区别，它可以是虚函数；也可以被重载；可以是公有的、保护的、私有的、也可以被其他C++成员函数调用。唯一区别的是：槽可以与信号连接在一起，每当和槽连接的信号被发射的时候，就会调用这个槽。</p>
@@ -131,6 +189,7 @@
 <li><p>由于信号都是没有返回值，所以，槽函数一定没有返回值</p>
 </li>
 </ol>
+<hr>
 <h2 id="额外知识点"><a href="#额外知识点" class="headerlink" title="额外知识点"></a>额外知识点</h2><ul>
 <li><p>emit：意为发送，主要用于发送信号</p>
 </li>
@@ -176,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxajpxk300063cw0l2x1tiyu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjxb3cbui000n28w0k9w847vo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -227,7 +286,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjxajpxkn000t3cw0e11oudqn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjxb3cbv3000u28w0fyuzd1dx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -309,7 +368,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjxajpxmk00163cw0o9w8s1jp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjxb3cbvb001328w040zdfezx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -365,7 +424,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjxajpxkm000s3cw05hht1ctr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjxb3cbul000q28w00egu3zun" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -438,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjxajpxjr00013cw0dni7ppev" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjxb3cbtt000328w0f560g0w0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
@@ -520,7 +579,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjxajpxkq000w3cw0yagxtq91" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjxb3cbv9001128w0rawx9ntk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -642,7 +701,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjxajpxjy00033cw0sqoquu9v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjxb3cbtq000128w0r3no3e25" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -736,7 +795,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjxajpxly00103cw0ajcpmptr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjxb3cbve001728w0i1xs6pir" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -854,70 +913,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjxajpxmn00173cw03e7lpflv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjxb3cbv6000z28w0todtquw3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS编写位置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/07/JS编写位置/" class="article-date">
-  <time datetime="2019-04-07T10:47:29.000Z" itemprop="datePublished">2019-04-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/07/JS编写位置/">JS编写位置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="button标签中的onclick"><a href="#button标签中的onclick" class="headerlink" title="button标签中的onclick"></a>button标签中的onclick</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;alert(&apos;警告框内容&apos;);&quot;&gt;按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="a标签的超链接"><a href="#a标签的超链接" class="headerlink" title="a标签的超链接"></a>a标签的超链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;javascript:alert(&apos;警告框内容&apos;);&quot;&gt;超链接&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="script标签"><a href="#script标签" class="headerlink" title="script标签"></a>script标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    alert(&quot;警告框内容&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>此方法会在浏览器加载完之后马上出现。</p>
-<h2 id="外部文件"><a href="#外部文件" class="headerlink" title="外部文件"></a>外部文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;绝对路径&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>该路径下写下js文件的具体内容（推荐此方法）</p>
-<ul>
-<li>可以在不同文件内同时引用</li>
-<li>结构清晰</li>
-<li>script标签一旦用于引入外部文件，就不能再编写代码了，即使编写浏览器也会忽略</li>
-<li>如果需要，可以再创建一个script标签用于编写内部代码（执行顺序按代码位置，JS按代码从上到下执行）<blockquote>
-<h3 id="lt-script-gt-一般写在body标签下"><a href="#lt-script-gt-一般写在body标签下" class="headerlink" title="&lt;script&gt;一般写在body标签下"></a><code>&lt;script&gt;</code>一般写在body标签下</h3></blockquote>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjxajpxk100053cw0qyoipwy4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -961,7 +960,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/Git/" style="font-size: 20px;">Git</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 10px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 15px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 20px;">Ajax</a> <a href="/tags/Git/" style="font-size: 20px;">Git</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 15px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -983,6 +982,10 @@
       <ul>
         
           <li>
+            <a href="/2019/06/25/QT中提示“常量中有换行符”解决办法/">QT中提示“常量中h有换行符”解决办法</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/24/QT信号与槽及其附属知识点-md/">QT信号与槽及其附属知识点</a>
           </li>
         
@@ -996,10 +999,6 @@
         
           <li>
             <a href="/2019/05/25/用jQuery实现Ajax-md/">用jQuery实现Ajax</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/17/JSON格式-md/">JSON格式</a>
           </li>
         
       </ul>
