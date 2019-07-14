@@ -20,7 +20,14 @@
 <meta property="og:image" content="http://img.mukewang.com/54292b990001ebea01290115.jpg">
 <meta property="og:image" content="http://img.mukewang.com/548fd91c000140a901540143.jpg">
 <meta property="og:image" content="http://img.mukewang.com/548fd93e00011dd101570142.jpg">
-<meta property="og:updated_time" content="2019-07-14T05:55:41.698Z">
+<meta property="og:image" content="http://img.mukewang.com/52e21fea000127e802100210.jpg">
+<meta property="og:image" content="http://img.mukewang.com/52e2201a0001b1e004720260.jpg">
+<meta property="og:image" content="http://img.mukewang.com/52e220780001091a03530354.jpg">
+<meta property="og:image" content="http://img.mukewang.com/52e220be0001cef603560358.jpg">
+<meta property="og:image" content="http://img.mukewang.com/52e2210700016f5603190313.jpg">
+<meta property="og:image" content="http://img.mukewang.com/52e2216700014c4103190312.jpg">
+<meta property="og:image" content="http://img.mukewang.com/52e2218d0001d45403530366.jpg">
+<meta property="og:updated_time" content="2019-07-14T06:08:48.258Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS进阶知识点--边框效果">
 <meta name="twitter:description" content="圆角效果 border-radiusborder-radius是向元素添加圆角边框。 1234使用方法：border-radius:10px;/* 所有角都使用半径为10px的圆角 */ border-radius: 5px 4px 3px 2px; /* 四个半径值分别是左上角、右上角、右下角和左下角，顺时针 */  不要以为border-radius的值只能用px单位，你还可以用百分比或者e">
@@ -122,11 +129,43 @@
 <p>.boxshadow-outset{<br>    width:100px;<br>    height:100px;<br>    box-shadow:4px -4px 6px #666;<br>}</p>
 <p>效果图：</p>
 <p><img src="http://img.mukewang.com/548fd93e00011dd101570142.jpg" alt></p>
+<h2 id="为边框应用图片-border-image"><a href="#为边框应用图片-border-image" class="headerlink" title="为边框应用图片 border-image"></a>为边框应用图片 border-image</h2><p>顾名思义就是为边框应用背景图片，它和我们常用的background属性比较相似。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background:url(xx.jpg) 10px 20px no-repeat;</span><br></pre></td></tr></table></figure>
+
+<p>但是又比背景图片复杂一些。</p>
+<p>想象一下：一个矩形，有四个边框。如果应用了边框图片，图片该怎么分布呢？ 图片会自动被切割分成四等分。用于四个边框。</p>
+<p>可以理解为它是一个切片工具，会自动把用做边框的图片切割。怎么切割呢？为了方便理解，做了一张特殊的图片，由9个矩形（70<code>*</code>70像素）拼成的一张图（210<code>*</code>210像素），并标注好序号，是不是像传说中的九宫图，如下：</p>
+<p><img src="http://img.mukewang.com/52e21fea000127e802100210.jpg" alt></p>
+<p>我们把上图当作边框图片 来应用一下， 看一看是什么效果</p>
+<p>根据border-image的语法：</p>
+<p><img src="http://img.mukewang.com/52e2201a0001b1e004720260.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#border-image&#123;</span><br><span class="line">   background:#F4FFFA;</span><br><span class="line">   width:210px; height:210px; border:70px solid #ddd;</span><br><span class="line">   border-image:url(borderimg.png) 70 repeat  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/52e220780001091a03530354.jpg" alt></p>
+<p>从序号可以看出div的四个角分别对应了背景图片的四个角。而2,4,6,8 被重复。5在哪？因为是从四周向中心切割图片的所以，5显示不出来。而在chrome浏览器中5是存在的，下图的样子：</p>
+<p><img src="http://img.mukewang.com/52e220be0001cef603560358.jpg" alt></p>
+<p><strong>repeat</strong>的意思就是重复，目前因为是刚好被整除，效果看不出来。如果改下DIV的宽高，再来看重复的效果：</p>
+<p><img src="http://img.mukewang.com/52e2210700016f5603190313.jpg" alt></p>
+<p>边角部分为裁掉了，可见repeat就是一直重复，然后超出部分剪裁掉，而且是居中开始重复。</p>
+<p><strong>Round 参数</strong>：Round可以理解为圆满的铺满。为了实现圆满所以会压缩（或拉伸）；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#border-image &#123;</span><br><span class="line"></span><br><span class="line">     width:170px;</span><br><span class="line"></span><br><span class="line">     height:170px;</span><br><span class="line"></span><br><span class="line">     border:70px solid;</span><br><span class="line"></span><br><span class="line">     border-image:url(borderimg.png) 70 round;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/52e2216700014c4103190312.jpg" alt></p>
+<p>可见图片被压扁了。</p>
+<p><strong>Stretch</strong> 很好理解就是拉伸，有多长拉多长。有多远“滚”多远。</p>
+<p><code>border-image:url(borderimg.png) 70 stretch</code></p>
+<p>看一下效果：</p>
+<p><img src="http://img.mukewang.com/52e2218d0001d45403530366.jpg" alt></p>
+<p>2,4,6,8分别被拉伸显示。</p>
+<p>注意：Chrome下，中间部分也会被拉伸，webkit浏览器对于round属性和repeat属性似乎没有区分，显示效果是一样的。</p>
+<p>Firefox 26.0 下是可以准确区分的。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/03/CSS进阶知识点/" data-id="cjy2jphvt0000now0dbycybaq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/03/CSS进阶知识点/" data-id="cjy2k6aod0000zcw09fynjvtm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
