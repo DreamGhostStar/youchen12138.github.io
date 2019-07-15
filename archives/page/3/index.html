@@ -5,20 +5,15 @@
   
 
   
-  <title>跨域 | Hexo</title>
+  <title>Archives | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个域名地址的组成  http://|www.|abc.com：|8080/|scripts/jquery.js|-|-|-|-|-|-|-|-|协议|子域名|主域名|端口号|请求资源地址  当协议、子域名、主域名、端口号中任意一个不相同时，都算作不同域  不同域之间相互请求资源，就算作“跨域”   比如：http://www.abc.com/index.html 请求 http://www.e">
-<meta name="keywords" content="TheKnowledgeOf">
-<meta property="og:type" content="article">
-<meta property="og:title" content="跨域">
-<meta property="og:url" content="http://yoursite.com/2019/05/25/跨域-md/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="一个域名地址的组成  http://|www.|abc.com：|8080/|scripts/jquery.js|-|-|-|-|-|-|-|-|协议|子域名|主域名|端口号|请求资源地址  当协议、子域名、主域名、端口号中任意一个不相同时，都算作不同域  不同域之间相互请求资源，就算作“跨域”   比如：http://www.abc.com/index.html 请求 http://www.e">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-26T04:00:43.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域">
-<meta name="twitter:description" content="一个域名地址的组成  http://|www.|abc.com：|8080/|scripts/jquery.js|-|-|-|-|-|-|-|-|协议|子域名|主域名|端口号|请求资源地址  当协议、子域名、主域名、端口号中任意一个不相同时，都算作不同域  不同域之间相互请求资源，就算作“跨域”   比如：http://www.abc.com/index.html 请求 http://www.e">
+<meta name="twitter:title" content="Hexo">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,108 +60,45 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-跨域-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/25/跨域-md/" class="article-date">
-  <time datetime="2019-05-25T06:59:34.000Z" itemprop="datePublished">2019-05-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      跨域
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2019/03/15/Git简介/" class="archive-article-date">
+  <time datetime="2019-03-15T12:11:19.000Z" itemprop="datePublished">Mar 15</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/03/15/Git简介/">Git简介</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>一个域名地址的组成</li>
-</ul>
-<p>http://|www.|<code>abc.com：</code>|8080/|scripts/jquery.js|<br>-|-|-|-|-|-|-|-|<br>协议|子域名|主域名|端口号|请求资源地址</p>
-<ul>
-<li><p>当协议、子域名、主域名、端口号中任意一个不相同时，都算作不同域</p>
-</li>
-<li><p>不同域之间相互请求资源，就算作“跨域”</p>
-</li>
-</ul>
-<p>比如：<a href="http://www.abc.com/index.html" target="_blank" rel="noopener">http://www.abc.com/index.html</a> 请求 <a href="http://www.efg.com/service.php" target="_blank" rel="noopener">http://www.efg.com/service.php</a></p>
-<ul>
-<li>JavaScript处于安全方面的考虑，不允许跨域调用其它页面的对象。什么是跨域呢，简单的理解就是JavaScript同源策略的限制，<code>a.com</code>域名下的js无法操作<code>b.com</code>或是<code>c.a.com</code>域名下的对象</li>
-</ul>
-<h2 id="处理跨域方法一——代理"><a href="#处理跨域方法一——代理" class="headerlink" title="处理跨域方法一——代理"></a>处理跨域方法一——代理</h2><ul>
-<li><p>通过在同域名的web服务器创建一个代理：</p>
-</li>
-<li><p>北京服务器（域名：<a href="http://www.beijing.com）" target="_blank" rel="noopener">www.beijing.com）</a></p>
-<p>  上海服务器（域名：<a href="http://www.shanghai.com）" target="_blank" rel="noopener">www.shanghai.com）</a></p>
-</li>
-</ul>
-<ul>
-<li><p>比如在北京的web服务器的后台</p>
-<p>  <code>(www.beijing.com/proxy-shanghaiservice.php)</code>来调用上海服务器<code>(www.shanghai.com/service.php)</code>的服务，然后再把响应结果返回给前端，这样前端调用北京同域名的服务就和调用上海的服务效果相同了</p>
-</li>
-</ul>
-<h2 id="处理跨域方法二——JSONP"><a href="#处理跨域方法二——JSONP" class="headerlink" title="处理跨域方法二——JSONP"></a>处理跨域方法二——JSONP</h2><ul>
-<li><p>JSONP可用于解决主流浏览器的跨域数据访问的问题（通过script标签来调用其它页面）</p>
-</li>
-<li><p>JSONP不支持POST请求</p>
-</li>
-</ul>
-<h2 id="处理跨域方法三——XHR2"><a href="#处理跨域方法三——XHR2" class="headerlink" title="处理跨域方法三——XHR2"></a>处理跨域方法三——XHR2</h2><ul>
-<li><p>HTML5提供的XMLHttpRequest Level2已经实现了跨域访问以及其他的一些新功能</p>
-</li>
-<li><p>IE10以下的版本都不支持</p>
-</li>
-<li><p>在服务器端做一些小小的改造即可：</p>
-<p>  <code>header(&#39;Access-Control-Allow-Origin: *&#39;);</code></p>
-<p>  <code>header(&#39;Access-Control-Allow-Methods:POST,GET&#39;);</code></p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjy411lli001cx8w04bggu4ef" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2019/06/23/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2019/05/25/用jQuery实现Ajax-md/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">用jQuery实现Ajax</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
 
 </section>
         
