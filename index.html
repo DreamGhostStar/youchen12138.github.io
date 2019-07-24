@@ -62,6 +62,398 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-HTML知识点-表格" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/24/HTML知识点-表格/" class="article-date">
+  <time datetime="2019-07-24T05:20:50.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/HTML知识点-表格/">HTML知识点-表格</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/24/HTML知识点-表格/" data-id="cjygtngd8000kukw0w9113xey" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML基础知识点-图像与超链接" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/23/HTML基础知识点-图像与超链接/" class="article-date">
+  <time datetime="2019-07-23T07:39:48.000Z" itemprop="datePublished">2019-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/23/HTML基础知识点-图像与超链接/">HTML基础知识点-图像与超链接</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="图像标签"><a href="#图像标签" class="headerlink" title="图像标签"></a>图像标签</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>&lt;img src=&quot;&quot; alt=&quot;&quot;/&gt;</code></p>
+<h3 id="img属性"><a href="#img属性" class="headerlink" title="img属性"></a>img属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Src（必写）</td>
+<td>URL</td>
+<td>显示图像的URL</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>文字</td>
+<td>图像替代文本</td>
+</tr>
+<tr>
+<td>height</td>
+<td>数值和百分比</td>
+<td>图像的高</td>
+</tr>
+<tr>
+<td>width</td>
+<td>数值和百分比</td>
+<td>图像的宽</td>
+</tr>
+</tbody></table>
+<h4 id="alt属性作用"><a href="#alt属性作用" class="headerlink" title="alt属性作用"></a>alt属性作用</h4><p>当由于：</p>
+<ul>
+<li><p>网速太慢</p>
+</li>
+<li><p>src属性中的错误</p>
+</li>
+<li><p>浏览器禁用图像</p>
+</li>
+</ul>
+<p>用户无法查看图像时，alt属性可以代替图像显示在浏览器中的内容</p>
+<h2 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><p><code>&lt;a href=&quot;&quot;&gt;内容&lt;/a&gt;</code></p>
+<p><strong>href</strong>：链接地址，可以是内部链接或外部链接</p>
+<p>当链接为空时，点击链接会刷新页面</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>href</td>
+<td>链接地址</td>
+</tr>
+<tr>
+<td>target</td>
+<td>链接的目标窗口（_self、_blank、_top、_parent）</td>
+</tr>
+<tr>
+<td>title</td>
+<td>链接提示文字（当光标停在链接上时，提示文字将会出现）</td>
+</tr>
+<tr>
+<td>name</td>
+<td>链接命名</td>
+</tr>
+</tbody></table>
+<h2 id="锚链接"><a href="#锚链接" class="headerlink" title="锚链接"></a>锚链接</h2><h3 id="定义锚（同一页面）"><a href="#定义锚（同一页面）" class="headerlink" title="定义锚（同一页面）"></a>定义锚（同一页面）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#锚名&quot;&gt;目录1&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;...&quot; name=&quot;锚名&quot;&gt;内容&lt;/a&gt;</span><br><span class="line">    xxxxx</span><br><span class="line">    xxxxxxxxxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="定义锚（不同页面）"><a href="#定义锚（不同页面）" class="headerlink" title="定义锚（不同页面）"></a>定义锚（不同页面）</h3><p>不同页面的锚链接：不仅可以跳转别的链接，而且还能找到相应的锚点位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">网页1：&lt;a href=&quot;网页名称#锚名&gt;...&lt;/a&gt;</span><br><span class="line">网页2：&lt;a href=&quot;锚名&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="电子邮件链接"><a href="#电子邮件链接" class="headerlink" title="电子邮件链接"></a>电子邮件链接</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;mailto:邮件地址&quot;&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;下载文件的地址&quot; download=&quot;下载文件的地址&quot;&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/23/HTML基础知识点-图像与超链接/" data-id="cjygtngd6000gukw0d3qnfw4b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/21/HTML基础/" class="article-date">
+  <time datetime="2019-07-21T13:58:01.000Z" itemprop="datePublished">2019-07-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/21/HTML基础/">HTML基础知识点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h2><ol>
+<li><p>换行：<code>&lt;br/&gt;</code></p>
+</li>
+<li><p>HTML编写格式排版网页：<code>&lt;pre&gt;&lt;/pre&gt;</code></p>
+</li>
+<li><p>线：<code>&lt;/hr&gt;</code></p>
+</li>
+<li><p>斜体：<code>&lt;i&gt;</code>,<code>&lt;em&gt;</code></p>
+</li>
+<li><p>粗体：<code>&lt;b&gt;</code>,<code>&lt;strong&gt;</code></p>
+</li>
+<li><p>上标：<code>&lt;sup&gt;</code></p>
+</li>
+<li><p>下标：<code>&lt;sub&gt;</code></p>
+</li>
+<li><p>定义列表：<code>&lt;dl&gt;</code></p>
+</li>
+<li><p>定义列表项：<code>&lt;dt&gt;</code></p>
+</li>
+<li><p>列表项描述：<code>&lt;dd&gt;</code></p>
+</li>
+</ol>
+<h2 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h2><ol>
+<li>align（对齐）</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>left</td>
+<td>左对齐内容</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右对齐内容</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中对齐内容</td>
+</tr>
+<tr>
+<td>justify</td>
+<td>对行进行伸展，这样每行都可以有相等的长度</td>
+</tr>
+</tbody></table>
+<h2 id="其他知识点"><a href="#其他知识点" class="headerlink" title="其他知识点"></a>其他知识点</h2><h3 id="无序列表符号"><a href="#无序列表符号" class="headerlink" title="无序列表符号"></a>无序列表符号</h3><p><code>&lt;ul&gt;</code>的type属性值</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>disc</td>
+<td>圆点</td>
+</tr>
+<tr>
+<td>square</td>
+<td>正方形</td>
+</tr>
+<tr>
+<td>circle</td>
+<td>空心圆</td>
+</tr>
+</tbody></table>
+<h3 id="有序列表符号"><a href="#有序列表符号" class="headerlink" title="有序列表符号"></a>有序列表符号</h3><p><code>&lt;ol&gt;</code>的type属性</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>数字1,2…</td>
+</tr>
+<tr>
+<td>a</td>
+<td>小写字母a,b…</td>
+</tr>
+<tr>
+<td>A</td>
+<td>大写字母A,B…</td>
+</tr>
+<tr>
+<td>i</td>
+<td>小写罗马数字i</td>
+</tr>
+<tr>
+<td>I</td>
+<td>大写罗马数字I</td>
+</tr>
+</tbody></table>
+<h3 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>显示结果</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;lt;</code></td>
+<td>&lt;</td>
+<td>小于号或显示标记</td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td>&gt;</td>
+<td>大于号或显示标记</td>
+</tr>
+<tr>
+<td><code>&amp;reg;</code></td>
+<td>&reg;</td>
+<td>已注册</td>
+</tr>
+<tr>
+<td><code>&amp;copy;</code></td>
+<td>&copy;</td>
+<td>版权</td>
+</tr>
+<tr>
+<td><code>&amp;trade;</code></td>
+<td>&trade;</td>
+<td>商标</td>
+</tr>
+<tr>
+<td><code>&amp;nbsp;</code></td>
+<td>Space</td>
+<td>不断行的空格</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/21/HTML基础/" data-id="cjygtngd4000eukw0snhq7zod" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Java知识点-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/20/Java知识点-2/" class="article-date">
+  <time datetime="2019-07-20T09:56:26.000Z" itemprop="datePublished">2019-07-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/20/Java知识点-2/">Java知识点-week2（枚举，继承）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h2><p>将普通的Java类的calss替换为enum，创建属性值时不需要添加<code>;</code></p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public enum Animal &#123;</span><br><span class="line">    tiger,</span><br><span class="line">    lion,</span><br><span class="line">    dog,</span><br><span class="line">    cat</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class Apple extends Fruit&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>父类转换成子类，需要强制转换。</p>
+<p>子类转换成父类，直接<code>=</code>符号赋值。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/20/Java知识点-2/" data-id="cjygtngdy000xukw0bfcsfmcu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Java知识点-1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/16/Java知识点-1/" class="article-date">
@@ -170,7 +562,7 @@
 <h2 id="数据过滤"><a href="#数据过滤" class="headerlink" title="数据过滤"></a>数据过滤</h2><ol>
 <li>Stream Filter</li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    List&lt;String&gt; strings = Arrays.asList(&quot;a1&quot;, &quot;a2&quot;, &quot;a3&quot;, &quot;b1&quot;, &quot;b2&quot;, &quot;b3&quot;);</span><br><span class="line">    List&lt;String&gt; filter = strings.stream().filter(str-&gt;str.startsWith(&quot;a&quot;)).collect(Collectors.toList());</span><br><span class="line">    System.out.println(filter);  </span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">先让字符向量变成流(`stream()`)，然后设置过滤条件(`filter()`)，最后收集(`collect(Collectors.toList())`)</span><br><span class="line"></span><br><span class="line">2. StringBuilder</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    List&lt;String&gt; strings = Arrays.asList(&quot;a1&quot;, &quot;a2&quot;, &quot;a3&quot;, &quot;b1&quot;, &quot;b2&quot;, &quot;b3&quot;);</span><br><span class="line">    List&lt;String&gt; filter = strings.stream().filter(str-&gt;str.startsWith(&quot;a&quot;)).collect(Collectors.toList());</span><br><span class="line">    System.out.println(filter);</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">先让字符向量变成流(`stream()`)，然后设置过滤条件(`filter()`)，最后收集(`collect(Collectors.toList())`)</span><br><span class="line"></span><br><span class="line">2. StringBuilder</span><br></pre></td></tr></table></figure>
 
 <pre><code>StringBuilder sb = new StringBuilder();
 System.out.println(sb);
@@ -188,7 +580,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="cjya79693000n9cw076oxq7to" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="cjygtngfd002vukw0dwrcha1v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -227,7 +619,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/15/CSS进阶知识点-选择器（下）/" data-id="cjya7968700019cw0lca1an00" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/15/CSS进阶知识点-选择器（下）/" data-id="cjygtngcr000aukw05gu2slf0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -454,7 +846,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-选择器（上）/" data-id="cjya796a200259cw02cpn76j6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-选择器（上）/" data-id="cjygtngey002kukw046xrqmjj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -532,7 +924,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-背景样式/" data-id="cjya7968a00049cw0742vwhqk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-背景样式/" data-id="cjygtngc30001ukw0a3tbvvo2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -603,7 +995,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-文字和字体/" data-id="cjya7967t00009cw0deow70c1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-文字和字体/" data-id="cjygtngan0000ukw0bfhqy6pu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -664,457 +1056,10 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-颜色/" data-id="cjya7968c00059cw03iewyyk1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-颜色/" data-id="cjygtngd1000bukw0nbu34up5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS进阶知识点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/03/CSS进阶知识点/" class="article-date">
-  <time datetime="2019-07-03T00:08:37.000Z" itemprop="datePublished">2019-07-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/CSS进阶知识点/">CSS进阶知识点--边框效果</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="圆角效果-border-radius"><a href="#圆角效果-border-radius" class="headerlink" title="圆角效果 border-radius"></a>圆角效果 border-radius</h2><p>border-radius是向元素添加圆角边框。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用方法：</span><br><span class="line">border-radius:10px;/* 所有角都使用半径为10px的圆角 */ </span><br><span class="line"></span><br><span class="line">border-radius: 5px 4px 3px 2px; /* 四个半径值分别是左上角、右上角、右下角和左下角，顺时针 */</span><br></pre></td></tr></table></figure>
-
-<p>不要以为<code>border-radius</code>的值只能用px单位，你还可以用百分比或者em，但兼容性目前还不太好。</p>
-<h2 id="阴影-box-shadow"><a href="#阴影-box-shadow" class="headerlink" title="阴影 box-shadow"></a>阴影 box-shadow</h2><p><img src="http://img.mukewang.com/54292d620001ffb107080250.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">box-shadow是向盒子添加阴影。支持添加一个或者多个。</span><br><span class="line"></span><br><span class="line">很简单的一段代码，就实现了投影效果，酷毙了。我们来看下语法：</span><br><span class="line"></span><br><span class="line">box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];</span><br><span class="line"></span><br><span class="line">参数介绍：</span><br><span class="line"></span><br><span class="line">注意：inset 可以写在参数的第一个或最后一个，其它位置是无效的。</span><br></pre></td></tr></table></figure>
-
-<h4 id="为元素设置外阴影："><a href="#为元素设置外阴影：" class="headerlink" title="为元素设置外阴影："></a>为元素设置外阴影：</h4><p>示例代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">  box-shadow:4px 2px 6px #333333; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<p><img src="http://img.mukewang.com/52e21c9000013c8f01180117.jpg" alt></p>
-<h4 id="为元素设置内阴影："><a href="#为元素设置内阴影：" class="headerlink" title="为元素设置内阴影："></a>为元素设置内阴影：</h4><p>示例代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">  box-shadow:4px 2px 6px #333333 inset; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<p><img src="http://img.mukewang.com/54292b990001ebea01290115.jpg" alt></p>
-<h4 id="阴影模糊半径与阴影扩展半径的区别"><a href="#阴影模糊半径与阴影扩展半径的区别" class="headerlink" title="阴影模糊半径与阴影扩展半径的区别"></a><font color="red">阴影模糊半径</font>与<font color="red">阴影扩展半径</font>的区别</h4><p>阴影模糊半径：此参数可选，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊；</p>
-<p>阴影扩展半径：此参数可选，其值可以是正负值，如果值为正，则整个阴影都延展扩大，反之值为负值时，则缩小；</p>
-<h4 id="X轴偏移量和Y轴偏移量值可以设置为负数"><a href="#X轴偏移量和Y轴偏移量值可以设置为负数" class="headerlink" title="X轴偏移量和Y轴偏移量值可以设置为负数"></a><font color="red">X轴偏移量</font>和<font color="red">Y轴偏移量值</font>可以设置为负数</h4><p>box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];</p>
-<p>X轴偏移量为负数：</p>
-<p>.boxshadow-outset{<br>    width:100px;<br>    height:100px;<br>    box-shadow:-4px 4px 6px #666;<br>}</p>
-<p>效果图：</p>
-<p><img src="http://img.mukewang.com/548fd91c000140a901540143.jpg" alt></p>
-<p>Y轴偏移量为负数：</p>
-<p>.boxshadow-outset{<br>    width:100px;<br>    height:100px;<br>    box-shadow:4px -4px 6px #666;<br>}</p>
-<p>效果图：</p>
-<p><img src="http://img.mukewang.com/548fd93e00011dd101570142.jpg" alt></p>
-<h2 id="为边框应用图片-border-image"><a href="#为边框应用图片-border-image" class="headerlink" title="为边框应用图片 border-image"></a>为边框应用图片 border-image</h2><p>顾名思义就是为边框应用背景图片，它和我们常用的background属性比较相似。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background:url(xx.jpg) 10px 20px no-repeat;</span><br></pre></td></tr></table></figure>
-
-<p>但是又比背景图片复杂一些。</p>
-<p>想象一下：一个矩形，有四个边框。如果应用了边框图片，图片该怎么分布呢？ 图片会自动被切割分成四等分。用于四个边框。</p>
-<p>可以理解为它是一个切片工具，会自动把用做边框的图片切割。怎么切割呢？为了方便理解，做了一张特殊的图片，由9个矩形（70<code>*</code>70像素）拼成的一张图（210<code>*</code>210像素），并标注好序号，是不是像传说中的九宫图，如下：</p>
-<p><img src="http://img.mukewang.com/52e21fea000127e802100210.jpg" alt></p>
-<p>我们把上图当作边框图片 来应用一下， 看一看是什么效果</p>
-<p>根据border-image的语法：</p>
-<p><img src="http://img.mukewang.com/52e2201a0001b1e004720260.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#border-image&#123;</span><br><span class="line">   background:#F4FFFA;</span><br><span class="line">   width:210px; height:210px; border:70px solid #ddd;</span><br><span class="line">   border-image:url(borderimg.png) 70 repeat  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<p><img src="http://img.mukewang.com/52e220780001091a03530354.jpg" alt></p>
-<p>从序号可以看出div的四个角分别对应了背景图片的四个角。而2,4,6,8 被重复。5在哪？因为是从四周向中心切割图片的所以，5显示不出来。而在chrome浏览器中5是存在的，下图的样子：</p>
-<p><img src="http://img.mukewang.com/52e220be0001cef603560358.jpg" alt></p>
-<p><strong>repeat</strong>的意思就是重复，目前因为是刚好被整除，效果看不出来。如果改下DIV的宽高，再来看重复的效果：</p>
-<p><img src="http://img.mukewang.com/52e2210700016f5603190313.jpg" alt></p>
-<p>边角部分为裁掉了，可见repeat就是一直重复，然后超出部分剪裁掉，而且是居中开始重复。</p>
-<p><strong>Round 参数</strong>：Round可以理解为圆满的铺满。为了实现圆满所以会压缩（或拉伸）；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#border-image &#123;</span><br><span class="line"></span><br><span class="line">     width:170px;</span><br><span class="line"></span><br><span class="line">     height:170px;</span><br><span class="line"></span><br><span class="line">     border:70px solid;</span><br><span class="line"></span><br><span class="line">     border-image:url(borderimg.png) 70 round;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<p><img src="http://img.mukewang.com/52e2216700014c4103190312.jpg" alt></p>
-<p>可见图片被压扁了。</p>
-<p><strong>Stretch</strong> 很好理解就是拉伸，有多长拉多长。有多远“滚”多远。</p>
-<p><code>border-image:url(borderimg.png) 70 stretch</code></p>
-<p>看一下效果：</p>
-<p><img src="http://img.mukewang.com/52e2218d0001d45403530366.jpg" alt></p>
-<p>2,4,6,8分别被拉伸显示。</p>
-<p>注意：Chrome下，中间部分也会被拉伸，webkit浏览器对于round属性和repeat属性似乎没有区分，显示效果是一样的。</p>
-<p>Firefox 26.0 下是可以准确区分的。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/03/CSS进阶知识点/" data-id="cjya7968r000e9cw07ol92fi5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Qt之菜单概述" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/25/Qt之菜单概述/" class="article-date">
-  <time datetime="2019-06-25T07:18:44.000Z" itemprop="datePublished">2019-06-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/QT/">QT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/25/Qt之菜单概述/">Qt之菜单概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<hr>
-<h2 id="菜单所需头文件"><a href="#菜单所需头文件" class="headerlink" title="菜单所需头文件"></a>菜单所需头文件</h2><ul>
-<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
-</li>
-<li><p>QMenu：菜单（添加菜单）</p>
-</li>
-<li><p>QAction：添加菜单项（添加动作）</p>
-</li>
-<li><p>QToolBar：添加菜单项的快捷方式</p>
-</li>
-<li><p>QStatusBar：状态栏</p>
-</li>
-<li><p>QLabel：标签</p>
-</li>
-</ul>
-<hr>
-<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//模板，创建并且指定当前窗口为父对象（实质上为构造函数）</span><br><span class="line">    头文件名 *名字 = new 头文件名(this);</span><br><span class="line"></span><br><span class="line">//创建菜单栏</span><br><span class="line">    QMenuBar *mBar = menuBar();</span><br><span class="line"></span><br><span class="line">//添加菜单项，添加动作</span><br><span class="line">    QAction *pNew = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;新建&quot;));</span><br><span class="line"></span><br><span class="line">//添加分割线</span><br><span class="line">    pFile-&gt;addSeparator();</span><br><span class="line"></span><br><span class="line">//添加工具栏，菜单项的快捷方式</span><br><span class="line">    QToolBar *toolBar = addToolBar(&quot;toolBar&quot;);</span><br><span class="line"></span><br><span class="line">//工具栏添加快捷键</span><br><span class="line">    toolBar-&gt;addAction(pNew);</span><br><span class="line"></span><br><span class="line">//新建状态栏</span><br><span class="line">    QStatusBar *statusBar = statusBar();</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="实战案例"><a href="#实战案例" class="headerlink" title="实战案例"></a>实战案例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//菜单栏</span><br><span class="line">QMenuBar *mBar = menuBar();</span><br><span class="line"></span><br><span class="line">//添加菜单</span><br><span class="line">QMenu *pFile = mBar-&gt;addMenu(QString::fromLocal8Bit(&quot;文件&quot;));</span><br><span class="line"></span><br><span class="line">//添加菜单项，添加动作</span><br><span class="line">QAction *pNew = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;新建&quot;));</span><br><span class="line">QAction *pOpen = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;打开&quot;));</span><br><span class="line"></span><br><span class="line">pFile-&gt;addSeparator();//添加分割线</span><br><span class="line"></span><br><span class="line">connect(pNew, &amp;QAction::triggered,</span><br><span class="line">        [=]()</span><br><span class="line">        &#123;</span><br><span class="line">            qDebug()&lt;&lt;QString::fromLocal8Bit(&quot;新建被按下&quot;);  //打印</span><br><span class="line">        &#125;</span><br><span class="line">       );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//工具栏，菜单项的快捷方式</span><br><span class="line">QToolBar *toolBar = addToolBar(&quot;toolBar&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//添加小控件</span><br><span class="line">QPushButton *b = new QPushButton(this);</span><br><span class="line">b-&gt;setText(&quot;^_^&quot;);</span><br><span class="line">toolBar-&gt;addWidget(b);</span><br><span class="line">connect(b, &amp;QPushButton::clicked,</span><br><span class="line">        [=]()</span><br><span class="line">        &#123;</span><br><span class="line">            b-&gt;setText(&quot;123&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">//工具栏添加快捷键</span><br><span class="line">toolBar-&gt;addAction(pNew);</span><br><span class="line"></span><br><span class="line">//状态栏</span><br><span class="line">QStatusBar *sBar = statusBar();    //新建状态栏</span><br><span class="line">QLabel *label = new QLabel(this);</span><br><span class="line">label-&gt;setText(&quot;Normal text file&quot;);</span><br><span class="line">sBar-&gt;addWidget(label);</span><br><span class="line"></span><br><span class="line">sBar-&gt;addWidget(new QLabel(&quot;2&quot;, this));     //从左往右添加</span><br><span class="line"></span><br><span class="line">sBar-&gt;addPermanentWidget(new QLabel(&quot;2&quot;, this));    //从右往左添加</span><br><span class="line"></span><br><span class="line">//核心控件,文本编辑框</span><br><span class="line">QTextEdit *textEdit = new QTextEdit(this);</span><br><span class="line">setCentralWidget(textEdit);</span><br><span class="line"></span><br><span class="line">//浮动窗口</span><br><span class="line">QDockWidget *dock = new QDockWidget(this);</span><br><span class="line">addDockWidget(Qt::RightDockWidgetArea, dock);</span><br><span class="line"></span><br><span class="line">//给浮动窗口添加控件</span><br><span class="line">QTextEdit *textEdit1 = new QTextEdit(this);</span><br><span class="line">dock-&gt;setWidget(textEdit1);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjya79697000s9cw0zmsztmq3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-QT中提示“常量中有换行符”解决办法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/25/QT中提示“常量中有换行符”解决办法/" class="article-date">
-  <time datetime="2019-06-25T00:42:50.000Z" itemprop="datePublished">2019-06-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/QT/">QT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/25/QT中提示“常量中有换行符”解决办法/">QT中提示“常量中h有换行符”解决办法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用QT编译界面时，免不了要使用中文，有会出现乱码，有时会提示“常量中有换行符”，而不能正常编译，因此可以通过下面的方法解决。</p>
-<p>PS：本文的环境，QT5.7.1，VS2015</p>
-<ol>
-<li>将文本编码设置为：如果编码是UTF-8则添加。</li>
-</ol>
-<p><img src="https://img-blog.csdn.net/20170530135801390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG92ZWx5YWlx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt></p>
-<ol start="2">
-<li>在界面中需要使用中文的地方，使用：</li>
-</ol>
-<p>QString::fromLocal8Bit</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将 Unicode 编码转换为本地系统编码。</span><br></pre></td></tr></table></figure>
-
-<p>经过以上处理之后，编译期就不会再报“常量中有换行符”错误了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjya7969b000z9cw0mi6dafg8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-QT信号与槽及其附属知识点-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/24/QT信号与槽及其附属知识点-md/" class="article-date">
-  <time datetime="2019-06-24T09:10:32.000Z" itemprop="datePublished">2019-06-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/QT/">QT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/24/QT信号与槽及其附属知识点-md/">QT信号与槽及其附属知识点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<hr>
-<h2 id="QT常用函数概述"><a href="#QT常用函数概述" class="headerlink" title="QT常用函数概述"></a>QT常用函数概述</h2><ul>
-<li><p>setWindowTitle(“string”): 设置标题</p>
-</li>
-<li><p>setText(“string”)：给按钮设置内容</p>
-</li>
-<li><p>setParent(&amp;父对象)：设置父对象</p>
-</li>
-<li><p>构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）</p>
-</li>
-<li><p>move(x, y)：以左上角为坐标原点，移动x, y</p>
-</li>
-<li><p>show：显示对象所属控件</p>
-</li>
-<li><p>exec：进程一直显示，等待用户操作</p>
-</li>
-<li><p>connect(&amp;b1, &amp;QPushButton::pressed, this, &amp;MainWidget::close)</p>
-<ol>
-<li><p>&amp;b1: 信号发出者，指针类型</p>
-</li>
-<li><p>&amp;QPushButton::pressed：处理的信号，&amp;发送者的类名::信号的名字</p>
-</li>
-<li><p>this：信号接收者</p>
-</li>
-<li><p>&amp;MainWidget::close:  槽函数，信号处理函数  &amp;接收的类名::槽函数名字（接收对象在接收到信号之后所需要调用的函数）</p>
-</li>
-</ol>
-</li>
-<li><p>disconnect：断开信号和槽的连接</p>
-</li>
-<li><p>hide：对象所属控件隐藏</p>
-</li>
-<li><p>resize(x, y)：重新界定子窗口大小</p>
-</li>
-<li><p>move(x, y)：相对于父窗口，子窗口移动(x, y)</p>
-</li>
-<li><p>setGeometry(x1, y1, x2, y2)：(x1, y1)为框的位置，(x2, y2)为框的大小</p>
-</li>
-<li><p>menuBar：添加菜单栏</p>
-</li>
-<li><p>addMenu：添加菜单</p>
-</li>
-<li><p>addAction：添加菜单项，添加动作</p>
-</li>
-<li><p>addSeparator：添加分割线</p>
-</li>
-<li><p>addToolBar(“toolBar”)：添加菜单栏快捷方式</p>
-</li>
-<li><p>statusBar()：新建状态栏</p>
-</li>
-<li><p>QLabel：新建标签</p>
-</li>
-<li><p>addWidget：从左往右添加状态栏</p>
-</li>
-<li><p>addPermanentWidget：从右往左添加状态栏</p>
-</li>
-<li><p>QTextEdit：新建文本编辑框</p>
-</li>
-<li><p>setCentralWidget：为文本编辑框添加文本编辑功能</p>
-</li>
-<li><p>setWidget：给对应窗口设置文本编辑</p>
-<p>  例如：<code>this-&gt;setWidget(textEdit);</code>给当前窗口设置文本编辑</p>
-</li>
-<li><p>QMessageBox::about：创建关于对话框</p>
-</li>
-<li><p>QMessageBox::question：创建问题对话框</p>
-</li>
-<li><p>setCurrentIndex：切换页</p>
-</li>
-<li><p>setTextMargins：设置外边距（设置内容显示间隙）</p>
-</li>
-<li><p>setEchoMode：设置内容显示方式</p>
-</li>
-</ul>
-<h3 id="按钮，框函数"><a href="#按钮，框函数" class="headerlink" title="按钮，框函数"></a>按钮，框函数</h3><ul>
-<li><p>triggered</p>
-</li>
-<li><p>pressed</p>
-</li>
-<li><p>clicked</p>
-</li>
-</ul>
-<p><strong>功能好像一样QAQ</strong></p>
-<hr>
-<h2 id="QT头文件"><a href="#QT头文件" class="headerlink" title="QT头文件"></a>QT头文件</h2><ul>
-<li><p>QPushButton：按钮</p>
-</li>
-<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
-</li>
-<li><p>QMenu：菜单（添加菜单）</p>
-</li>
-<li><p>QAction：添加菜单项（添加动作）</p>
-</li>
-<li><p>QDebug：打印</p>
-</li>
-<li><p>QToolBar：添加菜单项的快捷方式</p>
-</li>
-<li><p>QStatusBar：状态栏</p>
-</li>
-<li><p>QLabel：标签</p>
-</li>
-<li><p>QTextEdit：文本编辑框（也称核心控件）</p>
-</li>
-<li><p>QDockWidget：浮动窗口</p>
-</li>
-<li><p>QDialog：模态对话框</p>
-</li>
-<li><p>QMessageBox：对话框</p>
-</li>
-<li><p>QFileDialog：文件对话框</p>
-<p>  示例：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">QAction *p5 = menu-&gt;addAction(QString::fromLocal8Bit(&quot;文件对话框&quot;));</span><br><span class="line">connect(p5, &amp;QAction::triggered,</span><br><span class="line">    [=]()</span><br><span class="line">    &#123;</span><br><span class="line">        QString path = QFileDialog::getOpenFileName(</span><br><span class="line">                    this,</span><br><span class="line">                    &quot;open&quot;,</span><br><span class="line">                    &quot;../&quot;,//打开文件对话框的位置（命令行）</span><br><span class="line">                    &quot;source(*.cpp *.h);;Text(*.txt);;All(*.*)&quot;//文件类型</span><br><span class="line">                    );</span><br><span class="line">        qDebug()&lt;&lt;path;</span><br><span class="line">    &#125;</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>QStringList：字符串列表</p>
-</li>
-<li><p>QCompleter：字符表达形式？？？</p>
-</li>
-<li><p>QMovie：gif动画</p>
-</li>
-</ul>
-<hr>
-<h2 id="信号与槽"><a href="#信号与槽" class="headerlink" title="信号与槽"></a>信号与槽</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>信号槽是 Qt 框架引以为豪的机制之一。所谓信号槽，实际就是观察者模式。当某个事件发生之后，比如，按钮检测到自己被点击了一下，它就会发出一个信号（signal）。这种发出是没有目的的，类似广播。如果有对象对这个信号感兴趣，它就会使用连接（connect）函数，意思是，将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。也就是说，当信号发出时，被连接的槽函数会自动被回调。这就类似观察者模式：当发生了感兴趣的事件，某一个操作就会被自动触发。（这里提一句，Qt 的信号槽使用了额外的处理来实现，并不是 GoF 经典的观察者模式的实现方式。）</p>
-<p>信号和槽是Qt特有的信息传输机制，是Qt设计程序的重要基础，它可以让互不干扰的对象建立一种联系。</p>
-<p>槽的本质是类的成员函数，其参数可以是任意类型的。和普通C++成员函数几乎没有区别，它可以是虚函数；也可以被重载；可以是公有的、保护的、私有的、也可以被其他C++成员函数调用。唯一区别的是：槽可以与信号连接在一起，每当和槽连接的信号被发射的时候，就会调用这个槽。</p>
-<h3 id="自定义槽"><a href="#自定义槽" class="headerlink" title="自定义槽"></a>自定义槽</h3><ol>
-<li><p>QT5：任意的成员函数，普通全局函数，静态函数</p>
-</li>
-<li><p>槽函数需要与信号一致（参数类型和参数个数一致）</p>
-</li>
-<li><p>由于信号都是没有返回值，所以，槽函数一定没有返回值</p>
-</li>
-</ol>
-<hr>
-<h2 id="额外知识点"><a href="#额外知识点" class="headerlink" title="额外知识点"></a>额外知识点</h2><ul>
-<li><p>emit：意为发送，主要用于发送信号</p>
-</li>
-<li><p>signals：</p>
-<ol>
-<li><p>信号必须有signals关键字来声明</p>
-</li>
-<li><p>信号没有返回值，但可以有参数</p>
-</li>
-<li><p>信号就是函数的声明，只需声明，无需定义</p>
-</li>
-<li><p>使用：emit mySignal();</p>
-</li>
-</ol>
-</li>
-<li><p>在发送带参数的命令时，字符串包含中文的话，如果报错，请参照<a href="https://youchen12138.github.io/2019/06/25/QT%E4%B8%AD%E6%8F%90%E7%A4%BA%E2%80%9C%E5%B8%B8%E9%87%8F%E4%B8%AD%E6%9C%89%E6%8D%A2%E8%A1%8C%E7%AC%A6%E2%80%9D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" target="_blank" rel="noopener">QT中提示“常量中h有换行符”解决办法 </a>一文</p>
-</li>
-<li><p>重载信号用函数指针</p>
-</li>
-</ul>
-<p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void (SubWidget::*funSignal)()=&amp;SubWidget::mySignal;</span><br><span class="line">void (SubWidget::*testSignal)(int, QString)=&amp;SubWidget::mySignal;</span><br><span class="line">connect(&amp;subWin, funSignal, this, &amp;MainWidget::dealSub);</span><br><span class="line">connect(&amp;subWin, testSignal, this, &amp;MainWidget::dealSolt);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>打印由Unicode编码转中文</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//str.toUtf8() -&gt; 字节数组QByteArray</span><br><span class="line">//...data() -&gt; QByteArray -&gt; char *</span><br><span class="line">qDebug()&lt;&lt;a&lt;&lt;str.toUtf8().data();</span><br><span class="line">//高版本可以直接用第二种方式</span><br><span class="line"></span><br><span class="line">//高版本QT可以直接打印中文</span><br><span class="line">qDebug()&lt;&lt;a&lt;&lt;str;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>Lambda表达式: </p>
-<ol>
-<li><p>匿名函数对象</p>
-</li>
-<li><p>C++11增加的新特性，项目文件：CONFIG += C++11</p>
-</li>
-<li><p>QT配合信号一起使用</p>
-<p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int a=10, b=100;</span><br><span class="line">connect(b4, &amp;QPushButton::released,</span><br><span class="line">        // = :把外部局部变量、类中所有成员以值传递方式</span><br><span class="line">        // this: 类中所有成员以值传递方式</span><br><span class="line">        // &amp; ：把外部所有局部变量（除类中定义的）</span><br><span class="line">        [=]() mutable   //将值传递的变量设为可改变</span><br><span class="line">        &#123;</span><br><span class="line">            b4-&gt;setText(&quot;123&quot;);</span><br><span class="line">            qDebug()&lt;&lt;&quot;1111&quot;;</span><br><span class="line">            qDebug()&lt;&lt;a&lt;&lt;b;</span><br><span class="line">            a=11;</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="内存回收机制"><a href="#内存回收机制" class="headerlink" title="内存回收机制"></a>内存回收机制</h3><ul>
-<li><p>1）指定父对象后  2）直接或间接继承于QObject</p>
-</li>
-<li><p>子对象如果是动态分配空间的new，不需要手动释放delete</p>
-</li>
-<li><p>系统会自动释放</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjya79699000v9cw01gxdunxo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
 
     </footer>
   </div>
@@ -1138,7 +1083,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -1148,7 +1093,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -1158,7 +1103,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 16.67px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 16.67px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 13.33px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 16.67px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/Git/" style="font-size: 16.67px;">Git</a> <a href="/tags/HTML/" style="font-size: 16.67px;">HTML</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 16.67px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 13.33px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -1180,23 +1125,23 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       <ul>
         
           <li>
+            <a href="/2019/07/24/HTML知识点-表格/">HTML知识点-表格</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/23/HTML基础知识点-图像与超链接/">HTML基础知识点-图像与超链接</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/21/HTML基础/">HTML基础知识点</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/20/Java知识点-2/">Java知识点-week2（枚举，继承）</a>
+          </li>
+        
+          <li>
             <a href="/2019/07/16/Java知识点-1/">Java知识点--week1（基本方法，注解，ArrayList，数据过滤，Integer类，Date）</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/15/CSS进阶知识点-选择器（下）/">CSS进阶知识点--选择器（下）</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/14/CSS进阶知识点-选择器（上）/">CSS进阶知识点--选择器（上）</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/14/CSS进阶知识点-背景样式/">CSS进阶知识点--背景样式</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/14/CSS进阶知识点-文字和字体/">CSS进阶知识点--文字和字体</a>
           </li>
         
       </ul>
