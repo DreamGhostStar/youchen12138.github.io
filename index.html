@@ -80,7 +80,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/HTML知识点-表格/">HTML知识点-表格</a>
+      <a class="article-title" href="/2019/07/24/HTML知识点-表格/">HTML基础知识点-表格</a>
     </h1>
   
 
@@ -89,11 +89,75 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li><p><code>&lt;table&gt;</code>：表格</p>
+</li>
+<li><p><code>&lt;tr&gt;</code>：行</p>
+</li>
+<li><p><code>&lt;td&gt;</code>：单元格</p>
+</li>
+</ul>
+<h2 id="带结构的表格"><a href="#带结构的表格" class="headerlink" title="带结构的表格"></a>带结构的表格</h2><p>表格划分三部分：表头，主体，脚注</p>
+<p>加载时可以逐个结构加载</p>
+<ul>
+<li><p>thead：表格的头（放表格的表头）</p>
+</li>
+<li><p>tbody：表格的主体（放数据本体）</p>
+</li>
+<li><p>tfoot：表格的脚（放表格的脚注）</p>
+</li>
+</ul>
+<p>无论这三个标签的位置如何变化，总是先显示<code>&lt;thead&gt;</code>，然后才是<code>&lt;tbody&gt;</code>，最后是<code>&lt;tfoot&gt;</code></p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;                                 //表格开始</span><br><span class="line">    &lt;caption&gt;...&lt;/caption&gt;              //表格标题</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;                            //tr行标签</span><br><span class="line">            &lt;th&gt;表头&lt;/th&gt;               //表格头，内容居中，加粗显示</span><br><span class="line">            ...</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt; </span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;主体&lt;/td&gt;               //td单元格，默认</span><br><span class="line">            ...</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;脚注&lt;/td&gt;                        </span><br><span class="line">            ...</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;                               //表格结束</span><br></pre></td></tr></table></figure>
+
+<h3 id="table标签特殊属性"><a href="#table标签特殊属性" class="headerlink" title="table标签特殊属性"></a>table标签特殊属性</h3><ul>
+<li><p>cellspacing：单元格之间间距</p>
+</li>
+<li><p>cellpadding：单元格内内容和单元格边框的距离</p>
+</li>
+<li><p>frame：外部边框的显示</p>
+</li>
+<li><p>rules：内部标签的显示</p>
+</li>
+</ul>
+<h3 id="tr标签特殊属性"><a href="#tr标签特殊属性" class="headerlink" title="tr标签特殊属性"></a>tr标签特殊属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>Left/center/right/justiy/char</td>
+<td>行内容的水平对齐</td>
+</tr>
+<tr>
+<td>Valign</td>
+<td>top/middle/bottom/baseline</td>
+<td>行内容的垂直对齐</td>
+</tr>
+<tr>
+<td>Bgcolor</td>
+<td>rgb/#xxxxxx/colorname</td>
+<td>行的背景颜色</td>
+</tr>
+</tbody></table>
+<p><code>&lt;td&gt;</code>和<code>&lt;th&gt;</code>常用标签属性类似与<code>&lt;tr&gt;</code></p>
+<h2 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h2><ul>
+<li><p>尽量少的使用表格嵌套</p>
+</li>
+<li><p>尽量少的使用表格跨行跨列</p>
+</li>
+</ul>
+<p>说明：减少代码维护成本，使用表格进行网页布局一般不设置border</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/24/HTML知识点-表格/" data-id="cjygtngd8000kukw0w9113xey" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/24/HTML知识点-表格/" data-id="cjyhb55lw000oeww07w8nr76g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -210,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/23/HTML基础知识点-图像与超链接/" data-id="cjygtngd6000gukw0d3qnfw4b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/23/HTML基础知识点-图像与超链接/" data-id="cjyhb55m90010eww06l4wniys" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -391,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/21/HTML基础/" data-id="cjygtngd4000eukw0snhq7zod" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/21/HTML基础/" data-id="cjyhb55lj0007eww0c3aa1q97" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -442,7 +506,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/20/Java知识点-2/" data-id="cjygtngdy000xukw0bfcsfmcu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/20/Java知识点-2/" data-id="cjyhb55m6000xeww01s2tnyi6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -580,7 +644,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="cjygtngfd002vukw0dwrcha1v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="cjyhb55q5002ieww0fbxsfmjb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -619,7 +683,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/15/CSS进阶知识点-选择器（下）/" data-id="cjygtngcr000aukw05gu2slf0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/15/CSS进阶知识点-选择器（下）/" data-id="cjyhb55l70000eww05hy8uej3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -846,7 +910,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-选择器（上）/" data-id="cjygtngey002kukw046xrqmjj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-选择器（上）/" data-id="cjyhb55qe002leww0dyul4ygz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -924,7 +988,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-背景样式/" data-id="cjygtngc30001ukw0a3tbvvo2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-背景样式/" data-id="cjyhb55lh0005eww0vu4u0kdv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -995,7 +1059,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-文字和字体/" data-id="cjygtngan0000ukw0bfhqy6pu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-文字和字体/" data-id="cjyhb55lc0001eww0o4icsi0v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1056,7 +1120,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-颜色/" data-id="cjygtngd1000bukw0nbu34up5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-颜色/" data-id="cjyhb55ld0002eww0cgqdtnyv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1125,7 +1189,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       <ul>
         
           <li>
-            <a href="/2019/07/24/HTML知识点-表格/">HTML知识点-表格</a>
+            <a href="/2019/07/24/HTML知识点-表格/">HTML基础知识点-表格</a>
           </li>
         
           <li>
