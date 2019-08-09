@@ -62,6 +62,304 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-XMLHttpRequest-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/16/XMLHttpRequest-md/" class="article-date">
+  <time datetime="2019-05-16T09:16:17.000Z" itemprop="datePublished">2019-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/16/XMLHttpRequest-md/">XMLHttpRequest</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="XMLHTTPRequest发送请求"><a href="#XMLHTTPRequest发送请求" class="headerlink" title="XMLHTTPRequest发送请求"></a>XMLHTTPRequest发送请求</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><blockquote>
+<p>将请求发送到服务器上</p>
+</blockquote>
+<ul>
+<li><p>open(method, url, async)</p>
+<p>  method：采用了什么方式（GET还是POST）</p>
+<p>  url：请求的地址。可以使用相对地址也可以使用绝对地址</p>
+<p>  async请求同步/异步。true表示异步，flase表示同步</p>
+</li>
+<li><p>send(string)</p>
+<p>  使用GET可以不填写string参数，使用POST必须填写string参数</p>
+</li>
+</ul>
+<h3 id="取得响应"><a href="#取得响应" class="headerlink" title="取得响应"></a>取得响应</h3><ul>
+<li><p>responseText：获得字符串形式的响应数据</p>
+</li>
+<li><p>responseXML：获得XML形式的响应数据</p>
+</li>
+<li><p>status和statusText：以数字和文本形式返回HTTP状态码</p>
+</li>
+<li><p>getAllResponseHeader()：获取所有的响应报头</p>
+</li>
+<li><p>getResponseHeader()：查询响应中的某个字段的值</p>
+</li>
+</ul>
+<h3 id="readyState属性"><a href="#readyState属性" class="headerlink" title="readyState属性"></a>readyState属性</h3><blockquote>
+<p>0：请求未初始化，open还没有调用</p>
+</blockquote>
+<blockquote>
+<p>1：服务器连接已建立，open已经调用了</p>
+</blockquote>
+<blockquote>
+<p>2：请求已接收，也就是接收到头信息了</p>
+</blockquote>
+<blockquote>
+<p>3：请求处理中，也就是接收到响应主体了</p>
+</blockquote>
+<blockquote>
+<p>4：请求已完成，且响应已就绪，也就是响应完成了</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjz3u1e9i002ivcw09tkk2ups" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTTP请求" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/16/HTTP请求/" class="article-date">
+  <time datetime="2019-05-16T07:28:06.000Z" itemprop="datePublished">2019-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/16/HTTP请求/">HTTP请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是HTTP"><a href="#什么是HTTP" class="headerlink" title="什么是HTTP"></a>什么是HTTP</h2><ul>
+<li><p>http是计算机通过网络进行通信的规则。</p>
+</li>
+<li><p>主要使浏览器能够从web服务器去请求信息和服务。</p>
+</li>
+<li><p>HTTP是一种无状态的协议。无状态指的是不建立持久的连接，服务端不保留连接的一些相关信息。</p>
+</li>
+</ul>
+<h2 id="概念介绍——HTTP请求"><a href="#概念介绍——HTTP请求" class="headerlink" title="概念介绍——HTTP请求"></a>概念介绍——HTTP请求</h2><h3 id="HTTP请求通常有以下7个步骤"><a href="#HTTP请求通常有以下7个步骤" class="headerlink" title="HTTP请求通常有以下7个步骤"></a>HTTP请求通常有以下7个步骤</h3><ol>
+<li><p>建立TCP连接</p>
+</li>
+<li><p>Web浏览器向Web服务器发送请求命令</p>
+</li>
+<li><p>Web浏览器发送请求头信息</p>
+</li>
+<li><p>Web服务器应答</p>
+</li>
+<li><p>Web服务器发送应答头信息</p>
+</li>
+<li><p>Web服务器向浏览器发送数据</p>
+</li>
+<li><p>Web服务器关闭TCP连接</p>
+</li>
+</ol>
+<h3 id="HTTP请求一般由四部分组成"><a href="#HTTP请求一般由四部分组成" class="headerlink" title="HTTP请求一般由四部分组成"></a>HTTP请求一般由四部分组成</h3><ol>
+<li><p>HTTP请求的方法或动作，比如是GET还是POST请求</p>
+</li>
+<li><p>正在请求的URL，总得知道请求的地址是什么吧</p>
+</li>
+<li><p>请求头，包含一些客户端环境信息，身份验证信息等</p>
+</li>
+<li><p>请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等等</p>
+</li>
+</ol>
+<h3 id="两种请求区别"><a href="#两种请求区别" class="headerlink" title="两种请求区别"></a>两种请求区别</h3><ul>
+<li><p>GET： </p>
+<ol>
+<li><p>一般用于信息获取</p>
+</li>
+<li><p>使用URL传递参数</p>
+</li>
+<li><p>对所发送信息的数量也有限制，一般在2000个字符</p>
+</li>
+</ol>
+</li>
+<li><p>POST</p>
+<ol>
+<li><p>一般用于修改服务器上的资源</p>
+</li>
+<li><p>对所发送信息的数量无限制</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h3 id="一个HTTP响应一般由三部分组成"><a href="#一个HTTP响应一般由三部分组成" class="headerlink" title="一个HTTP响应一般由三部分组成"></a>一个HTTP响应一般由三部分组成</h3><ol>
+<li><p>一个数字和文字组成的状态码，用来显示请求成功还是失败</p>
+</li>
+<li><p>响应头，响应头也和请求头一样包含许多有用的信息，例如服务器类型、日期时间、内容类型和长度等</p>
+</li>
+<li><p>响应体，也就是响应正文</p>
+</li>
+</ol>
+<h3 id="HTTP状态码（status）"><a href="#HTTP状态码（status）" class="headerlink" title="HTTP状态码（status）"></a>HTTP状态码（status）</h3><ul>
+<li>HTTP状态码由3位数字构成，其中首位数字定义了状态码的类型</li>
+</ul>
+<blockquote>
+<p>1xx：信息类，表示收到Web浏览器请求，正在进一步的处理中</p>
+</blockquote>
+<blockquote>
+<p>2xx：成功，表示用户请求被正确接收，理解和处理例如：200 OK</p>
+</blockquote>
+<blockquote>
+<p>3xx：重定向，表示请求没有成功，客户必须采取进一步的动作</p>
+</blockquote>
+<blockquote>
+<p>4xx：客户端错误，表示客户端提交的请求有错误，例如：404 NOT Found，意味着请求中所引用的文档不存在</p>
+</blockquote>
+<blockquote>
+<p>5xx：服务器错误，表示服务器不能完成对请求的处理：如500</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjz3u1e8y001ovcw0we5z3mpd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-运算符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/09/运算符/" class="article-date">
+  <time datetime="2019-04-09T05:05:40.000Z" itemprop="datePublished">2019-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/09/运算符/">运算符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>typeof a可以获取a的类型（六个类型之一）它会将该值的类型以字符串形式返回。</p>
+</blockquote>
+<h2 id="各类型转换表"><a href="#各类型转换表" class="headerlink" title="各类型转换表"></a>各类型转换表</h2><p>String(数值) | String(语言) | Undefined | Null | Boolean(ture) | Boolean(false)</p>
+<ul>
+<li>| - | - | - | - | - | - |<br>数值| NaN| NaN| 0| 1| 0</li>
+</ul>
+<h2 id="非Number类型的值进行运算"><a href="#非Number类型的值进行运算" class="headerlink" title="非Number类型的值进行运算"></a>非Number类型的值进行运算</h2><p>都会将非Number的值转换为Number然后再进行运算，此时运算结果返回值为Number。</p>
+<ul>
+<li><p>任何值和NaN作运算结果为NaN</p>
+</li>
+<li><p>两个字符串相加，则会做“拼串”操作（不一定是数值，也可以汉字之类的）</p>
+</li>
+<li><p>两个字符串进行除+之外的运算（只能是数值，如果出现汉字等，则结果为NaN）</p>
+</li>
+<li><p>任何值和字符串相加，都要将值转换成字符串再进行相加。（此时的 + 起连接的作用）</p>
+</li>
+<li><p>可以通过让数字加上一个空的字符串，即可将其转换为string（隐式类型转换，由浏览器自动完成）</p>
+</li>
+<li><p>任何值做<code>- * /</code>运算时都会自动转换为Number，可以利用这一点做隐式的类型转换，可以通过为一个值<code>-0 *1 /1</code>来转换为Number</p>
+</li>
+</ul>
+<h2 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h2><blockquote>
+<p>一元运算符就是只涉及一个数的运算</p>
+</blockquote>
+<blockquote>
+<p>一元运算符的返回值请参照以上运算规则</p>
+</blockquote>
+<ul>
+<li><p><code>+</code>代表了<code>1*</code></p>
+</li>
+<li><p><code>-</code>代表了<code>-1*</code></p>
+</li>
+</ul>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>进行<code>&gt;= &lt;= &gt; &lt;</code>等运算符</p>
+<ul>
+<li><p>若两边均为数值，则按照数学规则比较</p>
+</li>
+<li><p>若一边为数值，一边为其他类型，则将其他类型转换为数值再进行比较</p>
+</li>
+<li><p>若两边均为字符串，比较字符编码（一位一位进行比较）（通过Unicode编码表）</p>
+</li>
+</ul>
+<blockquote>
+<p>注意：比较两个字符串型的数字时，一定要转换类型</p>
+</blockquote>
+<blockquote>
+<p>在字符串中使用转义字符输入Unicode编码<code>\u四位编码（16进制）</code></p>
+</blockquote>
+<blockquote>
+<p>在网页中使用Unicode编码<code>&amp;#编码（10进制）</code></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjz3u1eak003pvcw0ddlkqo10" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-类型强制转换" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/07/类型强制转换/" class="article-date">
@@ -168,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjyzkklh60039w0w0w8xo09f1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjz3u1e9p002uvcw0ocqgb1at" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -228,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjyzkklg3001kw0w0378o6m5d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjz3u1e90001rvcw06qje1djc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -306,7 +604,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="cjyzkklgm002fw0w0kfwior3h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="cjz3u1e9f002cvcw087q60szc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -359,7 +657,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="cjyzkklfj000nw0w0vvi3rdk3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="cjz3u1e8p001avcw0jd6ufmy7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -597,7 +895,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="cjyzkklgp002jw0w0qplj7jz8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="cjz3u1ea8003kvcw0cawikgaq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -694,7 +992,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="cjyzkklfo000uw0w0vsjmbblc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="cjz3u1e8k0012vcw0w7v5pq35" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -763,23 +1061,23 @@ q退出</code></pre><hr>
       <ul>
         
           <li>
+            <a href="/2019/08/08/CSS基础知识点-网页布局/">CSS基础知识点--网页布局</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/06/CSS基础知识点-CSS定位-position/">CSS基础知识点--CSS定位(position)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/06/CSS基础知识点-float浮动/">CSS基础知识点--float浮动</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/05/CSS基础知识点-背景和样式/">CSS基础知识点--背景和列表</a>
           </li>
         
           <li>
             <a href="/2019/08/03/CSS基础知识点-盒子模型/">CSS基础知识点--盒子模型</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/01/CSS基础知识点-CSS字体样式/">CSS基础知识点--CSS字体样式(font)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/01/CSS基础知识点-cCSS文本样式/">CSS基础知识点--CSS文本样式(text)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/01/CSS基础知识点-CSS样式命名/">CSS基础知识点--CSS样式命名</a>
           </li>
         
       </ul>

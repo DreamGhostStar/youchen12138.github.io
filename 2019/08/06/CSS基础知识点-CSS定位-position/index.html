@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019/5 | Hexo</title>
+  <title>CSS基础知识点--CSS定位(position) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/05/index.html">
+  <meta name="description" content="定位模型 static：自然模型  relative：相对定位模型  absolute：绝对定位模型  fixed：固定定位模型  sticky：磁贴定位模型   static模型静态定位 / 常规定位 / 自然定位 特点：  忽略掉top、bottom、left、right 或者 z-index 声明  两个相邻的元素如果都设置了外边距，那么最终外边距 = 两者外边距中最大的  具有固定 wi">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS基础知识点--CSS定位(position)">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/CSS基础知识点-CSS定位-position/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="定位模型 static：自然模型  relative：相对定位模型  absolute：绝对定位模型  fixed：固定定位模型  sticky：磁贴定位模型   static模型静态定位 / 常规定位 / 自然定位 特点：  忽略掉top、bottom、left、right 或者 z-index 声明  两个相邻的元素如果都设置了外边距，那么最终外边距 = 两者外边距中最大的  具有固定 wi">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-07T08:08:37.115Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="CSS基础知识点--CSS定位(position)">
+<meta name="twitter:description" content="定位模型 static：自然模型  relative：相对定位模型  absolute：绝对定位模型  fixed：固定定位模型  sticky：磁贴定位模型   static模型静态定位 / 常规定位 / 自然定位 特点：  忽略掉top、bottom、left、right 或者 z-index 声明  两个相邻的元素如果都设置了外边距，那么最终外边距 = 两者外边距中最大的  具有固定 wi">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,116 +65,134 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/25/跨域-md/" class="archive-article-date">
-  <time datetime="2019-05-25T06:59:34.000Z" itemprop="datePublished">May 25</time>
+        <section id="main"><article id="post-CSS基础知识点-CSS定位-position" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/06/CSS基础知识点-CSS定位-position/" class="article-date">
+  <time datetime="2019-08-06T13:48:01.000Z" itemprop="datePublished">2019-08-06</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/25/跨域-md/">跨域</a>
+    <h1 class="article-title" itemprop="name">
+      CSS基础知识点--CSS定位(position)
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/25/用jQuery实现Ajax-md/" class="archive-article-date">
-  <time datetime="2019-05-25T06:39:57.000Z" itemprop="datePublished">May 25</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/25/用jQuery实现Ajax-md/">用jQuery实现Ajax</a>
-    </h1>
-  
+        <hr>
+<h2 id="定位模型"><a href="#定位模型" class="headerlink" title="定位模型"></a>定位模型</h2><ul>
+<li><p>static：自然模型</p>
+</li>
+<li><p>relative：相对定位模型</p>
+</li>
+<li><p>absolute：绝对定位模型</p>
+</li>
+<li><p>fixed：固定定位模型</p>
+</li>
+<li><p>sticky：磁贴定位模型</p>
+</li>
+</ul>
+<h2 id="static模型"><a href="#static模型" class="headerlink" title="static模型"></a>static模型</h2><p>静态定位 / 常规定位 / 自然定位</p>
+<p>特点：</p>
+<ol>
+<li><p>忽略掉top、bottom、left、right 或者 z-index 声明</p>
+</li>
+<li><p>两个相邻的元素如果都设置了外边距，那么最终外边距 = 两者外边距中最大的</p>
+</li>
+<li><p>具有固定 width 和 height 值的元素，如果把左右外边距设置为 auto ，则左右外边距会自动扩大占满剩余宽度。造成的效果就是这个块居中</p>
+</li>
+</ol>
+<h2 id="relative模型和absolute模型"><a href="#relative模型和absolute模型" class="headerlink" title="relative模型和absolute模型"></a>relative模型和absolute模型</h2><p>特点：</p>
+<ol>
+<li><p>relative模型（相对定位）：不脱离常规流</p>
+</li>
+<li><p>absolute模型（绝对定位）：脱离常规流</p>
+</li>
+<li><p>若父元素是相对定位，并且子元素是绝对定位，那么子元素的绝对定位是相对父元素</p>
+</li>
+<li><p>继上一个特点情况，若是想要实现子元素的块垂直或水平居中</p>
+<ul>
+<li><p>right 为 0 ，并且 left 为 0 ，margin 为 0 auto。实现水平居中</p>
+</li>
+<li><p>top 为 0 ，并且 bottom 为 0 ，margin 为 auto 0。实现垂直居中</p>
+</li>
+<li><p>top、right、bottom、left 均为 0，margin 为auto。实现水平垂直居中 </p>
+</li>
+<li><p>若 top、right、bottom、left 均为 auto，则会变为常规流（疑似有问题）</p>
+</li>
+</ul>
+</li>
+<li><p>定位的垂直水平居中，<font color="red">必须写定位模式</font></p>
+<ul>
+<li><p>需要给元素设置 top：50%，然后再 margin-top:负本身高度的一半。实现垂直居中</p>
+</li>
+<li><p>需要给元素设置 left：50%，然后再 margin-left:负本身宽度的一半。实现水平居中</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="fix模型"><a href="#fix模型" class="headerlink" title="fix模型"></a>fix模型</h2><p>有些类似于 background-attachment 属性</p>
+<h2 id="sticky模型（CSS3）"><a href="#sticky模型（CSS3）" class="headerlink" title="sticky模型（CSS3）"></a>sticky模型（CSS3）</h2><p>磁贴定位 / 粘性定位 / 吸附定位</p>
+<p>作用：relative + fixed 的完美结合，制造出吸附效果</p>
+<p>特点：</p>
+<ol>
+<li><p>如果产生偏移，原位置还是会在常规流中</p>
+</li>
+<li><p>如果它的最近父元素有滚动，那么它的偏移标尺就是最近的父元素</p>
+</li>
+<li><p>如果最近父元素没有滚动，那么它的偏移标尺是视口</p>
+</li>
+<li><p>上下左右的偏移规则</p>
+</li>
+<li><p>top等定位属性更像是条件，而非是坐标</p>
+</li>
+</ol>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/17/JSON格式-md/" class="archive-article-date">
-  <time datetime="2019-05-17T04:58:44.000Z" itemprop="datePublished">May 17</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/17/JSON格式-md/">JSON格式</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/XMLHttpRequest-md/" class="archive-article-date">
-  <time datetime="2019-05-16T09:16:17.000Z" itemprop="datePublished">May 16</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-CSS定位-position/" data-id="cjz3u1e6q0000vcw0dc3hm1ry" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/XMLHttpRequest-md/">XMLHttpRequest</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/HTTP请求/" class="archive-article-date">
-  <time datetime="2019-05-16T07:28:06.000Z" itemprop="datePublished">May 16</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/HTTP请求/">HTTP请求</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/08/CSS基础知识点-网页布局/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS基础知识点--网页布局
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/08/06/CSS基础知识点-float浮动/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS基础知识点--float浮动</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
