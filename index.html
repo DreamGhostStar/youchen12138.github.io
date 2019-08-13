@@ -62,6 +62,478 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-HTML进阶知识点-HTML5属性变化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/11/HTML进阶知识点-HTML5属性变化/" class="article-date">
+  <time datetime="2019-08-11T07:57:56.000Z" itemprop="datePublished">2019-08-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/11/HTML进阶知识点-HTML5属性变化/">HTML进阶知识点--HTML5属性变化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="input标签type属性新增属性值"><a href="#input标签type属性新增属性值" class="headerlink" title="input标签type属性新增属性值"></a>input标签type属性新增属性值</h2><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tel</td>
+<td>手机端不同</td>
+</tr>
+<tr>
+<td>email</td>
+<td>手机端键盘出现@</td>
+</tr>
+<tr>
+<td>number</td>
+<td>出现按钮，可以加减</td>
+</tr>
+<tr>
+<td>url</td>
+<td>手机端键盘出现<code>.com</code></td>
+</tr>
+<tr>
+<td>Date</td>
+<td>选取日、月、年</td>
+</tr>
+<tr>
+<td>Month</td>
+<td>选取月、年</td>
+</tr>
+<tr>
+<td>Week</td>
+<td>选取周和年 <font color="red">不实用</font></td>
+</tr>
+<tr>
+<td>Time</td>
+<td>选取时间（小时和分钟）</td>
+</tr>
+<tr>
+<td>Datatime</td>
+<td>选取时间、日、月、年（UTC时间） <font color="red">不实用</font></td>
+</tr>
+<tr>
+<td>Datatime-local</td>
+<td>选取时间、日、月、年（本地时间）</td>
+</tr>
+<tr>
+<td>range</td>
+<td>一个可拉伸的进度条（pc端）</td>
+</tr>
+<tr>
+<td>search</td>
+<td>搜索框（pc端）</td>
+</tr>
+<tr>
+<td>color</td>
+<td>颜色选择框（pc端）</td>
+</tr>
+</tbody></table>
+<h2 id="表单新增属性"><a href="#表单新增属性" class="headerlink" title="表单新增属性"></a>表单新增属性</h2><h3 id="autocomplete属性"><a href="#autocomplete属性" class="headerlink" title="autocomplete属性"></a>autocomplete属性</h3><p>form 或 input 域应该拥有自动完成功能</p>
+<blockquote>
+<p><code>&lt;form autocomplete=&quot;on&quot;&gt;&lt;/form&gt;</code></p>
+</blockquote>
+<p>注意：autocomplete 适用于 <code>&lt;form&gt;</code> 标签，以及以下类型的 <code>&lt;input&gt;</code> 标签：text、search、url、telephone、email、password、datepickers、range、color</p>
+<h3 id="autofocus属性"><a href="#autofocus属性" class="headerlink" title="autofocus属性"></a>autofocus属性</h3><ul>
+<li><p>规定在页面加载时，域自动地获取焦点</p>
+</li>
+<li><p>autofocus 属性适用于所有 <code>&lt;input&gt;</code> 标签的类型</p>
+</li>
+</ul>
+<p>语法：</p>
+<blockquote>
+<p><code>&lt;input autofocus=&quot;autofocus&gt;</code></p>
+</blockquote>
+<h3 id="multiple属性"><a href="#multiple属性" class="headerlink" title="multiple属性"></a>multiple属性</h3><p>规定输入域中可选择多个值</p>
+<p>PS：multiple 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：email 和 file</p>
+<blockquote>
+<p><code>&lt;input type=&quot;file&quot; multiple=&quot;multiple&quot;&gt;</code></p>
+</blockquote>
+<h3 id="placeholder属性"><a href="#placeholder属性" class="headerlink" title="placeholder属性"></a>placeholder属性</h3><p>提供一种提示（hint），描述输入框所期待的值</p>
+<p>PS：适用于 <code>&lt;input&gt;</code> 标签 type 属性值为：text、search、url、tel、email、password</p>
+<h3 id="required属性"><a href="#required属性" class="headerlink" title="required属性"></a>required属性</h3><p>规定必须在提交之前填写输入域（不能为空）</p>
+<blockquote>
+<p><code>&lt;input type=&quot;text&quot; required=&quot;required&quot;&gt;</code></p>
+</blockquote>
+<p>减少前端开发人员写表单验证的压力</p>
+<p>PS：适用于 <code>&lt;input&gt;</code> 标签 type 属性值为：text、search、url、tel、email、password、datepickers、number、checkbox、radio、file</p>
+<h2 id="链接新增属性"><a href="#链接新增属性" class="headerlink" title="链接新增属性"></a>链接新增属性</h2><ol>
+<li><p><code>&lt;link&gt;</code> 的sizes</p>
+</li>
+<li><p><code>&lt;base&gt;</code> 的target</p>
+<ul>
+<li>base 标签如果设置了 target 属性，就可以控制整个页面所有超链接的跳转方式</li>
+</ul>
+</li>
+<li><p><code>&lt;a&gt;</code> 标签</p>
+<ul>
+<li><p>media = “”（表示对设备进行优化，handheld 对“手持”设备进行支持，tv 对“电视”设备进行支持</p>
+</li>
+<li><p>hreflang = “zh”（设置语言，这里设置语言是中文）</p>
+</li>
+<li><p>rel = “external”（设置超链接的引用，这里超链接为外部链接）</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h2><h3 id="script"><a href="#script" class="headerlink" title="script"></a>script</h3><ul>
+<li><p>defer：规定当页面已完成加载后，才会执行脚本</p>
+</li>
+<li><p>async：规定一旦脚本可用，将会异步执行</p>
+</li>
+</ul>
+<h3 id="ol"><a href="#ol" class="headerlink" title="ol"></a>ol</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>start</td>
+<td>起始值</td>
+</tr>
+<tr>
+<td>reversed</td>
+<td>倒序排列</td>
+</tr>
+</tbody></table>
+<h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><p>manifest = “cache.manifest”（定义页面离线应用文件）（引号中内容cache可更改）</p>
+<blockquote>
+<p><code>&lt;html manifest=&quot;cache.manifest&quot;&gt;</code></p>
+</blockquote>
+<h3 id="style"><a href="#style" class="headerlink" title="style"></a>style</h3><p>scoped：内嵌CSS</p>
+<p>可以写在html文件的任意位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/11/HTML进阶知识点-HTML5属性变化/" data-id="cjz9g2z7l0023u4w0rme0hy8c" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML进阶知识点-HTML5标签变化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/10/HTML进阶知识点-HTML5标签变化/" class="article-date">
+  <time datetime="2019-08-10T10:56:45.000Z" itemprop="datePublished">2019-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML5/">HTML5</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/10/HTML进阶知识点-HTML5标签变化/">HTML进阶知识点--HTML5标签变化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="HTML-lt-DOCTYPE-gt-标签"><a href="#HTML-lt-DOCTYPE-gt-标签" class="headerlink" title="HTML &lt;!DOCTYPE&gt; 标签"></a>HTML <code>&lt;!DOCTYPE&gt;</code> 标签</h2><h3 id="定义和用法"><a href="#定义和用法" class="headerlink" title="定义和用法"></a>定义和用法</h3><p><code>&lt;!DOCTYPE&gt;</code>声明必须是 HTML 文档的第一行，位于<code>&lt;html&gt;</code>标签之前</p>
+<h3 id="不是HTML标签"><a href="#不是HTML标签" class="headerlink" title="不是HTML标签"></a>不是HTML标签</h3><p>指示　web　浏览器关于页面使用哪个　HTML　版本进行编写的指令</p>
+<h2 id="文档类型定义（DTD）"><a href="#文档类型定义（DTD）" class="headerlink" title="文档类型定义（DTD）"></a>文档类型定义（DTD）</h2><h3 id="DTD"><a href="#DTD" class="headerlink" title="DTD"></a>DTD</h3><p>DTD 可定义合法的XML文档构建模块，它使用一系列合法的元素来定义文档的结构</p>
+<h3 id="在HTML中"><a href="#在HTML中" class="headerlink" title="在HTML中"></a>在HTML中</h3><p>DTD 规定了标记语言的规则，这样浏览器才能正确地呈现内容</p>
+<p>###HTML5</p>
+<p>HTML5 不基于 SGML，所以不需要引用 DTD</p>
+<h1 id="HTML5新增标签"><a href="#HTML5新增标签" class="headerlink" title="HTML5新增标签"></a>HTML5新增标签</h1><h2 id="结构标签"><a href="#结构标签" class="headerlink" title="结构标签"></a>结构标签</h2><p>结构标签（块级元素）——有意义的div</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;article&gt;</code></td>
+<td>标记定义一篇文章</td>
+</tr>
+<tr>
+<td><code>&lt;header&gt;</code></td>
+<td>标记定义一个页面或一个区域的头部</td>
+</tr>
+<tr>
+<td><code>&lt;nav&gt;</code></td>
+<td>标记定义导航链接</td>
+</tr>
+<tr>
+<td><code>&lt;section&gt;</code></td>
+<td>标记定义一个区域</td>
+</tr>
+<tr>
+<td><code>&lt;aside&gt;</code></td>
+<td>标记定义页面内容部分的侧边栏</td>
+</tr>
+<tr>
+<td><code>&lt;hgroup&gt;</code></td>
+<td>标记定义文件中一个区块的相关信息</td>
+</tr>
+<tr>
+<td><code>&lt;figure&gt;</code></td>
+<td>标记定义一组媒体内容以及它们的标题</td>
+</tr>
+<tr>
+<td><code>&lt;figcaption&gt;</code></td>
+<td>标签定义figure元素的标题</td>
+</tr>
+<tr>
+<td><code>&lt;footer&gt;</code></td>
+<td>标记定义一个页面或一个区域的底部</td>
+</tr>
+<tr>
+<td><code>&lt;dialog&gt;</code></td>
+<td>标记定义一个对话框（会话框）类似微信</td>
+</tr>
+</tbody></table>
+<h2 id="多媒体标签"><a href="#多媒体标签" class="headerlink" title="多媒体标签"></a>多媒体标签</h2><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;video&gt;</code></td>
+<td>标记定义一个视频</td>
+</tr>
+<tr>
+<td><code>&lt;audio&gt;</code></td>
+<td>标记定义音频内容</td>
+</tr>
+<tr>
+<td><code>&lt;source&gt;</code></td>
+<td>标记定义媒体资源</td>
+</tr>
+<tr>
+<td><code>&lt;canvas&gt;</code></td>
+<td>标记定义图片（诸多API）</td>
+</tr>
+<tr>
+<td><code>&lt;embed&gt;</code></td>
+<td>标记定义外部的可交互的内容或插件，比如 flash</td>
+</tr>
+</tbody></table>
+<p><code>&lt;video&gt;</code>和<code>&lt;audio&gt;</code>可以嵌套<code>&lt;source&gt;</code>，<code>&lt;source&gt;</code>标签主要用来存放视频资源和文件转码</p>
+<h3 id="标签意义"><a href="#标签意义" class="headerlink" title="标签意义"></a>标签意义</h3><p>多媒体标签的出现意味着富媒体的发展以及支持不使用插件的情况下即可操作媒体文件，极大地提升了用户体验</p>
+<h3 id="audio标签和video标签常用属性"><a href="#audio标签和video标签常用属性" class="headerlink" title="audio标签和video标签常用属性"></a>audio标签和video标签常用属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>音频或视频路径</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>自动播放</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>重复几次（当值为-1时，无限重复）</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>出现控制音频的进度条</td>
+</tr>
+</tbody></table>
+<h3 id="source标签常用属性"><a href="#source标签常用属性" class="headerlink" title="source标签常用属性"></a>source标签常用属性</h3><h4 id="type属性"><a href="#type属性" class="headerlink" title="type属性"></a>type属性</h4><p>type属性规定媒体资源的类型。</p>
+<p>常用的类型：</p>
+<ol>
+<li><p>用于视频：</p>
+<ul>
+<li><p>video/ogg</p>
+</li>
+<li><p>video/mp4</p>
+</li>
+<li><p>video/webm</p>
+</li>
+</ul>
+</li>
+<li><p>用于音频：</p>
+<ul>
+<li><p>audio/ogg</p>
+</li>
+<li><p>audio/mpeg</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="Web应用标签"><a href="#Web应用标签" class="headerlink" title="Web应用标签"></a>Web应用标签</h2><h3 id="状态标签"><a href="#状态标签" class="headerlink" title="状态标签"></a>状态标签</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;meter&gt;</code></td>
+<td>实时状态显示：气压、气温</td>
+</tr>
+<tr>
+<td><code>&lt;progress&gt;</code></td>
+<td>任务过程：安装、加载</td>
+</tr>
+</tbody></table>
+<h4 id="meter标签常用属性"><a href="#meter标签常用属性" class="headerlink" title="meter标签常用属性"></a>meter标签常用属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>value</td>
+<td>表示进度当前的值</td>
+</tr>
+<tr>
+<td>min</td>
+<td>进度条最小值</td>
+</tr>
+<tr>
+<td>max</td>
+<td>进度条最大值</td>
+</tr>
+<tr>
+<td>low</td>
+<td>低于此值将会出现样式变化，类似气温过低，气温测量器会报警</td>
+</tr>
+<tr>
+<td>high</td>
+<td>高于此值将会出现样式变化，类似气温过高，气温测量器会报警</td>
+</tr>
+<tr>
+<td>optimum</td>
+<td>标准值（最适宜）</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;datalist&gt;</code></td>
+<td>为 input 标记定义一个下拉菜单，配合 option</td>
+</tr>
+<tr>
+<td><code>&lt;details&gt;</code></td>
+<td>标记定义一个元素的详细内容</td>
+</tr>
+</tbody></table>
+<h4 id="datalist使用"><a href="#datalist使用" class="headerlink" title="datalist使用"></a>datalist使用</h4><p>input的list与datalist的id一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;input list=&quot;a&quot;&gt;</span><br><span class="line">&lt;datalist id=&quot;a&quot;&gt;</span><br><span class="line">    &lt;option&gt;雪佛兰&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;大众&lt;/option&gt;</span><br><span class="line">    &lt;option&gt;现代&lt;/option&gt;</span><br><span class="line">&lt;/datalist&gt;</span><br></pre></td></tr></table></figure>
+
+<input list="a">
+<datalist id="a">
+    <option>雪佛兰</option>
+    <option>大众</option>
+    <option>现代</option>
+</datalist>
+
+<h4 id="details使用"><a href="#details使用" class="headerlink" title="details使用"></a>details使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;details&gt;</span><br><span class="line">    &lt;summary&gt;展开&lt;/summary&gt;</span><br><span class="line">    &lt;p&gt;12344&lt;/p&gt;</span><br><span class="line">&lt;/details&gt;</span><br></pre></td></tr></table></figure>
+
+<details>
+    <summary>展开</summary>
+    <p>12344</p>
+</details>
+
+<hr>
+<h2 id="注释标签"><a href="#注释标签" class="headerlink" title="注释标签"></a>注释标签</h2><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;ruby&gt;</code></td>
+<td>标记定义注释或音标</td>
+</tr>
+<tr>
+<td><code>&lt;rt&gt;</code></td>
+<td>标记定义对ruby的注释内容文本</td>
+</tr>
+<tr>
+<td><code>&lt;rp&gt;</code></td>
+<td>告诉那些不支持 ruby 元素的浏览器如何去显示</td>
+</tr>
+</tbody></table>
+<h3 id="注释标签的使用"><a href="#注释标签的使用" class="headerlink" title="注释标签的使用"></a>注释标签的使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;ruby&gt;魑&lt;rp&gt;(&lt;/rp&gt;&lt;rt&gt;chi&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;</span><br></pre></td></tr></table></figure>
+
+<p><ruby>魑<rp>(</rp><rt>chi</rt><rp>)</rp></ruby></p>
+<hr>
+<h2 id="其他标签"><a href="#其他标签" class="headerlink" title="其他标签"></a>其他标签</h2><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;mark&gt;</code></td>
+<td>标记定义有标记的文本（黄色选中状态）</td>
+</tr>
+<tr>
+<td><code>&lt;output&gt;</code></td>
+<td>标记定义一些输出类型，计算表单结果配合 oninput 事件</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/10/HTML进阶知识点-HTML5标签变化/" data-id="cjz9g2z6u001ju4w0a19luowt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS基础知识点-网页布局" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/08/CSS基础知识点-网页布局/" class="article-date">
@@ -113,7 +585,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/08/CSS基础知识点-网页布局/" data-id="cjz3u1e7k000avcw0tai74flb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/08/CSS基础知识点-网页布局/" data-id="cjz9g2z4y0008u4w0brzfjtpk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -223,7 +695,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-CSS定位-position/" data-id="cjz3u1e6q0000vcw0dc3hm1ry" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-CSS定位-position/" data-id="cjz9g2z4u0005u4w01jtx3x1p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -305,7 +777,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-float浮动/" data-id="cjz3u1e7i0008vcw0ewy24djq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-float浮动/" data-id="cjz9g2z4v0006u4w0g66bsonh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -555,7 +1027,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/CSS基础知识点-背景和样式/" data-id="cjz3u1e7p000jvcw0o83gnmuu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/CSS基础知识点-背景和样式/" data-id="cjz9g2z54000du4w0emyumx9w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -789,7 +1261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="cjz3u1e7m000dvcw01zjyhj7s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="cjz9g2z5b000ju4w02x1pbxkd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -996,7 +1468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="cjz3u1e7h0006vcw045ioau5m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="cjz9g2z51000au4w07c7wv7x0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1115,7 +1587,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-cCSS文本样式/" data-id="cjz3u1e7f0005vcw0ofu2tssy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-cCSS文本样式/" data-id="cjz9g2z3x0000u4w05ae3r0ti" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1307,308 +1779,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS样式命名/" data-id="cjz3u1e7o000gvcw0lmpp8p5u" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS基础知识点-选择器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/31/CSS基础知识点-选择器/" class="article-date">
-  <time datetime="2019-07-31T10:32:51.000Z" itemprop="datePublished">2019-07-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/31/CSS基础知识点-选择器/">CSS基础知识点--选择器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="种类"><a href="#种类" class="headerlink" title="种类"></a>种类</h2><ul>
-<li><p>标签选择器</p>
-</li>
-<li><p>类选择器</p>
-</li>
-<li><p>ID选择器</p>
-</li>
-<li><p>全局选择器</p>
-</li>
-<li><p>群组选择器</p>
-</li>
-<li><p>后代选择器</p>
-</li>
-</ul>
-<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><ul>
-<li><p>伪类选择器定义特殊状态下的样式</p>
-</li>
-<li><p>无法用标签、id、class及其他属性实现</p>
-</li>
-</ul>
-<h3 id="链接伪类"><a href="#链接伪类" class="headerlink" title="链接伪类"></a>链接伪类</h3><p>链接的4种状态：激活状态，已访问状态，未访问状态和鼠标悬停状态</p>
-<table>
-<thead>
-<tr>
-<th>伪类</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>:link</td>
-<td>未访问的链接</td>
-</tr>
-<tr>
-<td>:visited</td>
-<td>已访问的链接</td>
-</tr>
-<tr>
-<td>:hover</td>
-<td>鼠标悬停状态</td>
-</tr>
-<tr>
-<td>:active</td>
-<td>激活的链接</td>
-</tr>
-</tbody></table>
-<h4 id="链接伪类的顺序"><a href="#链接伪类的顺序" class="headerlink" title="链接伪类的顺序"></a>链接伪类的顺序</h4><p>:link &gt; :visited &gt; :hover &gt; :active</p>
-<p>说明：</p>
-<ol>
-<li><p>a:hover必须置于a:link和a:visited之后，才有效</p>
-</li>
-<li><p>a:active必须置于a:hover之后，才有效</p>
-</li>
-<li><p>伪类名称对大小写不敏感</p>
-</li>
-</ol>
-<h3 id="伪类-hover和-active"><a href="#伪类-hover和-active" class="headerlink" title="伪类:hover和:active"></a>伪类:hover和:active</h3><ol>
-<li><p>:hover用于访问的鼠标经过某个元素时</p>
-</li>
-<li><p>:active用于一个元素被激活时（即按下鼠标之后放开鼠标之前的时间）</p>
-</li>
-</ol>
-<h4 id="伪类-hover和-active兼容"><a href="#伪类-hover和-active兼容" class="headerlink" title="伪类:hover和:active兼容"></a>伪类:hover和:active兼容</h4><ul>
-<li><p>IE6及更早版本，支持<code>&lt;a&gt;</code>元素的4种状态</p>
-</li>
-<li><p>IE6浏览器不支持元素的:hover和:active</p>
-</li>
-</ul>
-<h2 id="CSS层叠"><a href="#CSS层叠" class="headerlink" title="CSS层叠"></a>CSS层叠</h2><ul>
-<li><p>可以定义多个样式</p>
-</li>
-<li><p>不冲突时，多个样式课层叠为一个</p>
-</li>
-<li><p>冲突时，按不同样式规则优先级来应用样式</p>
-</li>
-</ul>
-<h2 id="CSS选择器优先级"><a href="#CSS选择器优先级" class="headerlink" title="CSS选择器优先级"></a>CSS选择器优先级</h2><p>id选择器 &gt; class选择器 &gt; 标签选择器 &gt; 通配符</p>
-<p>同一元素使用相同类型的选择器定义相同类型样式，优先级按就近原则</p>
-<h2 id="CSS优先级规则"><a href="#CSS优先级规则" class="headerlink" title="CSS优先级规则"></a>CSS优先级规则</h2><p>同一样式表中：</p>
-<ol>
-<li>权值相同</li>
-</ol>
-<ul>
-<li>就近原则（离被设置元素越近优先级越高）</li>
-</ul>
-<ol start="2">
-<li>权值不同</li>
-</ol>
-<ul>
-<li><p>根据权值来判断CSS样式</p>
-</li>
-<li><p>哪种CSS样式权值越高，就使用哪种样式</p>
-</li>
-</ul>
-<h2 id="选择器权值"><a href="#选择器权值" class="headerlink" title="选择器权值"></a>选择器权值</h2><table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>权值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>标签选择器</td>
-<td>1</td>
-</tr>
-<tr>
-<td>类选择器</td>
-<td>10</td>
-</tr>
-<tr>
-<td>伪类</td>
-<td>10</td>
-</tr>
-<tr>
-<td>ID选择器</td>
-<td>100</td>
-</tr>
-<tr>
-<td>通配符选择器</td>
-<td>0</td>
-</tr>
-<tr>
-<td>行内样式</td>
-<td>1000</td>
-</tr>
-</tbody></table>
-<h3 id="权值规则"><a href="#权值规则" class="headerlink" title="权值规则"></a>权值规则</h3><ol>
-<li><p>统计不同选择器的个数</p>
-</li>
-<li><p>每类选择器的个数乘以相应权值</p>
-</li>
-<li><p>把所有的值相加得出选择器的权值</p>
-</li>
-</ol>
-<h3 id="important规则"><a href="#important规则" class="headerlink" title="!important规则"></a>!important规则</h3><ul>
-<li><p>可调整样式规则的优先级，使其权值最高</p>
-</li>
-<li><p>添加在样式规则之后，中间用空格隔开</p>
-</li>
-</ul>
-<h2 id="CSS样式命名规则"><a href="#CSS样式命名规则" class="headerlink" title="CSS样式命名规则"></a>CSS样式命名规则</h2><ul>
-<li><p>采用英文字母、数字以及”-“和”_”命名</p>
-</li>
-<li><p>以小写字母开头，不能以数字和”-“、”_”开头</p>
-</li>
-<li><p>命名形式：单字，连字符，下划线和驼峰</p>
-</li>
-<li><p>使用有意义命名</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/31/CSS基础知识点-选择器/" data-id="cjz3u1e8e000xvcw0va7d4k36" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS基础知识点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/30/CSS基础知识点/" class="article-date">
-  <time datetime="2019-07-30T13:29:26.000Z" itemprop="datePublished">2019-07-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/30/CSS基础知识点/">CSS基础知识点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="HTML、CSS、JavaScript关系"><a href="#HTML、CSS、JavaScript关系" class="headerlink" title="HTML、CSS、JavaScript关系"></a>HTML、CSS、JavaScript关系</h2><ul>
-<li><p>HTML是网页内容的载体</p>
-</li>
-<li><p>CSS样式是表现（外观控制）</p>
-</li>
-<li><p>JavaScript是行为，用来实现网页特效效果</p>
-</li>
-</ul>
-<h2 id="CSS导入式"><a href="#CSS导入式" class="headerlink" title="CSS导入式"></a>CSS导入式</h2><ul>
-<li><p>@import “外部CSS样式”</p>
-</li>
-<li><p>@import url(外部CSS样式)</p>
-</li>
-</ul>
-<h2 id="CSS使用方法区别"><a href="#CSS使用方法区别" class="headerlink" title="CSS使用方法区别"></a>CSS使用方法区别</h2><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>引入方法</th>
-<th>位置</th>
-<th>加载</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>行内样式</td>
-<td>开始标签内的style</td>
-<td>html文件内</td>
-<td>同时</td>
-</tr>
-<tr>
-<td>内部样式</td>
-<td><code>&lt;head&gt;</code>中<code>&lt;style&gt;</code>内</td>
-<td>html文件内</td>
-<td>同时</td>
-</tr>
-<tr>
-<td>链入外部样式</td>
-<td><code>&lt;head&gt;</code>中<code>&lt;link&gt;</code>引用</td>
-<td>CSS样式文件与html文件分离</td>
-<td>页面加载时，同时加载CSS样式</td>
-</tr>
-<tr>
-<td>导入式@import</td>
-<td>在样式代码最开始处</td>
-<td>CSS样式文件与html文件分离</td>
-<td>在读取完html文件之后加载</td>
-</tr>
-</tbody></table>
-<h3 id="使用链入外部样式的好处"><a href="#使用链入外部样式的好处" class="headerlink" title="使用链入外部样式的好处"></a>使用链入外部样式的好处</h3><ol>
-<li><p>CSS和HTML分离</p>
-</li>
-<li><p>多个文件可以使用同一个样式文件</p>
-</li>
-<li><p>多文件引用同一个CSS文件，CSS只需下载一次</p>
-</li>
-</ol>
-<h3 id="CSS使用方法优先级"><a href="#CSS使用方法优先级" class="headerlink" title="CSS使用方法优先级"></a>CSS使用方法优先级</h3><blockquote>
-<p>行内样式&gt;内部样式&gt;外部样式</p>
-</blockquote>
-<p>说明：</p>
-<ol>
-<li><p>链入外部样式表与内部样式表之间的优先级取决于所处位置的先后</p>
-</li>
-<li><p>根据样式与元素的距离而定，越接近优先级就越高（就近原则）</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/30/CSS基础知识点/" data-id="cjz3u1e7r000mvcw0iekwvyaz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS样式命名/" data-id="cjz9g2z57000gu4w0r9ylr22d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1624,7 +1795,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -1635,7 +1806,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -1645,7 +1816,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -1655,7 +1826,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -1677,6 +1848,14 @@
       <ul>
         
           <li>
+            <a href="/2019/08/11/HTML进阶知识点-HTML5属性变化/">HTML进阶知识点--HTML5属性变化</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/10/HTML进阶知识点-HTML5标签变化/">HTML进阶知识点--HTML5标签变化</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/08/CSS基础知识点-网页布局/">CSS基础知识点--网页布局</a>
           </li>
         
@@ -1686,14 +1865,6 @@
         
           <li>
             <a href="/2019/08/06/CSS基础知识点-float浮动/">CSS基础知识点--float浮动</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/05/CSS基础知识点-背景和样式/">CSS基础知识点--背景和列表</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/03/CSS基础知识点-盒子模型/">CSS基础知识点--盒子模型</a>
           </li>
         
       </ul>
