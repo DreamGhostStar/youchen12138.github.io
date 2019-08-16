@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS进阶知识点--CSS3基本选择器及属性选择器 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基本选择器 通配符选择器  元素选择器  类选择器  ID选择器  后代选择器  子元素选择器  相邻兄弟选择器  通用兄弟选择器  群组选择器   前五个请参考CSS基础知识点–选择器 子元素选择器概念子元素选择器只能选择某元素的子元素 语法格式 父元素 &amp;gt; 子元素（father &amp;gt; child）  相邻兄弟选择器概念相邻兄弟选择器可以选择紧接在另一元素后的元素，而且他们具有一个相">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS进阶知识点--CSS3基本选择器及属性选择器">
+<meta property="og:url" content="http://yoursite.com/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基本选择器 通配符选择器  元素选择器  类选择器  ID选择器  后代选择器  子元素选择器  相邻兄弟选择器  通用兄弟选择器  群组选择器   前五个请参考CSS基础知识点–选择器 子元素选择器概念子元素选择器只能选择某元素的子元素 语法格式 父元素 &amp;gt; 子元素（father &amp;gt; child）  相邻兄弟选择器概念相邻兄弟选择器可以选择紧接在另一元素后的元素，而且他们具有一个相">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-15T13:45:02.983Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS进阶知识点--CSS3基本选择器及属性选择器">
+<meta name="twitter:description" content="基本选择器 通配符选择器  元素选择器  类选择器  ID选择器  后代选择器  子元素选择器  相邻兄弟选择器  通用兄弟选择器  群组选择器   前五个请参考CSS基础知识点–选择器 子元素选择器概念子元素选择器只能选择某元素的子元素 语法格式 父元素 &amp;gt; 子元素（father &amp;gt; child）  相邻兄弟选择器概念相邻兄弟选择器可以选择紧接在另一元素后的元素，而且他们具有一个相">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS进阶知识点-CSS3基本选择器及属性选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" class="article-date">
+  <time datetime="2019-08-14T00:32:50.000Z" itemprop="datePublished">2019-08-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS进阶知识点--CSS3基本选择器及属性选择器
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h1><ul>
+<li><p>通配符选择器</p>
+</li>
+<li><p>元素选择器</p>
+</li>
+<li><p>类选择器</p>
+</li>
+<li><p>ID选择器</p>
+</li>
+<li><p>后代选择器</p>
+</li>
+<li><p>子元素选择器</p>
+</li>
+<li><p>相邻兄弟选择器</p>
+</li>
+<li><p>通用兄弟选择器</p>
+</li>
+<li><p>群组选择器</p>
+</li>
+</ul>
+<p>前五个请参考<a href="https://youchen12138.github.io/2019/07/31/CSS基础知识点-选择器/" target="_blank" rel="noopener">CSS基础知识点–选择器</a></p>
+<h2 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>子元素选择器只能选择某元素的子元素</p>
+<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>父元素 &gt; 子元素（father &gt; child）</p>
+</blockquote>
+<h2 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>相邻兄弟选择器可以选择紧接在另一元素后的元素，而且他们具有一个相同的父元素</p>
+<h3 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>元素 + 兄弟相邻元素（Element + Sibling）</p>
+</blockquote>
+<h2 id="通用兄弟选择器"><a href="#通用兄弟选择器" class="headerlink" title="通用兄弟选择器"></a>通用兄弟选择器</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>选择某元素后面的所有兄弟元素，而且他们具有一个相同的父元素</p>
+<h3 id="语法格式-2"><a href="#语法格式-2" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>元素 ~ 后面所有兄弟相邻元素（Element ~ Sibling）</p>
+</blockquote>
+<h2 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h2><h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><p>群组选择器是将具有相同样式的元素分组在一起，每个选择器之间使用逗号”,”隔开</p>
+<h3 id="语法格式-3"><a href="#语法格式-3" class="headerlink" title="语法格式"></a>语法格式</h3><p>元素1，元素2，…，元素n（Element1,Element2,…,Element3）</p>
+<h1 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h1><p>对带有制定属性的 HTML 元素设置样式</p>
+<p>使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值</p>
+<h2 id="Element-attribute"><a href="#Element-attribute" class="headerlink" title="Element[attribute]"></a>Element[attribute]</h2><h3 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h3><p>选择所有带有 attribute 属性元素</p>
+<h2 id="Element-attribute-”value”"><a href="#Element-attribute-”value”" class="headerlink" title="Element[attribute~=”value”]"></a>Element[attribute~=”value”]</h2><h3 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性有单词”value”的所有元素（属性不止一个属性值，其中一个属性值为”value”）</p>
+<p>注意：该属性选择器用于选取属性值中包含指定词汇的元素，只要是指定的属性，并且属性值列表中包含value，而不是在某个值中以value开头或结尾</p>
+<h2 id="Element-attribute-”value”-1"><a href="#Element-attribute-”value”-1" class="headerlink" title="Element[attribute^=”value”]"></a>Element[attribute^=”value”]</h2><h3 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值以”value”开头的所有元素</p>
+<p>注意：该属性选择器匹配指定属性的指定value值开头的元素，如果class中有多个value值，第一个值中的第一个字母不是指定的值，即使后面的属性中首字母是指定的值，那么也不能匹配上</p>
+<h2 id="Element-attribute-”value”-2"><a href="#Element-attribute-”value”-2" class="headerlink" title="Element[attribute$=”value”]"></a>Element[attribute$=”value”]</h2><h3 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值以”value”结尾的所有元素</p>
+<h2 id="Element-attribute-”value”-3"><a href="#Element-attribute-”value”-3" class="headerlink" title="Element[attribute*=”value”]"></a>Element[attribute*=”value”]</h2><h3 id="概念-8"><a href="#概念-8" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值包含”value”的所有元素（属性值中的单词包含）</p>
+<h2 id="Element-attribute-”value”-4"><a href="#Element-attribute-”value”-4" class="headerlink" title="Element[attribute|=”value”]"></a>Element[attribute|=”value”]</h2><h3 id="概念-9"><a href="#概念-9" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值为”value”或以”value”开头的元素</p>
+<table>
+<thead>
+<tr>
+<th>属性选择器</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Element[<code>attribute</code>]</td>
+<td>选择所有带有 attribute 属性元素</td>
+</tr>
+<tr>
+<td>Element[<code>attribute~=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性有单词”value”的所有元素（属性不止一个属性值，其中一个属性值为”value”）</td>
+</tr>
+<tr>
+<td>Element[<code>attribute^=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性值以”value”开头的所有元素</td>
+</tr>
+<tr>
+<td>Element[<code>attribute$=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性值以”value”结尾的所有元素</td>
+</tr>
+<tr>
+<td>Element[<code>attribute*=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性值包含”value”的所有元素（属性值中的单词包含）</td>
+</tr>
+<tr>
+<td>Element[`attribute</td>
+<td>=”value”`]</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" data-id="cjze4jf00000pncw0sdtoacy1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS进阶知识点--CSS3伪类选择器和伪元素
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/11/HTML进阶知识点-HTML5属性变化/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTML进阶知识点--HTML5属性变化</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/16/CSS进阶知识点-渐变/">CSS进阶知识点--渐变</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/16/CSS进阶知识点-背景/">CSS进阶知识点--背景</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/16/CSS进阶知识点-CSS3边框和圆角/">CSS进阶知识点--CSS3边框和圆角（浏览器前缀）、盒阴影</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

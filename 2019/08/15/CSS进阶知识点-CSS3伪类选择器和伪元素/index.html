@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS进阶知识点--CSS3伪类选择器和伪元素 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="伪类选择器 动态伪类（锚点伪类、用户行为伪类）  UI元素状态伪类  CSS3结构伪类  否定选择器  伪元素   动态伪类这些伪类并不存在与 HTML 中，只有当用户和网站交互的时候才能体现出来 锚点伪类 :link  :visited   用户行为伪类 :hover  :active  :focus（获取到焦点时的样式）   UI元素状态伪类概念我们把”:enabled“, “:disabl">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS进阶知识点--CSS3伪类选择器和伪元素">
+<meta property="og:url" content="http://yoursite.com/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="伪类选择器 动态伪类（锚点伪类、用户行为伪类）  UI元素状态伪类  CSS3结构伪类  否定选择器  伪元素   动态伪类这些伪类并不存在与 HTML 中，只有当用户和网站交互的时候才能体现出来 锚点伪类 :link  :visited   用户行为伪类 :hover  :active  :focus（获取到焦点时的样式）   UI元素状态伪类概念我们把”:enabled“, “:disabl">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-16T05:31:53.623Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS进阶知识点--CSS3伪类选择器和伪元素">
+<meta name="twitter:description" content="伪类选择器 动态伪类（锚点伪类、用户行为伪类）  UI元素状态伪类  CSS3结构伪类  否定选择器  伪元素   动态伪类这些伪类并不存在与 HTML 中，只有当用户和网站交互的时候才能体现出来 锚点伪类 :link  :visited   用户行为伪类 :hover  :active  :focus（获取到焦点时的样式）   UI元素状态伪类概念我们把”:enabled“, “:disabl">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS进阶知识点-CSS3伪类选择器和伪元素" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" class="article-date">
+  <time datetime="2019-08-15T13:44:22.000Z" itemprop="datePublished">2019-08-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS进阶知识点--CSS3伪类选择器和伪元素
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h1><ul>
+<li><p>动态伪类（锚点伪类、用户行为伪类）</p>
+</li>
+<li><p>UI元素状态伪类</p>
+</li>
+<li><p>CSS3结构伪类</p>
+</li>
+<li><p>否定选择器</p>
+</li>
+<li><p>伪元素</p>
+</li>
+</ul>
+<h2 id="动态伪类"><a href="#动态伪类" class="headerlink" title="动态伪类"></a>动态伪类</h2><p>这些伪类并不存在与 HTML 中，只有当用户和网站<strong>交互</strong>的时候才能体现出来</p>
+<h3 id="锚点伪类"><a href="#锚点伪类" class="headerlink" title="锚点伪类"></a>锚点伪类</h3><ul>
+<li><p>:link</p>
+</li>
+<li><p>:visited</p>
+</li>
+</ul>
+<h3 id="用户行为伪类"><a href="#用户行为伪类" class="headerlink" title="用户行为伪类"></a>用户行为伪类</h3><ul>
+<li><p>:hover</p>
+</li>
+<li><p>:active</p>
+</li>
+<li><p>:focus（获取到焦点时的样式）</p>
+</li>
+</ul>
+<h2 id="UI元素状态伪类"><a href="#UI元素状态伪类" class="headerlink" title="UI元素状态伪类"></a>UI元素状态伪类</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>我们把”<code>:enabled</code>“, “<code>:disabled</code>“, “<code>checked</code>“伪类称为UI元素状态伪类</p>
+<h2 id="CSS3结构类"><a href="#CSS3结构类" class="headerlink" title="CSS3结构类"></a>CSS3结构类</h2><h3 id="CSS3的-nth选择器"><a href="#CSS3的-nth选择器" class="headerlink" title="CSS3的:nth选择器"></a>CSS3的<code>:nth</code>选择器</h3><p>我们把CSS3的<code>:nth</code>选择器也称为CSS3结构类</p>
+<h3 id="选择方法"><a href="#选择方法" class="headerlink" title="选择方法"></a>选择方法</h3><ul>
+<li><p>:first-child</p>
+</li>
+<li><p>:last-child</p>
+</li>
+<li><p>:nth-child()</p>
+</li>
+<li><p>:nth-last-child()</p>
+</li>
+<li><p>:nth-of-type()</p>
+</li>
+<li><p>:nth-last-of-type()</p>
+</li>
+<li><p>:first-of-type</p>
+</li>
+<li><p>:last-of-type</p>
+</li>
+<li><p>only-child</p>
+</li>
+<li><p>only-of-type</p>
+</li>
+<li><p>:empty</p>
+</li>
+</ul>
+<h3 id="Element-first-child"><a href="#Element-first-child" class="headerlink" title="Element:first-child"></a>Element:first-child</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的首个子元素，并为其设置样式</p>
+<h3 id="Element-last-child"><a href="#Element-last-child" class="headerlink" title="Element:last-child"></a>Element:last-child</h3><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的最后一个子元素，并为其设置样式</p>
+<h3 id="Element-nth-child-N"><a href="#Element-nth-child-N" class="headerlink" title="Element:nth-child(N)"></a>Element:nth-child(N)</h3><h4 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素，不论元素的类型</p>
+<h4 id="关于参数（N）"><a href="#关于参数（N）" class="headerlink" title="关于参数（N）"></a>关于参数（N）</h4><ul>
+<li><p>odd 相当于2n+1</p>
+</li>
+<li><p>even 相当于2n</p>
+</li>
+</ul>
+<h3 id="Element-nth-last-child-N"><a href="#Element-nth-last-child-N" class="headerlink" title="Element:nth-last-child(N)"></a>Element:nth-last-child(N)</h3><h4 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数</p>
+<h3 id="Element-nth-of-type-N"><a href="#Element-nth-of-type-N" class="headerlink" title="Element:nth-of-type(N)"></a>Element:nth-of-type(N)</h3><h4 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素</p>
+<h3 id="Element-nth-last-of-type-N"><a href="#Element-nth-last-of-type-N" class="headerlink" title="Element:nth-last-of-type(N)"></a>Element:nth-last-of-type(N)</h3><h4 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素，从最后一个子元素开始计数</p>
+<h3 id="Element-first-of-type"><a href="#Element-first-of-type" class="headerlink" title="Element:first-of-type"></a>Element:first-of-type</h3><h4 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的首个子元素</p>
+<h3 id="Element-last-of-type"><a href="#Element-last-of-type" class="headerlink" title="Element:last-of-type"></a>Element:last-of-type</h3><h4 id="概念-8"><a href="#概念-8" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的最后一个子元素</p>
+<h3 id="Element-only-child"><a href="#Element-only-child" class="headerlink" title="Element:only-child"></a>Element:only-child</h3><h4 id="概念-9"><a href="#概念-9" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一子元素</p>
+<h3 id="Element-only-of-type"><a href="#Element-only-of-type" class="headerlink" title="Element:only-of-type"></a>Element:only-of-type</h3><h4 id="概念-10"><a href="#概念-10" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一特定类型的子元素</p>
+<h3 id="Element-empty"><a href="#Element-empty" class="headerlink" title="Element:empty"></a>Element:empty</h3><h4 id="概念-11"><a href="#概念-11" class="headerlink" title="概念"></a>概念</h4><p>选择没有子元素（包括文本节点）的每个元素</p>
+<h2 id="否定选择器"><a href="#否定选择器" class="headerlink" title="否定选择器"></a>否定选择器</h2><h3 id="概念-12"><a href="#概念-12" class="headerlink" title="概念"></a>概念</h3><p>:not(Element/selector)选择器匹配非指定元素/选择器的每个元素</p>
+<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>父元素:not(子元素/子选择器)</p>
+</blockquote>
+<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><p>CSS 伪元素用于向某些选择器设置特殊效果</p>
+<h2 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h2><blockquote>
+<p>元素::伪元素（Element::pseudo-element）</p>
+</blockquote>
+<h2 id="Element-first-line"><a href="#Element-first-line" class="headerlink" title="Element::first-line"></a>Element::first-line</h2><h3 id="概念-13"><a href="#概念-13" class="headerlink" title="概念"></a>概念</h3><p>根据”first-line”伪元素中的样式对 Element 元素的第一行文本进行格式化</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>“first-line”伪元素只能用于块级元素</p>
+<h2 id="Element-first-letter"><a href="#Element-first-letter" class="headerlink" title="Element::first-letter"></a>Element::first-letter</h2><h3 id="概念-14"><a href="#概念-14" class="headerlink" title="概念"></a>概念</h3><p>用于向文本的首字母设置特殊样式</p>
+<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>“first-letter”伪元素只能用于块级元素</p>
+<h2 id="Element-before"><a href="#Element-before" class="headerlink" title="Element::before"></a>Element::before</h2><h3 id="概念-15"><a href="#概念-15" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容前面插入新内容</p>
+<h3 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li><p>第一个子元素</p>
+</li>
+<li><p>行级元素</p>
+</li>
+<li><p>内容通过 content 写入</p>
+</li>
+<li><p>标签中找不到对应标签，只能在浏览器开发者工具那可以找到</p>
+</li>
+</ol>
+<h2 id="Element-after"><a href="#Element-after" class="headerlink" title="Element::after"></a>Element::after</h2><h3 id="概念-16"><a href="#概念-16" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容后面插入新内容</p>
+<h3 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用，常用于清除浮动</p>
+<h2 id="Element-selection"><a href="#Element-selection" class="headerlink" title="Element::selection"></a>Element::selection</h2><h3 id="概念-17"><a href="#概念-17" class="headerlink" title="概念"></a>概念</h3><p>用于设置在浏览器中选中文本后的背景色与前景色</p>
+<h3 id="兼容性说明"><a href="#兼容性说明" class="headerlink" title="兼容性说明"></a>兼容性说明</h3><p>::selection 在IE家族中，只有IE9+ 版本支持，在 Firefox 中需要加上其前缀”-moz”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" data-id="cjze4jezv000incw07faedys0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/16/CSS进阶知识点-CSS3边框和圆角/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS进阶知识点--CSS3边框和圆角（浏览器前缀）、盒阴影
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS进阶知识点--CSS3基本选择器及属性选择器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/16/CSS进阶知识点-渐变/">CSS进阶知识点--渐变</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/16/CSS进阶知识点-背景/">CSS进阶知识点--背景</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/16/CSS进阶知识点-CSS3边框和圆角/">CSS进阶知识点--CSS3边框和圆角（浏览器前缀）、盒阴影</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -62,9 +62,540 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-CSS进阶知识点-选择器（上）" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-HTML基础知识点-图像与超链接" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/14/CSS进阶知识点-选择器（上）/" class="article-date">
+    <a href="/2019/07/23/HTML基础知识点-图像与超链接/" class="article-date">
+  <time datetime="2019-07-23T07:39:48.000Z" itemprop="datePublished">2019-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/23/HTML基础知识点-图像与超链接/">HTML基础知识点-图像与超链接</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="图像标签"><a href="#图像标签" class="headerlink" title="图像标签"></a>图像标签</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>&lt;img src=&quot;&quot; alt=&quot;&quot;/&gt;</code></p>
+<h3 id="img属性"><a href="#img属性" class="headerlink" title="img属性"></a>img属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Src（必写）</td>
+<td>URL</td>
+<td>显示图像的URL</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>文字</td>
+<td>图像替代文本</td>
+</tr>
+<tr>
+<td>height</td>
+<td>数值和百分比</td>
+<td>图像的高</td>
+</tr>
+<tr>
+<td>width</td>
+<td>数值和百分比</td>
+<td>图像的宽</td>
+</tr>
+</tbody></table>
+<h4 id="alt属性作用"><a href="#alt属性作用" class="headerlink" title="alt属性作用"></a>alt属性作用</h4><p>当由于：</p>
+<ul>
+<li><p>网速太慢</p>
+</li>
+<li><p>src属性中的错误</p>
+</li>
+<li><p>浏览器禁用图像</p>
+</li>
+</ul>
+<p>用户无法查看图像时，alt属性可以代替图像显示在浏览器中的内容</p>
+<h2 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><p><code>&lt;a href=&quot;&quot;&gt;内容&lt;/a&gt;</code></p>
+<p><strong>href</strong>：链接地址，可以是内部链接或外部链接</p>
+<p>当链接为空时，点击链接会刷新页面</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>href</td>
+<td>链接地址</td>
+</tr>
+<tr>
+<td>target</td>
+<td>链接的目标窗口（_self、_blank、_top、_parent）</td>
+</tr>
+<tr>
+<td>title</td>
+<td>链接提示文字（当光标停在链接上时，提示文字将会出现）</td>
+</tr>
+<tr>
+<td>name</td>
+<td>链接命名</td>
+</tr>
+</tbody></table>
+<h2 id="锚链接"><a href="#锚链接" class="headerlink" title="锚链接"></a>锚链接</h2><h3 id="定义锚（同一页面）"><a href="#定义锚（同一页面）" class="headerlink" title="定义锚（同一页面）"></a>定义锚（同一页面）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#锚名&quot;&gt;目录1&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;...&quot; name=&quot;锚名&quot;&gt;内容&lt;/a&gt;</span><br><span class="line">    xxxxx</span><br><span class="line">    xxxxxxxxxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="定义锚（不同页面）"><a href="#定义锚（不同页面）" class="headerlink" title="定义锚（不同页面）"></a>定义锚（不同页面）</h3><p>不同页面的锚链接：不仅可以跳转别的链接，而且还能找到相应的锚点位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">网页1：&lt;a href=&quot;网页名称#锚名&gt;...&lt;/a&gt;</span><br><span class="line">网页2：&lt;a href=&quot;锚名&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="电子邮件链接"><a href="#电子邮件链接" class="headerlink" title="电子邮件链接"></a>电子邮件链接</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;mailto:邮件地址&quot;&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;下载文件的地址&quot; download=&quot;下载文件的地址&quot;&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/23/HTML基础知识点-图像与超链接/" data-id="cjze4jf0s001rncw0ydwp2rar" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/21/HTML基础/" class="article-date">
+  <time datetime="2019-07-21T13:58:01.000Z" itemprop="datePublished">2019-07-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/21/HTML基础/">HTML基础知识点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h2><ol>
+<li><p>换行：<code>&lt;br/&gt;</code></p>
+</li>
+<li><p>HTML编写格式排版网页：<code>&lt;pre&gt;&lt;/pre&gt;</code></p>
+</li>
+<li><p>线：<code>&lt;/hr&gt;</code></p>
+</li>
+<li><p>斜体：<code>&lt;i&gt;</code>,<code>&lt;em&gt;</code></p>
+</li>
+<li><p>粗体：<code>&lt;b&gt;</code>,<code>&lt;strong&gt;</code></p>
+</li>
+<li><p>上标：<code>&lt;sup&gt;</code></p>
+</li>
+<li><p>下标：<code>&lt;sub&gt;</code></p>
+</li>
+<li><p>定义列表：<code>&lt;dl&gt;</code></p>
+</li>
+<li><p>定义列表项：<code>&lt;dt&gt;</code></p>
+</li>
+<li><p>列表项描述：<code>&lt;dd&gt;</code></p>
+</li>
+</ol>
+<h2 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h2><ol>
+<li>align（对齐）</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>left</td>
+<td>左对齐内容</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右对齐内容</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中对齐内容</td>
+</tr>
+<tr>
+<td>justify</td>
+<td>对行进行伸展，这样每行都可以有相等的长度</td>
+</tr>
+</tbody></table>
+<h2 id="其他知识点"><a href="#其他知识点" class="headerlink" title="其他知识点"></a>其他知识点</h2><h3 id="无序列表符号"><a href="#无序列表符号" class="headerlink" title="无序列表符号"></a>无序列表符号</h3><p><code>&lt;ul&gt;</code>的type属性值</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>disc</td>
+<td>圆点</td>
+</tr>
+<tr>
+<td>square</td>
+<td>正方形</td>
+</tr>
+<tr>
+<td>circle</td>
+<td>空心圆</td>
+</tr>
+</tbody></table>
+<h3 id="有序列表符号"><a href="#有序列表符号" class="headerlink" title="有序列表符号"></a>有序列表符号</h3><p><code>&lt;ol&gt;</code>的type属性</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>数字1,2…</td>
+</tr>
+<tr>
+<td>a</td>
+<td>小写字母a,b…</td>
+</tr>
+<tr>
+<td>A</td>
+<td>大写字母A,B…</td>
+</tr>
+<tr>
+<td>i</td>
+<td>小写罗马数字i</td>
+</tr>
+<tr>
+<td>I</td>
+<td>大写罗马数字I</td>
+</tr>
+</tbody></table>
+<h3 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>显示结果</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;lt;</code></td>
+<td>&lt;</td>
+<td>小于号或显示标记</td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td>&gt;</td>
+<td>大于号或显示标记</td>
+</tr>
+<tr>
+<td><code>&amp;reg;</code></td>
+<td>&reg;</td>
+<td>已注册</td>
+</tr>
+<tr>
+<td><code>&amp;copy;</code></td>
+<td>&copy;</td>
+<td>版权</td>
+</tr>
+<tr>
+<td><code>&amp;trade;</code></td>
+<td>&trade;</td>
+<td>商标</td>
+</tr>
+<tr>
+<td><code>&amp;nbsp;</code></td>
+<td>Space</td>
+<td>不断行的空格</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/21/HTML基础/" data-id="cjze4jf0x0020ncw0jshk7wli" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Java知识点-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/20/Java知识点-2/" class="article-date">
+  <time datetime="2019-07-20T09:56:26.000Z" itemprop="datePublished">2019-07-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/20/Java知识点-2/">Java知识点-week2（枚举，继承）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h2><p>将普通的Java类的calss替换为enum，创建属性值时不需要添加<code>;</code></p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public enum Animal &#123;</span><br><span class="line">    tiger,</span><br><span class="line">    lion,</span><br><span class="line">    dog,</span><br><span class="line">    cat</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class Apple extends Fruit&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>父类转换成子类，需要强制转换。</p>
+<p>子类转换成父类，直接<code>=</code>符号赋值。</p>
+<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><h3 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public static void read()&#123;</span><br><span class="line">    File file = new File(&quot;E:\\临时.txt&quot;);</span><br><span class="line">    BufferedReader br = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        br = new BufferedReader(new FileReader(file));</span><br><span class="line">        String line;</span><br><span class="line">        while ((line = br.readLine()) != null)&#123;</span><br><span class="line">            System.out.println(line);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; catch (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        if( br != null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                br.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>BufferedReader是比FileReader更为简洁的代码编写，主要体现在缓存区中，BufferedReader读取时将字符串一行一行的读取。</p>
+<h3 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public static void write()&#123;</span><br><span class="line">    File file = new File(&quot;E:\\临时.txt&quot;);</span><br><span class="line">    BufferedWriter bw = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        bw = new BufferedWriter(new FileWriter(file));</span><br><span class="line">        bw.write(&quot;hello bmatch&quot;);</span><br><span class="line">    &#125; catch (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        if(bw != null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                bw.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Excel文件读写"><a href="#Excel文件读写" class="headerlink" title="Excel文件读写"></a>Excel文件读写</h2><h3 id="Excel文件读取"><a href="#Excel文件读取" class="headerlink" title="Excel文件读取"></a>Excel文件读取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">public static void read()&#123;</span><br><span class="line">    InputStream inputStream = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        inputStream = new FileInputStream(&quot;E:\\test\\workbook.xlsx&quot;);</span><br><span class="line">        Workbook wb = WorkbookFactory.create(inputStream);</span><br><span class="line">        DataFormatter formatter = new DataFormatter();</span><br><span class="line">        Sheet sheet1 = wb.getSheetAt(0);</span><br><span class="line">        for (Row row : sheet1) &#123;</span><br><span class="line">            for (Cell cell : row) &#123;</span><br><span class="line">                CellReference cellRef = new CellReference(row.getRowNum(), cell.getColumnIndex());</span><br><span class="line">                System.out.print(cellRef.formatAsString());</span><br><span class="line">                System.out.print(&quot; - &quot;);</span><br><span class="line"></span><br><span class="line">                // get the text that appears in the cell by getting the cell value and applying any data formats (Date, 0.00, 1.23e9, $1.23, etc)</span><br><span class="line">                String text = formatter.formatCellValue(cell);</span><br><span class="line">                System.out.println(text);</span><br><span class="line"></span><br><span class="line">                // Alternatively, get the value and format it yourself</span><br><span class="line">                switch (cell.getCellType()) &#123;</span><br><span class="line">                    case STRING:</span><br><span class="line">                        System.out.println(cell.getRichStringCellValue().getString());</span><br><span class="line">                        break;</span><br><span class="line">                    case NUMERIC:</span><br><span class="line">                        if (DateUtil.isCellDateFormatted(cell)) &#123;</span><br><span class="line">                            System.out.println(cell.getDateCellValue());</span><br><span class="line">                        &#125; else &#123;</span><br><span class="line">                            System.out.println(cell.getNumericCellValue());</span><br><span class="line">                        &#125;</span><br><span class="line">                        break;</span><br><span class="line">                    case BOOLEAN:</span><br><span class="line">                        System.out.println(cell.getBooleanCellValue());</span><br><span class="line">                        break;</span><br><span class="line">                    case FORMULA:</span><br><span class="line">                        System.out.println(cell.getCellFormula());</span><br><span class="line">                        break;</span><br><span class="line">                    case BLANK:</span><br><span class="line">                        System.out.println();</span><br><span class="line">                        break;</span><br><span class="line">                    default:</span><br><span class="line">                        System.out.println();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125; catch (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        if(inputStream != null)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                inputStream.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Excel文件写入"><a href="#Excel文件写入" class="headerlink" title="Excel文件写入"></a>Excel文件写入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">public static void write()&#123;</span><br><span class="line">    Workbook wb = null;</span><br><span class="line">    OutputStream fileOut = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        fileOut = new FileOutputStream(&quot;E:\\test\\workbook.xlsx&quot;);</span><br><span class="line">        wb = new XSSFWorkbook();</span><br><span class="line">        Sheet sheet = wb.createSheet(&quot;new sheet&quot;);</span><br><span class="line">        Row row = sheet.createRow(0);</span><br><span class="line">        Cell cell0 = row.createCell(0);</span><br><span class="line">        cell0.setCellValue(1.0);</span><br><span class="line"></span><br><span class="line">        Cell cell1 = row.createCell(1);</span><br><span class="line">        cell1.setCellValue(&quot;hello bmatch&quot;);</span><br><span class="line"></span><br><span class="line">        CreationHelper createHelper = wb.getCreationHelper();</span><br><span class="line">        CellStyle cellStyle = wb.createCellStyle();</span><br><span class="line">        cellStyle.setDataFormat(</span><br><span class="line">                createHelper.createDataFormat().getFormat(&quot;m/d/yy h:mm&quot;));</span><br><span class="line"></span><br><span class="line">        Cell cell2 = row.createCell(2);</span><br><span class="line">        cell2.setCellValue(new Date());</span><br><span class="line">        cell2.setCellStyle(cellStyle);</span><br><span class="line">        wb.write(fileOut);</span><br><span class="line">    &#125;  catch (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; finally &#123;</span><br><span class="line">        if (fileOut != null) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                fileOut.close();</span><br><span class="line">            &#125; catch (IOException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/20/Java知识点-2/" data-id="cjze4jf1e002uncw0dqf33tbl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Java知识点-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/16/Java知识点-1/" class="article-date">
+  <time datetime="2019-07-16T09:21:39.000Z" itemprop="datePublished">2019-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/16/Java知识点-1/">Java知识点--week1（基本方法，注解，ArrayList，数据过滤，Integer类，Date）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="Java基本方法概况"><a href="#Java基本方法概况" class="headerlink" title="Java基本方法概况"></a>Java基本方法概况</h2><ul>
+<li><p>System.out.println(“string”);</p>
+<p>  控制台打印信息</p>
+</li>
+<li><p>concat方法：拼接字符串</p>
+<p>  string1.concat(string2)</p>
+</li>
+<li><p><code>+</code>拼接字符串</p>
+</li>
+<li><p>string.length()：查看字符串长度</p>
+</li>
+<li><p>string1.equals(string2)：返回值为布尔类型</p>
+</li>
+</ul>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a><font color="red">常量</font></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//快捷：const</span><br><span class="line">private static final String ConStant = &quot;常量&quot;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class AccountingController &#123;</span><br><span class="line">    @RequestMapping(path = &quot;/accounting&quot;)</span><br><span class="line">    public String accounting(@RequestParam(&quot;cash&quot;) int cash,@RequestParam(&quot;income&quot;) int income,@RequestParam(&quot;rent&quot;) int rent,@RequestParam(&quot;charges&quot;) int charges,</span><br><span class="line"></span><br><span class="line">    @RequestParam(&quot;eat&quot;) int eat)&#123;</span><br><span class="line">        int result = cash + income - rent - charges - eat;</span><br><span class="line">        String str = String.valueOf(result);</span><br><span class="line">        return str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>@RestController = @Controller + @ResponseBody：</p>
+<ol>
+<li><p>@Controller 习惯于和@RequestMapping绑定来使用</p>
+</li>
+<li><p>@ResponseBody告诉控制器返回对象会被自动序列化成JSON，并且传回HttpResponse这个对象。相当于自动实现XMLHttpRequest</p>
+</li>
+</ol>
+</li>
+<li><p>@RequestMapping：为HTML的form表单提供地址</p>
+</li>
+<li><p>@RequestParam(“前端input的name”)：获取输入的值</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public String search(@RequestParam(&quot;amount&quot;) int amount)&#123;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ol>
+<li><p>能够动态扩容的数组</p>
+</li>
+<li><p>按照放入的顺序存储数据，可以存放重复的对象</p>
+</li>
+</ol>
+<h3 id="ArrayList——方法概况"><a href="#ArrayList——方法概况" class="headerlink" title="ArrayList——方法概况"></a>ArrayList——方法概况</h3><ol>
+<li><p>add：增加数据</p>
+</li>
+<li><p>remove：删除数据</p>
+</li>
+<li><p>size：长度</p>
+</li>
+<li><p>isEmpty：是否为空</p>
+</li>
+<li><p>get：获取数组中的值，根据索引读取元素，比如可以获取第二个元素</p>
+</li>
+</ol>
+<h3 id="ArrayList——遍历数组——foreach循环"><a href="#ArrayList——遍历数组——foreach循环" class="headerlink" title="ArrayList——遍历数组——foreach循环"></a>ArrayList——遍历数组——foreach循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (String item : List1)&#123;</span><br><span class="line">    //String item : List1等价于从数组的第一个开始，自动加一</span><br><span class="line">    System.out.println(&quot;ArrayList的元素是：&quot; + item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Integer类"><a href="#Integer类" class="headerlink" title="Integer类"></a>Integer类</h2><p>Integer 类在对象中包装了一个基本类型int的值。Integer类型的对象包含一个 int 类型的字段。此外，该类提供了多个方法，能在 int 类型和 String 类型之间互相转换，同时还提供了其他一些处理int类型时非常有用的常量和方法。</p>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ol>
+<li>Integer(int number)</li>
+</ol>
+<p>该方法以一个int型变量作为参数来获取Integer对象。<br>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intrger number = new Integer(7);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Integer(String str)</li>
+</ol>
+<p>该方法以一个String型变量作为参数来获取Integer对象。<br>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intrger number = new Integer(&quot;45&quot;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>要用数值型String变量作为参数，如123，否则将会抛出NumberFormatException异常。</li>
+</ul>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p><img src="https://images2015.cnblogs.com/blog/1121163/201707/1121163-20170718205559349-30919243.jpg" alt></p>
+<ul>
+<li><p>parseInt()方法返回与调用该方法的数值字符串相应的整型(int)值</p>
+</li>
+<li><p>toString()方法，可将Integer对象转换为十进制字符串表示。toBinaryString()、toHexString()和toOctalString()方法分别将值转换成二进制、十六进制和八进制字符串。</p>
+</li>
+</ul>
+<p>详情请见：<a href="https://www.cnblogs.com/cxf1404445126/p/7202483.html" target="_blank" rel="noopener">https://www.cnblogs.com/cxf1404445126/p/7202483.html</a></p>
+<h2 id="数据过滤"><a href="#数据过滤" class="headerlink" title="数据过滤"></a>数据过滤</h2><ol>
+<li>Stream Filter</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    List&lt;String&gt; strings = Arrays.asList(&quot;a1&quot;, &quot;a2&quot;, &quot;a3&quot;, &quot;b1&quot;, &quot;b2&quot;, &quot;b3&quot;);</span><br><span class="line">    List&lt;String&gt; filter = strings.stream().filter(str-&gt;str.startsWith(&quot;a&quot;)).collect(Collectors.toList());</span><br><span class="line">    System.out.println(filter);</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">先让字符向量变成流(`stream()`)，然后设置过滤条件(`filter()`)，最后收集(`collect(Collectors.toList())`)</span><br><span class="line"></span><br><span class="line">2. StringBuilder</span><br></pre></td></tr></table></figure>
+
+<pre><code>StringBuilder sb = new StringBuilder();
+System.out.println(sb);
+sb.append(&quot;hello&quot;);
+System.out.println(sb);//打印出来为hello</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## **Date**和**SimpleDateFormat**</span><br><span class="line"></span><br><span class="line">建立SimpleDateFormat实例的时候要写出结构</span><br><span class="line"></span><br><span class="line">例：</span><br></pre></td></tr></table></figure>
+
+<p>SimpleDateFormat sdf = new SimpleDateFormat(“yyyy/MM/dd HH:mm:ss”);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### Date常用方法</span><br><span class="line"></span><br><span class="line">1. getTime：获取毫秒数，返回值为long</span><br><span class="line"></span><br><span class="line">2. Date1.before(Date2)：比较Date1是否在Date2之前</span><br><span class="line"></span><br><span class="line">3. Date1.after(Date2)：比较Date1是否在Date2之后</span><br><span class="line"></span><br><span class="line">### SimpleDateFormat常用方法</span><br><span class="line"></span><br><span class="line">1. format(Date实例)：获取格式时间（建立实例时设置格式）</span><br></pre></td></tr></table></figure>
+
+<p>sdf.format(day1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. parse()：括号里为格式型的时间字符串，返回值为Date</span><br></pre></td></tr></table></figure>
+
+<p>Date day2 = sdf.parse(“1988/5/3 15:23:16”);<br>```</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="cjze4jf1b002pncw0cc2g4air" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS额外知识点-选择器（下）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/CSS额外知识点-选择器（下）/" class="article-date">
+  <time datetime="2019-07-15T06:54:08.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/CSS额外知识点-选择器（下）/">CSS额外知识点--选择器（下）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/CSS额外知识点-选择器（下）/" data-id="cjze4jf0g0016ncw07big46a6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS额外知识点-选择器（上）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/14/CSS额外知识点-选择器（上）/" class="article-date">
   <time datetime="2019-07-14T10:14:46.000Z" itemprop="datePublished">2019-07-14</time>
 </a>
     
@@ -80,7 +611,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/14/CSS进阶知识点-选择器（上）/">CSS进阶知识点--选择器（上）</a>
+      <a class="article-title" href="/2019/07/14/CSS额外知识点-选择器（上）/">CSS额外知识点--选择器（上）</a>
     </h1>
   
 
@@ -279,7 +810,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-选择器（上）/" data-id="cjz9j7ser003onkw0rt4c3zkd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-选择器（上）/" data-id="cjze4jf2g004encw0mhwvla6s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -291,9 +822,9 @@
 
 
   
-    <article id="post-CSS进阶知识点-背景样式" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-CSS额外知识点-背景样式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/14/CSS进阶知识点-背景样式/" class="article-date">
+    <a href="/2019/07/14/CSS额外知识点-背景样式/" class="article-date">
   <time datetime="2019-07-14T06:50:10.000Z" itemprop="datePublished">2019-07-14</time>
 </a>
     
@@ -309,7 +840,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/14/CSS进阶知识点-背景样式/">CSS进阶知识点--背景样式</a>
+      <a class="article-title" href="/2019/07/14/CSS额外知识点-背景样式/">CSS额外知识点--背景样式</a>
     </h1>
   
 
@@ -357,7 +888,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-背景样式/" data-id="cjz9j7scy000xnkw0zbi7e3g0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-背景样式/" data-id="cjze4jf0k001cncw08ig2a943" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -369,9 +900,9 @@
 
 
   
-    <article id="post-CSS进阶知识点-文字和字体" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-CSS额外知识点-文字和字体" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/14/CSS进阶知识点-文字和字体/" class="article-date">
+    <a href="/2019/07/14/CSS额外知识点-文字和字体/" class="article-date">
   <time datetime="2019-07-14T06:28:17.000Z" itemprop="datePublished">2019-07-14</time>
 </a>
     
@@ -387,7 +918,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/14/CSS进阶知识点-文字和字体/">CSS进阶知识点--文字和字体</a>
+      <a class="article-title" href="/2019/07/14/CSS额外知识点-文字和字体/">CSS额外知识点--文字和字体</a>
     </h1>
   
 
@@ -428,7 +959,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-文字和字体/" data-id="cjz9j7scr000rnkw0gnf1nfcr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="cjze4jf0m001fncw0vei5636d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -440,9 +971,9 @@
 
 
   
-    <article id="post-CSS进阶知识点-颜色" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-CSS额外知识点-颜色" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/14/CSS进阶知识点-颜色/" class="article-date">
+    <a href="/2019/07/14/CSS额外知识点-颜色/" class="article-date">
   <time datetime="2019-07-14T06:13:49.000Z" itemprop="datePublished">2019-07-14</time>
 </a>
     
@@ -458,7 +989,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/14/CSS进阶知识点-颜色/">CSS进阶知识点--颜色</a>
+      <a class="article-title" href="/2019/07/14/CSS额外知识点-颜色/">CSS额外知识点--颜色</a>
     </h1>
   
 
@@ -489,7 +1020,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS进阶知识点-颜色/" data-id="cjz9j7scz000znkw0uidlajan" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-颜色/" data-id="cjze4jf0o001incw0u4xh4o0n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -501,9 +1032,9 @@
 
 
   
-    <article id="post-CSS进阶知识点" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-CSS额外知识点" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/03/CSS进阶知识点/" class="article-date">
+    <a href="/2019/07/03/CSS额外知识点/" class="article-date">
   <time datetime="2019-07-03T00:08:37.000Z" itemprop="datePublished">2019-07-03</time>
 </a>
     
@@ -519,7 +1050,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/CSS进阶知识点/">CSS进阶知识点--边框效果</a>
+      <a class="article-title" href="/2019/07/03/CSS额外知识点/">CSS额外知识点--边框效果</a>
     </h1>
   
 
@@ -592,487 +1123,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/03/CSS进阶知识点/" data-id="cjz9j7sd50017nkw0rked5ctx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="cjze4jf0p001lncw0bxcwsavr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Qt之菜单概述" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/25/Qt之菜单概述/" class="article-date">
-  <time datetime="2019-06-25T07:18:44.000Z" itemprop="datePublished">2019-06-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/QT/">QT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/25/Qt之菜单概述/">Qt之菜单概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<hr>
-<h2 id="菜单所需头文件"><a href="#菜单所需头文件" class="headerlink" title="菜单所需头文件"></a>菜单所需头文件</h2><ul>
-<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
-</li>
-<li><p>QMenu：菜单（添加菜单）</p>
-</li>
-<li><p>QAction：添加菜单项（添加动作）</p>
-</li>
-<li><p>QToolBar：添加菜单项的快捷方式</p>
-</li>
-<li><p>QStatusBar：状态栏</p>
-</li>
-<li><p>QLabel：标签</p>
-</li>
-</ul>
-<hr>
-<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//模板，创建并且指定当前窗口为父对象（实质上为构造函数）</span><br><span class="line">    头文件名 *名字 = new 头文件名(this);</span><br><span class="line"></span><br><span class="line">//创建菜单栏</span><br><span class="line">    QMenuBar *mBar = menuBar();</span><br><span class="line"></span><br><span class="line">//添加菜单项，添加动作</span><br><span class="line">    QAction *pNew = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;新建&quot;));</span><br><span class="line"></span><br><span class="line">//添加分割线</span><br><span class="line">    pFile-&gt;addSeparator();</span><br><span class="line"></span><br><span class="line">//添加工具栏，菜单项的快捷方式</span><br><span class="line">    QToolBar *toolBar = addToolBar(&quot;toolBar&quot;);</span><br><span class="line"></span><br><span class="line">//工具栏添加快捷键</span><br><span class="line">    toolBar-&gt;addAction(pNew);</span><br><span class="line"></span><br><span class="line">//新建状态栏</span><br><span class="line">    QStatusBar *statusBar = statusBar();</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="实战案例"><a href="#实战案例" class="headerlink" title="实战案例"></a>实战案例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//菜单栏</span><br><span class="line">QMenuBar *mBar = menuBar();</span><br><span class="line"></span><br><span class="line">//添加菜单</span><br><span class="line">QMenu *pFile = mBar-&gt;addMenu(QString::fromLocal8Bit(&quot;文件&quot;));</span><br><span class="line"></span><br><span class="line">//添加菜单项，添加动作</span><br><span class="line">QAction *pNew = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;新建&quot;));</span><br><span class="line">QAction *pOpen = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;打开&quot;));</span><br><span class="line"></span><br><span class="line">pFile-&gt;addSeparator();//添加分割线</span><br><span class="line"></span><br><span class="line">connect(pNew, &amp;QAction::triggered,</span><br><span class="line">        [=]()</span><br><span class="line">        &#123;</span><br><span class="line">            qDebug()&lt;&lt;QString::fromLocal8Bit(&quot;新建被按下&quot;);  //打印</span><br><span class="line">        &#125;</span><br><span class="line">       );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//工具栏，菜单项的快捷方式</span><br><span class="line">QToolBar *toolBar = addToolBar(&quot;toolBar&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//添加小控件</span><br><span class="line">QPushButton *b = new QPushButton(this);</span><br><span class="line">b-&gt;setText(&quot;^_^&quot;);</span><br><span class="line">toolBar-&gt;addWidget(b);</span><br><span class="line">connect(b, &amp;QPushButton::clicked,</span><br><span class="line">        [=]()</span><br><span class="line">        &#123;</span><br><span class="line">            b-&gt;setText(&quot;123&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">//工具栏添加快捷键</span><br><span class="line">toolBar-&gt;addAction(pNew);</span><br><span class="line"></span><br><span class="line">//状态栏</span><br><span class="line">QStatusBar *sBar = statusBar();    //新建状态栏</span><br><span class="line">QLabel *label = new QLabel(this);</span><br><span class="line">label-&gt;setText(&quot;Normal text file&quot;);</span><br><span class="line">sBar-&gt;addWidget(label);</span><br><span class="line"></span><br><span class="line">sBar-&gt;addWidget(new QLabel(&quot;2&quot;, this));     //从左往右添加</span><br><span class="line"></span><br><span class="line">sBar-&gt;addPermanentWidget(new QLabel(&quot;2&quot;, this));    //从右往左添加</span><br><span class="line"></span><br><span class="line">//核心控件,文本编辑框</span><br><span class="line">QTextEdit *textEdit = new QTextEdit(this);</span><br><span class="line">setCentralWidget(textEdit);</span><br><span class="line"></span><br><span class="line">//浮动窗口</span><br><span class="line">QDockWidget *dock = new QDockWidget(this);</span><br><span class="line">addDockWidget(Qt::RightDockWidgetArea, dock);</span><br><span class="line"></span><br><span class="line">//给浮动窗口添加控件</span><br><span class="line">QTextEdit *textEdit1 = new QTextEdit(this);</span><br><span class="line">dock-&gt;setWidget(textEdit1);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjz9j7se0002pnkw0eyl7s38a" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-QT中提示“常量中有换行符”解决办法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/25/QT中提示“常量中有换行符”解决办法/" class="article-date">
-  <time datetime="2019-06-25T00:42:50.000Z" itemprop="datePublished">2019-06-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/QT/">QT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/25/QT中提示“常量中有换行符”解决办法/">QT中提示“常量中h有换行符”解决办法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用QT编译界面时，免不了要使用中文，有会出现乱码，有时会提示“常量中有换行符”，而不能正常编译，因此可以通过下面的方法解决。</p>
-<p>PS：本文的环境，QT5.7.1，VS2015</p>
-<ol>
-<li>将文本编码设置为：如果编码是UTF-8则添加。</li>
-</ol>
-<p><img src="https://img-blog.csdn.net/20170530135801390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG92ZWx5YWlx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt></p>
-<ol start="2">
-<li>在界面中需要使用中文的地方，使用：</li>
-</ol>
-<p>QString::fromLocal8Bit</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将 Unicode 编码转换为本地系统编码。</span><br></pre></td></tr></table></figure>
-
-<p>经过以上处理之后，编译期就不会再报“常量中有换行符”错误了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjz9j7sdx002lnkw0a5pc3r8o" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-QT信号与槽及其附属知识点-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/24/QT信号与槽及其附属知识点-md/" class="article-date">
-  <time datetime="2019-06-24T09:10:32.000Z" itemprop="datePublished">2019-06-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/QT/">QT</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/24/QT信号与槽及其附属知识点-md/">QT信号与槽及其附属知识点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<hr>
-<h2 id="QT常用函数概述"><a href="#QT常用函数概述" class="headerlink" title="QT常用函数概述"></a>QT常用函数概述</h2><ul>
-<li><p>setWindowTitle(“string”): 设置标题</p>
-</li>
-<li><p>setText(“string”)：给按钮设置内容</p>
-</li>
-<li><p>setParent(&amp;父对象)：设置父对象</p>
-</li>
-<li><p>构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）</p>
-</li>
-<li><p>move(x, y)：以左上角为坐标原点，移动x, y</p>
-</li>
-<li><p>show：显示对象所属控件</p>
-</li>
-<li><p>exec：进程一直显示，等待用户操作</p>
-</li>
-<li><p>connect(&amp;b1, &amp;QPushButton::pressed, this, &amp;MainWidget::close)</p>
-<ol>
-<li><p>&amp;b1: 信号发出者，指针类型</p>
-</li>
-<li><p>&amp;QPushButton::pressed：处理的信号，&amp;发送者的类名::信号的名字</p>
-</li>
-<li><p>this：信号接收者</p>
-</li>
-<li><p>&amp;MainWidget::close:  槽函数，信号处理函数  &amp;接收的类名::槽函数名字（接收对象在接收到信号之后所需要调用的函数）</p>
-</li>
-</ol>
-</li>
-<li><p>disconnect：断开信号和槽的连接</p>
-</li>
-<li><p>hide：对象所属控件隐藏</p>
-</li>
-<li><p>resize(x, y)：重新界定子窗口大小</p>
-</li>
-<li><p>move(x, y)：相对于父窗口，子窗口移动(x, y)</p>
-</li>
-<li><p>setGeometry(x1, y1, x2, y2)：(x1, y1)为框的位置，(x2, y2)为框的大小</p>
-</li>
-<li><p>menuBar：添加菜单栏</p>
-</li>
-<li><p>addMenu：添加菜单</p>
-</li>
-<li><p>addAction：添加菜单项，添加动作</p>
-</li>
-<li><p>addSeparator：添加分割线</p>
-</li>
-<li><p>addToolBar(“toolBar”)：添加菜单栏快捷方式</p>
-</li>
-<li><p>statusBar()：新建状态栏</p>
-</li>
-<li><p>QLabel：新建标签</p>
-</li>
-<li><p>addWidget：从左往右添加状态栏</p>
-</li>
-<li><p>addPermanentWidget：从右往左添加状态栏</p>
-</li>
-<li><p>QTextEdit：新建文本编辑框</p>
-</li>
-<li><p>setCentralWidget：为文本编辑框添加文本编辑功能</p>
-</li>
-<li><p>setWidget：给对应窗口设置文本编辑</p>
-<p>  例如：<code>this-&gt;setWidget(textEdit);</code>给当前窗口设置文本编辑</p>
-</li>
-<li><p>QMessageBox::about：创建关于对话框</p>
-</li>
-<li><p>QMessageBox::question：创建问题对话框</p>
-</li>
-<li><p>setCurrentIndex：切换页</p>
-</li>
-<li><p>setTextMargins：设置外边距（设置内容显示间隙）</p>
-</li>
-<li><p>setEchoMode：设置内容显示方式</p>
-</li>
-</ul>
-<h3 id="按钮，框函数"><a href="#按钮，框函数" class="headerlink" title="按钮，框函数"></a>按钮，框函数</h3><ul>
-<li><p>triggered</p>
-</li>
-<li><p>pressed</p>
-</li>
-<li><p>clicked</p>
-</li>
-</ul>
-<p><strong>功能好像一样QAQ</strong></p>
-<hr>
-<h2 id="QT头文件"><a href="#QT头文件" class="headerlink" title="QT头文件"></a>QT头文件</h2><ul>
-<li><p>QPushButton：按钮</p>
-</li>
-<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
-</li>
-<li><p>QMenu：菜单（添加菜单）</p>
-</li>
-<li><p>QAction：添加菜单项（添加动作）</p>
-</li>
-<li><p>QDebug：打印</p>
-</li>
-<li><p>QToolBar：添加菜单项的快捷方式</p>
-</li>
-<li><p>QStatusBar：状态栏</p>
-</li>
-<li><p>QLabel：标签</p>
-</li>
-<li><p>QTextEdit：文本编辑框（也称核心控件）</p>
-</li>
-<li><p>QDockWidget：浮动窗口</p>
-</li>
-<li><p>QDialog：模态对话框</p>
-</li>
-<li><p>QMessageBox：对话框</p>
-</li>
-<li><p>QFileDialog：文件对话框</p>
-<p>  示例：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">QAction *p5 = menu-&gt;addAction(QString::fromLocal8Bit(&quot;文件对话框&quot;));</span><br><span class="line">connect(p5, &amp;QAction::triggered,</span><br><span class="line">    [=]()</span><br><span class="line">    &#123;</span><br><span class="line">        QString path = QFileDialog::getOpenFileName(</span><br><span class="line">                    this,</span><br><span class="line">                    &quot;open&quot;,</span><br><span class="line">                    &quot;../&quot;,//打开文件对话框的位置（命令行）</span><br><span class="line">                    &quot;source(*.cpp *.h);;Text(*.txt);;All(*.*)&quot;//文件类型</span><br><span class="line">                    );</span><br><span class="line">        qDebug()&lt;&lt;path;</span><br><span class="line">    &#125;</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>QStringList：字符串列表</p>
-</li>
-<li><p>QCompleter：字符表达形式？？？</p>
-</li>
-<li><p>QMovie：gif动画</p>
-</li>
-</ul>
-<hr>
-<h2 id="信号与槽"><a href="#信号与槽" class="headerlink" title="信号与槽"></a>信号与槽</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>信号槽是 Qt 框架引以为豪的机制之一。所谓信号槽，实际就是观察者模式。当某个事件发生之后，比如，按钮检测到自己被点击了一下，它就会发出一个信号（signal）。这种发出是没有目的的，类似广播。如果有对象对这个信号感兴趣，它就会使用连接（connect）函数，意思是，将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。也就是说，当信号发出时，被连接的槽函数会自动被回调。这就类似观察者模式：当发生了感兴趣的事件，某一个操作就会被自动触发。（这里提一句，Qt 的信号槽使用了额外的处理来实现，并不是 GoF 经典的观察者模式的实现方式。）</p>
-<p>信号和槽是Qt特有的信息传输机制，是Qt设计程序的重要基础，它可以让互不干扰的对象建立一种联系。</p>
-<p>槽的本质是类的成员函数，其参数可以是任意类型的。和普通C++成员函数几乎没有区别，它可以是虚函数；也可以被重载；可以是公有的、保护的、私有的、也可以被其他C++成员函数调用。唯一区别的是：槽可以与信号连接在一起，每当和槽连接的信号被发射的时候，就会调用这个槽。</p>
-<h3 id="自定义槽"><a href="#自定义槽" class="headerlink" title="自定义槽"></a>自定义槽</h3><ol>
-<li><p>QT5：任意的成员函数，普通全局函数，静态函数</p>
-</li>
-<li><p>槽函数需要与信号一致（参数类型和参数个数一致）</p>
-</li>
-<li><p>由于信号都是没有返回值，所以，槽函数一定没有返回值</p>
-</li>
-</ol>
-<hr>
-<h2 id="额外知识点"><a href="#额外知识点" class="headerlink" title="额外知识点"></a>额外知识点</h2><ul>
-<li><p>emit：意为发送，主要用于发送信号</p>
-</li>
-<li><p>signals：</p>
-<ol>
-<li><p>信号必须有signals关键字来声明</p>
-</li>
-<li><p>信号没有返回值，但可以有参数</p>
-</li>
-<li><p>信号就是函数的声明，只需声明，无需定义</p>
-</li>
-<li><p>使用：emit mySignal();</p>
-</li>
-</ol>
-</li>
-<li><p>在发送带参数的命令时，字符串包含中文的话，如果报错，请参照<a href="https://youchen12138.github.io/2019/06/25/QT%E4%B8%AD%E6%8F%90%E7%A4%BA%E2%80%9C%E5%B8%B8%E9%87%8F%E4%B8%AD%E6%9C%89%E6%8D%A2%E8%A1%8C%E7%AC%A6%E2%80%9D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" target="_blank" rel="noopener">QT中提示“常量中h有换行符”解决办法 </a>一文</p>
-</li>
-<li><p>重载信号用函数指针</p>
-</li>
-</ul>
-<p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void (SubWidget::*funSignal)()=&amp;SubWidget::mySignal;</span><br><span class="line">void (SubWidget::*testSignal)(int, QString)=&amp;SubWidget::mySignal;</span><br><span class="line">connect(&amp;subWin, funSignal, this, &amp;MainWidget::dealSub);</span><br><span class="line">connect(&amp;subWin, testSignal, this, &amp;MainWidget::dealSolt);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>打印由Unicode编码转中文</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//str.toUtf8() -&gt; 字节数组QByteArray</span><br><span class="line">//...data() -&gt; QByteArray -&gt; char *</span><br><span class="line">qDebug()&lt;&lt;a&lt;&lt;str.toUtf8().data();</span><br><span class="line">//高版本可以直接用第二种方式</span><br><span class="line"></span><br><span class="line">//高版本QT可以直接打印中文</span><br><span class="line">qDebug()&lt;&lt;a&lt;&lt;str;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>Lambda表达式: </p>
-<ol>
-<li><p>匿名函数对象</p>
-</li>
-<li><p>C++11增加的新特性，项目文件：CONFIG += C++11</p>
-</li>
-<li><p>QT配合信号一起使用</p>
-<p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int a=10, b=100;</span><br><span class="line">connect(b4, &amp;QPushButton::released,</span><br><span class="line">        // = :把外部局部变量、类中所有成员以值传递方式</span><br><span class="line">        // this: 类中所有成员以值传递方式</span><br><span class="line">        // &amp; ：把外部所有局部变量（除类中定义的）</span><br><span class="line">        [=]() mutable   //将值传递的变量设为可改变</span><br><span class="line">        &#123;</span><br><span class="line">            b4-&gt;setText(&quot;123&quot;);</span><br><span class="line">            qDebug()&lt;&lt;&quot;1111&quot;;</span><br><span class="line">            qDebug()&lt;&lt;a&lt;&lt;b;</span><br><span class="line">            a=11;</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
-</ul>
-<h3 id="内存回收机制"><a href="#内存回收机制" class="headerlink" title="内存回收机制"></a>内存回收机制</h3><ul>
-<li><p>1）指定父对象后  2）直接或间接继承于QObject</p>
-</li>
-<li><p>子对象如果是动态分配空间的new，不需要手动释放delete</p>
-</li>
-<li><p>系统会自动释放</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjz9j7sdv002hnkw0bu58gugv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/23/hello-world/" class="article-date">
-  <time datetime="2019-06-23T12:20:47.578Z" itemprop="datePublished">2019-06-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjz9j7se80031nkw0yp9qmlqm" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-跨域-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/25/跨域-md/" class="article-date">
-  <time datetime="2019-05-25T06:59:34.000Z" itemprop="datePublished">2019-05-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/25/跨域-md/">跨域</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>一个域名地址的组成</li>
-</ul>
-<p>http://|www.|<code>abc.com：</code>|8080/|scripts/jquery.js|<br>-|-|-|-|-|-|-|-|<br>协议|子域名|主域名|端口号|请求资源地址</p>
-<ul>
-<li><p>当协议、子域名、主域名、端口号中任意一个不相同时，都算作不同域</p>
-</li>
-<li><p>不同域之间相互请求资源，就算作“跨域”</p>
-</li>
-</ul>
-<p>比如：<a href="http://www.abc.com/index.html" target="_blank" rel="noopener">http://www.abc.com/index.html</a> 请求 <a href="http://www.efg.com/service.php" target="_blank" rel="noopener">http://www.efg.com/service.php</a></p>
-<ul>
-<li>JavaScript处于安全方面的考虑，不允许跨域调用其它页面的对象。什么是跨域呢，简单的理解就是JavaScript同源策略的限制，<code>a.com</code>域名下的js无法操作<code>b.com</code>或是<code>c.a.com</code>域名下的对象</li>
-</ul>
-<h2 id="处理跨域方法一——代理"><a href="#处理跨域方法一——代理" class="headerlink" title="处理跨域方法一——代理"></a>处理跨域方法一——代理</h2><ul>
-<li><p>通过在同域名的web服务器创建一个代理：</p>
-</li>
-<li><p>北京服务器（域名：<a href="http://www.beijing.com）" target="_blank" rel="noopener">www.beijing.com）</a></p>
-<p>  上海服务器（域名：<a href="http://www.shanghai.com）" target="_blank" rel="noopener">www.shanghai.com）</a></p>
-</li>
-</ul>
-<ul>
-<li><p>比如在北京的web服务器的后台</p>
-<p>  <code>(www.beijing.com/proxy-shanghaiservice.php)</code>来调用上海服务器<code>(www.shanghai.com/service.php)</code>的服务，然后再把响应结果返回给前端，这样前端调用北京同域名的服务就和调用上海的服务效果相同了</p>
-</li>
-</ul>
-<h2 id="处理跨域方法二——JSONP"><a href="#处理跨域方法二——JSONP" class="headerlink" title="处理跨域方法二——JSONP"></a>处理跨域方法二——JSONP</h2><ul>
-<li><p>JSONP可用于解决主流浏览器的跨域数据访问的问题（通过script标签来调用其它页面）</p>
-</li>
-<li><p>JSONP不支持POST请求</p>
-</li>
-</ul>
-<h2 id="处理跨域方法三——XHR2"><a href="#处理跨域方法三——XHR2" class="headerlink" title="处理跨域方法三——XHR2"></a>处理跨域方法三——XHR2</h2><ul>
-<li><p>HTML5提供的XMLHttpRequest Level2已经实现了跨域访问以及其他的一些新功能</p>
-</li>
-<li><p>IE10以下的版本都不支持</p>
-</li>
-<li><p>在服务器端做一些小小的改造即可：</p>
-<p>  <code>header(&#39;Access-Control-Allow-Origin: *&#39;);</code></p>
-<p>  <code>header(&#39;Access-Control-Allow-Methods:POST,GET&#39;);</code></p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjz9j7sf6003xnkw08af6l3a3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
 
     </footer>
   </div>
@@ -1096,7 +1150,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -1106,7 +1160,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -1116,7 +1170,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -1138,23 +1192,23 @@
       <ul>
         
           <li>
-            <a href="/2019/08/11/HTML进阶知识点-HTML5属性变化/">HTML进阶知识点--HTML5属性变化</a>
+            <a href="/2019/08/16/CSS进阶知识点-渐变/">CSS进阶知识点--渐变</a>
           </li>
         
           <li>
-            <a href="/2019/08/10/HTML进阶知识点-HTML5标签变化/">HTML进阶知识点--HTML5标签变化</a>
+            <a href="/2019/08/16/CSS进阶知识点-背景/">CSS进阶知识点--背景</a>
           </li>
         
           <li>
-            <a href="/2019/08/08/CSS基础知识点-网页布局/">CSS基础知识点--网页布局</a>
+            <a href="/2019/08/16/CSS进阶知识点-CSS3边框和圆角/">CSS进阶知识点--CSS3边框和圆角（浏览器前缀）、盒阴影</a>
           </li>
         
           <li>
-            <a href="/2019/08/06/CSS基础知识点-CSS定位-position/">CSS基础知识点--CSS定位(position)</a>
+            <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
           </li>
         
           <li>
-            <a href="/2019/08/06/CSS基础知识点-float浮动/">CSS基础知识点--float浮动</a>
+            <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
           </li>
         
       </ul>

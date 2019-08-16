@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS额外知识点--文字和字体 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="text-overflow 与 word-wraptext-overflow用来设置是否使用一个省略标记（…）标示对象内文本的溢出。 语法：  但是text-overflow只是用来说明文字溢出时用什么方式显示，要实现溢出时产生省略号的效果，还须定义强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden），只有这样才能实现溢出文本显示省略号的">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS额外知识点--文字和字体">
+<meta property="og:url" content="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="text-overflow 与 word-wraptext-overflow用来设置是否使用一个省略标记（…）标示对象内文本的溢出。 语法：  但是text-overflow只是用来说明文字溢出时用什么方式显示，要实现溢出时产生省略号的效果，还须定义强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden），只有这样才能实现溢出文本显示省略号的">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://img.mukewang.com/53070cc00001a5bc06000200.jpg">
+<meta property="og:image" content="http://img.mukewang.com/53070cf700018a2b06000200.jpg">
+<meta property="og:updated_time" content="2019-08-16T04:55:21.687Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS额外知识点--文字和字体">
+<meta name="twitter:description" content="text-overflow 与 word-wraptext-overflow用来设置是否使用一个省略标记（…）标示对象内文本的溢出。 语法：  但是text-overflow只是用来说明文字溢出时用什么方式显示，要实现溢出时产生省略号的效果，还须定义强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden），只有这样才能实现溢出文本显示省略号的">
+<meta name="twitter:image" content="http://img.mukewang.com/53070cc00001a5bc06000200.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS额外知识点-文字和字体" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/14/CSS额外知识点-文字和字体/" class="article-date">
+  <time datetime="2019-07-14T06:28:17.000Z" itemprop="datePublished">2019-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS额外知识点--文字和字体
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="text-overflow-与-word-wrap"><a href="#text-overflow-与-word-wrap" class="headerlink" title="text-overflow 与 word-wrap"></a><strong>text-overflow</strong> 与 <strong>word-wrap</strong></h2><p>text-overflow用来设置是否使用一个省略标记（…）标示对象内文本的溢出。</p>
+<p>语法：</p>
+<p><img src="http://img.mukewang.com/53070cc00001a5bc06000200.jpg" alt></p>
+<p>但是<strong>text-overflow</strong>只是用来说明文字溢出时用什么方式显示，要实现溢出时产生<strong>省略号</strong>的效果，还须定义<strong>强制文本在一行内显示</strong>（white-space:nowrap）及<strong>溢出内容为隐藏</strong>（overflow:hidden），只有这样才能实现<strong>溢出文本显示省略号</strong>的效果，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">text-overflow:ellipsis; </span><br><span class="line">overflow:hidden; </span><br><span class="line">white-space:nowrap;</span><br></pre></td></tr></table></figure>
+
+<p>同时，<strong>word-wrap</strong>也可以用来设置<strong>文本行为</strong>，当前行超过指定容器的边界时是否断开转行。</p>
+<p>语法：</p>
+<p><img src="http://img.mukewang.com/53070cf700018a2b06000200.jpg" alt></p>
+<p><strong>normal</strong>为浏览器默认值，<strong>break-word</strong>设置在长单词或 <strong>URL地址</strong>内部进行换行，此属性不常用，用浏览器默认值即可。</p>
+<h2 id="嵌入字体-font-face"><a href="#嵌入字体-font-face" class="headerlink" title="嵌入字体@font-face"></a><strong>嵌入字体@font-face</strong></h2><p>@font-face能够加载服务器端的字体文件，让浏览器端可以显示用户电脑里没有安装的字体。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">    font-family : 字体名称;</span><br><span class="line">    src : 字体文件在服务器上的相对或绝对路径;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>这样设置之后，就可以像使用普通字体一样在<code>（font-*）</code>中设置字体样式。</p>
+<p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    font-size :12px;</span><br><span class="line">    font-family : &quot;My Font&quot;;</span><br><span class="line">    /*必须项，设置@font-face中font-family同样的值*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文本阴影text-shadow"><a href="#文本阴影text-shadow" class="headerlink" title="文本阴影text-shadow"></a>文本阴影text-shadow</h2><p>text-shadow可以用来设置文本的阴影效果。</p>
+<p>语法：</p>
+<p><code>text-shadow: X-Offset Y-Offset blur color;</code></p>
+<p><font color="LightPink">X-Offset</font>：表示阴影的水平偏移距离，其值为正值时阴影向右偏移，反之向左偏移；      </p>
+<p><font color="LightPink">Y-Offset</font>：是指阴影的垂直偏移距离，如果其值是正值时，阴影向下偏移，反之向上偏移；</p>
+<p><font color="LightPink">Blur</font>：是指阴影的模糊程度，其值不能是负值，如果值越大，阴影越模糊，反之阴影越清晰，如果不需要阴影模糊可以将Blur值设置为0；</p>
+<p><font color="LightPink">Color</font>：是指阴影的颜色，其可以使用rgba色。</p>
+<p>比如，我们可以用下面代码实现设置阴影效果。</p>
+<p><code>text-shadow: 0 1px 1px #fff</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="cjze4jf0m001fncw0vei5636d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/14/CSS额外知识点-背景样式/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS额外知识点--背景样式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/14/CSS额外知识点-颜色/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS额外知识点--颜色</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/16/CSS进阶知识点-渐变/">CSS进阶知识点--渐变</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/16/CSS进阶知识点-背景/">CSS进阶知识点--背景</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/16/CSS进阶知识点-CSS3边框和圆角/">CSS进阶知识点--CSS3边框和圆角（浏览器前缀）、盒阴影</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
