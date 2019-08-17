@@ -62,6 +62,88 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS基础知识点-float浮动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/06/CSS基础知识点-float浮动/" class="article-date">
+  <time datetime="2019-08-06T08:50:58.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/06/CSS基础知识点-float浮动/">CSS基础知识点--float浮动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="CSS定位机制"><a href="#CSS定位机制" class="headerlink" title="CSS定位机制"></a>CSS定位机制</h2><ul>
+<li><p>普通流（标准流）</p>
+</li>
+<li><p>浮动</p>
+</li>
+<li><p>绝对定位</p>
+</li>
+</ul>
+<h3 id="普通流"><a href="#普通流" class="headerlink" title="普通流"></a>普通流</h3><p><font color="pink">普通流（标准流）</font>：默认状态，元素自动从左到右，从上往下的排列</p>
+<h3 id="CSS-Float（浮动）的基础知识"><a href="#CSS-Float（浮动）的基础知识" class="headerlink" title="CSS Float（浮动）的基础知识"></a>CSS Float（浮动）的基础知识</h3><ul>
+<li><p>会使元素向左或向右移动，只能左右，不能上下</p>
+</li>
+<li><p>浮动元素碰到包含框或另一个浮动框，浮动停止</p>
+</li>
+<li><p>浮动元素之后的元素将围绕它，之前的不受影响</p>
+</li>
+<li><p>浮动元素会脱离标准流</p>
+</li>
+</ul>
+<h3 id="浮动的基本语法"><a href="#浮动的基本语法" class="headerlink" title="浮动的基本语法"></a>浮动的基本语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">float：left     靠左浮动</span><br><span class="line"></span><br><span class="line">float：right    靠右浮动</span><br><span class="line"></span><br><span class="line">float：none     不使用浮动</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用浮动后产生的问题"><a href="#使用浮动后产生的问题" class="headerlink" title="使用浮动后产生的问题"></a>使用浮动后产生的问题</h3><p>元素使用浮动后会脱离普通流，出现“高度塌陷”，也叫做浮动溢出。</p>
+<h2 id="清除浮动语法"><a href="#清除浮动语法" class="headerlink" title="清除浮动语法"></a>清除浮动语法</h2><blockquote>
+<p>clear：none | left | right | both</p>
+</blockquote>
+<h3 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h3><p>设置了float的元素会影响其他相邻元素，需要使用clear清除浮动，clear只会影响自身，不会对其他相邻元素造成影响！</p>
+<h3 id="清除浮动的常用方法"><a href="#清除浮动的常用方法" class="headerlink" title="清除浮动的常用方法"></a>清除浮动的常用方法</h3><h4 id="方法一：在浮动元素后使用一个空元素"><a href="#方法一：在浮动元素后使用一个空元素" class="headerlink" title="方法一：在浮动元素后使用一个空元素"></a>方法一：在浮动元素后使用一个空元素</h4><p>例如：<code>&lt;div class=&quot;clear&gt;&lt;/div&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.clear&#123;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法二：给浮动元素的容器添加-overflow：hidden；"><a href="#方法二：给浮动元素的容器添加-overflow：hidden；" class="headerlink" title="方法二：给浮动元素的容器添加 overflow：hidden；"></a>方法二：给浮动元素的容器添加 overflow：hidden；</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*zoom:1     //触发 hasLayout 兼容 IE 6、7</span><br></pre></td></tr></table></figure>
+
+<h4 id="方法三：使用CSS3的-after-伪元素"><a href="#方法三：使用CSS3的-after-伪元素" class="headerlink" title="方法三：使用CSS3的 :after 伪元素"></a>方法三：使用CSS3的 :after 伪元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.clearfix:after&#123;</span><br><span class="line">    content:&quot;.&quot;;</span><br><span class="line">    display:block;</span><br><span class="line">    height:0;</span><br><span class="line">    visibility:hidden;</span><br><span class="line">    clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="清除浮动其他方法"><a href="#清除浮动其他方法" class="headerlink" title="清除浮动其他方法"></a>清除浮动其他方法</h3><ol>
+<li><p>父级元素定义 height 。只适合高度固定的布局</p>
+</li>
+<li><p>父级元素也一起浮动。不推荐，会产生新的浮动问题</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-float浮动/" data-id="cjzfd8r000006row0vj5c0qth" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS基础知识点-背景和样式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/05/CSS基础知识点-背景和样式/" class="article-date">
@@ -300,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/CSS基础知识点-背景和样式/" data-id="cjze4jezy000lncw0p1qiles4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/CSS基础知识点-背景和样式/" data-id="cjzfd8r04000arow042otab9d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -534,7 +616,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="cjze4jezt000fncw0pxnhlry7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="cjzfd8r08000hrow0hf0ef4sd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -741,7 +823,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="cjze4jexl0000ncw0diqdc4dy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="cjzfd8qzy0004row0mcdnvrx6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -860,7 +942,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS文本样式/" data-id="cjze4jez50001ncw0lahmkz9p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS文本样式/" data-id="cjzfd8qz80000row0lpxa91xo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1052,7 +1134,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS样式命名/" data-id="cjze4jf05000sncw0ocy24lco" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS样式命名/" data-id="cjzfd8r12000yrow0xl0dldig" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1244,7 +1326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/31/CSS基础知识点-选择器/" data-id="cjze4jf0d0013ncw0yhm2zh76" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/31/CSS基础知识点-选择器/" data-id="cjzfd8r1b001erow0jvga0pg3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1353,7 +1435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/30/CSS基础知识点/" data-id="cjze4jf0b0010ncw0lpo6hon1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/30/CSS基础知识点/" data-id="cjzfd8r05000crow0t9cv7shy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1414,7 +1496,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/29/HTML基础知识点-div和span与块级和行内标签/" data-id="cjze4jf0q001oncw0jsh3ptr3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/29/HTML基础知识点-div和span与块级和行内标签/" data-id="cjzfd8r1x0020row0no50q702" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -1658,114 +1740,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/25/HTML基础知识点-表单/" data-id="cjze4jf2m004mncw0vsqhwffn" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HTML基础知识点-表格" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/24/HTML基础知识点-表格/" class="article-date">
-  <time datetime="2019-07-24T05:20:50.000Z" itemprop="datePublished">2019-07-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/HTML/">HTML</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/HTML基础知识点-表格/">HTML基础知识点-表格</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
-<li><p><code>&lt;table&gt;</code>：表格</p>
-</li>
-<li><p><code>&lt;tr&gt;</code>：行</p>
-</li>
-<li><p><code>&lt;td&gt;</code>：单元格</p>
-</li>
-</ul>
-<h2 id="带结构的表格"><a href="#带结构的表格" class="headerlink" title="带结构的表格"></a>带结构的表格</h2><p>表格划分三部分：表头，主体，脚注</p>
-<p>加载时可以逐个结构加载</p>
-<ul>
-<li><p>thead：表格的头（放表格的表头）</p>
-</li>
-<li><p>tbody：表格的主体（放数据本体）</p>
-</li>
-<li><p>tfoot：表格的脚（放表格的脚注）</p>
-</li>
-</ul>
-<p>无论这三个标签的位置如何变化，总是先显示<code>&lt;thead&gt;</code>，然后才是<code>&lt;tbody&gt;</code>，最后是<code>&lt;tfoot&gt;</code></p>
-<p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;                                 //表格开始</span><br><span class="line">    &lt;caption&gt;...&lt;/caption&gt;              //表格标题</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;                            //tr行标签</span><br><span class="line">            &lt;th&gt;表头&lt;/th&gt;               //表格头，内容居中，加粗显示</span><br><span class="line">            ...</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt; </span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;主体&lt;/td&gt;               //td单元格，默认</span><br><span class="line">            ...</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;脚注&lt;/td&gt;                        </span><br><span class="line">            ...</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;                               //表格结束</span><br></pre></td></tr></table></figure>
-
-<h3 id="table标签特殊属性"><a href="#table标签特殊属性" class="headerlink" title="table标签特殊属性"></a>table标签特殊属性</h3><ul>
-<li><p>cellspacing：单元格之间间距</p>
-</li>
-<li><p>cellpadding：单元格内内容和单元格边框的距离</p>
-</li>
-<li><p>frame：外部边框的显示</p>
-</li>
-<li><p>rules：内部标签的显示</p>
-</li>
-</ul>
-<h3 id="tr标签特殊属性"><a href="#tr标签特殊属性" class="headerlink" title="tr标签特殊属性"></a>tr标签特殊属性</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>align</td>
-<td>Left/center/right/justiy/char</td>
-<td>行内容的水平对齐</td>
-</tr>
-<tr>
-<td>Valign</td>
-<td>top/middle/bottom/baseline</td>
-<td>行内容的垂直对齐</td>
-</tr>
-<tr>
-<td>Bgcolor</td>
-<td>rgb/#xxxxxx/colorname</td>
-<td>行的背景颜色</td>
-</tr>
-</tbody></table>
-<p><code>&lt;td&gt;</code>和<code>&lt;th&gt;</code>常用标签属性类似与<code>&lt;tr&gt;</code></p>
-<h2 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h2><ul>
-<li><p>尽量少的使用表格嵌套</p>
-</li>
-<li><p>尽量少的使用表格跨行跨列</p>
-</li>
-</ul>
-<p>说明：减少代码维护成本，使用表格进行网页布局一般不设置border</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/24/HTML基础知识点-表格/" data-id="cjze4jf18002jncw0zjy68988" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/25/HTML基础知识点-表单/" data-id="cjzfd8r2a002krow01z5vpx6m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -1812,7 +1787,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18px;">CSS3</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/HTML/" style="font-size: 16px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 14px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -1834,6 +1809,10 @@
       <ul>
         
           <li>
+            <a href="/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/">CSS进阶知识点--文本与字体（overflow 及获取特殊字体）</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/16/CSS进阶知识点-渐变/">CSS进阶知识点--渐变</a>
           </li>
         
@@ -1847,10 +1826,6 @@
         
           <li>
             <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
           </li>
         
       </ul>

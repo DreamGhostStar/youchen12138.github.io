@@ -62,6 +62,113 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-HTML基础知识点-表格" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/24/HTML基础知识点-表格/" class="article-date">
+  <time datetime="2019-07-24T05:20:50.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/HTML基础知识点-表格/">HTML基础知识点-表格</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li><p><code>&lt;table&gt;</code>：表格</p>
+</li>
+<li><p><code>&lt;tr&gt;</code>：行</p>
+</li>
+<li><p><code>&lt;td&gt;</code>：单元格</p>
+</li>
+</ul>
+<h2 id="带结构的表格"><a href="#带结构的表格" class="headerlink" title="带结构的表格"></a>带结构的表格</h2><p>表格划分三部分：表头，主体，脚注</p>
+<p>加载时可以逐个结构加载</p>
+<ul>
+<li><p>thead：表格的头（放表格的表头）</p>
+</li>
+<li><p>tbody：表格的主体（放数据本体）</p>
+</li>
+<li><p>tfoot：表格的脚（放表格的脚注）</p>
+</li>
+</ul>
+<p>无论这三个标签的位置如何变化，总是先显示<code>&lt;thead&gt;</code>，然后才是<code>&lt;tbody&gt;</code>，最后是<code>&lt;tfoot&gt;</code></p>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;                                 //表格开始</span><br><span class="line">    &lt;caption&gt;...&lt;/caption&gt;              //表格标题</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;                            //tr行标签</span><br><span class="line">            &lt;th&gt;表头&lt;/th&gt;               //表格头，内容居中，加粗显示</span><br><span class="line">            ...</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt; </span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;主体&lt;/td&gt;               //td单元格，默认</span><br><span class="line">            ...</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;脚注&lt;/td&gt;                        </span><br><span class="line">            ...</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;                               //表格结束</span><br></pre></td></tr></table></figure>
+
+<h3 id="table标签特殊属性"><a href="#table标签特殊属性" class="headerlink" title="table标签特殊属性"></a>table标签特殊属性</h3><ul>
+<li><p>cellspacing：单元格之间间距</p>
+</li>
+<li><p>cellpadding：单元格内内容和单元格边框的距离</p>
+</li>
+<li><p>frame：外部边框的显示</p>
+</li>
+<li><p>rules：内部标签的显示</p>
+</li>
+</ul>
+<h3 id="tr标签特殊属性"><a href="#tr标签特殊属性" class="headerlink" title="tr标签特殊属性"></a>tr标签特殊属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>Left/center/right/justiy/char</td>
+<td>行内容的水平对齐</td>
+</tr>
+<tr>
+<td>Valign</td>
+<td>top/middle/bottom/baseline</td>
+<td>行内容的垂直对齐</td>
+</tr>
+<tr>
+<td>Bgcolor</td>
+<td>rgb/#xxxxxx/colorname</td>
+<td>行的背景颜色</td>
+</tr>
+</tbody></table>
+<p><code>&lt;td&gt;</code>和<code>&lt;th&gt;</code>常用标签属性类似与<code>&lt;tr&gt;</code></p>
+<h2 id="表格布局"><a href="#表格布局" class="headerlink" title="表格布局"></a>表格布局</h2><ul>
+<li><p>尽量少的使用表格嵌套</p>
+</li>
+<li><p>尽量少的使用表格跨行跨列</p>
+</li>
+</ul>
+<p>说明：减少代码维护成本，使用表格进行网页布局一般不设置border</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/24/HTML基础知识点-表格/" data-id="cjzfd8r2y003crow0zhdx2el7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-HTML基础知识点-图像与超链接" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/23/HTML基础知识点-图像与超链接/" class="article-date">
@@ -167,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/23/HTML基础知识点-图像与超链接/" data-id="cjze4jf0s001rncw0ydwp2rar" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/23/HTML基础知识点-图像与超链接/" data-id="cjzfd8r210026row0bsvjor7m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -348,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/21/HTML基础/" data-id="cjze4jf0x0020ncw0jshk7wli" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/21/HTML基础/" data-id="cjzfd8r24002arow0yqir2hm5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -406,7 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/20/Java知识点-2/" data-id="cjze4jf1e002uncw0dqf33tbl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/20/Java知识点-2/" data-id="cjzfd8r3h0042row0b94jj2q1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -544,7 +651,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="cjze4jf1b002pncw0cc2g4air" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="cjzfd8r34003irow0pvyjy58r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -583,7 +690,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/15/CSS额外知识点-选择器（下）/" data-id="cjze4jf0g0016ncw07big46a6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/15/CSS额外知识点-选择器（下）/" data-id="cjzfd8r160016row0m6bk27oz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -810,7 +917,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-选择器（上）/" data-id="cjze4jf2g004encw0mhwvla6s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-选择器（上）/" data-id="cjzfd8r1u001vrow0ri0hvnhu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -888,7 +995,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-背景样式/" data-id="cjze4jf0k001cncw08ig2a943" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-背景样式/" data-id="cjzfd8r1s001trow0slp1clg7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -959,7 +1066,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="cjze4jf0m001fncw0vei5636d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="cjzfd8r19001brow0c2z7hfai" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1020,110 +1127,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-颜色/" data-id="cjze4jf0o001incw0u4xh4o0n" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS额外知识点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/03/CSS额外知识点/" class="article-date">
-  <time datetime="2019-07-03T00:08:37.000Z" itemprop="datePublished">2019-07-03</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/CSS额外知识点/">CSS额外知识点--边框效果</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="圆角效果-border-radius"><a href="#圆角效果-border-radius" class="headerlink" title="圆角效果 border-radius"></a>圆角效果 border-radius</h2><p>border-radius是向元素添加圆角边框。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用方法：</span><br><span class="line">border-radius:10px;/* 所有角都使用半径为10px的圆角 */ </span><br><span class="line"></span><br><span class="line">border-radius: 5px 4px 3px 2px; /* 四个半径值分别是左上角、右上角、右下角和左下角，顺时针 */</span><br></pre></td></tr></table></figure>
-
-<p>不要以为<code>border-radius</code>的值只能用px单位，你还可以用百分比或者em，但兼容性目前还不太好。</p>
-<h2 id="阴影-box-shadow"><a href="#阴影-box-shadow" class="headerlink" title="阴影 box-shadow"></a>阴影 box-shadow</h2><p><img src="http://img.mukewang.com/54292d620001ffb107080250.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">box-shadow是向盒子添加阴影。支持添加一个或者多个。</span><br><span class="line"></span><br><span class="line">很简单的一段代码，就实现了投影效果，酷毙了。我们来看下语法：</span><br><span class="line"></span><br><span class="line">box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];</span><br><span class="line"></span><br><span class="line">参数介绍：</span><br><span class="line"></span><br><span class="line">注意：inset 可以写在参数的第一个或最后一个，其它位置是无效的。</span><br></pre></td></tr></table></figure>
-
-<h4 id="为元素设置外阴影："><a href="#为元素设置外阴影：" class="headerlink" title="为元素设置外阴影："></a>为元素设置外阴影：</h4><p>示例代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">  box-shadow:4px 2px 6px #333333; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<p><img src="http://img.mukewang.com/52e21c9000013c8f01180117.jpg" alt></p>
-<h4 id="为元素设置内阴影："><a href="#为元素设置内阴影：" class="headerlink" title="为元素设置内阴影："></a>为元素设置内阴影：</h4><p>示例代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">  box-shadow:4px 2px 6px #333333 inset; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<p><img src="http://img.mukewang.com/54292b990001ebea01290115.jpg" alt></p>
-<h4 id="阴影模糊半径与阴影扩展半径的区别"><a href="#阴影模糊半径与阴影扩展半径的区别" class="headerlink" title="阴影模糊半径与阴影扩展半径的区别"></a><font color="red">阴影模糊半径</font>与<font color="red">阴影扩展半径</font>的区别</h4><p>阴影模糊半径：此参数可选，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊；</p>
-<p>阴影扩展半径：此参数可选，其值可以是正负值，如果值为正，则整个阴影都延展扩大，反之值为负值时，则缩小；</p>
-<h4 id="X轴偏移量和Y轴偏移量值可以设置为负数"><a href="#X轴偏移量和Y轴偏移量值可以设置为负数" class="headerlink" title="X轴偏移量和Y轴偏移量值可以设置为负数"></a><font color="red">X轴偏移量</font>和<font color="red">Y轴偏移量值</font>可以设置为负数</h4><p>box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];</p>
-<p>X轴偏移量为负数：</p>
-<p>.boxshadow-outset{<br>    width:100px;<br>    height:100px;<br>    box-shadow:-4px 4px 6px #666;<br>}</p>
-<p>效果图：</p>
-<p><img src="http://img.mukewang.com/548fd91c000140a901540143.jpg" alt></p>
-<p>Y轴偏移量为负数：</p>
-<p>.boxshadow-outset{<br>    width:100px;<br>    height:100px;<br>    box-shadow:4px -4px 6px #666;<br>}</p>
-<p>效果图：</p>
-<p><img src="http://img.mukewang.com/548fd93e00011dd101570142.jpg" alt></p>
-<h2 id="为边框应用图片-border-image"><a href="#为边框应用图片-border-image" class="headerlink" title="为边框应用图片 border-image"></a>为边框应用图片 border-image</h2><p>顾名思义就是为边框应用背景图片，它和我们常用的background属性比较相似。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background:url(xx.jpg) 10px 20px no-repeat;</span><br></pre></td></tr></table></figure>
-
-<p>但是又比背景图片复杂一些。</p>
-<p>想象一下：一个矩形，有四个边框。如果应用了边框图片，图片该怎么分布呢？ 图片会自动被切割分成四等分。用于四个边框。</p>
-<p>可以理解为它是一个切片工具，会自动把用做边框的图片切割。怎么切割呢？为了方便理解，做了一张特殊的图片，由9个矩形（70<code>*</code>70像素）拼成的一张图（210<code>*</code>210像素），并标注好序号，是不是像传说中的九宫图，如下：</p>
-<p><img src="http://img.mukewang.com/52e21fea000127e802100210.jpg" alt></p>
-<p>我们把上图当作边框图片 来应用一下， 看一看是什么效果</p>
-<p>根据border-image的语法：</p>
-<p><img src="http://img.mukewang.com/52e2201a0001b1e004720260.jpg" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#border-image&#123;</span><br><span class="line">   background:#F4FFFA;</span><br><span class="line">   width:210px; height:210px; border:70px solid #ddd;</span><br><span class="line">   border-image:url(borderimg.png) 70 repeat  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<p><img src="http://img.mukewang.com/52e220780001091a03530354.jpg" alt></p>
-<p>从序号可以看出div的四个角分别对应了背景图片的四个角。而2,4,6,8 被重复。5在哪？因为是从四周向中心切割图片的所以，5显示不出来。而在chrome浏览器中5是存在的，下图的样子：</p>
-<p><img src="http://img.mukewang.com/52e220be0001cef603560358.jpg" alt></p>
-<p><strong>repeat</strong>的意思就是重复，目前因为是刚好被整除，效果看不出来。如果改下DIV的宽高，再来看重复的效果：</p>
-<p><img src="http://img.mukewang.com/52e2210700016f5603190313.jpg" alt></p>
-<p>边角部分为裁掉了，可见repeat就是一直重复，然后超出部分剪裁掉，而且是居中开始重复。</p>
-<p><strong>Round 参数</strong>：Round可以理解为圆满的铺满。为了实现圆满所以会压缩（或拉伸）；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#border-image &#123;</span><br><span class="line"></span><br><span class="line">     width:170px;</span><br><span class="line"></span><br><span class="line">     height:170px;</span><br><span class="line"></span><br><span class="line">     border:70px solid;</span><br><span class="line"></span><br><span class="line">     border-image:url(borderimg.png) 70 round;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<p>效果：</p>
-<p><img src="http://img.mukewang.com/52e2216700014c4103190312.jpg" alt></p>
-<p>可见图片被压扁了。</p>
-<p><strong>Stretch</strong> 很好理解就是拉伸，有多长拉多长。有多远“滚”多远。</p>
-<p><code>border-image:url(borderimg.png) 70 stretch</code></p>
-<p>看一下效果：</p>
-<p><img src="http://img.mukewang.com/52e2218d0001d45403530366.jpg" alt></p>
-<p>2,4,6,8分别被拉伸显示。</p>
-<p>注意：Chrome下，中间部分也会被拉伸，webkit浏览器对于round属性和repeat属性似乎没有区分，显示效果是一样的。</p>
-<p>Firefox 26.0 下是可以准确区分的。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="cjze4jf0p001lncw0bxcwsavr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-颜色/" data-id="cjzfd8r220027row0qqh8ljfa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1170,7 +1174,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18px;">CSS3</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/HTML/" style="font-size: 16px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 14px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -1192,6 +1196,10 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       <ul>
         
           <li>
+            <a href="/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/">CSS进阶知识点--文本与字体（overflow 及获取特殊字体）</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/16/CSS进阶知识点-渐变/">CSS进阶知识点--渐变</a>
           </li>
         
@@ -1205,10 +1213,6 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
         
           <li>
             <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
           </li>
         
       </ul>

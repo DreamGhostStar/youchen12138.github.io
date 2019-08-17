@@ -62,6 +62,109 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS额外知识点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/03/CSS额外知识点/" class="article-date">
+  <time datetime="2019-07-03T00:08:37.000Z" itemprop="datePublished">2019-07-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/03/CSS额外知识点/">CSS额外知识点--边框效果</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="圆角效果-border-radius"><a href="#圆角效果-border-radius" class="headerlink" title="圆角效果 border-radius"></a>圆角效果 border-radius</h2><p>border-radius是向元素添加圆角边框。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用方法：</span><br><span class="line">border-radius:10px;/* 所有角都使用半径为10px的圆角 */ </span><br><span class="line"></span><br><span class="line">border-radius: 5px 4px 3px 2px; /* 四个半径值分别是左上角、右上角、右下角和左下角，顺时针 */</span><br></pre></td></tr></table></figure>
+
+<p>不要以为<code>border-radius</code>的值只能用px单位，你还可以用百分比或者em，但兼容性目前还不太好。</p>
+<h2 id="阴影-box-shadow"><a href="#阴影-box-shadow" class="headerlink" title="阴影 box-shadow"></a>阴影 box-shadow</h2><p><img src="http://img.mukewang.com/54292d620001ffb107080250.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">box-shadow是向盒子添加阴影。支持添加一个或者多个。</span><br><span class="line"></span><br><span class="line">很简单的一段代码，就实现了投影效果，酷毙了。我们来看下语法：</span><br><span class="line"></span><br><span class="line">box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];</span><br><span class="line"></span><br><span class="line">参数介绍：</span><br><span class="line"></span><br><span class="line">注意：inset 可以写在参数的第一个或最后一个，其它位置是无效的。</span><br></pre></td></tr></table></figure>
+
+<h4 id="为元素设置外阴影："><a href="#为元素设置外阴影：" class="headerlink" title="为元素设置外阴影："></a>为元素设置外阴影：</h4><p>示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">  box-shadow:4px 2px 6px #333333; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/52e21c9000013c8f01180117.jpg" alt></p>
+<h4 id="为元素设置内阴影："><a href="#为元素设置内阴影：" class="headerlink" title="为元素设置内阴影："></a>为元素设置内阴影：</h4><p>示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">  box-shadow:4px 2px 6px #333333 inset; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/54292b990001ebea01290115.jpg" alt></p>
+<h4 id="阴影模糊半径与阴影扩展半径的区别"><a href="#阴影模糊半径与阴影扩展半径的区别" class="headerlink" title="阴影模糊半径与阴影扩展半径的区别"></a><font color="red">阴影模糊半径</font>与<font color="red">阴影扩展半径</font>的区别</h4><p>阴影模糊半径：此参数可选，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊；</p>
+<p>阴影扩展半径：此参数可选，其值可以是正负值，如果值为正，则整个阴影都延展扩大，反之值为负值时，则缩小；</p>
+<h4 id="X轴偏移量和Y轴偏移量值可以设置为负数"><a href="#X轴偏移量和Y轴偏移量值可以设置为负数" class="headerlink" title="X轴偏移量和Y轴偏移量值可以设置为负数"></a><font color="red">X轴偏移量</font>和<font color="red">Y轴偏移量值</font>可以设置为负数</h4><p>box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];</p>
+<p>X轴偏移量为负数：</p>
+<p>.boxshadow-outset{<br>    width:100px;<br>    height:100px;<br>    box-shadow:-4px 4px 6px #666;<br>}</p>
+<p>效果图：</p>
+<p><img src="http://img.mukewang.com/548fd91c000140a901540143.jpg" alt></p>
+<p>Y轴偏移量为负数：</p>
+<p>.boxshadow-outset{<br>    width:100px;<br>    height:100px;<br>    box-shadow:4px -4px 6px #666;<br>}</p>
+<p>效果图：</p>
+<p><img src="http://img.mukewang.com/548fd93e00011dd101570142.jpg" alt></p>
+<h2 id="为边框应用图片-border-image"><a href="#为边框应用图片-border-image" class="headerlink" title="为边框应用图片 border-image"></a>为边框应用图片 border-image</h2><p>顾名思义就是为边框应用背景图片，它和我们常用的background属性比较相似。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background:url(xx.jpg) 10px 20px no-repeat;</span><br></pre></td></tr></table></figure>
+
+<p>但是又比背景图片复杂一些。</p>
+<p>想象一下：一个矩形，有四个边框。如果应用了边框图片，图片该怎么分布呢？ 图片会自动被切割分成四等分。用于四个边框。</p>
+<p>可以理解为它是一个切片工具，会自动把用做边框的图片切割。怎么切割呢？为了方便理解，做了一张特殊的图片，由9个矩形（70<code>*</code>70像素）拼成的一张图（210<code>*</code>210像素），并标注好序号，是不是像传说中的九宫图，如下：</p>
+<p><img src="http://img.mukewang.com/52e21fea000127e802100210.jpg" alt></p>
+<p>我们把上图当作边框图片 来应用一下， 看一看是什么效果</p>
+<p>根据border-image的语法：</p>
+<p><img src="http://img.mukewang.com/52e2201a0001b1e004720260.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#border-image&#123;</span><br><span class="line">   background:#F4FFFA;</span><br><span class="line">   width:210px; height:210px; border:70px solid #ddd;</span><br><span class="line">   border-image:url(borderimg.png) 70 repeat  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/52e220780001091a03530354.jpg" alt></p>
+<p>从序号可以看出div的四个角分别对应了背景图片的四个角。而2,4,6,8 被重复。5在哪？因为是从四周向中心切割图片的所以，5显示不出来。而在chrome浏览器中5是存在的，下图的样子：</p>
+<p><img src="http://img.mukewang.com/52e220be0001cef603560358.jpg" alt></p>
+<p><strong>repeat</strong>的意思就是重复，目前因为是刚好被整除，效果看不出来。如果改下DIV的宽高，再来看重复的效果：</p>
+<p><img src="http://img.mukewang.com/52e2210700016f5603190313.jpg" alt></p>
+<p>边角部分为裁掉了，可见repeat就是一直重复，然后超出部分剪裁掉，而且是居中开始重复。</p>
+<p><strong>Round 参数</strong>：Round可以理解为圆满的铺满。为了实现圆满所以会压缩（或拉伸）；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#border-image &#123;</span><br><span class="line"></span><br><span class="line">     width:170px;</span><br><span class="line"></span><br><span class="line">     height:170px;</span><br><span class="line"></span><br><span class="line">     border:70px solid;</span><br><span class="line"></span><br><span class="line">     border-image:url(borderimg.png) 70 round;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/52e2216700014c4103190312.jpg" alt></p>
+<p>可见图片被压扁了。</p>
+<p><strong>Stretch</strong> 很好理解就是拉伸，有多长拉多长。有多远“滚”多远。</p>
+<p><code>border-image:url(borderimg.png) 70 stretch</code></p>
+<p>看一下效果：</p>
+<p><img src="http://img.mukewang.com/52e2218d0001d45403530366.jpg" alt></p>
+<p>2,4,6,8分别被拉伸显示。</p>
+<p>注意：Chrome下，中间部分也会被拉伸，webkit浏览器对于round属性和repeat属性似乎没有区分，显示效果是一样的。</p>
+<p>Firefox 26.0 下是可以准确区分的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="cjzfd8r1r001srow0tgj0t8r7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Qt之菜单概述" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/25/Qt之菜单概述/" class="article-date">
@@ -112,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjze4jf1g002xncw0q4htn0tz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjzfd8r35003krow0lkahyv09" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -167,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjze4jf1i0031ncw03qypdz05" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjzfd8r37003lrow0xtqs5k7m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -394,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjze4jf2j004hncw0t0x19qck" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjzfd8r3l004arow0mo9s2fxd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -445,7 +548,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjze4jf1o003ancw0g1xf7fl4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjzfd8r4p004srow01qr0suc5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,7 +630,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjze4jf1q003fncw0al1qo7z6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjzfd8r3f003xrow0os6meepe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -583,7 +686,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjze4jf1l0036ncw08pfi5ae5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjzfd8r3b003qrow075u3etkd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -656,7 +759,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjze4jf13002bncw0jlsv4zps" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjzfd8r2f002rrow0pw3cib2y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
@@ -738,7 +841,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjze4jf1j0033ncw0ydknsirp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjzfd8r3a003prow0vuixrbef" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -860,104 +963,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjze4jf17002hncw0ucusn0hp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjzfd8r2d002nrow04mowjsaa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-运算符" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/09/运算符/" class="article-date">
-  <time datetime="2019-04-09T05:05:40.000Z" itemprop="datePublished">2019-04-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/09/运算符/">运算符</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>typeof a可以获取a的类型（六个类型之一）它会将该值的类型以字符串形式返回。</p>
-</blockquote>
-<h2 id="各类型转换表"><a href="#各类型转换表" class="headerlink" title="各类型转换表"></a>各类型转换表</h2><p>String(数值) | String(语言) | Undefined | Null | Boolean(ture) | Boolean(false)</p>
-<ul>
-<li>| - | - | - | - | - | - |<br>数值| NaN| NaN| 0| 1| 0</li>
-</ul>
-<h2 id="非Number类型的值进行运算"><a href="#非Number类型的值进行运算" class="headerlink" title="非Number类型的值进行运算"></a>非Number类型的值进行运算</h2><p>都会将非Number的值转换为Number然后再进行运算，此时运算结果返回值为Number。</p>
-<ul>
-<li><p>任何值和NaN作运算结果为NaN</p>
-</li>
-<li><p>两个字符串相加，则会做“拼串”操作（不一定是数值，也可以汉字之类的）</p>
-</li>
-<li><p>两个字符串进行除+之外的运算（只能是数值，如果出现汉字等，则结果为NaN）</p>
-</li>
-<li><p>任何值和字符串相加，都要将值转换成字符串再进行相加。（此时的 + 起连接的作用）</p>
-</li>
-<li><p>可以通过让数字加上一个空的字符串，即可将其转换为string（隐式类型转换，由浏览器自动完成）</p>
-</li>
-<li><p>任何值做<code>- * /</code>运算时都会自动转换为Number，可以利用这一点做隐式的类型转换，可以通过为一个值<code>-0 *1 /1</code>来转换为Number</p>
-</li>
-</ul>
-<h2 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h2><blockquote>
-<p>一元运算符就是只涉及一个数的运算</p>
-</blockquote>
-<blockquote>
-<p>一元运算符的返回值请参照以上运算规则</p>
-</blockquote>
-<ul>
-<li><p><code>+</code>代表了<code>1*</code></p>
-</li>
-<li><p><code>-</code>代表了<code>-1*</code></p>
-</li>
-</ul>
-<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>进行<code>&gt;= &lt;= &gt; &lt;</code>等运算符</p>
-<ul>
-<li><p>若两边均为数值，则按照数学规则比较</p>
-</li>
-<li><p>若一边为数值，一边为其他类型，则将其他类型转换为数值再进行比较</p>
-</li>
-<li><p>若两边均为字符串，比较字符编码（一位一位进行比较）（通过Unicode编码表）</p>
-</li>
-</ul>
-<blockquote>
-<p>注意：比较两个字符串型的数字时，一定要转换类型</p>
-</blockquote>
-<blockquote>
-<p>在字符串中使用转义字符输入Unicode编码<code>\u四位编码（16进制）</code></p>
-</blockquote>
-<blockquote>
-<p>在网页中使用Unicode编码<code>&amp;#编码（10进制）</code></p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjze4jf2l004jncw0tkbd2sn2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
     </footer>
   </div>
@@ -1001,7 +1010,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/HTML/" style="font-size: 17.5px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 15px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12.5px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18px;">CSS3</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/HTML/" style="font-size: 16px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 14px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -1023,6 +1032,10 @@
       <ul>
         
           <li>
+            <a href="/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/">CSS进阶知识点--文本与字体（overflow 及获取特殊字体）</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/16/CSS进阶知识点-渐变/">CSS进阶知识点--渐变</a>
           </li>
         
@@ -1036,10 +1049,6 @@
         
           <li>
             <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
           </li>
         
       </ul>
