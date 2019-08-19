@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS3进阶知识点--2D转换 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="变形(Transform)属性让元素在一个坐标系统中变形。这个属性包含一系列变形函数，可以移动、旋转和缩放元素 语法 transform：none（默认值） | &amp;lt;transform-function&amp;gt; [ &amp;lt;transform-function&amp;gt; ] *;  2D 转换   属性 作用    rotate() 旋转   translate() 平移   scale()">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3进阶知识点--2D转换">
+<meta property="og:url" content="http://yoursite.com/2019/08/18/CSS进阶知识点-2D转换/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="变形(Transform)属性让元素在一个坐标系统中变形。这个属性包含一系列变形函数，可以移动、旋转和缩放元素 语法 transform：none（默认值） | &amp;lt;transform-function&amp;gt; [ &amp;lt;transform-function&amp;gt; ] *;  2D 转换   属性 作用    rotate() 旋转   translate() 平移   scale()">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-18T11:12:36.042Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3进阶知识点--2D转换">
+<meta name="twitter:description" content="变形(Transform)属性让元素在一个坐标系统中变形。这个属性包含一系列变形函数，可以移动、旋转和缩放元素 语法 transform：none（默认值） | &amp;lt;transform-function&amp;gt; [ &amp;lt;transform-function&amp;gt; ] *;  2D 转换   属性 作用    rotate() 旋转   translate() 平移   scale()">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS进阶知识点-2D转换" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/18/CSS进阶知识点-2D转换/" class="article-date">
+  <time datetime="2019-08-18T06:45:24.000Z" itemprop="datePublished">2019-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS3进阶知识点--2D转换
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="变形-Transform-属性"><a href="#变形-Transform-属性" class="headerlink" title="变形(Transform)属性"></a>变形(Transform)属性</h2><p>让元素在一个坐标系统中变形。这个属性包含一系列变形函数，可以移动、旋转和缩放元素</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>transform：none（默认值） | <code>&lt;transform-function&gt;</code> [ <code>&lt;transform-function&gt;</code> ] *;</p>
+</blockquote>
+<h1 id="2D-转换"><a href="#2D-转换" class="headerlink" title="2D 转换"></a>2D 转换</h1><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rotate()</td>
+<td>旋转</td>
+</tr>
+<tr>
+<td>translate()</td>
+<td>平移</td>
+</tr>
+<tr>
+<td>scale()</td>
+<td>缩放</td>
+</tr>
+<tr>
+<td>skew()</td>
+<td>扭曲或斜切</td>
+</tr>
+</tbody></table>
+<h2 id="旋转-rotate"><a href="#旋转-rotate" class="headerlink" title="旋转 rotate"></a>旋转 rotate</h2><p>通过指定的角度参数对原元素指定一个2D rotation（2D 旋转）</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>transform: rotate(<code>&lt;angle&gt;</code>)</p>
+</blockquote>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>angle 指旋转角度，正数表示顺时针旋转，负数表示逆时针旋转</p>
+<h2 id="移动-translate"><a href="#移动-translate" class="headerlink" title="移动 translate"></a>移动 translate</h2><p>根据左（X轴）和顶部（Y轴）位置给定的参数，从当前元素位置移动</p>
+<h3 id="translateX"><a href="#translateX" class="headerlink" title="translateX"></a>translateX</h3><p>通过给定一个X方向上的数目指定一个 translation</p>
+<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：translateX( value )</p>
+</blockquote>
+<h3 id="translateY"><a href="#translateY" class="headerlink" title="translateY"></a>translateY</h3><p>通过给定一个Y方向上的数目指定一个 translation</p>
+<h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：translateY( value )</p>
+</blockquote>
+<h3 id="translate"><a href="#translate" class="headerlink" title="translate"></a>translate</h3><p>通过给定一个X和Y方向上的数目指定一个 translation</p>
+<h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：translate( value1, [ value2 ] )</p>
+</blockquote>
+<p>如果写一个参数，代表 X 方向平移多少，而 Y 方向平移为 0 </p>
+<h2 id="缩放-scale"><a href="#缩放-scale" class="headerlink" title="缩放 scale"></a>缩放 scale</h2><p>指定对象的 2D scale（2D缩放）</p>
+<h3 id="取值说明"><a href="#取值说明" class="headerlink" title="取值说明"></a>取值说明</h3><p>只能为 数值，不能带单位</p>
+<h3 id="scaleX"><a href="#scaleX" class="headerlink" title="scaleX"></a>scaleX</h3><p>X 轴方向往中间缩放，以中线为原点线</p>
+<h4 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：scaleX( number )</p>
+</blockquote>
+<h3 id="scaleY"><a href="#scaleY" class="headerlink" title="scaleY"></a>scaleY</h3><p>Y 轴方向往中间缩放，以中线为原点线</p>
+<h4 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：scaleY( number )</p>
+</blockquote>
+<h3 id="scale"><a href="#scale" class="headerlink" title="scale"></a>scale</h3><p>X 轴和 Y 轴方向往中间缩放</p>
+<h4 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：scale( number1, [ number2 ] )</p>
+</blockquote>
+<p>如果写一个参数，代表 X 方向缩放多少，而 Y 方向和 X 方向缩放比例相同</p>
+<h2 id="扭曲-skew"><a href="#扭曲-skew" class="headerlink" title="扭曲 skew"></a>扭曲 skew</h2><p>指定对象 skew transformation（斜切扭曲）</p>
+<h3 id="skewX"><a href="#skewX" class="headerlink" title="skewX"></a>skewX</h3><p>按给定角度沿 X 轴指定一个 skew transformation（斜切变换）</p>
+<h4 id="语法-8"><a href="#语法-8" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：skewX( angle )</p>
+</blockquote>
+<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><ul>
+<li><p>正值：逆时针</p>
+</li>
+<li><p>负值：顺时针</p>
+</li>
+</ul>
+<h3 id="skewY"><a href="#skewY" class="headerlink" title="skewY"></a>skewY</h3><p>按给定角度沿 Y 轴指定一个 skew transformation（斜切变换）</p>
+<h4 id="语法-9"><a href="#语法-9" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：skewY( angle )</p>
+</blockquote>
+<h4 id="取值-1"><a href="#取值-1" class="headerlink" title="取值"></a>取值</h4><ul>
+<li><p>正值：顺时针</p>
+</li>
+<li><p>负值：逆时针</p>
+</li>
+<li><p>有效范围为-90~90，其余取值会重复</p>
+</li>
+</ul>
+<h3 id="skew"><a href="#skew" class="headerlink" title="skew"></a>skew</h3><p>综合 skewX 和 skewY 的情况</p>
+<h4 id="取值-2"><a href="#取值-2" class="headerlink" title="取值"></a>取值</h4><p>如果只有一个值，则 skewY 为0deg</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-2D转换/" data-id="cjzi3ubmr0016m4w0mud3hj7z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/18/CSS进阶知识点-3D转换/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS进阶知识点--3D转换及perspective 属性
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS进阶知识点--文本与字体（overflow 及获取特殊字体）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18px;">CSS3</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/HTML/" style="font-size: 16px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 14px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12px;">TheKnowledgeOf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-过渡/">CSS进阶知识点--过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/">CSS进阶知识点--Transform坐标系统与CSS矩阵及扩展</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/CSS进阶知识点-3D转换/">CSS进阶知识点--3D转换及perspective 属性</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/CSS进阶知识点-2D转换/">CSS3进阶知识点--2D转换</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/">CSS进阶知识点--文本与字体（overflow 及获取特殊字体）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
