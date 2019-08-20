@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS进阶知识点--动画性能优化 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="目标增强页面渲染性能 CPU 和 GPUCPU 即中央处理器，解释计算机指令以及处理计算机软件中的数据 GPU 即图片处理器，专门处理和绘制图形相关的硬件。GPU 是专门执行复杂的数学和几何计算而设计的，有了它，CPU 就从图形处理的任务中解放出来，可以执行其他更多的系统任务 现状CSS 的动画、变形、渐变并不会自动的触发 GPU 加速，而是使用浏览器稍慢的软件渲染引擎。 在 transitio">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS进阶知识点--动画性能优化">
+<meta property="og:url" content="http://yoursite.com/2019/08/19/CSS进阶知识点-动画性能优化/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="目标增强页面渲染性能 CPU 和 GPUCPU 即中央处理器，解释计算机指令以及处理计算机软件中的数据 GPU 即图片处理器，专门处理和绘制图形相关的硬件。GPU 是专门执行复杂的数学和几何计算而设计的，有了它，CPU 就从图形处理的任务中解放出来，可以执行其他更多的系统任务 现状CSS 的动画、变形、渐变并不会自动的触发 GPU 加速，而是使用浏览器稍慢的软件渲染引擎。 在 transitio">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-19T14:54:44.008Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS进阶知识点--动画性能优化">
+<meta name="twitter:description" content="目标增强页面渲染性能 CPU 和 GPUCPU 即中央处理器，解释计算机指令以及处理计算机软件中的数据 GPU 即图片处理器，专门处理和绘制图形相关的硬件。GPU 是专门执行复杂的数学和几何计算而设计的，有了它，CPU 就从图形处理的任务中解放出来，可以执行其他更多的系统任务 现状CSS 的动画、变形、渐变并不会自动的触发 GPU 加速，而是使用浏览器稍慢的软件渲染引擎。 在 transitio">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS进阶知识点-动画性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/19/CSS进阶知识点-动画性能优化/" class="article-date">
+  <time datetime="2019-08-19T14:22:03.000Z" itemprop="datePublished">2019-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS进阶知识点--动画性能优化
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>增强页面渲染性能</p>
+<h2 id="CPU-和-GPU"><a href="#CPU-和-GPU" class="headerlink" title="CPU 和 GPU"></a>CPU 和 GPU</h2><p>CPU 即中央处理器，解释计算机指令以及处理计算机软件中的数据</p>
+<p>GPU 即图片处理器，专门处理和绘制图形相关的硬件。GPU 是专门执行复杂的数学和几何计算而设计的，有了它，CPU 就从图形处理的任务中解放出来，可以执行其他更多的系统任务</p>
+<h2 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h2><p>CSS 的动画、变形、渐变并不会自动的触发 GPU 加速，而是使用浏览器稍慢的软件渲染引擎。</p>
+<p>在 transition，transform 和 animation 的世界里，应该卸载进程到 GPU 以加快速度。</p>
+<p>只有 3D 变形会有自己的 layer，2D变形不会</p>
+<h2 id="translateZ-（or-translate3d-）Hack"><a href="#translateZ-（or-translate3d-）Hack" class="headerlink" title="translateZ()（or translate3d()）Hack"></a>translateZ()（or translate3d()）Hack</h2><p>为元素添加没有变化的 3D 变形，骗取浏览器触发硬件加速</p>
+<h2 id="代价"><a href="#代价" class="headerlink" title="代价"></a>代价</h2><p>这种情况通过向它自己的层叠加元素，占用 RAM 和 GPU 存储空间</p>
+<h1 id="will-change"><a href="#will-change" class="headerlink" title="will-change"></a>will-change</h1><p>提前通知浏览器元素将要做什么动画，让浏览器提前准备合适的优化设置</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<p>will-change：auto | scroll-position | contents | <code>&lt;custom-ident&gt;</code> | <code>&lt;animateable-feature&gt;</code></p>
+</blockquote>
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auto</td>
+<td>此关键字表示没有特定的意图，适用于它通常所做的任何启发式和优化</td>
+</tr>
+<tr>
+<td>scroll-position</td>
+<td>表示将要改变元素的滚动位置</td>
+</tr>
+<tr>
+<td>contents</td>
+<td>表示将要改变元素的内容</td>
+</tr>
+<tr>
+<td><code>&lt;custom-ident&gt;</code></td>
+<td>明确指定将要改变的属性与给定的名称（最重要）</td>
+</tr>
+<tr>
+<td><code>&lt;animateable-feature&gt;</code></td>
+<td>可动画的一些特征值，比如left、top、margin等</td>
+</tr>
+</tbody></table>
+<h2 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h2><ul>
+<li><p>不能滥用</p>
+</li>
+<li><p>提前声明</p>
+</li>
+<li><p>remove</p>
+</li>
+</ul>
+<p>尽量将 will-change 放在 hover 伪类的父元素里</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画性能优化/" data-id="cjzjcx4bl001qg4w04ezem4mk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/19/CSS进阶知识点-动画/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS进阶知识点--动画及关键帧</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18px;">CSS3</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/HTML/" style="font-size: 16px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 14px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12px;">TheKnowledgeOf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画/">CSS进阶知识点--动画及关键帧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-过渡/">CSS进阶知识点--过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/">CSS进阶知识点--Transform坐标系统与CSS矩阵及扩展</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/CSS进阶知识点-3D转换/">CSS进阶知识点--3D转换及perspective 属性</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -62,6 +62,266 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS进阶知识点-动画性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/19/CSS进阶知识点-动画性能优化/" class="article-date">
+  <time datetime="2019-08-19T14:22:03.000Z" itemprop="datePublished">2019-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>增强页面渲染性能</p>
+<h2 id="CPU-和-GPU"><a href="#CPU-和-GPU" class="headerlink" title="CPU 和 GPU"></a>CPU 和 GPU</h2><p>CPU 即中央处理器，解释计算机指令以及处理计算机软件中的数据</p>
+<p>GPU 即图片处理器，专门处理和绘制图形相关的硬件。GPU 是专门执行复杂的数学和几何计算而设计的，有了它，CPU 就从图形处理的任务中解放出来，可以执行其他更多的系统任务</p>
+<h2 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h2><p>CSS 的动画、变形、渐变并不会自动的触发 GPU 加速，而是使用浏览器稍慢的软件渲染引擎。</p>
+<p>在 transition，transform 和 animation 的世界里，应该卸载进程到 GPU 以加快速度。</p>
+<p>只有 3D 变形会有自己的 layer，2D变形不会</p>
+<h2 id="translateZ-（or-translate3d-）Hack"><a href="#translateZ-（or-translate3d-）Hack" class="headerlink" title="translateZ()（or translate3d()）Hack"></a>translateZ()（or translate3d()）Hack</h2><p>为元素添加没有变化的 3D 变形，骗取浏览器触发硬件加速</p>
+<h2 id="代价"><a href="#代价" class="headerlink" title="代价"></a>代价</h2><p>这种情况通过向它自己的层叠加元素，占用 RAM 和 GPU 存储空间</p>
+<h1 id="will-change"><a href="#will-change" class="headerlink" title="will-change"></a>will-change</h1><p>提前通知浏览器元素将要做什么动画，让浏览器提前准备合适的优化设置</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<p>will-change：auto | scroll-position | contents | <code>&lt;custom-ident&gt;</code> | <code>&lt;animateable-feature&gt;</code></p>
+</blockquote>
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auto</td>
+<td>此关键字表示没有特定的意图，适用于它通常所做的任何启发式和优化</td>
+</tr>
+<tr>
+<td>scroll-position</td>
+<td>表示将要改变元素的滚动位置</td>
+</tr>
+<tr>
+<td>contents</td>
+<td>表示将要改变元素的内容</td>
+</tr>
+<tr>
+<td><code>&lt;custom-ident&gt;</code></td>
+<td>明确指定将要改变的属性与给定的名称（最重要）</td>
+</tr>
+<tr>
+<td><code>&lt;animateable-feature&gt;</code></td>
+<td>可动画的一些特征值，比如left、top、margin等</td>
+</tr>
+</tbody></table>
+<h2 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h2><ul>
+<li><p>不能滥用</p>
+</li>
+<li><p>提前声明</p>
+</li>
+<li><p>remove</p>
+</li>
+</ul>
+<p>尽量将 will-change 放在 hover 伪类的父元素里</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画性能优化/" data-id="cjzjcx4bl001qg4w04ezem4mk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS进阶知识点-动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/19/CSS进阶知识点-动画/" class="article-date">
+  <time datetime="2019-08-19T08:14:24.000Z" itemprop="datePublished">2019-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/CSS进阶知识点-动画/">CSS进阶知识点--动画及关键帧</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><h2 id="视觉暂留原理"><a href="#视觉暂留原理" class="headerlink" title="视觉暂留原理"></a>视觉暂留原理</h2><p>人类具有“视觉暂留”的特性，人的眼睛看到一幅画或一个物体后，在0.34秒内不会消失</p>
+<h2 id="动画原理"><a href="#动画原理" class="headerlink" title="动画原理"></a>动画原理</h2><p>通过把人物的表情、动作、变化等分解后画成许多动作瞬间的画幅，利用视觉暂留的原理，在一幅画还没消失前播放下一幅画，就会给人一种流畅的视觉变化效果</p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>手机设备的浏览器在使用CSS3动画时，要加上-webkit-前缀</p>
+<h2 id="CSS3-动画"><a href="#CSS3-动画" class="headerlink" title="CSS3 动画"></a>CSS3 动画</h2><p>使元素从一种样式逐渐变化成另一种样式的效果</p>
+<h1 id="动画属性-animation"><a href="#动画属性-animation" class="headerlink" title="动画属性 animation"></a>动画属性 animation</h1><h2 id="animation-name-属性"><a href="#animation-name-属性" class="headerlink" title="animation-name 属性"></a>animation-name 属性</h2><p>检索或设置对象所应用的动画名称</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-name: keyframename | none</p>
+</blockquote>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>keyframename：指定要绑定到选择器的关键帧的名称</p>
+<p>noen：不规定动画</p>
+<p>可以有多个值，每个值之间用“，”隔开</p>
+<h2 id="animation-duration-属性"><a href="#animation-duration-属性" class="headerlink" title="animation-duration 属性"></a>animation-duration 属性</h2><p>检索或设置对象动画的持续时间</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-duration: time</p>
+</blockquote>
+<h3 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h3><p>time 指定动画播放完成花费的时间。默认值为 0，意味着没有动画效果</p>
+<h2 id="animation-timing-function-属性"><a href="#animation-timing-function-属性" class="headerlink" title="animation-timing-function 属性"></a>animation-timing-function 属性</h2><p><a href="https://youchen12138.github.io/2019/08/19/CSS%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86%E7%82%B9-%E8%BF%87%E6%B8%A1/" target="_blank" rel="noopener">该属性请参考此链接</a></p>
+<h2 id="animation-delay-属性"><a href="#animation-delay-属性" class="headerlink" title="animation-delay 属性"></a>animation-delay 属性</h2><p><a href="https://youchen12138.github.io/2019/08/19/CSS%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86%E7%82%B9-%E8%BF%87%E6%B8%A1/" target="_blank" rel="noopener">该属性请参考此链接</a></p>
+<h2 id="animation-iteration-count-属性"><a href="#animation-iteration-count-属性" class="headerlink" title="animation-iteration-count 属性"></a>animation-iteration-count 属性</h2><p>检索或设置对象动画的循环次数</p>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-iteration-count: infinite | number</p>
+</blockquote>
+<h3 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
+<li><p>number 为数字，其默认值为1</p>
+</li>
+<li><p>infinite 为无限次数循环</p>
+</li>
+</ul>
+<h2 id="animation-direction-属性"><a href="#animation-direction-属性" class="headerlink" title="animation-direction 属性"></a>animation-direction 属性</h2><p>检索或设置对象动画在循环中是否反向运动</p>
+<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-direction: normal | reverse | alternate | alternate-reverse | initial | inherit</p>
+</blockquote>
+<h3 id="参数说明-3"><a href="#参数说明-3" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>normal</td>
+<td>正常方向</td>
+</tr>
+<tr>
+<td>reserve</td>
+<td>反方向运行</td>
+</tr>
+<tr>
+<td>alternate</td>
+<td>动画先正常运行再反向运行，并持续交替运行</td>
+</tr>
+<tr>
+<td>alternate-reserve</td>
+<td>动画先反方向运行再正向运行，并持续交替运行</td>
+</tr>
+</tbody></table>
+<h2 id="animation-fill-mode-属性"><a href="#animation-fill-mode-属性" class="headerlink" title="animation-fill-mode 属性"></a>animation-fill-mode 属性</h2><p>规定当动画不播放时（当动画完成或当动画有延迟未开始播放时），要应用到元素的样式</p>
+<h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-fill-mode: none | forwords | backwards | both | initial | inherit</p>
+</blockquote>
+<h3 id="参数说明-4"><a href="#参数说明-4" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>默认值。不设置对象动画之外的状态</td>
+</tr>
+<tr>
+<td>forwards</td>
+<td>设置对象状态为动画结束时的状态</td>
+</tr>
+<tr>
+<td>backwards</td>
+<td>设置对象状态为动画开始时的状态</td>
+</tr>
+<tr>
+<td>both</td>
+<td>设置对象状态为动画结束或开始的状态</td>
+</tr>
+</tbody></table>
+<h2 id="animation-play-state-属性"><a href="#animation-play-state-属性" class="headerlink" title="animation-play-state 属性"></a>animation-play-state 属性</h2><p>指定动画是否正在运行或已暂停</p>
+<h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><p>animation-paly-state：paused | running</p>
+<h3 id="参数说明-5"><a href="#参数说明-5" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
+<li><p>paused：暂停动画</p>
+</li>
+<li><p>running：默认值。正在运行的动画</p>
+</li>
+</ul>
+<h1 id="animation-复合属性"><a href="#animation-复合属性" class="headerlink" title="animation 复合属性"></a>animation 复合属性</h1><p>检索或设置对象所应用的动画特效</p>
+<h2 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<p>animation: name duration timing-function delay iteration-count direction fill-mode play-state</p>
+</blockquote>
+<h1 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h1><h2 id="Keyframes-定义"><a href="#Keyframes-定义" class="headerlink" title="Keyframes 定义"></a>Keyframes 定义</h2><p>关键帧。可以指定任何顺序排列来决定 Animation 动画变化的关键位置</p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>使用 @keyframes 规则创建动画，通过逐步改变从一个 CSS 样式设定到另一个</p>
+<p>在动画过程中可以通过 @keyframes 规则多次更改 CSS 样式的设定</p>
+<h2 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@keyframes animationname&#123;</span><br><span class="line">    keyframes-selector&#123;</span><br><span class="line">      css-styles</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="参数说明-6"><a href="#参数说明-6" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>animationname</td>
+<td>必写项。定义 animation 的名称</td>
+</tr>
+<tr>
+<td>keyframes-selector</td>
+<td>必写项。动画持续时间的百分比，0~100%、from(0%)、to(100%)</td>
+</tr>
+<tr>
+<td>css-styles</td>
+<td>必写项。一个或多个合法的 CSS 样式属性</td>
+</tr>
+<tr>
+<td>前缀</td>
+<td>可选。如果需要，加在@后面 keyframes 前面</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画/" data-id="cjzjcx4bb0019g4w0voismx74" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS进阶知识点-过渡" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/19/CSS进阶知识点-过渡/" class="article-date">
@@ -164,6 +424,10 @@
 <td>`steps ( <integer>[, [ start</integer></td>
 <td>end ] ] )`</td>
 </tr>
+<tr>
+<td>cubic-bezier(num1, num2, num3, num4)</td>
+<td>特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内</td>
+</tr>
 </tbody></table>
 <h2 id="transition-delay-属性"><a href="#transition-delay-属性" class="headerlink" title="transition-delay 属性"></a>transition-delay 属性</h2><p>检索或设置对象延迟过渡的时间</p>
 <h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
@@ -179,11 +443,12 @@
 <h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><blockquote>
 <p>transition: property duration timing-function delay</p>
 </blockquote>
+<p>必须写duration属性值</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-过渡/" data-id="cjzi3ubmz001cm4w0gjtp1vpa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-过渡/" data-id="cjzjcx4cu003dg4w00xhlo518" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -251,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/" data-id="cjzi3ubmo0013m4w0lu1wlj0m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/" data-id="cjzjcx4ba0017g4w08llb18l0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -345,7 +610,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-3D转换/" data-id="cjzi3ubmq0015m4w0fq2ukfjq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-3D转换/" data-id="cjzjcx4b70013g4w004t4ncj6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -475,7 +740,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-2D转换/" data-id="cjzi3ubmr0016m4w0mud3hj7z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-2D转换/" data-id="cjzjcx4b40010g4w084qlrbzm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -579,7 +844,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" data-id="cjzi3ubn2001hm4w0nw2096oa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" data-id="cjzjcx4be001eg4w0qr6qb9z5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -702,7 +967,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-渐变/" data-id="cjzi3ubna001tm4w0hvng17gp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-渐变/" data-id="cjzjcx4bi001kg4w0hi4utst7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -786,7 +1051,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-背景/" data-id="cjzi3ubn6001km4w0v9q6976o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-背景/" data-id="cjzjcx4bk001ng4w0iavnm7xd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -931,268 +1196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-CSS3边框和圆角/" data-id="cjzi3ubmu001am4w0cafhveht" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS进阶知识点-CSS3伪类选择器和伪元素" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" class="article-date">
-  <time datetime="2019-08-15T13:44:22.000Z" itemprop="datePublished">2019-08-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h1><ul>
-<li><p>动态伪类（锚点伪类、用户行为伪类）</p>
-</li>
-<li><p>UI元素状态伪类</p>
-</li>
-<li><p>CSS3结构伪类</p>
-</li>
-<li><p>否定选择器</p>
-</li>
-<li><p>伪元素</p>
-</li>
-</ul>
-<h2 id="动态伪类"><a href="#动态伪类" class="headerlink" title="动态伪类"></a>动态伪类</h2><p>这些伪类并不存在与 HTML 中，只有当用户和网站<strong>交互</strong>的时候才能体现出来</p>
-<h3 id="锚点伪类"><a href="#锚点伪类" class="headerlink" title="锚点伪类"></a>锚点伪类</h3><ul>
-<li><p>:link</p>
-</li>
-<li><p>:visited</p>
-</li>
-</ul>
-<h3 id="用户行为伪类"><a href="#用户行为伪类" class="headerlink" title="用户行为伪类"></a>用户行为伪类</h3><ul>
-<li><p>:hover</p>
-</li>
-<li><p>:active</p>
-</li>
-<li><p>:focus（获取到焦点时的样式）</p>
-</li>
-</ul>
-<h2 id="UI元素状态伪类"><a href="#UI元素状态伪类" class="headerlink" title="UI元素状态伪类"></a>UI元素状态伪类</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>我们把”<code>:enabled</code>“, “<code>:disabled</code>“, “<code>checked</code>“伪类称为UI元素状态伪类</p>
-<h2 id="CSS3结构类"><a href="#CSS3结构类" class="headerlink" title="CSS3结构类"></a>CSS3结构类</h2><h3 id="CSS3的-nth选择器"><a href="#CSS3的-nth选择器" class="headerlink" title="CSS3的:nth选择器"></a>CSS3的<code>:nth</code>选择器</h3><p>我们把CSS3的<code>:nth</code>选择器也称为CSS3结构类</p>
-<h3 id="选择方法"><a href="#选择方法" class="headerlink" title="选择方法"></a>选择方法</h3><ul>
-<li><p>:first-child</p>
-</li>
-<li><p>:last-child</p>
-</li>
-<li><p>:nth-child()</p>
-</li>
-<li><p>:nth-last-child()</p>
-</li>
-<li><p>:nth-of-type()</p>
-</li>
-<li><p>:nth-last-of-type()</p>
-</li>
-<li><p>:first-of-type</p>
-</li>
-<li><p>:last-of-type</p>
-</li>
-<li><p>only-child</p>
-</li>
-<li><p>only-of-type</p>
-</li>
-<li><p>:empty</p>
-</li>
-</ul>
-<h3 id="Element-first-child"><a href="#Element-first-child" class="headerlink" title="Element:first-child"></a>Element:first-child</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的首个子元素，并为其设置样式</p>
-<h3 id="Element-last-child"><a href="#Element-last-child" class="headerlink" title="Element:last-child"></a>Element:last-child</h3><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的最后一个子元素，并为其设置样式</p>
-<h3 id="Element-nth-child-N"><a href="#Element-nth-child-N" class="headerlink" title="Element:nth-child(N)"></a>Element:nth-child(N)</h3><h4 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素，不论元素的类型</p>
-<h4 id="关于参数（N）"><a href="#关于参数（N）" class="headerlink" title="关于参数（N）"></a>关于参数（N）</h4><ul>
-<li><p>odd 相当于2n+1</p>
-</li>
-<li><p>even 相当于2n</p>
-</li>
-</ul>
-<h3 id="Element-nth-last-child-N"><a href="#Element-nth-last-child-N" class="headerlink" title="Element:nth-last-child(N)"></a>Element:nth-last-child(N)</h3><h4 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数</p>
-<h3 id="Element-nth-of-type-N"><a href="#Element-nth-of-type-N" class="headerlink" title="Element:nth-of-type(N)"></a>Element:nth-of-type(N)</h3><h4 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素</p>
-<h3 id="Element-nth-last-of-type-N"><a href="#Element-nth-last-of-type-N" class="headerlink" title="Element:nth-last-of-type(N)"></a>Element:nth-last-of-type(N)</h3><h4 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素，从最后一个子元素开始计数</p>
-<h3 id="Element-first-of-type"><a href="#Element-first-of-type" class="headerlink" title="Element:first-of-type"></a>Element:first-of-type</h3><h4 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的首个子元素</p>
-<h3 id="Element-last-of-type"><a href="#Element-last-of-type" class="headerlink" title="Element:last-of-type"></a>Element:last-of-type</h3><h4 id="概念-8"><a href="#概念-8" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的最后一个子元素</p>
-<h3 id="Element-only-child"><a href="#Element-only-child" class="headerlink" title="Element:only-child"></a>Element:only-child</h3><h4 id="概念-9"><a href="#概念-9" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一子元素</p>
-<h3 id="Element-only-of-type"><a href="#Element-only-of-type" class="headerlink" title="Element:only-of-type"></a>Element:only-of-type</h3><h4 id="概念-10"><a href="#概念-10" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一特定类型的子元素</p>
-<h3 id="Element-empty"><a href="#Element-empty" class="headerlink" title="Element:empty"></a>Element:empty</h3><h4 id="概念-11"><a href="#概念-11" class="headerlink" title="概念"></a>概念</h4><p>选择没有子元素（包括文本节点）的每个元素</p>
-<h2 id="否定选择器"><a href="#否定选择器" class="headerlink" title="否定选择器"></a>否定选择器</h2><h3 id="概念-12"><a href="#概念-12" class="headerlink" title="概念"></a>概念</h3><p>:not(Element/selector)选择器匹配非指定元素/选择器的每个元素</p>
-<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
-<p>父元素:not(子元素/子选择器)</p>
-</blockquote>
-<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><p>CSS 伪元素用于向某些选择器设置特殊效果</p>
-<h2 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h2><blockquote>
-<p>元素::伪元素（Element::pseudo-element）</p>
-</blockquote>
-<h2 id="Element-first-line"><a href="#Element-first-line" class="headerlink" title="Element::first-line"></a>Element::first-line</h2><h3 id="概念-13"><a href="#概念-13" class="headerlink" title="概念"></a>概念</h3><p>根据”first-line”伪元素中的样式对 Element 元素的第一行文本进行格式化</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>“first-line”伪元素只能用于块级元素</p>
-<h2 id="Element-first-letter"><a href="#Element-first-letter" class="headerlink" title="Element::first-letter"></a>Element::first-letter</h2><h3 id="概念-14"><a href="#概念-14" class="headerlink" title="概念"></a>概念</h3><p>用于向文本的首字母设置特殊样式</p>
-<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>“first-letter”伪元素只能用于块级元素</p>
-<h2 id="Element-before"><a href="#Element-before" class="headerlink" title="Element::before"></a>Element::before</h2><h3 id="概念-15"><a href="#概念-15" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容前面插入新内容</p>
-<h3 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li><p>第一个子元素</p>
-</li>
-<li><p>行级元素</p>
-</li>
-<li><p>内容通过 content 写入</p>
-</li>
-<li><p>标签中找不到对应标签，只能在浏览器开发者工具那可以找到</p>
-</li>
-</ol>
-<h2 id="Element-after"><a href="#Element-after" class="headerlink" title="Element::after"></a>Element::after</h2><h3 id="概念-16"><a href="#概念-16" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容后面插入新内容</p>
-<h3 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用，常用于清除浮动</p>
-<h2 id="Element-selection"><a href="#Element-selection" class="headerlink" title="Element::selection"></a>Element::selection</h2><h3 id="概念-17"><a href="#概念-17" class="headerlink" title="概念"></a>概念</h3><p>用于设置在浏览器中选中文本后的背景色与前景色</p>
-<h3 id="兼容性说明"><a href="#兼容性说明" class="headerlink" title="兼容性说明"></a>兼容性说明</h3><p>::selection 在IE家族中，只有IE9+ 版本支持，在 Firefox 中需要加上其前缀”-moz”</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" data-id="cjzi3ubmj000zm4w08p87psb5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS进阶知识点-CSS3基本选择器及属性选择器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" class="article-date">
-  <time datetime="2019-08-14T00:32:50.000Z" itemprop="datePublished">2019-08-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h1><ul>
-<li><p>通配符选择器</p>
-</li>
-<li><p>元素选择器</p>
-</li>
-<li><p>类选择器</p>
-</li>
-<li><p>ID选择器</p>
-</li>
-<li><p>后代选择器</p>
-</li>
-<li><p>子元素选择器</p>
-</li>
-<li><p>相邻兄弟选择器</p>
-</li>
-<li><p>通用兄弟选择器</p>
-</li>
-<li><p>群组选择器</p>
-</li>
-</ul>
-<p>前五个请参考<a href="https://youchen12138.github.io/2019/07/31/CSS基础知识点-选择器/" target="_blank" rel="noopener">CSS基础知识点–选择器</a></p>
-<h2 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>子元素选择器只能选择某元素的子元素</p>
-<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
-<p>父元素 &gt; 子元素（father &gt; child）</p>
-</blockquote>
-<h2 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>相邻兄弟选择器可以选择紧接在另一元素后的元素，而且他们具有一个相同的父元素</p>
-<h3 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
-<p>元素 + 兄弟相邻元素（Element + Sibling）</p>
-</blockquote>
-<h2 id="通用兄弟选择器"><a href="#通用兄弟选择器" class="headerlink" title="通用兄弟选择器"></a>通用兄弟选择器</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>选择某元素后面的所有兄弟元素，而且他们具有一个相同的父元素</p>
-<h3 id="语法格式-2"><a href="#语法格式-2" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
-<p>元素 ~ 后面所有兄弟相邻元素（Element ~ Sibling）</p>
-</blockquote>
-<h2 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h2><h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><p>群组选择器是将具有相同样式的元素分组在一起，每个选择器之间使用逗号”,”隔开</p>
-<h3 id="语法格式-3"><a href="#语法格式-3" class="headerlink" title="语法格式"></a>语法格式</h3><p>元素1，元素2，…，元素n（Element1,Element2,…,Element3）</p>
-<h1 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h1><p>对带有制定属性的 HTML 元素设置样式</p>
-<p>使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值</p>
-<h2 id="Element-attribute"><a href="#Element-attribute" class="headerlink" title="Element[attribute]"></a>Element[attribute]</h2><h3 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h3><p>选择所有带有 attribute 属性元素</p>
-<h2 id="Element-attribute-”value”"><a href="#Element-attribute-”value”" class="headerlink" title="Element[attribute~=”value”]"></a>Element[attribute~=”value”]</h2><h3 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性有单词”value”的所有元素（属性不止一个属性值，其中一个属性值为”value”）</p>
-<p>注意：该属性选择器用于选取属性值中包含指定词汇的元素，只要是指定的属性，并且属性值列表中包含value，而不是在某个值中以value开头或结尾</p>
-<h2 id="Element-attribute-”value”-1"><a href="#Element-attribute-”value”-1" class="headerlink" title="Element[attribute^=”value”]"></a>Element[attribute^=”value”]</h2><h3 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值以”value”开头的所有元素</p>
-<p>注意：该属性选择器匹配指定属性的指定value值开头的元素，如果class中有多个value值，第一个值中的第一个字母不是指定的值，即使后面的属性中首字母是指定的值，那么也不能匹配上</p>
-<h2 id="Element-attribute-”value”-2"><a href="#Element-attribute-”value”-2" class="headerlink" title="Element[attribute$=”value”]"></a>Element[attribute$=”value”]</h2><h3 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值以”value”结尾的所有元素</p>
-<h2 id="Element-attribute-”value”-3"><a href="#Element-attribute-”value”-3" class="headerlink" title="Element[attribute*=”value”]"></a>Element[attribute*=”value”]</h2><h3 id="概念-8"><a href="#概念-8" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值包含”value”的所有元素（属性值中的单词包含）</p>
-<h2 id="Element-attribute-”value”-4"><a href="#Element-attribute-”value”-4" class="headerlink" title="Element[attribute|=”value”]"></a>Element[attribute|=”value”]</h2><h3 id="概念-9"><a href="#概念-9" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值为”value”或以”value”开头的元素</p>
-<table>
-<thead>
-<tr>
-<th>属性选择器</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Element[<code>attribute</code>]</td>
-<td>选择所有带有 attribute 属性元素</td>
-</tr>
-<tr>
-<td>Element[<code>attribute~=&quot;value&quot;</code>]</td>
-<td>选择 attribute 属性有单词”value”的所有元素（属性不止一个属性值，其中一个属性值为”value”）</td>
-</tr>
-<tr>
-<td>Element[<code>attribute^=&quot;value&quot;</code>]</td>
-<td>选择 attribute 属性值以”value”开头的所有元素</td>
-</tr>
-<tr>
-<td>Element[<code>attribute$=&quot;value&quot;</code>]</td>
-<td>选择 attribute 属性值以”value”结尾的所有元素</td>
-</tr>
-<tr>
-<td>Element[<code>attribute*=&quot;value&quot;</code>]</td>
-<td>选择 attribute 属性值包含”value”的所有元素（属性值中的单词包含）</td>
-</tr>
-<tr>
-<td>Element[`attribute</td>
-<td>=”value”`]</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" data-id="cjzi3ubmh000wm4w0dcngoph7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-CSS3边框和圆角/" data-id="cjzjcx4b60012g4w07em5mhyn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -1261,6 +1265,14 @@
       <ul>
         
           <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画/">CSS进阶知识点--动画及关键帧</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/19/CSS进阶知识点-过渡/">CSS进阶知识点--过渡</a>
           </li>
         
@@ -1270,14 +1282,6 @@
         
           <li>
             <a href="/2019/08/18/CSS进阶知识点-3D转换/">CSS进阶知识点--3D转换及perspective 属性</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/18/CSS进阶知识点-2D转换/">CSS3进阶知识点--2D转换</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/">CSS进阶知识点--文本与字体（overflow 及获取特殊字体）</a>
           </li>
         
       </ul>

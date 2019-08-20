@@ -62,6 +62,267 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS进阶知识点-CSS3伪类选择器和伪元素" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" class="article-date">
+  <time datetime="2019-08-15T13:44:22.000Z" itemprop="datePublished">2019-08-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h1><ul>
+<li><p>动态伪类（锚点伪类、用户行为伪类）</p>
+</li>
+<li><p>UI元素状态伪类</p>
+</li>
+<li><p>CSS3结构伪类</p>
+</li>
+<li><p>否定选择器</p>
+</li>
+<li><p>伪元素</p>
+</li>
+</ul>
+<h2 id="动态伪类"><a href="#动态伪类" class="headerlink" title="动态伪类"></a>动态伪类</h2><p>这些伪类并不存在与 HTML 中，只有当用户和网站<strong>交互</strong>的时候才能体现出来</p>
+<h3 id="锚点伪类"><a href="#锚点伪类" class="headerlink" title="锚点伪类"></a>锚点伪类</h3><ul>
+<li><p>:link</p>
+</li>
+<li><p>:visited</p>
+</li>
+</ul>
+<h3 id="用户行为伪类"><a href="#用户行为伪类" class="headerlink" title="用户行为伪类"></a>用户行为伪类</h3><ul>
+<li><p>:hover</p>
+</li>
+<li><p>:active</p>
+</li>
+<li><p>:focus（获取到焦点时的样式）</p>
+</li>
+</ul>
+<h2 id="UI元素状态伪类"><a href="#UI元素状态伪类" class="headerlink" title="UI元素状态伪类"></a>UI元素状态伪类</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>我们把”<code>:enabled</code>“, “<code>:disabled</code>“, “<code>checked</code>“伪类称为UI元素状态伪类</p>
+<h2 id="CSS3结构类"><a href="#CSS3结构类" class="headerlink" title="CSS3结构类"></a>CSS3结构类</h2><h3 id="CSS3的-nth选择器"><a href="#CSS3的-nth选择器" class="headerlink" title="CSS3的:nth选择器"></a>CSS3的<code>:nth</code>选择器</h3><p>我们把CSS3的<code>:nth</code>选择器也称为CSS3结构类</p>
+<h3 id="选择方法"><a href="#选择方法" class="headerlink" title="选择方法"></a>选择方法</h3><ul>
+<li><p>:first-child</p>
+</li>
+<li><p>:last-child</p>
+</li>
+<li><p>:nth-child()</p>
+</li>
+<li><p>:nth-last-child()</p>
+</li>
+<li><p>:nth-of-type()</p>
+</li>
+<li><p>:nth-last-of-type()</p>
+</li>
+<li><p>:first-of-type</p>
+</li>
+<li><p>:last-of-type</p>
+</li>
+<li><p>only-child</p>
+</li>
+<li><p>only-of-type</p>
+</li>
+<li><p>:empty</p>
+</li>
+</ul>
+<h3 id="Element-first-child"><a href="#Element-first-child" class="headerlink" title="Element:first-child"></a>Element:first-child</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的首个子元素，并为其设置样式</p>
+<h3 id="Element-last-child"><a href="#Element-last-child" class="headerlink" title="Element:last-child"></a>Element:last-child</h3><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的最后一个子元素，并为其设置样式</p>
+<h3 id="Element-nth-child-N"><a href="#Element-nth-child-N" class="headerlink" title="Element:nth-child(N)"></a>Element:nth-child(N)</h3><h4 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素，不论元素的类型</p>
+<h4 id="关于参数（N）"><a href="#关于参数（N）" class="headerlink" title="关于参数（N）"></a>关于参数（N）</h4><ul>
+<li><p>odd 相当于2n+1</p>
+</li>
+<li><p>even 相当于2n</p>
+</li>
+</ul>
+<h3 id="Element-nth-last-child-N"><a href="#Element-nth-last-child-N" class="headerlink" title="Element:nth-last-child(N)"></a>Element:nth-last-child(N)</h3><h4 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数</p>
+<h3 id="Element-nth-of-type-N"><a href="#Element-nth-of-type-N" class="headerlink" title="Element:nth-of-type(N)"></a>Element:nth-of-type(N)</h3><h4 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素</p>
+<h3 id="Element-nth-last-of-type-N"><a href="#Element-nth-last-of-type-N" class="headerlink" title="Element:nth-last-of-type(N)"></a>Element:nth-last-of-type(N)</h3><h4 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素，从最后一个子元素开始计数</p>
+<h3 id="Element-first-of-type"><a href="#Element-first-of-type" class="headerlink" title="Element:first-of-type"></a>Element:first-of-type</h3><h4 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的首个子元素</p>
+<h3 id="Element-last-of-type"><a href="#Element-last-of-type" class="headerlink" title="Element:last-of-type"></a>Element:last-of-type</h3><h4 id="概念-8"><a href="#概念-8" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的最后一个子元素</p>
+<h3 id="Element-only-child"><a href="#Element-only-child" class="headerlink" title="Element:only-child"></a>Element:only-child</h3><h4 id="概念-9"><a href="#概念-9" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一子元素</p>
+<h3 id="Element-only-of-type"><a href="#Element-only-of-type" class="headerlink" title="Element:only-of-type"></a>Element:only-of-type</h3><h4 id="概念-10"><a href="#概念-10" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一特定类型的子元素</p>
+<h3 id="Element-empty"><a href="#Element-empty" class="headerlink" title="Element:empty"></a>Element:empty</h3><h4 id="概念-11"><a href="#概念-11" class="headerlink" title="概念"></a>概念</h4><p>选择没有子元素（包括文本节点）的每个元素</p>
+<h2 id="否定选择器"><a href="#否定选择器" class="headerlink" title="否定选择器"></a>否定选择器</h2><h3 id="概念-12"><a href="#概念-12" class="headerlink" title="概念"></a>概念</h3><p>:not(Element/selector)选择器匹配非指定元素/选择器的每个元素</p>
+<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>父元素:not(子元素/子选择器)</p>
+</blockquote>
+<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><p>CSS 伪元素用于向某些选择器设置特殊效果</p>
+<h2 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h2><blockquote>
+<p>元素::伪元素（Element::pseudo-element）</p>
+</blockquote>
+<h2 id="Element-first-line"><a href="#Element-first-line" class="headerlink" title="Element::first-line"></a>Element::first-line</h2><h3 id="概念-13"><a href="#概念-13" class="headerlink" title="概念"></a>概念</h3><p>根据”first-line”伪元素中的样式对 Element 元素的第一行文本进行格式化</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>“first-line”伪元素只能用于块级元素</p>
+<h2 id="Element-first-letter"><a href="#Element-first-letter" class="headerlink" title="Element::first-letter"></a>Element::first-letter</h2><h3 id="概念-14"><a href="#概念-14" class="headerlink" title="概念"></a>概念</h3><p>用于向文本的首字母设置特殊样式</p>
+<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>“first-letter”伪元素只能用于块级元素</p>
+<h2 id="Element-before"><a href="#Element-before" class="headerlink" title="Element::before"></a>Element::before</h2><h3 id="概念-15"><a href="#概念-15" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容前面插入新内容</p>
+<h3 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li><p>第一个子元素</p>
+</li>
+<li><p>行级元素</p>
+</li>
+<li><p>内容通过 content 写入</p>
+</li>
+<li><p>标签中找不到对应标签，只能在浏览器开发者工具那可以找到</p>
+</li>
+</ol>
+<h2 id="Element-after"><a href="#Element-after" class="headerlink" title="Element::after"></a>Element::after</h2><h3 id="概念-16"><a href="#概念-16" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容后面插入新内容</p>
+<h3 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用，常用于清除浮动</p>
+<h2 id="Element-selection"><a href="#Element-selection" class="headerlink" title="Element::selection"></a>Element::selection</h2><h3 id="概念-17"><a href="#概念-17" class="headerlink" title="概念"></a>概念</h3><p>用于设置在浏览器中选中文本后的背景色与前景色</p>
+<h3 id="兼容性说明"><a href="#兼容性说明" class="headerlink" title="兼容性说明"></a>兼容性说明</h3><p>::selection 在IE家族中，只有IE9+ 版本支持，在 Firefox 中需要加上其前缀”-moz”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" data-id="cjzjcx4az000wg4w028djk3zi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS进阶知识点-CSS3基本选择器及属性选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" class="article-date">
+  <time datetime="2019-08-14T00:32:50.000Z" itemprop="datePublished">2019-08-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h1><ul>
+<li><p>通配符选择器</p>
+</li>
+<li><p>元素选择器</p>
+</li>
+<li><p>类选择器</p>
+</li>
+<li><p>ID选择器</p>
+</li>
+<li><p>后代选择器</p>
+</li>
+<li><p>子元素选择器</p>
+</li>
+<li><p>相邻兄弟选择器</p>
+</li>
+<li><p>通用兄弟选择器</p>
+</li>
+<li><p>群组选择器</p>
+</li>
+</ul>
+<p>前五个请参考<a href="https://youchen12138.github.io/2019/07/31/CSS基础知识点-选择器/" target="_blank" rel="noopener">CSS基础知识点–选择器</a></p>
+<h2 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>子元素选择器只能选择某元素的子元素</p>
+<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>父元素 &gt; 子元素（father &gt; child）</p>
+</blockquote>
+<h2 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>相邻兄弟选择器可以选择紧接在另一元素后的元素，而且他们具有一个相同的父元素</p>
+<h3 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>元素 + 兄弟相邻元素（Element + Sibling）</p>
+</blockquote>
+<h2 id="通用兄弟选择器"><a href="#通用兄弟选择器" class="headerlink" title="通用兄弟选择器"></a>通用兄弟选择器</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>选择某元素后面的所有兄弟元素，而且他们具有一个相同的父元素</p>
+<h3 id="语法格式-2"><a href="#语法格式-2" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>元素 ~ 后面所有兄弟相邻元素（Element ~ Sibling）</p>
+</blockquote>
+<h2 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h2><h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><p>群组选择器是将具有相同样式的元素分组在一起，每个选择器之间使用逗号”,”隔开</p>
+<h3 id="语法格式-3"><a href="#语法格式-3" class="headerlink" title="语法格式"></a>语法格式</h3><p>元素1，元素2，…，元素n（Element1,Element2,…,Element3）</p>
+<h1 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h1><p>对带有制定属性的 HTML 元素设置样式</p>
+<p>使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值</p>
+<h2 id="Element-attribute"><a href="#Element-attribute" class="headerlink" title="Element[attribute]"></a>Element[attribute]</h2><h3 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h3><p>选择所有带有 attribute 属性元素</p>
+<h2 id="Element-attribute-”value”"><a href="#Element-attribute-”value”" class="headerlink" title="Element[attribute~=”value”]"></a>Element[attribute~=”value”]</h2><h3 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性有单词”value”的所有元素（属性不止一个属性值，其中一个属性值为”value”）</p>
+<p>注意：该属性选择器用于选取属性值中包含指定词汇的元素，只要是指定的属性，并且属性值列表中包含value，而不是在某个值中以value开头或结尾</p>
+<h2 id="Element-attribute-”value”-1"><a href="#Element-attribute-”value”-1" class="headerlink" title="Element[attribute^=”value”]"></a>Element[attribute^=”value”]</h2><h3 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值以”value”开头的所有元素</p>
+<p>注意：该属性选择器匹配指定属性的指定value值开头的元素，如果class中有多个value值，第一个值中的第一个字母不是指定的值，即使后面的属性中首字母是指定的值，那么也不能匹配上</p>
+<h2 id="Element-attribute-”value”-2"><a href="#Element-attribute-”value”-2" class="headerlink" title="Element[attribute$=”value”]"></a>Element[attribute$=”value”]</h2><h3 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值以”value”结尾的所有元素</p>
+<h2 id="Element-attribute-”value”-3"><a href="#Element-attribute-”value”-3" class="headerlink" title="Element[attribute*=”value”]"></a>Element[attribute*=”value”]</h2><h3 id="概念-8"><a href="#概念-8" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值包含”value”的所有元素（属性值中的单词包含）</p>
+<h2 id="Element-attribute-”value”-4"><a href="#Element-attribute-”value”-4" class="headerlink" title="Element[attribute|=”value”]"></a>Element[attribute|=”value”]</h2><h3 id="概念-9"><a href="#概念-9" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值为”value”或以”value”开头的元素</p>
+<table>
+<thead>
+<tr>
+<th>属性选择器</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Element[<code>attribute</code>]</td>
+<td>选择所有带有 attribute 属性元素</td>
+</tr>
+<tr>
+<td>Element[<code>attribute~=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性有单词”value”的所有元素（属性不止一个属性值，其中一个属性值为”value”）</td>
+</tr>
+<tr>
+<td>Element[<code>attribute^=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性值以”value”开头的所有元素</td>
+</tr>
+<tr>
+<td>Element[<code>attribute$=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性值以”value”结尾的所有元素</td>
+</tr>
+<tr>
+<td>Element[<code>attribute*=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性值包含”value”的所有元素（属性值中的单词包含）</td>
+</tr>
+<tr>
+<td>Element[`attribute</td>
+<td>=”value”`]</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" data-id="cjzjcx4aw000tg4w0q4mftc8g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-HTML进阶知识点-HTML5属性变化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/11/HTML进阶知识点-HTML5属性变化/" class="article-date">
@@ -228,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/11/HTML进阶知识点-HTML5属性变化/" data-id="cjzi3ubnr002nm4w0a4jw078c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/11/HTML进阶知识点-HTML5属性变化/" data-id="cjzjcx4e60059g4w0bl9x6ea0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
@@ -525,7 +786,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/10/HTML进阶知识点-HTML5标签变化/" data-id="cjzi3ubpu0056m4w0xdns1kfx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/10/HTML进阶知识点-HTML5标签变化/" data-id="cjzjcx4cq0036g4w06h40qpk8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
@@ -588,7 +849,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/08/CSS基础知识点-网页布局/" data-id="cjzi3ubm1000gm4w0yl8ys19m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/08/CSS基础知识点-网页布局/" data-id="cjzjcx4a20005g4w0b5apn7f4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -698,7 +959,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-CSS定位-position/" data-id="cjzi3uble0001m4w0x0h6cjiq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-CSS定位-position/" data-id="cjzjcx49g0000g4w07slu0ywr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -780,7 +1041,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-float浮动/" data-id="cjzi3ublz000fm4w0398dqgjf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-float浮动/" data-id="cjzjcx4am000ig4w0si0jta1o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1030,7 +1291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/CSS基础知识点-背景和样式/" data-id="cjzi3ubm9000qm4w03150fqd3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/CSS基础知识点-背景和样式/" data-id="cjzjcx4bg001hg4w0r8z851ko" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1264,7 +1525,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="cjzi3ubm2000im4w0ep5e426z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="cjzjcx4an000jg4w0b28tar3b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1471,318 +1732,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="cjzi3ubjt0000m4w01vqr92uo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS基础知识点-CSS文本样式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/01/CSS基础知识点-CSS文本样式/" class="article-date">
-  <time datetime="2019-08-01T07:16:05.000Z" itemprop="datePublished">2019-08-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/01/CSS基础知识点-CSS文本样式/">CSS基础知识点--CSS文本样式(text)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="文本样式属性"><a href="#文本样式属性" class="headerlink" title="文本样式属性"></a>文本样式属性</h2><h3 id="text-align"><a href="#text-align" class="headerlink" title="text-align"></a>text-align</h3><p>设置元素内文本对齐方式</p>
-<p>语法：</p>
-<blockquote>
-<p>text-algin：left | right | center | justify</p>
-</blockquote>
-<p>注：该属性只对块级元素的设置有效</p>
-<h3 id="line-height属性"><a href="#line-height属性" class="headerlink" title="line-height属性"></a>line-height属性</h3><p>设置元素中文本行高</p>
-<p>语法：</p>
-<blockquote>
-<p>line-height：长度值 | 百分比</p>
-</blockquote>
-<p>em/%都会相对于字体大小来变化</p>
-<h3 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h3><p>设置元素内容的垂直方式</p>
-<p>语法：</p>
-<blockquote>
-<p>vertical-align：baseline(默认) | sub | super | top | text-top | middle | bottom | text-bottom | 长度 | 百分比</p>
-</blockquote>
-<p>说明：</p>
-<ul>
-<li><p>对行内元素有效，对块级元素无效</p>
-</li>
-<li><p>长度和百分比，上移为正，下移为负</p>
-</li>
-</ul>
-<h3 id="水平居中与垂直居中"><a href="#水平居中与垂直居中" class="headerlink" title="水平居中与垂直居中"></a>水平居中与垂直居中</h3><p>技巧：</p>
-<ul>
-<li><p>单行文字垂直居中：将line-height属性设置和元素一样高</p>
-</li>
-<li><p>单行文字水平对齐：text-align：center</p>
-</li>
-<li><p>多行文字垂直居中：</p>
-<ol>
-<li><p>先用display属性将div转换为table的表格元素，变为行内元素（display：table-cell），同时也将div的父元素div也转换为table元素（display：table）</p>
-</li>
-<li><p>再用vertical-align：middle将单元格垂直居中</p>
-</li>
-</ol>
-</li>
-<li><p>多行文字水平居中：text-align：center</p>
-</li>
-</ul>
-<h3 id="其他文本样式"><a href="#其他文本样式" class="headerlink" title="其他文本样式"></a>其他文本样式</h3><table>
-<thead>
-<tr>
-<th>字体属性</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>word-spacing</td>
-<td>设置元素内<font color="red">单词</font>之间间距</td>
-</tr>
-<tr>
-<td>letter-spacing</td>
-<td>设置元素内<font color="red">字母</font>之间间距</td>
-</tr>
-<tr>
-<td>text-transform</td>
-<td>设置元素内文本的大小写  capitalize / uppercase / lowercase / none</td>
-</tr>
-<tr>
-<td>text-decoration</td>
-<td>设置元素内文本的装饰  underline / overline / line-through / blink / none</td>
-</tr>
-</tbody></table>
-<h4 id="text-indent"><a href="#text-indent" class="headerlink" title="text-indent"></a>text-indent</h4><p>主要作用：首行缩进</p>
-<p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-indent:2em;</span><br></pre></td></tr></table></figure>
-
-<h2 id="CSS文本样式应用"><a href="#CSS文本样式应用" class="headerlink" title="CSS文本样式应用"></a>CSS文本样式应用</h2><p>经验技巧：</p>
-<ol>
-<li><p>网页制作从整体到局部</p>
-</li>
-<li><p>借助手册和网络</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS文本样式/" data-id="cjzi3ubli0004m4w033yf0hth" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS基础知识点-CSS样式命名" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/01/CSS基础知识点-CSS样式命名/" class="article-date">
-  <time datetime="2019-08-01T05:58:44.000Z" itemprop="datePublished">2019-08-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/01/CSS基础知识点-CSS样式命名/">CSS基础知识点--CSS样式命名</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<ol>
-<li>页面结构</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>结构</th>
-<th>英文命名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>页头</td>
-<td>header</td>
-</tr>
-<tr>
-<td>导航</td>
-<td>nav</td>
-</tr>
-<tr>
-<td>页面主体</td>
-<td>main</td>
-</tr>
-<tr>
-<td>侧栏</td>
-<td>sidebar</td>
-</tr>
-<tr>
-<td>页尾</td>
-<td>footer</td>
-</tr>
-<tr>
-<td>栏目</td>
-<td>column</td>
-</tr>
-<tr>
-<td>内容</td>
-<td>content/container</td>
-</tr>
-<tr>
-<td>页面外围控制</td>
-<td>wrapper</td>
-</tr>
-<tr>
-<td>容器</td>
-<td>container</td>
-</tr>
-<tr>
-<td>左右中</td>
-<td>left right center</td>
-</tr>
-</tbody></table>
-<ol start="2">
-<li>导航</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>位置</th>
-<th>英文命名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>导航</td>
-<td>nav</td>
-</tr>
-<tr>
-<td>左导航</td>
-<td>leftSidebar</td>
-</tr>
-<tr>
-<td>主导航</td>
-<td>mainNav</td>
-</tr>
-<tr>
-<td>右导航</td>
-<td>rightSidebar</td>
-</tr>
-<tr>
-<td>子导航</td>
-<td>subNav</td>
-</tr>
-<tr>
-<td>菜单</td>
-<td>menu</td>
-</tr>
-<tr>
-<td>顶导航</td>
-<td>topNav</td>
-</tr>
-<tr>
-<td>子菜单</td>
-<td>subMenu</td>
-</tr>
-<tr>
-<td>边导航</td>
-<td>sidebar</td>
-</tr>
-<tr>
-<td>标题</td>
-<td>title</td>
-</tr>
-<tr>
-<td>摘要</td>
-<td>summary</td>
-</tr>
-</tbody></table>
-<ol start="3">
-<li>功能</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>英文命名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>标志</td>
-<td>logo</td>
-</tr>
-<tr>
-<td>注册</td>
-<td>register</td>
-</tr>
-<tr>
-<td>广告</td>
-<td>banner</td>
-</tr>
-<tr>
-<td>搜索</td>
-<td>search</td>
-</tr>
-<tr>
-<td>登陆</td>
-<td>login</td>
-</tr>
-<tr>
-<td>功能区</td>
-<td>shop</td>
-</tr>
-<tr>
-<td>登陆条</td>
-<td>loginbar</td>
-</tr>
-<tr>
-<td>标题</td>
-<td>title</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS样式命名/" data-id="cjzi3ubm4000km4w0bje8evbg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="cjzjcx4a10004g4w06cfha7ln" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1851,6 +1801,14 @@
       <ul>
         
           <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画/">CSS进阶知识点--动画及关键帧</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/19/CSS进阶知识点-过渡/">CSS进阶知识点--过渡</a>
           </li>
         
@@ -1860,14 +1818,6 @@
         
           <li>
             <a href="/2019/08/18/CSS进阶知识点-3D转换/">CSS进阶知识点--3D转换及perspective 属性</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/18/CSS进阶知识点-2D转换/">CSS3进阶知识点--2D转换</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/">CSS进阶知识点--文本与字体（overflow 及获取特殊字体）</a>
           </li>
         
       </ul>

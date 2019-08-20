@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>CSS进阶知识点--动画及关键帧 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="动画视觉暂留原理人类具有“视觉暂留”的特性，人的眼睛看到一幅画或一个物体后，在0.34秒内不会消失 动画原理通过把人物的表情、动作、变化等分解后画成许多动作瞬间的画幅，利用视觉暂留的原理，在一幅画还没消失前播放下一幅画，就会给人一种流畅的视觉变化效果 兼容性手机设备的浏览器在使用CSS3动画时，要加上-webkit-前缀 CSS3 动画使元素从一种样式逐渐变化成另一种样式的效果 动画属性 ani">
+<meta name="keywords" content="CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS进阶知识点--动画及关键帧">
+<meta property="og:url" content="http://yoursite.com/2019/08/19/CSS进阶知识点-动画/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="动画视觉暂留原理人类具有“视觉暂留”的特性，人的眼睛看到一幅画或一个物体后，在0.34秒内不会消失 动画原理通过把人物的表情、动作、变化等分解后画成许多动作瞬间的画幅，利用视觉暂留的原理，在一幅画还没消失前播放下一幅画，就会给人一种流畅的视觉变化效果 兼容性手机设备的浏览器在使用CSS3动画时，要加上-webkit-前缀 CSS3 动画使元素从一种样式逐渐变化成另一种样式的效果 动画属性 ani">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-19T14:23:06.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS进阶知识点--动画及关键帧">
+<meta name="twitter:description" content="动画视觉暂留原理人类具有“视觉暂留”的特性，人的眼睛看到一幅画或一个物体后，在0.34秒内不会消失 动画原理通过把人物的表情、动作、变化等分解后画成许多动作瞬间的画幅，利用视觉暂留的原理，在一幅画还没消失前播放下一幅画，就会给人一种流畅的视觉变化效果 兼容性手机设备的浏览器在使用CSS3动画时，要加上-webkit-前缀 CSS3 动画使元素从一种样式逐渐变化成另一种样式的效果 动画属性 ani">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-CSS进阶知识点-动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/19/CSS进阶知识点-动画/" class="article-date">
+  <time datetime="2019-08-19T08:14:24.000Z" itemprop="datePublished">2019-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      CSS进阶知识点--动画及关键帧
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><h2 id="视觉暂留原理"><a href="#视觉暂留原理" class="headerlink" title="视觉暂留原理"></a>视觉暂留原理</h2><p>人类具有“视觉暂留”的特性，人的眼睛看到一幅画或一个物体后，在0.34秒内不会消失</p>
+<h2 id="动画原理"><a href="#动画原理" class="headerlink" title="动画原理"></a>动画原理</h2><p>通过把人物的表情、动作、变化等分解后画成许多动作瞬间的画幅，利用视觉暂留的原理，在一幅画还没消失前播放下一幅画，就会给人一种流畅的视觉变化效果</p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>手机设备的浏览器在使用CSS3动画时，要加上-webkit-前缀</p>
+<h2 id="CSS3-动画"><a href="#CSS3-动画" class="headerlink" title="CSS3 动画"></a>CSS3 动画</h2><p>使元素从一种样式逐渐变化成另一种样式的效果</p>
+<h1 id="动画属性-animation"><a href="#动画属性-animation" class="headerlink" title="动画属性 animation"></a>动画属性 animation</h1><h2 id="animation-name-属性"><a href="#animation-name-属性" class="headerlink" title="animation-name 属性"></a>animation-name 属性</h2><p>检索或设置对象所应用的动画名称</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-name: keyframename | none</p>
+</blockquote>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>keyframename：指定要绑定到选择器的关键帧的名称</p>
+<p>noen：不规定动画</p>
+<p>可以有多个值，每个值之间用“，”隔开</p>
+<h2 id="animation-duration-属性"><a href="#animation-duration-属性" class="headerlink" title="animation-duration 属性"></a>animation-duration 属性</h2><p>检索或设置对象动画的持续时间</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-duration: time</p>
+</blockquote>
+<h3 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h3><p>time 指定动画播放完成花费的时间。默认值为 0，意味着没有动画效果</p>
+<h2 id="animation-timing-function-属性"><a href="#animation-timing-function-属性" class="headerlink" title="animation-timing-function 属性"></a>animation-timing-function 属性</h2><p><a href="https://youchen12138.github.io/2019/08/19/CSS%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86%E7%82%B9-%E8%BF%87%E6%B8%A1/" target="_blank" rel="noopener">该属性请参考此链接</a></p>
+<h2 id="animation-delay-属性"><a href="#animation-delay-属性" class="headerlink" title="animation-delay 属性"></a>animation-delay 属性</h2><p><a href="https://youchen12138.github.io/2019/08/19/CSS%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86%E7%82%B9-%E8%BF%87%E6%B8%A1/" target="_blank" rel="noopener">该属性请参考此链接</a></p>
+<h2 id="animation-iteration-count-属性"><a href="#animation-iteration-count-属性" class="headerlink" title="animation-iteration-count 属性"></a>animation-iteration-count 属性</h2><p>检索或设置对象动画的循环次数</p>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-iteration-count: infinite | number</p>
+</blockquote>
+<h3 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
+<li><p>number 为数字，其默认值为1</p>
+</li>
+<li><p>infinite 为无限次数循环</p>
+</li>
+</ul>
+<h2 id="animation-direction-属性"><a href="#animation-direction-属性" class="headerlink" title="animation-direction 属性"></a>animation-direction 属性</h2><p>检索或设置对象动画在循环中是否反向运动</p>
+<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-direction: normal | reverse | alternate | alternate-reverse | initial | inherit</p>
+</blockquote>
+<h3 id="参数说明-3"><a href="#参数说明-3" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>normal</td>
+<td>正常方向</td>
+</tr>
+<tr>
+<td>reserve</td>
+<td>反方向运行</td>
+</tr>
+<tr>
+<td>alternate</td>
+<td>动画先正常运行再反向运行，并持续交替运行</td>
+</tr>
+<tr>
+<td>alternate-reserve</td>
+<td>动画先反方向运行再正向运行，并持续交替运行</td>
+</tr>
+</tbody></table>
+<h2 id="animation-fill-mode-属性"><a href="#animation-fill-mode-属性" class="headerlink" title="animation-fill-mode 属性"></a>animation-fill-mode 属性</h2><p>规定当动画不播放时（当动画完成或当动画有延迟未开始播放时），要应用到元素的样式</p>
+<h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>animation-fill-mode: none | forwords | backwards | both | initial | inherit</p>
+</blockquote>
+<h3 id="参数说明-4"><a href="#参数说明-4" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>默认值。不设置对象动画之外的状态</td>
+</tr>
+<tr>
+<td>forwards</td>
+<td>设置对象状态为动画结束时的状态</td>
+</tr>
+<tr>
+<td>backwards</td>
+<td>设置对象状态为动画开始时的状态</td>
+</tr>
+<tr>
+<td>both</td>
+<td>设置对象状态为动画结束或开始的状态</td>
+</tr>
+</tbody></table>
+<h2 id="animation-play-state-属性"><a href="#animation-play-state-属性" class="headerlink" title="animation-play-state 属性"></a>animation-play-state 属性</h2><p>指定动画是否正在运行或已暂停</p>
+<h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><p>animation-paly-state：paused | running</p>
+<h3 id="参数说明-5"><a href="#参数说明-5" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
+<li><p>paused：暂停动画</p>
+</li>
+<li><p>running：默认值。正在运行的动画</p>
+</li>
+</ul>
+<h1 id="animation-复合属性"><a href="#animation-复合属性" class="headerlink" title="animation 复合属性"></a>animation 复合属性</h1><p>检索或设置对象所应用的动画特效</p>
+<h2 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<p>animation: name duration timing-function delay iteration-count direction fill-mode play-state</p>
+</blockquote>
+<h1 id="keyframes"><a href="#keyframes" class="headerlink" title="@keyframes"></a>@keyframes</h1><h2 id="Keyframes-定义"><a href="#Keyframes-定义" class="headerlink" title="Keyframes 定义"></a>Keyframes 定义</h2><p>关键帧。可以指定任何顺序排列来决定 Animation 动画变化的关键位置</p>
+<h2 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h2><p>使用 @keyframes 规则创建动画，通过逐步改变从一个 CSS 样式设定到另一个</p>
+<p>在动画过程中可以通过 @keyframes 规则多次更改 CSS 样式的设定</p>
+<h2 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@keyframes animationname&#123;</span><br><span class="line">    keyframes-selector&#123;</span><br><span class="line">      css-styles</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="参数说明-6"><a href="#参数说明-6" class="headerlink" title="参数说明"></a>参数说明</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>animationname</td>
+<td>必写项。定义 animation 的名称</td>
+</tr>
+<tr>
+<td>keyframes-selector</td>
+<td>必写项。动画持续时间的百分比，0~100%、from(0%)、to(100%)</td>
+</tr>
+<tr>
+<td>css-styles</td>
+<td>必写项。一个或多个合法的 CSS 样式属性</td>
+</tr>
+<tr>
+<td>前缀</td>
+<td>可选。如果需要，加在@后面 keyframes 前面</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画/" data-id="cjzjcx4bb0019g4w0voismx74" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/19/CSS进阶知识点-动画性能优化/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS进阶知识点--动画性能优化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/19/CSS进阶知识点-过渡/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS进阶知识点--过渡</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18px;">CSS3</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/HTML/" style="font-size: 16px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 14px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 14px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12px;">TheKnowledgeOf</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画/">CSS进阶知识点--动画及关键帧</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-过渡/">CSS进阶知识点--过渡</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/">CSS进阶知识点--Transform坐标系统与CSS矩阵及扩展</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/18/CSS进阶知识点-3D转换/">CSS进阶知识点--3D转换及perspective 属性</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

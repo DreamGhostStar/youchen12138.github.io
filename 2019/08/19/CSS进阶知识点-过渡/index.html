@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="过渡允许 CSS 的属性值在一定的时间区间内平滑地过渡 在鼠标单击、获取焦点、被点击或对元素任何改变中触发，并平滑地以动画效果改变 CSS 的属性值 transition 属性transition-property 属性检索或设置对象中的参与过渡的属性 语法 transition-property：none | all | property  参数说明   参数 作用    none 没有属性改">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-19T07:51:07.242Z">
+<meta property="og:updated_time" content="2019-08-19T10:01:09.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS进阶知识点--过渡">
 <meta name="twitter:description" content="过渡允许 CSS 的属性值在一定的时间区间内平滑地过渡 在鼠标单击、获取焦点、被点击或对元素任何改变中触发，并平滑地以动画效果改变 CSS 的属性值 transition 属性transition-property 属性检索或设置对象中的参与过渡的属性 语法 transition-property：none | all | property  参数说明   参数 作用    none 没有属性改">
@@ -167,6 +167,10 @@
 <td>`steps ( <integer>[, [ start</integer></td>
 <td>end ] ] )`</td>
 </tr>
+<tr>
+<td>cubic-bezier(num1, num2, num3, num4)</td>
+<td>特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内</td>
+</tr>
 </tbody></table>
 <h2 id="transition-delay-属性"><a href="#transition-delay-属性" class="headerlink" title="transition-delay 属性"></a>transition-delay 属性</h2><p>检索或设置对象延迟过渡的时间</p>
 <h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
@@ -182,11 +186,12 @@
 <h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><blockquote>
 <p>transition: property duration timing-function delay</p>
 </blockquote>
+<p>必须写duration属性值</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-过渡/" data-id="cjzi3ubmz001cm4w0gjtp1vpa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-过渡/" data-id="cjzjcx4cu003dg4w00xhlo518" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -196,6 +201,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/08/19/CSS进阶知识点-动画/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS进阶知识点--动画及关键帧
+        
+      </div>
+    </a>
   
   
     <a href="/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/" id="article-nav-older" class="article-nav-link-wrap">
@@ -258,6 +272,14 @@
       <ul>
         
           <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/CSS进阶知识点-动画/">CSS进阶知识点--动画及关键帧</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/19/CSS进阶知识点-过渡/">CSS进阶知识点--过渡</a>
           </li>
         
@@ -267,14 +289,6 @@
         
           <li>
             <a href="/2019/08/18/CSS进阶知识点-3D转换/">CSS进阶知识点--3D转换及perspective 属性</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/18/CSS进阶知识点-2D转换/">CSS3进阶知识点--2D转换</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/">CSS进阶知识点--文本与字体（overflow 及获取特殊字体）</a>
           </li>
         
       </ul>
