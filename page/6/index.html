@@ -62,6 +62,210 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-XMLHttpRequest-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/16/XMLHttpRequest-md/" class="article-date">
+  <time datetime="2019-05-16T09:16:17.000Z" itemprop="datePublished">2019-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/16/XMLHttpRequest-md/">XMLHttpRequest</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="XMLHTTPRequest发送请求"><a href="#XMLHTTPRequest发送请求" class="headerlink" title="XMLHTTPRequest发送请求"></a>XMLHTTPRequest发送请求</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><blockquote>
+<p>将请求发送到服务器上</p>
+</blockquote>
+<ul>
+<li><p>open(method, url, async)</p>
+<p>  method：采用了什么方式（GET还是POST）</p>
+<p>  url：请求的地址。可以使用相对地址也可以使用绝对地址</p>
+<p>  async请求同步/异步。true表示异步，flase表示同步</p>
+</li>
+<li><p>send(string)</p>
+<p>  使用GET可以不填写string参数，使用POST必须填写string参数</p>
+</li>
+</ul>
+<h3 id="取得响应"><a href="#取得响应" class="headerlink" title="取得响应"></a>取得响应</h3><ul>
+<li><p>responseText：获得字符串形式的响应数据</p>
+</li>
+<li><p>responseXML：获得XML形式的响应数据</p>
+</li>
+<li><p>status和statusText：以数字和文本形式返回HTTP状态码</p>
+</li>
+<li><p>getAllResponseHeader()：获取所有的响应报头</p>
+</li>
+<li><p>getResponseHeader()：查询响应中的某个字段的值</p>
+</li>
+</ul>
+<h3 id="readyState属性"><a href="#readyState属性" class="headerlink" title="readyState属性"></a>readyState属性</h3><blockquote>
+<p>0：请求未初始化，open还没有调用</p>
+</blockquote>
+<blockquote>
+<p>1：服务器连接已建立，open已经调用了</p>
+</blockquote>
+<blockquote>
+<p>2：请求已接收，也就是接收到头信息了</p>
+</blockquote>
+<blockquote>
+<p>3：请求处理中，也就是接收到响应主体了</p>
+</blockquote>
+<blockquote>
+<p>4：请求已完成，且响应已就绪，也就是响应完成了</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjzorkg9r0042dkw0pmu363vl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTTP请求" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/16/HTTP请求/" class="article-date">
+  <time datetime="2019-05-16T07:28:06.000Z" itemprop="datePublished">2019-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/16/HTTP请求/">HTTP请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是HTTP"><a href="#什么是HTTP" class="headerlink" title="什么是HTTP"></a>什么是HTTP</h2><ul>
+<li><p>http是计算机通过网络进行通信的规则。</p>
+</li>
+<li><p>主要使浏览器能够从web服务器去请求信息和服务。</p>
+</li>
+<li><p>HTTP是一种无状态的协议。无状态指的是不建立持久的连接，服务端不保留连接的一些相关信息。</p>
+</li>
+</ul>
+<h2 id="概念介绍——HTTP请求"><a href="#概念介绍——HTTP请求" class="headerlink" title="概念介绍——HTTP请求"></a>概念介绍——HTTP请求</h2><h3 id="HTTP请求通常有以下7个步骤"><a href="#HTTP请求通常有以下7个步骤" class="headerlink" title="HTTP请求通常有以下7个步骤"></a>HTTP请求通常有以下7个步骤</h3><ol>
+<li><p>建立TCP连接</p>
+</li>
+<li><p>Web浏览器向Web服务器发送请求命令</p>
+</li>
+<li><p>Web浏览器发送请求头信息</p>
+</li>
+<li><p>Web服务器应答</p>
+</li>
+<li><p>Web服务器发送应答头信息</p>
+</li>
+<li><p>Web服务器向浏览器发送数据</p>
+</li>
+<li><p>Web服务器关闭TCP连接</p>
+</li>
+</ol>
+<h3 id="HTTP请求一般由四部分组成"><a href="#HTTP请求一般由四部分组成" class="headerlink" title="HTTP请求一般由四部分组成"></a>HTTP请求一般由四部分组成</h3><ol>
+<li><p>HTTP请求的方法或动作，比如是GET还是POST请求</p>
+</li>
+<li><p>正在请求的URL，总得知道请求的地址是什么吧</p>
+</li>
+<li><p>请求头，包含一些客户端环境信息，身份验证信息等</p>
+</li>
+<li><p>请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等等</p>
+</li>
+</ol>
+<h3 id="两种请求区别"><a href="#两种请求区别" class="headerlink" title="两种请求区别"></a>两种请求区别</h3><ul>
+<li><p>GET： </p>
+<ol>
+<li><p>一般用于信息获取</p>
+</li>
+<li><p>使用URL传递参数</p>
+</li>
+<li><p>对所发送信息的数量也有限制，一般在2000个字符</p>
+</li>
+</ol>
+</li>
+<li><p>POST</p>
+<ol>
+<li><p>一般用于修改服务器上的资源</p>
+</li>
+<li><p>对所发送信息的数量无限制</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h3 id="一个HTTP响应一般由三部分组成"><a href="#一个HTTP响应一般由三部分组成" class="headerlink" title="一个HTTP响应一般由三部分组成"></a>一个HTTP响应一般由三部分组成</h3><ol>
+<li><p>一个数字和文字组成的状态码，用来显示请求成功还是失败</p>
+</li>
+<li><p>响应头，响应头也和请求头一样包含许多有用的信息，例如服务器类型、日期时间、内容类型和长度等</p>
+</li>
+<li><p>响应体，也就是响应正文</p>
+</li>
+</ol>
+<h3 id="HTTP状态码（status）"><a href="#HTTP状态码（status）" class="headerlink" title="HTTP状态码（status）"></a>HTTP状态码（status）</h3><ul>
+<li>HTTP状态码由3位数字构成，其中首位数字定义了状态码的类型</li>
+</ul>
+<blockquote>
+<p>1xx：信息类，表示收到Web浏览器请求，正在进一步的处理中</p>
+</blockquote>
+<blockquote>
+<p>2xx：成功，表示用户请求被正确接收，理解和处理例如：200 OK</p>
+</blockquote>
+<blockquote>
+<p>3xx：重定向，表示请求没有成功，客户必须采取进一步的动作</p>
+</blockquote>
+<blockquote>
+<p>4xx：客户端错误，表示客户端提交的请求有错误，例如：404 NOT Found，意味着请求中所引用的文档不存在</p>
+</blockquote>
+<blockquote>
+<p>5xx：服务器错误，表示服务器不能完成对请求的处理：如500</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjzorkg970036dkw0z3a0jnps" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-运算符" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/09/运算符/" class="article-date">
@@ -144,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjzngtq8y005gfcw0f6kc75hf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="cjzorkga9004ydkw0eczm8ln8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -262,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjzngtq7r004cfcw0tm4jlawo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="cjzorkga4004qdkw03oenqeic" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -322,7 +526,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjzngtq7g003xfcw03h4wnwjy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="cjzorkg9b003edkw0bnp387pi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -400,7 +604,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="cjzngtq7d003sfcw0vfho6qd7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="cjzorkga0004idkw05qd7j9nm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -453,7 +657,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="cjzngtq650023fcw0o5alvupv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="cjzorkg8n002ddkw02c38ryyo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -691,7 +895,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="cjzngtq8l0055fcw07dwv7hpq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="cjzorkgau005pdkw078o9li57" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -788,7 +992,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="cjzngtq680029fcw0i3zd15uc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="cjzorkg8p002gdkw01ziah2bt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -825,7 +1029,7 @@ q退出</code></pre><hr>
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -835,7 +1039,7 @@ q退出</code></pre><hr>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18.33px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18.33px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -857,6 +1061,14 @@ q退出</code></pre><hr>
       <ul>
         
           <li>
+            <a href="/2019/08/23/JavaScript基础知识点-内置对象String方法/">JavaScript基础知识点--内置对象String方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/23/Javascript基础知识点-内置对象Array方法/">Javascript基础知识点--内置对象 Array 方法</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/23/JavaScript基础知识点-JS内置对象/">JavaScript基础知识点--JS内置对象</a>
           </li>
         
@@ -866,14 +1078,6 @@ q退出</code></pre><hr>
         
           <li>
             <a href="/2019/08/21/JavaScript基础知识点-数值转换/">JavaScript基础知识点--数值转换</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/21/JavaScript基础知识点-JS语法/">JavaScript基础知识点--JS语法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
           </li>
         
       </ul>

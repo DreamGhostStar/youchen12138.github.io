@@ -62,6 +62,138 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS额外知识点-文字和字体" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/14/CSS额外知识点-文字和字体/" class="article-date">
+  <time datetime="2019-07-14T06:28:17.000Z" itemprop="datePublished">2019-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/14/CSS额外知识点-文字和字体/">CSS额外知识点--文字和字体</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="text-overflow-与-word-wrap"><a href="#text-overflow-与-word-wrap" class="headerlink" title="text-overflow 与 word-wrap"></a><strong>text-overflow</strong> 与 <strong>word-wrap</strong></h2><p>text-overflow用来设置是否使用一个省略标记（…）标示对象内文本的溢出。</p>
+<p>语法：</p>
+<p><img src="http://img.mukewang.com/53070cc00001a5bc06000200.jpg" alt></p>
+<p>但是<strong>text-overflow</strong>只是用来说明文字溢出时用什么方式显示，要实现溢出时产生<strong>省略号</strong>的效果，还须定义<strong>强制文本在一行内显示</strong>（white-space:nowrap）及<strong>溢出内容为隐藏</strong>（overflow:hidden），只有这样才能实现<strong>溢出文本显示省略号</strong>的效果，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">text-overflow:ellipsis; </span><br><span class="line">overflow:hidden; </span><br><span class="line">white-space:nowrap;</span><br></pre></td></tr></table></figure>
+
+<p>同时，<strong>word-wrap</strong>也可以用来设置<strong>文本行为</strong>，当前行超过指定容器的边界时是否断开转行。</p>
+<p>语法：</p>
+<p><img src="http://img.mukewang.com/53070cf700018a2b06000200.jpg" alt></p>
+<p><strong>normal</strong>为浏览器默认值，<strong>break-word</strong>设置在长单词或 <strong>URL地址</strong>内部进行换行，此属性不常用，用浏览器默认值即可。</p>
+<h2 id="嵌入字体-font-face"><a href="#嵌入字体-font-face" class="headerlink" title="嵌入字体@font-face"></a><strong>嵌入字体@font-face</strong></h2><p>@font-face能够加载服务器端的字体文件，让浏览器端可以显示用户电脑里没有安装的字体。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">    font-family : 字体名称;</span><br><span class="line">    src : 字体文件在服务器上的相对或绝对路径;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>这样设置之后，就可以像使用普通字体一样在<code>（font-*）</code>中设置字体样式。</p>
+<p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    font-size :12px;</span><br><span class="line">    font-family : &quot;My Font&quot;;</span><br><span class="line">    /*必须项，设置@font-face中font-family同样的值*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文本阴影text-shadow"><a href="#文本阴影text-shadow" class="headerlink" title="文本阴影text-shadow"></a>文本阴影text-shadow</h2><p>text-shadow可以用来设置文本的阴影效果。</p>
+<p>语法：</p>
+<p><code>text-shadow: X-Offset Y-Offset blur color;</code></p>
+<p><font color="LightPink">X-Offset</font>：表示阴影的水平偏移距离，其值为正值时阴影向右偏移，反之向左偏移；      </p>
+<p><font color="LightPink">Y-Offset</font>：是指阴影的垂直偏移距离，如果其值是正值时，阴影向下偏移，反之向上偏移；</p>
+<p><font color="LightPink">Blur</font>：是指阴影的模糊程度，其值不能是负值，如果值越大，阴影越模糊，反之阴影越清晰，如果不需要阴影模糊可以将Blur值设置为0；</p>
+<p><font color="LightPink">Color</font>：是指阴影的颜色，其可以使用rgba色。</p>
+<p>比如，我们可以用下面代码实现设置阴影效果。</p>
+<p><code>text-shadow: 0 1px 1px #fff</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="cjzorkg8h0022dkw0qac1ut9u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS额外知识点-颜色" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/14/CSS额外知识点-颜色/" class="article-date">
+  <time datetime="2019-07-14T06:13:49.000Z" itemprop="datePublished">2019-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/14/CSS额外知识点-颜色/">CSS额外知识点--颜色</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="颜色之RGBA"><a href="#颜色之RGBA" class="headerlink" title="颜色之RGBA"></a>颜色之RGBA</h2><p>RGB是一种色彩标准，是由红(R)、绿(G)、蓝(B)的变化以及相互叠加来得到各式各样的颜色。RGBA是在RGB的基础上增加了控制alpha透明度的参数。</p>
+<p>语法：</p>
+<p><code>color：rgba(R,G,B,A)</code></p>
+<p>以上R、G、B三个参数，正整数值的取值范围为：0 - 255。百分数值的取值范围为：0.0% - 100.0%。超出范围的数值将被截至其最接近的取值极限。并非所有浏览器都支持使用百分数值。A为透明度参数，取值在0~1之间，不可为负值。</p>
+<p>代码示例：</p>
+<p><code>background-color:rgba(100,120,60,0.5);</code></p>
+<h2 id="渐变色彩"><a href="#渐变色彩" class="headerlink" title="渐变色彩"></a>渐变色彩</h2><p>CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)。由于不同的渲染引擎实现渐变的语法不同，这里我们只针对线性渐变的 W3C 标准语法来分析其用法，其余大家可以查阅相关资料。W3C 语法已经得到了 IE10+、Firefox19.0+、Chrome26.0+ 和 Opera12.1+等浏览器的支持。</p>
+<p>这一小节我们来说一下线性渐变：</p>
+<p><img src="http://img.mukewang.com/54b72b2e0001500103790158.jpg" alt></p>
+<p>参数：</p>
+<p>第一个参数:指定<strong>渐变方向</strong>，可以用“<strong>角度</strong>”的关键词或“<strong>英文</strong>”来表示：</p>
+<p><img src="http://img.mukewang.com/542a25da00017e9406980223.jpg" alt></p>
+<p>（单击图片可放大）</p>
+<p>第一个参数省略时，默认为“180deg”，等同于“to bottom”。</p>
+<p>第二个和第三个参数，表示<strong>颜色的起始点和结束点</strong>，可以有多个颜色值。</p>
+<p><code>background-image:linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);</code></p>
+<p>效果图：</p>
+<p><img src="http://img.mukewang.com/54b72c080001611c04230192.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-颜色/" data-id="cjzorkg8k0028dkw0m1r87hx5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS额外知识点" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/03/CSS额外知识点/" class="article-date">
@@ -153,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="cjzngtq620020fcw088hohowq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="cjzorkg8w002rdkw0d35utxfq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -215,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjzngtq7m0045fcw0a3wwsfri" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjzorkg9u0047dkw0nhe3yl13" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -270,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjzngtq7b003qfcw0h40ayc1c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjzorkgab0051dkw0gstj6u0z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -497,7 +629,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjzngtq8r0059fcw0bol9wfpe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjzorkg9y004fdkw09hw6hret" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -548,7 +680,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjzngtq7p004afcw0hj3v4s2i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjzorkgb7005xdkw0th6dpx1c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -630,7 +762,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjzngtq8o0057fcw0g9ezffq3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjzorkga7004vdkw0j6qjtr70" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -686,7 +818,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjzngtq7k0043fcw05vqqzz5f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjzorkga2004ndkw0zkemixpc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -759,214 +891,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjzngtq6o002yfcw0dvwimh1e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjzorkg990039dkw0i9rstb11" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-XMLHttpRequest-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/16/XMLHttpRequest-md/" class="article-date">
-  <time datetime="2019-05-16T09:16:17.000Z" itemprop="datePublished">2019-05-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/16/XMLHttpRequest-md/">XMLHttpRequest</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="XMLHTTPRequest发送请求"><a href="#XMLHTTPRequest发送请求" class="headerlink" title="XMLHTTPRequest发送请求"></a>XMLHTTPRequest发送请求</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><blockquote>
-<p>将请求发送到服务器上</p>
-</blockquote>
-<ul>
-<li><p>open(method, url, async)</p>
-<p>  method：采用了什么方式（GET还是POST）</p>
-<p>  url：请求的地址。可以使用相对地址也可以使用绝对地址</p>
-<p>  async请求同步/异步。true表示异步，flase表示同步</p>
-</li>
-<li><p>send(string)</p>
-<p>  使用GET可以不填写string参数，使用POST必须填写string参数</p>
-</li>
-</ul>
-<h3 id="取得响应"><a href="#取得响应" class="headerlink" title="取得响应"></a>取得响应</h3><ul>
-<li><p>responseText：获得字符串形式的响应数据</p>
-</li>
-<li><p>responseXML：获得XML形式的响应数据</p>
-</li>
-<li><p>status和statusText：以数字和文本形式返回HTTP状态码</p>
-</li>
-<li><p>getAllResponseHeader()：获取所有的响应报头</p>
-</li>
-<li><p>getResponseHeader()：查询响应中的某个字段的值</p>
-</li>
-</ul>
-<h3 id="readyState属性"><a href="#readyState属性" class="headerlink" title="readyState属性"></a>readyState属性</h3><blockquote>
-<p>0：请求未初始化，open还没有调用</p>
-</blockquote>
-<blockquote>
-<p>1：服务器连接已建立，open已经调用了</p>
-</blockquote>
-<blockquote>
-<p>2：请求已接收，也就是接收到头信息了</p>
-</blockquote>
-<blockquote>
-<p>3：请求处理中，也就是接收到响应主体了</p>
-</blockquote>
-<blockquote>
-<p>4：请求已完成，且响应已就绪，也就是响应完成了</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="cjzngtq7h003yfcw0vemwvusm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HTTP请求" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/16/HTTP请求/" class="article-date">
-  <time datetime="2019-05-16T07:28:06.000Z" itemprop="datePublished">2019-05-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/16/HTTP请求/">HTTP请求</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是HTTP"><a href="#什么是HTTP" class="headerlink" title="什么是HTTP"></a>什么是HTTP</h2><ul>
-<li><p>http是计算机通过网络进行通信的规则。</p>
-</li>
-<li><p>主要使浏览器能够从web服务器去请求信息和服务。</p>
-</li>
-<li><p>HTTP是一种无状态的协议。无状态指的是不建立持久的连接，服务端不保留连接的一些相关信息。</p>
-</li>
-</ul>
-<h2 id="概念介绍——HTTP请求"><a href="#概念介绍——HTTP请求" class="headerlink" title="概念介绍——HTTP请求"></a>概念介绍——HTTP请求</h2><h3 id="HTTP请求通常有以下7个步骤"><a href="#HTTP请求通常有以下7个步骤" class="headerlink" title="HTTP请求通常有以下7个步骤"></a>HTTP请求通常有以下7个步骤</h3><ol>
-<li><p>建立TCP连接</p>
-</li>
-<li><p>Web浏览器向Web服务器发送请求命令</p>
-</li>
-<li><p>Web浏览器发送请求头信息</p>
-</li>
-<li><p>Web服务器应答</p>
-</li>
-<li><p>Web服务器发送应答头信息</p>
-</li>
-<li><p>Web服务器向浏览器发送数据</p>
-</li>
-<li><p>Web服务器关闭TCP连接</p>
-</li>
-</ol>
-<h3 id="HTTP请求一般由四部分组成"><a href="#HTTP请求一般由四部分组成" class="headerlink" title="HTTP请求一般由四部分组成"></a>HTTP请求一般由四部分组成</h3><ol>
-<li><p>HTTP请求的方法或动作，比如是GET还是POST请求</p>
-</li>
-<li><p>正在请求的URL，总得知道请求的地址是什么吧</p>
-</li>
-<li><p>请求头，包含一些客户端环境信息，身份验证信息等</p>
-</li>
-<li><p>请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等等</p>
-</li>
-</ol>
-<h3 id="两种请求区别"><a href="#两种请求区别" class="headerlink" title="两种请求区别"></a>两种请求区别</h3><ul>
-<li><p>GET： </p>
-<ol>
-<li><p>一般用于信息获取</p>
-</li>
-<li><p>使用URL传递参数</p>
-</li>
-<li><p>对所发送信息的数量也有限制，一般在2000个字符</p>
-</li>
-</ol>
-</li>
-<li><p>POST</p>
-<ol>
-<li><p>一般用于修改服务器上的资源</p>
-</li>
-<li><p>对所发送信息的数量无限制</p>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h3 id="一个HTTP响应一般由三部分组成"><a href="#一个HTTP响应一般由三部分组成" class="headerlink" title="一个HTTP响应一般由三部分组成"></a>一个HTTP响应一般由三部分组成</h3><ol>
-<li><p>一个数字和文字组成的状态码，用来显示请求成功还是失败</p>
-</li>
-<li><p>响应头，响应头也和请求头一样包含许多有用的信息，例如服务器类型、日期时间、内容类型和长度等</p>
-</li>
-<li><p>响应体，也就是响应正文</p>
-</li>
-</ol>
-<h3 id="HTTP状态码（status）"><a href="#HTTP状态码（status）" class="headerlink" title="HTTP状态码（status）"></a>HTTP状态码（status）</h3><ul>
-<li>HTTP状态码由3位数字构成，其中首位数字定义了状态码的类型</li>
-</ul>
-<blockquote>
-<p>1xx：信息类，表示收到Web浏览器请求，正在进一步的处理中</p>
-</blockquote>
-<blockquote>
-<p>2xx：成功，表示用户请求被正确接收，理解和处理例如：200 OK</p>
-</blockquote>
-<blockquote>
-<p>3xx：重定向，表示请求没有成功，客户必须采取进一步的动作</p>
-</blockquote>
-<blockquote>
-<p>4xx：客户端错误，表示客户端提交的请求有错误，例如：404 NOT Found，意味着请求中所引用的文档不存在</p>
-</blockquote>
-<blockquote>
-<p>5xx：服务器错误，表示服务器不能完成对请求的处理：如500</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="cjzngtq79003mfcw0hwoucj4a" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
 
     </footer>
   </div>
@@ -1000,7 +928,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
     </div>
   </div>
 
@@ -1010,7 +938,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18.33px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18.33px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -1032,6 +960,14 @@
       <ul>
         
           <li>
+            <a href="/2019/08/23/JavaScript基础知识点-内置对象String方法/">JavaScript基础知识点--内置对象String方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/23/Javascript基础知识点-内置对象Array方法/">Javascript基础知识点--内置对象 Array 方法</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/23/JavaScript基础知识点-JS内置对象/">JavaScript基础知识点--JS内置对象</a>
           </li>
         
@@ -1041,14 +977,6 @@
         
           <li>
             <a href="/2019/08/21/JavaScript基础知识点-数值转换/">JavaScript基础知识点--数值转换</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/21/JavaScript基础知识点-JS语法/">JavaScript基础知识点--JS语法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
           </li>
         
       </ul>
