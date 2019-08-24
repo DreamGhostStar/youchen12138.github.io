@@ -62,6 +62,488 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java知识点-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/16/Java知识点-1/" class="article-date">
+  <time datetime="2019-07-16T09:21:39.000Z" itemprop="datePublished">2019-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/16/Java知识点-1/">Java知识点--week1（基本方法，注解，ArrayList，数据过滤，Integer类，Date）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="Java基本方法概况"><a href="#Java基本方法概况" class="headerlink" title="Java基本方法概况"></a>Java基本方法概况</h2><ul>
+<li><p>System.out.println(“string”);</p>
+<p>  控制台打印信息</p>
+</li>
+<li><p>concat方法：拼接字符串</p>
+<p>  string1.concat(string2)</p>
+</li>
+<li><p><code>+</code>拼接字符串</p>
+</li>
+<li><p>string.length()：查看字符串长度</p>
+</li>
+<li><p>string1.equals(string2)：返回值为布尔类型</p>
+</li>
+</ul>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a><font color="red">常量</font></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//快捷：const</span><br><span class="line">private static final String ConStant = &quot;常量&quot;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class AccountingController &#123;</span><br><span class="line">    @RequestMapping(path = &quot;/accounting&quot;)</span><br><span class="line">    public String accounting(@RequestParam(&quot;cash&quot;) int cash,@RequestParam(&quot;income&quot;) int income,@RequestParam(&quot;rent&quot;) int rent,@RequestParam(&quot;charges&quot;) int charges,</span><br><span class="line"></span><br><span class="line">    @RequestParam(&quot;eat&quot;) int eat)&#123;</span><br><span class="line">        int result = cash + income - rent - charges - eat;</span><br><span class="line">        String str = String.valueOf(result);</span><br><span class="line">        return str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>@RestController = @Controller + @ResponseBody：</p>
+<ol>
+<li><p>@Controller 习惯于和@RequestMapping绑定来使用</p>
+</li>
+<li><p>@ResponseBody告诉控制器返回对象会被自动序列化成JSON，并且传回HttpResponse这个对象。相当于自动实现XMLHttpRequest</p>
+</li>
+</ol>
+</li>
+<li><p>@RequestMapping：为HTML的form表单提供地址</p>
+</li>
+<li><p>@RequestParam(“前端input的name”)：获取输入的值</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public String search(@RequestParam(&quot;amount&quot;) int amount)&#123;</span><br><span class="line">    return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><ol>
+<li><p>能够动态扩容的数组</p>
+</li>
+<li><p>按照放入的顺序存储数据，可以存放重复的对象</p>
+</li>
+</ol>
+<h3 id="ArrayList——方法概况"><a href="#ArrayList——方法概况" class="headerlink" title="ArrayList——方法概况"></a>ArrayList——方法概况</h3><ol>
+<li><p>add：增加数据</p>
+</li>
+<li><p>remove：删除数据</p>
+</li>
+<li><p>size：长度</p>
+</li>
+<li><p>isEmpty：是否为空</p>
+</li>
+<li><p>get：获取数组中的值，根据索引读取元素，比如可以获取第二个元素</p>
+</li>
+</ol>
+<h3 id="ArrayList——遍历数组——foreach循环"><a href="#ArrayList——遍历数组——foreach循环" class="headerlink" title="ArrayList——遍历数组——foreach循环"></a>ArrayList——遍历数组——foreach循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (String item : List1)&#123;</span><br><span class="line">    //String item : List1等价于从数组的第一个开始，自动加一</span><br><span class="line">    System.out.println(&quot;ArrayList的元素是：&quot; + item);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Integer类"><a href="#Integer类" class="headerlink" title="Integer类"></a>Integer类</h2><p>Integer 类在对象中包装了一个基本类型int的值。Integer类型的对象包含一个 int 类型的字段。此外，该类提供了多个方法，能在 int 类型和 String 类型之间互相转换，同时还提供了其他一些处理int类型时非常有用的常量和方法。</p>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><ol>
+<li>Integer(int number)</li>
+</ol>
+<p>该方法以一个int型变量作为参数来获取Integer对象。<br>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intrger number = new Integer(7);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Integer(String str)</li>
+</ol>
+<p>该方法以一个String型变量作为参数来获取Integer对象。<br>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intrger number = new Integer(&quot;45&quot;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>要用数值型String变量作为参数，如123，否则将会抛出NumberFormatException异常。</li>
+</ul>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p><img src="https://images2015.cnblogs.com/blog/1121163/201707/1121163-20170718205559349-30919243.jpg" alt></p>
+<ul>
+<li><p>parseInt()方法返回与调用该方法的数值字符串相应的整型(int)值</p>
+</li>
+<li><p>toString()方法，可将Integer对象转换为十进制字符串表示。toBinaryString()、toHexString()和toOctalString()方法分别将值转换成二进制、十六进制和八进制字符串。</p>
+</li>
+</ul>
+<p>详情请见：<a href="https://www.cnblogs.com/cxf1404445126/p/7202483.html" target="_blank" rel="noopener">https://www.cnblogs.com/cxf1404445126/p/7202483.html</a></p>
+<h2 id="数据过滤"><a href="#数据过滤" class="headerlink" title="数据过滤"></a>数据过滤</h2><ol>
+<li>Stream Filter</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    List&lt;String&gt; strings = Arrays.asList(&quot;a1&quot;, &quot;a2&quot;, &quot;a3&quot;, &quot;b1&quot;, &quot;b2&quot;, &quot;b3&quot;);</span><br><span class="line">    List&lt;String&gt; filter = strings.stream().filter(str-&gt;str.startsWith(&quot;a&quot;)).collect(Collectors.toList());</span><br><span class="line">    System.out.println(filter);</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">先让字符向量变成流(`stream()`)，然后设置过滤条件(`filter()`)，最后收集(`collect(Collectors.toList())`)</span><br><span class="line"></span><br><span class="line">2. StringBuilder</span><br></pre></td></tr></table></figure>
+
+<pre><code>StringBuilder sb = new StringBuilder();
+System.out.println(sb);
+sb.append(&quot;hello&quot;);
+System.out.println(sb);//打印出来为hello</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## **Date**和**SimpleDateFormat**</span><br><span class="line"></span><br><span class="line">建立SimpleDateFormat实例的时候要写出结构</span><br><span class="line"></span><br><span class="line">例：</span><br></pre></td></tr></table></figure>
+
+<p>SimpleDateFormat sdf = new SimpleDateFormat(“yyyy/MM/dd HH:mm:ss”);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### Date常用方法</span><br><span class="line"></span><br><span class="line">1. getTime：获取毫秒数，返回值为long</span><br><span class="line"></span><br><span class="line">2. Date1.before(Date2)：比较Date1是否在Date2之前</span><br><span class="line"></span><br><span class="line">3. Date1.after(Date2)：比较Date1是否在Date2之后</span><br><span class="line"></span><br><span class="line">### SimpleDateFormat常用方法</span><br><span class="line"></span><br><span class="line">1. format(Date实例)：获取格式时间（建立实例时设置格式）</span><br></pre></td></tr></table></figure>
+
+<p>sdf.format(day1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. parse()：括号里为格式型的时间字符串，返回值为Date</span><br></pre></td></tr></table></figure>
+
+<p>Date day2 = sdf.parse(“1988/5/3 15:23:16”);<br>```</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="cjzpm6qth004efww072z7cd0l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS额外知识点-选择器（下）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/15/CSS额外知识点-选择器（下）/" class="article-date">
+  <time datetime="2019-07-15T06:54:08.000Z" itemprop="datePublished">2019-07-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/15/CSS额外知识点-选择器（下）/">CSS额外知识点--选择器（下）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/15/CSS额外知识点-选择器（下）/" data-id="cjzpm6qrx001tfww0mvedw1d9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS额外知识点-选择器（上）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/14/CSS额外知识点-选择器（上）/" class="article-date">
+  <time datetime="2019-07-14T10:14:46.000Z" itemprop="datePublished">2019-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/14/CSS额外知识点-选择器（上）/">CSS额外知识点--选择器（上）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p>在HTML中，通过各种各样的属性可以给元素增加很多附加的信息。例如，通过id属性可以将不同div元素进行区分。</p>
+<p>在CSS2中引入了一些属性选择器，而CSS3在CSS2的基础上对属性选择器进行了扩展，新增了3个属性选择器，使得属性选择器有了通配符的概念，这三个属性选择器与CSS2的属性选择器共同构成了CSS功能强大的属性选择器。如下表所示：</p>
+<p><img src="http://img.mukewang.com/56653eba0001b07004610215.jpg" alt></p>
+<h3 id="实例展示："><a href="#实例展示：" class="headerlink" title="实例展示："></a>实例展示：</h3><p>html代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;xxx.pdf&quot;&gt;我链接的是PDF文件&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;#&quot; class=&quot;icon&quot;&gt;我类名是icon&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;#&quot; title=&quot;我的title是more&quot;&gt;我的title是more&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>css代码  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a[class^=icon]&#123;</span><br><span class="line">  background: green;</span><br><span class="line">  color:#fff;</span><br><span class="line">&#125;</span><br><span class="line">a[href$=pdf]&#123;</span><br><span class="line">  background: orange;</span><br><span class="line">  color: #fff;</span><br><span class="line">&#125;</span><br><span class="line">a[title*=more]&#123;</span><br><span class="line">  background: blue;</span><br><span class="line">  color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 结果显示：</p>
+<p> <img src="http://img.mukewang.com/53202e050001c07e03820068.jpg" alt></p>
+<h2 id="结构性伪类选择器—root"><a href="#结构性伪类选择器—root" class="headerlink" title="结构性伪类选择器—root"></a>结构性伪类选择器—root</h2><p><code>:root</code>选择器，从字面上我们就可以很清楚的理解是<font color="red">根选择器</font>，他的意思就是匹配元素E所在文档的<font color="red">根元素</font>。在HTML文档中，根元素始终是<font color="red"><code>&lt;html&gt;</code></font>。</p>
+<p>示例演示：</p>
+<p>通过“:root”选择器设置背景颜色</p>
+<p>HTML代码：</p>
+<p><code>&lt;div&gt;:root选择器的演示&lt;/div&gt;</code></p>
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:root &#123;</span><br><span class="line">  background:orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/531eb1d90001735d01560050.jpg" alt></p>
+<p>“:root”选择器等同于<html>元素，简单点说：</html></p>
+<p><code>:root{background:orange}</code></p>
+<p><code>html {background:orange;}</code></p>
+<p>得到的效果等同。</p>
+<p>建议使用:root方法。</p>
+<p>另外在IE9以下还可以借助“:root”实现hack功能。</p>
+<h2 id="结构性伪类选择器—not"><a href="#结构性伪类选择器—not" class="headerlink" title="结构性伪类选择器—not"></a>结构性伪类选择器—not</h2><p><code>:not</code>选择器称为<font color="red">否定选择器</font>，和jQuery中的:not选择器一模一样，可以选择除某个元素之外的所有元素。就拿form元素来说，比如说你想给表单中除submit按钮之外的input元素添加红色边框，CSS代码可以写成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">form &#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  margin: 20px auto;</span><br><span class="line">&#125;</span><br><span class="line">div &#123;</span><br><span class="line">  margin-bottom: 20px;</span><br><span class="line">&#125;</span><br><span class="line">input:not([type=&quot;submit&quot;])&#123;</span><br><span class="line">  border:1px solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相关HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;#&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;label for=&quot;name&quot;&gt;Text Input:&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; placeholder=&quot;John Smith&quot; /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;label for=&quot;name&quot;&gt;Password Input:&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; placeholder=&quot;John Smith&quot; /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/form&gt;  ​</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/531eb2ca00014b5002370177.jpg" alt></p>
+<h2 id="结构性伪类选择器—empty"><a href="#结构性伪类选择器—empty" class="headerlink" title="结构性伪类选择器—empty"></a>结构性伪类选择器—empty</h2><p><code>:empty</code>选择器表示的就是空。用来选择没有任何内容的元素，这里没有内容指的是一点内容都没有，<strong>哪怕是一个空格。</strong></p>
+<p>示例显示：</p>
+<p>比如说，你的文档中有三个段落p元素，你想把没有任何内容的P元素隐藏起来。我们就可以使用“:empty”选择器来控制。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">&lt;p&gt; &lt;/p&gt;</span><br><span class="line">&lt;p&gt;&lt;/p&gt;​</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line"> background: orange;</span><br><span class="line"> min-height: 30px;</span><br><span class="line">&#125;</span><br><span class="line">p:empty &#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;​</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/531eb55b0001d7d401580126.jpg" alt></p>
+<h2 id="结构性伪类选择器—target"><a href="#结构性伪类选择器—target" class="headerlink" title="结构性伪类选择器—target"></a>结构性伪类选择器—target</h2><p><code>:target</code>选择器称为目标选择器，用来匹配文档(页面)的<strong>url的某个标志符的目标元素</strong>。我们先来上个例子，然后再做分析。</p>
+<p>示例展示</p>
+<p>点击链接显示隐藏的段落。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;&lt;a href=&quot;#brand&quot;&gt;Brand&lt;/a&gt;&lt;/h2&gt;</span><br><span class="line">&lt;div class=&quot;menuSection&quot; id=&quot;brand&quot;&gt;</span><br><span class="line">    content for Brand</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.menuSection&#123;</span><br><span class="line">  display: none;</span><br><span class="line">&#125;</span><br><span class="line">:target&#123;/*这里的:target就是指id=&quot;brand&quot;的div对象*/</span><br><span class="line">  display:block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/53217ea30001103002230101.jpg" alt></p>
+<p>分析：</p>
+<ol>
+<li><p>具体来说，触发元素的URL中的标志符通常会包含一个<font color="red">#号</font>，后面带有一个<font color="red">标志符名称</font>，上面代码中是：#brand</p>
+</li>
+<li><p><code>：target</code>就是用来匹配id为“brand”的元素（id=”brand”的元素）,上面代码中是那个div元素。</p>
+</li>
+</ol>
+<p><strong>多个url（多个target）处理：</strong></p>
+<p>就像上面的例子，#brand与后面的id=”brand”是对应的，当同一个页面上有很多的url的时候你可以取不同的名字，只要#号后对的名称与<font color="red">id=””</font>中的名称对应就可以了。<br>如下面例子：<br>html代码：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;&lt;a href=&quot;#brand&quot;&gt;Brand&lt;/a&gt;&lt;/h2&gt;</span><br><span class="line">&lt;div class=&quot;menuSection&quot; id=&quot;brand&quot;&gt;</span><br><span class="line">  content for Brand</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;h2&gt;&lt;a href=&quot;#jake&quot;&gt;Brand&lt;/a&gt;&lt;/h2&gt;</span><br><span class="line">&lt;div class=&quot;menuSection&quot; id=&quot;jake&quot;&gt;</span><br><span class="line"> content for jake</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;h2&gt;&lt;a href=&quot;#aron&quot;&gt;Brand&lt;/a&gt;&lt;/h2&gt;</span><br><span class="line">&lt;div class=&quot;menuSection&quot; id=&quot;aron&quot;&gt;</span><br><span class="line">    content for aron</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>css代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#brand:target &#123;</span><br><span class="line">  background: orange;</span><br><span class="line">  color: #fff;</span><br><span class="line">&#125;</span><br><span class="line">#jake:target &#123;</span><br><span class="line">  background: blue;</span><br><span class="line">  color: #fff;</span><br><span class="line">&#125;</span><br><span class="line">#aron:target &#123;</span><br><span class="line">  background: red;</span><br><span class="line">  color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码可以对不同的target对象分别设置不的样式。</p>
+<h2 id="结构性伪类选择器—first-child"><a href="#结构性伪类选择器—first-child" class="headerlink" title="结构性伪类选择器—first-child"></a>结构性伪类选择器—first-child</h2><p>“:first-child”选择器表示的是选择<strong>父元素的第一个子元素的元素E</strong>。简单点理解就是选择元素中的第一个<strong>子元素</strong>，记住是子元素，而不是后代元素。</p>
+<p>示例演示</p>
+<p>通过“:first-child”选择器定位列表中的第一个列表项，并将序列号颜色变为红色。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;li&gt;&lt;a href=&quot;##&quot;&gt;Link1&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;&lt;a href=&quot;##&quot;&gt;Link2&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;&lt;a href=&quot;##&quot;&gt;link3&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ol &gt; li&#123;</span><br><span class="line">  font-size:20px;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  margin-bottom: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ol a &#123;</span><br><span class="line">  font-size: 16px;</span><br><span class="line">  font-weight: normal;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ol &gt; li:first-child&#123;</span><br><span class="line">  color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/531eb8ca0001c5ba01250125.jpg" alt></p>
+<h2 id="结构性伪类选择器—last-child"><a href="#结构性伪类选择器—last-child" class="headerlink" title="结构性伪类选择器—last-child"></a>结构性伪类选择器—last-child</h2><p>“:last-child”选择器与“:first-child”选择器作用类似，不同的是“:last-child”选择器选择的是元素的最后一个子元素。例如，需要改变的是列表中的最后一个“li”的背景色，就可以使用这个选择器，</p>
+<p><code>ul&gt;li:last-child{background:blue;}</code></p>
+<p>示例演示</p>
+<p>在博客的排版中，每个段落都有15px的margin-bottom，假设不想让博客“post”中最后一个段落不需要底部的margin值，可以使用“:last-child”选择器。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;post&quot;&gt;</span><br><span class="line">  &lt;p&gt;第一段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;第二段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;第三段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;第四段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;第五段落&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;​</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.post &#123;</span><br><span class="line">  padding: 10px;</span><br><span class="line">  border: 1px solid #ccc;</span><br><span class="line">  width: 200px;</span><br><span class="line">  margin: 20px auto;</span><br><span class="line">&#125;</span><br><span class="line">.post p &#123;</span><br><span class="line">  margin:0 0 15px 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.post p:last-child &#123;</span><br><span class="line">  margin-bottom:0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/531eb9cb0001428002760188.jpg" alt></p>
+<h2 id="结构性伪类选择器—nth-child-n"><a href="#结构性伪类选择器—nth-child-n" class="headerlink" title="结构性伪类选择器—nth-child(n)"></a>结构性伪类选择器—nth-child(n)</h2><p>“:nth-child(n)”选择器用来定位<strong>某个父元素的一个或多个特定的子元素</strong>。其中“n”是其参数，而且可以是整数值(1,2,3,4)，也可以是表达式(2n+1、-n+5)和关键词(odd、even)，但参数n的起始值始终是1，而不是0。也就是说，参数n的值为0时，选择器将选择不到任何匹配的元素。</p>
+<p><strong>经验与技巧</strong>:当“:nth-child(n)”选择器中的n为一个表达式时，其中n是从0开始计算，当表达式的值为0或小于0的时候，不选择任何匹配的元素。如下表所示：</p>
+<p><img src="http://img.mukewang.com/531eba56000138aa05870197.jpg" alt></p>
+<p>案例演示</p>
+<p>  通过“:nth-child(n)”选择器，并且参数使用表达式“2n”，将偶数行列表背景色设置为橙色。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;li&gt;item1&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item2&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item3&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item4&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item5&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item6&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item7&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item8&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item9&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item10&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;​</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ol &gt; li:nth-child(2n)&#123;</span><br><span class="line">  background: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/531ebac90001750902580228.jpg" alt></p>
+<h2 id="结构性伪类选择器—nth-last-child-n"><a href="#结构性伪类选择器—nth-last-child-n" class="headerlink" title="结构性伪类选择器—nth-last-child(n)"></a>结构性伪类选择器—nth-last-child(n)</h2><p>“:nth-last-child(n)”选择器和前面的“:nth-child(n)”选择器非常的相似，只是这里多了一个“last”，所起的作用和“:nth-child(n)”选择器有所区别，从某父元素的最后一个子元素开始计算，来选择特定的元素。</p>
+<p>案例演示</p>
+<p>选择列表中<font color="red">倒数</font>第五个列表项，将其背景设置为橙色。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;li&gt;item1&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item2&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item3&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item4&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item5&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item6&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item7&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item8&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item9&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item10&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item11&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item12&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item13&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item14&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;item15&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;​</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ol &gt; li:nth-last-child(5)&#123;</span><br><span class="line">  background: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/531ebb7a0001d20b01530286.jpg" alt></p>
+<h2 id="first-of-type选择器"><a href="#first-of-type选择器" class="headerlink" title="first-of-type选择器"></a>first-of-type选择器</h2><p>“:first-of-type”选择器类似于“:first-child”选择器，不同之处就是指定了元素的类型,其主要用来定位一个父元素下的某个类型的第一个子元素。</p>
+<p><strong>示例演示：</strong></p>
+<p>通过“:first-of-type”选择器，定位div容器中的第一个p元素（p不一定是容器中的第一个子元素），并设置其背景色为橙色。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">  &lt;div&gt;我是一个块元素，我是.wrapper的第一个子元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落元素，我是不是.wrapper的第一个子元素，但是他的第一个段落元素&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落元素&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个块元素&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &#123;</span><br><span class="line">  width: 500px;</span><br><span class="line">  margin: 20px auto;</span><br><span class="line">  padding: 10px;</span><br><span class="line">  border: 1px solid #ccc;</span><br><span class="line">  color: #fff;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper &gt; div &#123;</span><br><span class="line">  background: green;</span><br><span class="line">&#125;</span><br><span class="line">.wrapper &gt; p &#123;</span><br><span class="line">  background: blue;</span><br><span class="line">&#125;</span><br><span class="line">/*我要改变第一个段落的背景为橙色*/</span><br><span class="line">.wrapper &gt; p:first-of-type &#123;</span><br><span class="line">  background: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/532959820001ab6804700149.jpg" alt></p>
+<h2 id="nth-of-type-n-选择器"><a href="#nth-of-type-n-选择器" class="headerlink" title="nth-of-type(n)选择器"></a>nth-of-type(n)选择器</h2><p>“<code>:nth-of-type(n)</code>”选择器和“<code>:nth-child(n)</code>”选择器非常类似，不同的是它只计算父元素中指定的某种类型的子元素。当某个元素中的子元素不单单是同一种类型的子元素时，使用“:nth-of-type(n)”选择器来定位于父元素中某种类型的子元素是非常方便和有用的。在“:nth-of-type(n)”选择器中的“n”和“:nth-child(n)”选择器中的“n”参数也一样，可以是具体的<strong>整数</strong>，也可以是表达式，还可以是<strong>关键词</strong>。</p>
+<p>示例演示</p>
+<p>通过“:nth-of-type(2n)”选择器，将容器“div.wrapper”中偶数段数的背景设置为橙色。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落元素&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &gt; p:nth-of-type(2n)&#123;</span><br><span class="line">  background: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/532be1ed00010f5403290494.jpg" alt></p>
+<h2 id="last-of-type选择器"><a href="#last-of-type选择器" class="headerlink" title="last-of-type选择器"></a>last-of-type选择器</h2><p>“<code>:last-of-type</code>”选择器和“<code>:first-of-type</code>”选择器功能是一样的，不同的是他选择是父元素下的某个类型的<strong>最后一个子元素</strong>。</p>
+<p>示例演示</p>
+<p>通过“<code>:last-of-type</code>”选择器，将容器“<code>div.wrapper</code>”中最后一个段落元素背景设置为橙色</p>
+<p>（提示：这个段落不是“div.wrapper”容器的最后一个子元素）。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">  &lt;p&gt;我是第一个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是第二个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是第三个段落&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是第一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;我是第二个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;我是第三个Div元素&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> .wrapper &gt; p:last-of-type&#123;</span><br><span class="line">  background: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/53295ba70001d68d02470183.jpg" alt></p>
+<h2 id="nth-last-of-type-n-选择器"><a href="#nth-last-of-type-n-选择器" class="headerlink" title="nth-last-of-type(n)选择器"></a>nth-last-of-type(n)选择器</h2><p>“<code>:nth-last-of-type(n)</code>”选择器和“<code>:nth-of-type(n)</code>”选择器是一样的，选择父元素中指定的某种子元素类型，但它的起始方向是从最后一个子元素开始，而且它的使用方法类似于上节中介绍的“<code>:nth-last-child(n)</code>”选择器一样。</p>
+<p>示例演示</p>
+<p>通过“<code>:nth-last-of-type(n)</code>”选择器将容器“<code>div.wrapper</code>”中的倒数第三个段落背景设置为橙色。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">  &lt;p&gt;我是第一个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是第二个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是第三个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是第四个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是第五个段落&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">  &lt;p&gt;我是第六个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是第七个段落&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &gt; p:nth-last-of-type(3)&#123;</span><br><span class="line">  background: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/53295c5900015a5a02190200.jpg" alt></p>
+<h2 id="only-child选择器"><a href="#only-child选择器" class="headerlink" title="only-child选择器"></a>only-child选择器</h2><p>“<code>:only-child</code>”选择器选择的是父元素中只有一个子元素，而且只有唯一的一个子元素。也就是说，匹配的元素的父元素中仅有一个子元素，而且是一个<strong>唯一的子元素</strong>。</p>
+<p>示例演示</p>
+<p>通过“:only-child”选择器，来控制仅有一个子元素的背景样式，为了更好的理解，我们这个示例通过对比的方式来向大家演示。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;post&quot;&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;post&quot;&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.post p &#123;</span><br><span class="line">  background: green;</span><br><span class="line">  color: #fff;</span><br><span class="line">  padding: 10px;</span><br><span class="line">&#125;</span><br><span class="line">.post p:only-child &#123;</span><br><span class="line">  background: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/53295d4a0001e07202260173.jpg" alt></p>
+<h2 id="only-of-type选择器"><a href="#only-of-type选择器" class="headerlink" title="only-of-type选择器"></a>only-of-type选择器</h2><p>“<code>:only-of-type</code>”选择器用来选择一个元素是它的父元素的唯一一个相同类型的子元素。这样说或许不太好理解，换一种说法。“<code>:only-of-type</code>”是表示一个元素他有很多个子元素，而其中只有一种类型的子元素是唯一的，使用“<code>:only-of-type</code>”选择器就可以选中这个元素中的唯一一个类型子元素。</p>
+<p>示例演示</p>
+<p>通过“<code>:only-of-type</code>”选择器来修改容器中仅有一个div元素的背景色为橙色。</p>
+<p>HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div元素&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">  &lt;div&gt;我是一个Div&lt;/div&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;我是一个列表项&lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">  &lt;p&gt;我是一个段落&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>CSS代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.wrapper &gt; div:only-of-type &#123;</span><br><span class="line">  background: orange;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>演示结果：</p>
+<p><img src="http://img.mukewang.com/53295deb000128d801980212.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-选择器（上）/" data-id="cjzpm6qu7005mfww0ecywe7pp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS额外知识点-背景样式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/14/CSS额外知识点-背景样式/" class="article-date">
+  <time datetime="2019-07-14T06:50:10.000Z" itemprop="datePublished">2019-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/14/CSS额外知识点-背景样式/">CSS额外知识点--背景样式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="background-origin"><a href="#background-origin" class="headerlink" title="background-origin"></a><strong>background-origin</strong></h2><p>设置元素背景图片的原始起始位置。</p>
+<p>语法：</p>
+<p><code>background-origin ： border-box | padding-box | content-box;</code></p>
+<p>参数分别表示背景图片是从边框，还是内边距（默认值），或者是内容区域开始显示。</p>
+<p>效果如下：</p>
+<p><img src="http://img.mukewang.com/531003de0001166903660166.jpg" alt></p>
+<p>需要注意的是，如果背景不是no-repeat，这个属性无效，它会从边框开始显示。</p>
+<h2 id="background-clip"><a href="#background-clip" class="headerlink" title="background-clip"></a><strong>background-clip</strong></h2><p>用来将背景图片做适当的裁剪以适应实际需要。</p>
+<p>语法：</p>
+<p><code>background-clip ： border-box | padding-box | content-box | no-clip</code></p>
+<p>参数分别表示从<strong>边框</strong>、或<strong>内填充</strong>，或者<strong>内容区域向外裁剪背景</strong>。no-clip表示不裁切，和参数border-box显示同样的效果。backgroud-clip默认值为border-box。</p>
+<p>效果如下图所示：</p>
+<p><img src="http://img.mukewang.com/5310065d0001c95103660166.jpg" alt></p>
+<h2 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a><strong>background-size</strong></h2><p>设置背景图片的大小，以<strong>长度值</strong>或<strong>百分比</strong>显示，还可以通过<strong>cover</strong>和<strong>contain</strong>来对图片进行伸缩。</p>
+<p>语法：</p>
+<p><code>background-size: auto | &lt;长度值&gt; | &lt;百分比&gt; | cover | contain</code></p>
+<p>取值说明：</p>
+<p>1、<strong>auto</strong>：默认值，不改变背景图片的原始高度和宽度；</p>
+<p>2、<strong>&lt;长度值&gt;</strong>：成对出现如200px 50px，将背景图片宽高依次设置为前面两个值，当设置一个值时，将其作为图片宽度值来等比缩放；</p>
+<p>3、<strong>&lt;百分比&gt;</strong>：0％~100％之间的任何值，将背景图片宽高依次设置为所在元素宽高乘以前面百分比得出的数值，当设置一个值时同上；</p>
+<p>4、<strong>cover</strong>：顾名思义为覆盖，即将背景图片等比缩放以填满整个容器；</p>
+<p>5、<strong>contain</strong>：容纳，即将背景图片等比缩放至某一边紧贴容器边缘为止。</p>
+<h2 id="multiple-backgrounds"><a href="#multiple-backgrounds" class="headerlink" title="multiple backgrounds"></a><strong>multiple backgrounds</strong></h2><p>多重背景，也就是CSS2里<strong>background</strong>的属性外加<strong>origin</strong>、<strong>clip</strong>和<strong>size</strong>组成的新background的多次叠加，缩写时为用<strong>逗号</strong>隔开的每组值；用分解写法时，如果有多个背景图片，而其他属性只有一个（例如background-repeat只有一个），表明所有背景图片应用该属性值。</p>
+<p>语法缩写如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background ： [background-color] | [background-image] | [background-position][/background-size] | [background-repeat] | [background-attachment] | [background-clip] | [background-origin],...</span><br></pre></td></tr></table></figure>
+
+<p>可以把上面的缩写拆解成以下形式：</p>
+<p><code>background-image:url1,url2,...,urlN;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">background-repeat : repeat1,repeat2,...,repeatN;</span><br><span class="line">backround-position : position1,position2,...,positionN;</span><br><span class="line">background-size : size1,size2,...,sizeN;</span><br><span class="line">background-attachment : attachment1,attachment2,...,attachmentN;</span><br><span class="line">background-clip : clip1,clip2,...,clipN;</span><br><span class="line">background-origin : origin1,origin2,...,originN;</span><br><span class="line">background-color : color;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>用逗号隔开每组 background 的缩写值；</p>
+<p>如果有 size 值，需要紧跟 position 并且用 “/“ 隔开；</p>
+<p>如果有多个背景图片，而其他属性只有一个（例如 background-repeat 只有一个），表明所有背景图片应用该属性值。</p>
+<p>background-color 只能设置一个。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-背景样式/" data-id="cjzpm6qsc002ifww0xv4m3358" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS额外知识点-文字和字体" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/14/CSS额外知识点-文字和字体/" class="article-date">
@@ -121,7 +603,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="cjzorkg8h0022dkw0qac1ut9u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="cjzpm6qru001qfww0qtt9fsf2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -182,7 +664,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-颜色/" data-id="cjzorkg8k0028dkw0m1r87hx5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-颜色/" data-id="cjzpm6qsb002gfww0ux738bpf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -285,7 +767,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="cjzorkg8w002rdkw0d35utxfq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="cjzpm6qs20022fww0agf975pa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -347,7 +829,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjzorkg9u0047dkw0nhe3yl13" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjzpm6qts004yfww0kqjzknfp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -402,7 +884,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjzorkgab0051dkw0gstj6u0z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjzpm6qu9005pfww0r78sjshd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -629,272 +1111,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjzorkg9y004fdkw09hw6hret" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjzpm6qtm004mfww0kflik9xj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/06/23/hello-world/" class="article-date">
-  <time datetime="2019-06-23T12:20:47.578Z" itemprop="datePublished">2019-06-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjzorkgb7005xdkw0th6dpx1c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-跨域-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/25/跨域-md/" class="article-date">
-  <time datetime="2019-05-25T06:59:34.000Z" itemprop="datePublished">2019-05-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/25/跨域-md/">跨域</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>一个域名地址的组成</li>
-</ul>
-<p>http://|www.|<code>abc.com：</code>|8080/|scripts/jquery.js|<br>-|-|-|-|-|-|-|-|<br>协议|子域名|主域名|端口号|请求资源地址</p>
-<ul>
-<li><p>当协议、子域名、主域名、端口号中任意一个不相同时，都算作不同域</p>
-</li>
-<li><p>不同域之间相互请求资源，就算作“跨域”</p>
-</li>
-</ul>
-<p>比如：<a href="http://www.abc.com/index.html" target="_blank" rel="noopener">http://www.abc.com/index.html</a> 请求 <a href="http://www.efg.com/service.php" target="_blank" rel="noopener">http://www.efg.com/service.php</a></p>
-<ul>
-<li>JavaScript处于安全方面的考虑，不允许跨域调用其它页面的对象。什么是跨域呢，简单的理解就是JavaScript同源策略的限制，<code>a.com</code>域名下的js无法操作<code>b.com</code>或是<code>c.a.com</code>域名下的对象</li>
-</ul>
-<h2 id="处理跨域方法一——代理"><a href="#处理跨域方法一——代理" class="headerlink" title="处理跨域方法一——代理"></a>处理跨域方法一——代理</h2><ul>
-<li><p>通过在同域名的web服务器创建一个代理：</p>
-</li>
-<li><p>北京服务器（域名：<a href="http://www.beijing.com）" target="_blank" rel="noopener">www.beijing.com）</a></p>
-<p>  上海服务器（域名：<a href="http://www.shanghai.com）" target="_blank" rel="noopener">www.shanghai.com）</a></p>
-</li>
-</ul>
-<ul>
-<li><p>比如在北京的web服务器的后台</p>
-<p>  <code>(www.beijing.com/proxy-shanghaiservice.php)</code>来调用上海服务器<code>(www.shanghai.com/service.php)</code>的服务，然后再把响应结果返回给前端，这样前端调用北京同域名的服务就和调用上海的服务效果相同了</p>
-</li>
-</ul>
-<h2 id="处理跨域方法二——JSONP"><a href="#处理跨域方法二——JSONP" class="headerlink" title="处理跨域方法二——JSONP"></a>处理跨域方法二——JSONP</h2><ul>
-<li><p>JSONP可用于解决主流浏览器的跨域数据访问的问题（通过script标签来调用其它页面）</p>
-</li>
-<li><p>JSONP不支持POST请求</p>
-</li>
-</ul>
-<h2 id="处理跨域方法三——XHR2"><a href="#处理跨域方法三——XHR2" class="headerlink" title="处理跨域方法三——XHR2"></a>处理跨域方法三——XHR2</h2><ul>
-<li><p>HTML5提供的XMLHttpRequest Level2已经实现了跨域访问以及其他的一些新功能</p>
-</li>
-<li><p>IE10以下的版本都不支持</p>
-</li>
-<li><p>在服务器端做一些小小的改造即可：</p>
-<p>  <code>header(&#39;Access-Control-Allow-Origin: *&#39;);</code></p>
-<p>  <code>header(&#39;Access-Control-Allow-Methods:POST,GET&#39;);</code></p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjzorkga7004vdkw0j6qjtr70" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-用jQuery实现Ajax-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/25/用jQuery实现Ajax-md/" class="article-date">
-  <time datetime="2019-05-25T06:39:57.000Z" itemprop="datePublished">2019-05-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/25/用jQuery实现Ajax-md/">用jQuery实现Ajax</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="jQuery提供的Ajax方法"><a href="#jQuery提供的Ajax方法" class="headerlink" title="jQuery提供的Ajax方法"></a>jQuery提供的Ajax方法</h2><ul>
-<li><p>type：类型，“POST”或“GET”，默认为“GET”</p>
-</li>
-<li><p>url：发送请求的地址</p>
-</li>
-<li><p>data：是一个对象，连同请求发送到服务器的数据</p>
-</li>
-<li><p>dataType：预期服务器返回的数据类型。如果不指定，jQuery将自动根据HTTP包MIME信息来智能判断，一<br>般我们采用json格式，可以设置为“json”</p>
-</li>
-<li><p>success：是一个方法，请求成功后的回调函数。传入返回后的数据，以及包含成功代码的字符串</p>
-</li>
-<li><p>error：是一个方法，请求失败时调用此函数。传入XMLHttpRequest对象</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjzorkga2004ndkw0zkemixpc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JSON格式-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/17/JSON格式-md/" class="article-date">
-  <time datetime="2019-05-17T04:58:44.000Z" itemprop="datePublished">2019-05-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JSON/">JSON</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/17/JSON格式-md/">JSON格式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JSON基本概念"><a href="#JSON基本概念" class="headerlink" title="JSON基本概念"></a>JSON基本概念</h2><ul>
-<li><p>JSON：JavaScript对象表示法（JavaScript object Notation）</p>
-</li>
-<li><p>JSON是存储和交换文本信息的语法，类似XML。它采用键值对的方式来组织，易于人们阅读和编写，同时也易于机器解析和生成</p>
-</li>
-<li><p>JSON是独立于语言的，也就是说不管什么语言，都可以解析JSON，只需要按照JSON的规则就行</p>
-</li>
-</ul>
-<h3 id="JSON与XML比较"><a href="#JSON与XML比较" class="headerlink" title="JSON与XML比较"></a>JSON与XML比较</h3><ul>
-<li><p>JSON的长度和XML格式比起来很短小，在网络传输的过程中可以大大减少带宽</p>
-</li>
-<li><p>JSON读写的速度更快</p>
-</li>
-<li><p>JSON可以使用JavaScript内建的方法直接进行解析，转换成JavaScript对象，非常方便</p>
-</li>
-</ul>
-<h3 id="JSON语法规则"><a href="#JSON语法规则" class="headerlink" title="JSON语法规则"></a>JSON语法规则</h3><ul>
-<li><p>JSON数据的书写格式是：名称/值对</p>
-<p>  名称/值对组合中的名称写在前面（在双引号中），值对写在后面（同样写在双引号中），中间用冒号隔开：比如”name”:”郭靖”</p>
-</li>
-<li><p>JSON的值可以是下面这些类型：</p>
-<p>  数字（整数或浮点数），比如123, 1.23</p>
-<p>  字符串（在双引号中）</p>
-<p>  逻辑值（布尔值 true或false）</p>
-<p>  数组（在方括号中）</p>
-<p>  对象（在花括号中）</p>
-<p>  null</p>
-</li>
-</ul>
-<h3 id="JSON约定"><a href="#JSON约定" class="headerlink" title="JSON约定"></a>JSON约定</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;success&quot;:true,                     //表示是否正确执行了，请求是否成功</span><br><span class="line">    &quot;msg&quot;:&quot;xxx&quot;,                        //这个请求为false时返回的信息</span><br><span class="line">    &quot;data&quot;:&quot;xxx&quot;                        //这个请求的返回值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;success&quot;:true,                     //表示是否正确执行了，请求是否成功</span><br><span class="line">    &quot;msg&quot;:&quot;xxx&quot;,  </span><br><span class="line">&#125;                      //返回的信息</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjzorkg990039dkw0i9rstb11" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
 
     </footer>
   </div>
@@ -907,7 +1127,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -938,7 +1158,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18.33px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 16.67px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 14px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 20px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 18px;">CSS3</a> <a href="/tags/Git/" style="font-size: 14px;">Git</a> <a href="/tags/HTML/" style="font-size: 16px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 12px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 18px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 14px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 12px;">TheKnowledgeOf</a>
     </div>
   </div>
 
@@ -960,23 +1180,23 @@
       <ul>
         
           <li>
+            <a href="/2019/08/24/JavaScript基础知识点-初识DOM/">JavaScript基础知识点--初识DOM</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/24/JavaScript基础知识点-错误调试与处理/">JavaScript基础知识点--错误调试与处理</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/24/JavaScript基础知识点-内置对象Date方法/">JavaScript基础知识点--内置对象Date方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/24/JavaScript基础知识点-内置对象Math方法/">JavaScript基础知识点--内置对象Math方法</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/23/JavaScript基础知识点-内置对象String方法/">JavaScript基础知识点--内置对象String方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/23/Javascript基础知识点-内置对象Array方法/">Javascript基础知识点--内置对象 Array 方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/23/JavaScript基础知识点-JS内置对象/">JavaScript基础知识点--JS内置对象</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/22/JavaScript基础知识点-JS流程控制语句/">JavaScript基础知识点--JS流程控制语句</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/21/JavaScript基础知识点-数值转换/">JavaScript基础知识点--数值转换</a>
           </li>
         
       </ul>
