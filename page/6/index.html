@@ -62,6 +62,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS额外知识点-背景样式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/14/CSS额外知识点-背景样式/" class="article-date">
+  <time datetime="2019-07-14T06:50:10.000Z" itemprop="datePublished">2019-07-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/14/CSS额外知识点-背景样式/">CSS额外知识点--背景样式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="background-origin"><a href="#background-origin" class="headerlink" title="background-origin"></a><strong>background-origin</strong></h2><p>设置元素背景图片的原始起始位置。</p>
+<p>语法：</p>
+<p><code>background-origin ： border-box | padding-box | content-box;</code></p>
+<p>参数分别表示背景图片是从边框，还是内边距（默认值），或者是内容区域开始显示。</p>
+<p>效果如下：</p>
+<p><img src="http://img.mukewang.com/531003de0001166903660166.jpg" alt></p>
+<p>需要注意的是，如果背景不是no-repeat，这个属性无效，它会从边框开始显示。</p>
+<h2 id="background-clip"><a href="#background-clip" class="headerlink" title="background-clip"></a><strong>background-clip</strong></h2><p>用来将背景图片做适当的裁剪以适应实际需要。</p>
+<p>语法：</p>
+<p><code>background-clip ： border-box | padding-box | content-box | no-clip</code></p>
+<p>参数分别表示从<strong>边框</strong>、或<strong>内填充</strong>，或者<strong>内容区域向外裁剪背景</strong>。no-clip表示不裁切，和参数border-box显示同样的效果。backgroud-clip默认值为border-box。</p>
+<p>效果如下图所示：</p>
+<p><img src="http://img.mukewang.com/5310065d0001c95103660166.jpg" alt></p>
+<h2 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a><strong>background-size</strong></h2><p>设置背景图片的大小，以<strong>长度值</strong>或<strong>百分比</strong>显示，还可以通过<strong>cover</strong>和<strong>contain</strong>来对图片进行伸缩。</p>
+<p>语法：</p>
+<p><code>background-size: auto | &lt;长度值&gt; | &lt;百分比&gt; | cover | contain</code></p>
+<p>取值说明：</p>
+<p>1、<strong>auto</strong>：默认值，不改变背景图片的原始高度和宽度；</p>
+<p>2、<strong>&lt;长度值&gt;</strong>：成对出现如200px 50px，将背景图片宽高依次设置为前面两个值，当设置一个值时，将其作为图片宽度值来等比缩放；</p>
+<p>3、<strong>&lt;百分比&gt;</strong>：0％~100％之间的任何值，将背景图片宽高依次设置为所在元素宽高乘以前面百分比得出的数值，当设置一个值时同上；</p>
+<p>4、<strong>cover</strong>：顾名思义为覆盖，即将背景图片等比缩放以填满整个容器；</p>
+<p>5、<strong>contain</strong>：容纳，即将背景图片等比缩放至某一边紧贴容器边缘为止。</p>
+<h2 id="multiple-backgrounds"><a href="#multiple-backgrounds" class="headerlink" title="multiple backgrounds"></a><strong>multiple backgrounds</strong></h2><p>多重背景，也就是CSS2里<strong>background</strong>的属性外加<strong>origin</strong>、<strong>clip</strong>和<strong>size</strong>组成的新background的多次叠加，缩写时为用<strong>逗号</strong>隔开的每组值；用分解写法时，如果有多个背景图片，而其他属性只有一个（例如background-repeat只有一个），表明所有背景图片应用该属性值。</p>
+<p>语法缩写如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background ： [background-color] | [background-image] | [background-position][/background-size] | [background-repeat] | [background-attachment] | [background-clip] | [background-origin],...</span><br></pre></td></tr></table></figure>
+
+<p>可以把上面的缩写拆解成以下形式：</p>
+<p><code>background-image:url1,url2,...,urlN;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">background-repeat : repeat1,repeat2,...,repeatN;</span><br><span class="line">backround-position : position1,position2,...,positionN;</span><br><span class="line">background-size : size1,size2,...,sizeN;</span><br><span class="line">background-attachment : attachment1,attachment2,...,attachmentN;</span><br><span class="line">background-clip : clip1,clip2,...,clipN;</span><br><span class="line">background-origin : origin1,origin2,...,originN;</span><br><span class="line">background-color : color;</span><br></pre></td></tr></table></figure>
+
+<p>注意：</p>
+<p>用逗号隔开每组 background 的缩写值；</p>
+<p>如果有 size 值，需要紧跟 position 并且用 “/“ 隔开；</p>
+<p>如果有多个背景图片，而其他属性只有一个（例如 background-repeat 只有一个），表明所有背景图片应用该属性值。</p>
+<p>background-color 只能设置一个。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-背景样式/" data-id="cjzyvfaj10020a4w0xd0tyyjy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS额外知识点-文字和字体" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/14/CSS额外知识点-文字和字体/" class="article-date">
@@ -121,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="cjzsdzmvk0023sww0c7nhdeib" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="cjzyvfaiz001xa4w0s1208tm3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -182,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-颜色/" data-id="cjzsdzmvr0028sww0d7y17aey" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-颜色/" data-id="cjzyvfaj9002ha4w0d1rmve0z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -285,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="cjzsdzmw5002msww0uoghlldo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="cjzyvfaiy001ua4w03yq86n2r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -347,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjzsdzn1r005isww0vgln7mwl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="cjzyvfal3005ba4w02nr55xsw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -402,7 +480,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjzsdzn11004rsww0wmnyql3s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="cjzyvfal5005fa4w028dcr9vs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -629,7 +707,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjzsdzn1e0052sww0p1ocx6eg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="cjzyvfaky0053a4w0u2mp2uey" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -680,7 +758,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjzsdzn2r006ksww0dnb97sza" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="cjzyvfam6006va4w0xv9b45e9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -762,7 +840,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjzsdzn1x005qsww0q9snz8l1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="cjzyvfam8006ya4w0e3ynm4b0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -818,83 +896,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjzsdzn1q005fsww00bsu9cy4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="cjzyvfal9005ja4w096y5vp0s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JSON格式-md" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/17/JSON格式-md/" class="article-date">
-  <time datetime="2019-05-17T04:58:44.000Z" itemprop="datePublished">2019-05-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JSON/">JSON</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/17/JSON格式-md/">JSON格式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JSON基本概念"><a href="#JSON基本概念" class="headerlink" title="JSON基本概念"></a>JSON基本概念</h2><ul>
-<li><p>JSON：JavaScript对象表示法（JavaScript object Notation）</p>
-</li>
-<li><p>JSON是存储和交换文本信息的语法，类似XML。它采用键值对的方式来组织，易于人们阅读和编写，同时也易于机器解析和生成</p>
-</li>
-<li><p>JSON是独立于语言的，也就是说不管什么语言，都可以解析JSON，只需要按照JSON的规则就行</p>
-</li>
-</ul>
-<h3 id="JSON与XML比较"><a href="#JSON与XML比较" class="headerlink" title="JSON与XML比较"></a>JSON与XML比较</h3><ul>
-<li><p>JSON的长度和XML格式比起来很短小，在网络传输的过程中可以大大减少带宽</p>
-</li>
-<li><p>JSON读写的速度更快</p>
-</li>
-<li><p>JSON可以使用JavaScript内建的方法直接进行解析，转换成JavaScript对象，非常方便</p>
-</li>
-</ul>
-<h3 id="JSON语法规则"><a href="#JSON语法规则" class="headerlink" title="JSON语法规则"></a>JSON语法规则</h3><ul>
-<li><p>JSON数据的书写格式是：名称/值对</p>
-<p>  名称/值对组合中的名称写在前面（在双引号中），值对写在后面（同样写在双引号中），中间用冒号隔开：比如”name”:”郭靖”</p>
-</li>
-<li><p>JSON的值可以是下面这些类型：</p>
-<p>  数字（整数或浮点数），比如123, 1.23</p>
-<p>  字符串（在双引号中）</p>
-<p>  逻辑值（布尔值 true或false）</p>
-<p>  数组（在方括号中）</p>
-<p>  对象（在花括号中）</p>
-<p>  null</p>
-</li>
-</ul>
-<h3 id="JSON约定"><a href="#JSON约定" class="headerlink" title="JSON约定"></a>JSON约定</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;success&quot;:true,                     //表示是否正确执行了，请求是否成功</span><br><span class="line">    &quot;msg&quot;:&quot;xxx&quot;,                        //这个请求为false时返回的信息</span><br><span class="line">    &quot;data&quot;:&quot;xxx&quot;                        //这个请求的返回值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;success&quot;:true,                     //表示是否正确执行了，请求是否成功</span><br><span class="line">    &quot;msg&quot;:&quot;xxx&quot;,  </span><br><span class="line">&#125;                      //返回的信息</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="cjzsdzmwd002xsww09oi5dl85" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
 
     </footer>
   </div>
@@ -960,6 +965,10 @@
       <ul>
         
           <li>
+            <a href="/2019/08/26/JavaScript基础知识点-DOM操作之节点/">JavaScript基础知识点--DOM操作之节点</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/">JavaScript基础知识点--BOM之navigator对象及方法</a>
           </li>
         
@@ -973,10 +982,6 @@
         
           <li>
             <a href="/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/">JavaScript基础知识点--BOM之location对象及方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/25/JavaScript基础知识点-BOM基础及window对象/">JavaScript基础知识点--BOM基础及window对象</a>
           </li>
         
       </ul>
