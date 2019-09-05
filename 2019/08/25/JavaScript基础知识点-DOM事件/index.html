@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="什么是事件事件就是文档或浏览器窗口中发生的一些特定的交互瞬间 HTML 事件直接在 HTML 元素标签内添加事件，执行脚本 语法 &amp;lt;tag 事件=&amp;quot;执行脚本&amp;quot;&amp;gt;&amp;lt;/tag&amp;gt;  功能在 HTML 元素上绑定事件 不建议使用 HTML 事件 多元素绑定相同事件时，效率低  不建议在 HTML 元素中写 JavaScript 代码   说明执行脚本可以是一个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-25T08:02:43.625Z">
+<meta property="og:updated_time" content="2019-09-01T14:58:20.276Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript基础知识点--DOM事件">
 <meta name="twitter:description" content="什么是事件事件就是文档或浏览器窗口中发生的一些特定的交互瞬间 HTML 事件直接在 HTML 元素标签内添加事件，执行脚本 语法 &amp;lt;tag 事件=&amp;quot;执行脚本&amp;quot;&amp;gt;&amp;lt;/tag&amp;gt;  功能在 HTML 元素上绑定事件 不建议使用 HTML 事件 多元素绑定相同事件时，效率低  不建议在 HTML 元素中写 JavaScript 代码   说明执行脚本可以是一个">
@@ -176,6 +176,10 @@
 <td>onscroll</td>
 <td>拖动滚动条滚动时触发</td>
 </tr>
+<tr>
+<td>ondblclick</td>
+<td>双击元素触发</td>
+</tr>
 </tbody></table>
 <p>onfocus 事件用于 input 标签 type 为 text、password 和 textarea 标签</p>
 <h1 id="键盘事件与-keyCode-属性"><a href="#键盘事件与-keyCode-属性" class="headerlink" title="键盘事件与 keyCode 属性"></a>键盘事件与 keyCode 属性</h1><table>
@@ -201,9 +205,18 @@
 <td>keyCode</td>
 <td>返回 onkeypress、onkeydown 或 onkeyup 事件触发的键的值的字符代码，或键的代码</td>
 </tr>
+<tr>
+<td>charCode</td>
+<td>返回键的ASCll码</td>
+</tr>
+<tr>
+<td>textInput</td>
+<td>只有在可编辑区域，按下能够输入实际字符的键时才会触发此事件</td>
+</tr>
 </tbody></table>
-<p>键盘事件触发顺序</p>
-<ol>
+<h2 id="textInput-详解"><a href="#textInput-详解" class="headerlink" title="textInput 详解"></a>textInput 详解</h2><h3 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h3><p>输入框中按下enter键，触发的只有keypress事件</p>
+<h3 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h3><p>按下a键，触发keypress和textinput事件</p>
+<h2 id="键盘事件触发顺序"><a href="#键盘事件触发顺序" class="headerlink" title="键盘事件触发顺序"></a>键盘事件触发顺序</h2><ol>
 <li><p>onkeydown</p>
 </li>
 <li><p>onkeypress</p>
@@ -214,12 +227,95 @@
 <h2 id="event"><a href="#event" class="headerlink" title="event"></a>event</h2><p>event 代表事件的状态，如触发 event 对象的元素、鼠标的位置及状态等</p>
 <h2 id="获取按键的字符代码"><a href="#获取按键的字符代码" class="headerlink" title="获取按键的字符代码"></a>获取按键的字符代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.onkeypress = function(event)&#123;</span><br><span class="line">    console.log(event.keyCode);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="charCode与keyCode的区别"><a href="#charCode与keyCode的区别" class="headerlink" title="charCode与keyCode的区别"></a>charCode与keyCode的区别</h2><p>charCode 返回onkeypress事件触发键值的字母代码。</p>
+<p>keyCode 返回 onkeydown 或 onkeyup 事件的键的代码。</p>
+<h1 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h1><table>
+<thead>
+<tr>
+<th>事件名称</th>
+<th>触发条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DOMNodeRemoved</td>
+<td>Document 中任意元素被删除就会触发</td>
+</tr>
+<tr>
+<td>DOMSubtreeModified</td>
+<td>DOM结构中发生任何变化都会触发</td>
+</tr>
+<tr>
+<td>DOMNodeRemoveFromDocument</td>
+<td>从文档中移除之前会触发</td>
+</tr>
+<tr>
+<td>DOMNodeInserted</td>
+<td>Document 中任意元素被添加就会触发</td>
+</tr>
+<tr>
+<td>DOMNodeInsertedIntoDocument</td>
+<td>从文档中添加之前被触发</td>
+</tr>
+</tbody></table>
+<h1 id="HTML5新增的事件"><a href="#HTML5新增的事件" class="headerlink" title="HTML5新增的事件"></a>HTML5新增的事件</h1><table>
+<thead>
+<tr>
+<th>事件名称</th>
+<th>触发条件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DOMContentLoaded</td>
+<td>在DOM树之后就会触发，不理会图像、JavaScript文件、CSS文件或其他资源是否已经下载。速度一定快于load事件</td>
+</tr>
+<tr>
+<td>readystatechange</td>
+<td>请参照下面的描述</td>
+</tr>
+<tr>
+<td>hashchange</td>
+<td>对象一定是window。#号后面的值变化时触发</td>
+</tr>
+</tbody></table>
+<h2 id="readystatechange-事件详解"><a href="#readystatechange-事件详解" class="headerlink" title="readystatechange 事件详解"></a>readystatechange 事件详解</h2><p>提供文档或者元素加载过程，但很难预料与load事件一起使用时候</p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><ol>
+<li><p>uninitialized：尚未初始化</p>
+</li>
+<li><p>loading：对象正在加载数据</p>
+</li>
+<li><p>interactive：可以操作对象，但还没有完全加载</p>
+</li>
+<li><p>对象已经加载完毕</p>
+</li>
+</ol>
+<p>但其他资料并不是这样写的</p>
+<p>请参照<a href="https://www.runoob.com/ajax/ajax-xmlhttprequest-onreadystatechange.html" target="_blank" rel="noopener">菜鸟教程–readystatechange 事件</a></p>
+<h1 id="移动端常用的事件类型"><a href="#移动端常用的事件类型" class="headerlink" title="移动端常用的事件类型"></a>移动端常用的事件类型</h1><table>
+<thead>
+<tr>
+<th>事件类型名称</th>
+<th>触发</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>touchstart</td>
+<td>手指触摸屏幕</td>
+</tr>
+<tr>
+<td>touchmove</td>
+<td>手指在屏幕上滑动</td>
+</tr>
+<tr>
+<td>touchend</td>
+<td>手指从屏幕上移开</td>
+</tr>
+</tbody></table>
 <h1 id="关于-this-指向"><a href="#关于-this-指向" class="headerlink" title="关于 this 指向"></a>关于 this 指向</h1><p>在事件触发的函数中，this 是对该 DOM 对象的引用</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-DOM事件/" data-id="cjzyvfak5003qa4w05nea90gh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-DOM事件/" data-id="ck06d8czc003t20w0xco2mly0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -287,7 +383,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -300,23 +396,23 @@
       <ul>
         
           <li>
+            <a href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/">JavaScript基础知识点--event对象常用属性和方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/31/JavaScript基础知识点-JS事件/">JavaScript基础知识点--JS事件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/31/JavaScript基础知识点-DOM属性/">JavaScript基础知识点--DOM属性</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/26/JavaScript基础知识点-DOM操作之节点/">JavaScript基础知识点--DOM操作之节点</a>
           </li>
         
           <li>
             <a href="/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/">JavaScript基础知识点--BOM之navigator对象及方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/">JavaScript基础知识点--BOM之screen对象及方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/">JavaScript基础知识点--BOM之history对象及方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/">JavaScript基础知识点--BOM之location对象及方法</a>
           </li>
         
       </ul>

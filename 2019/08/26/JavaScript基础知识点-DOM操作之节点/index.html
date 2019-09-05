@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="DOM之节点 添加节点  删除节点  修改节点  查找节点   添加节点create 系列方法 document.creatElement()：创建新的元素节点。一个参数，标签名  document.createTextNode()：创建新的文本节点。一个参数，要插入的节点的文本  document.createDocumentFragment()：创建文档片段  document.create">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-31T01:31:54.885Z">
+<meta property="og:updated_time" content="2019-08-31T02:06:54.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript基础知识点--DOM操作之节点">
 <meta name="twitter:description" content="DOM之节点 添加节点  删除节点  修改节点  查找节点   添加节点create 系列方法 document.creatElement()：创建新的元素节点。一个参数，标签名  document.createTextNode()：创建新的文本节点。一个参数，要插入的节点的文本  document.createDocumentFragment()：创建文档片段  document.create">
@@ -180,7 +180,12 @@
 </blockquote>
 <h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>name：必需。你要返回元素的 id 或 name 属性的值</p>
 <h2 id="类数组对象-NamedNodeMap"><a href="#类数组对象-NamedNodeMap" class="headerlink" title="类数组对象 NamedNodeMap"></a>类数组对象 NamedNodeMap</h2><p>主要用于获取属性的属性值</p>
-<p>例如：Ele.attributes</p>
+<ul>
+<li><p>Ele.attributes：返回指定节点的属性集合</p>
+</li>
+<li><p>Ele.attributes.getNamedItem(“attributeName”).nodeValue：返回指定的属性节点。attributeName为要查找的属性值的属性名，该方法只能获取在元素上定义的属性值</p>
+</li>
+</ul>
 <h2 id="类数组对象的动态性"><a href="#类数组对象的动态性" class="headerlink" title="类数组对象的动态性"></a>类数组对象的动态性</h2><ul>
 <li><p>NodeList，HTMLCollection，NamedNodeMap 三个集合都是动态的，是有生命的、有呼吸的对象</p>
 </li>
@@ -282,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="cjzyvfak1003ja4w0hnzp9q62" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck06d8czt004c20w0vdpxaf88" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -292,6 +297,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/08/31/JavaScript基础知识点-DOM属性/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript基础知识点--DOM属性
+        
+      </div>
+    </a>
   
   
     <a href="/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" id="article-nav-older" class="article-nav-link-wrap">
@@ -341,7 +355,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -354,23 +368,23 @@
       <ul>
         
           <li>
+            <a href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/">JavaScript基础知识点--event对象常用属性和方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/31/JavaScript基础知识点-JS事件/">JavaScript基础知识点--JS事件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/31/JavaScript基础知识点-DOM属性/">JavaScript基础知识点--DOM属性</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/26/JavaScript基础知识点-DOM操作之节点/">JavaScript基础知识点--DOM操作之节点</a>
           </li>
         
           <li>
             <a href="/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/">JavaScript基础知识点--BOM之navigator对象及方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/">JavaScript基础知识点--BOM之screen对象及方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/">JavaScript基础知识点--BOM之history对象及方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/">JavaScript基础知识点--BOM之location对象及方法</a>
           </li>
         
       </ul>
