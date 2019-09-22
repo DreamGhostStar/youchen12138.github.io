@@ -62,6 +62,453 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS额外知识点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/03/CSS额外知识点/" class="article-date">
+  <time datetime="2019-07-03T00:08:37.000Z" itemprop="datePublished">2019-07-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/03/CSS额外知识点/">CSS额外知识点--边框效果</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="圆角效果-border-radius"><a href="#圆角效果-border-radius" class="headerlink" title="圆角效果 border-radius"></a>圆角效果 border-radius</h2><p>border-radius是向元素添加圆角边框。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用方法：</span><br><span class="line">border-radius:10px;/* 所有角都使用半径为10px的圆角 */ </span><br><span class="line"></span><br><span class="line">border-radius: 5px 4px 3px 2px; /* 四个半径值分别是左上角、右上角、右下角和左下角，顺时针 */</span><br></pre></td></tr></table></figure>
+
+<p>不要以为<code>border-radius</code>的值只能用px单位，你还可以用百分比或者em，但兼容性目前还不太好。</p>
+<h2 id="阴影-box-shadow"><a href="#阴影-box-shadow" class="headerlink" title="阴影 box-shadow"></a>阴影 box-shadow</h2><p><img src="http://img.mukewang.com/54292d620001ffb107080250.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">box-shadow是向盒子添加阴影。支持添加一个或者多个。</span><br><span class="line"></span><br><span class="line">很简单的一段代码，就实现了投影效果，酷毙了。我们来看下语法：</span><br><span class="line"></span><br><span class="line">box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];</span><br><span class="line"></span><br><span class="line">参数介绍：</span><br><span class="line"></span><br><span class="line">注意：inset 可以写在参数的第一个或最后一个，其它位置是无效的。</span><br></pre></td></tr></table></figure>
+
+<h4 id="为元素设置外阴影："><a href="#为元素设置外阴影：" class="headerlink" title="为元素设置外阴影："></a>为元素设置外阴影：</h4><p>示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">  box-shadow:4px 2px 6px #333333; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/52e21c9000013c8f01180117.jpg" alt></p>
+<h4 id="为元素设置内阴影："><a href="#为元素设置内阴影：" class="headerlink" title="为元素设置内阴影："></a>为元素设置内阴影：</h4><p>示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box_shadow&#123;</span><br><span class="line">  box-shadow:4px 2px 6px #333333 inset; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/54292b990001ebea01290115.jpg" alt></p>
+<h4 id="阴影模糊半径与阴影扩展半径的区别"><a href="#阴影模糊半径与阴影扩展半径的区别" class="headerlink" title="阴影模糊半径与阴影扩展半径的区别"></a><font color="red">阴影模糊半径</font>与<font color="red">阴影扩展半径</font>的区别</h4><p>阴影模糊半径：此参数可选，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊；</p>
+<p>阴影扩展半径：此参数可选，其值可以是正负值，如果值为正，则整个阴影都延展扩大，反之值为负值时，则缩小；</p>
+<h4 id="X轴偏移量和Y轴偏移量值可以设置为负数"><a href="#X轴偏移量和Y轴偏移量值可以设置为负数" class="headerlink" title="X轴偏移量和Y轴偏移量值可以设置为负数"></a><font color="red">X轴偏移量</font>和<font color="red">Y轴偏移量值</font>可以设置为负数</h4><p>box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];</p>
+<p>X轴偏移量为负数：</p>
+<p>.boxshadow-outset{<br>    width:100px;<br>    height:100px;<br>    box-shadow:-4px 4px 6px #666;<br>}</p>
+<p>效果图：</p>
+<p><img src="http://img.mukewang.com/548fd91c000140a901540143.jpg" alt></p>
+<p>Y轴偏移量为负数：</p>
+<p>.boxshadow-outset{<br>    width:100px;<br>    height:100px;<br>    box-shadow:4px -4px 6px #666;<br>}</p>
+<p>效果图：</p>
+<p><img src="http://img.mukewang.com/548fd93e00011dd101570142.jpg" alt></p>
+<h2 id="为边框应用图片-border-image"><a href="#为边框应用图片-border-image" class="headerlink" title="为边框应用图片 border-image"></a>为边框应用图片 border-image</h2><p>顾名思义就是为边框应用背景图片，它和我们常用的background属性比较相似。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background:url(xx.jpg) 10px 20px no-repeat;</span><br></pre></td></tr></table></figure>
+
+<p>但是又比背景图片复杂一些。</p>
+<p>想象一下：一个矩形，有四个边框。如果应用了边框图片，图片该怎么分布呢？ 图片会自动被切割分成四等分。用于四个边框。</p>
+<p>可以理解为它是一个切片工具，会自动把用做边框的图片切割。怎么切割呢？为了方便理解，做了一张特殊的图片，由9个矩形（70<code>*</code>70像素）拼成的一张图（210<code>*</code>210像素），并标注好序号，是不是像传说中的九宫图，如下：</p>
+<p><img src="http://img.mukewang.com/52e21fea000127e802100210.jpg" alt></p>
+<p>我们把上图当作边框图片 来应用一下， 看一看是什么效果</p>
+<p>根据border-image的语法：</p>
+<p><img src="http://img.mukewang.com/52e2201a0001b1e004720260.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#border-image&#123;</span><br><span class="line">   background:#F4FFFA;</span><br><span class="line">   width:210px; height:210px; border:70px solid #ddd;</span><br><span class="line">   border-image:url(borderimg.png) 70 repeat  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/52e220780001091a03530354.jpg" alt></p>
+<p>从序号可以看出div的四个角分别对应了背景图片的四个角。而2,4,6,8 被重复。5在哪？因为是从四周向中心切割图片的所以，5显示不出来。而在chrome浏览器中5是存在的，下图的样子：</p>
+<p><img src="http://img.mukewang.com/52e220be0001cef603560358.jpg" alt></p>
+<p><strong>repeat</strong>的意思就是重复，目前因为是刚好被整除，效果看不出来。如果改下DIV的宽高，再来看重复的效果：</p>
+<p><img src="http://img.mukewang.com/52e2210700016f5603190313.jpg" alt></p>
+<p>边角部分为裁掉了，可见repeat就是一直重复，然后超出部分剪裁掉，而且是居中开始重复。</p>
+<p><strong>Round 参数</strong>：Round可以理解为圆满的铺满。为了实现圆满所以会压缩（或拉伸）；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#border-image &#123;</span><br><span class="line"></span><br><span class="line">     width:170px;</span><br><span class="line"></span><br><span class="line">     height:170px;</span><br><span class="line"></span><br><span class="line">     border:70px solid;</span><br><span class="line"></span><br><span class="line">     border-image:url(borderimg.png) 70 round;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>效果：</p>
+<p><img src="http://img.mukewang.com/52e2216700014c4103190312.jpg" alt></p>
+<p>可见图片被压扁了。</p>
+<p><strong>Stretch</strong> 很好理解就是拉伸，有多长拉多长。有多远“滚”多远。</p>
+<p><code>border-image:url(borderimg.png) 70 stretch</code></p>
+<p>看一下效果：</p>
+<p><img src="http://img.mukewang.com/52e2218d0001d45403530366.jpg" alt></p>
+<p>2,4,6,8分别被拉伸显示。</p>
+<p>注意：Chrome下，中间部分也会被拉伸，webkit浏览器对于round属性和repeat属性似乎没有区分，显示效果是一样的。</p>
+<p>Firefox 26.0 下是可以准确区分的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/03/CSS额外知识点/" data-id="ck0uawm67002cpcw02ukb6tor" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Qt之菜单概述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/25/Qt之菜单概述/" class="article-date">
+  <time datetime="2019-06-25T07:18:44.000Z" itemprop="datePublished">2019-06-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/QT/">QT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/25/Qt之菜单概述/">Qt之菜单概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<hr>
+<h2 id="菜单所需头文件"><a href="#菜单所需头文件" class="headerlink" title="菜单所需头文件"></a>菜单所需头文件</h2><ul>
+<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
+</li>
+<li><p>QMenu：菜单（添加菜单）</p>
+</li>
+<li><p>QAction：添加菜单项（添加动作）</p>
+</li>
+<li><p>QToolBar：添加菜单项的快捷方式</p>
+</li>
+<li><p>QStatusBar：状态栏</p>
+</li>
+<li><p>QLabel：标签</p>
+</li>
+</ul>
+<hr>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//模板，创建并且指定当前窗口为父对象（实质上为构造函数）</span><br><span class="line">    头文件名 *名字 = new 头文件名(this);</span><br><span class="line"></span><br><span class="line">//创建菜单栏</span><br><span class="line">    QMenuBar *mBar = menuBar();</span><br><span class="line"></span><br><span class="line">//添加菜单项，添加动作</span><br><span class="line">    QAction *pNew = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;新建&quot;));</span><br><span class="line"></span><br><span class="line">//添加分割线</span><br><span class="line">    pFile-&gt;addSeparator();</span><br><span class="line"></span><br><span class="line">//添加工具栏，菜单项的快捷方式</span><br><span class="line">    QToolBar *toolBar = addToolBar(&quot;toolBar&quot;);</span><br><span class="line"></span><br><span class="line">//工具栏添加快捷键</span><br><span class="line">    toolBar-&gt;addAction(pNew);</span><br><span class="line"></span><br><span class="line">//新建状态栏</span><br><span class="line">    QStatusBar *statusBar = statusBar();</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="实战案例"><a href="#实战案例" class="headerlink" title="实战案例"></a>实战案例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//菜单栏</span><br><span class="line">QMenuBar *mBar = menuBar();</span><br><span class="line"></span><br><span class="line">//添加菜单</span><br><span class="line">QMenu *pFile = mBar-&gt;addMenu(QString::fromLocal8Bit(&quot;文件&quot;));</span><br><span class="line"></span><br><span class="line">//添加菜单项，添加动作</span><br><span class="line">QAction *pNew = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;新建&quot;));</span><br><span class="line">QAction *pOpen = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;打开&quot;));</span><br><span class="line"></span><br><span class="line">pFile-&gt;addSeparator();//添加分割线</span><br><span class="line"></span><br><span class="line">connect(pNew, &amp;QAction::triggered,</span><br><span class="line">        [=]()</span><br><span class="line">        &#123;</span><br><span class="line">            qDebug()&lt;&lt;QString::fromLocal8Bit(&quot;新建被按下&quot;);  //打印</span><br><span class="line">        &#125;</span><br><span class="line">       );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//工具栏，菜单项的快捷方式</span><br><span class="line">QToolBar *toolBar = addToolBar(&quot;toolBar&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//添加小控件</span><br><span class="line">QPushButton *b = new QPushButton(this);</span><br><span class="line">b-&gt;setText(&quot;^_^&quot;);</span><br><span class="line">toolBar-&gt;addWidget(b);</span><br><span class="line">connect(b, &amp;QPushButton::clicked,</span><br><span class="line">        [=]()</span><br><span class="line">        &#123;</span><br><span class="line">            b-&gt;setText(&quot;123&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">//工具栏添加快捷键</span><br><span class="line">toolBar-&gt;addAction(pNew);</span><br><span class="line"></span><br><span class="line">//状态栏</span><br><span class="line">QStatusBar *sBar = statusBar();    //新建状态栏</span><br><span class="line">QLabel *label = new QLabel(this);</span><br><span class="line">label-&gt;setText(&quot;Normal text file&quot;);</span><br><span class="line">sBar-&gt;addWidget(label);</span><br><span class="line"></span><br><span class="line">sBar-&gt;addWidget(new QLabel(&quot;2&quot;, this));     //从左往右添加</span><br><span class="line"></span><br><span class="line">sBar-&gt;addPermanentWidget(new QLabel(&quot;2&quot;, this));    //从右往左添加</span><br><span class="line"></span><br><span class="line">//核心控件,文本编辑框</span><br><span class="line">QTextEdit *textEdit = new QTextEdit(this);</span><br><span class="line">setCentralWidget(textEdit);</span><br><span class="line"></span><br><span class="line">//浮动窗口</span><br><span class="line">QDockWidget *dock = new QDockWidget(this);</span><br><span class="line">addDockWidget(Qt::RightDockWidgetArea, dock);</span><br><span class="line"></span><br><span class="line">//给浮动窗口添加控件</span><br><span class="line">QTextEdit *textEdit1 = new QTextEdit(this);</span><br><span class="line">dock-&gt;setWidget(textEdit1);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="ck0uawmbe006hpcw0zz6h9dac" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-QT中提示“常量中有换行符”解决办法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/25/QT中提示“常量中有换行符”解决办法/" class="article-date">
+  <time datetime="2019-06-25T00:42:50.000Z" itemprop="datePublished">2019-06-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/QT/">QT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/25/QT中提示“常量中有换行符”解决办法/">QT中提示“常量中h有换行符”解决办法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用QT编译界面时，免不了要使用中文，有会出现乱码，有时会提示“常量中有换行符”，而不能正常编译，因此可以通过下面的方法解决。</p>
+<p>PS：本文的环境，QT5.7.1，VS2015</p>
+<ol>
+<li>将文本编码设置为：如果编码是UTF-8则添加。</li>
+</ol>
+<p><img src="https://img-blog.csdn.net/20170530135801390?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvbG92ZWx5YWlx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt></p>
+<ol start="2">
+<li>在界面中需要使用中文的地方，使用：</li>
+</ol>
+<p>QString::fromLocal8Bit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将 Unicode 编码转换为本地系统编码。</span><br></pre></td></tr></table></figure>
+
+<p>经过以上处理之后，编译期就不会再报“常量中有换行符”错误了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="ck0uawmaq005opcw0exy11kct" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-QT信号与槽及其附属知识点-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/24/QT信号与槽及其附属知识点-md/" class="article-date">
+  <time datetime="2019-06-24T09:10:32.000Z" itemprop="datePublished">2019-06-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/QT/">QT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/24/QT信号与槽及其附属知识点-md/">QT信号与槽及其附属知识点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<hr>
+<h2 id="QT常用函数概述"><a href="#QT常用函数概述" class="headerlink" title="QT常用函数概述"></a>QT常用函数概述</h2><ul>
+<li><p>setWindowTitle(“string”): 设置标题</p>
+</li>
+<li><p>setText(“string”)：给按钮设置内容</p>
+</li>
+<li><p>setParent(&amp;父对象)：设置父对象</p>
+</li>
+<li><p>构造函数传参：设置父对象（只需要父对象显示，其子对象自动显示）</p>
+</li>
+<li><p>move(x, y)：以左上角为坐标原点，移动x, y</p>
+</li>
+<li><p>show：显示对象所属控件</p>
+</li>
+<li><p>exec：进程一直显示，等待用户操作</p>
+</li>
+<li><p>connect(&amp;b1, &amp;QPushButton::pressed, this, &amp;MainWidget::close)</p>
+<ol>
+<li><p>&amp;b1: 信号发出者，指针类型</p>
+</li>
+<li><p>&amp;QPushButton::pressed：处理的信号，&amp;发送者的类名::信号的名字</p>
+</li>
+<li><p>this：信号接收者</p>
+</li>
+<li><p>&amp;MainWidget::close:  槽函数，信号处理函数  &amp;接收的类名::槽函数名字（接收对象在接收到信号之后所需要调用的函数）</p>
+</li>
+</ol>
+</li>
+<li><p>disconnect：断开信号和槽的连接</p>
+</li>
+<li><p>hide：对象所属控件隐藏</p>
+</li>
+<li><p>resize(x, y)：重新界定子窗口大小</p>
+</li>
+<li><p>move(x, y)：相对于父窗口，子窗口移动(x, y)</p>
+</li>
+<li><p>setGeometry(x1, y1, x2, y2)：(x1, y1)为框的位置，(x2, y2)为框的大小</p>
+</li>
+<li><p>menuBar：添加菜单栏</p>
+</li>
+<li><p>addMenu：添加菜单</p>
+</li>
+<li><p>addAction：添加菜单项，添加动作</p>
+</li>
+<li><p>addSeparator：添加分割线</p>
+</li>
+<li><p>addToolBar(“toolBar”)：添加菜单栏快捷方式</p>
+</li>
+<li><p>statusBar()：新建状态栏</p>
+</li>
+<li><p>QLabel：新建标签</p>
+</li>
+<li><p>addWidget：从左往右添加状态栏</p>
+</li>
+<li><p>addPermanentWidget：从右往左添加状态栏</p>
+</li>
+<li><p>QTextEdit：新建文本编辑框</p>
+</li>
+<li><p>setCentralWidget：为文本编辑框添加文本编辑功能</p>
+</li>
+<li><p>setWidget：给对应窗口设置文本编辑</p>
+<p>  例如：<code>this-&gt;setWidget(textEdit);</code>给当前窗口设置文本编辑</p>
+</li>
+<li><p>QMessageBox::about：创建关于对话框</p>
+</li>
+<li><p>QMessageBox::question：创建问题对话框</p>
+</li>
+<li><p>setCurrentIndex：切换页</p>
+</li>
+<li><p>setTextMargins：设置外边距（设置内容显示间隙）</p>
+</li>
+<li><p>setEchoMode：设置内容显示方式</p>
+</li>
+</ul>
+<h3 id="按钮，框函数"><a href="#按钮，框函数" class="headerlink" title="按钮，框函数"></a>按钮，框函数</h3><ul>
+<li><p>triggered</p>
+</li>
+<li><p>pressed</p>
+</li>
+<li><p>clicked</p>
+</li>
+</ul>
+<p><strong>功能好像一样QAQ</strong></p>
+<hr>
+<h2 id="QT头文件"><a href="#QT头文件" class="headerlink" title="QT头文件"></a>QT头文件</h2><ul>
+<li><p>QPushButton：按钮</p>
+</li>
+<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
+</li>
+<li><p>QMenu：菜单（添加菜单）</p>
+</li>
+<li><p>QAction：添加菜单项（添加动作）</p>
+</li>
+<li><p>QDebug：打印</p>
+</li>
+<li><p>QToolBar：添加菜单项的快捷方式</p>
+</li>
+<li><p>QStatusBar：状态栏</p>
+</li>
+<li><p>QLabel：标签</p>
+</li>
+<li><p>QTextEdit：文本编辑框（也称核心控件）</p>
+</li>
+<li><p>QDockWidget：浮动窗口</p>
+</li>
+<li><p>QDialog：模态对话框</p>
+</li>
+<li><p>QMessageBox：对话框</p>
+</li>
+<li><p>QFileDialog：文件对话框</p>
+<p>  示例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">QAction *p5 = menu-&gt;addAction(QString::fromLocal8Bit(&quot;文件对话框&quot;));</span><br><span class="line">connect(p5, &amp;QAction::triggered,</span><br><span class="line">    [=]()</span><br><span class="line">    &#123;</span><br><span class="line">        QString path = QFileDialog::getOpenFileName(</span><br><span class="line">                    this,</span><br><span class="line">                    &quot;open&quot;,</span><br><span class="line">                    &quot;../&quot;,//打开文件对话框的位置（命令行）</span><br><span class="line">                    &quot;source(*.cpp *.h);;Text(*.txt);;All(*.*)&quot;//文件类型</span><br><span class="line">                    );</span><br><span class="line">        qDebug()&lt;&lt;path;</span><br><span class="line">    &#125;</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>QStringList：字符串列表</p>
+</li>
+<li><p>QCompleter：字符表达形式？？？</p>
+</li>
+<li><p>QMovie：gif动画</p>
+</li>
+</ul>
+<hr>
+<h2 id="信号与槽"><a href="#信号与槽" class="headerlink" title="信号与槽"></a>信号与槽</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>信号槽是 Qt 框架引以为豪的机制之一。所谓信号槽，实际就是观察者模式。当某个事件发生之后，比如，按钮检测到自己被点击了一下，它就会发出一个信号（signal）。这种发出是没有目的的，类似广播。如果有对象对这个信号感兴趣，它就会使用连接（connect）函数，意思是，将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。也就是说，当信号发出时，被连接的槽函数会自动被回调。这就类似观察者模式：当发生了感兴趣的事件，某一个操作就会被自动触发。（这里提一句，Qt 的信号槽使用了额外的处理来实现，并不是 GoF 经典的观察者模式的实现方式。）</p>
+<p>信号和槽是Qt特有的信息传输机制，是Qt设计程序的重要基础，它可以让互不干扰的对象建立一种联系。</p>
+<p>槽的本质是类的成员函数，其参数可以是任意类型的。和普通C++成员函数几乎没有区别，它可以是虚函数；也可以被重载；可以是公有的、保护的、私有的、也可以被其他C++成员函数调用。唯一区别的是：槽可以与信号连接在一起，每当和槽连接的信号被发射的时候，就会调用这个槽。</p>
+<h3 id="自定义槽"><a href="#自定义槽" class="headerlink" title="自定义槽"></a>自定义槽</h3><ol>
+<li><p>QT5：任意的成员函数，普通全局函数，静态函数</p>
+</li>
+<li><p>槽函数需要与信号一致（参数类型和参数个数一致）</p>
+</li>
+<li><p>由于信号都是没有返回值，所以，槽函数一定没有返回值</p>
+</li>
+</ol>
+<hr>
+<h2 id="额外知识点"><a href="#额外知识点" class="headerlink" title="额外知识点"></a>额外知识点</h2><ul>
+<li><p>emit：意为发送，主要用于发送信号</p>
+</li>
+<li><p>signals：</p>
+<ol>
+<li><p>信号必须有signals关键字来声明</p>
+</li>
+<li><p>信号没有返回值，但可以有参数</p>
+</li>
+<li><p>信号就是函数的声明，只需声明，无需定义</p>
+</li>
+<li><p>使用：emit mySignal();</p>
+</li>
+</ol>
+</li>
+<li><p>在发送带参数的命令时，字符串包含中文的话，如果报错，请参照<a href="https://youchen12138.github.io/2019/06/25/QT%E4%B8%AD%E6%8F%90%E7%A4%BA%E2%80%9C%E5%B8%B8%E9%87%8F%E4%B8%AD%E6%9C%89%E6%8D%A2%E8%A1%8C%E7%AC%A6%E2%80%9D%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" target="_blank" rel="noopener">QT中提示“常量中h有换行符”解决办法 </a>一文</p>
+</li>
+<li><p>重载信号用函数指针</p>
+</li>
+</ul>
+<p>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void (SubWidget::*funSignal)()=&amp;SubWidget::mySignal;</span><br><span class="line">void (SubWidget::*testSignal)(int, QString)=&amp;SubWidget::mySignal;</span><br><span class="line">connect(&amp;subWin, funSignal, this, &amp;MainWidget::dealSub);</span><br><span class="line">connect(&amp;subWin, testSignal, this, &amp;MainWidget::dealSolt);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>打印由Unicode编码转中文</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//str.toUtf8() -&gt; 字节数组QByteArray</span><br><span class="line">//...data() -&gt; QByteArray -&gt; char *</span><br><span class="line">qDebug()&lt;&lt;a&lt;&lt;str.toUtf8().data();</span><br><span class="line">//高版本可以直接用第二种方式</span><br><span class="line"></span><br><span class="line">//高版本QT可以直接打印中文</span><br><span class="line">qDebug()&lt;&lt;a&lt;&lt;str;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Lambda表达式: </p>
+<ol>
+<li><p>匿名函数对象</p>
+</li>
+<li><p>C++11增加的新特性，项目文件：CONFIG += C++11</p>
+</li>
+<li><p>QT配合信号一起使用</p>
+<p>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int a=10, b=100;</span><br><span class="line">connect(b4, &amp;QPushButton::released,</span><br><span class="line">        // = :把外部局部变量、类中所有成员以值传递方式</span><br><span class="line">        // this: 类中所有成员以值传递方式</span><br><span class="line">        // &amp; ：把外部所有局部变量（除类中定义的）</span><br><span class="line">        [=]() mutable   //将值传递的变量设为可改变</span><br><span class="line">        &#123;</span><br><span class="line">            b4-&gt;setText(&quot;123&quot;);</span><br><span class="line">            qDebug()&lt;&lt;&quot;1111&quot;;</span><br><span class="line">            qDebug()&lt;&lt;a&lt;&lt;b;</span><br><span class="line">            a=11;</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="内存回收机制"><a href="#内存回收机制" class="headerlink" title="内存回收机制"></a>内存回收机制</h3><ul>
+<li><p>1）指定父对象后  2）直接或间接继承于QObject</p>
+</li>
+<li><p>子对象如果是动态分配空间的new，不需要手动释放delete</p>
+</li>
+<li><p>系统会自动释放</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="ck0uawmbk006npcw06f0uecbm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/23/hello-world/" class="article-date">
@@ -101,7 +548,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="ck06d8d66007320w0yi20h1y3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="ck0uawmb20063pcw0ugnohk11" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +587,7 @@
         <ul>
 <li>一个域名地址的组成</li>
 </ul>
-<p>http://|www.|<code>abc.com：</code>|8080/|scripts/jquery.js|<br>-|-|-|-|-|-|-|-|<br>协议|子域名|主域名|端口号|请求资源地址</p>
+<p><code>http://</code>|<code>www.</code>|<code>abc.com：</code>|<code>8080/</code>|<code>scripts/jquery.js</code><br>-|-|-|-|-|-|-|-<br>协议|子域名|主域名|端口号|请求资源地址</p>
 <ul>
 <li><p>当协议、子域名、主域名、端口号中任意一个不相同时，都算作不同域</p>
 </li>
@@ -183,7 +630,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="ck06d8d1f006720w0bwj046jm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="ck0uawmce0074pcw0amxkqln2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -239,7 +686,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="ck06d8d1d006320w0g68wbl15" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="ck0uawmb50067pcw0pcm3jxxf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -312,7 +759,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="ck06d8cyi002z20w093c8v4j0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="ck0uawm890030pcw0z5zyyaxk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
@@ -394,7 +841,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="ck06d8d13005n20w0ugw4uxl0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="ck0uawmbh006kpcw0hi946p3q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -516,360 +963,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="ck06d8cyf002w20w0age4yro5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="ck0uawm910038pcw0khouajx2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-运算符" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/09/运算符/" class="article-date">
-  <time datetime="2019-04-09T05:05:40.000Z" itemprop="datePublished">2019-04-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/09/运算符/">运算符</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>typeof a可以获取a的类型（六个类型之一）它会将该值的类型以字符串形式返回。</p>
-</blockquote>
-<h2 id="各类型转换表"><a href="#各类型转换表" class="headerlink" title="各类型转换表"></a>各类型转换表</h2><p>String(数值) | String(语言) | Undefined | Null | Boolean(ture) | Boolean(false)</p>
-<ul>
-<li>| - | - | - | - | - | - |<br>数值| NaN| NaN| 0| 1| 0</li>
-</ul>
-<h2 id="非Number类型的值进行运算"><a href="#非Number类型的值进行运算" class="headerlink" title="非Number类型的值进行运算"></a>非Number类型的值进行运算</h2><p>都会将非Number的值转换为Number然后再进行运算，此时运算结果返回值为Number。</p>
-<ul>
-<li><p>任何值和NaN作运算结果为NaN</p>
-</li>
-<li><p>两个字符串相加，则会做“拼串”操作（不一定是数值，也可以汉字之类的）</p>
-</li>
-<li><p>两个字符串进行除+之外的运算（只能是数值，如果出现汉字等，则结果为NaN）</p>
-</li>
-<li><p>任何值和字符串相加，都要将值转换成字符串再进行相加。（此时的 + 起连接的作用）</p>
-</li>
-<li><p>可以通过让数字加上一个空的字符串，即可将其转换为string（隐式类型转换，由浏览器自动完成）</p>
-</li>
-<li><p>任何值做<code>- * /</code>运算时都会自动转换为Number，可以利用这一点做隐式的类型转换，可以通过为一个值<code>-0 *1 /1</code>来转换为Number</p>
-</li>
-</ul>
-<h2 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h2><blockquote>
-<p>一元运算符就是只涉及一个数的运算</p>
-</blockquote>
-<blockquote>
-<p>一元运算符的返回值请参照以上运算规则</p>
-</blockquote>
-<ul>
-<li><p><code>+</code>代表了<code>1*</code></p>
-</li>
-<li><p><code>-</code>代表了<code>-1*</code></p>
-</li>
-</ul>
-<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>进行<code>&gt;= &lt;= &gt; &lt;</code>等运算符</p>
-<ul>
-<li><p>若两边均为数值，则按照数学规则比较</p>
-</li>
-<li><p>若一边为数值，一边为其他类型，则将其他类型转换为数值再进行比较</p>
-</li>
-<li><p>若两边均为字符串，比较字符编码（一位一位进行比较）（通过Unicode编码表）</p>
-</li>
-</ul>
-<blockquote>
-<p>注意：比较两个字符串型的数字时，一定要转换类型</p>
-</blockquote>
-<blockquote>
-<p>在字符串中使用转义字符输入Unicode编码<code>\u四位编码（16进制）</code></p>
-</blockquote>
-<blockquote>
-<p>在网页中使用Unicode编码<code>&amp;#编码（10进制）</code></p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="ck06d8d68007420w04mslx5qf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-类型强制转换" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/07/类型强制转换/" class="article-date">
-  <time datetime="2019-04-07T11:32:25.000Z" itemprop="datePublished">2019-04-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/07/类型强制转换/">类型强制转换</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript中有六种类型"><a href="#JavaScript中有六种类型" class="headerlink" title="JavaScript中有六种类型"></a>JavaScript中有六种类型</h2><ul>
-<li><p>String 字符串</p>
-</li>
-<li><p>Number 数值</p>
-</li>
-<li><p>Boolean 布尔值</p>
-</li>
-<li><p>Null 空值</p>
-</li>
-<li><p>Undefined 未定义</p>
-</li>
-<li><p>Object 对象</p>
-</li>
-</ul>
-<blockquote>
-<p>强制类型转换只能在String，Number，Boolean三者之间转换</p>
-</blockquote>
-<h2 id="数组与字符串互转"><a href="#数组与字符串互转" class="headerlink" title="数组与字符串互转"></a>数组与字符串互转</h2><p>在开发中经常需要把字符串与数组互转</p>
-<h3 id="Array对象中的join-方法"><a href="#Array对象中的join-方法" class="headerlink" title="Array对象中的join()方法"></a>Array对象中的join()方法</h3><blockquote>
-<p>该方法可以将数组转换为多种形式的字符串</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3, 4, 5];</span><br><span class="line">a = a.join(&quot;-&quot;);</span><br><span class="line">document.write(&quot;a类型 = &quot; + typeof(a) + &quot;&lt;br/&gt;&quot;)</span><br><span class="line">document.write(&quot;a的值 = &quot; + a)</span><br></pre></td></tr></table></figure>
-
-<p>结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a类型 = string</span><br><span class="line">a的值 = 1-2-3-4-5</span><br></pre></td></tr></table></figure>
-
-<p>join()方法包含一个参数，用于定义合并元素的连字符，若不提供参数，则以逗号连接每个元素</p>
-<h3 id="Array对象中的spilt-方法"><a href="#Array对象中的spilt-方法" class="headerlink" title="Array对象中的spilt()方法"></a>Array对象中的spilt()方法</h3><blockquote>
-<p>该方法可以将字符串转换为数组</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3, 4, 5];</span><br><span class="line">a = a.join(&quot;-&quot;);</span><br><span class="line">var s = a.spilt(&quot;-&quot;);</span><br><span class="line">document.write(&quot;a类型 = &quot; + typeof(a) + &quot;&lt;br/&gt;&quot;)</span><br><span class="line">document.write(&quot;a的值 = &quot; + a)</span><br></pre></td></tr></table></figure>
-
-<p>结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a类型 = object</span><br><span class="line">a的值 = 1-2-3-4-5</span><br></pre></td></tr></table></figure>
-
-<h2 id="其他类型转换为字符串"><a href="#其他类型转换为字符串" class="headerlink" title="其他类型转换为字符串"></a>其他类型转换为字符串</h2><h3 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h3><blockquote>
-<p>返回值为String类型</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 123;</span><br><span class="line">a = a.tostring();</span><br><span class="line">document.write(a);</span><br></pre></td></tr></table></figure>
-
-<p>结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Boolean和上面相同，toString()方法可以将Boolean转换为String类型</p>
-</blockquote>
-<blockquote>
-<p>注：不能将Null和Undefined类型转换为String类型</p>
-</blockquote>
-<h2 id="字符串转换为数值"><a href="#字符串转换为数值" class="headerlink" title="字符串转换为数值"></a>字符串转换为数值</h2><h3 id="parseInt-方法"><a href="#parseInt-方法" class="headerlink" title="parseInt()方法"></a>parseInt()方法</h3><blockquote>
-<p>将一个字符串转换为一个整数</p>
-</blockquote>
-<p>可以将字符串中的有效数值提取出来，比如示例，1是数值，继续；2是数值，继续；3是数值，继续；p不是数值，结束。</p>
-<p>若a=123px45，强制转换类型之后的结果为123.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;123px&quot;;</span><br><span class="line">a = parseInt(a);</span><br><span class="line">//从String转换为Number，结果为123</span><br></pre></td></tr></table></figure>
-
-<h3 id="parseFloat-方法"><a href="#parseFloat-方法" class="headerlink" title="parseFloat()方法"></a>parseFloat()方法</h3><blockquote>
-<p>将一个字符串转换为一个浮点数</p>
-</blockquote>
-<p>功能和parseInt相似，只是读取有效数值为浮点数而已。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;123.456px&quot;;</span><br><span class="line">a = parseFloat(a);</span><br><span class="line">//从String转换为Number，结果为123.456</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果对非String使用parseInt()或parseFloat()，它会将其转换为String然后再操作。</p>
-</blockquote>
-<h2 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 123;</span><br><span class="line">a = String(a);//其他的类型也可以这样转换</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>空字符串转换为数值时为0，有非数字的字符串转换为数值时为NaN</p>
-</blockquote>
-<blockquote>
-<p>true布尔值转换为数值为1，false布尔值转换为数值为0</p>
-</blockquote>
-<blockquote>
-<p>Undefined转换为数值时为NaN</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="ck06d8d1b006020w0xmuf23ca" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JS编写位置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/07/JS编写位置/" class="article-date">
-  <time datetime="2019-04-07T10:47:29.000Z" itemprop="datePublished">2019-04-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/07/JS编写位置/">JS编写位置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="button标签中的onclick"><a href="#button标签中的onclick" class="headerlink" title="button标签中的onclick"></a>button标签中的onclick</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;alert(&apos;警告框内容&apos;);&quot;&gt;按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="a标签的超链接"><a href="#a标签的超链接" class="headerlink" title="a标签的超链接"></a>a标签的超链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;javascript:alert(&apos;警告框内容&apos;);&quot;&gt;超链接&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="script标签"><a href="#script标签" class="headerlink" title="script标签"></a>script标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    alert(&quot;警告框内容&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>此方法会在浏览器加载完之后马上出现。</p>
-<h2 id="外部文件"><a href="#外部文件" class="headerlink" title="外部文件"></a>外部文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;绝对路径&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>该路径下写下js文件的具体内容（推荐此方法）</p>
-<ul>
-<li>可以在不同文件内同时引用</li>
-<li>结构清晰</li>
-<li>script标签一旦用于引入外部文件，就不能再编写代码了，即使编写浏览器也会忽略</li>
-<li>如果需要，可以再创建一个script标签用于编写内部代码（执行顺序按代码位置，JS按代码从上到下执行）<blockquote>
-<h3 id="lt-script-gt-一般写在body标签下"><a href="#lt-script-gt-一般写在body标签下" class="headerlink" title="&lt;script&gt;一般写在body标签下"></a><code>&lt;script&gt;</code>一般写在body标签下</h3></blockquote>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="ck06d8cyq003720w0yhc1vyby" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-LeetCode-移位符" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/28/LeetCode-移位符/" class="article-date">
-  <time datetime="2019-03-28T06:15:37.000Z" itemprop="datePublished">2019-03-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/28/LeetCode-移位符/">LeetCode--移位符</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>不得不说，自己的算法是真的差，差的也不仅仅是算法，更多的还是自己上课期间忽略的基础知识。<br>LeetCode第29题，题目描述如下：</p>
-<blockquote>
-<p>给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。<br>返回被除数 dividend 除以除数 divisor 得到的商。</p>
-</blockquote>
-<blockquote>
-<p>示例 1:<br>输入: dividend = 10, divisor = 3<br>输出: 3<br>示例 2:<br>输入: dividend = 7, divisor = -3<br>输出: -2</p>
-</blockquote>
-<blockquote>
-<p>说明:<br>被除数和除数均为 32 位有符号整数。<br>除数不为 0。<br>假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。本题中，如果除法结果溢出，则返回 231 − 1。</p>
-</blockquote>
-<p>看到这道题，我的第一个想法：“一个数除以另一个数，可以转化成多次减法运算”。<br>然后我的第一个骚操作来了：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">soultion</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> dividend, <span class="keyword">int</span> divisor)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(dividend &gt;= divisor)&#123;</span><br><span class="line">			dividend = dividend - divisor;</span><br><span class="line">			result++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>现在看到这段代码，我自己都佩服我自己。（手动鼓掌）</p>
-<h3 id="其实这个想法还是没错的，错在于没考虑极端情况"><a href="#其实这个想法还是没错的，错在于没考虑极端情况" class="headerlink" title="其实这个想法还是没错的，错在于没考虑极端情况"></a>其实这个想法还是没错的，错在于没考虑极端情况</h3><p>举例子说明，比如第一组测试样例，10除以3这种“正常数字”（日常接触得到的计算量级）来说，这段代码并没有问题，可以正常运行，花费的时间也在可以接受的范围之内，但是现在问题来了：极端情况下会怎么样呢？</p>
-<p>我们给dividend取int的最大值（2的31次方-1），divisor取值1，执行这段代码需要耗时多久？<br>不难算出，while循环需要执行2的31次方-1次，也就是二十一亿多次，很明显时间上是不允许的。所以我们需要改进这个算法。</p>
-<p>在百度的帮助下，我认识了一个符号，叫移位符。好吧，这可能真的是很基础的东西，但是原谅我的菜，我真的是第一次听说这个东西。<br>简单介绍下移位符的作用：</p>
-<blockquote>
-<p>移位运算符在程序设计中，是位操作运算符的一种。移位运算符可以在二进制的基础上对数字进行平移。按照平移的方向和填充数字的规则分为三种：&lt;&lt;(左移)、&gt;&gt;(带符号右移)和&gt;&gt;&gt;(无符号右移)。</p>
-</blockquote>
-<p>拿右移<code>&gt;&gt;</code>举例子， <code>7&gt;&gt;1</code> 相当于 <code>7/2</code> <code>7&gt;&gt;2</code>相当于 <code>7/4</code>，即右移n位相当于除以2的n次方。<br>（从结果上看是这种效果）</p>
-<p>具体的运算例子 <code>11&gt;&gt;2</code></p>
-<blockquote>
-<p>11的二进制形式为：0000 0000 0000 0000 0000 0000 0000 1011，然后把低位的最后两个数字移出，因为该数字是正数，所以在高位补零。则得到的最终结果是0000 0000 0000 0000 0000 0000 0000 0010。转换为十进制是2。</p>
-</blockquote>
-<p>有了这个积累，我们再来看这道题。<br>我们现在需要做的事情，就是减少while循环的次数，怎么减少呢？当然就是每次循环多减一点啦！<br>先上代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> dividend, <span class="keyword">int</span> divisor)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> m,n;</span><br><span class="line">        m = Math.abs((<span class="keyword">long</span>)dividend);<span class="comment">//被除数的绝对值</span></span><br><span class="line">        n = Math.abs((<span class="keyword">long</span>)divisor);<span class="comment">//除数的绝对值</span></span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span> || (dividend == Integer.MIN_VALUE &amp;&amp; divisor == -<span class="number">1</span>))</span><br><span class="line">           <span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">           <span class="keyword">int</span> sign = ((dividend &lt; <span class="number">0</span>) ^ (divisor &lt; <span class="number">0</span>)) ? -<span class="number">1</span> : <span class="number">1</span>;</span><br><span class="line">         <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> (<span class="keyword">int</span>)((sign&gt;<span class="number">0</span>)? m:-m);</span><br><span class="line">           <span class="keyword">long</span> result = <span class="number">0</span>;</span><br><span class="line">           <span class="keyword">while</span>(m&gt;= n)&#123;</span><br><span class="line">                <span class="keyword">long</span> temp = n;</span><br><span class="line">                <span class="keyword">long</span> count = <span class="number">1</span>;</span><br><span class="line">               <span class="keyword">while</span>(m &gt; (temp&lt;&lt;<span class="number">1</span>))&#123;</span><br><span class="line">                   temp = temp&lt;&lt;<span class="number">1</span>;</span><br><span class="line">                   count = count&lt;&lt;<span class="number">1</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               result = result + count;</span><br><span class="line">               m = m - temp;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">return</span> (<span class="keyword">int</span>)((sign&gt;<span class="number">0</span>)? result:-result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>好了，现在我来解释下这个程序。</p>
-<p>首先看内层循环 <code>while(m &gt; (temp&lt;&lt;1))</code>里面的东西，<code>temp</code>等于除数，当m（被除数的绝对值）大于两倍的除数的时候，temp乘以二，count乘以二，循环到temp的两倍大于被除数m为止。这样循环的结果是循环次数会以指数级减少。<br>我们还是拿最开始的例子，dividend = pow（2，31）-1；divisor = 1；<br>第一次进入外层循环，然后进入内层循环，内层的while执行30次后结束，此时temp = 2的30次方，count = 2的30次方。接着向下执行第18和第19两行代码，整个循环第一次结束后，m = 1。</p>
-<h3 id="对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。"><a href="#对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。" class="headerlink" title="对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。"></a>对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。</h3><h3 id="但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。"><a href="#但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。" class="headerlink" title="但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。"></a>但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。</h3><p>前面还有十几次失败经验还没总结呢。</p>
-<p>首先第一个问题，变量声明里面的 <code>long</code> 为什么要用long？<br>还是上面那个极端的例子，在判断的时候 temp&lt;&lt;1，如果用int，会发生超出int最大值的问题，然后temp会变成一个负数，然后这个循环永远结束不了，然后就超时了。。。。。。</p>
-<p>第二个是边界值问题，在这个题目中，边界情况下只有一种可能会越界，就是当被除数为int最小值，除数为-1时，得到的商会大于int的最大值，所以我们需要考虑这种情况。</p>
-<p>最后就是符号判别问题，用异或判断被除数与除数是否相同，保证输出结果符号的正确性。（当然不想用异或运算的也可以使用if写明条件判断）</p>
-<p>当然按照这个思路做完以后，我也有个问题：为什么非要用移位运算符呢？<br>count = count + count不也一样么？<br>抱着这个疑问，我又改了改程序，又跑了一次。</p>
-<h2 id="结论是：确实可以，只不过会比移位运算符慢2ms"><a href="#结论是：确实可以，只不过会比移位运算符慢2ms" class="headerlink" title="结论是：确实可以，只不过会比移位运算符慢2ms"></a>结论是：确实可以，只不过会比移位运算符慢2ms</h2><p>至于为什么会慢2ms…我给自己留个坑吧，初步猜测是计算机处理二进制会更快一些，当然这只是猜测而已，具体什么原因我有空再去验证一下……</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="ck06d8d16005s20w028btv3y4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
 
     </footer>
   </div>
@@ -935,23 +1032,23 @@
       <ul>
         
           <li>
+            <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/">JavaScript进阶知识点--正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/15/JavaScript进阶知识点-JS面向对象/">JavaScript进阶知识点--JS面向对象</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/14/JavaScript进阶知识点-JS函数深入/">JavaScript进阶知识点--JS函数深入</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/">JavaScript进阶知识点--JS变量与作用域</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/">JavaScript基础知识点--event对象常用属性和方法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/31/JavaScript基础知识点-JS事件/">JavaScript基础知识点--JS事件</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/31/JavaScript基础知识点-DOM属性/">JavaScript基础知识点--DOM属性</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/26/JavaScript基础知识点-DOM操作之节点/">JavaScript基础知识点--DOM操作之节点</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/">JavaScript基础知识点--BOM之navigator对象及方法</a>
           </li>
         
       </ul>
