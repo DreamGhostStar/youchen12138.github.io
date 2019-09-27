@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="正则表达式什么是正则表达式由以下两种字符组成的文字模式  普通字符（例如26个英文字母、数字、汉字、_、,，不含有特殊含义的符号等）  特殊字符（有特殊含义的，例如.\等）   该模式描述在查找文字主体时待匹配的一个或多个字符串。正则表达式作为一个模板，将某个字符模式与说搜索的字符串进行匹配 正则表达式匹配的一定是字符串中的内容 方法test如果找到，则返回 true 如果未找到，则返回 fal">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-22T01:24:25.848Z">
+<meta property="og:updated_time" content="2019-09-22T02:31:46.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript进阶知识点--正则表达式">
 <meta name="twitter:description" content="正则表达式什么是正则表达式由以下两种字符组成的文字模式  普通字符（例如26个英文字母、数字、汉字、_、,，不含有特殊含义的符号等）  特殊字符（有特殊含义的，例如.\等）   该模式描述在查找文字主体时待匹配的一个或多个字符串。正则表达式作为一个模板，将某个字符模式与说搜索的字符串进行匹配 正则表达式匹配的一定是字符串中的内容 方法test如果找到，则返回 true 如果未找到，则返回 fal">
@@ -174,7 +174,7 @@
 <td>单词的边界匹配</td>
 </tr>
 </tbody></table>
-<p>中文的 Unicode 编码为<code>\u4e00-\u9fa5a</code></p>
+<p>中文的 Unicode 编码为<code>\u4e00-\u9fa5</code></p>
 <h1 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h1><p>以下均为贪婪匹配</p>
 <p>代码示例</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 匹配n个字符 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d&#123;3&#125;/; // &#123;&#125;中表示匹配的个数</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 匹配至少n个字符 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d&#123;1,&#125;/; // 至少1个</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 匹配n个到m个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d&#123;0,1&#125;/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;1&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 匹配0个或者1个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d?/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;1&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 至少匹配1个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d+/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 至少匹配0个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d*/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br></pre></td></tr></table></figure>
@@ -193,7 +193,7 @@
 
 <h1 id="前瞻性匹配"><a href="#前瞻性匹配" class="headerlink" title="前瞻性匹配"></a>前瞻性匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在这个例子中，只有java后面跟了script才会匹配成功 --&gt;</span><br><span class="line">var str = &apos;javascript&apos;;</span><br><span class="line">var pattern = /java(?=script)/;</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;java&quot;]</span><br></pre></td></tr></table></figure>
 
-<h1 id="负向前瞻性匹配"><a href="#负向前瞻性匹配" class="headerlink" title="负向前瞻性匹配"></a>负向前瞻性匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在这个例子中，如果java后面跟了script则不会匹配java --&gt;</span><br><span class="line">var str = &apos;javascript&apos;;</span><br><span class="line">var pattern = /java(?!script)/;</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;java&quot;]</span><br></pre></td></tr></table></figure>
+<h1 id="负向前瞻性匹配"><a href="#负向前瞻性匹配" class="headerlink" title="负向前瞻性匹配"></a>负向前瞻性匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在这个例子中，如果java后面跟了script则不会匹配java --&gt;</span><br><span class="line">var str = &apos;javascript&apos;;</span><br><span class="line">var pattern = /java(?!script)/;</span><br><span class="line">console.log(pattern.exec(str)); // null</span><br></pre></td></tr></table></figure>
 
 <h1 id="RegExp-的实例"><a href="#RegExp-的实例" class="headerlink" title="RegExp 的实例"></a>RegExp 的实例</h1><h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h2><table>
 <thead>
@@ -303,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck0uawmaj005apcw08312ij8a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck11th0o4006hh0w0urnk3t9a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -313,6 +313,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2019/09/23/jQuery入门/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          jQuery入门¨
+        
+      </div>
+    </a>
   
   
     <a href="/2019/09/15/JavaScript进阶知识点-JS面向对象/" id="article-nav-older" class="article-nav-link-wrap">
@@ -333,7 +342,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -343,7 +352,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -353,7 +362,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a> <a href="/tags/jQuery/" style="font-size: 11.67px;">jQuery</a>
     </div>
   </div>
 
@@ -375,23 +384,23 @@
       <ul>
         
           <li>
+            <a href="/2019/09/26/JavaScript进阶知识点-AJAX及JSON/">JavaScript进阶知识点--AJAX及JSON</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/24/jQuery选择器/">jQuery选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/23/jQuery入门/">jQuery入门¨</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/">JavaScript进阶知识点--正则表达式</a>
           </li>
         
           <li>
             <a href="/2019/09/15/JavaScript进阶知识点-JS面向对象/">JavaScript进阶知识点--JS面向对象</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/14/JavaScript进阶知识点-JS函数深入/">JavaScript进阶知识点--JS函数深入</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/">JavaScript进阶知识点--JS变量与作用域</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/">JavaScript基础知识点--event对象常用属性和方法</a>
           </li>
         
       </ul>

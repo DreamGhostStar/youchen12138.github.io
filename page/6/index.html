@@ -62,6 +62,420 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS基础知识点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/30/CSS基础知识点/" class="article-date">
+  <time datetime="2019-07-30T13:29:26.000Z" itemprop="datePublished">2019-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/30/CSS基础知识点/">CSS基础知识点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="HTML、CSS、JavaScript关系"><a href="#HTML、CSS、JavaScript关系" class="headerlink" title="HTML、CSS、JavaScript关系"></a>HTML、CSS、JavaScript关系</h2><ul>
+<li><p>HTML是网页内容的载体</p>
+</li>
+<li><p>CSS样式是表现（外观控制）</p>
+</li>
+<li><p>JavaScript是行为，用来实现网页特效效果</p>
+</li>
+</ul>
+<h2 id="CSS导入式"><a href="#CSS导入式" class="headerlink" title="CSS导入式"></a>CSS导入式</h2><ul>
+<li><p>@import “外部CSS样式”</p>
+</li>
+<li><p>@import url(外部CSS样式)</p>
+</li>
+</ul>
+<h2 id="CSS使用方法区别"><a href="#CSS使用方法区别" class="headerlink" title="CSS使用方法区别"></a>CSS使用方法区别</h2><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>引入方法</th>
+<th>位置</th>
+<th>加载</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>行内样式</td>
+<td>开始标签内的style</td>
+<td>html文件内</td>
+<td>同时</td>
+</tr>
+<tr>
+<td>内部样式</td>
+<td><code>&lt;head&gt;</code>中<code>&lt;style&gt;</code>内</td>
+<td>html文件内</td>
+<td>同时</td>
+</tr>
+<tr>
+<td>链入外部样式</td>
+<td><code>&lt;head&gt;</code>中<code>&lt;link&gt;</code>引用</td>
+<td>CSS样式文件与html文件分离</td>
+<td>页面加载时，同时加载CSS样式</td>
+</tr>
+<tr>
+<td>导入式@import</td>
+<td>在样式代码最开始处</td>
+<td>CSS样式文件与html文件分离</td>
+<td>在读取完html文件之后加载</td>
+</tr>
+</tbody></table>
+<h3 id="使用链入外部样式的好处"><a href="#使用链入外部样式的好处" class="headerlink" title="使用链入外部样式的好处"></a>使用链入外部样式的好处</h3><ol>
+<li><p>CSS和HTML分离</p>
+</li>
+<li><p>多个文件可以使用同一个样式文件</p>
+</li>
+<li><p>多文件引用同一个CSS文件，CSS只需下载一次</p>
+</li>
+</ol>
+<h3 id="CSS使用方法优先级"><a href="#CSS使用方法优先级" class="headerlink" title="CSS使用方法优先级"></a>CSS使用方法优先级</h3><blockquote>
+<p>行内样式&gt;内部样式&gt;外部样式</p>
+</blockquote>
+<p>说明：</p>
+<ol>
+<li><p>链入外部样式表与内部样式表之间的优先级取决于所处位置的先后</p>
+</li>
+<li><p>根据样式与元素的距离而定，越接近优先级就越高（就近原则）</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/30/CSS基础知识点/" data-id="ck11th0k8000ch0w0ax0r5rd0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML基础知识点-div和span与块级和行内标签" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/29/HTML基础知识点-div和span与块级和行内标签/" class="article-date">
+  <time datetime="2019-07-29T13:39:52.000Z" itemprop="datePublished">2019-07-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/HTML基础知识点-div和span与块级和行内标签/">HTML基础知识点--div和span与块级和行内标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="lt-div-gt-和-lt-span-gt"><a href="#lt-div-gt-和-lt-span-gt" class="headerlink" title="&lt;div&gt;和&lt;span&gt;"></a><code>&lt;div&gt;</code>和<code>&lt;span&gt;</code></h2><ul>
+<li><code>&lt;div&gt;</code>标签</li>
+</ul>
+<blockquote>
+<p>是一个区块容器标记，<code>&lt;div&gt;&lt;/div&gt;</code>之间是一个容器，可以包含段落、表格、图片等各种HTML元素。</p>
+</blockquote>
+<ul>
+<li><code>&lt;span&gt;</code>标签</li>
+</ul>
+<blockquote>
+<p>没有任何意义，为了应用样式</p>
+</blockquote>
+<h2 id="块级标签和行内标签"><a href="#块级标签和行内标签" class="headerlink" title="块级标签和行内标签"></a>块级标签和行内标签</h2><ul>
+<li><p>块级标签：占据一行，换行</p>
+</li>
+<li><p>行内标签：在一行，不换行</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/29/HTML基础知识点-div和span与块级和行内标签/" data-id="ck11th0ll002eh0w0pjg2elm5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML基础知识点-表单" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/25/HTML基础知识点-表单/" class="article-date">
+  <time datetime="2019-07-25T05:23:35.000Z" itemprop="datePublished">2019-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/25/HTML基础知识点-表单/">HTML基础知识点-表单</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>Form标签中，以下标签实现表单元素的添加</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;input&gt;</code></td>
+<td>表单输入标签</td>
+</tr>
+<tr>
+<td><code>&lt;select&gt;</code></td>
+<td>菜单和列表标签</td>
+</tr>
+<tr>
+<td><code>&lt;option&gt;</code></td>
+<td>菜单和列表项目标签</td>
+</tr>
+<tr>
+<td><code>&lt;textarea&gt;</code></td>
+<td>文字域标签</td>
+</tr>
+<tr>
+<td><code>&lt;optgroup&gt;</code></td>
+<td>菜单和列表项目分组标签</td>
+</tr>
+</tbody></table>
+<h2 id="lt-form-gt-标签属性"><a href="#lt-form-gt-标签属性" class="headerlink" title="&lt;form&gt;标签属性"></a><code>&lt;form&gt;</code>标签属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>action</td>
+<td>URL</td>
+<td>提交表单时向何处发送表单数据</td>
+</tr>
+<tr>
+<td>method</td>
+<td>get，post</td>
+<td>设置表单以何种方式发送到指定页面</td>
+</tr>
+<tr>
+<td>name</td>
+<td>form_name</td>
+<td>表单的名称</td>
+</tr>
+<tr>
+<td>target</td>
+<td>_blank,_self,_parent,_top</td>
+<td>在何处打开action URL</td>
+</tr>
+<tr>
+<td>enctype</td>
+<td>application/x-www-form-urlencoded, multiple/form-data, text/plain</td>
+<td>在发送表单数据之前如何对其编码</td>
+</tr>
+</tbody></table>
+<h2 id="input标签属性"><a href="#input标签属性" class="headerlink" title="input标签属性"></a>input标签属性</h2><table>
+<thead>
+<tr>
+<th>Type属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>text</td>
+<td>文字域</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码域</td>
+</tr>
+<tr>
+<td>file</td>
+<td>文件域</td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>复选域</td>
+</tr>
+<tr>
+<td>radio</td>
+<td>单选域</td>
+</tr>
+<tr>
+<td>Button</td>
+<td>按钮</td>
+</tr>
+<tr>
+<td>Submit</td>
+<td>提交按钮</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>重置按钮</td>
+</tr>
+<tr>
+<td>Hidden</td>
+<td>隐藏域</td>
+</tr>
+<tr>
+<td>image</td>
+<td>图像域</td>
+</tr>
+</tbody></table>
+<h3 id="单选框和复选框"><a href="#单选框和复选框" class="headerlink" title="单选框和复选框"></a>单选框和复选框</h3><p>注：name值必须一致</p>
+<h3 id="image"><a href="#image" class="headerlink" title="image"></a>image</h3><p>图像域既有图像，也能实现提交功能</p>
+<h2 id="下拉菜单和列表标签"><a href="#下拉菜单和列表标签" class="headerlink" title="下拉菜单和列表标签"></a>下拉菜单和列表标签</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;select&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;选项&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;选项&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="select标签属性"><a href="#select标签属性" class="headerlink" title="select标签属性"></a>select标签属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>设置下拉菜单和列表的名称</td>
+</tr>
+<tr>
+<td>multiple</td>
+<td>设置可选择多个选项</td>
+</tr>
+<tr>
+<td>size</td>
+<td>设置列表中可见选项的数目</td>
+</tr>
+</tbody></table>
+<h3 id="option标签属性"><a href="#option标签属性" class="headerlink" title="option标签属性"></a>option标签属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>selected</td>
+<td>设置选项初始选中状态</td>
+</tr>
+<tr>
+<td>value</td>
+<td>定义送往服务器的选项值</td>
+</tr>
+</tbody></table>
+<h2 id="分组下拉菜单和列表"><a href="#分组下拉菜单和列表" class="headerlink" title="分组下拉菜单和列表"></a>分组下拉菜单和列表</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;select&gt;</span><br><span class="line">    &lt;optgroup label=&quot;组1&quot;&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;选项&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;选项&lt;/option&gt;</span><br><span class="line">    ...</span><br><span class="line">    &lt;optgroup label=&quot;组2&quot;&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;选项&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;选项&lt;/option&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多行文本域-lt-textarea-gt"><a href="#多行文本域-lt-textarea-gt" class="headerlink" title="多行文本域&lt;textarea&gt;"></a>多行文本域<code>&lt;textarea&gt;</code></h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea name=&quot;&quot; rows=&quot;&quot; cols=&quot;&quot;&gt;</span><br><span class="line">    内容...</span><br><span class="line">&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>设置文本区的名称</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>设置描述文本区域预期值的简短提示</td>
+</tr>
+<tr>
+<td>rows</td>
+<td>设置文本区内的可见行数</td>
+</tr>
+<tr>
+<td>cols</td>
+<td>设置文本区内的可见宽度</td>
+</tr>
+</tbody></table>
+<h2 id="post和get的区别"><a href="#post和get的区别" class="headerlink" title="post和get的区别"></a>post和get的区别</h2><p>GET：</p>
+<ul>
+<li><p>使用URL传递参数</p>
+</li>
+<li><p>对所发送信息的数量也有限制</p>
+</li>
+<li><p>一般用于信息获取</p>
+</li>
+<li><p>保密性差</p>
+</li>
+</ul>
+<p>POST：</p>
+<ul>
+<li><p>表单数据作为HTTP请求体的一部分</p>
+</li>
+<li><p>对所发送信息的数量无限制</p>
+</li>
+<li><p>一般用于修改服务器上的资源</p>
+</li>
+<li><p>保密性好</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/25/HTML基础知识点-表单/" data-id="ck11th0lv002xh0w0hq88dn8m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-HTML基础知识点-表格" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/24/HTML基础知识点-表格/" class="article-date">
@@ -157,7 +571,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/24/HTML基础知识点-表格/" data-id="ck0uawm6z002mpcw0ckq0n17p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/24/HTML基础知识点-表格/" data-id="ck11th0lq002oh0w0492jytky" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -274,7 +688,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/23/HTML基础知识点-图像与超链接/" data-id="ck0uawm7j002tpcw08ufssmqx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/23/HTML基础知识点-图像与超链接/" data-id="ck11th0lm002hh0w01b3kldai" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -455,7 +869,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/21/HTML基础/" data-id="ck0uawm7p002vpcw0fpqzxx5d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/21/HTML基础/" data-id="ck11th0lz0031h0w0h6w4v7d7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -513,7 +927,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/20/Java知识点-2/" data-id="ck0uawmaw005wpcw0mw9xng2h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/20/Java知识点-2/" data-id="ck11th0nv0062h0w0wuffovez" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -651,7 +1065,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="ck0uawmal005dpcw01gk4vpda" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/16/Java知识点-1/" data-id="ck11th0ns005wh0w0giw55w2x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -690,7 +1104,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/15/CSS额外知识点-选择器（下）/" data-id="ck0uawm4s001zpcw076gq3gqf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/15/CSS额外知识点-选择器（下）/" data-id="ck11th0l8001xh0w0u6axjttm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -917,217 +1331,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-选择器（上）/" data-id="ck0uawmc80071pcw06duh58an" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS额外知识点-背景样式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/14/CSS额外知识点-背景样式/" class="article-date">
-  <time datetime="2019-07-14T06:50:10.000Z" itemprop="datePublished">2019-07-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/14/CSS额外知识点-背景样式/">CSS额外知识点--背景样式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="background-origin"><a href="#background-origin" class="headerlink" title="background-origin"></a><strong>background-origin</strong></h2><p>设置元素背景图片的原始起始位置。</p>
-<p>语法：</p>
-<p><code>background-origin ： border-box | padding-box | content-box;</code></p>
-<p>参数分别表示背景图片是从边框，还是内边距（默认值），或者是内容区域开始显示。</p>
-<p>效果如下：</p>
-<p><img src="http://img.mukewang.com/531003de0001166903660166.jpg" alt></p>
-<p>需要注意的是，如果背景不是no-repeat，这个属性无效，它会从边框开始显示。</p>
-<h2 id="background-clip"><a href="#background-clip" class="headerlink" title="background-clip"></a><strong>background-clip</strong></h2><p>用来将背景图片做适当的裁剪以适应实际需要。</p>
-<p>语法：</p>
-<p><code>background-clip ： border-box | padding-box | content-box | no-clip</code></p>
-<p>参数分别表示从<strong>边框</strong>、或<strong>内填充</strong>，或者<strong>内容区域向外裁剪背景</strong>。no-clip表示不裁切，和参数border-box显示同样的效果。backgroud-clip默认值为border-box。</p>
-<p>效果如下图所示：</p>
-<p><img src="http://img.mukewang.com/5310065d0001c95103660166.jpg" alt></p>
-<h2 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a><strong>background-size</strong></h2><p>设置背景图片的大小，以<strong>长度值</strong>或<strong>百分比</strong>显示，还可以通过<strong>cover</strong>和<strong>contain</strong>来对图片进行伸缩。</p>
-<p>语法：</p>
-<p><code>background-size: auto | &lt;长度值&gt; | &lt;百分比&gt; | cover | contain</code></p>
-<p>取值说明：</p>
-<p>1、<strong>auto</strong>：默认值，不改变背景图片的原始高度和宽度；</p>
-<p>2、<strong>&lt;长度值&gt;</strong>：成对出现如200px 50px，将背景图片宽高依次设置为前面两个值，当设置一个值时，将其作为图片宽度值来等比缩放；</p>
-<p>3、<strong>&lt;百分比&gt;</strong>：0％~100％之间的任何值，将背景图片宽高依次设置为所在元素宽高乘以前面百分比得出的数值，当设置一个值时同上；</p>
-<p>4、<strong>cover</strong>：顾名思义为覆盖，即将背景图片等比缩放以填满整个容器；</p>
-<p>5、<strong>contain</strong>：容纳，即将背景图片等比缩放至某一边紧贴容器边缘为止。</p>
-<h2 id="multiple-backgrounds"><a href="#multiple-backgrounds" class="headerlink" title="multiple backgrounds"></a><strong>multiple backgrounds</strong></h2><p>多重背景，也就是CSS2里<strong>background</strong>的属性外加<strong>origin</strong>、<strong>clip</strong>和<strong>size</strong>组成的新background的多次叠加，缩写时为用<strong>逗号</strong>隔开的每组值；用分解写法时，如果有多个背景图片，而其他属性只有一个（例如background-repeat只有一个），表明所有背景图片应用该属性值。</p>
-<p>语法缩写如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background ： [background-color] | [background-image] | [background-position][/background-size] | [background-repeat] | [background-attachment] | [background-clip] | [background-origin],...</span><br></pre></td></tr></table></figure>
-
-<p>可以把上面的缩写拆解成以下形式：</p>
-<p><code>background-image:url1,url2,...,urlN;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">background-repeat : repeat1,repeat2,...,repeatN;</span><br><span class="line">backround-position : position1,position2,...,positionN;</span><br><span class="line">background-size : size1,size2,...,sizeN;</span><br><span class="line">background-attachment : attachment1,attachment2,...,attachmentN;</span><br><span class="line">background-clip : clip1,clip2,...,clipN;</span><br><span class="line">background-origin : origin1,origin2,...,originN;</span><br><span class="line">background-color : color;</span><br></pre></td></tr></table></figure>
-
-<p>注意：</p>
-<p>用逗号隔开每组 background 的缩写值；</p>
-<p>如果有 size 值，需要紧跟 position 并且用 “/“ 隔开；</p>
-<p>如果有多个背景图片，而其他属性只有一个（例如 background-repeat 只有一个），表明所有背景图片应用该属性值。</p>
-<p>background-color 只能设置一个。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-背景样式/" data-id="ck0uawm5r0027pcw02c63vpu1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS额外知识点-文字和字体" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/14/CSS额外知识点-文字和字体/" class="article-date">
-  <time datetime="2019-07-14T06:28:17.000Z" itemprop="datePublished">2019-07-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/14/CSS额外知识点-文字和字体/">CSS额外知识点--文字和字体</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="text-overflow-与-word-wrap"><a href="#text-overflow-与-word-wrap" class="headerlink" title="text-overflow 与 word-wrap"></a><strong>text-overflow</strong> 与 <strong>word-wrap</strong></h2><p>text-overflow用来设置是否使用一个省略标记（…）标示对象内文本的溢出。</p>
-<p>语法：</p>
-<p><img src="http://img.mukewang.com/53070cc00001a5bc06000200.jpg" alt></p>
-<p>但是<strong>text-overflow</strong>只是用来说明文字溢出时用什么方式显示，要实现溢出时产生<strong>省略号</strong>的效果，还须定义<strong>强制文本在一行内显示</strong>（white-space:nowrap）及<strong>溢出内容为隐藏</strong>（overflow:hidden），只有这样才能实现<strong>溢出文本显示省略号</strong>的效果，代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">text-overflow:ellipsis; </span><br><span class="line">overflow:hidden; </span><br><span class="line">white-space:nowrap;</span><br></pre></td></tr></table></figure>
-
-<p>同时，<strong>word-wrap</strong>也可以用来设置<strong>文本行为</strong>，当前行超过指定容器的边界时是否断开转行。</p>
-<p>语法：</p>
-<p><img src="http://img.mukewang.com/53070cf700018a2b06000200.jpg" alt></p>
-<p><strong>normal</strong>为浏览器默认值，<strong>break-word</strong>设置在长单词或 <strong>URL地址</strong>内部进行换行，此属性不常用，用浏览器默认值即可。</p>
-<h2 id="嵌入字体-font-face"><a href="#嵌入字体-font-face" class="headerlink" title="嵌入字体@font-face"></a><strong>嵌入字体@font-face</strong></h2><p>@font-face能够加载服务器端的字体文件，让浏览器端可以显示用户电脑里没有安装的字体。</p>
-<p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@font-face &#123;</span><br><span class="line">    font-family : 字体名称;</span><br><span class="line">    src : 字体文件在服务器上的相对或绝对路径;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>这样设置之后，就可以像使用普通字体一样在<code>（font-*）</code>中设置字体样式。</p>
-<p>比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p &#123;</span><br><span class="line">    font-size :12px;</span><br><span class="line">    font-family : &quot;My Font&quot;;</span><br><span class="line">    /*必须项，设置@font-face中font-family同样的值*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="文本阴影text-shadow"><a href="#文本阴影text-shadow" class="headerlink" title="文本阴影text-shadow"></a>文本阴影text-shadow</h2><p>text-shadow可以用来设置文本的阴影效果。</p>
-<p>语法：</p>
-<p><code>text-shadow: X-Offset Y-Offset blur color;</code></p>
-<p><font color="LightPink">X-Offset</font>：表示阴影的水平偏移距离，其值为正值时阴影向右偏移，反之向左偏移；      </p>
-<p><font color="LightPink">Y-Offset</font>：是指阴影的垂直偏移距离，如果其值是正值时，阴影向下偏移，反之向上偏移；</p>
-<p><font color="LightPink">Blur</font>：是指阴影的模糊程度，其值不能是负值，如果值越大，阴影越模糊，反之阴影越清晰，如果不需要阴影模糊可以将Blur值设置为0；</p>
-<p><font color="LightPink">Color</font>：是指阴影的颜色，其可以使用rgba色。</p>
-<p>比如，我们可以用下面代码实现设置阴影效果。</p>
-<p><code>text-shadow: 0 1px 1px #fff</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-文字和字体/" data-id="ck0uawm520022pcw0bztaxys3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS额外知识点-颜色" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/14/CSS额外知识点-颜色/" class="article-date">
-  <time datetime="2019-07-14T06:13:49.000Z" itemprop="datePublished">2019-07-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/14/CSS额外知识点-颜色/">CSS额外知识点--颜色</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="颜色之RGBA"><a href="#颜色之RGBA" class="headerlink" title="颜色之RGBA"></a>颜色之RGBA</h2><p>RGB是一种色彩标准，是由红(R)、绿(G)、蓝(B)的变化以及相互叠加来得到各式各样的颜色。RGBA是在RGB的基础上增加了控制alpha透明度的参数。</p>
-<p>语法：</p>
-<p><code>color：rgba(R,G,B,A)</code></p>
-<p>以上R、G、B三个参数，正整数值的取值范围为：0 - 255。百分数值的取值范围为：0.0% - 100.0%。超出范围的数值将被截至其最接近的取值极限。并非所有浏览器都支持使用百分数值。A为透明度参数，取值在0~1之间，不可为负值。</p>
-<p>代码示例：</p>
-<p><code>background-color:rgba(100,120,60,0.5);</code></p>
-<h2 id="渐变色彩"><a href="#渐变色彩" class="headerlink" title="渐变色彩"></a>渐变色彩</h2><p>CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)。由于不同的渲染引擎实现渐变的语法不同，这里我们只针对线性渐变的 W3C 标准语法来分析其用法，其余大家可以查阅相关资料。W3C 语法已经得到了 IE10+、Firefox19.0+、Chrome26.0+ 和 Opera12.1+等浏览器的支持。</p>
-<p>这一小节我们来说一下线性渐变：</p>
-<p><img src="http://img.mukewang.com/54b72b2e0001500103790158.jpg" alt></p>
-<p>参数：</p>
-<p>第一个参数:指定<strong>渐变方向</strong>，可以用“<strong>角度</strong>”的关键词或“<strong>英文</strong>”来表示：</p>
-<p><img src="http://img.mukewang.com/542a25da00017e9406980223.jpg" alt></p>
-<p>（单击图片可放大）</p>
-<p>第一个参数省略时，默认为“180deg”，等同于“to bottom”。</p>
-<p>第二个和第三个参数，表示<strong>颜色的起始点和结束点</strong>，可以有多个颜色值。</p>
-<p><code>background-image:linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);</code></p>
-<p>效果图：</p>
-<p><img src="http://img.mukewang.com/54b72c080001611c04230192.jpg" alt></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-颜色/" data-id="ck0uawm5i0024pcw0kg3lq37z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/14/CSS额外知识点-选择器（上）/" data-id="ck11th0nd0056h0w02y4muq1f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1154,7 +1358,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -1164,7 +1368,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -1174,7 +1378,7 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a> <a href="/tags/jQuery/" style="font-size: 11.67px;">jQuery</a>
     </div>
   </div>
 
@@ -1196,23 +1400,23 @@ System.out.println(sb);//打印出来为hello</code></pre><figure class="highlig
       <ul>
         
           <li>
+            <a href="/2019/09/26/JavaScript进阶知识点-AJAX及JSON/">JavaScript进阶知识点--AJAX及JSON</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/24/jQuery选择器/">jQuery选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/23/jQuery入门/">jQuery入门¨</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/">JavaScript进阶知识点--正则表达式</a>
           </li>
         
           <li>
             <a href="/2019/09/15/JavaScript进阶知识点-JS面向对象/">JavaScript进阶知识点--JS面向对象</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/14/JavaScript进阶知识点-JS函数深入/">JavaScript进阶知识点--JS函数深入</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/">JavaScript进阶知识点--JS变量与作用域</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/">JavaScript基础知识点--event对象常用属性和方法</a>
           </li>
         
       </ul>

@@ -62,6 +62,283 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JSON格式-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/17/JSON格式-md/" class="article-date">
+  <time datetime="2019-05-17T04:58:44.000Z" itemprop="datePublished">2019-05-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JSON/">JSON</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/17/JSON格式-md/">JSON格式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JSON基本概念"><a href="#JSON基本概念" class="headerlink" title="JSON基本概念"></a>JSON基本概念</h2><ul>
+<li><p>JSON：JavaScript对象表示法（JavaScript object Notation）</p>
+</li>
+<li><p>JSON是存储和交换文本信息的语法，类似XML。它采用键值对的方式来组织，易于人们阅读和编写，同时也易于机器解析和生成</p>
+</li>
+<li><p>JSON是独立于语言的，也就是说不管什么语言，都可以解析JSON，只需要按照JSON的规则就行</p>
+</li>
+</ul>
+<h3 id="JSON与XML比较"><a href="#JSON与XML比较" class="headerlink" title="JSON与XML比较"></a>JSON与XML比较</h3><ul>
+<li><p>JSON的长度和XML格式比起来很短小，在网络传输的过程中可以大大减少带宽</p>
+</li>
+<li><p>JSON读写的速度更快</p>
+</li>
+<li><p>JSON可以使用JavaScript内建的方法直接进行解析，转换成JavaScript对象，非常方便</p>
+</li>
+</ul>
+<h3 id="JSON语法规则"><a href="#JSON语法规则" class="headerlink" title="JSON语法规则"></a>JSON语法规则</h3><ul>
+<li><p>JSON数据的书写格式是：名称/值对</p>
+<p>  名称/值对组合中的名称写在前面（在双引号中），值对写在后面（同样写在双引号中），中间用冒号隔开：比如”name”:”郭靖”</p>
+</li>
+<li><p>JSON的值可以是下面这些类型：</p>
+<p>  数字（整数或浮点数），比如123, 1.23</p>
+<p>  字符串（在双引号中）</p>
+<p>  逻辑值（布尔值 true或false）</p>
+<p>  数组（在方括号中）</p>
+<p>  对象（在花括号中）</p>
+<p>  null</p>
+</li>
+</ul>
+<h3 id="JSON约定"><a href="#JSON约定" class="headerlink" title="JSON约定"></a>JSON约定</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;success&quot;:true,                     //表示是否正确执行了，请求是否成功</span><br><span class="line">    &quot;msg&quot;:&quot;xxx&quot;,                        //这个请求为false时返回的信息</span><br><span class="line">    &quot;data&quot;:&quot;xxx&quot;                        //这个请求的返回值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;success&quot;:true,                     //表示是否正确执行了，请求是否成功</span><br><span class="line">    &quot;msg&quot;:&quot;xxx&quot;,  </span><br><span class="line">&#125;                      //返回的信息</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="ck11th0m50039h0w0qb1antp5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-XMLHttpRequest-md" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/16/XMLHttpRequest-md/" class="article-date">
+  <time datetime="2019-05-16T09:16:17.000Z" itemprop="datePublished">2019-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/16/XMLHttpRequest-md/">XMLHttpRequest</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="XMLHTTPRequest发送请求"><a href="#XMLHTTPRequest发送请求" class="headerlink" title="XMLHTTPRequest发送请求"></a>XMLHTTPRequest发送请求</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><blockquote>
+<p>将请求发送到服务器上</p>
+</blockquote>
+<ul>
+<li><p>open(method, url, async)</p>
+<p>  method：采用了什么方式（GET还是POST）</p>
+<p>  url：请求的地址。可以使用相对地址也可以使用绝对地址</p>
+<p>  async请求同步/异步。true表示异步，flase表示同步</p>
+</li>
+<li><p>send(string)</p>
+<p>  使用GET可以不填写string参数，使用POST必须填写string参数</p>
+</li>
+</ul>
+<h3 id="取得响应"><a href="#取得响应" class="headerlink" title="取得响应"></a>取得响应</h3><ul>
+<li><p>responseText：获得字符串形式的响应数据</p>
+</li>
+<li><p>responseXML：获得XML形式的响应数据</p>
+</li>
+<li><p>status和statusText：以数字和文本形式返回HTTP状态码</p>
+</li>
+<li><p>getAllResponseHeader()：获取所有的响应报头</p>
+</li>
+<li><p>getResponseHeader()：查询响应中的某个字段的值</p>
+</li>
+</ul>
+<h3 id="readyState属性"><a href="#readyState属性" class="headerlink" title="readyState属性"></a>readyState属性</h3><blockquote>
+<p>0：请求未初始化，open还没有调用</p>
+</blockquote>
+<blockquote>
+<p>1：服务器连接已建立，open已经调用了</p>
+</blockquote>
+<blockquote>
+<p>2：请求已接收，也就是接收到头信息了</p>
+</blockquote>
+<blockquote>
+<p>3：请求处理中，也就是接收到响应主体了</p>
+</blockquote>
+<blockquote>
+<p>4：请求已完成，且响应已就绪，也就是响应完成了</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="ck11th0o1006bh0w0zf85xgut" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTTP请求" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/16/HTTP请求/" class="article-date">
+  <time datetime="2019-05-16T07:28:06.000Z" itemprop="datePublished">2019-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/16/HTTP请求/">HTTP请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是HTTP"><a href="#什么是HTTP" class="headerlink" title="什么是HTTP"></a>什么是HTTP</h2><ul>
+<li><p>http是计算机通过网络进行通信的规则。</p>
+</li>
+<li><p>主要使浏览器能够从web服务器去请求信息和服务。</p>
+</li>
+<li><p>HTTP是一种无状态的协议。无状态指的是不建立持久的连接，服务端不保留连接的一些相关信息。</p>
+</li>
+</ul>
+<h2 id="概念介绍——HTTP请求"><a href="#概念介绍——HTTP请求" class="headerlink" title="概念介绍——HTTP请求"></a>概念介绍——HTTP请求</h2><h3 id="HTTP请求通常有以下7个步骤"><a href="#HTTP请求通常有以下7个步骤" class="headerlink" title="HTTP请求通常有以下7个步骤"></a>HTTP请求通常有以下7个步骤</h3><ol>
+<li><p>建立TCP连接</p>
+</li>
+<li><p>Web浏览器向Web服务器发送请求命令</p>
+</li>
+<li><p>Web浏览器发送请求头信息</p>
+</li>
+<li><p>Web服务器应答</p>
+</li>
+<li><p>Web服务器发送应答头信息</p>
+</li>
+<li><p>Web服务器向浏览器发送数据</p>
+</li>
+<li><p>Web服务器关闭TCP连接</p>
+</li>
+</ol>
+<h3 id="HTTP请求一般由四部分组成"><a href="#HTTP请求一般由四部分组成" class="headerlink" title="HTTP请求一般由四部分组成"></a>HTTP请求一般由四部分组成</h3><ol>
+<li><p>HTTP请求的方法或动作，比如是GET还是POST请求</p>
+</li>
+<li><p>正在请求的URL，总得知道请求的地址是什么吧</p>
+</li>
+<li><p>请求头，包含一些客户端环境信息，身份验证信息等</p>
+</li>
+<li><p>请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等等</p>
+</li>
+</ol>
+<h3 id="两种请求区别"><a href="#两种请求区别" class="headerlink" title="两种请求区别"></a>两种请求区别</h3><ul>
+<li><p>GET： </p>
+<ol>
+<li><p>一般用于信息获取</p>
+</li>
+<li><p>使用URL传递参数</p>
+</li>
+<li><p>对所发送信息的数量也有限制，一般在2000个字符</p>
+</li>
+</ol>
+</li>
+<li><p>POST</p>
+<ol>
+<li><p>一般用于修改服务器上的资源</p>
+</li>
+<li><p>对所发送信息的数量无限制</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h3 id="一个HTTP响应一般由三部分组成"><a href="#一个HTTP响应一般由三部分组成" class="headerlink" title="一个HTTP响应一般由三部分组成"></a>一个HTTP响应一般由三部分组成</h3><ol>
+<li><p>一个数字和文字组成的状态码，用来显示请求成功还是失败</p>
+</li>
+<li><p>响应头，响应头也和请求头一样包含许多有用的信息，例如服务器类型、日期时间、内容类型和长度等</p>
+</li>
+<li><p>响应体，也就是响应正文</p>
+</li>
+</ol>
+<h3 id="HTTP状态码（status）"><a href="#HTTP状态码（status）" class="headerlink" title="HTTP状态码（status）"></a>HTTP状态码（status）</h3><ul>
+<li>HTTP状态码由3位数字构成，其中首位数字定义了状态码的类型</li>
+</ul>
+<blockquote>
+<p>1xx：信息类，表示收到Web浏览器请求，正在进一步的处理中</p>
+</blockquote>
+<blockquote>
+<p>2xx：成功，表示用户请求被正确接收，理解和处理例如：200 OK</p>
+</blockquote>
+<blockquote>
+<p>3xx：重定向，表示请求没有成功，客户必须采取进一步的动作</p>
+</blockquote>
+<blockquote>
+<p>4xx：客户端错误，表示客户端提交的请求有错误，例如：404 NOT Found，意味着请求中所引用的文档不存在</p>
+</blockquote>
+<blockquote>
+<p>5xx：服务器错误，表示服务器不能完成对请求的处理：如500</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="ck11th0m6003ch0w0hmn9noyc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-运算符" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/09/运算符/" class="article-date">
@@ -144,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="ck0uawmbb006epcw0d742xu5o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="ck11th0oi0078h0w0twu0em0o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -262,7 +539,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="ck0uawmch0076pcw0s9q7plpo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="ck11th0oc006wh0w04f3x5zd8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -322,7 +599,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="ck0uawm8k0033pcw0fj9q6cvu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="ck11th0m10034h0w0mqaa7hdp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -400,7 +677,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="ck0uawmat005rpcw07walhl6z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="ck11th0ot007rh0w0s1zgqr3u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -453,7 +730,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="ck0uawm75002opcw01f4x2g63" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="ck11th0lf0029h0w08x3pbshp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -691,7 +968,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="ck0uawmcb0072pcw02j3sf4xf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="ck11th0ne0058h0w0fnijljss" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -788,7 +1065,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="ck0uawm6o002ipcw0f18pwfvi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="ck11th0ld0026h0w0untnq8gy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -815,7 +1092,7 @@ q退出</code></pre><hr>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -825,7 +1102,7 @@ q退出</code></pre><hr>
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -835,7 +1112,7 @@ q退出</code></pre><hr>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a> <a href="/tags/jQuery/" style="font-size: 11.67px;">jQuery</a>
     </div>
   </div>
 
@@ -857,23 +1134,23 @@ q退出</code></pre><hr>
       <ul>
         
           <li>
+            <a href="/2019/09/26/JavaScript进阶知识点-AJAX及JSON/">JavaScript进阶知识点--AJAX及JSON</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/24/jQuery选择器/">jQuery选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/23/jQuery入门/">jQuery入门¨</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/">JavaScript进阶知识点--正则表达式</a>
           </li>
         
           <li>
             <a href="/2019/09/15/JavaScript进阶知识点-JS面向对象/">JavaScript进阶知识点--JS面向对象</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/14/JavaScript进阶知识点-JS函数深入/">JavaScript进阶知识点--JS函数深入</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/">JavaScript进阶知识点--JS变量与作用域</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/">JavaScript基础知识点--event对象常用属性和方法</a>
           </li>
         
       </ul>
