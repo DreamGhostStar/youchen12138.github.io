@@ -62,6 +62,193 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript基础知识点-DOM属性" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/31/JavaScript基础知识点-DOM属性/" class="article-date">
+  <time datetime="2019-08-31T01:34:26.000Z" itemprop="datePublished">2019-08-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/31/JavaScript基础知识点-DOM属性/">JavaScript基础知识点--DOM属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="认识属性"><a href="#认识属性" class="headerlink" title="认识属性"></a>认识属性</h1><p>HTML 属性分为两种</p>
+<ol>
+<li><p>property：固有属性</p>
+</li>
+<li><p>attribute：自定义属性</p>
+</li>
+</ol>
+<h2 id="属性说明"><a href="#属性说明" class="headerlink" title="属性说明"></a>属性说明</h2><ul>
+<li><p>Ele.attributes：返回指定节点的属性集合</p>
+</li>
+<li><p>Ele.attributes.getNamedItem(“attributeName”).nodeValue：返回指定的属性节点。attributeName为要查找的属性值的属性名，该方法只能获取在元素上定义的属性值</p>
+</li>
+<li><p>Ele.attributes.removeNamedItem(“attributeName”)：移除指定的属性节点</p>
+</li>
+<li><p>Ele.attributes.setNamedItem(“attribute”)：将已有的属性节点设置给该元素</p>
+</li>
+<li><p>document.createAttribute(“arributeName”)：在文档中创建一个属性节点。若是要为指定元素添加属性，需要到 setNamedItem() 方法或 setAttributeNode() 方法</p>
+</li>
+<li><p>nodeName：会根据所属节点类型返回节点的名称</p>
+<table>
+<thead>
+<tr>
+<th>nodeName所属节点的类型</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>元素节点</td>
+<td>标签名称</td>
+</tr>
+<tr>
+<td>属性节点</td>
+<td>属性名称</td>
+</tr>
+<tr>
+<td>文本节点</td>
+<td>#text</td>
+</tr>
+<tr>
+<td>文档节点(document)</td>
+<td>#document</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>nodeValue：会根据所属节点类型返回节点的值。nodeValue 属性对于文档节点和元素节点是不可用的</p>
+<table>
+<thead>
+<tr>
+<th>nodeValue所属节点的类型</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>文本节点</td>
+<td>文本</td>
+</tr>
+<tr>
+<td>属性节点</td>
+<td>属性值</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>nodeType：返回一个数值代表节点的类型</p>
+<table>
+<thead>
+<tr>
+<th>接口</th>
+<th>nodeType常量</th>
+<th>nodeType值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Element</td>
+<td>Node.ELEMENT_NODE</td>
+<td>1</td>
+<td>元素节点</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Node.TEXT_NODE</td>
+<td>3</td>
+<td>文本节点</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>Node.DOCUMENT_NODE</td>
+<td>9</td>
+<td>document</td>
+</tr>
+<tr>
+<td>Comment</td>
+<td>Node.COMMENT_NODE</td>
+<td>8</td>
+<td>注释的文本</td>
+</tr>
+<tr>
+<td>DocumentFragment</td>
+<td>Node.DOCUMENT_FRAGMENT_NODE</td>
+<td>11</td>
+<td>文档片段</td>
+</tr>
+<tr>
+<td>Attr</td>
+<td>Node.ATTRIBUTE_NODE</td>
+<td>2</td>
+<td>节点属性</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Ele.getAttribute(“attributeName”)：获取该属性名的属性值。包括固有属性和自定义属性</p>
+</li>
+<li><p>Ele.setAttribute(attributeName, attributeValue)：添加或修改元素的属性节点的属性值</p>
+</li>
+<li><p>Ele.removeAttribute(attributeName)：移除该元素指定的属性名及其属性值</p>
+</li>
+<li><p>Ele.setAttributeNode(attribute)：将属性节点添加到指定元素内</p>
+</li>
+</ul>
+<h1 id="nodeValue-与-value-的区别"><a href="#nodeValue-与-value-的区别" class="headerlink" title="nodeValue 与 value 的区别"></a>nodeValue 与 value 的区别</h1><p>nodeValue 属性根据节点的类型设置或返回节点的值。这里创建了一个属性节点，然后给这个节点添加了值</p>
+<p>value 属性用于设置或者返回属性的值。这里是直接属性添加值</p>
+<h1 id="为元素添加属性"><a href="#为元素添加属性" class="headerlink" title="为元素添加属性"></a>为元素添加属性</h1><h2 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ele.color.colorName=&quot;colorValue&quot;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ele.setArribute(&quot;arributeName&quot;, &quot;arributeValue&quot;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="第三种方法"><a href="#第三种方法" class="headerlink" title="第三种方法"></a>第三种方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr=document.createAttribute(&quot;arributeName&quot;);// 设置元素节点的属性名</span><br><span class="line">arr.value=&quot;arributeValue&quot;;// 设置元素节点的属性值</span><br><span class="line">Ele.setAttributeNode(arr);// 将元素节点添加到元素中</span><br></pre></td></tr></table></figure>
+
+<h2 id="第四种方法"><a href="#第四种方法" class="headerlink" title="第四种方法"></a>第四种方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var data = document.createAttribute(&quot;data&quot;);</span><br><span class="line">data.value = &quot;wrap&quot;;</span><br><span class="line">div.attributes.setNamedItem(data);// 为元素添加指定节点</span><br></pre></td></tr></table></figure>
+
+<h1 id="移除属性节点"><a href="#移除属性节点" class="headerlink" title="移除属性节点"></a>移除属性节点</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ele.attributes.removeNamedItem(&quot;attributeName&quot;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="其他属性"><a href="#其他属性" class="headerlink" title="其他属性"></a>其他属性</h1><h2 id="HTML-标签的布尔属性"><a href="#HTML-标签的布尔属性" class="headerlink" title="HTML 标签的布尔属性"></a>HTML 标签的布尔属性</h2><p>如 disabled、multiple、readonly、checked、selected 等属性</p>
+<h2 id="字符串属性"><a href="#字符串属性" class="headerlink" title="字符串属性"></a>字符串属性</h2><p>如 id、title（鼠标滑过时的提示信息）、href、src、lang、dir（文本的输出方向）、accesskey（通过快捷键使某个元素快捷选中，快捷键为Alt+定义的键）、name、value、class 等属性</p>
+<h3 id="W3C全局属性"><a href="#W3C全局属性" class="headerlink" title="W3C全局属性"></a>W3C全局属性</h3><p>accesskey、class、contenteditable（是否可编辑的内容）、dir、hidden、id、lang、spellcheck、style、tabindex（规定当使用“tab”键进行导航时元素的顺序）、title、translate（规定是否应该翻译元素内容，目前所有主流浏览器都无法正确支持该属性）</p>
+<h1 id="classList"><a href="#classList" class="headerlink" title="classList"></a>classList</h1><ul>
+<li><p>add(classValue)：为元素添加class类名</p>
+</li>
+<li><p>remove(classValue)：为元素移除class类名</p>
+</li>
+<li><p>contain(classValue)：判断该元素是否存在某个class</p>
+</li>
+<li><p>toggle(classValue)：如果有该classValue，则删除。若没有，则添加上</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck13dqldn004fj8w0ok47x95r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaScript基础知识点-DOM操作之节点" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/26/JavaScript基础知识点-DOM操作之节点/" class="article-date">
@@ -284,7 +471,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck11th0mo0047h0w0k64kdv1l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck13dqldu004oj8w0i1y5f092" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -328,7 +515,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck11th0ma003hh0w0xnq6fs43" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck13dqlcq003lj8w0tdcyyqo3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -389,7 +576,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" data-id="ck11th0mf003qh0w0c12p8vd8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" data-id="ck13dqldi0046j8w0wfhlg9d3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -451,7 +638,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/" data-id="ck11th0mg003th0w0ereavnw8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/" data-id="ck13dqldm004dj8w0x747osij" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -554,7 +741,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/" data-id="ck11th0md003oh0w0wzjkn72m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/" data-id="ck13dqlch003aj8w0yt1zyjr5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -740,7 +927,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-BOM基础及window对象/" data-id="ck11th0mi003xh0w0883pmmng" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-BOM基础及window对象/" data-id="ck13dqldq004ij8w08kk9jsk3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1002,7 +1189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-DOM事件/" data-id="ck11th0np005qh0w0tjlisqfu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-DOM事件/" data-id="ck13dqlef005lj8w0fusljq22" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1124,7 +1311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-初识DOM/" data-id="ck11th0nk005jh0w07tl422zj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-初识DOM/" data-id="ck13dqle40053j8w018xgtpmq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1177,132 +1364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-错误调试与处理/" data-id="ck11th0nh005dh0w0d2bkp9cb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-内置对象Date方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/24/JavaScript基础知识点-内置对象Date方法/" class="article-date">
-  <time datetime="2019-08-24T01:00:19.000Z" itemprop="datePublished">2019-08-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/24/JavaScript基础知识点-内置对象Date方法/">JavaScript基础知识点--内置对象Date方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="创建一个日期对象"><a href="#创建一个日期对象" class="headerlink" title="创建一个日期对象"></a>创建一个日期对象</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>new date()</p>
-</blockquote>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p>创建一个日期时间对象</p>
-<h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><p>不传参的情况下，返回当前的日期时间对象</p>
-<h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><p>如果想根据特定的日期和时间创建日期对象，必须传入表示该日期的毫秒数或者是一组用逗号隔开的表示年月日时分秒的参数，年月日必须选，时分秒可选</p>
-<h1 id="获取年月日时分秒及星期的方法"><a href="#获取年月日时分秒及星期的方法" class="headerlink" title="获取年月日时分秒及星期的方法"></a>获取年月日时分秒及星期的方法</h1><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>getFullTear()</td>
-<td>返回4位数的年份</td>
-</tr>
-<tr>
-<td>getMonth()</td>
-<td>返回日期中的月份，返回值为0~11</td>
-</tr>
-<tr>
-<td>getDate()</td>
-<td>返回月份中的某一天</td>
-</tr>
-<tr>
-<td>getDay()</td>
-<td>返回星期几，返回值为0~6</td>
-</tr>
-<tr>
-<td>getHours()</td>
-<td>返回小时</td>
-</tr>
-<tr>
-<td>getMinutes()</td>
-<td>返回分</td>
-</tr>
-<tr>
-<td>getSeconds()</td>
-<td>返回秒</td>
-</tr>
-<tr>
-<td>getTime()</td>
-<td>返回表示日期的毫秒数</td>
-</tr>
-</tbody></table>
-<h1 id="设置年月日时分秒及星期的方法"><a href="#设置年月日时分秒及星期的方法" class="headerlink" title="设置年月日时分秒及星期的方法"></a>设置年月日时分秒及星期的方法</h1><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>setFullTear()</td>
-<td>设置4位数的年份</td>
-</tr>
-<tr>
-<td>setMonth()</td>
-<td>设置日期中的月份，值为0~11</td>
-</tr>
-<tr>
-<td>setDate()</td>
-<td>设置月份中的某一天</td>
-</tr>
-<tr>
-<td>setHours()</td>
-<td>设置小时</td>
-</tr>
-<tr>
-<td>setMinutes()</td>
-<td>设置分</td>
-</tr>
-<tr>
-<td>setSeconds()</td>
-<td>设置秒</td>
-</tr>
-<tr>
-<td>setTime()</td>
-<td>设置表示日期的毫秒数，会改变整个日期</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-内置对象Date方法/" data-id="ck11th0nu005zh0w0gsr1qlzi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-错误调试与处理/" data-id="ck13dqleh005oj8w0z7gozpw2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1318,7 +1380,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -1349,7 +1411,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a> <a href="/tags/jQuery/" style="font-size: 11.67px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a>
     </div>
   </div>
 
@@ -1371,6 +1433,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/27/jQuery事件/">jQuery事件</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/26/JavaScript进阶知识点-AJAX及JSON/">JavaScript进阶知识点--AJAX及JSON</a>
           </li>
         
@@ -1384,10 +1450,6 @@
         
           <li>
             <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/">JavaScript进阶知识点--正则表达式</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/15/JavaScript进阶知识点-JS面向对象/">JavaScript进阶知识点--JS面向对象</a>
           </li>
         
       </ul>

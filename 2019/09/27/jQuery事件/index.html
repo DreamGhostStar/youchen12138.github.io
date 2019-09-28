@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>jQuery事件 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="鼠标事件 click([[data], fn])、dblclick([[data], fn])  click：鼠标单击时触发 dblclick：鼠标双击时触发  mousedown、mouseup  mousedown：鼠标按下时触发 mouseup：按下的鼠标放松是触发  mouseenter、mouseleave  鼠标进入（移出）时触发  hover([over], out)  鼠标进入和">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery事件">
+<meta property="og:url" content="http://yoursite.com/2019/09/27/jQuery事件/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="鼠标事件 click([[data], fn])、dblclick([[data], fn])  click：鼠标单击时触发 dblclick：鼠标双击时触发  mousedown、mouseup  mousedown：鼠标按下时触发 mouseup：按下的鼠标放松是触发  mouseenter、mouseleave  鼠标进入（移出）时触发  hover([over], out)  鼠标进入和">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-28T09:06:46.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery事件">
+<meta name="twitter:description" content="鼠标事件 click([[data], fn])、dblclick([[data], fn])  click：鼠标单击时触发 dblclick：鼠标双击时触发  mousedown、mouseup  mousedown：鼠标按下时触发 mouseup：按下的鼠标放松是触发  mouseenter、mouseleave  鼠标进入（移出）时触发  hover([over], out)  鼠标进入和">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQuery事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/27/jQuery事件/" class="article-date">
+  <time datetime="2019-09-27T07:42:27.000Z" itemprop="datePublished">2019-09-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery事件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h2><blockquote>
+<p><code>click([[data], fn])、dblclick([[data], fn])</code></p>
+</blockquote>
+<p>click：鼠标单击时触发</p>
+<p>dblclick：鼠标双击时触发</p>
+<blockquote>
+<p><code>mousedown、mouseup</code></p>
+</blockquote>
+<p>mousedown：鼠标按下时触发</p>
+<p>mouseup：按下的鼠标放松是触发</p>
+<blockquote>
+<p><code>mouseenter、mouseleave</code></p>
+</blockquote>
+<p>鼠标进入（移出）时触发</p>
+<blockquote>
+<p><code>hover([over], out)</code></p>
+</blockquote>
+<p>鼠标进入和退出时触发两个函数，相当于 mouseenter 加上 mouseleave</p>
+<blockquote>
+<p><code>mouseover、mouseout</code></p>
+</blockquote>
+<p>鼠标进入（移出）指定元素及其子元素时触发</p>
+<blockquote>
+<p><code>mousemove([[data], fn])</code></p>
+</blockquote>
+<p>在 DOM 内部移动时，会发生 mousemove 事件</p>
+<blockquote>
+<p><code>scroll([[data], fn])</code></p>
+</blockquote>
+<p>当滚动指定的元素时，会发生 scroll 事件</p>
+<h2 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h2><blockquote>
+<p><code>keydown([[data], fn])</code></p>
+</blockquote>
+<p>当键盘或按钮被按下时，发生 keydown 事件</p>
+<blockquote>
+<p><code>keyup([[data], fn])</code></p>
+</blockquote>
+<p>当按钮被松开时，发生 keyup 事件。它发生在当前获得焦点的元素上</p>
+<blockquote>
+<p><code>keypress([[data], fn])</code></p>
+</blockquote>
+<p>当键盘或按钮被按下时，发生 keypress 事件</p>
+<h2 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h2><blockquote>
+<p><code>ready(fn)</code></p>
+</blockquote>
+<p>当 DOM 载入就绪可以查询及操纵时绑定一个要执行的函数</p>
+<blockquote>
+<p><code>resize([[data], fn])</code></p>
+</blockquote>
+<p>当调整浏览器窗口大小时，发生 resize 事件</p>
+<blockquote>
+<p><code>focus([[data], fn])、blur([[data], fn])</code></p>
+</blockquote>
+<p>当元素获得（失去）焦点时触发focus（blur）事件</p>
+<blockquote>
+<p><code>change([[data], fn])</code></p>
+</blockquote>
+<p>当元素的值发生改变时，会发生 change 事件</p>
+<blockquote>
+<p><code>select([[data], fn])</code></p>
+</blockquote>
+<p>当 textarea 或文本类型的 input 元素中的文本被选择时，会发生 select 事件</p>
+<blockquote>
+<p><code>submit([[data], fn])</code></p>
+</blockquote>
+<p>当提交表单时，会发生 submit 事件</p>
+<p>注：如果 submit 事件中的函数返回值为 false，表单不会提交</p>
+<h2 id="事件参数"><a href="#事件参数" class="headerlink" title="事件参数"></a>事件参数</h2><h3 id="event"><a href="#event" class="headerlink" title="event"></a>event</h3><p>有些事件，如 mousemove 和 keypress，我们需要获取鼠标位置和按键的值，否则监听这些事件就没什么意义了。所有事件都会传入 event 对象作为参数，可以从 event 对象上获取到更多的信息</p>
+<h2 id="事件绑定与取消"><a href="#事件绑定与取消" class="headerlink" title="事件绑定与取消"></a>事件绑定与取消</h2><blockquote>
+<p><code>on(events, [selector], [data], fn)</code></p>
+</blockquote>
+<p>在选择元素上绑定一个或多个事件的事件处理函数</p>
+<blockquote>
+<p><code>off(events, [selector], [fn])</code></p>
+</blockquote>
+<p>在选择元素上移除一个或多个事件的事件处理函数</p>
+<blockquote>
+<p><code>one(type, [data], fn)</code></p>
+</blockquote>
+<p>为每一个匹配元素的特定事件（比如 click ）绑定一个一次性的事件处理函数</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/27/jQuery事件/" data-id="ck13dqley006ij8w0xjhorwhc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/26/JavaScript进阶知识点-AJAX及JSON/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript进阶知识点--AJAX及JSON</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/27/jQuery事件/">jQuery事件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/26/JavaScript进阶知识点-AJAX及JSON/">JavaScript进阶知识点--AJAX及JSON</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/24/jQuery选择器/">jQuery选择器</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/23/jQuery入门/">jQuery入门¨</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/">JavaScript进阶知识点--正则表达式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
