@@ -5,20 +5,20 @@
   
 
   
-  <title>JavaScript基础知识点--内置对象Math方法 | Hexo</title>
+  <title>jQuery扩展之动画 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="求最大、最小值min()语法 Math.min(num1, num2…numN)  功能求一组数中的最小值 返回值Number max()语法 Math.max(num1, num2…numN)  功能求一组数中的最大值 返回值Number 取整方法ceil()语法 Math.ceil(num)  功能向上取整，即返回大于 num 的最小整数 返回值Number floor()语法 Math.f">
-<meta name="keywords" content="JavaScript">
+  <meta name="description" content="动画 DOM 及其 CSS 操作原理我们只需要以固定的时间间隔（例如，0.1秒），每次 DOM 元素的 CSS 样式修改一点（例如，高宽各增加10%），看起来就像动画了 自定义动画 animate  可以实现任意的动画效果，需要传递的参数是 DOM 元素最终的 CSS 状态和时间 123456var div = $(&amp;apos;#test-animate&amp;apos;);div.animate(&amp;">
+<meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript基础知识点--内置对象Math方法">
-<meta property="og:url" content="http://yoursite.com/2019/08/24/JavaScript基础知识点-内置对象Math方法/index.html">
+<meta property="og:title" content="jQuery扩展之动画">
+<meta property="og:url" content="http://yoursite.com/2019/09/28/jQuery扩展之动画/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="求最大、最小值min()语法 Math.min(num1, num2…numN)  功能求一组数中的最小值 返回值Number max()语法 Math.max(num1, num2…numN)  功能求一组数中的最大值 返回值Number 取整方法ceil()语法 Math.ceil(num)  功能向上取整，即返回大于 num 的最小整数 返回值Number floor()语法 Math.f">
+<meta property="og:description" content="动画 DOM 及其 CSS 操作原理我们只需要以固定的时间间隔（例如，0.1秒），每次 DOM 元素的 CSS 样式修改一点（例如，高宽各增加10%），看起来就像动画了 自定义动画 animate  可以实现任意的动画效果，需要传递的参数是 DOM 元素最终的 CSS 状态和时间 123456var div = $(&amp;apos;#test-animate&amp;apos;);div.animate(&amp;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-24T00:15:24.474Z">
+<meta property="og:updated_time" content="2019-09-29T12:14:09.901Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript基础知识点--内置对象Math方法">
-<meta name="twitter:description" content="求最大、最小值min()语法 Math.min(num1, num2…numN)  功能求一组数中的最小值 返回值Number max()语法 Math.max(num1, num2…numN)  功能求一组数中的最大值 返回值Number 取整方法ceil()语法 Math.ceil(num)  功能向上取整，即返回大于 num 的最小整数 返回值Number floor()语法 Math.f">
+<meta name="twitter:title" content="jQuery扩展之动画">
+<meta name="twitter:description" content="动画 DOM 及其 CSS 操作原理我们只需要以固定的时间间隔（例如，0.1秒），每次 DOM 元素的 CSS 样式修改一点（例如，高宽各增加10%），看起来就像动画了 自定义动画 animate  可以实现任意的动画效果，需要传递的参数是 DOM 元素最终的 CSS 状态和时间 123456var div = $(&amp;apos;#test-animate&amp;apos;);div.animate(&amp;">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,14 +65,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JavaScript基础知识点-内置对象Math方法" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-jQuery扩展之动画" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/24/JavaScript基础知识点-内置对象Math方法/" class="article-date">
-  <time datetime="2019-08-23T23:48:37.000Z" itemprop="datePublished">2019-08-24</time>
+    <a href="/2019/09/28/jQuery扩展之动画/" class="article-date">
+  <time datetime="2019-09-28T09:57:36.000Z" itemprop="datePublished">2019-09-28</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
   </div>
 
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript基础知识点--内置对象Math方法
+      jQuery扩展之动画
     </h1>
   
 
@@ -92,53 +92,66 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h1 id="求最大、最小值"><a href="#求最大、最小值" class="headerlink" title="求最大、最小值"></a>求最大、最小值</h1><h2 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.min(num1, num2…numN)</p>
+<h1 id="动画-DOM-及其-CSS-操作"><a href="#动画-DOM-及其-CSS-操作" class="headerlink" title="动画 DOM 及其 CSS 操作"></a>动画 DOM 及其 CSS 操作</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>我们只需要以固定的时间间隔（例如，0.1秒），每次 DOM 元素的 CSS 样式修改一点（例如，高宽各增加10%），看起来就像动画了</p>
+<h2 id="自定义动画"><a href="#自定义动画" class="headerlink" title="自定义动画"></a>自定义动画</h2><blockquote>
+<p><code>animate</code></p>
 </blockquote>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>求一组数中的最小值</p>
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h2 id="max"><a href="#max" class="headerlink" title="max()"></a>max()</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.max(num1, num2…numN)</p>
-</blockquote>
-<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><p>求一组数中的最大值</p>
-<h3 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h1 id="取整方法"><a href="#取整方法" class="headerlink" title="取整方法"></a>取整方法</h1><h2 id="ceil"><a href="#ceil" class="headerlink" title="ceil()"></a>ceil()</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.ceil(num)</p>
-</blockquote>
-<h3 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a>功能</h3><p>向上取整，即返回大于 num 的最小整数</p>
-<h3 id="返回值-2"><a href="#返回值-2" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h2 id="floor"><a href="#floor" class="headerlink" title="floor()"></a>floor()</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.floor(num)</p>
-</blockquote>
-<h3 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a>功能</h3><p>向下取整，即返回 num 的整数部分</p>
-<h3 id="返回值-3"><a href="#返回值-3" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h2 id="round"><a href="#round" class="headerlink" title="round()"></a>round()</h2><h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.round(num)</p>
-</blockquote>
-<h3 id="功能-4"><a href="#功能-4" class="headerlink" title="功能"></a>功能</h3><p>将数值四舍五入为最接近的整数</p>
-<h3 id="返回值-4"><a href="#返回值-4" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h2 id="abs"><a href="#abs" class="headerlink" title="abs()"></a>abs()</h2><h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.abs(num)</p>
-</blockquote>
-<h3 id="功能-5"><a href="#功能-5" class="headerlink" title="功能"></a>功能</h3><p>返回 num 的绝对值</p>
-<h3 id="返回值-5"><a href="#返回值-5" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h1 id="产生随机数"><a href="#产生随机数" class="headerlink" title="产生随机数"></a>产生随机数</h1><h2 id="random"><a href="#random" class="headerlink" title="random()"></a>random()</h2><h3 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.random()</p>
-</blockquote>
-<h3 id="功能-6"><a href="#功能-6" class="headerlink" title="功能"></a>功能</h3><p>返回大于等于0小于1的一个随机数</p>
-<h3 id="返回值-6"><a href="#返回值-6" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>求n到m之间的随机整数的公式</p>
+<p>可以实现任意的动画效果，需要传递的参数是 DOM 元素最终的 CSS 状态和时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var div = $(&apos;#test-animate&apos;);</span><br><span class="line">div.animate(&#123;</span><br><span class="line">    opacity: 0.25,</span><br><span class="line">    width: &apos;256px&apos;,</span><br><span class="line">    height: &apos;256px&apos;</span><br><span class="line">&#125;, 3000)</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>random=Math.floor(Math.random()*(m-n+1)+n);</p>
+<p><code>delay(time)</code></p>
 </blockquote>
+<p>delay() 方法可以实现动画暂停</p>
+<blockquote>
+<p><code>stop()</code></p>
+</blockquote>
+<p>实现动画终止</p>
+<h2 id="动画函数"><a href="#动画函数" class="headerlink" title="动画函数"></a>动画函数</h2><blockquote>
+<p><code>show()/hide()</code></p>
+</blockquote>
+<p>直接以无参形式调用 show() 和 hide()，会显示和隐藏 DOM 元素，但是只要传递一个时间参数进去，就变成了动画</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var div = $(&apos;#test-show-hide&apos;);</span><br><span class="line">div.hide(3000);// 在3秒钟内逐渐消失</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>toggle()</code></p>
+</blockquote>
+<p>根据当前状态决定是 show() 和 hide()</p>
+<blockquote>
+<p><code>fadeIn / fadeout</code></p>
+</blockquote>
+<p>fadeIn() 和 fadeout 方法是动画淡入淡出，也就是通过不断地设置 DOM 元素的 opacity 属性来实现</p>
+<blockquote>
+<p><code>fadeToggle()</code></p>
+</blockquote>
+<p>根据元素是否可见来决定下一步动作</p>
+<blockquote>
+<p><code>slideUp / slideDown</code></p>
+</blockquote>
+<p>slideUp() / slideDown() 在垂直方向逐渐展开或收缩</p>
+<blockquote>
+<p><code>slideToggle()</code></p>
+</blockquote>
+<p>根据元素是否可见来进行下一步动作</p>
+<h2 id="计时器"><a href="#计时器" class="headerlink" title="计时器"></a>计时器</h2><blockquote>
+<p><code>setTimeout(time)</code></p>
+</blockquote>
+<p>间隔一段时间。只进行一次动画</p>
+<blockquote>
+<p><code>setInterval</code></p>
+</blockquote>
+<blockquote>
+<p><code>clearTimeout(timer)</code></p>
+</blockquote>
+<p>终止未进行的动画</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-内置对象Math方法/" data-id="ck14yjala004j4ow0iuwa78tx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/28/jQuery扩展之动画/" data-id="ck14yjamu006m4ow0cmvizlz5" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
 
     </footer>
   </div>
@@ -146,19 +159,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/08/24/JavaScript基础知识点-内置对象Date方法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          JavaScript基础知识点--内置对象Date方法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/23/JavaScript基础知识点-内置对象String方法/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/09/27/jQuery事件/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JavaScript基础知识点--内置对象String方法</div>
+      <div class="article-nav-title">jQuery事件</div>
     </a>
   
 </nav>

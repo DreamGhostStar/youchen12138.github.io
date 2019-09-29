@@ -62,6 +62,126 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS进阶知识点-CSS3基本选择器及属性选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" class="article-date">
+  <time datetime="2019-08-14T00:32:50.000Z" itemprop="datePublished">2019-08-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/">CSS进阶知识点--CSS3基本选择器及属性选择器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h1><ul>
+<li><p>通配符选择器</p>
+</li>
+<li><p>元素选择器</p>
+</li>
+<li><p>类选择器</p>
+</li>
+<li><p>ID选择器</p>
+</li>
+<li><p>后代选择器</p>
+</li>
+<li><p>子元素选择器</p>
+</li>
+<li><p>相邻兄弟选择器</p>
+</li>
+<li><p>通用兄弟选择器</p>
+</li>
+<li><p>群组选择器</p>
+</li>
+</ul>
+<p>前五个请参考<a href="https://youchen12138.github.io/2019/07/31/CSS基础知识点-选择器/" target="_blank" rel="noopener">CSS基础知识点–选择器</a></p>
+<h2 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>子元素选择器只能选择某元素的子元素</p>
+<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>父元素 &gt; 子元素（father &gt; child）</p>
+</blockquote>
+<h2 id="相邻兄弟选择器"><a href="#相邻兄弟选择器" class="headerlink" title="相邻兄弟选择器"></a>相邻兄弟选择器</h2><h3 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h3><p>相邻兄弟选择器可以选择紧接在另一元素后的元素，而且他们具有一个相同的父元素</p>
+<h3 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>元素 + 兄弟相邻元素（Element + Sibling）</p>
+</blockquote>
+<h2 id="通用兄弟选择器"><a href="#通用兄弟选择器" class="headerlink" title="通用兄弟选择器"></a>通用兄弟选择器</h2><h3 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h3><p>选择某元素后面的所有兄弟元素，而且他们具有一个相同的父元素</p>
+<h3 id="语法格式-2"><a href="#语法格式-2" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
+<p>元素 ~ 后面所有兄弟相邻元素（Element ~ Sibling）</p>
+</blockquote>
+<h2 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h2><h3 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h3><p>群组选择器是将具有相同样式的元素分组在一起，每个选择器之间使用逗号”,”隔开</p>
+<h3 id="语法格式-3"><a href="#语法格式-3" class="headerlink" title="语法格式"></a>语法格式</h3><p>元素1，元素2，…，元素n（Element1,Element2,…,Element3）</p>
+<h1 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h1><p>对带有制定属性的 HTML 元素设置样式</p>
+<p>使用CSS3属性选择器，你可以只指定元素的某个属性，或者你还可以同时指定元素的某个属性和其对应的属性值</p>
+<h2 id="Element-attribute"><a href="#Element-attribute" class="headerlink" title="Element[attribute]"></a>Element[attribute]</h2><h3 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h3><p>选择所有带有 attribute 属性元素</p>
+<h2 id="Element-attribute-”value”"><a href="#Element-attribute-”value”" class="headerlink" title="Element[attribute~=”value”]"></a>Element[attribute~=”value”]</h2><h3 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性有单词”value”的所有元素（属性不止一个属性值，其中一个属性值为”value”）</p>
+<p>注意：该属性选择器用于选取属性值中包含指定词汇的元素，只要是指定的属性，并且属性值列表中包含value，而不是在某个值中以value开头或结尾</p>
+<h2 id="Element-attribute-”value”-1"><a href="#Element-attribute-”value”-1" class="headerlink" title="Element[attribute^=”value”]"></a>Element[attribute^=”value”]</h2><h3 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值以”value”开头的所有元素</p>
+<p>注意：该属性选择器匹配指定属性的指定value值开头的元素，如果class中有多个value值，第一个值中的第一个字母不是指定的值，即使后面的属性中首字母是指定的值，那么也不能匹配上</p>
+<h2 id="Element-attribute-”value”-2"><a href="#Element-attribute-”value”-2" class="headerlink" title="Element[attribute$=”value”]"></a>Element[attribute$=”value”]</h2><h3 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值以”value”结尾的所有元素</p>
+<h2 id="Element-attribute-”value”-3"><a href="#Element-attribute-”value”-3" class="headerlink" title="Element[attribute*=”value”]"></a>Element[attribute*=”value”]</h2><h3 id="概念-8"><a href="#概念-8" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值包含”value”的所有元素（属性值中的单词包含）</p>
+<h2 id="Element-attribute-”value”-4"><a href="#Element-attribute-”value”-4" class="headerlink" title="Element[attribute|=”value”]"></a>Element[attribute|=”value”]</h2><h3 id="概念-9"><a href="#概念-9" class="headerlink" title="概念"></a>概念</h3><p>选择 attribute 属性值为”value”或以”value”开头的元素</p>
+<table>
+<thead>
+<tr>
+<th>属性选择器</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Element[<code>attribute</code>]</td>
+<td>选择所有带有 attribute 属性元素</td>
+</tr>
+<tr>
+<td>Element[<code>attribute~=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性有单词”value”的所有元素（属性不止一个属性值，其中一个属性值为”value”）</td>
+</tr>
+<tr>
+<td>Element[<code>attribute^=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性值以”value”开头的所有元素</td>
+</tr>
+<tr>
+<td>Element[<code>attribute$=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性值以”value”结尾的所有元素</td>
+</tr>
+<tr>
+<td>Element[<code>attribute*=&quot;value&quot;</code>]</td>
+<td>选择 attribute 属性值包含”value”的所有元素（属性值中的单词包含）</td>
+</tr>
+<tr>
+<td>Element[`attribute</td>
+<td>=”value”`]</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" data-id="ck14yjagy000x4ow0d2217lxt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-HTML进阶知识点-HTML5属性变化" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/11/HTML进阶知识点-HTML5属性变化/" class="article-date">
@@ -228,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/11/HTML进阶知识点-HTML5属性变化/" data-id="ck13dqlc1002oj8w0t642f8hj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/11/HTML进阶知识点-HTML5属性变化/" data-id="ck14yjakd00324ow09j9sapsx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
@@ -525,7 +645,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/10/HTML进阶知识点-HTML5标签变化/" data-id="ck13dqlc8002wj8w0jcf7z2ih" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/10/HTML进阶知识点-HTML5标签变化/" data-id="ck14yjak0002q4ow0hce3stee" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
@@ -588,7 +708,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/08/CSS基础知识点-网页布局/" data-id="ck13dql9u0005j8w0xi1oe1kz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/08/CSS基础知识点-网页布局/" data-id="ck14yjafj00064ow0l5n0l957" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -698,7 +818,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-CSS定位-position/" data-id="ck13dql9j0000j8w0frihztai" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-CSS定位-position/" data-id="ck14yjagh000r4ow0mp3hc03e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -780,7 +900,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-float浮动/" data-id="ck13dql9p0001j8w07pqsj0z3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-float浮动/" data-id="ck14yjaff00044ow0x1aae2gi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1030,7 +1150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/05/CSS基础知识点-背景和样式/" data-id="ck13dql9y000aj8w0jkapua24" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/05/CSS基础知识点-背景和样式/" data-id="ck14yjafq000c4ow0pvoexn7i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1264,7 +1384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="ck13dqla3000hj8w0iyafxsyy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="ck14yjafh00054ow0y6aa12t0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1471,7 +1591,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="ck13dqlad000vj8w0l8um73yp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="ck14yjaf600004ow0bjdsjloh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1590,199 +1710,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS文本样式/" data-id="ck13dql9v0006j8w0iahb5sy2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS基础知识点-CSS样式命名" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/01/CSS基础知识点-CSS样式命名/" class="article-date">
-  <time datetime="2019-08-01T05:58:44.000Z" itemprop="datePublished">2019-08-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/01/CSS基础知识点-CSS样式命名/">CSS基础知识点--CSS样式命名</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<ol>
-<li>页面结构</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>结构</th>
-<th>英文命名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>页头</td>
-<td>header</td>
-</tr>
-<tr>
-<td>导航</td>
-<td>nav</td>
-</tr>
-<tr>
-<td>页面主体</td>
-<td>main</td>
-</tr>
-<tr>
-<td>侧栏</td>
-<td>sidebar</td>
-</tr>
-<tr>
-<td>页尾</td>
-<td>footer</td>
-</tr>
-<tr>
-<td>栏目</td>
-<td>column</td>
-</tr>
-<tr>
-<td>内容</td>
-<td>content/container</td>
-</tr>
-<tr>
-<td>页面外围控制</td>
-<td>wrapper</td>
-</tr>
-<tr>
-<td>容器</td>
-<td>container</td>
-</tr>
-<tr>
-<td>左右中</td>
-<td>left right center</td>
-</tr>
-</tbody></table>
-<ol start="2">
-<li>导航</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>位置</th>
-<th>英文命名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>导航</td>
-<td>nav</td>
-</tr>
-<tr>
-<td>左导航</td>
-<td>leftSidebar</td>
-</tr>
-<tr>
-<td>主导航</td>
-<td>mainNav</td>
-</tr>
-<tr>
-<td>右导航</td>
-<td>rightSidebar</td>
-</tr>
-<tr>
-<td>子导航</td>
-<td>subNav</td>
-</tr>
-<tr>
-<td>菜单</td>
-<td>menu</td>
-</tr>
-<tr>
-<td>顶导航</td>
-<td>topNav</td>
-</tr>
-<tr>
-<td>子菜单</td>
-<td>subMenu</td>
-</tr>
-<tr>
-<td>边导航</td>
-<td>sidebar</td>
-</tr>
-<tr>
-<td>标题</td>
-<td>title</td>
-</tr>
-<tr>
-<td>摘要</td>
-<td>summary</td>
-</tr>
-</tbody></table>
-<ol start="3">
-<li>功能</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>英文命名</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>标志</td>
-<td>logo</td>
-</tr>
-<tr>
-<td>注册</td>
-<td>register</td>
-</tr>
-<tr>
-<td>广告</td>
-<td>banner</td>
-</tr>
-<tr>
-<td>搜索</td>
-<td>search</td>
-</tr>
-<tr>
-<td>登陆</td>
-<td>login</td>
-</tr>
-<tr>
-<td>功能区</td>
-<td>shop</td>
-</tr>
-<tr>
-<td>登陆条</td>
-<td>loginbar</td>
-</tr>
-<tr>
-<td>标题</td>
-<td>title</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS样式命名/" data-id="ck13dql9s0004j8w0mw08z3hf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS文本样式/" data-id="ck14yjafo000a4ow0hvru6zoi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1829,7 +1757,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.33px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/Git/" style="font-size: 13.33px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.67px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.67px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 13.33px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.67px;">TheKnowledgeOf</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.43px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
     </div>
   </div>
 
@@ -1851,6 +1779,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/28/jQuery扩展之动画/">jQuery扩展之动画</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/27/jQuery事件/">jQuery事件</a>
           </li>
         
@@ -1864,10 +1796,6 @@
         
           <li>
             <a href="/2019/09/23/jQuery入门/">jQuery入门¨</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/">JavaScript进阶知识点--正则表达式</a>
           </li>
         
       </ul>
