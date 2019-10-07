@@ -62,6 +62,98 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS进阶知识点-动画性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/19/CSS进阶知识点-动画性能优化/" class="article-date">
+  <time datetime="2019-08-19T14:22:03.000Z" itemprop="datePublished">2019-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>增强页面渲染性能</p>
+<h2 id="CPU-和-GPU"><a href="#CPU-和-GPU" class="headerlink" title="CPU 和 GPU"></a>CPU 和 GPU</h2><p>CPU 即中央处理器，解释计算机指令以及处理计算机软件中的数据</p>
+<p>GPU 即图片处理器，专门处理和绘制图形相关的硬件。GPU 是专门执行复杂的数学和几何计算而设计的，有了它，CPU 就从图形处理的任务中解放出来，可以执行其他更多的系统任务</p>
+<h2 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h2><p>CSS 的动画、变形、渐变并不会自动的触发 GPU 加速，而是使用浏览器稍慢的软件渲染引擎。</p>
+<p>在 transition，transform 和 animation 的世界里，应该卸载进程到 GPU 以加快速度。</p>
+<p>只有 3D 变形会有自己的 layer，2D变形不会</p>
+<h2 id="translateZ-（or-translate3d-）Hack"><a href="#translateZ-（or-translate3d-）Hack" class="headerlink" title="translateZ()（or translate3d()）Hack"></a>translateZ()（or translate3d()）Hack</h2><p>为元素添加没有变化的 3D 变形，骗取浏览器触发硬件加速</p>
+<h2 id="代价"><a href="#代价" class="headerlink" title="代价"></a>代价</h2><p>这种情况通过向它自己的层叠加元素，占用 RAM 和 GPU 存储空间</p>
+<h1 id="will-change"><a href="#will-change" class="headerlink" title="will-change"></a>will-change</h1><p>提前通知浏览器元素将要做什么动画，让浏览器提前准备合适的优化设置</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<p>will-change：auto | scroll-position | contents | <code>&lt;custom-ident&gt;</code> | <code>&lt;animateable-feature&gt;</code></p>
+</blockquote>
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auto</td>
+<td>此关键字表示没有特定的意图，适用于它通常所做的任何启发式和优化</td>
+</tr>
+<tr>
+<td>scroll-position</td>
+<td>表示将要改变元素的滚动位置</td>
+</tr>
+<tr>
+<td>contents</td>
+<td>表示将要改变元素的内容</td>
+</tr>
+<tr>
+<td><code>&lt;custom-ident&gt;</code></td>
+<td>明确指定将要改变的属性与给定的名称（最重要）</td>
+</tr>
+<tr>
+<td><code>&lt;animateable-feature&gt;</code></td>
+<td>可动画的一些特征值，比如left、top、margin等</td>
+</tr>
+</tbody></table>
+<h2 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h2><ul>
+<li><p>不能滥用</p>
+</li>
+<li><p>提前声明</p>
+</li>
+<li><p>remove</p>
+</li>
+</ul>
+<p>尽量将 will-change 放在 hover 伪类的父元素里</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画性能优化/" data-id="ck1g2tb62001a74w0eiulres9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS进阶知识点-动画" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/19/CSS进阶知识点-动画/" class="article-date">
@@ -218,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画/" data-id="ck14yjaj3001e4ow05ow941ds" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画/" data-id="ck1g2tb5z001874w0jadttv4d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -356,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-过渡/" data-id="ck14yjaje001t4ow0xf8cry48" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-过渡/" data-id="ck1g2tb6k001u74w03hdb7jva" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -424,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/" data-id="ck14yjah400144ow0b68m0xvn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/" data-id="ck1g2tb5t001374w08fs2v53t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -518,7 +610,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-3D转换/" data-id="ck14yjah200124ow0r7fcseav" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-3D转换/" data-id="ck1g2tb5r001174w0czqozysa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -648,7 +740,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-2D转换/" data-id="ck14yjajc001q4ow0faz0qn4c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-2D转换/" data-id="ck1g2tb6b001o74w00f7if243" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -752,7 +844,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" data-id="ck14yjaj7001h4ow0we1rkoeq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" data-id="ck1g2tb65001f74w066x2t0uo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -875,7 +967,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-渐变/" data-id="ck14yjaji001z4ow08rz7l4e2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-渐变/" data-id="ck1g2tb6n001x74w071havut1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -959,7 +1051,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-背景/" data-id="ck14yjaj9001k4ow0w6c8xxlg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-背景/" data-id="ck1g2tb67001i74w097jvrhf1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -1104,148 +1196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-CSS3边框和圆角/" data-id="ck14yjah600184ow02vgv489w" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS进阶知识点-CSS3伪类选择器和伪元素" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" class="article-date">
-  <time datetime="2019-08-15T13:44:22.000Z" itemprop="datePublished">2019-08-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h1><ul>
-<li><p>动态伪类（锚点伪类、用户行为伪类）</p>
-</li>
-<li><p>UI元素状态伪类</p>
-</li>
-<li><p>CSS3结构伪类</p>
-</li>
-<li><p>否定选择器</p>
-</li>
-<li><p>伪元素</p>
-</li>
-</ul>
-<h2 id="动态伪类"><a href="#动态伪类" class="headerlink" title="动态伪类"></a>动态伪类</h2><p>这些伪类并不存在与 HTML 中，只有当用户和网站<strong>交互</strong>的时候才能体现出来</p>
-<h3 id="锚点伪类"><a href="#锚点伪类" class="headerlink" title="锚点伪类"></a>锚点伪类</h3><ul>
-<li><p>:link</p>
-</li>
-<li><p>:visited</p>
-</li>
-</ul>
-<h3 id="用户行为伪类"><a href="#用户行为伪类" class="headerlink" title="用户行为伪类"></a>用户行为伪类</h3><ul>
-<li><p>:hover</p>
-</li>
-<li><p>:active</p>
-</li>
-<li><p>:focus（获取到焦点时的样式）</p>
-</li>
-</ul>
-<h2 id="UI元素状态伪类"><a href="#UI元素状态伪类" class="headerlink" title="UI元素状态伪类"></a>UI元素状态伪类</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>我们把”<code>:enabled</code>“, “<code>:disabled</code>“, “<code>checked</code>“伪类称为UI元素状态伪类</p>
-<h2 id="CSS3结构类"><a href="#CSS3结构类" class="headerlink" title="CSS3结构类"></a>CSS3结构类</h2><h3 id="CSS3的-nth选择器"><a href="#CSS3的-nth选择器" class="headerlink" title="CSS3的:nth选择器"></a>CSS3的<code>:nth</code>选择器</h3><p>我们把CSS3的<code>:nth</code>选择器也称为CSS3结构类</p>
-<h3 id="选择方法"><a href="#选择方法" class="headerlink" title="选择方法"></a>选择方法</h3><ul>
-<li><p>:first-child</p>
-</li>
-<li><p>:last-child</p>
-</li>
-<li><p>:nth-child()</p>
-</li>
-<li><p>:nth-last-child()</p>
-</li>
-<li><p>:nth-of-type()</p>
-</li>
-<li><p>:nth-last-of-type()</p>
-</li>
-<li><p>:first-of-type</p>
-</li>
-<li><p>:last-of-type</p>
-</li>
-<li><p>only-child</p>
-</li>
-<li><p>only-of-type</p>
-</li>
-<li><p>:empty</p>
-</li>
-</ul>
-<h3 id="Element-first-child"><a href="#Element-first-child" class="headerlink" title="Element:first-child"></a>Element:first-child</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的首个子元素，并为其设置样式</p>
-<h3 id="Element-last-child"><a href="#Element-last-child" class="headerlink" title="Element:last-child"></a>Element:last-child</h3><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的最后一个子元素，并为其设置样式</p>
-<h3 id="Element-nth-child-N"><a href="#Element-nth-child-N" class="headerlink" title="Element:nth-child(N)"></a>Element:nth-child(N)</h3><h4 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素，不论元素的类型</p>
-<h4 id="关于参数（N）"><a href="#关于参数（N）" class="headerlink" title="关于参数（N）"></a>关于参数（N）</h4><ul>
-<li><p>odd 相当于2n+1</p>
-</li>
-<li><p>even 相当于2n</p>
-</li>
-</ul>
-<h3 id="Element-nth-last-child-N"><a href="#Element-nth-last-child-N" class="headerlink" title="Element:nth-last-child(N)"></a>Element:nth-last-child(N)</h3><h4 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数</p>
-<h3 id="Element-nth-of-type-N"><a href="#Element-nth-of-type-N" class="headerlink" title="Element:nth-of-type(N)"></a>Element:nth-of-type(N)</h3><h4 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素</p>
-<h3 id="Element-nth-last-of-type-N"><a href="#Element-nth-last-of-type-N" class="headerlink" title="Element:nth-last-of-type(N)"></a>Element:nth-last-of-type(N)</h3><h4 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素，从最后一个子元素开始计数</p>
-<h3 id="Element-first-of-type"><a href="#Element-first-of-type" class="headerlink" title="Element:first-of-type"></a>Element:first-of-type</h3><h4 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的首个子元素</p>
-<h3 id="Element-last-of-type"><a href="#Element-last-of-type" class="headerlink" title="Element:last-of-type"></a>Element:last-of-type</h3><h4 id="概念-8"><a href="#概念-8" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的最后一个子元素</p>
-<h3 id="Element-only-child"><a href="#Element-only-child" class="headerlink" title="Element:only-child"></a>Element:only-child</h3><h4 id="概念-9"><a href="#概念-9" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一子元素</p>
-<h3 id="Element-only-of-type"><a href="#Element-only-of-type" class="headerlink" title="Element:only-of-type"></a>Element:only-of-type</h3><h4 id="概念-10"><a href="#概念-10" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一特定类型的子元素</p>
-<h3 id="Element-empty"><a href="#Element-empty" class="headerlink" title="Element:empty"></a>Element:empty</h3><h4 id="概念-11"><a href="#概念-11" class="headerlink" title="概念"></a>概念</h4><p>选择没有子元素（包括文本节点）的每个元素</p>
-<h2 id="否定选择器"><a href="#否定选择器" class="headerlink" title="否定选择器"></a>否定选择器</h2><h3 id="概念-12"><a href="#概念-12" class="headerlink" title="概念"></a>概念</h3><p>:not(Element/selector)选择器匹配非指定元素/选择器的每个元素</p>
-<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
-<p>父元素:not(子元素/子选择器)</p>
-</blockquote>
-<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><p>CSS 伪元素用于向某些选择器设置特殊效果</p>
-<h2 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h2><blockquote>
-<p>元素::伪元素（Element::pseudo-element）</p>
-</blockquote>
-<h2 id="Element-first-line"><a href="#Element-first-line" class="headerlink" title="Element::first-line"></a>Element::first-line</h2><h3 id="概念-13"><a href="#概念-13" class="headerlink" title="概念"></a>概念</h3><p>根据”first-line”伪元素中的样式对 Element 元素的第一行文本进行格式化</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>“first-line”伪元素只能用于块级元素</p>
-<h2 id="Element-first-letter"><a href="#Element-first-letter" class="headerlink" title="Element::first-letter"></a>Element::first-letter</h2><h3 id="概念-14"><a href="#概念-14" class="headerlink" title="概念"></a>概念</h3><p>用于向文本的首字母设置特殊样式</p>
-<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>“first-letter”伪元素只能用于块级元素</p>
-<h2 id="Element-before"><a href="#Element-before" class="headerlink" title="Element::before"></a>Element::before</h2><h3 id="概念-15"><a href="#概念-15" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容前面插入新内容</p>
-<h3 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li><p>第一个子元素</p>
-</li>
-<li><p>行级元素</p>
-</li>
-<li><p>内容通过 content 写入</p>
-</li>
-<li><p>标签中找不到对应标签，只能在浏览器开发者工具那可以找到</p>
-</li>
-</ol>
-<h2 id="Element-after"><a href="#Element-after" class="headerlink" title="Element::after"></a>Element::after</h2><h3 id="概念-16"><a href="#概念-16" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容后面插入新内容</p>
-<h3 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用，常用于清除浮动</p>
-<h2 id="Element-selection"><a href="#Element-selection" class="headerlink" title="Element::selection"></a>Element::selection</h2><h3 id="概念-17"><a href="#概念-17" class="headerlink" title="概念"></a>概念</h3><p>用于设置在浏览器中选中文本后的背景色与前景色</p>
-<h3 id="兼容性说明"><a href="#兼容性说明" class="headerlink" title="兼容性说明"></a>兼容性说明</h3><p>::selection 在IE家族中，只有IE9+ 版本支持，在 Firefox 中需要加上其前缀”-moz”</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" data-id="ck14yjagw000v4ow0gm51n4rj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-CSS3边框和圆角/" data-id="ck1g2tb5u001474w00inxy3dp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -1272,7 +1223,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bootstrap/">bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -1282,7 +1233,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -1292,7 +1243,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.43px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.43px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
     </div>
   </div>
 
@@ -1301,7 +1252,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -1312,6 +1263,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/10/07/bootstrap入门之全局样式/">bootstrap入门之全局样式</a>
+          </li>
         
           <li>
             <a href="/2019/09/28/jQuery扩展之动画/">jQuery扩展之动画</a>
@@ -1327,10 +1282,6 @@
         
           <li>
             <a href="/2019/09/24/jQuery选择器/">jQuery选择器</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/23/jQuery入门/">jQuery入门¨</a>
           </li>
         
       </ul>
