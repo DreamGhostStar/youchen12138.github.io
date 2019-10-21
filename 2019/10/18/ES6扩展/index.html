@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>ES6扩展 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="字符串扩展  正则扩展  数值扩展  函数扩展  对象扩展  数组扩展   字符串扩展模版字符串12let data=&amp;quot;jsiasj&amp;quot;;console.log(`data:$&amp;#123;data&amp;#125;`); // data:jsiasj  部分新的方法 padStart、padEnd  12345678&amp;lt;!-- padStart方法 --&amp;gt;let str">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6扩展">
+<meta property="og:url" content="http://yoursite.com/2019/10/18/ES6扩展/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="字符串扩展  正则扩展  数值扩展  函数扩展  对象扩展  数组扩展   字符串扩展模版字符串12let data=&amp;quot;jsiasj&amp;quot;;console.log(`data:$&amp;#123;data&amp;#125;`); // data:jsiasj  部分新的方法 padStart、padEnd  12345678&amp;lt;!-- padStart方法 --&amp;gt;let str">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-21T10:30:53.857Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6扩展">
+<meta name="twitter:description" content="字符串扩展  正则扩展  数值扩展  函数扩展  对象扩展  数组扩展   字符串扩展模版字符串12let data=&amp;quot;jsiasj&amp;quot;;console.log(`data:$&amp;#123;data&amp;#125;`); // data:jsiasj  部分新的方法 padStart、padEnd  12345678&amp;lt;!-- padStart方法 --&amp;gt;let str">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ES6扩展" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/18/ES6扩展/" class="article-date">
+  <time datetime="2019-10-18T02:12:22.000Z" itemprop="datePublished">2019-10-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ES6扩展
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><p>字符串扩展</p>
+</li>
+<li><p>正则扩展</p>
+</li>
+<li><p>数值扩展</p>
+</li>
+<li><p>函数扩展</p>
+</li>
+<li><p>对象扩展</p>
+</li>
+<li><p>数组扩展</p>
+</li>
+</ul>
+<h2 id="字符串扩展"><a href="#字符串扩展" class="headerlink" title="字符串扩展"></a>字符串扩展</h2><h3 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let data=&quot;jsiasj&quot;;</span><br><span class="line">console.log(`data:$&#123;data&#125;`); // data:jsiasj</span><br></pre></td></tr></table></figure>
+
+<h3 id="部分新的方法"><a href="#部分新的方法" class="headerlink" title="部分新的方法"></a>部分新的方法</h3><ul>
+<li>padStart、padEnd</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- padStart方法 --&gt;</span><br><span class="line">let str = &apos;i&apos;;</span><br><span class="line"></span><br><span class="line">let str1 = str.padStart(5, &apos;mooc&apos;);</span><br><span class="line">console.log(str1); // &apos;mooci&apos;</span><br><span class="line"></span><br><span class="line">let str1 = str.padStart(9, &apos;mooc&apos;);</span><br><span class="line">console.log(str1); // &apos;moocmooci&apos;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>repeat</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;i&apos;.repeat(10)); // &apos;iiiiiiiiii&apos;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>startsWith、endsWith：判断字符串是不是以…开头\结尾</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const str = &apos;A promsie is a promsie&apos;;</span><br><span class="line"></span><br><span class="line">console.log(str.startsWith(&apos;B&apos;)); // false</span><br><span class="line">console.log(str.startsWith(&apos;A pro&apos;)); // true</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>includes</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const str = &apos;A promise is a promise&apos;;</span><br><span class="line"></span><br><span class="line">if(str.includes(&apos;a promise&apos;))&#123;</span><br><span class="line">    console.log(&quot;存在&quot;); //存在</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="新的-Unicode-表示法和遍历方式"><a href="#新的-Unicode-表示法和遍历方式" class="headerlink" title="新的 Unicode 表示法和遍历方式"></a>新的 Unicode 表示法和遍历方式</h3><h4 id="使用-for-of-遍历字符串"><a href="#使用-for-of-遍历字符串" class="headerlink" title="使用 for-of 遍历字符串"></a>使用 for-of 遍历字符串</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;promise&quot;;</span><br><span class="line"></span><br><span class="line">for (let word of str)&#123;</span><br><span class="line">    console.log(word);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Unicode-表示法"><a href="#Unicode-表示法" class="headerlink" title="Unicode 表示法"></a>Unicode 表示法</h4><p>Unicode 是一项标准，包括字符集、编码方案等</p>
+<p>它是为了解决传统的字符编码方案的局限而产生的，为每种语言中的每个字符设定了统一并且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求</p>
+<p>一般的 Unicode 编码支持 0000~ffff</p>
+<p>如果想要表示 “\u1f436” 这种字符串，则需要”\u{1f436}”写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- codePointAt 获取字符串中对应的一个码点 --&gt;</span><br><span class="line">🐶.codePointAt(0); // 128054</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果想要获取🐶的 Unicode 编码 --&gt;</span><br><span class="line">🐶.codePointAt(0).toString(16); // 1f436</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则扩展"><a href="#正则扩展" class="headerlink" title="正则扩展"></a>正则扩展</h2><h3 id="u-修饰符"><a href="#u-修饰符" class="headerlink" title="u 修饰符"></a>u 修饰符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- &apos;\ud83d\udc36&apos;为一个字符，但是如果像下列这样写的话，系统会将其视为两个字符，才为 true --&gt;</span><br><span class="line">console.log(/^\ud83d/.test(&apos;\ud83d\udc36&apos;)); // true</span><br><span class="line"></span><br><span class="line">&lt;!-- 添加 u 修饰符，系统会将其视为一个字符 --&gt;</span><br><span class="line">console.log(/^\ud83d/u.test(&apos;\ud83d\udc36&apos;)); // false</span><br></pre></td></tr></table></figure>
+
+<h3 id="y-修饰符"><a href="#y-修饰符" class="headerlink" title="y 修饰符"></a>y 修饰符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const r1 = /imooc/g;</span><br><span class="line">const r2 = /imooc/y;</span><br><span class="line"></span><br><span class="line">const str = &apos;imoocimooc-imooc&apos;;</span><br><span class="line"></span><br><span class="line">console.log(r1.exec(str)); // &quot;imooc&quot;, index=0</span><br><span class="line">console.log(r1.exec(str)); // &quot;imooc&quot;, index=5</span><br><span class="line">console.log(r1.exec(str)); // &quot;imooc&quot;, index=11</span><br><span class="line">console.log(r1.exec(str)); // null</span><br><span class="line"></span><br><span class="line">console.log(r2.exec(str)); // &quot;imooc&quot;, index=0</span><br><span class="line">console.log(r2.exec(str)); // &quot;imooc&quot;, index=5</span><br><span class="line">console.log(r2.exec(str)); // null</span><br></pre></td></tr></table></figure>
+
+<h2 id="数值扩展"><a href="#数值扩展" class="headerlink" title="数值扩展"></a>数值扩展</h2><h3 id="新的进制表示法"><a href="#新的进制表示法" class="headerlink" title="新的进制表示法"></a>新的进制表示法</h3><p><code>0o</code>或<code>0O</code>表示八进制</p>
+<p><code>0b</code>或<code>0B</code>表示二进制</p>
+<h3 id="新的方法与安全数"><a href="#新的方法与安全数" class="headerlink" title="新的方法与安全数"></a>新的方法与安全数</h3><ul>
+<li><p>isFinite：是否为无限</p>
+</li>
+<li><p>isSafeInteger：是否处于js能精确表示的范围</p>
+<p>  范围为 Number.MIN_SAFE_INTEGER ~ Number.MAX_SAFE_INTEGER</p>
+</li>
+<li><p>幂运算（默认右结合）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = 2 ** 10;</span><br><span class="line">console.log(a); // 1024</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="函数扩展"><a href="#函数扩展" class="headerlink" title="函数扩展"></a>函数扩展</h2><h3 id="函数参数默认值"><a href="#函数参数默认值" class="headerlink" title="函数参数默认值"></a>函数参数默认值</h3><h3 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add(..args)&#123;</span><br><span class="line">    console.log(args); // [1, 2, 3, 4, 5]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(1, 2, 3, 4, 5);</span><br></pre></td></tr></table></figure>
+
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const add1 = (a, b) =&gt; &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const add2 = function(a, b)&#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(add1(2, 2)); // 4</span><br><span class="line">console.log(add2(2, 2)); // 4</span><br><span class="line"></span><br><span class="line">&lt;!-- 以上两种方法相同 --&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const pop = arr =&gt; void arr.pop();</span><br><span class="line">console.log(pop([1, 2, 3])); // undefined</span><br><span class="line"></span><br><span class="line">const pop = arr =&gt; arr.pop();</span><br><span class="line">console.log(pop([1, 2, 3])); // 3</span><br><span class="line"></span><br><span class="line">const pop = arr =&gt; &#123;</span><br><span class="line">    // 因为其没有 return，所以不会有返回值</span><br><span class="line">    arr.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>箭头函数中并无 arguments 对象，只能用扩展运算符实现 arguments 的功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const log = (...args) =&gt; &#123;</span><br><span class="line">    console.log(args);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(1, 2, 3); // [1, 2, 3]</span><br></pre></td></tr></table></figure>
+
+<p>箭头函数并不像普通函数一样具有函数作用域</p>
+<h2 id="对象扩展"><a href="#对象扩展" class="headerlink" title="对象扩展"></a>对象扩展</h2><h3 id="对象的简洁表示法"><a href="#对象的简洁表示法" class="headerlink" title="对象的简洁表示法"></a>对象的简洁表示法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const getUserInfo = (id = 1) =&gt; &#123;</span><br><span class="line">    const name = &apos;xiaoming&apos;;</span><br><span class="line">    const age = 10;</span><br><span class="line">    return &#123;</span><br><span class="line">        name, // 会自动寻找同名变量，相当于 name: name</span><br><span class="line">        age,</span><br><span class="line">        say()&#123;</span><br><span class="line">            console.log(this.name + this.age);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const xiaoming = getUserInfo();</span><br></pre></td></tr></table></figure>
+
+<h3 id="属性名表达式"><a href="#属性名表达式" class="headerlink" title="属性名表达式"></a>属性名表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const key = &apos;age&apos;;</span><br><span class="line">const xiaoming = &#123;</span><br><span class="line">    name: &apos;xiaoming&apos;,</span><br><span class="line">    [key]: 14 // [`$&#123;key&#125;123`]: 14</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><h3 id="复制对象——浅拷贝"><a href="#复制对象——浅拷贝" class="headerlink" title="复制对象——浅拷贝"></a>复制对象——浅拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const obj1 = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2,</span><br><span class="line">    d: &#123;</span><br><span class="line">        aa: 1,</span><br><span class="line">        bb: 2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const cObj1 = &#123;...obj1&#125;; // 浅拷贝</span><br><span class="line">console.log(cObj1.d.aa); // 1</span><br><span class="line">cObj1.d.aa = 99;</span><br><span class="line">console.log(cObj1.d.aa); // 99</span><br><span class="line">console.log(cObj1.d.aa); // 99</span><br></pre></td></tr></table></figure>
+
+<h3 id="合并对象——浅拷贝"><a href="#合并对象——浅拷贝" class="headerlink" title="合并对象——浅拷贝"></a>合并对象——浅拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const newObj = &#123;</span><br><span class="line">    ...obj2,</span><br><span class="line">    ...obj1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">newObj.d.aa = 22;</span><br><span class="line">console.log(obj1.d.aa); // 22</span><br></pre></td></tr></table></figure>
+
+<h3 id="部分新的方法和属性"><a href="#部分新的方法和属性" class="headerlink" title="部分新的方法和属性"></a>部分新的方法和属性</h3><h4 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is"></a><code>Object.is</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Object.is(+0, -0)); // false</span><br><span class="line">console.log(+0 === -0); // true</span><br><span class="line">console.log(Object.is(NaN, NaN)); // true</span><br><span class="line">console.log(NaN === NaN); // false</span><br></pre></td></tr></table></figure>
+
+<h4 id="Object-assign-——-浅拷贝"><a href="#Object-assign-——-浅拷贝" class="headerlink" title="Object.assign —— 浅拷贝"></a><code>Object.assign</code> —— 浅拷贝</h4><p>用途为合并对象或复制对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: &#123;</span><br><span class="line">        c: 2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const newObj = Object.assign(&#123;a: 3&#125;, obj);</span><br><span class="line"></span><br><span class="line">console.log(newObj.b.c); // 2</span><br><span class="line"></span><br><span class="line">newObj.b.c = 100;</span><br><span class="line"></span><br><span class="line">console.log(obj.b.c); // 100</span><br></pre></td></tr></table></figure>
+
+<h4 id="keys、values、entries"><a href="#keys、values、entries" class="headerlink" title="keys、values、entries"></a>keys、values、entries</h4><ul>
+<li><p>keys：返回迭代对象中的索引值</p>
+</li>
+<li><p>values：索引值所对应的值</p>
+</li>
+<li><p>entries：entries() 方法返回一个数组的迭代对象，该对象包含数组的键值对 (key/value)</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2,</span><br><span class="line">    c: 3,</span><br><span class="line">    d: 4</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">console.log(Object.keys(obj)); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span><br><span class="line"></span><br><span class="line">console.log(Object.values(obj)); // [1, 2, 3, 4]</span><br><span class="line"></span><br><span class="line">console.log(Object.entries(obj));</span><br><span class="line"></span><br><span class="line">for (let [k, v] of Object.entries(obj)) &#123;</span><br><span class="line">    console.log(k, v); // a 1&lt;br&gt;b 2&lt;br&gt;c 3&lt;br&gt;d 4&lt;br&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="新的方法"><a href="#新的方法" class="headerlink" title="新的方法"></a>新的方法</h3><h4 id="setPrototypeOf-obj-objProto"><a href="#setPrototypeOf-obj-objProto" class="headerlink" title="setPrototypeOf(obj, objProto)"></a>setPrototypeOf(obj, objProto)</h4><p>修改 obj 的原型对象为 objProtot</p>
+<h4 id="getPrototypeOf-obj"><a href="#getPrototypeOf-obj" class="headerlink" title="getPrototypeOf(obj)"></a>getPrototypeOf(obj)</h4><p>获取 obj 的原型对象</p>
+<h4 id="super"><a href="#super" class="headerlink" title="super"></a>super</h4><p>可以访问到原型对象上的属性和方法</p>
+<p>对象上有函数时，必须使用对象的简洁表示法才可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;name: &apos;xiaoming&apos;&#125;;</span><br><span class="line"></span><br><span class="line">const cObj = &#123;</span><br><span class="line">    say() &#123;</span><br><span class="line">        console.log(`My name is $&#123;super.name&#125;`);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.setPrototypeOf(cObj, obj);</span><br><span class="line"></span><br><span class="line">cObj.say(); // My name is xiaoming</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组扩展"><a href="#数组扩展" class="headerlink" title="数组扩展"></a>数组扩展</h2><h3 id="结合扩展运算符使用"><a href="#结合扩展运算符使用" class="headerlink" title="结合扩展运算符使用"></a>结合扩展运算符使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const user = [&apos;小明&apos;, 14, [&apos;吃饭&apos;, &apos;打游戏&apos;], &apos;我今年大二&apos;];</span><br><span class="line"></span><br><span class="line">function say(name, age, hobby, desc) &#123;</span><br><span class="line">    console.log(`我叫$&#123;name&#125;, 我今年$&#123;age&#125;岁，我喜欢$&#123;hobby.join(&apos;和&apos;)&#125;, $&#123;desc&#125;`);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">say(...user);</span><br></pre></td></tr></table></figure>
+
+<h3 id="合并数组与复制数组"><a href="#合并数组与复制数组" class="headerlink" title="合并数组与复制数组"></a>合并数组与复制数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2, 3, 4];</span><br><span class="line">const arr2 = [4, 2, 2, 1];</span><br><span class="line">const arr3 = [2.2, &apos;123&apos;, false];</span><br><span class="line"></span><br><span class="line">&lt;!-- 合并数组 --&gt;</span><br><span class="line">&lt;!-- 第一种方法 --&gt;</span><br><span class="line">const cArr1 = [1, 2, 3, ...arr3];</span><br><span class="line"></span><br><span class="line">&lt;!-- 第二种方法 --&gt;</span><br><span class="line">const cArr2 = [...arr1, ...arr2, ...arr3];</span><br><span class="line"></span><br><span class="line">&lt;!-- 复制数组 --&gt;</span><br><span class="line">&lt;!-- 第一种方法 --&gt;</span><br><span class="line">const cArr3 = [...arr1];</span><br><span class="line"></span><br><span class="line">&lt;!-- 第二种方法 --&gt;</span><br><span class="line">const [...cArr4] = arr3;</span><br></pre></td></tr></table></figure>
+
+<h3 id="新方法"><a href="#新方法" class="headerlink" title="新方法"></a>新方法</h3><h4 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h4><p>from()方法的作用是将一个 ArrayLike 对象或者 Iterable 对象（类数组对象）转换成一个 Array</p>
+<p>类数组对象的属性名必须为数值型或字符串型的数字</p>
+<p>对象中的 length 键值对表示的是最终由 from 方法转换的数组的长度</p>
+<p>接收两个参数，一个是需要转换的对象，一个是回调函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">    0: 1,</span><br><span class="line">    1: &apos;dfsa&apos;,</span><br><span class="line">    2: false,</span><br><span class="line">    length: 3</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(Array.from(obj));</span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of"></a>Array.of</h4><p>将传进去的参数转换为数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.of(1, 2, &apos;123&apos;, false));</span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-num-fill-value-start-end"><a href="#Array-num-fill-value-start-end" class="headerlink" title="Array(num).fill(value, start end)"></a>Array(num).fill(value, start end)</h4><p>将value填充数组，填充个数为数组的长度</p>
+<p>即使数组里面有值，它也会将原来有的值覆盖掉</p>
+<p>接受三个参数，start为开始填充的位置，end为结束填充的位置</p>
+<h4 id="Array-includes-value"><a href="#Array-includes-value" class="headerlink" title="Array.includes(value)"></a>Array.includes(value)</h4><p>判断数组中是否有value，返回布尔值</p>
+<h4 id="keys、values、entries-1"><a href="#keys、values、entries-1" class="headerlink" title="keys、values、entries"></a>keys、values、entries</h4><p>这里不过多阐述，请参照上面的笔记</p>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><p>根据条件（回调）按顺序遍历数组，当回调返回true时，就返回当前遍历到的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const res = [1, 7, 6, 3].find(function(value, index, arr)&#123;</span><br><span class="line">    console.log(&apos;value&apos;, value);</span><br><span class="line">    console.log(&apos;index&apos;, index);</span><br><span class="line">    console.log(&apos;arr&apos;, arr);</span><br><span class="line"></span><br><span class="line">    return value % 2 === 0;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(res);</span><br></pre></td></tr></table></figure>
+
+<h4 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h4><p>根据条件（回调）按顺序遍历数组，当回调返回true时，就返回当前遍历到的下标</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/18/ES6扩展/" data-id="ck20a6psp007o24w0kmpjwhkt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/17/ES6解构赋值/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ES6解构赋值</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bootstrap/">bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/18/ES6扩展/">ES6扩展</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/17/ES6解构赋值/">ES6解构赋值</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/16/bootstrap组件/">bootstrap组件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/13/ES6基础入门let、const/">ES6基础入门let、const</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/13/HTML5音视频/">HTML5音视频</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

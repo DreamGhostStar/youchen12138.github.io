@@ -62,6 +62,747 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ES6扩展" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/18/ES6扩展/" class="article-date">
+  <time datetime="2019-10-18T02:12:22.000Z" itemprop="datePublished">2019-10-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/18/ES6扩展/">ES6扩展</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><p>字符串扩展</p>
+</li>
+<li><p>正则扩展</p>
+</li>
+<li><p>数值扩展</p>
+</li>
+<li><p>函数扩展</p>
+</li>
+<li><p>对象扩展</p>
+</li>
+<li><p>数组扩展</p>
+</li>
+</ul>
+<h2 id="字符串扩展"><a href="#字符串扩展" class="headerlink" title="字符串扩展"></a>字符串扩展</h2><h3 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let data=&quot;jsiasj&quot;;</span><br><span class="line">console.log(`data:$&#123;data&#125;`); // data:jsiasj</span><br></pre></td></tr></table></figure>
+
+<h3 id="部分新的方法"><a href="#部分新的方法" class="headerlink" title="部分新的方法"></a>部分新的方法</h3><ul>
+<li>padStart、padEnd</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- padStart方法 --&gt;</span><br><span class="line">let str = &apos;i&apos;;</span><br><span class="line"></span><br><span class="line">let str1 = str.padStart(5, &apos;mooc&apos;);</span><br><span class="line">console.log(str1); // &apos;mooci&apos;</span><br><span class="line"></span><br><span class="line">let str1 = str.padStart(9, &apos;mooc&apos;);</span><br><span class="line">console.log(str1); // &apos;moocmooci&apos;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>repeat</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;i&apos;.repeat(10)); // &apos;iiiiiiiiii&apos;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>startsWith、endsWith：判断字符串是不是以…开头\结尾</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const str = &apos;A promsie is a promsie&apos;;</span><br><span class="line"></span><br><span class="line">console.log(str.startsWith(&apos;B&apos;)); // false</span><br><span class="line">console.log(str.startsWith(&apos;A pro&apos;)); // true</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>includes</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const str = &apos;A promise is a promise&apos;;</span><br><span class="line"></span><br><span class="line">if(str.includes(&apos;a promise&apos;))&#123;</span><br><span class="line">    console.log(&quot;存在&quot;); //存在</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="新的-Unicode-表示法和遍历方式"><a href="#新的-Unicode-表示法和遍历方式" class="headerlink" title="新的 Unicode 表示法和遍历方式"></a>新的 Unicode 表示法和遍历方式</h3><h4 id="使用-for-of-遍历字符串"><a href="#使用-for-of-遍历字符串" class="headerlink" title="使用 for-of 遍历字符串"></a>使用 for-of 遍历字符串</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;promise&quot;;</span><br><span class="line"></span><br><span class="line">for (let word of str)&#123;</span><br><span class="line">    console.log(word);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Unicode-表示法"><a href="#Unicode-表示法" class="headerlink" title="Unicode 表示法"></a>Unicode 表示法</h4><p>Unicode 是一项标准，包括字符集、编码方案等</p>
+<p>它是为了解决传统的字符编码方案的局限而产生的，为每种语言中的每个字符设定了统一并且唯一的二进制编码，以满足跨语言、跨平台进行文本转换、处理的要求</p>
+<p>一般的 Unicode 编码支持 0000~ffff</p>
+<p>如果想要表示 “\u1f436” 这种字符串，则需要”\u{1f436}”写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- codePointAt 获取字符串中对应的一个码点 --&gt;</span><br><span class="line">🐶.codePointAt(0); // 128054</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果想要获取🐶的 Unicode 编码 --&gt;</span><br><span class="line">🐶.codePointAt(0).toString(16); // 1f436</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则扩展"><a href="#正则扩展" class="headerlink" title="正则扩展"></a>正则扩展</h2><h3 id="u-修饰符"><a href="#u-修饰符" class="headerlink" title="u 修饰符"></a>u 修饰符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- &apos;\ud83d\udc36&apos;为一个字符，但是如果像下列这样写的话，系统会将其视为两个字符，才为 true --&gt;</span><br><span class="line">console.log(/^\ud83d/.test(&apos;\ud83d\udc36&apos;)); // true</span><br><span class="line"></span><br><span class="line">&lt;!-- 添加 u 修饰符，系统会将其视为一个字符 --&gt;</span><br><span class="line">console.log(/^\ud83d/u.test(&apos;\ud83d\udc36&apos;)); // false</span><br></pre></td></tr></table></figure>
+
+<h3 id="y-修饰符"><a href="#y-修饰符" class="headerlink" title="y 修饰符"></a>y 修饰符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const r1 = /imooc/g;</span><br><span class="line">const r2 = /imooc/y;</span><br><span class="line"></span><br><span class="line">const str = &apos;imoocimooc-imooc&apos;;</span><br><span class="line"></span><br><span class="line">console.log(r1.exec(str)); // &quot;imooc&quot;, index=0</span><br><span class="line">console.log(r1.exec(str)); // &quot;imooc&quot;, index=5</span><br><span class="line">console.log(r1.exec(str)); // &quot;imooc&quot;, index=11</span><br><span class="line">console.log(r1.exec(str)); // null</span><br><span class="line"></span><br><span class="line">console.log(r2.exec(str)); // &quot;imooc&quot;, index=0</span><br><span class="line">console.log(r2.exec(str)); // &quot;imooc&quot;, index=5</span><br><span class="line">console.log(r2.exec(str)); // null</span><br></pre></td></tr></table></figure>
+
+<h2 id="数值扩展"><a href="#数值扩展" class="headerlink" title="数值扩展"></a>数值扩展</h2><h3 id="新的进制表示法"><a href="#新的进制表示法" class="headerlink" title="新的进制表示法"></a>新的进制表示法</h3><p><code>0o</code>或<code>0O</code>表示八进制</p>
+<p><code>0b</code>或<code>0B</code>表示二进制</p>
+<h3 id="新的方法与安全数"><a href="#新的方法与安全数" class="headerlink" title="新的方法与安全数"></a>新的方法与安全数</h3><ul>
+<li><p>isFinite：是否为无限</p>
+</li>
+<li><p>isSafeInteger：是否处于js能精确表示的范围</p>
+<p>  范围为 Number.MIN_SAFE_INTEGER ~ Number.MAX_SAFE_INTEGER</p>
+</li>
+<li><p>幂运算（默认右结合）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let a = 2 ** 10;</span><br><span class="line">console.log(a); // 1024</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="函数扩展"><a href="#函数扩展" class="headerlink" title="函数扩展"></a>函数扩展</h2><h3 id="函数参数默认值"><a href="#函数参数默认值" class="headerlink" title="函数参数默认值"></a>函数参数默认值</h3><h3 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add(..args)&#123;</span><br><span class="line">    console.log(args); // [1, 2, 3, 4, 5]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">add(1, 2, 3, 4, 5);</span><br></pre></td></tr></table></figure>
+
+<h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const add1 = (a, b) =&gt; &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const add2 = function(a, b)&#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(add1(2, 2)); // 4</span><br><span class="line">console.log(add2(2, 2)); // 4</span><br><span class="line"></span><br><span class="line">&lt;!-- 以上两种方法相同 --&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const pop = arr =&gt; void arr.pop();</span><br><span class="line">console.log(pop([1, 2, 3])); // undefined</span><br><span class="line"></span><br><span class="line">const pop = arr =&gt; arr.pop();</span><br><span class="line">console.log(pop([1, 2, 3])); // 3</span><br><span class="line"></span><br><span class="line">const pop = arr =&gt; &#123;</span><br><span class="line">    // 因为其没有 return，所以不会有返回值</span><br><span class="line">    arr.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>箭头函数中并无 arguments 对象，只能用扩展运算符实现 arguments 的功能</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const log = (...args) =&gt; &#123;</span><br><span class="line">    console.log(args);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(1, 2, 3); // [1, 2, 3]</span><br></pre></td></tr></table></figure>
+
+<p>箭头函数并不像普通函数一样具有函数作用域</p>
+<h2 id="对象扩展"><a href="#对象扩展" class="headerlink" title="对象扩展"></a>对象扩展</h2><h3 id="对象的简洁表示法"><a href="#对象的简洁表示法" class="headerlink" title="对象的简洁表示法"></a>对象的简洁表示法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const getUserInfo = (id = 1) =&gt; &#123;</span><br><span class="line">    const name = &apos;xiaoming&apos;;</span><br><span class="line">    const age = 10;</span><br><span class="line">    return &#123;</span><br><span class="line">        name, // 会自动寻找同名变量，相当于 name: name</span><br><span class="line">        age,</span><br><span class="line">        say()&#123;</span><br><span class="line">            console.log(this.name + this.age);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const xiaoming = getUserInfo();</span><br></pre></td></tr></table></figure>
+
+<h3 id="属性名表达式"><a href="#属性名表达式" class="headerlink" title="属性名表达式"></a>属性名表达式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const key = &apos;age&apos;;</span><br><span class="line">const xiaoming = &#123;</span><br><span class="line">    name: &apos;xiaoming&apos;,</span><br><span class="line">    [key]: 14 // [`$&#123;key&#125;123`]: 14</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><h3 id="复制对象——浅拷贝"><a href="#复制对象——浅拷贝" class="headerlink" title="复制对象——浅拷贝"></a>复制对象——浅拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const obj1 = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2,</span><br><span class="line">    d: &#123;</span><br><span class="line">        aa: 1,</span><br><span class="line">        bb: 2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const cObj1 = &#123;...obj1&#125;; // 浅拷贝</span><br><span class="line">console.log(cObj1.d.aa); // 1</span><br><span class="line">cObj1.d.aa = 99;</span><br><span class="line">console.log(cObj1.d.aa); // 99</span><br><span class="line">console.log(cObj1.d.aa); // 99</span><br></pre></td></tr></table></figure>
+
+<h3 id="合并对象——浅拷贝"><a href="#合并对象——浅拷贝" class="headerlink" title="合并对象——浅拷贝"></a>合并对象——浅拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const newObj = &#123;</span><br><span class="line">    ...obj2,</span><br><span class="line">    ...obj1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">newObj.d.aa = 22;</span><br><span class="line">console.log(obj1.d.aa); // 22</span><br></pre></td></tr></table></figure>
+
+<h3 id="部分新的方法和属性"><a href="#部分新的方法和属性" class="headerlink" title="部分新的方法和属性"></a>部分新的方法和属性</h3><h4 id="Object-is"><a href="#Object-is" class="headerlink" title="Object.is"></a><code>Object.is</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(Object.is(+0, -0)); // false</span><br><span class="line">console.log(+0 === -0); // true</span><br><span class="line">console.log(Object.is(NaN, NaN)); // true</span><br><span class="line">console.log(NaN === NaN); // false</span><br></pre></td></tr></table></figure>
+
+<h4 id="Object-assign-——-浅拷贝"><a href="#Object-assign-——-浅拷贝" class="headerlink" title="Object.assign —— 浅拷贝"></a><code>Object.assign</code> —— 浅拷贝</h4><p>用途为合并对象或复制对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: &#123;</span><br><span class="line">        c: 2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const newObj = Object.assign(&#123;a: 3&#125;, obj);</span><br><span class="line"></span><br><span class="line">console.log(newObj.b.c); // 2</span><br><span class="line"></span><br><span class="line">newObj.b.c = 100;</span><br><span class="line"></span><br><span class="line">console.log(obj.b.c); // 100</span><br></pre></td></tr></table></figure>
+
+<h4 id="keys、values、entries"><a href="#keys、values、entries" class="headerlink" title="keys、values、entries"></a>keys、values、entries</h4><ul>
+<li><p>keys：返回迭代对象中的索引值</p>
+</li>
+<li><p>values：索引值所对应的值</p>
+</li>
+<li><p>entries：entries() 方法返回一个数组的迭代对象，该对象包含数组的键值对 (key/value)</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2,</span><br><span class="line">    c: 3,</span><br><span class="line">    d: 4</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">console.log(Object.keys(obj)); // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</span><br><span class="line"></span><br><span class="line">console.log(Object.values(obj)); // [1, 2, 3, 4]</span><br><span class="line"></span><br><span class="line">console.log(Object.entries(obj));</span><br><span class="line"></span><br><span class="line">for (let [k, v] of Object.entries(obj)) &#123;</span><br><span class="line">    console.log(k, v); // a 1&lt;br&gt;b 2&lt;br&gt;c 3&lt;br&gt;d 4&lt;br&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="新的方法"><a href="#新的方法" class="headerlink" title="新的方法"></a>新的方法</h3><h4 id="setPrototypeOf-obj-objProto"><a href="#setPrototypeOf-obj-objProto" class="headerlink" title="setPrototypeOf(obj, objProto)"></a>setPrototypeOf(obj, objProto)</h4><p>修改 obj 的原型对象为 objProtot</p>
+<h4 id="getPrototypeOf-obj"><a href="#getPrototypeOf-obj" class="headerlink" title="getPrototypeOf(obj)"></a>getPrototypeOf(obj)</h4><p>获取 obj 的原型对象</p>
+<h4 id="super"><a href="#super" class="headerlink" title="super"></a>super</h4><p>可以访问到原型对象上的属性和方法</p>
+<p>对象上有函数时，必须使用对象的简洁表示法才可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;name: &apos;xiaoming&apos;&#125;;</span><br><span class="line"></span><br><span class="line">const cObj = &#123;</span><br><span class="line">    say() &#123;</span><br><span class="line">        console.log(`My name is $&#123;super.name&#125;`);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.setPrototypeOf(cObj, obj);</span><br><span class="line"></span><br><span class="line">cObj.say(); // My name is xiaoming</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组扩展"><a href="#数组扩展" class="headerlink" title="数组扩展"></a>数组扩展</h2><h3 id="结合扩展运算符使用"><a href="#结合扩展运算符使用" class="headerlink" title="结合扩展运算符使用"></a>结合扩展运算符使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const user = [&apos;小明&apos;, 14, [&apos;吃饭&apos;, &apos;打游戏&apos;], &apos;我今年大二&apos;];</span><br><span class="line"></span><br><span class="line">function say(name, age, hobby, desc) &#123;</span><br><span class="line">    console.log(`我叫$&#123;name&#125;, 我今年$&#123;age&#125;岁，我喜欢$&#123;hobby.join(&apos;和&apos;)&#125;, $&#123;desc&#125;`);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">say(...user);</span><br></pre></td></tr></table></figure>
+
+<h3 id="合并数组与复制数组"><a href="#合并数组与复制数组" class="headerlink" title="合并数组与复制数组"></a>合并数组与复制数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2, 3, 4];</span><br><span class="line">const arr2 = [4, 2, 2, 1];</span><br><span class="line">const arr3 = [2.2, &apos;123&apos;, false];</span><br><span class="line"></span><br><span class="line">&lt;!-- 合并数组 --&gt;</span><br><span class="line">&lt;!-- 第一种方法 --&gt;</span><br><span class="line">const cArr1 = [1, 2, 3, ...arr3];</span><br><span class="line"></span><br><span class="line">&lt;!-- 第二种方法 --&gt;</span><br><span class="line">const cArr2 = [...arr1, ...arr2, ...arr3];</span><br><span class="line"></span><br><span class="line">&lt;!-- 复制数组 --&gt;</span><br><span class="line">&lt;!-- 第一种方法 --&gt;</span><br><span class="line">const cArr3 = [...arr1];</span><br><span class="line"></span><br><span class="line">&lt;!-- 第二种方法 --&gt;</span><br><span class="line">const [...cArr4] = arr3;</span><br></pre></td></tr></table></figure>
+
+<h3 id="新方法"><a href="#新方法" class="headerlink" title="新方法"></a>新方法</h3><h4 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h4><p>from()方法的作用是将一个 ArrayLike 对象或者 Iterable 对象（类数组对象）转换成一个 Array</p>
+<p>类数组对象的属性名必须为数值型或字符串型的数字</p>
+<p>对象中的 length 键值对表示的是最终由 from 方法转换的数组的长度</p>
+<p>接收两个参数，一个是需要转换的对象，一个是回调函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const obj = &#123;</span><br><span class="line">    0: 1,</span><br><span class="line">    1: &apos;dfsa&apos;,</span><br><span class="line">    2: false,</span><br><span class="line">    length: 3</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(Array.from(obj));</span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of"></a>Array.of</h4><p>将传进去的参数转换为数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.of(1, 2, &apos;123&apos;, false));</span><br></pre></td></tr></table></figure>
+
+<h4 id="Array-num-fill-value-start-end"><a href="#Array-num-fill-value-start-end" class="headerlink" title="Array(num).fill(value, start end)"></a>Array(num).fill(value, start end)</h4><p>将value填充数组，填充个数为数组的长度</p>
+<p>即使数组里面有值，它也会将原来有的值覆盖掉</p>
+<p>接受三个参数，start为开始填充的位置，end为结束填充的位置</p>
+<h4 id="Array-includes-value"><a href="#Array-includes-value" class="headerlink" title="Array.includes(value)"></a>Array.includes(value)</h4><p>判断数组中是否有value，返回布尔值</p>
+<h4 id="keys、values、entries-1"><a href="#keys、values、entries-1" class="headerlink" title="keys、values、entries"></a>keys、values、entries</h4><p>这里不过多阐述，请参照上面的笔记</p>
+<h4 id="find"><a href="#find" class="headerlink" title="find"></a>find</h4><p>根据条件（回调）按顺序遍历数组，当回调返回true时，就返回当前遍历到的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const res = [1, 7, 6, 3].find(function(value, index, arr)&#123;</span><br><span class="line">    console.log(&apos;value&apos;, value);</span><br><span class="line">    console.log(&apos;index&apos;, index);</span><br><span class="line">    console.log(&apos;arr&apos;, arr);</span><br><span class="line"></span><br><span class="line">    return value % 2 === 0;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">console.log(res);</span><br></pre></td></tr></table></figure>
+
+<h4 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h4><p>根据条件（回调）按顺序遍历数组，当回调返回true时，就返回当前遍历到的下标</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/18/ES6扩展/" data-id="ck20a6psp007o24w0kmpjwhkt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ES6解构赋值" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/17/ES6解构赋值/" class="article-date">
+  <time datetime="2019-10-17T10:59:34.000Z" itemprop="datePublished">2019-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/17/ES6解构赋值/">ES6解构赋值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>解构赋值语法是一个 JavaScript 表达式，这使得可以将值从数组或属性从对象提取到不同的变量中</p>
+<ul>
+<li><p>数组的结构赋值</p>
+</li>
+<li><p>对象的解构赋值</p>
+</li>
+<li><p>字符串的解构赋值</p>
+</li>
+<li><p>数值与布尔值的解构赋值</p>
+</li>
+<li><p>函数参数的解构赋值</p>
+</li>
+</ul>
+<h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4];</span><br><span class="line">let [a, b, c, d] = arr; // a=1, b=2, b=3, b=4</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr = [&apos;a&apos;, &apos;b&apos;, [&apos;c&apos;, &apos;d&apos;, [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;]]];</span><br><span class="line">const [a, b] = arr; // a=&apos;a&apos;, b=&apos;b&apos;</span><br><span class="line">const [, , g] = [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;] // g=&apos;g&apos;</span><br><span class="line">const [, , [, , g]] = [&apos;c&apos;, &apos;d&apos;, [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;]]; // g=&apos;g&apos;</span><br></pre></td></tr></table></figure>
+
+<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2, 3];</span><br><span class="line">const arr2 = [&apos;a&apos;, &apos;b&apos;];</span><br><span class="line">const arr3 = [&apos;zz&apos;, 1];</span><br><span class="line">const arr4 = [...arr1, ...arr2, ...arr3]; // arr4 = [1, 2, 3, &apos;a&apos;, &apos;b&apos;, &apos;zz&apos;, 1]</span><br><span class="line"></span><br><span class="line">const arr = [1, 2, 3, 4];</span><br><span class="line">const [a, b, ...c] = arr; // c = [3, 4]</span><br></pre></td></tr></table></figure>
+
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, undefined, undefined];</span><br><span class="line">const [a, b = 2, c, d] = arr; // a=1, b=2, c=d=undefined</span><br></pre></td></tr></table></figure>
+
+<h4 id="交换变量"><a href="#交换变量" class="headerlink" title="交换变量"></a>交换变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[a, b] = [b, a];</span><br></pre></td></tr></table></figure>
+
+<h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><p>对象的解构赋值与数组的解构赋值相似</p>
+<p>等号左右两边都为对象结构 —— <code>const{a, b} = {a:1, b:2}</code></p>
+<p>左边的<code>{}</code>中为需要赋值的变量</p>
+<p>右边为需要解构的对象</p>
+<h4 id="对象的解构赋值的主要用途"><a href="#对象的解构赋值的主要用途" class="headerlink" title="对象的解构赋值的主要用途"></a>对象的解构赋值的主要用途</h4><ul>
+<li><p>提取对象属性</p>
+</li>
+<li><p>使用对象传入乱序的函数参数</p>
+</li>
+<li><p>获取多个函数返回值</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/17/ES6解构赋值/" data-id="ck20a6pp0002824w0dc23syf3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-bootstrap组件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/16/bootstrap组件/" class="article-date">
+  <time datetime="2019-10-16T08:22:17.000Z" itemprop="datePublished">2019-10-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bootstrap/">bootstrap</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/16/bootstrap组件/">bootstrap组件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="响应式页面开发"><a href="#响应式页面开发" class="headerlink" title="响应式页面开发"></a>响应式页面开发</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (min-width: *px) and (max-width)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="栅格布局"><a href="#栅格布局" class="headerlink" title="栅格布局"></a>栅格布局</h2><p>将屏幕分成12格</p>
+<ul>
+<li><p>元素所占屏幕大小：<code>col-屏幕型号-num</code></p>
+</li>
+<li><p>元素距左侧几格：<code>col-屏幕型号-offset-num</code></p>
+</li>
+</ul>
+<h2 id="网页开发中的单位"><a href="#网页开发中的单位" class="headerlink" title="网页开发中的单位"></a>网页开发中的单位</h2><p>px：相对于屏幕分辨率的长度单位</p>
+<p>em：相对于当前文本内的字体尺寸</p>
+<p>rem 与 em 相似，相对于 HTML 根节点的字体单位</p>
+<h3 id="px"><a href="#px" class="headerlink" title="px"></a>px</h3><p>px 是相对于屏幕分辨率的单位</p>
+<p>px 的大小无法跟随屏幕放大缩小</p>
+<h3 id="em"><a href="#em" class="headerlink" title="em"></a>em</h3><p>1em = 16px（但不完全是）</p>
+<p>em 会继承父级元素的字体大小，适合手机端、平板开发</p>
+<p>IE 的部分版本不支持 em</p>
+<h3 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h3><p>rem 与 em 类似</p>
+<p>rem 会继承根元素的字体大小</p>
+<h2 id="bootstrap-组件"><a href="#bootstrap-组件" class="headerlink" title="bootstrap 组件"></a>bootstrap 组件</h2><ol>
+<li><p>role：标识普通标签，使之语义化，方便浏览器对其具体的功能进行识别</p>
+</li>
+<li><p>aria-label：当焦点落到输入框时，读屏软件就会读出输入框内容</p>
+</li>
+<li><p>tabIndex：可以设置键盘上的 tab 键在控件中进行移动</p>
+</li>
+<li><p>通过该自定义属性管理交互、效果</p>
+</li>
+</ol>
+<h3 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h3><ol>
+<li><p>glyphicon</p>
+</li>
+<li><p>glyphicon-具体图标</p>
+</li>
+</ol>
+<h3 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h3><ol>
+<li><p>.dropdown 控制组件为下拉</p>
+</li>
+<li><p>.dropdown-menu-right 代替 .pull-right 右对齐</p>
+</li>
+<li><p>.divider 分割线</p>
+</li>
+</ol>
+<h3 id="控件组"><a href="#控件组" class="headerlink" title="控件组"></a>控件组</h3><ol>
+<li><p>.input-group 表示控件组</p>
+</li>
+<li><p>.input-group-addon 可放置额外内容和图标</p>
+</li>
+</ol>
+<h3 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h3><ol>
+<li><p>以一个带有 class .nav 的无序列表开始</p>
+</li>
+<li><p>.nav-tabs 代表可切换的导航</p>
+</li>
+<li><p>.nav-pills 代表胶囊导航</p>
+</li>
+<li><p>.nav-justified 使导航垂直</p>
+</li>
+</ol>
+<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><ol>
+<li><p>.pagination 在父元素中添加表示分页</p>
+</li>
+<li><p>.pager 放置在翻页区域</p>
+</li>
+<li><p>.previous 把链接向左对齐，.next 把链接向右对齐</p>
+</li>
+</ol>
+<h3 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h3><ol>
+<li><p>.progress 表示进度条</p>
+</li>
+<li><p>通过状态类改变进度条的颜色</p>
+</li>
+<li><p>.progress-bar-striped 使得进度条颜色渐变</p>
+</li>
+</ol>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ol>
+<li><p>.list-group 代表列表组</p>
+</li>
+<li><p>.badge 代表状态数</p>
+</li>
+<li><p>.active 代表选中状态</p>
+</li>
+</ol>
+<h3 id="面板"><a href="#面板" class="headerlink" title="面板"></a>面板</h3><ol>
+<li><p>.panel 代表面板</p>
+</li>
+<li><p>.panel-body 代表面板内容</p>
+</li>
+<li><p>.panel-footer 代表面板的注脚</p>
+</li>
+</ol>
+<h2 id="Bootstrap-中的插件"><a href="#Bootstrap-中的插件" class="headerlink" title="Bootstrap 中的插件"></a>Bootstrap 中的插件</h2><ol>
+<li><p>Bootstrap 插件依赖 Bootstrap.js</p>
+</li>
+<li><p>Bootstrap.js 基于 JQuery</p>
+</li>
+</ol>
+<h3 id="data-属性"><a href="#data-属性" class="headerlink" title="data 属性"></a>data 属性</h3><ol>
+<li><p>通过 data 属性控制页面交互</p>
+</li>
+<li><p>$(document).off(‘.data-api’) 解除属性绑定</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/16/bootstrap组件/" data-id="ck20a6ps4006p24w0wz8ih41t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ES6基础入门let、const" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/13/ES6基础入门let、const/" class="article-date">
+  <time datetime="2019-10-13T14:40:48.000Z" itemprop="datePublished">2019-10-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/13/ES6基础入门let、const/">ES6基础入门let、const</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><ul>
+<li><p>var</p>
+</li>
+<li><p>直接使用</p>
+</li>
+</ul>
+<h2 id="let-和-var-的主要区别"><a href="#let-和-var-的主要区别" class="headerlink" title="let 和 var 的主要区别"></a>let 和 var 的主要区别</h2><ul>
+<li><p>let 声明的变量只在当前（块级）作用域内有效</p>
+</li>
+<li><p>let 声明的变量不能重复被声明</p>
+</li>
+<li><p>不提供变量提升</p>
+</li>
+<li><p>暂存死区</p>
+</li>
+</ul>
+<h2 id="ES6-之前的作用域"><a href="#ES6-之前的作用域" class="headerlink" title="ES6 之前的作用域"></a>ES6 之前的作用域</h2><ul>
+<li><p>全局作用域</p>
+</li>
+<li><p>函数作用域</p>
+</li>
+<li><p>eval 作用域</p>
+</li>
+</ul>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>常量：不可改变的量</p>
+<h3 id="使用-const"><a href="#使用-const" class="headerlink" title="使用 const"></a>使用 const</h3><ul>
+<li><p>和声明变量一样，基本只是关键字的区别</p>
+</li>
+<li><p>常量必须在声明的时候赋值</p>
+</li>
+<li><p>使用引用类型的对象时，内部的值可以被修改，可通过 Object.freeze(obj)冻结，使其内部的值不能被修改</p>
+</li>
+</ul>
+<h3 id="与let类似的特性"><a href="#与let类似的特性" class="headerlink" title="与let类似的特性"></a>与let类似的特性</h3><ul>
+<li><p>不能重复声明</p>
+</li>
+<li><p>不存在提升</p>
+</li>
+<li><p>只在当前（块级）作用域内有效</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/13/ES6基础入门let、const/" data-id="ck20a6pp2002b24w0m1yanphj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HTML5音视频" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/13/HTML5音视频/" class="article-date">
+  <time datetime="2019-10-13T01:44:00.000Z" itemprop="datePublished">2019-10-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML5/">HTML5</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/13/HTML5音视频/">HTML5音视频</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="认识-video"><a href="#认识-video" class="headerlink" title="认识 video"></a>认识 video</h2><ul>
+<li><p>video 标签定义视频，比如电影等</p>
+</li>
+<li><p>支持的视频格式：mp4、webm、ogv</p>
+</li>
+</ul>
+<h3 id="video-的兼容性"><a href="#video-的兼容性" class="headerlink" title="video 的兼容性"></a>video 的兼容性</h3><ul>
+<li><p>Google、Firefox 和 Opera 三种格式全部支持</p>
+</li>
+<li><p>Safari 浏览器不支持 video 的 webm 和 ogv 视频格式</p>
+</li>
+<li><p>IE8 以下均不支持 video 标签</p>
+</li>
+</ul>
+<p>source 标签也可以放入 src，如果播放失败，video 会继续看下一个 source 标签，直到兼容</p>
+<h2 id="video-属性"><a href="#video-属性" class="headerlink" title="video 属性"></a>video 属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>视频的资源地址</td>
+</tr>
+<tr>
+<td>width</td>
+<td>视频宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>视频高度</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>播放控件</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>自动播放</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>poster</td>
+<td>视频封面，没有播放时显示的图片</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>当设置该属性后，它规定视频的音频输出应该被静音</td>
+</tr>
+</tbody></table>
+<p>注意：autoplay 在Chrome上不会自动播放</p>
+<h2 id="video-API-事件"><a href="#video-API-事件" class="headerlink" title="video API 事件"></a>video API 事件</h2><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>play</td>
+<td>让视频播放/不在暂停时</td>
+</tr>
+<tr>
+<td>pause</td>
+<td>让视频暂停/不在播放时</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>返回当前视频长度</td>
+</tr>
+<tr>
+<td>currentTime</td>
+<td>设置或返回当前视频的总长度，秒为单位</td>
+</tr>
+<tr>
+<td>src</td>
+<td>设置/返回当前视频的来源</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>设置/返回当前视频的音量</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>设置视频是否显示控件</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>设置视频是否静音</td>
+</tr>
+<tr>
+<td>networkState</td>
+<td>返回视频的当前网络状态</td>
+</tr>
+<tr>
+<td>currentSrc</td>
+<td>返回当前音视频的URL，必须是视频加载完成时</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>返回音视频的播放是否已结束</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>设置或返回视频是否应在结束时重新播放</td>
+</tr>
+<tr>
+<td>playbackRate</td>
+<td>设置或返回视频播放的速度</td>
+</tr>
+<tr>
+<td>readyState</td>
+<td>属性返回视频的当前就绪状态</td>
+</tr>
+<tr>
+<td>timeupdate</td>
+<td>目前的播放位置已更改时</td>
+</tr>
+<tr>
+<td>seeked</td>
+<td>当用户已移动/跳跃到视频时的新位置时</td>
+</tr>
+<tr>
+<td>seeking</td>
+<td>当用户开始移动/跳跃到视频中的新位置时</td>
+</tr>
+<tr>
+<td>volumechange</td>
+<td>当音量已更改时</td>
+</tr>
+</tbody></table>
+<h3 id="networkState-属性值"><a href="#networkState-属性值" class="headerlink" title="networkState 属性值"></a>networkState 属性值</h3><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>NETWORK_EMPTY - 音频/视频尚未初始化</td>
+</tr>
+<tr>
+<td>1</td>
+<td>NETWORK_IDLE - 音频/视频是活动的且已选取资源，但并未使用网络</td>
+</tr>
+<tr>
+<td>2</td>
+<td>NETWORK_LOADING - 浏览器正在下载数据</td>
+</tr>
+<tr>
+<td>3</td>
+<td>NETWORK_NO_SOURCE - 未找到音频/视频来源</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/13/HTML5音视频/" data-id="ck20a6ppb002p24w0ieomdq5l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-React简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/12/React简介/" class="article-date">
+  <time datetime="2019-10-12T04:47:36.000Z" itemprop="datePublished">2019-10-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/12/React简介/">React简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="什么是-React？"><a href="#什么是-React？" class="headerlink" title="什么是 React？"></a>什么是 React？</h2><ul>
+<li><p>React 是一个用于构建用户界面的 JAVASCRIPT 库。</p>
+</li>
+<li><p>React 主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。</p>
+</li>
+<li><p>React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。</p>
+</li>
+</ul>
+<h3 id="清楚两个概念"><a href="#清楚两个概念" class="headerlink" title="清楚两个概念"></a>清楚两个概念</h3><ul>
+<li><p>library（库）：小而巧的库；优点是可以很方便的从一个库切换到另外的库，但是代码几乎不会改变</p>
+</li>
+<li><p>Framework（框架）：大而全的是框架；框架提供了一整套的解决方案（所以，在开发过程中想切换到另外的库，比较困难）</p>
+</li>
+</ul>
+<h2 id="前端三大主流框架"><a href="#前端三大主流框架" class="headerlink" title="前端三大主流框架"></a>前端三大主流框架</h2><ul>
+<li><p>Angular：出来较早的前端框架，学习曲线比较陡，NG1学起来比较麻烦，NG2 ~ NG5 开始，进行了一系列的改革，也提供了组件化开发的概念；从 NG2 开始，也支持使用 TS（TypeScript）进行编程</p>
+</li>
+<li><p>vue：最火的一门前端框架</p>
+</li>
+<li><p>React：最流行的一门框架，因为它的设计很优秀</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/12/React简介/" data-id="ck20a6ps1006i24w0x360tpnr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-bootstrap入门之全局样式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/07/bootstrap入门之全局样式/" class="article-date">
@@ -392,7 +1133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/07/bootstrap入门之全局样式/" data-id="ck1g2tbac006b74w0iu28p1fu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/07/bootstrap入门之全局样式/" data-id="ck20a6ps9006x24w0tshe9duf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
@@ -487,7 +1228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/28/jQuery扩展之动画/" data-id="ck1g2tbax007374w0veh1y76j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/28/jQuery扩展之动画/" data-id="ck20a6psj007d24w0x8a91hvu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -610,7 +1351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/27/jQuery事件/" data-id="ck1g2tbau006z74w0yys2hops" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/27/jQuery事件/" data-id="ck20a6psd007424w0mewp9l3y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -802,893 +1543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/26/JavaScript进阶知识点-AJAX及JSON/" data-id="ck1g2tb9j005f74w05fozjd94" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jQuery选择器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/24/jQuery选择器/" class="article-date">
-  <time datetime="2019-09-24T13:35:07.000Z" itemprop="datePublished">2019-09-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/24/jQuery选择器/">jQuery选择器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><p>返回的都是 jQuery 对象</p>
-<p>类似数组，每个元素都是一个引用了 DOM 节点的对象</p>
-<p>不会返回 undefined 或者 null</p>
-<p>不必在下一行判断 if（div === undefined）</p>
-<ul>
-<li><p>基本选择器</p>
-</li>
-<li><p>多项选择器</p>
-</li>
-<li><p>层级选择器</p>
-</li>
-<li><p>属性选择器</p>
-</li>
-<li><p>过滤器</p>
-</li>
-<li><p>表单相关</p>
-</li>
-<li><p>查找和过滤</p>
-</li>
-</ul>
-<h2 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h2><ul>
-<li><p><code>#id</code>：根据给定的 ID 匹配一个元素</p>
-</li>
-<li><p><code>element</code>：根据给定的元素标签名匹配所有元素</p>
-</li>
-<li><p><code>.class</code>：根据给定的 css 类名匹配元素</p>
-</li>
-<li><p><code>*</code>：匹配所有元素</p>
-</li>
-</ul>
-<h2 id="多项选择器"><a href="#多项选择器" class="headerlink" title="多项选择器"></a>多项选择器</h2><blockquote>
-<p><code>$(&quot;selector1, selector2, selectorN&quot;);</code></p>
-</blockquote>
-<p>将每一个选择器匹配到的元素合并后一起返回</p>
-<p>可以指定任意多个选择器，并将匹配到的元素合并到一个结果内</p>
-<h2 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h2><blockquote>
-<p><code>$(&#39;ancestor descendant&#39;)</code></p>
-</blockquote>
-<p>在给定的祖先元素下匹配所有的后代元素</p>
-<blockquote>
-<p><code>$(&#39;parent &gt; child&#39;)</code></p>
-</blockquote>
-<p>在给定的父元素下匹配所有的子元素</p>
-<blockquote>
-<p><code>$(&#39;prev + next&#39;)</code></p>
-</blockquote>
-<p>匹配所有紧接在 prev 元素后的 next 元素</p>
-<blockquote>
-<p><code>$(&#39;prev ~ siblings&#39;)</code></p>
-</blockquote>
-<p>匹配 prev 元素之后的所有 siblings 元素</p>
-<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><ul>
-<li><p><code>[attribute]</code></p>
-</li>
-<li><p><code>[attribute = value]</code></p>
-</li>
-<li><p><code>[attribute != value]</code></p>
-</li>
-<li><p><code>[attribute ^= value]</code></p>
-</li>
-<li><p><code>[attribute $= value]</code></p>
-</li>
-<li><p><code>[attribute *= value]</code></p>
-</li>
-<li><p><code>[selector1][selector2][selectorN]</code></p>
-</li>
-</ul>
-<p><a href="https://youchen12138.github.io/2019/08/14/CSS%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86%E7%82%B9-CSS3%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8%E5%8F%8A%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8/" target="_blank" rel="noopener">请参照该链接，以便更加了解属性选择器</a></p>
-<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><h3 id="child-系列"><a href="#child-系列" class="headerlink" title="child 系列"></a>child 系列</h3><ul>
-<li><p><code>:first-child</code></p>
-</li>
-<li><p><code>:last-child</code></p>
-</li>
-<li><p><code>:nth-child(n | even | odd | formula)</code></p>
-</li>
-<li><p><code>:nth-last-child(n | even | odd | formula)</code></p>
-</li>
-<li><p><code>:only-child</code></p>
-</li>
-</ul>
-<h3 id="type-系列"><a href="#type-系列" class="headerlink" title="type 系列"></a>type 系列</h3><ul>
-<li><p><code>:first-type-child</code></p>
-</li>
-<li><p><code>:last-type-child</code></p>
-</li>
-<li><p><code>:nth-type-child(n | even | odd | formula)</code></p>
-</li>
-<li><p><code>:nth-type-last-child(n | even | odd | formula)</code></p>
-</li>
-<li><p><code>:only-type-child</code></p>
-</li>
-</ul>
-<h3 id="表单相关"><a href="#表单相关" class="headerlink" title="表单相关"></a>表单相关</h3><table>
-<thead>
-<tr>
-<th>快速选择表单元素</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>:input</code></td>
-<td>可以选择<code>&lt;input&gt;</code>，<code>&lt;select&gt;</code>，<code>&lt;textarea&gt;</code>和<code>&lt;button&gt;</code></td>
-</tr>
-<tr>
-<td><code>:text</code></td>
-<td>匹配所有的单行文本框，和 <code>input[type=&quot;text&quot;]</code>一样</td>
-</tr>
-<tr>
-<td>其他 input 的 type</td>
-<td><code>:passowrd/:radio/:checkbox/:image/:reset/:button/:file</code></td>
-</tr>
-</tbody></table>
-<h3 id="表单状态"><a href="#表单状态" class="headerlink" title="表单状态"></a>表单状态</h3><table>
-<thead>
-<tr>
-<th>根据表单状态选择表单元素</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>:enabled</code></td>
-<td>匹配所有可用元素</td>
-</tr>
-<tr>
-<td><code>:disabled</code></td>
-<td>匹配所有不可用元素</td>
-</tr>
-<tr>
-<td><code>:checked</code></td>
-<td>匹配所有选中的被选中元素（复选框，单选框等，select 中的 option）</td>
-</tr>
-<tr>
-<td><code>:selected</code></td>
-<td>匹配所有选中的 option 元素</td>
-</tr>
-</tbody></table>
-<h2 id="查找与过滤"><a href="#查找与过滤" class="headerlink" title="查找与过滤"></a>查找与过滤</h2><blockquote>
-<p><code>find(expr | object | element)</code></p>
-</blockquote>
-<p>搜索所有与指定表达式匹配的元素</p>
-<blockquote>
-<p><code>children([expr])</code></p>
-</blockquote>
-<p>取得一个包含匹配的元素集合中每一个元素的所有子元素的元素集合</p>
-<blockquote>
-<p><code>parent([expr])</code></p>
-</blockquote>
-<p>取得一个包含着所有匹配元素的唯一父元素的集合</p>
-<blockquote>
-<p><code>next([expr])、prev([expr])</code></p>
-</blockquote>
-<p>取得一个包含匹配的元素结合中每一个元素紧邻的后面（前面）同辈元素的元素集合</p>
-<blockquote>
-<p><code>eq(index | -index)</code></p>
-</blockquote>
-<p>获取当前链式操作中第 N 个jQuery 对象</p>
-<blockquote>
-<p><code>siblings([expr])</code></p>
-</blockquote>
-<p>取得一个包含匹配的元素集合中每一个元素的所有唯一同辈元素的元素集合</p>
-<blockquote>
-<p><code>filter(expr | object | element | fn)</code></p>
-</blockquote>
-<p>筛选出与指定表达式匹配的元素集合</p>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>expr：字符串值，包含供匹配当前元素集合的选择器表达式</p>
-<p>object：现有的 jQuery 对象，以匹配当前的元素</p>
-<p>element：一个用于匹配元素的 DOM 元素</p>
-<p>fn：一个函数用来作为测试元素的集合</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/jQuery选择器/" data-id="ck1g2tbas006v74w0x9opafad" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jQuery入门" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/23/jQuery入门/" class="article-date">
-  <time datetime="2019-09-23T07:43:58.000Z" itemprop="datePublished">2019-09-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/23/jQuery入门/">jQuery入门¨</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="jQuery是什么"><a href="#jQuery是什么" class="headerlink" title="jQuery是什么"></a>jQuery是什么</h2><p>jQuery 是一个快速、小巧且功能丰富的 JavaScript 库。它使 HTML 文档的遍历和操作、事件处理、动画和 Ajax 等操作变得更加简单，并提供了一个易于使用的 API ，可以跨多种浏览器工作。jQuery 集多功能性和可扩展性于一身，改变了数百万人编写 JavaScript 的方式</p>
-<p>jQuery 是一个请年假的“写得少，做得多” 的 JavaScript 库</p>
-<h2 id="通过-ID-获取一个-HTML-元素"><a href="#通过-ID-获取一个-HTML-元素" class="headerlink" title="通过 ID 获取一个 HTML 元素"></a>通过 ID 获取一个 HTML 元素</h2><h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>var obj = document.getElementById(&#39;idValue&#39;)</code></p>
-<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><p><code>var obj = $(&#39;idValue)</code></p>
-<h2 id="将一个-HTML-元素隐藏"><a href="#将一个-HTML-元素隐藏" class="headerlink" title="将一个 HTML 元素隐藏"></a>将一个 HTML 元素隐藏</h2><h3 id="JavaScript-1"><a href="#JavaScript-1" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>document.getElementById(&#39;idValue&#39;).style.display = &#39;none&#39;</code></p>
-<h3 id="jQuery-1"><a href="#jQuery-1" class="headerlink" title="jQuery"></a>jQuery</h3><p><code>$(&#39;idValue&#39;).hide()</code></p>
-<h2 id="将一个-HTML-元素的宽度变成-200px"><a href="#将一个-HTML-元素的宽度变成-200px" class="headerlink" title="将一个 HTML 元素的宽度变成 200px"></a>将一个 HTML 元素的宽度变成 200px</h2><h3 id="JavaScript-2"><a href="#JavaScript-2" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>document.getElementById(&#39;idValue&#39;).style.width = &#39;200px&#39;</code></p>
-<h3 id="jQuery-2"><a href="#jQuery-2" class="headerlink" title="jQuery"></a>jQuery</h3><p><code>$(&#39;idValue&#39;).css(&#39;width&#39;, &#39;200px&#39;)</code></p>
-<h2 id="jQuery-的作用"><a href="#jQuery-的作用" class="headerlink" title="jQuery 的作用"></a>jQuery 的作用</h2><ul>
-<li><p>HTML 元素的选取</p>
-</li>
-<li><p>HTML 元素操作</p>
-</li>
-<li><p>CSS 操作</p>
-</li>
-<li><p>HTML 事件函数</p>
-</li>
-<li><p>JavaScript 特效和动画</p>
-</li>
-<li><p>HTML DOM 遍历和修改</p>
-</li>
-<li><p>AJAX</p>
-</li>
-<li><p>Utilities</p>
-</li>
-</ul>
-<h2 id="jQuery-的版本"><a href="#jQuery-的版本" class="headerlink" title="jQuery 的版本"></a>jQuery 的版本</h2><h3 id="版本分类"><a href="#版本分类" class="headerlink" title="版本分类"></a>版本分类</h3><blockquote>
-<p><code>jQuery1.x.x/jQuery2.x.x/jQuery3.x.x</code></p>
-</blockquote>
-<p>IE 6/7/8兼容最高版本为 jQuery1.9.1</p>
-<h2 id="jQuery-的优势"><a href="#jQuery-的优势" class="headerlink" title="jQuery 的优势"></a>jQuery 的优势</h2><ul>
-<li><p>轻量级</p>
-</li>
-<li><p>强大的选择器</p>
-</li>
-<li><p>出色的 DOM 操作及其封装</p>
-</li>
-<li><p>可靠的事件处理机制</p>
-</li>
-<li><p>完善的 Ajax</p>
-</li>
-<li><p>不污染顶级变量</p>
-</li>
-<li><p>出色的浏览器兼容性</p>
-</li>
-<li><p>链式操作方式</p>
-</li>
-<li><p>隐式迭代</p>
-</li>
-<li><p>行为层和结构层的分离</p>
-</li>
-<li><p>丰富的插件支持</p>
-</li>
-</ul>
-<h1 id="jQuery-使用"><a href="#jQuery-使用" class="headerlink" title="jQuery 使用"></a>jQuery 使用</h1><h2 id="jQuery-的引入"><a href="#jQuery-的引入" class="headerlink" title="jQuery 的引入"></a>jQuery 的引入</h2><ul>
-<li><p>常规引入</p>
-<p>  使用 jQuery 只需要在页面的<code>&lt;head&gt;</code>中引入 jQuery 文件即可：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;jQueryPath/jquery.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="符号"><a href="#符号" class="headerlink" title="$ 符号"></a>$ 符号</h2><ul>
-<li><p>jQuery 符号</p>
-<p>  jQuery 把所有功能全部封装在一个全局变量 jQuery 中，而 $ 也是一个合法的变量名，它是变量 jQuery 的别名</p>
-</li>
-<li><p>$ 使用</p>
-</li>
-</ul>
-<p>绝大多数时候，我们都直接用 $</p>
-<p>若 $ 变量已被占用，且不能改，就只能使用 jQuery 这个变量</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/jQuery入门/" data-id="ck1g2tbah006j74w0mxv0fged" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript进阶知识点-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/" class="article-date">
-  <time datetime="2019-09-19T11:47:51.000Z" itemprop="datePublished">2019-09-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/19/JavaScript进阶知识点-正则表达式/">JavaScript进阶知识点--正则表达式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="什么是正则表达式"><a href="#什么是正则表达式" class="headerlink" title="什么是正则表达式"></a>什么是正则表达式</h2><p>由以下两种字符组成的文字模式</p>
-<ol>
-<li><p>普通字符（例如26个英文字母、数字、汉字、<code>_</code>、<code>,</code>，不含有特殊含义的符号等）</p>
-</li>
-<li><p>特殊字符（有特殊含义的，例如<code>.\</code>等）</p>
-</li>
-</ol>
-<p>该模式描述在查找文字主体时待匹配的一个或多个字符串。正则表达式作为一个模板，将某个字符模式与说搜索的字符串进行匹配</p>
-<p>正则表达式匹配的一定是字符串中的内容</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><p>如果找到，则返回 true</p>
-<p>如果未找到，则返回 false</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;I love js&quot;;</span><br><span class="line">var pattern = /js/;</span><br><span class="line"></span><br><span class="line">console.log(pattern.test(str));</span><br></pre></td></tr></table></figure>
-
-<h3 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h3><p>如果找到，则将在字符串中找到的该字符传入一个数组中，并将该数组返回</p>
-<p>如果未找到，则返回 null</p>
-<h2 id="flags"><a href="#flags" class="headerlink" title="flags"></a>flags</h2><table>
-<thead>
-<tr>
-<th>flags</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>g</td>
-<td>表示全局(global)模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止</td>
-</tr>
-<tr>
-<td>i</td>
-<td>表示不区分(case-insensitive)模式，即在确定匹配项时忽略模式与字符串的大小写</td>
-</tr>
-<tr>
-<td>m</td>
-<td>表示多行模式，即在到达一行文本末尾时还会继续查找下一行中是否存在于模式匹配的项</td>
-</tr>
-</tbody></table>
-<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><ul>
-<li><p>如果使用字面量的方式定义正则，一个反斜杠转义</p>
-</li>
-<li><p>如果使用构造函数方式定义正则，需要用到双重反斜杠</p>
-</li>
-</ul>
-<p>有问请查看文件中的<code>特殊字符总结</code>，<code>常用正则表达式总结</code></p>
-<table>
-<thead>
-<tr>
-<th>常用的字符类</th>
-<th>意义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>/./</code></td>
-<td>表示除了换行符之外的所有字符</td>
-</tr>
-<tr>
-<td><code>/\w/</code></td>
-<td>等同于<code>/[a-zA-Z0-9_]/</code></td>
-</tr>
-<tr>
-<td><code>/\W/</code></td>
-<td>等同于<code>/[^a-zA-Z0-9_]/</code></td>
-</tr>
-<tr>
-<td><code>/\d/</code></td>
-<td>等同于<code>/[0-9]/</code></td>
-</tr>
-<tr>
-<td><code>/\D/</code></td>
-<td>等同于<code>/[^0-9]/</code></td>
-</tr>
-<tr>
-<td><code>/\s/</code></td>
-<td>匹配空格和制表符之类的</td>
-</tr>
-<tr>
-<td><code>/\S/</code></td>
-<td>匹配空格和制表符之类的空白字符以外的所有字符</td>
-</tr>
-<tr>
-<td><code>/\b/</code></td>
-<td>单词的边界匹配</td>
-</tr>
-</tbody></table>
-<p>中文的 Unicode 编码为<code>\u4e00-\u9fa5</code></p>
-<h1 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h1><p>以下均为贪婪匹配</p>
-<p>代码示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 匹配n个字符 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d&#123;3&#125;/; // &#123;&#125;中表示匹配的个数</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 匹配至少n个字符 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d&#123;1,&#125;/; // 至少1个</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 匹配n个到m个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d&#123;0,1&#125;/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;1&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 匹配0个或者1个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d?/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;1&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 至少匹配1个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d+/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 至少匹配0个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d*/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br></pre></td></tr></table></figure>
-
-<h2 id="非贪婪匹配"><a href="#非贪婪匹配" class="headerlink" title="非贪婪匹配"></a>非贪婪匹配</h2><p>在量词后面加<code>?</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 至少匹配1个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d+?/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;1&quot;]</span><br></pre></td></tr></table></figure>
-
-<h1 id="选择、分组、引用"><a href="#选择、分组、引用" class="headerlink" title="选择、分组、引用"></a>选择、分组、引用</h1><h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>代码示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;html js&quot;;</span><br><span class="line">var pattern = /html|css|js/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;html&quot;]</span><br></pre></td></tr></table></figure>
-
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;ababab&quot;;</span><br><span class="line">var pattern = /(ab)+/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;ababab&quot;, &quot;ab&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 非捕获性分组 --&gt;</span><br><span class="line">var str = &quot;ababab&quot;;</span><br><span class="line">var pattern = /(?:ab)+/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;ababab&quot;]</span><br></pre></td></tr></table></figure>
-
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 捕获性分组的引用 --&gt;</span><br><span class="line">var str = &quot;ab cd ab&quot;;</span><br><span class="line">var pattern = /(ab) cd \1/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;ab cd ab&quot;, &quot;ab&quot;]</span><br></pre></td></tr></table></figure>
-
-<h1 id="首尾匹配"><a href="#首尾匹配" class="headerlink" title="首尾匹配"></a>首尾匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 首匹配 --&gt;</span><br><span class="line">var str1 = &quot;js&quot;;</span><br><span class="line">var str2 = &quot;html js&quot;;</span><br><span class="line">var pattern = /^js/;</span><br><span class="line">console.log(pattern.exec(str1)); // [&quot;js&quot;]</span><br><span class="line">console.log(pattern.exec(str2)); // null</span><br><span class="line"></span><br><span class="line">&lt;!-- 尾匹配 --&gt;</span><br><span class="line">var str1 = &quot;js&quot;;</span><br><span class="line">var str2 = &quot;js html&quot;;</span><br><span class="line">var pattern = /js$/;</span><br><span class="line">console.log(pattern.exec(str1)); // [&quot;js&quot;]</span><br><span class="line">console.log(pattern.exec(str2)); // null</span><br></pre></td></tr></table></figure>
-
-<h1 id="前瞻性匹配"><a href="#前瞻性匹配" class="headerlink" title="前瞻性匹配"></a>前瞻性匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在这个例子中，只有java后面跟了script才会匹配成功 --&gt;</span><br><span class="line">var str = &apos;javascript&apos;;</span><br><span class="line">var pattern = /java(?=script)/;</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;java&quot;]</span><br></pre></td></tr></table></figure>
-
-<h1 id="负向前瞻性匹配"><a href="#负向前瞻性匹配" class="headerlink" title="负向前瞻性匹配"></a>负向前瞻性匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在这个例子中，如果java后面跟了script则不会匹配java --&gt;</span><br><span class="line">var str = &apos;javascript&apos;;</span><br><span class="line">var pattern = /java(?!script)/;</span><br><span class="line">console.log(pattern.exec(str)); // null</span><br></pre></td></tr></table></figure>
-
-<h1 id="RegExp-的实例"><a href="#RegExp-的实例" class="headerlink" title="RegExp 的实例"></a>RegExp 的实例</h1><h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h2><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>test(str)</td>
-<td>返回布尔值。判断该字符串是否有该匹配式</td>
-</tr>
-<tr>
-<td>exec(str)</td>
-<td>返回数组。找到该匹配式，将匹配成功的字符放入数组中</td>
-</tr>
-<tr>
-<td>toString()</td>
-<td>返回字符串。将匹配式转换为字面量的字符串</td>
-</tr>
-<tr>
-<td>toLocaleString()</td>
-<td>返回本地字符。其实没多大区别</td>
-</tr>
-<tr>
-<td>valueOf()</td>
-<td>返回该匹配式的字符串形式</td>
-</tr>
-</tbody></table>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>ignoreCase</td>
-<td>判断 flags 是否有i</td>
-</tr>
-<tr>
-<td>global</td>
-<td>判断 flags 是否有g</td>
-</tr>
-<tr>
-<td>multiline</td>
-<td>判断flags是否有m</td>
-</tr>
-<tr>
-<td>source</td>
-<td>返回字面量形式的字符串</td>
-</tr>
-<tr>
-<td>lastIndex</td>
-<td>返回数值。每次检索完毕的最终位置</td>
-</tr>
-</tbody></table>
-<h2 id="构造函数属性"><a href="#构造函数属性" class="headerlink" title="构造函数属性"></a>构造函数属性</h2><table>
-<thead>
-<tr>
-<th>构造函数属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>RegExp.input</td>
-<td>返回检索的字符串</td>
-</tr>
-<tr>
-<td>RegExp.$_</td>
-<td>和 RegExp.input 作用相同</td>
-</tr>
-<tr>
-<td>RegExp.lastMatch</td>
-<td>返回最近一次匹配的字符</td>
-</tr>
-<tr>
-<td>RegExp[‘$&amp;’]</td>
-<td>和 RegExp.lastMatch 作用相同</td>
-</tr>
-<tr>
-<td>RegExp.leftContext</td>
-<td>上一次匹配左边剩余的字符</td>
-</tr>
-<tr>
-<td>RegExp.rightContext</td>
-<td>上一次匹配右边边剩余的字符</td>
-</tr>
-<tr>
-<td>RegExp.lastParen</td>
-<td>上一次捕获的分组的字符</td>
-</tr>
-<tr>
-<td>RegExp.$1</td>
-<td>第一个分组的引用，与<code>\1</code>作用相同</td>
-</tr>
-</tbody></table>
-<h1 id="String对象中与正则表达式相关的方法"><a href="#String对象中与正则表达式相关的方法" class="headerlink" title="String对象中与正则表达式相关的方法"></a>String对象中与正则表达式相关的方法</h1><h2 id="search"><a href="#search" class="headerlink" title="search"></a>search</h2><p>返回一个 Number ，找到匹配的字符的位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;html js&quot;;</span><br><span class="line">var pattern = /js/;</span><br><span class="line">console.log(str.search(pattern)); // 5</span><br></pre></td></tr></table></figure>
-
-<h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><p>和exec一样，返回的是一个类数组的对象</p>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;js js js&quot;;</span><br><span class="line">var pattern = /js/g;</span><br><span class="line">console.log(str.match(pattern)); // [&quot;js&quot;, &quot;js&quot;, &quot;js&quot;]</span><br></pre></td></tr></table></figure>
-
-<p><code>match</code>： 非全局的情况下才会返回分组中匹配到的内容，全局匹配只能匹配到所有匹配到的字符</p>
-<p><code>exec</code>：无论是否全局匹配都会返回分组中匹配到的内容，都只会返回当前匹配到的一个内容，而不是全部返回</p>
-<h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 全部替换 --&gt;</span><br><span class="line">var str = &quot;I love js js&quot;;</span><br><span class="line">var pattern = /js/g;</span><br><span class="line">console.log(str.replace(pattern, &quot;html&quot;));</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck1g2tb9k005i74w0ep5ohf9a" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript进阶知识点-JS面向对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/15/JavaScript进阶知识点-JS面向对象/" class="article-date">
-  <time datetime="2019-09-15T06:41:21.000Z" itemprop="datePublished">2019-09-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/15/JavaScript进阶知识点-JS面向对象/">JavaScript进阶知识点--JS面向对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>对代码的一种抽象，对外同一提供调用接口的编程思想</p>
-<h2 id="基于原型的面向对象"><a href="#基于原型的面向对象" class="headerlink" title="基于原型的面向对象"></a>基于原型的面向对象</h2><p>基于原型的面向对象方式中，对象（object）则是依靠构造器（constructor）利用原型（prototype）构造出来的</p>
-<h2 id="JS面向对象的名词解释"><a href="#JS面向对象的名词解释" class="headerlink" title="JS面向对象的名词解释"></a>JS面向对象的名词解释</h2><ul>
-<li><p>属性：事物的特效</p>
-</li>
-<li><p>方法：事物的功能</p>
-</li>
-<li><p>对象：事物的一个实例</p>
-</li>
-<li><p>原型：JS函数中由 prototype 属性引用了一个对象，即原型对象（原型）</p>
-</li>
-</ul>
-<h2 id="JS中的闭包"><a href="#JS中的闭包" class="headerlink" title="JS中的闭包"></a>JS中的闭包</h2><p>闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数）</p>
-<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ol>
-<li><p>读取函数内部变量</p>
-</li>
-<li><p>让在函数内部声明的变量的值保留在内存中</p>
-</li>
-</ol>
-<h3 id="闭包的优缺点"><a href="#闭包的优缺点" class="headerlink" title="闭包的优缺点"></a>闭包的优缺点</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
-<li><p>有利于封装</p>
-</li>
-<li><p>可以访问局部变量</p>
-</li>
-</ol>
-<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
-<li><p>内存占用浪费严重</p>
-</li>
-<li><p>内存泄漏</p>
-</li>
-</ol>
-<h3 id="分析闭包"><a href="#分析闭包" class="headerlink" title="分析闭包"></a>分析闭包</h3><ol>
-<li><p>函数嵌套函数，这是闭包的一个结构。</p>
-</li>
-<li><p>函数里的子函数被函数外部一直使用，使子函数无法释放，保持其所在作用域，形成一个封闭的作用域，称之为闭包。</p>
-</li>
-</ol>
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ol>
-<li><p>字面量（P83）</p>
-</li>
-<li><p>new 操作符后跟 Object 构造函数（P83）</p>
-</li>
-<li><p>JS中构造函数方法声明对象</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function test([参数列表])&#123;</span><br><span class="line">    this.属性 = 属性值;</span><br><span class="line">    this.方法 = function () &#123;</span><br><span class="line">        方法中代码</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = new test(参数列表);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="JS-设计模式"><a href="#JS-设计模式" class="headerlink" title="JS 设计模式"></a>JS 设计模式</h1><p>任何模式下，同种模式中的创造出来的对象都是独立存在的</p>
-<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function createObject(name, age) &#123;</span><br><span class="line">    var obj = new Object();</span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age = age;</span><br><span class="line">    obj.run = function() &#123;</span><br><span class="line">        return this.name + this.age + &apos;运行中...&apos;;</span><br><span class="line">    &#125;;</span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var box1 = createObject(&apos;zhangsan&apos;, 100);</span><br><span class="line">var box2 = createObject(&apos;lisi&apos;, 200);</span><br></pre></td></tr></table></figure>
-
-<h2 id="构造方式"><a href="#构造方式" class="headerlink" title="构造方式"></a>构造方式</h2><ol>
-<li><p>构造方式不会显示创建对象，将属性赋值给 this ，不需要 return 对象</p>
-</li>
-<li><p>工厂模式在方法内部创建 object 对象，返回 object 对象，属性和方法都是赋给 object 对象</p>
-</li>
-</ol>
-<h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">&#125;</span><br><span class="line">test.prototype.属性 = 属性值;</span><br><span class="line">test.prototype.属性 = 属性值;</span><br><span class="line">test.prototype.方法名称 = function() &#123;</span><br><span class="line">    执行代码;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = new test();</span><br></pre></td></tr></table></figure>
-
-<h3 id="原型模式的写法原理"><a href="#原型模式的写法原理" class="headerlink" title="原型模式的写法原理"></a>原型模式的写法原理</h3><p>函数本身声明为空内容，利用 prototype 定义一些属性及方法</p>
-<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><p>让所有实例化的对象都拥有它包含的属性及方法</p>
-<h2 id="混合模式"><a href="#混合模式" class="headerlink" title="混合模式"></a>混合模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function test(v1, v2, v3) &#123;</span><br><span class="line">    this.v1 = v1;</span><br><span class="line">    this.v2 = v2;</span><br><span class="line">    tihs.v3 = v3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test.prototype.方法名称 = function() &#123;</span><br><span class="line">    执行代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = new test(v1, v2, v3);</span><br></pre></td></tr></table></figure>
-
-<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var ren = &#123;&#125;;</span><br><span class="line">ren.name = &quot;zhangsan&quot;;</span><br><span class="line">ren.age = 18;</span><br><span class="line">ren.demo = function() &#123;</span><br><span class="line">    document.write(&quot;aaaa&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for(var i in ren)&#123;</span><br><span class="line">    // alert(i);    //弹出属性和方法名称</span><br><span class="line">    alert(ren[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// i是所有的属性或方法名称</span><br></pre></td></tr></table></figure>
-
-<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><p>封装（Encapsulation）：把对象内部数据和操作细节进行隐藏</p>
-<p>大多数面向对象的语言都支持封装的特性，提供了 private 关键字来隐藏某些属性或方法，用来限制被封装的数据或者内容的访问，只对外提供了一个对象的专门访问的接口</p>
-<p>接口一般为调用方法</p>
-<p>JavaScript中可以通过闭包实现封装</p>
-<h1 id="原型和原型链"><a href="#原型和原型链" class="headerlink" title="原型和原型链"></a>原型和原型链</h1><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>是利用 prototype 添加属性和方法</p>
-<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>JS在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做_proto_的内置属性，用于指向创建它的函数对象的原型对象 prototype</p>
-<h1 id="对象冒充"><a href="#对象冒充" class="headerlink" title="对象冒充"></a>对象冒充</h1><p>将父类的属性和方法一起传给子类作为特权属性和特权方法</p>
-<p>原型属性和原型方法不属于特权属性和特权方法</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck1g2tb9f005974w0ckw5qsi7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript进阶知识点-JS函数深入" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/14/JavaScript进阶知识点-JS函数深入/" class="article-date">
-  <time datetime="2019-09-14T02:38:33.000Z" itemprop="datePublished">2019-09-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/14/JavaScript进阶知识点-JS函数深入/">JavaScript进阶知识点--JS函数深入</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><h2 id="创建对象（P145）"><a href="#创建对象（P145）" class="headerlink" title="创建对象（P145）"></a>创建对象（P145）</h2><ol>
-<li><p>字面量方法</p>
-</li>
-<li><p>构造函数</p>
-</li>
-<li><p><code>Object.create()</code></p>
-</li>
-</ol>
-<h2 id="删除对象属性"><a href="#删除对象属性" class="headerlink" title="删除对象属性"></a>删除对象属性</h2><blockquote>
-<p>delete obj.attributeName</p>
-</blockquote>
-<h2 id="检测属性是否在对象中"><a href="#检测属性是否在对象中" class="headerlink" title="检测属性是否在对象中"></a>检测属性是否在对象中</h2><blockquote>
-<p>attributeName in obj</p>
-</blockquote>
-<p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;</span><br><span class="line">    name: &quot;Tom&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(name in person);// true</span><br></pre></td></tr></table></figure>
-
-<h2 id="对象枚举"><a href="#对象枚举" class="headerlink" title="对象枚举"></a>对象枚举</h2><h3 id="for-in-循环（P57）"><a href="#for-in-循环（P57）" class="headerlink" title="for in 循环（P57）"></a>for in 循环（P57）</h3><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><ul>
-<li><p>function 声明</p>
-</li>
-<li><p>var 赋值表达式</p>
-</li>
-</ul>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>var 赋值表达式不能写在调用之后</p>
-<p>var 赋值表达式要先定义，后调用</p>
-<h2 id="构造函数（不建议）"><a href="#构造函数（不建议）" class="headerlink" title="构造函数（不建议）"></a>构造函数（不建议）</h2><p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fun = new Function(&quot;num1&quot;, &quot;num2&quot;, &quot;return num1 + num2&quot;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="直接函数调用"><a href="#直接函数调用" class="headerlink" title="直接函数调用"></a>直接函数调用</h2><ul>
-<li><p>普通函数调用</p>
-</li>
-<li><p>匿名函数调用（不能让function打头）（也叫自执行函数）</p>
-</li>
-</ul>
-<h2 id="间接函数调用"><a href="#间接函数调用" class="headerlink" title="间接函数调用"></a>间接函数调用</h2><ul>
-<li><p>fun.call()</p>
-</li>
-<li><p>fun.apply();</p>
-</li>
-</ul>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ol>
-<li><p>第一个参数：改变this的指向</p>
-</li>
-<li><p>第二个参数：改变参数的值</p>
-<ul>
-<li><p>call：传进的参数以逗号分隔</p>
-</li>
-<li><p>apply：传进的参数以数组形式体现</p>
-</li>
-</ul>
-</li>
-</ol>
-<p>例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// call 方法调用</span><br><span class="line">fun.call(window, 1, 2);</span><br><span class="line"></span><br><span class="line">// apply 方法调用</span><br><span class="line">fun,apply(window, [1, 2]);</span><br></pre></td></tr></table></figure>
-
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ul>
-<li><p>如果用 alert 或 document.write 输出不是字符串的值，则该值则调用 <code>toString()</code> 方法</p>
-</li>
-<li><p>document.write 期望接收和输出字符串，当接收的参数不为字符串时，会调用参数的<code>toString</code>方法，将其转化成字符串输出</p>
-</li>
-<li><p>数组调用<code>toString()</code>后，会将其中的元素用逗号拼接起来变成字符串</p>
-</li>
-<li><p>一般的对象调用toString()后返回<code>[object Object]</code></p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck1g2tb9e005674w098qkfz9i" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript进阶知识点-JS变量与作用域" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" class="article-date">
-  <time datetime="2019-09-13T01:49:54.000Z" itemprop="datePublished">2019-09-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/">JavaScript进阶知识点--JS变量与作用域</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="检测引用类型"><a href="#检测引用类型" class="headerlink" title="检测引用类型"></a>检测引用类型</h1><h2 id="instanceof-方法（P88）"><a href="#instanceof-方法（P88）" class="headerlink" title="instanceof 方法（P88）"></a>instanceof 方法（P88）</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(value instanceof Array)&#123;</span><br><span class="line">    // 对数组执行某些操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><table>
-<thead>
-<tr>
-<th>基本类型</th>
-<th>引用类型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>不可修改</td>
-<td>可以修改</td>
-</tr>
-<tr>
-<td>保存在栈内存中</td>
-<td>保存在堆内存中</td>
-</tr>
-<tr>
-<td>按值访问</td>
-<td>按引用访问</td>
-</tr>
-<tr>
-<td>比较时，值相等即相等</td>
-<td>比较时，同一引用才相等</td>
-</tr>
-<tr>
-<td>复制时，创建一个副本</td>
-<td>复制的其实是指针</td>
-</tr>
-<tr>
-<td>按值传递参数</td>
-<td>按值传递参数</td>
-</tr>
-<tr>
-<td>用 typeof 检测类型</td>
-<td>用 instanceof 检测类型</td>
-</tr>
-</tbody></table>
-<h1 id="延长作用域链（不推荐使用）（P75）"><a href="#延长作用域链（不推荐使用）（P75）" class="headerlink" title="延长作用域链（不推荐使用）（P75）"></a>延长作用域链（不推荐使用）（P75）</h1><h2 id="with-方法"><a href="#with-方法" class="headerlink" title="with 方法"></a>with 方法</h2><h2 id="try-catch-语句的-catch-块"><a href="#try-catch-语句的-catch-块" class="headerlink" title="try-catch 语句的 catch 块"></a>try-catch 语句的 catch 块</h2><h1 id="垃圾收集（P79）"><a href="#垃圾收集（P79）" class="headerlink" title="垃圾收集（P79）"></a>垃圾收集（P79）</h1><ul>
-<li><p>标识清除</p>
-</li>
-<li><p>引用计数（基本废除）</p>
-</li>
-</ul>
-<p>引用计数会在循环引用过程中出现错误</p>
-<h2 id="手动清除内存"><a href="#手动清除内存" class="headerlink" title="手动清除内存"></a>手动清除内存</h2><p>将变量设置为 null</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck1g2tbae006f74w0selw70op" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/26/JavaScript进阶知识点-AJAX及JSON/" data-id="ck20a6prg005i24w0969twoo8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1715,7 +1570,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bootstrap/">bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bootstrap/">bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -1725,7 +1580,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -1735,7 +1590,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 11.43px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
     </div>
   </div>
 
@@ -1757,23 +1612,23 @@
       <ul>
         
           <li>
-            <a href="/2019/10/07/bootstrap入门之全局样式/">bootstrap入门之全局样式</a>
+            <a href="/2019/10/18/ES6扩展/">ES6扩展</a>
           </li>
         
           <li>
-            <a href="/2019/09/28/jQuery扩展之动画/">jQuery扩展之动画</a>
+            <a href="/2019/10/17/ES6解构赋值/">ES6解构赋值</a>
           </li>
         
           <li>
-            <a href="/2019/09/27/jQuery事件/">jQuery事件</a>
+            <a href="/2019/10/16/bootstrap组件/">bootstrap组件</a>
           </li>
         
           <li>
-            <a href="/2019/09/26/JavaScript进阶知识点-AJAX及JSON/">JavaScript进阶知识点--AJAX及JSON</a>
+            <a href="/2019/10/13/ES6基础入门let、const/">ES6基础入门let、const</a>
           </li>
         
           <li>
-            <a href="/2019/09/24/jQuery选择器/">jQuery选择器</a>
+            <a href="/2019/10/13/HTML5音视频/">HTML5音视频</a>
           </li>
         
       </ul>
