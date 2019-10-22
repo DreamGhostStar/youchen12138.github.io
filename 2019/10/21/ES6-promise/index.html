@@ -5,15 +5,20 @@
   
 
   
-  <title>Tag: Ajax | Hexo</title>
+  <title>ES6-promise | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/Ajax/index.html">
+  <meta name="description" content="什么是promisePromise 对象用于表示一个异步操作的最终状态（完成或失败）以及其返回的值 同步？异步？同步任务会阻塞程序运行 异步任务不会阻塞程序执行 示例： 1234567891011121314151617181920function f() &amp;#123;    return new Promise(resolve =&amp;gt; &amp;#123;        setTimeout(fu">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6-promise">
+<meta property="og:url" content="http://yoursite.com/2019/10/21/ES6-promise/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是promisePromise 对象用于表示一个异步操作的最终状态（完成或失败）以及其返回的值 同步？异步？同步任务会阻塞程序运行 异步任务不会阻塞程序执行 示例： 1234567891011121314151617181920function f() &amp;#123;    return new Promise(resolve =&amp;gt; &amp;#123;        setTimeout(fu">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-21T13:47:10.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="ES6-promise">
+<meta name="twitter:description" content="什么是promisePromise 对象用于表示一个异步操作的最终状态（完成或失败）以及其返回的值 同步？异步？同步任务会阻塞程序运行 异步任务不会阻塞程序执行 示例： 1234567891011121314151617181920function f() &amp;#123;    return new Promise(resolve =&amp;gt; &amp;#123;        setTimeout(fu">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,78 +65,70 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/25/用jQuery实现Ajax-md/" class="archive-article-date">
-  <time datetime="2019-05-25T06:39:57.000Z" itemprop="datePublished">May 25</time>
+        <section id="main"><article id="post-ES6-promise" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/21/ES6-promise/" class="article-date">
+  <time datetime="2019-10-21T10:35:13.000Z" itemprop="datePublished">2019-10-21</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/25/用jQuery实现Ajax-md/">用jQuery实现Ajax</a>
+    <h1 class="article-title" itemprop="name">
+      ES6-promise
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/XMLHttpRequest-md/" class="archive-article-date">
-  <time datetime="2019-05-16T09:16:17.000Z" itemprop="datePublished">May 16</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/XMLHttpRequest-md/">XMLHttpRequest</a>
-    </h1>
-  
+        <hr>
+<h1 id="什么是promise"><a href="#什么是promise" class="headerlink" title="什么是promise"></a>什么是promise</h1><p>Promise 对象用于表示一个异步操作的最终状态（完成或失败）以及其返回的值</p>
+<h2 id="同步？异步？"><a href="#同步？异步？" class="headerlink" title="同步？异步？"></a>同步？异步？</h2><p>同步任务会阻塞程序运行</p>
+<p>异步任务不会阻塞程序执行</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function f() &#123;</span><br><span class="line">    return new Promise(resolve =&gt; &#123;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            resolve();</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f()</span><br><span class="line">    .then(function () &#123;</span><br><span class="line">        console.log(1);</span><br><span class="line">        return f();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(function () &#123;</span><br><span class="line">        console.log(2);</span><br><span class="line">        return f();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(function () &#123;</span><br><span class="line">        console.log(3);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/05/16/HTTP请求/" class="archive-article-date">
-  <time datetime="2019-05-16T07:28:06.000Z" itemprop="datePublished">May 16</time>
-</a>
+<h2 id="promise信任问题"><a href="#promise信任问题" class="headerlink" title="promise信任问题"></a>promise信任问题</h2><ol>
+<li><p>解决了回调地狱、信任问题；</p>
+</li>
+<li><p>promise可以有效防止回调函数控制反转的问题,一旦被确定为成功或者失败，就不能再被更改</p>
+</li>
+</ol>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/16/HTTP请求/">HTTP请求</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/21/ES6-promise/" data-id="ck21l8gkn00297ow06vbjg1mv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/10/18/ES6扩展/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ES6扩展</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         

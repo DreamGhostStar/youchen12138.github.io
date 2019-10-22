@@ -62,6 +62,240 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript基础知识点-DOM操作之节点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/26/JavaScript基础知识点-DOM操作之节点/" class="article-date">
+  <time datetime="2019-08-26T12:55:06.000Z" itemprop="datePublished">2019-08-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/26/JavaScript基础知识点-DOM操作之节点/">JavaScript基础知识点--DOM操作之节点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="DOM之节点"><a href="#DOM之节点" class="headerlink" title="DOM之节点"></a>DOM之节点</h1><ul>
+<li><p>添加节点</p>
+</li>
+<li><p>删除节点</p>
+</li>
+<li><p>修改节点</p>
+</li>
+<li><p>查找节点</p>
+</li>
+</ul>
+<h1 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h1><h2 id="create-系列方法"><a href="#create-系列方法" class="headerlink" title="create 系列方法"></a>create 系列方法</h2><ul>
+<li><p>document.creatElement()：创建新的元素节点。一个参数，标签名</p>
+</li>
+<li><p>document.createTextNode()：创建新的文本节点。一个参数，要插入的节点的文本</p>
+</li>
+<li><p>document.createDocumentFragment()：创建文档片段</p>
+</li>
+<li><p>document.createComment()：传入一个注释文本，创建一个注释节点</p>
+</li>
+<li><p>node1.appendChild(node2);将node2（节点二）装填到node1（节点1）内。</p>
+</li>
+</ul>
+<p>document.createElement 还能支持创建当前浏览器不支持的标签名，在IE6-8下，这是一个著名的 hack</p>
+<h3 id="创建节点示例一"><a href="#创建节点示例一" class="headerlink" title="创建节点示例一"></a>创建节点示例一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var newDiv = document.createElement(&quot;div&quot;); // 创建元素节点，这句话就是在窗口创建div元素</span><br><span class="line">var newContent = document.createTextNode(&quot;Hi there and greetings!&quot;); // 创建文本节点及其内容</span><br><span class="line">newDiv.appendChild(newContent); // 将文本节点装填到元素节点内</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建节点示例二"><a href="#创建节点示例二" class="headerlink" title="创建节点示例二"></a>创建节点示例二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var comment = document.createComment(&quot;A comment&quot;);</span><br><span class="line">    var fragment = document.createDocumentFragment();</span><br><span class="line">    var ul = document.getElementById(&quot;myList&quot;);// HTML 文档中ul的id为myList</span><br><span class="line">    var li = null;</span><br><span class="line">    for(var i = 0; i &lt; 3; i++)&#123;</span><br><span class="line">        li = document.createElement(&quot;li&quot;);</span><br><span class="line">        li.appendChild(document.createTextNode(&quot;Item &quot;+ (i+1)));</span><br><span class="line">        fragment.appendChild(li);</span><br><span class="line">    &#125;</span><br><span class="line">    ul.appendChild(fragment);</span><br><span class="line">    // insertBefore 有两个参数，一个是要插入的节点，另一个是插入节点相对的对象，插入节点要插入到哪个对象的前面的对象，这里的第二个参数是ul</span><br><span class="line">    document.body.insertBefore(comment, document.body.firstChild);</span><br></pre></td></tr></table></figure>
+
+<h1 id="IE-浏览器条件编译"><a href="#IE-浏览器条件编译" class="headerlink" title="IE 浏览器条件编译"></a>IE 浏览器条件编译</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 如果是IE浏览器，则!!0为假，不return。如果不是IE浏览器，则!0为真，返回并且不执行条件编译后面的代码</span><br><span class="line">if(!</span><br><span class="line">/*@cc_on!@/</span><br><span class="line">0) return;</span><br></pre></td></tr></table></figure>
+
+<h1 id="高效创建节点的方法"><a href="#高效创建节点的方法" class="headerlink" title="高效创建节点的方法"></a>高效创建节点的方法</h1><ul>
+<li><p>innerHTML：用来设置或获取当前标签的起始和结束里面的内容</p>
+</li>
+<li><p>outerHTML：返回调用它的元素及所有子节点的 HTML 标签，包含元素自身的标签</p>
+</li>
+<li><p>innerText：设置或获取位于对象起始和结束标签内的文本，低版本火狐浏览器不支持，可用 textContent 方法</p>
+</li>
+</ul>
+<h2 id="使用-innerHTML-的限制"><a href="#使用-innerHTML-的限制" class="headerlink" title="使用 innerHTML 的限制"></a>使用 innerHTML 的限制</h2><ul>
+<li><p>字符串的最左边不能出现空白，IE6~8会自动移除它</p>
+</li>
+<li><p>大多数浏览器不会对 script 标签进行脚本执行操作</p>
+<ol>
+<li><p>为 script 标签添加 defer 属性</p>
+</li>
+<li><p>script 标签要在有作用域的元素之后</p>
+</li>
+</ol>
+</li>
+<li><p>不能单独创建 meta，style，link等元素，一定要在前面加上一些字符</p>
+</li>
+</ul>
+<h2 id="避开空白节点"><a href="#避开空白节点" class="headerlink" title="避开空白节点"></a>避开空白节点</h2><ol>
+<li><p>nodeType</p>
+</li>
+<li><p>第二套 API</p>
+</li>
+</ol>
+<h1 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h1><h2 id="NodeList-对象的特点"><a href="#NodeList-对象的特点" class="headerlink" title="NodeList 对象的特点"></a>NodeList 对象的特点</h2><p>NodeList 是 childNodes 的保存的对象</p>
+<ul>
+<li><p>NodeList 是一种类数组对象，用于保存一组有序的节点</p>
+</li>
+<li><p>可以通过方括号语法来访问 NodeList 的值，有 item 方法与 length 属性</p>
+</li>
+<li><p>它并不是 Array 的实例，没有数组对象的方法</p>
+</li>
+</ul>
+<h2 id="类数组对象-HTMLCollection"><a href="#类数组对象-HTMLCollection" class="headerlink" title="类数组对象 HTMLCollection"></a>类数组对象 HTMLCollection</h2><ul>
+<li><p>Ele.getElementsByTagName()：会根据节点的名称返回一组元素的集合</p>
+</li>
+<li><p>document.scripts：会返回页面里的全部 script 的集合</p>
+</li>
+<li><p>document.links：会返回页面里的全部 a 元素</p>
+</li>
+<li><p>document.images：会返回页面里的全部 image 元素</p>
+</li>
+<li><p>document.forms：会返回页面里全部的页面表单</p>
+</li>
+<li><p>tr.cells：会返回 tr 的所有 td 子元素的集合</p>
+</li>
+<li><p>select.options：会返回这个 select 属性的全部选项</p>
+</li>
+</ul>
+<h2 id="namedItem"><a href="#namedItem" class="headerlink" title="namedItem()"></a>namedItem()</h2><p>该方法返回 HTMLCollection 对象中指定 ID 或 name 的元素</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>HTMLCollection.namedItem(name)</p>
+</blockquote>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>name：必需。你要返回元素的 id 或 name 属性的值</p>
+<h2 id="类数组对象-NamedNodeMap"><a href="#类数组对象-NamedNodeMap" class="headerlink" title="类数组对象 NamedNodeMap"></a>类数组对象 NamedNodeMap</h2><p>主要用于获取属性的属性值</p>
+<ul>
+<li><p>Ele.attributes：返回指定节点的属性集合</p>
+</li>
+<li><p>Ele.attributes.getNamedItem(“attributeName”).nodeValue：返回指定的属性节点。attributeName为要查找的属性值的属性名，该方法只能获取在元素上定义的属性值</p>
+</li>
+</ul>
+<h2 id="类数组对象的动态性"><a href="#类数组对象的动态性" class="headerlink" title="类数组对象的动态性"></a>类数组对象的动态性</h2><ul>
+<li><p>NodeList，HTMLCollection，NamedNodeMap 三个集合都是动态的，是有生命的、有呼吸的对象</p>
+</li>
+<li><p>它们实际上是基于 DOM 结构动态执行查询的结果，因此 DOM 结构的变化能够自动反映这些对象</p>
+</li>
+<li><p>每当文档结构发生变化时，它们都会得到更新。因此，它们始终都会保存着最新、最准确的信息</p>
+</li>
+</ul>
+<h1 id="节点查找方法"><a href="#节点查找方法" class="headerlink" title="节点查找方法"></a>节点查找方法</h1><ul>
+<li><p>getElementById()</p>
+</li>
+<li><p>getElementsByName()</p>
+</li>
+<li><p>getElementsTagName()</p>
+</li>
+<li><p>getElementsByClassName()</p>
+</li>
+<li><p>querySelector()：返回文档中匹配指定 CSS 选择器的一个元素，括号中写符合 CSS 语法的字符</p>
+</li>
+<li><p>querySeletorAll()：返回文档中匹配指定 CSS 选择器的一组元素，括号中写符合 CSS 语法的字符</p>
+</li>
+</ul>
+<p>前三个只能是 document 对象的方法</p>
+<p>querySelectorAll() 和 querySelector() 方法返回的是一个静态的 NodeList ,所谓静态 NodeList 就是对底层 document 的更改不会影响到返回的这个 NodeList 对象.此时返回的 NodeList 只是 querySelectorAll() 方法被调用时的文档状态的快照。</p>
+<h1 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h1><ul>
+<li><p>appendChild()：为指定元素节点的最后一个子节点之后添加节点。该方法返回新的子节点</p>
+</li>
+<li><p>insertBefore()：在指定的已有子节点之前插入新的子节点。该方法返回新创建的节点</p>
+</li>
+<li><p>replaceChild()：新节点替换某个子节点。返回被替换的节点</p>
+</li>
+<li><p>cloneNode()：创建节点的拷贝，并返回该副本。拷贝的节点要有父节点，如果没有父节点，要通过上面三个方法对其进行添加</p>
+</li>
+<li><p>normalize()：合并相邻的文本节点</p>
+</li>
+<li><p>splitText()：按照指定的位置把文本节点分割为两个节点。返回分割后新的文本节点</p>
+</li>
+</ul>
+<h2 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>appendChild()</td>
+<td>appendChild(要插入的节点)</td>
+</tr>
+<tr>
+<td>insertBefore()</td>
+<td>insertBefore(要插入的节点，指定的子节点)</td>
+</tr>
+<tr>
+<td>replaceChild()</td>
+<td>replaceChild(要插入的节点，被替换的节点)</td>
+</tr>
+<tr>
+<td>cloneNode()</td>
+<td>cloneNode(boolean)，若Boolean为false，则只复制该节点。如果未true，则为深度拷贝，将该节点下的子节点一起拷贝</td>
+</tr>
+<tr>
+<td>splitText()</td>
+<td>splitText(num)，节点从num位置被分割，包括num该位置的字符</td>
+</tr>
+</tbody></table>
+<h2 id="nodeValue-与-innerHTML-的区别"><a href="#nodeValue-与-innerHTML-的区别" class="headerlink" title="nodeValue 与 innerHTML 的区别"></a>nodeValue 与 innerHTML 的区别</h2><h3 id="nodeValue"><a href="#nodeValue" class="headerlink" title="nodeValue"></a>nodeValue</h3><p>nodeValue 属性设置或返回指定节点的节点值。（文本节点和属性节点可以用nodeValue）</p>
+<h3 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h3><p>innerText属性可以获取或者设置指定元素的文本内容</p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>nodeValue 只会读取 element 这个节点的节点值，不包括子节点，而 innerHTML 包括子节点</p>
+<h1 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h1><h2 id="涉及方法"><a href="#涉及方法" class="headerlink" title="涉及方法"></a>涉及方法</h2><ul>
+<li><p>removeChild()：删除某个节点中指定的子节点。返回被删除的节点</p>
+</li>
+<li><p>removeNode()：IE的私有实现。将目标节点从文档中删除，返回目标节点</p>
+</li>
+<li><p>innerHTML</p>
+</li>
+<li><p>deleteContents</p>
+</li>
+<li><p>textContent</p>
+</li>
+</ul>
+<h2 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>removeChild()</td>
+<td>一个参数。为要删除的子节点</td>
+</tr>
+<tr>
+<td>removeNode()</td>
+<td>一个参数为布尔值，默认值为false。若为false，仅删除目标节点，保留子节点。若为true，功能和removeChild类似</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck21l8gm8004o7ow05ngzf9ol" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaScript基础知识点-BOM之navigator对象及方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" class="article-date">
@@ -94,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck20a6pql004524w0tm5f64xy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck21l8glh003m7ow0xet14abl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -155,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" data-id="ck20a6pqo004924w0xgggiu5e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" data-id="ck21l8glq00427ow00ictkbma" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -217,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/" data-id="ck20a6prl005r24w0mv5p0v0c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/" data-id="ck21l8glo003z7ow0xbp4t5bg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -320,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/" data-id="ck20a6pqq004c24w0knm2zn5g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/" data-id="ck21l8glx004d7ow0q8cbn4a9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -506,7 +740,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-BOM基础及window对象/" data-id="ck20a6pqu004i24w0c8989lp0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-BOM基础及window对象/" data-id="ck21l8glt00477ow0ruspnnuf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -768,7 +1002,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-DOM事件/" data-id="ck20a6pqs004f24w0tf7u6wrk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-DOM事件/" data-id="ck21l8glv004a7ow04pptvxon" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -890,7 +1124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-初识DOM/" data-id="ck20a6prb005924w0sfg1wimz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-初识DOM/" data-id="ck21l8gr900567ow0i99a9zpp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -943,7 +1177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-错误调试与处理/" data-id="ck20a6pre005f24w01e01sfhv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-错误调试与处理/" data-id="ck21l8gr700537ow0hmz60v1g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1068,89 +1302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-内置对象Date方法/" data-id="ck20a6prh005l24w0a2dsoxze" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-内置对象Math方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/24/JavaScript基础知识点-内置对象Math方法/" class="article-date">
-  <time datetime="2019-08-23T23:48:37.000Z" itemprop="datePublished">2019-08-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/24/JavaScript基础知识点-内置对象Math方法/">JavaScript基础知识点--内置对象Math方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="求最大、最小值"><a href="#求最大、最小值" class="headerlink" title="求最大、最小值"></a>求最大、最小值</h1><h2 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.min(num1, num2…numN)</p>
-</blockquote>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>求一组数中的最小值</p>
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h2 id="max"><a href="#max" class="headerlink" title="max()"></a>max()</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.max(num1, num2…numN)</p>
-</blockquote>
-<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><p>求一组数中的最大值</p>
-<h3 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h1 id="取整方法"><a href="#取整方法" class="headerlink" title="取整方法"></a>取整方法</h1><h2 id="ceil"><a href="#ceil" class="headerlink" title="ceil()"></a>ceil()</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.ceil(num)</p>
-</blockquote>
-<h3 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a>功能</h3><p>向上取整，即返回大于 num 的最小整数</p>
-<h3 id="返回值-2"><a href="#返回值-2" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h2 id="floor"><a href="#floor" class="headerlink" title="floor()"></a>floor()</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.floor(num)</p>
-</blockquote>
-<h3 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a>功能</h3><p>向下取整，即返回 num 的整数部分</p>
-<h3 id="返回值-3"><a href="#返回值-3" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h2 id="round"><a href="#round" class="headerlink" title="round()"></a>round()</h2><h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.round(num)</p>
-</blockquote>
-<h3 id="功能-4"><a href="#功能-4" class="headerlink" title="功能"></a>功能</h3><p>将数值四舍五入为最接近的整数</p>
-<h3 id="返回值-4"><a href="#返回值-4" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h2 id="abs"><a href="#abs" class="headerlink" title="abs()"></a>abs()</h2><h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.abs(num)</p>
-</blockquote>
-<h3 id="功能-5"><a href="#功能-5" class="headerlink" title="功能"></a>功能</h3><p>返回 num 的绝对值</p>
-<h3 id="返回值-5"><a href="#返回值-5" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h1 id="产生随机数"><a href="#产生随机数" class="headerlink" title="产生随机数"></a>产生随机数</h1><h2 id="random"><a href="#random" class="headerlink" title="random()"></a>random()</h2><h3 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>Math.random()</p>
-</blockquote>
-<h3 id="功能-6"><a href="#功能-6" class="headerlink" title="功能"></a>功能</h3><p>返回大于等于0小于1的一个随机数</p>
-<h3 id="返回值-6"><a href="#返回值-6" class="headerlink" title="返回值"></a>返回值</h3><p>Number</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>求n到m之间的随机整数的公式</p>
-<blockquote>
-<p>random=Math.floor(Math.random()*(m-n+1)+n);</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-内置对象Math方法/" data-id="ck20a6pr6005024w0ri298ypp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-内置对象Date方法/" data-id="ck21l8grc005c7ow0o6pd4f8h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1219,6 +1371,10 @@
       <ul>
         
           <li>
+            <a href="/2019/10/21/ES6-promise/">ES6-promise</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/18/ES6扩展/">ES6扩展</a>
           </li>
         
@@ -1232,10 +1388,6 @@
         
           <li>
             <a href="/2019/10/13/ES6基础入门let、const/">ES6基础入门let、const</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/13/HTML5音视频/">HTML5音视频</a>
           </li>
         
       </ul>

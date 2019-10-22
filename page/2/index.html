@@ -62,6 +62,198 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript进阶知识点-AJAX及JSON" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/26/JavaScript进阶知识点-AJAX及JSON/" class="article-date">
+  <time datetime="2019-09-26T04:35:35.000Z" itemprop="datePublished">2019-09-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/26/JavaScript进阶知识点-AJAX及JSON/">JavaScript进阶知识点--AJAX及JSON</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="关于-AJAX"><a href="#关于-AJAX" class="headerlink" title="关于 AJAX"></a>关于 AJAX</h2><h3 id="什么是-AJAX"><a href="#什么是-AJAX" class="headerlink" title="什么是 AJAX"></a>什么是 AJAX</h3><p>AJAX 的全称是 Asynchronous JavaScript and XML（即异步的 JavaScript 和 XML，它并不是一种新的编程语言，而是几种原有技术的结合体</p>
+<p>AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术</p>
+<h3 id="为什么要使用-AJAX？"><a href="#为什么要使用-AJAX？" class="headerlink" title="为什么要使用 AJAX？"></a>为什么要使用 AJAX？</h3><h4 id="AJAX-的优点"><a href="#AJAX-的优点" class="headerlink" title="AJAX 的优点"></a>AJAX 的优点</h4><ul>
+<li><p>通过异步模式，提升了用户体验</p>
+</li>
+<li><p>优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用</p>
+</li>
+<li><p>AJAX 引擎在客户端运行，承担了一部分本来由服务器承担的工作，从而减少了大用户量下的服务器负载</p>
+</li>
+</ul>
+<h4 id="AJAX-的缺点"><a href="#AJAX-的缺点" class="headerlink" title="AJAX 的缺点"></a>AJAX 的缺点</h4><ul>
+<li><p>不支持浏览器 back 按钮</p>
+</li>
+<li><p>安全问题 AJAX 暴露了与服务器交互的细节</p>
+</li>
+<li><p>对搜索引擎的支持比较弱</p>
+</li>
+</ul>
+<h2 id="XMLHTTPRequest-对象"><a href="#XMLHTTPRequest-对象" class="headerlink" title="XMLHTTPRequest 对象"></a>XMLHTTPRequest 对象</h2><h3 id="什么是-XMLHTTPRequest？"><a href="#什么是-XMLHTTPRequest？" class="headerlink" title="什么是 XMLHTTPRequest？"></a>什么是 XMLHTTPRequest？</h3><p>是一种支持异步请求的技术，它是 AJAX 的核心</p>
+<h3 id="XMLHTTPRequest-的作用"><a href="#XMLHTTPRequest-的作用" class="headerlink" title="XMLHTTPRequest 的作用"></a>XMLHTTPRequest 的作用</h3><ul>
+<li><p>可以先服务器提出请求并处理响应，而不阻塞用户</p>
+</li>
+<li><p>可以在页面加载以后进行页面的局部更新</p>
+</li>
+</ul>
+<h2 id="如何使用-AJAX？"><a href="#如何使用-AJAX？" class="headerlink" title="如何使用 AJAX？"></a>如何使用 AJAX？</h2><p>要完整实现一个 AJAX 异步调用和局部刷新，通常需要以下几个步骤</p>
+<ul>
+<li><p>创建 XMLHTTPRequest 对象，也就是创建一个异步调用对象</p>
+</li>
+<li><p>创建一个新的 HTTP 请求，并指定该 HTTP 请求的方法、URL</p>
+</li>
+<li><p>设置响应 HTTP 请求状态变化的函数</p>
+</li>
+<li><p>发送 HTTP 请求</p>
+</li>
+<li><p>获取异步调用返回的数据</p>
+</li>
+<li><p>使用 JavaScript 和 DOM 实现局部刷新</p>
+</li>
+</ul>
+<h2 id="如何创建-HTTP-请求"><a href="#如何创建-HTTP-请求" class="headerlink" title="如何创建 HTTP 请求"></a>如何创建 HTTP 请求</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>open(method, url, async)</p>
+</blockquote>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>创建 HTTP 请求，规定请求的类型、URL及是否异步处理请求</p>
+<h3 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h3><ul>
+<li><p><code>method</code>：请求类型，GET或POST</p>
+</li>
+<li><p><code>url</code>：文件在服务器上的位置</p>
+</li>
+<li><p><code>async</code>：true（异步）或 false（同步）</p>
+</li>
+</ul>
+<h3 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h3><p><code>open</code> 方法不会向服务器发送真正请求，它相当于初始化请求并准备发送只能向同一个域中使用相同协议和端口的URL发送请求，否则会因为安全原因报错</p>
+<h4 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h4><p><code>url</code> 参数是 <code>open()</code> 方法中唯一一个必须要指定的参数，用来设置服务器上文件的地址，该文件可以是任何类型的文件，如.txt 和 .xml，或者服务器脚本文件，如.asp 和 .php（在传回响应之前，能够在服务器上执行任务）</p>
+<h4 id="GET-和-POST-的区别"><a href="#GET-和-POST-的区别" class="headerlink" title="GET 和 POST 的区别"></a>GET 和 POST 的区别</h4><p>与 <code>POST</code> 相比，<code>GET</code> 更简单也更快，并且在大部分情况下都能用，然而，在以下情况中，必须使用 POST 请求：</p>
+<ul>
+<li><p>无法使用缓存文件（更新服务器上的文件或数据库）</p>
+</li>
+<li><p>向服务器发送大量数据（POST 没有数据量限制）</p>
+</li>
+<li><p>发送包含未知字符的用户输入时，<code>POST</code> 比 <code>GET</code> 更稳定也更可靠</p>
+</li>
+</ul>
+<h4 id="同步和异步的区别"><a href="#同步和异步的区别" class="headerlink" title="同步和异步的区别"></a>同步和异步的区别</h4><ul>
+<li><p>同步：提交请求 -&gt; 等待服务器处理 -&gt; 处理完毕返回 这个期间客户端浏览器不能干任何事</p>
+</li>
+<li><p>异步：请求通过事件触发 -&gt; 服务器处理（这是浏览器仍然可以作其他事情）-&gt; 处理完毕</p>
+</li>
+</ul>
+<h4 id="async"><a href="#async" class="headerlink" title="async"></a>async</h4><p>说明：<code>async</code> 是一个布尔值。</p>
+<p>如果是异步通信方式（true），客户机就不等待服务器的响应</p>
+<p>如果是同步方式（false），客户机就要等到服务器返回消息后才去执行其他操作</p>
+<h2 id="设置响应-HTTP-请求状态变化的函数"><a href="#设置响应-HTTP-请求状态变化的函数" class="headerlink" title="设置响应 HTTP 请求状态变化的函数"></a>设置响应 HTTP 请求状态变化的函数</h2><p>请求发往服务器 -&gt; 服务器根据请求生成响应 -&gt; 传回给 XHR 对象</p>
+<p>在收到响应后相应数据会填充到 XHR 对象的属性，有四个相关属性会被填充：</p>
+<ul>
+<li><p>responseText：从服务器进程返回数据的字符形式</p>
+</li>
+<li><p>responseXML：从服务器进程返回的 DOM 兼容的文档数据对象</p>
+</li>
+<li><p>status：从服务器返回的数字代码，如 404（未找到）和200（已就绪）</p>
+</li>
+<li><p>statusText：伴随状态码的字符串信息</p>
+</li>
+</ul>
+<h2 id="如何发送请求"><a href="#如何发送请求" class="headerlink" title="如何发送请求"></a>如何发送请求</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>send(string)</p>
+</blockquote>
+<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><p>将请求发送到服务器</p>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>string 仅用于 post 请求</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>仅在 POST 请求时可以传入参数，不需要则发送 null，在调用 send 方法之后请求被发往服务器</p>
+<h2 id="如何添加-HTTP-头"><a href="#如何添加-HTTP-头" class="headerlink" title="如何添加 HTTP 头"></a>如何添加 HTTP 头</h2><p>如果需要像 HTML 表单那样 POST 数据，需使用 setRequestHeader() 来添加 HTTP 头，然后在 send() 方法中规定希望发送的数据</p>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>xmlhttp.setRequestHeader(header, value)</p>
+</blockquote>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xmlhttp.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><h2 id="什么是-JSON？"><a href="#什么是-JSON？" class="headerlink" title="什么是 JSON？"></a>什么是 JSON？</h2><p>JSON（JavaScript object notation）全称是 JavaScript 对象表示法，它是一种数据交换的文本格式，而不是一种编程语言，用于读取结构化数据，2001年由 Douglas Crockford 提出，目的是取代繁琐笨重的 XML 格式</p>
+<h2 id="JSON-的语法规则"><a href="#JSON-的语法规则" class="headerlink" title="JSON 的语法规则"></a>JSON 的语法规则</h2><p>JSON 的语法可以表示以下三种类型的值：</p>
+<h3 id="简单值："><a href="#简单值：" class="headerlink" title="简单值："></a>简单值：</h3><p>简单值使用与 JavaScript 相同的语法，可以在 JSON 中表示字符串、数值、布尔值和 null</p>
+<p>字符串必须使用双引号表示，不能使用单引号，数值必须以十进制表示，且不能使用 NaN 和 Infinity</p>
+<p>说明：JSON 不支持 JavaScript 中的特殊值 undefined</p>
+<h3 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h3><p>对象作为一种复杂数据类型，表示的是一组有序的键值对，而每个键值对中的值可以是简单值，也可以是复杂数据类型的值</p>
+<p>JSON 中对象的键名必须放在双引号里面，因为 JSON 不是 JavaScript 语句，所以没有末尾的分号</p>
+<p>说明：同一个对象不应该出现两个同名属性</p>
+<h3 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h3><p>数组也是一种复杂数据类型，表示一组有序的值的列表，可以通过数值索引来访问其中的值</p>
+<p>说明：数组或对象最后一个成员的后面，不能加逗号</p>
+<h1 id="JSON-对象"><a href="#JSON-对象" class="headerlink" title="JSON 对象"></a>JSON 对象</h1><p>JSON 对象的两个方法：</p>
+<h2 id="parse"><a href="#parse" class="headerlink" title="parse()"></a>parse()</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>JSON.parse()</p>
+</blockquote>
+<h3 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a>功能</h3><p>用于将 JSON 字符串转换成对象</p>
+<h2 id="stringify"><a href="#stringify" class="headerlink" title="stringify()"></a>stringify()</h2><h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>JSON.stringify()</p>
+</blockquote>
+<h3 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a>功能</h3><p>用于将一个值转为字符串，该字符串应该符合 JSON 格式，并且可以被 JSON.parse()方法还原</p>
+<h2 id="JSON-对象总结"><a href="#JSON-对象总结" class="headerlink" title="JSON 对象总结"></a>JSON 对象总结</h2><ul>
+<li><p>JSON 之所以流行，是因为可以把 JSON 数据结构解析为有用的 JavaScript 对象</p>
+</li>
+<li><p>JSON 对象 的 stringify()和 parse()这两个方法可以分别用于把 JavaScript 对象序列化为 JSON 字符串和把 JSON 字符串解析为原生 JavaScript 值</p>
+</li>
+<li><p>JavaScript 的 eval() 类似于 JSON.parse() 方法，可以将 json 字符串转换为 json 对象，但是，eval() 可以执行不符合 JSON 格式的代码，有可能会包含恶意代码，所以尽量少用</p>
+</li>
+</ul>
+<h1 id="jQuery-的-ajax-方法"><a href="#jQuery-的-ajax-方法" class="headerlink" title="jQuery 的 ajax 方法"></a>jQuery 的 ajax 方法</h1><ul>
+<li><p><code>$.ajax()</code></p>
+</li>
+<li><p><code>$.get()</code></p>
+</li>
+<li><p><code>$.post()</code></p>
+</li>
+<li><p><code>$.getJson()</code></p>
+</li>
+</ul>
+<h1 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h1><h2 id="什么是同源策略"><a href="#什么是同源策略" class="headerlink" title="什么是同源策略"></a>什么是同源策略</h2><p>所谓同源是指：域名，协议，端口均相同</p>
+<h2 id="什么是跨域"><a href="#什么是跨域" class="headerlink" title="什么是跨域"></a>什么是跨域</h2><p>跨域是指从一个域名的网页去请求另一个域名的资源，严格一点的定义是：只要协议，域名，端口有任何一个的不同，就被当作跨域</p>
+<h2 id="如何解决跨域"><a href="#如何解决跨域" class="headerlink" title="如何解决跨域"></a>如何解决跨域</h2><ul>
+<li><p>跨域资源共享（CORS）</p>
+</li>
+<li><p>JSONP（常用）</p>
+</li>
+<li><p>修改 <code>document.domain</code></p>
+</li>
+<li><p>使用 <code>window.name</code></p>
+</li>
+</ul>
+<h2 id="如何使用-JSONP-解决跨域"><a href="#如何使用-JSONP-解决跨域" class="headerlink" title="如何使用 JSONP 解决跨域"></a>如何使用 JSONP 解决跨域</h2><h3 id="什么是-JSONP"><a href="#什么是-JSONP" class="headerlink" title="什么是 JSONP"></a>什么是 JSONP</h3><p>JSONP 是 JSON with Padding（填充式json）的简写，是应用 JSON 的一种新方法，也是一种跨域解决方案</p>
+<h3 id="JSONP-的组成"><a href="#JSONP-的组成" class="headerlink" title="JSONP 的组成"></a>JSONP 的组成</h3><p>JSONP 由两部分组成：回调函数和数据。回调函数是当响应到来时应该在页面中调用的函数，而数据就是传入回调函数中的 JSON 数据</p>
+<h3 id="JSONP-的原理"><a href="#JSONP-的原理" class="headerlink" title="JSONP 的原理"></a>JSONP 的原理</h3><p>直接用 XMLHTTPRequest 请求不同域上的数据时，是不可以的。但是，在页面上引入不同域上的 js 脚本文件却是可以的，JSONP 正是利用这个特性来实现的</p>
+<p>通过 script 标签引入 js 文件 -&gt; js 文件载入成功后 -&gt; 执行我们在 url 参数中指定的函数</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/26/JavaScript进阶知识点-AJAX及JSON/" data-id="ck21l8gre005f7ow01vlkvu1z" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jQuery选择器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/24/jQuery选择器/" class="article-date">
@@ -261,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/jQuery选择器/" data-id="ck20a6pt8008e24w0tkdlc8fj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/24/jQuery选择器/" data-id="ck21l8gsc007d7ow0qi5bfiye" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -374,7 +566,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/jQuery入门/" data-id="ck20a6psb007024w0q28e7zxa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/23/jQuery入门/" data-id="ck21l8gs600707ow0oh8oqi7j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -624,7 +816,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck20a6pro005u24w0q6m1ka6c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck21l8grk005r7ow0lubbjk2r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -739,7 +931,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck20a6prr006024w00qsgxel0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck21l8grx006h7ow0l9malq3v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -847,7 +1039,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck20a6psf007724w0qzik9in6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck21l8grq00627ow00l1w2zx5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -936,7 +1128,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck20a6prj005o24w0ixzwprcm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck21l8grg005i7ow06fudr6er" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1079,7 +1271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck20a6pqn004724w0yh51t27a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck21l8gll003u7ow0r96n9pz0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1216,7 +1408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck20a6pqy004o24w0h1h5uxcj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck21l8gm6004l7ow05qt8vr2q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1403,241 +1595,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck20a6pqw004l24w0fry8gvoa" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-DOM操作之节点" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/26/JavaScript基础知识点-DOM操作之节点/" class="article-date">
-  <time datetime="2019-08-26T12:55:06.000Z" itemprop="datePublished">2019-08-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/JavaScript基础知识点-DOM操作之节点/">JavaScript基础知识点--DOM操作之节点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="DOM之节点"><a href="#DOM之节点" class="headerlink" title="DOM之节点"></a>DOM之节点</h1><ul>
-<li><p>添加节点</p>
-</li>
-<li><p>删除节点</p>
-</li>
-<li><p>修改节点</p>
-</li>
-<li><p>查找节点</p>
-</li>
-</ul>
-<h1 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h1><h2 id="create-系列方法"><a href="#create-系列方法" class="headerlink" title="create 系列方法"></a>create 系列方法</h2><ul>
-<li><p>document.creatElement()：创建新的元素节点。一个参数，标签名</p>
-</li>
-<li><p>document.createTextNode()：创建新的文本节点。一个参数，要插入的节点的文本</p>
-</li>
-<li><p>document.createDocumentFragment()：创建文档片段</p>
-</li>
-<li><p>document.createComment()：传入一个注释文本，创建一个注释节点</p>
-</li>
-<li><p>node1.appendChild(node2);将node2（节点二）装填到node1（节点1）内。</p>
-</li>
-</ul>
-<p>document.createElement 还能支持创建当前浏览器不支持的标签名，在IE6-8下，这是一个著名的 hack</p>
-<h3 id="创建节点示例一"><a href="#创建节点示例一" class="headerlink" title="创建节点示例一"></a>创建节点示例一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var newDiv = document.createElement(&quot;div&quot;); // 创建元素节点，这句话就是在窗口创建div元素</span><br><span class="line">var newContent = document.createTextNode(&quot;Hi there and greetings!&quot;); // 创建文本节点及其内容</span><br><span class="line">newDiv.appendChild(newContent); // 将文本节点装填到元素节点内</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建节点示例二"><a href="#创建节点示例二" class="headerlink" title="创建节点示例二"></a>创建节点示例二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var comment = document.createComment(&quot;A comment&quot;);</span><br><span class="line">    var fragment = document.createDocumentFragment();</span><br><span class="line">    var ul = document.getElementById(&quot;myList&quot;);// HTML 文档中ul的id为myList</span><br><span class="line">    var li = null;</span><br><span class="line">    for(var i = 0; i &lt; 3; i++)&#123;</span><br><span class="line">        li = document.createElement(&quot;li&quot;);</span><br><span class="line">        li.appendChild(document.createTextNode(&quot;Item &quot;+ (i+1)));</span><br><span class="line">        fragment.appendChild(li);</span><br><span class="line">    &#125;</span><br><span class="line">    ul.appendChild(fragment);</span><br><span class="line">    // insertBefore 有两个参数，一个是要插入的节点，另一个是插入节点相对的对象，插入节点要插入到哪个对象的前面的对象，这里的第二个参数是ul</span><br><span class="line">    document.body.insertBefore(comment, document.body.firstChild);</span><br></pre></td></tr></table></figure>
-
-<h1 id="IE-浏览器条件编译"><a href="#IE-浏览器条件编译" class="headerlink" title="IE 浏览器条件编译"></a>IE 浏览器条件编译</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 如果是IE浏览器，则!!0为假，不return。如果不是IE浏览器，则!0为真，返回并且不执行条件编译后面的代码</span><br><span class="line">if(!</span><br><span class="line">/*@cc_on!@/</span><br><span class="line">0) return;</span><br></pre></td></tr></table></figure>
-
-<h1 id="高效创建节点的方法"><a href="#高效创建节点的方法" class="headerlink" title="高效创建节点的方法"></a>高效创建节点的方法</h1><ul>
-<li><p>innerHTML：用来设置或获取当前标签的起始和结束里面的内容</p>
-</li>
-<li><p>outerHTML：返回调用它的元素及所有子节点的 HTML 标签，包含元素自身的标签</p>
-</li>
-<li><p>innerText：设置或获取位于对象起始和结束标签内的文本，低版本火狐浏览器不支持，可用 textContent 方法</p>
-</li>
-</ul>
-<h2 id="使用-innerHTML-的限制"><a href="#使用-innerHTML-的限制" class="headerlink" title="使用 innerHTML 的限制"></a>使用 innerHTML 的限制</h2><ul>
-<li><p>字符串的最左边不能出现空白，IE6~8会自动移除它</p>
-</li>
-<li><p>大多数浏览器不会对 script 标签进行脚本执行操作</p>
-<ol>
-<li><p>为 script 标签添加 defer 属性</p>
-</li>
-<li><p>script 标签要在有作用域的元素之后</p>
-</li>
-</ol>
-</li>
-<li><p>不能单独创建 meta，style，link等元素，一定要在前面加上一些字符</p>
-</li>
-</ul>
-<h2 id="避开空白节点"><a href="#避开空白节点" class="headerlink" title="避开空白节点"></a>避开空白节点</h2><ol>
-<li><p>nodeType</p>
-</li>
-<li><p>第二套 API</p>
-</li>
-</ol>
-<h1 id="类数组对象"><a href="#类数组对象" class="headerlink" title="类数组对象"></a>类数组对象</h1><h2 id="NodeList-对象的特点"><a href="#NodeList-对象的特点" class="headerlink" title="NodeList 对象的特点"></a>NodeList 对象的特点</h2><p>NodeList 是 childNodes 的保存的对象</p>
-<ul>
-<li><p>NodeList 是一种类数组对象，用于保存一组有序的节点</p>
-</li>
-<li><p>可以通过方括号语法来访问 NodeList 的值，有 item 方法与 length 属性</p>
-</li>
-<li><p>它并不是 Array 的实例，没有数组对象的方法</p>
-</li>
-</ul>
-<h2 id="类数组对象-HTMLCollection"><a href="#类数组对象-HTMLCollection" class="headerlink" title="类数组对象 HTMLCollection"></a>类数组对象 HTMLCollection</h2><ul>
-<li><p>Ele.getElementsByTagName()：会根据节点的名称返回一组元素的集合</p>
-</li>
-<li><p>document.scripts：会返回页面里的全部 script 的集合</p>
-</li>
-<li><p>document.links：会返回页面里的全部 a 元素</p>
-</li>
-<li><p>document.images：会返回页面里的全部 image 元素</p>
-</li>
-<li><p>document.forms：会返回页面里全部的页面表单</p>
-</li>
-<li><p>tr.cells：会返回 tr 的所有 td 子元素的集合</p>
-</li>
-<li><p>select.options：会返回这个 select 属性的全部选项</p>
-</li>
-</ul>
-<h2 id="namedItem"><a href="#namedItem" class="headerlink" title="namedItem()"></a>namedItem()</h2><p>该方法返回 HTMLCollection 对象中指定 ID 或 name 的元素</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>HTMLCollection.namedItem(name)</p>
-</blockquote>
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>name：必需。你要返回元素的 id 或 name 属性的值</p>
-<h2 id="类数组对象-NamedNodeMap"><a href="#类数组对象-NamedNodeMap" class="headerlink" title="类数组对象 NamedNodeMap"></a>类数组对象 NamedNodeMap</h2><p>主要用于获取属性的属性值</p>
-<ul>
-<li><p>Ele.attributes：返回指定节点的属性集合</p>
-</li>
-<li><p>Ele.attributes.getNamedItem(“attributeName”).nodeValue：返回指定的属性节点。attributeName为要查找的属性值的属性名，该方法只能获取在元素上定义的属性值</p>
-</li>
-</ul>
-<h2 id="类数组对象的动态性"><a href="#类数组对象的动态性" class="headerlink" title="类数组对象的动态性"></a>类数组对象的动态性</h2><ul>
-<li><p>NodeList，HTMLCollection，NamedNodeMap 三个集合都是动态的，是有生命的、有呼吸的对象</p>
-</li>
-<li><p>它们实际上是基于 DOM 结构动态执行查询的结果，因此 DOM 结构的变化能够自动反映这些对象</p>
-</li>
-<li><p>每当文档结构发生变化时，它们都会得到更新。因此，它们始终都会保存着最新、最准确的信息</p>
-</li>
-</ul>
-<h1 id="节点查找方法"><a href="#节点查找方法" class="headerlink" title="节点查找方法"></a>节点查找方法</h1><ul>
-<li><p>getElementById()</p>
-</li>
-<li><p>getElementsByName()</p>
-</li>
-<li><p>getElementsTagName()</p>
-</li>
-<li><p>getElementsByClassName()</p>
-</li>
-<li><p>querySelector()：返回文档中匹配指定 CSS 选择器的一个元素，括号中写符合 CSS 语法的字符</p>
-</li>
-<li><p>querySeletorAll()：返回文档中匹配指定 CSS 选择器的一组元素，括号中写符合 CSS 语法的字符</p>
-</li>
-</ul>
-<p>前三个只能是 document 对象的方法</p>
-<p>querySelectorAll() 和 querySelector() 方法返回的是一个静态的 NodeList ,所谓静态 NodeList 就是对底层 document 的更改不会影响到返回的这个 NodeList 对象.此时返回的 NodeList 只是 querySelectorAll() 方法被调用时的文档状态的快照。</p>
-<h1 id="操作节点"><a href="#操作节点" class="headerlink" title="操作节点"></a>操作节点</h1><ul>
-<li><p>appendChild()：为指定元素节点的最后一个子节点之后添加节点。该方法返回新的子节点</p>
-</li>
-<li><p>insertBefore()：在指定的已有子节点之前插入新的子节点。该方法返回新创建的节点</p>
-</li>
-<li><p>replaceChild()：新节点替换某个子节点。返回被替换的节点</p>
-</li>
-<li><p>cloneNode()：创建节点的拷贝，并返回该副本。拷贝的节点要有父节点，如果没有父节点，要通过上面三个方法对其进行添加</p>
-</li>
-<li><p>normalize()：合并相邻的文本节点</p>
-</li>
-<li><p>splitText()：按照指定的位置把文本节点分割为两个节点。返回分割后新的文本节点</p>
-</li>
-</ul>
-<h2 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h2><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>参数</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>appendChild()</td>
-<td>appendChild(要插入的节点)</td>
-</tr>
-<tr>
-<td>insertBefore()</td>
-<td>insertBefore(要插入的节点，指定的子节点)</td>
-</tr>
-<tr>
-<td>replaceChild()</td>
-<td>replaceChild(要插入的节点，被替换的节点)</td>
-</tr>
-<tr>
-<td>cloneNode()</td>
-<td>cloneNode(boolean)，若Boolean为false，则只复制该节点。如果未true，则为深度拷贝，将该节点下的子节点一起拷贝</td>
-</tr>
-<tr>
-<td>splitText()</td>
-<td>splitText(num)，节点从num位置被分割，包括num该位置的字符</td>
-</tr>
-</tbody></table>
-<h2 id="nodeValue-与-innerHTML-的区别"><a href="#nodeValue-与-innerHTML-的区别" class="headerlink" title="nodeValue 与 innerHTML 的区别"></a>nodeValue 与 innerHTML 的区别</h2><h3 id="nodeValue"><a href="#nodeValue" class="headerlink" title="nodeValue"></a>nodeValue</h3><p>nodeValue 属性设置或返回指定节点的节点值。（文本节点和属性节点可以用nodeValue）</p>
-<h3 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h3><p>innerText属性可以获取或者设置指定元素的文本内容</p>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>nodeValue 只会读取 element 这个节点的节点值，不包括子节点，而 innerHTML 包括子节点</p>
-<h1 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h1><h2 id="涉及方法"><a href="#涉及方法" class="headerlink" title="涉及方法"></a>涉及方法</h2><ul>
-<li><p>removeChild()：删除某个节点中指定的子节点。返回被删除的节点</p>
-</li>
-<li><p>removeNode()：IE的私有实现。将目标节点从文档中删除，返回目标节点</p>
-</li>
-<li><p>innerHTML</p>
-</li>
-<li><p>deleteContents</p>
-</li>
-<li><p>textContent</p>
-</li>
-</ul>
-<h2 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h2><table>
-<thead>
-<tr>
-<th>方法</th>
-<th>参数说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>removeChild()</td>
-<td>一个参数。为要删除的子节点</td>
-</tr>
-<tr>
-<td>removeNode()</td>
-<td>一个参数为布尔值，默认值为false。若为false，仅删除目标节点，保留子节点。若为true，功能和removeChild类似</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck20a6pr0004r24w06c9ov1yp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck21l8gm0004i7ow0cqdeivyj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1706,6 +1664,10 @@
       <ul>
         
           <li>
+            <a href="/2019/10/21/ES6-promise/">ES6-promise</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/18/ES6扩展/">ES6扩展</a>
           </li>
         
@@ -1719,10 +1681,6 @@
         
           <li>
             <a href="/2019/10/13/ES6基础入门let、const/">ES6基础入门let、const</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/13/HTML5音视频/">HTML5音视频</a>
           </li>
         
       </ul>
