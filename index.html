@@ -90,22 +90,60 @@
       
         <hr>
 <h1 id="什么是promise"><a href="#什么是promise" class="headerlink" title="什么是promise"></a>什么是promise</h1><p>Promise 对象用于表示一个异步操作的最终状态（完成或失败）以及其返回的值</p>
+<p>Promise 对象代表了未来将要发生的事件，用来传递异步操作的消息。</p>
 <h2 id="同步？异步？"><a href="#同步？异步？" class="headerlink" title="同步？异步？"></a>同步？异步？</h2><p>同步任务会阻塞程序运行</p>
 <p>异步任务不会阻塞程序执行</p>
 <p>示例：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function f() &#123;</span><br><span class="line">    return new Promise(resolve =&gt; &#123;</span><br><span class="line">        setTimeout(function () &#123;</span><br><span class="line">            resolve();</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f()</span><br><span class="line">    .then(function () &#123;</span><br><span class="line">        console.log(1);</span><br><span class="line">        return f();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(function () &#123;</span><br><span class="line">        console.log(2);</span><br><span class="line">        return f();</span><br><span class="line">    &#125;)</span><br><span class="line">    .then(function () &#123;</span><br><span class="line">        console.log(3);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
 
-<h2 id="promise信任问题"><a href="#promise信任问题" class="headerlink" title="promise信任问题"></a>promise信任问题</h2><ol>
+<h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h3 id="信任问题"><a href="#信任问题" class="headerlink" title="信任问题"></a>信任问题</h3><ol>
 <li><p>解决了回调地狱、信任问题；</p>
 </li>
 <li><p>promise可以有效防止回调函数控制反转的问题,一旦被确定为成功或者失败，就不能再被更改</p>
 </li>
 </ol>
+<h3 id="Promise-then-resolve-reject"><a href="#Promise-then-resolve-reject" class="headerlink" title="Promise.then(resolve, reject)"></a>Promise.then(resolve, reject)</h3><p>resolve 和 reject 都是异步的，没办法通过 try-catch 语句捕获错误</p>
+<p>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function f(a) &#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        if(a)&#123;</span><br><span class="line">            resolve(&quot;成功&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            reject(&quot;失败&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 此句说明，我们可以将一个表达式放进去，或者放一个数值，经过处理 再在f函数体内调用成功或错误的函数</span><br><span class="line">f(false)  </span><br><span class="line">    .then((data) =&gt; console.log(data), (data) =&gt; console.log(data));</span><br></pre></td></tr></table></figure>
+
+<p>可以选择Promise自带的<code>.catch</code>方法捕获错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function f(a) &#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        if(a)&#123;</span><br><span class="line">            resolve(&quot;成功&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            reject(&quot;失败&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 如果上一个执行函数未执行其中函数，catch 方法可以获取到上一个执行函数的 reject 函数，并且执行</span><br><span class="line">f(false)</span><br><span class="line">    .then((data) =&gt; console.log(data))</span><br><span class="line">    .catch(e =&gt; &#123;</span><br><span class="line">        console.log(e);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-的三种状态"><a href="#Promise-的三种状态" class="headerlink" title="Promise 的三种状态"></a>Promise 的三种状态</h3><ul>
+<li><p>pending：进行中</p>
+</li>
+<li><p>fulfilled：成功</p>
+</li>
+<li><p>rejected：失败</p>
+</li>
+</ul>
+<p>状态的改变不可逆，一但决议就不能再修改</p>
+<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h3><p>该方法可以把多个 promise 实例包装成一个新的 promise 实例</p>
+<p><code>Promise.all([promise1,promise2]):Promise</code> — 最终返回 Promise 实例；</p>
+<ol>
+<li><p>全部加载成功 则返回所有promise实例中<code>resolve()</code>回来带的参数，按数组中一一对应的顺序所集合的数组</p>
+</li>
+<li><p>若任意有一个失败 ，立即决议失败，但会执行成功的实例，后将失败的 promise 实例（<code>reject()</code>中参数）传递给我们</p>
+</li>
+<li><p>若<code>Promise.all([])</code>中，数组为空数组，则立即决议为成功执行<code>resolve()</code></p>
+</li>
+</ol>
+<h3 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h3><p>只要有一个 Promise 实例被决议，则返回该实例带来的<code>resolve()</code>或<code>reject()</code>的参数</p>
+<h3 id="Promise-resolve-方法，Promise-reject-方法"><a href="#Promise-resolve-方法，Promise-reject-方法" class="headerlink" title="Promise.resolve 方法，Promise.reject 方法"></a>Promise.resolve 方法，Promise.reject 方法</h3><ol>
+<li><p>如果 resolve 方法中是一个值的话，则返回一个新的 Promise 对象，且它的状态为 fulfilled</p>
+</li>
+<li><p>如果 resolve 方法中是一个包含 then 方法的对象时（又称 thenable 对象），则返回一个新的 Promise 对象，且它的状态为 fulfilled</p>
+</li>
+<li><p>如果接受的是一个 Promise 实例，则返回这个 Promise 实例</p>
+</li>
+</ol>
+<p>Promise.reject 方法类似，但就是状态为 rejected</p>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p>同步任务要比异步任务先执行</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/21/ES6-promise/" data-id="ck21l8gkn00297ow06vbjg1mv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/21/ES6-promise/" data-id="ck236welf0023q4w0fh4bfx94" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -270,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/18/ES6扩展/" data-id="ck21l8gss00847ow03ryq8kp4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/18/ES6扩展/" data-id="ck236wepu008oq4w0dvu4ns0b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -348,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/17/ES6解构赋值/" data-id="ck21l8glf003j7ow0bib8zqhw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/17/ES6解构赋值/" data-id="ck236welk002eq4w08e62f4kf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -494,7 +532,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/16/bootstrap组件/" data-id="ck21l8gt0008f7ow0a57mafn5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/16/bootstrap组件/" data-id="ck236weop006tq4w0u8rqpx76" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
@@ -578,7 +616,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/13/ES6基础入门let、const/" data-id="ck21l8gkl00277ow0et2uicg5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/13/ES6基础入门let、const/" data-id="ck236welm002hq4w0hs6957kd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -781,7 +819,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/13/HTML5音视频/" data-id="ck21l8gkv002k7ow0ag9f7wks" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/13/HTML5音视频/" data-id="ck236wem5002yq4w03tff2b0l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
@@ -846,7 +884,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/12/React简介/" data-id="ck21l8gsw00887ow0flqfurq3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/12/React简介/" data-id="ck236weom006mq4w0rhvgahqg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -1188,7 +1226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/07/bootstrap入门之全局样式/" data-id="ck21l8grt00697ow01pbjwzkz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/07/bootstrap入门之全局样式/" data-id="ck236weok006jq4w0afz8rtyu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
@@ -1283,7 +1321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/28/jQuery扩展之动画/" data-id="ck21l8gse007g7ow09qvp59gs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/28/jQuery扩展之动画/" data-id="ck236wepc007sq4w0z1rpgczu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -1406,7 +1444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/27/jQuery事件/" data-id="ck21l8gs900757ow09o106y0l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/27/jQuery事件/" data-id="ck236weox0073q4w0a9fpvnxe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
