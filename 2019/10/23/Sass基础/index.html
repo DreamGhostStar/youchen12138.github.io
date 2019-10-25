@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Sass基础 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是 Sass世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言！ Sass 能帮助我们解决什么问题 嵌套规则   通过花括号的方式解决复杂的 CSS 父子样式嵌套问题  变量规则   通过变量将公共样式抽离，减少冗余 CSS 代码  条件逻辑   先高级语言一样编写逻辑性的 CSS 代码   Sass基础知识Sass 变量和引用 变量格式  变量类型  变量作用域  import 规则等">
+<meta name="keywords" content="Sass">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sass基础">
+<meta property="og:url" content="http://yoursite.com/2019/10/23/Sass基础/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是 Sass世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言！ Sass 能帮助我们解决什么问题 嵌套规则   通过花括号的方式解决复杂的 CSS 父子样式嵌套问题  变量规则   通过变量将公共样式抽离，减少冗余 CSS 代码  条件逻辑   先高级语言一样编写逻辑性的 CSS 代码   Sass基础知识Sass 变量和引用 变量格式  变量类型  变量作用域  import 规则等">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-25T01:54:46.146Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sass基础">
+<meta name="twitter:description" content="什么是 Sass世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言！ Sass 能帮助我们解决什么问题 嵌套规则   通过花括号的方式解决复杂的 CSS 父子样式嵌套问题  变量规则   通过变量将公共样式抽离，减少冗余 CSS 代码  条件逻辑   先高级语言一样编写逻辑性的 CSS 代码   Sass基础知识Sass 变量和引用 变量格式  变量类型  变量作用域  import 规则等">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Sass基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/23/Sass基础/" class="article-date">
+  <time datetime="2019-10-23T11:25:32.000Z" itemprop="datePublished">2019-10-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Sass/">Sass</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Sass基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="什么是-Sass"><a href="#什么是-Sass" class="headerlink" title="什么是 Sass"></a>什么是 Sass</h2><p>世界上最成熟、最稳定、最强大的专业级 CSS 扩展语言！</p>
+<h2 id="Sass-能帮助我们解决什么问题"><a href="#Sass-能帮助我们解决什么问题" class="headerlink" title="Sass 能帮助我们解决什么问题"></a>Sass 能帮助我们解决什么问题</h2><ul>
+<li><p>嵌套规则</p>
+<p>  通过花括号的方式解决复杂的 CSS 父子样式嵌套问题</p>
+</li>
+<li><p>变量规则</p>
+<p>  通过变量将公共样式抽离，减少冗余 CSS 代码</p>
+</li>
+<li><p>条件逻辑</p>
+<p>  先高级语言一样编写逻辑性的 CSS 代码</p>
+</li>
+</ul>
+<h1 id="Sass基础知识"><a href="#Sass基础知识" class="headerlink" title="Sass基础知识"></a>Sass基础知识</h1><h2 id="Sass-变量和引用"><a href="#Sass-变量和引用" class="headerlink" title="Sass 变量和引用"></a>Sass 变量和引用</h2><ul>
+<li><p>变量格式</p>
+</li>
+<li><p>变量类型</p>
+</li>
+<li><p>变量作用域</p>
+</li>
+<li><p>import 规则等</p>
+</li>
+</ul>
+<p>sass 变量中是有作用域的，基于<code>{}</code></p>
+<h3 id="变量格式"><a href="#变量格式" class="headerlink" title="变量格式"></a>变量格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$width: 300px;</span><br><span class="line"></span><br><span class="line">.div1 &#123;</span><br><span class="line">    width: $width;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- default语句 --&gt;</span><br><span class="line">&lt;!-- 添加了default语句的值都是默认值，在后面执行的语句都会被覆盖掉 --&gt;</span><br><span class="line">$width: 300px !default;</span><br><span class="line">$width: 200px;</span><br><span class="line"></span><br><span class="line">.div &#123;</span><br><span class="line">    width: $width; // 最后显示300px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="插值语句"><a href="#插值语句" class="headerlink" title="插值语句#{}"></a>插值语句<code>#{}</code></h3><p>通过 <code>#{}</code> 插值语句可以在选择器或属性名中使用变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$name: foo;</span><br><span class="line">$attr: border;</span><br><span class="line">p.#&#123;$name&#125; &#123;</span><br><span class="line">    #&#123;$attr&#125;-color: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 编译为 --&gt;</span><br><span class="line">p.foo &#123;</span><br><span class="line">    border-color: blue; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="import-规则"><a href="#import-规则" class="headerlink" title="import 规则"></a>import 规则</h3><p>Sass 拓展了 <code>@import</code> 的功能，允许其导入 SCSS 或 Sass 文件。被导入的文件将合并编译到同一个 CSS 文件中，另外，被导入的文件中所包含的变量或者混合指令 (mixin) 都可以在导入的文件中使用</p>
+<p>如果直接使用 <code>@import &#39;foo.css&#39;</code>的话，它会直接在原生 css 文件中编译为 <code>@import &#39;foo.css&#39;</code>，而不能起到直接将 <code>foo.css</code> 文件的 css 代码书写到原生 css 文件中，并不能起到 sass 用<code>@import</code>的根本性作用</p>
+<h4 id="分音-Partials"><a href="#分音-Partials" class="headerlink" title="分音 (Partials)"></a>分音 (Partials)</h4><p>为了解决这个问题（需要导入 SCSS 或者 Sass 文件，但又不希望将其编译为 CSS），只需要在文件名前添加下划线，这样会告诉 Sass 不要编译这些文件，但导入语句中却不需要添加下划线</p>
+<p>例如，将文件命名为 <code>_colors.scss</code>，便不会编译 <code>_colors.css</code> 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;colors&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>上面的例子，导入的其实是 <code>_colors.scss</code> 文件</p>
+<h2 id="Sass-数据类型，变量运算，mixin"><a href="#Sass-数据类型，变量运算，mixin" class="headerlink" title="Sass 数据类型，变量运算，mixin"></a>Sass 数据类型，变量运算，mixin</h2><ul>
+<li><p>数字类型，颜色类型，字符串类型，数组类型，map 类型</p>
+</li>
+<li><p>变量的加减乘除运算等</p>
+</li>
+<li><p>Mixin（混合宏）用法</p>
+</li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="数组类型"><a href="#数组类型" class="headerlink" title="数组类型"></a>数组类型</h4><p>示例：定义数组的方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$list: (100px, 200px, &apos;string&apos;);</span><br><span class="line"></span><br><span class="line">&lt;!-- 取值 --&gt;</span><br><span class="line">&lt;!-- nth方法 --&gt;</span><br><span class="line">.div &#123;</span><br><span class="line">    width: nth($list: $list, $n: 1); // 100px</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- index方法 --&gt;</span><br><span class="line">.div &#123;</span><br><span class="line">    zoom: index($list: $list, $value: &apos;string&apos;); // 3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="map-类型"><a href="#map-类型" class="headerlink" title="map 类型"></a>map 类型</h4><p>定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$map: (top:1px, left:2px, bottom:3px, right:4px);</span><br><span class="line"></span><br><span class="line">.div &#123;</span><br><span class="line">    zoom: index($list: $list, $value: &apos;string&apos;); // 3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="遍历-map-类型"><a href="#遍历-map-类型" class="headerlink" title="遍历 map 类型"></a>遍历 map 类型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 定义map类型 --&gt;</span><br><span class="line">$map: (top:1px, left:2px, bottom:3px, right:4px);</span><br><span class="line"></span><br><span class="line">@each $key, $value in $map &#123;</span><br><span class="line">    #&#123;$key&#125;: $value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 编译后 --&gt;</span><br><span class="line">top: 1px;</span><br><span class="line">left: 2px;</span><br><span class="line">bottom: 3px;</span><br><span class="line">right: 4px;</span><br></pre></td></tr></table></figure>
+
+<h3 id="布尔运算-Boolean-Operations"><a href="#布尔运算-Boolean-Operations" class="headerlink" title="布尔运算 (Boolean Operations)"></a>布尔运算 (Boolean Operations)</h3><p>SassScript 支持布尔型的 <code>and</code> <code>or</code> 以及 <code>not</code> 运算。</p>
+<h3 id="除法运算"><a href="#除法运算" class="headerlink" title="除法运算"></a>除法运算</h3><p>以下三种情况 <code>/</code> 将被视为除法运算符号：</p>
+<ul>
+<li><p>如果值，或值的一部分，是变量或者函数的返回值</p>
+</li>
+<li><p>如果值被圆括号包裹</p>
+</li>
+<li><p>如果值是算数表达式的一部分</p>
+</li>
+</ul>
+<h3 id="Mixin（混合宏）"><a href="#Mixin（混合宏）" class="headerlink" title="Mixin（混合宏）"></a>Mixin（混合宏）</h3><p>为便于书写，@mixin 可以用 = 表示，而 @include 可以用 + 表示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 定义Mixin --&gt;</span><br><span class="line">@mixin helloMixin &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line"></span><br><span class="line">    font: &#123;</span><br><span class="line">        size: 20px;</span><br><span class="line">        weight: bold;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 使用Mixin，用 @include --&gt;</span><br><span class="line">p &#123;</span><br><span class="line">    color: #fff;</span><br><span class="line">    @include helloMixin();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@mixin sexy-border($color, $width)&#123;</span><br><span class="line">    border: &#123;</span><br><span class="line">        color: $color;</span><br><span class="line">        width: $width;</span><br><span class="line">        style: dashed;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sass-继承和嵌套"><a href="#Sass-继承和嵌套" class="headerlink" title="Sass 继承和嵌套"></a>Sass 继承和嵌套</h2><ul>
+<li><p>选择器嵌套，属性嵌套，伪类嵌套</p>
+</li>
+<li><p>简单继承，多继承，链式继承等</p>
+</li>
+</ul>
+<h3 id="简单继承"><a href="#简单继承" class="headerlink" title="简单继承"></a>简单继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.div1 &#123;</span><br><span class="line">    border: 1px;</span><br><span class="line">    background-color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.divext &#123;</span><br><span class="line">    @extend .div;</span><br><span class="line">    border-width: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="关联属性继承"><a href="#关联属性继承" class="headerlink" title="关联属性继承"></a>关联属性继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.div1 &#123;</span><br><span class="line">    border: 1px;</span><br><span class="line">    background-color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div1.other &#123;</span><br><span class="line">    background-image: url(&apos;hello.jepg&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 如果.divext也有.other这个类，则.div1.other的属性也会被继承 --&gt;</span><br><span class="line">.divext &#123;</span><br><span class="line">    @extend .div1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="链式继承"><a href="#链式继承" class="headerlink" title="链式继承"></a>链式继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.div1 &#123;</span><br><span class="line">    border: 1px solid #000;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div2 &#123;</span><br><span class="line">    @extend .div1;</span><br><span class="line">    color: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.div3 &#123;</span><br><span class="line">    @extend .div2;</span><br><span class="line">    color: #000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="伪类继承"><a href="#伪类继承" class="headerlink" title="伪类继承"></a>伪类继承</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a:hover &#123;</span><br><span class="line">    text-decoration: underline;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.hoverlink &#123;</span><br><span class="line">    color: red;</span><br><span class="line">    @extend :hover;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sass-条件控制语句"><a href="#Sass-条件控制语句" class="headerlink" title="Sass 条件控制语句"></a>Sass 条件控制语句</h2><p><code>@if</code>, <code>@for</code>, <code>@while</code>, <code>@each</code>等条件控制语句</p>
+<h3 id="if"><a href="#if" class="headerlink" title="@if"></a><code>@if</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@if $type == &apos;bufy&apos; &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="for"><a href="#for" class="headerlink" title="@for"></a><code>@for</code></h3><p>through 和 to 的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@for $i form 1 through 3 &#123;</span><br><span class="line">    &lt;!-- i会增加到3 --&gt;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@for $i form 1 to 3 &#123;</span><br><span class="line">    &lt;!-- i会增加到3-1 --&gt;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="while"><a href="#while" class="headerlink" title="@while"></a><code>@while</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$i: 6;</span><br><span class="line"></span><br><span class="line">@while $i &gt; 0 &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="each"><a href="#each" class="headerlink" title="@each"></a><code>@each</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 定义map类型 --&gt;</span><br><span class="line">$map: (top:1px, left:2px, bottom:3px, right:4px);</span><br><span class="line"></span><br><span class="line">@each $key, $value in $map &#123;</span><br><span class="line">    #&#123;$key&#125;: $value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- 编译后 --&gt;</span><br><span class="line">top: 1px;</span><br><span class="line">left: 2px;</span><br><span class="line">bottom: 3px;</span><br><span class="line">right: 4px;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/23/Sass基础/" data-id="ck2602aoj0077tww0017hakh9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/10/25/Sass内置函数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Sass内置函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/21/ES6-promise/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ES6-promise</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sass/">Sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bootstrap/">bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Sass/" style="font-size: 11.43px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/10/25/Sass内置函数/">Sass内置函数</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/23/Sass基础/">Sass基础</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/21/ES6-promise/">ES6-promise</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/18/ES6扩展/">ES6扩展</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/17/ES6解构赋值/">ES6解构赋值</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
