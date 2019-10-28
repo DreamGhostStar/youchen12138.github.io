@@ -7,18 +7,20 @@
   
   <title>React简介 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是 React？ React 是一个用于构建用户界面的 JAVASCRIPT 库。  React 主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。  React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。  使用函数式编程   清楚两个概念 library（库）：小而巧的库；优点是可以很方便的从一个库切">
+  <meta name="description" content="什么是 React？ React 是一个用于构建用户界面的 JAVASCRIPT 库。  React 主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。  React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。   React 的特点 声名式开发  可以与其他框架并存  组件化  单向数据流（父组件可以直接改">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React简介">
 <meta property="og:url" content="http://yoursite.com/2019/10/12/React简介/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="什么是 React？ React 是一个用于构建用户界面的 JAVASCRIPT 库。  React 主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。  React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。  使用函数式编程   清楚两个概念 library（库）：小而巧的库；优点是可以很方便的从一个库切">
+<meta property="og:description" content="什么是 React？ React 是一个用于构建用户界面的 JAVASCRIPT 库。  React 主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。  React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。   React 的特点 声名式开发  可以与其他框架并存  组件化  单向数据流（父组件可以直接改">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-25T03:29:37.653Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/14110538-96ed1615a0e16a39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1175/format/webp">
+<meta property="og:updated_time" content="2019-10-28T06:50:31.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React简介">
-<meta name="twitter:description" content="什么是 React？ React 是一个用于构建用户界面的 JAVASCRIPT 库。  React 主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。  React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。  使用函数式编程   清楚两个概念 library（库）：小而巧的库；优点是可以很方便的从一个库切">
+<meta name="twitter:description" content="什么是 React？ React 是一个用于构建用户界面的 JAVASCRIPT 库。  React 主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。  React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。   React 的特点 声名式开发  可以与其他框架并存  组件化  单向数据流（父组件可以直接改">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/14110538-96ed1615a0e16a39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1175/format/webp">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -99,6 +101,16 @@
 </li>
 <li><p>React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。</p>
 </li>
+</ul>
+<h2 id="React-的特点"><a href="#React-的特点" class="headerlink" title="React 的特点"></a>React 的特点</h2><ul>
+<li><p>声名式开发</p>
+</li>
+<li><p>可以与其他框架并存</p>
+</li>
+<li><p>组件化</p>
+</li>
+<li><p>单向数据流（父组件可以直接改变子组件的数据，但子组件不能直接修改父组件的数据）</p>
+</li>
 <li><p>使用函数式编程</p>
 </li>
 </ul>
@@ -116,11 +128,65 @@
 <li><p>React：最流行的一门框架，因为它的设计很优秀</p>
 </li>
 </ul>
+<h1 id="什么是JSX语法"><a href="#什么是JSX语法" class="headerlink" title="什么是JSX语法"></a>什么是JSX语法</h1><p>JSX 语法里面，有两种类型的标签</p>
+<ul>
+<li><p>普通的 HTML 标签</p>
+</li>
+<li><p>组件标签</p>
+</li>
+</ul>
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><p>组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素</p>
+<p>所有 React 组件都必须像纯函数一样保护它们的 props 不被更改</p>
+<h2 id="在react中创建组件的形式有三种"><a href="#在react中创建组件的形式有三种" class="headerlink" title="在react中创建组件的形式有三种"></a>在react中创建组件的形式有三种</h2><ul>
+<li><p>纯函数式定义的无状态组件（函数组件）</p>
+</li>
+<li><p>React.createClass 定义的组件</p>
+</li>
+<li><p>Extends React.Component 定义的组件（类组件）</p>
+</li>
+</ul>
+<h3 id="Extends-React-Component-定义的组件"><a href="#Extends-React-Component-定义的组件" class="headerlink" title="Extends React.Component 定义的组件"></a>Extends React.Component 定义的组件</h3><p>React.Component是以ES6的形式来创建react的组件的，是React目前极为推荐的创建有状态组件的方式，最终会取代React.createClass形式</p>
+<h3 id="纯函数式定义的无状态组件"><a href="#纯函数式定义的无状态组件" class="headerlink" title="纯函数式定义的无状态组件"></a>纯函数式定义的无状态组件</h3><p>纯函数组件的特点:</p>
+<ul>
+<li><p>组件不会被实例化,整体渲染性能得到提升</p>
+</li>
+<li><p>组件不能访问this对象</p>
+</li>
+<li><p>组件无法访问生命周期的方法</p>
+</li>
+<li><p>无状态组件只能访问输入的props,无副作用</p>
+</li>
+</ul>
+<p>注意：因为 return 只能返回一个根节点，所以如果出现多个根节点，可以用<code>&lt;Fragemnt&gt;&lt;/Fragment&gt;</code>标签包裹</p>
+<h2 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h2><p>生命周期函数指的是组件在某一时刻会自动执行的函数</p>
+<ul>
+<li><p>constructor</p>
+</li>
+<li><p>componentWillMount（挂载前自动执行）</p>
+</li>
+<li><p>render（渲染时自动执行）（组件更新前 shouldComponentUpdate 之后会自动执行）</p>
+</li>
+<li><p>componentDidMount（挂载后自动执行）</p>
+</li>
+<li><p>shouldComponentUpdate（更新前自动执行）</p>
+</li>
+<li><p>componentWillUpdate（组件将要更新，之后执行 render）</p>
+</li>
+<li><p>componentDidUpdate（组件已经更新）</p>
+</li>
+<li><p>componentWillUnmount（组件从页面中移除前自动执行）</p>
+</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/c78534fd1fba" target="_blank" rel="noopener">详情请见此链接</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14110538-96ed1615a0e16a39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1175/format/webp" alt="生命周期函数图解"></p>
+<h2 id="相关-js-库"><a href="#相关-js-库" class="headerlink" title="相关 js 库"></a>相关 js 库</h2><p>react.js：React 的核心库</p>
+<p>react-dom.js：提供操作 DOM 的 react 扩展库</p>
+<p>babel.min.js：解析 JSX 语法代码转为纯 JS 语法代码的库</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/12/React简介/" data-id="ck2602aox007ztww0s5pqck5i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/12/React简介/" data-id="ck2a3cdej006a4cw0w2q9odkh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
