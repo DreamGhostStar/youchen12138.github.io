@@ -62,6 +62,238 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript进阶知识点-JS变量与作用域" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" class="article-date">
+  <time datetime="2019-09-13T01:49:54.000Z" itemprop="datePublished">2019-09-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/">JavaScript进阶知识点--JS变量与作用域</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="检测引用类型"><a href="#检测引用类型" class="headerlink" title="检测引用类型"></a>检测引用类型</h1><h2 id="instanceof-方法（P88）"><a href="#instanceof-方法（P88）" class="headerlink" title="instanceof 方法（P88）"></a>instanceof 方法（P88）</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(value instanceof Array)&#123;</span><br><span class="line">    // 对数组执行某些操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>引用类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>不可修改</td>
+<td>可以修改</td>
+</tr>
+<tr>
+<td>保存在栈内存中</td>
+<td>保存在堆内存中</td>
+</tr>
+<tr>
+<td>按值访问</td>
+<td>按引用访问</td>
+</tr>
+<tr>
+<td>比较时，值相等即相等</td>
+<td>比较时，同一引用才相等</td>
+</tr>
+<tr>
+<td>复制时，创建一个副本</td>
+<td>复制的其实是指针</td>
+</tr>
+<tr>
+<td>按值传递参数</td>
+<td>按值传递参数</td>
+</tr>
+<tr>
+<td>用 typeof 检测类型</td>
+<td>用 instanceof 检测类型</td>
+</tr>
+</tbody></table>
+<h1 id="延长作用域链（不推荐使用）（P75）"><a href="#延长作用域链（不推荐使用）（P75）" class="headerlink" title="延长作用域链（不推荐使用）（P75）"></a>延长作用域链（不推荐使用）（P75）</h1><h2 id="with-方法"><a href="#with-方法" class="headerlink" title="with 方法"></a>with 方法</h2><h2 id="try-catch-语句的-catch-块"><a href="#try-catch-语句的-catch-块" class="headerlink" title="try-catch 语句的 catch 块"></a>try-catch 语句的 catch 块</h2><h1 id="垃圾收集（P79）"><a href="#垃圾收集（P79）" class="headerlink" title="垃圾收集（P79）"></a>垃圾收集（P79）</h1><ul>
+<li><p>标识清除</p>
+</li>
+<li><p>引用计数（基本废除）</p>
+</li>
+</ul>
+<p>引用计数会在循环引用过程中出现错误</p>
+<h2 id="手动清除内存"><a href="#手动清除内存" class="headerlink" title="手动清除内存"></a>手动清除内存</h2><p>将变量设置为 null</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck2ctbdww005xfgw0mf1tn19h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript基础知识点--event对象常用属性和方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" class="article-date">
+  <time datetime="2019-09-01T07:11:45.000Z" itemprop="datePublished">2019-09-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/">JavaScript基础知识点--event对象常用属性和方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="event常用属性和方法"><a href="#event常用属性和方法" class="headerlink" title="event常用属性和方法"></a>event常用属性和方法</h1><h2 id="常用属性和方法表"><a href="#常用属性和方法表" class="headerlink" title="常用属性和方法表"></a>常用属性和方法表</h2><table>
+<thead>
+<tr>
+<th>属性或方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type</td>
+<td>事件的类型</td>
+</tr>
+<tr>
+<td>srcElement/target</td>
+<td>事件源，就是发生事件的元素</td>
+</tr>
+<tr>
+<td>cancelBubble</td>
+<td>布尔属性。设为 true 的时候，将停止事件进一步起泡到包容层次的元素（Ele.cancelBubble = true;相当于Ele.stopPropagation();）</td>
+</tr>
+<tr>
+<td>returnValue</td>
+<td>布尔属性。设置为 false 的时候可以阻止浏览器执行默认的事件动作（Ele.returnValue = false;相当于Ele.preventDefault();）</td>
+</tr>
+<tr>
+<td>clientX/clientY</td>
+<td>事件发生的时候，鼠标相对于浏览器窗口可视文档区域的左上角的位置</td>
+</tr>
+<tr>
+<td>offsetX/offsetY</td>
+<td>事件发生的时候，鼠标相对于事件源元素左上角的位置</td>
+</tr>
+<tr>
+<td>initEvent()</td>
+<td>初始化新创建的Event对象的属性</td>
+</tr>
+</tbody></table>
+<p>说明：event 对象的所有属性列表可以在浏览器控制台中输出查看</p>
+<h2 id="event-type"><a href="#event-type" class="headerlink" title="event.type"></a>event.type</h2><p>返回当前触发事件的类型</p>
+<h2 id="event-target"><a href="#event-target" class="headerlink" title="event.target"></a>event.target</h2><p>事件源。返回触发事件的元素</p>
+<h2 id="event-currentTarget"><a href="#event-currentTarget" class="headerlink" title="event.currentTarget"></a>event.currentTarget</h2><p>返回事件绑定的元素</p>
+<h2 id="event-preventDefault"><a href="#event-preventDefault" class="headerlink" title="event.preventDefault()"></a>event.preventDefault()</h2><p>阻止浏览器执行默认行为</p>
+<h2 id="event-stopPropagation"><a href="#event-stopPropagation" class="headerlink" title="event.stopPropagation()"></a>event.stopPropagation()</h2><p>阻止事件的捕获或冒泡</p>
+<h2 id="event-clientY"><a href="#event-clientY" class="headerlink" title="event.clientY"></a>event.clientY</h2><p>clientY 事件属性返回当事件被触发时鼠标指针距浏览器顶部底边的距离，不包括滚动条滚动的部分</p>
+<h2 id="event-pageY"><a href="#event-pageY" class="headerlink" title="event.pageY"></a>event.pageY</h2><p>pageY 事件属性返回当事件被触发时鼠标指针距浏览器顶部底边的距离，包括滚动条滚动的部分</p>
+<h2 id="event-screenY"><a href="#event-screenY" class="headerlink" title="event.screenY"></a>event.screenY</h2><p>屏幕顶端到鼠标位置</p>
+<h2 id="event-button"><a href="#event-button" class="headerlink" title="event.button"></a>event.button</h2><table>
+<thead>
+<tr>
+<th>值</th>
+<th>代表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>鼠标左键</td>
+</tr>
+<tr>
+<td>1</td>
+<td>鼠标中键</td>
+</tr>
+<tr>
+<td>2</td>
+<td>鼠标右键</td>
+</tr>
+</tbody></table>
+<h2 id="touchcancel"><a href="#touchcancel" class="headerlink" title="touchcancel"></a>touchcancel</h2><p>当系统停止跟踪触摸时触发</p>
+<h2 id="event-touches"><a href="#event-touches" class="headerlink" title="event.touches"></a>event.touches</h2><p>当前触摸屏幕的触摸点数组</p>
+<h2 id="event-changedTouches"><a href="#event-changedTouches" class="headerlink" title="event.changedTouches"></a>event.changedTouches</h2><p>数组中只包含引起事件的触摸点信息</p>
+<h2 id="event-targetTouches"><a href="#event-targetTouches" class="headerlink" title="event.targetTouches"></a>event.targetTouches</h2><p>只包含放在元素上的触摸信息</p>
+<h2 id="IE事件独有"><a href="#IE事件独有" class="headerlink" title="IE事件独有"></a>IE事件独有</h2><h3 id="event-returnValue-false"><a href="#event-returnValue-false" class="headerlink" title="event.returnValue = false"></a>event.returnValue = false</h3><p>阻止默认行为。同 preventDefault</p>
+<h3 id="event-cancleBubble-true"><a href="#event-cancleBubble-true" class="headerlink" title="event.cancleBubble = true"></a>event.cancleBubble = true</h3><p>取消事件冒泡。同 stopPropagation</p>
+<h3 id="srcElement"><a href="#srcElement" class="headerlink" title="srcElement"></a>srcElement</h3><p>同 target</p>
+<h3 id="event-button-1"><a href="#event-button-1" class="headerlink" title="event.button"></a>event.button</h3><table>
+<thead>
+<tr>
+<th>值</th>
+<th>代表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>没有按下按钮</td>
+</tr>
+<tr>
+<td>1</td>
+<td>按下主鼠标按钮</td>
+</tr>
+<tr>
+<td>2</td>
+<td>按下次鼠标按钮</td>
+</tr>
+<tr>
+<td>3</td>
+<td>同时按下主、次鼠标按钮</td>
+</tr>
+<tr>
+<td>4</td>
+<td>按钮中间鼠标按钮</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck2ctbdv90040fgw0nseag597" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaScript基础知识点-JS事件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/31/JavaScript基础知识点-JS事件/" class="article-date">
@@ -187,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck2a3cddj004m4cw00h1m9q89" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck2ctbdvn004mfgw0mbcewkz7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -374,7 +606,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck2a3cddg004g4cw02d1jefcq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck2ctbdvl004jfgw0o8phwn3j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -608,7 +840,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck2a3cddk004p4cw0whxd63od" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck2ctbdvp004pfgw0r83sdxpm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -652,7 +884,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck2a3cdd4003t4cw0b2oxwvwx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck2ctbdv7003xfgw0fx5kyocz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -713,7 +945,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" data-id="ck2a3cdda00444cw0n2u39qrz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" data-id="ck2ctbdvf0048fgw0dod9aivi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -775,7 +1007,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/" data-id="ck2a3cdd7003z4cw06kjew6pl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/" data-id="ck2ctbdvh004dfgw035ze5p4g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -878,7 +1110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/" data-id="ck2a3cdde004d4cw098qqc993" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/" data-id="ck2ctbdvc0045fgw0mxw5b6pl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1064,391 +1296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-BOM基础及window对象/" data-id="ck2a3cddd004a4cw0366yp5d0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-DOM事件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/25/JavaScript基础知识点-DOM事件/" class="article-date">
-  <time datetime="2019-08-25T00:36:42.000Z" itemprop="datePublished">2019-08-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/25/JavaScript基础知识点-DOM事件/">JavaScript基础知识点--DOM事件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="什么是事件"><a href="#什么是事件" class="headerlink" title="什么是事件"></a>什么是事件</h1><p>事件就是文档或浏览器窗口中发生的一些特定的交互瞬间</p>
-<h2 id="HTML-事件"><a href="#HTML-事件" class="headerlink" title="HTML 事件"></a>HTML 事件</h2><p>直接在 HTML 元素标签内添加事件，执行脚本</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p><code>&lt;tag 事件=&quot;执行脚本&quot;&gt;&lt;/tag&gt;</code></p>
-</blockquote>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>在 HTML 元素上绑定事件</p>
-<h3 id="不建议使用-HTML-事件"><a href="#不建议使用-HTML-事件" class="headerlink" title="不建议使用 HTML 事件"></a>不建议使用 HTML 事件</h3><ol>
-<li><p>多元素绑定相同事件时，效率低</p>
-</li>
-<li><p>不建议在 HTML 元素中写 JavaScript 代码</p>
-</li>
-</ol>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>执行脚本可以是一个函数的调用</p>
-<h2 id="DOM-0级事件"><a href="#DOM-0级事件" class="headerlink" title="DOM 0级事件"></a>DOM 0级事件</h2><ol>
-<li><p>通过 DOM 获取 HTML 元素</p>
-</li>
-<li><p>（获取 HTML 元素）.事件 = 执行脚本</p>
-</li>
-</ol>
-<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>ele.事件 = 执行脚本</p>
-</blockquote>
-<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><p>在 DOM 对象上绑定事件</p>
-<h3 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h3><p>执行脚本可以是一个匿名函数，也可以是一个函数的调用</p>
-<p>除非调用匿名函数，否则调用普通函数不能加括号</p>
-<h1 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h1><table>
-<thead>
-<tr>
-<th>事件名称</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>onload</td>
-<td>页面加载时触发</td>
-</tr>
-<tr>
-<td>onclick</td>
-<td>鼠标点击时触发</td>
-</tr>
-<tr>
-<td>onmouseover</td>
-<td>鼠标滑过时触发</td>
-</tr>
-<tr>
-<td>onmouseout</td>
-<td>鼠标离开时触发</td>
-</tr>
-<tr>
-<td>onfocus</td>
-<td>获得焦点时触发</td>
-</tr>
-<tr>
-<td>onblur</td>
-<td>失去焦点时触发</td>
-</tr>
-<tr>
-<td>onchange</td>
-<td>域的内容改变时发生</td>
-</tr>
-<tr>
-<td>onsubmit</td>
-<td>表单中的确认按钮被点击时发生，这个事件不是加在按钮上，而是表单上</td>
-</tr>
-<tr>
-<td>onmousedown</td>
-<td>鼠标按钮在元素上按下时触发</td>
-</tr>
-<tr>
-<td>onmousemove</td>
-<td>在鼠标指针移动是发生</td>
-</tr>
-<tr>
-<td>onmouseup</td>
-<td>在元素上松开鼠标按钮时触发</td>
-</tr>
-<tr>
-<td>onresize</td>
-<td>当调整浏览器窗口的大小时触发</td>
-</tr>
-<tr>
-<td>onscroll</td>
-<td>拖动滚动条滚动时触发</td>
-</tr>
-<tr>
-<td>ondblclick</td>
-<td>双击元素触发</td>
-</tr>
-</tbody></table>
-<p>onfocus 事件用于 input 标签 type 为 text、password 和 textarea 标签</p>
-<h1 id="键盘事件与-keyCode-属性"><a href="#键盘事件与-keyCode-属性" class="headerlink" title="键盘事件与 keyCode 属性"></a>键盘事件与 keyCode 属性</h1><table>
-<thead>
-<tr>
-<th>事件名称</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>onkeydown</td>
-<td>在用户按下一个键盘按键时发生</td>
-</tr>
-<tr>
-<td>onkeypress</td>
-<td>在按下键盘按键时发生（只会响应字母与数字符号）</td>
-</tr>
-<tr>
-<td>onkeyup</td>
-<td>在键盘按键被松开时发生</td>
-</tr>
-<tr>
-<td>keyCode</td>
-<td>返回 onkeypress、onkeydown 或 onkeyup 事件触发的键的值的字符代码，或键的代码</td>
-</tr>
-<tr>
-<td>charCode</td>
-<td>返回键的ASCll码</td>
-</tr>
-<tr>
-<td>textInput</td>
-<td>只有在可编辑区域，按下能够输入实际字符的键时才会触发此事件</td>
-</tr>
-</tbody></table>
-<h2 id="textInput-详解"><a href="#textInput-详解" class="headerlink" title="textInput 详解"></a>textInput 详解</h2><h3 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h3><p>输入框中按下enter键，触发的只有keypress事件</p>
-<h3 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h3><p>按下a键，触发keypress和textinput事件</p>
-<h2 id="键盘事件触发顺序"><a href="#键盘事件触发顺序" class="headerlink" title="键盘事件触发顺序"></a>键盘事件触发顺序</h2><ol>
-<li><p>onkeydown</p>
-</li>
-<li><p>onkeypress</p>
-</li>
-<li><p>onkeyup</p>
-</li>
-</ol>
-<h2 id="event"><a href="#event" class="headerlink" title="event"></a>event</h2><p>event 代表事件的状态，如触发 event 对象的元素、鼠标的位置及状态等</p>
-<h2 id="获取按键的字符代码"><a href="#获取按键的字符代码" class="headerlink" title="获取按键的字符代码"></a>获取按键的字符代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.onkeypress = function(event)&#123;</span><br><span class="line">    console.log(event.keyCode);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="charCode与keyCode的区别"><a href="#charCode与keyCode的区别" class="headerlink" title="charCode与keyCode的区别"></a>charCode与keyCode的区别</h2><p>charCode 返回onkeypress事件触发键值的字母代码。</p>
-<p>keyCode 返回 onkeydown 或 onkeyup 事件的键的代码。</p>
-<h1 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h1><table>
-<thead>
-<tr>
-<th>事件名称</th>
-<th>触发条件</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DOMNodeRemoved</td>
-<td>Document 中任意元素被删除就会触发</td>
-</tr>
-<tr>
-<td>DOMSubtreeModified</td>
-<td>DOM结构中发生任何变化都会触发</td>
-</tr>
-<tr>
-<td>DOMNodeRemoveFromDocument</td>
-<td>从文档中移除之前会触发</td>
-</tr>
-<tr>
-<td>DOMNodeInserted</td>
-<td>Document 中任意元素被添加就会触发</td>
-</tr>
-<tr>
-<td>DOMNodeInsertedIntoDocument</td>
-<td>从文档中添加之前被触发</td>
-</tr>
-</tbody></table>
-<h1 id="HTML5新增的事件"><a href="#HTML5新增的事件" class="headerlink" title="HTML5新增的事件"></a>HTML5新增的事件</h1><table>
-<thead>
-<tr>
-<th>事件名称</th>
-<th>触发条件</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DOMContentLoaded</td>
-<td>在DOM树之后就会触发，不理会图像、JavaScript文件、CSS文件或其他资源是否已经下载。速度一定快于load事件</td>
-</tr>
-<tr>
-<td>readystatechange</td>
-<td>请参照下面的描述</td>
-</tr>
-<tr>
-<td>hashchange</td>
-<td>对象一定是window。#号后面的值变化时触发</td>
-</tr>
-</tbody></table>
-<h2 id="readystatechange-事件详解"><a href="#readystatechange-事件详解" class="headerlink" title="readystatechange 事件详解"></a>readystatechange 事件详解</h2><p>提供文档或者元素加载过程，但很难预料与load事件一起使用时候</p>
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><ol>
-<li><p>uninitialized：尚未初始化</p>
-</li>
-<li><p>loading：对象正在加载数据</p>
-</li>
-<li><p>interactive：可以操作对象，但还没有完全加载</p>
-</li>
-<li><p>对象已经加载完毕</p>
-</li>
-</ol>
-<p>但其他资料并不是这样写的</p>
-<p>请参照<a href="https://www.runoob.com/ajax/ajax-xmlhttprequest-onreadystatechange.html" target="_blank" rel="noopener">菜鸟教程–readystatechange 事件</a></p>
-<h1 id="移动端常用的事件类型"><a href="#移动端常用的事件类型" class="headerlink" title="移动端常用的事件类型"></a>移动端常用的事件类型</h1><table>
-<thead>
-<tr>
-<th>事件类型名称</th>
-<th>触发</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>touchstart</td>
-<td>手指触摸屏幕</td>
-</tr>
-<tr>
-<td>touchmove</td>
-<td>手指在屏幕上滑动</td>
-</tr>
-<tr>
-<td>touchend</td>
-<td>手指从屏幕上移开</td>
-</tr>
-</tbody></table>
-<h1 id="关于-this-指向"><a href="#关于-this-指向" class="headerlink" title="关于 this 指向"></a>关于 this 指向</h1><p>在事件触发的函数中，this 是对该 DOM 对象的引用</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-DOM事件/" data-id="ck2a3cddb00474cw06veosv6x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-初识DOM" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/24/JavaScript基础知识点-初识DOM/" class="article-date">
-  <time datetime="2019-08-24T08:42:41.000Z" itemprop="datePublished">2019-08-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/24/JavaScript基础知识点-初识DOM/">JavaScript基础知识点--初识DOM</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="JavaScript-DOM-基础"><a href="#JavaScript-DOM-基础" class="headerlink" title="JavaScript DOM 基础"></a>JavaScript DOM 基础</h1><p>DOM 是 Document Object Model（文档对象模型）的缩写</p>
-<p>文档对象模型（DOM）是 HTML 和 XML 文档的编程接口，它提供了对文档的结构化的表述，并定义了一种方式可以使从程序中对该结构进行访问，从而改变文档的结构、样式和内容</p>
-<h1 id="DOM-查找方法"><a href="#DOM-查找方法" class="headerlink" title="DOM 查找方法"></a>DOM 查找方法</h1><h2 id="getElementById"><a href="#getElementById" class="headerlink" title="getElementById"></a>getElementById</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>document.getElementById(“id”)</p>
-</blockquote>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>返回对拥有指定 ID 的第一个对象的引用</p>
-<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>DOM 对象</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>id 为 DOM 元素上 id 属性的值</p>
-<h2 id="getElementsByTagName"><a href="#getElementsByTagName" class="headerlink" title="getElementsByTagName"></a>getElementsByTagName</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>document.getElementsByTagName(“tag”)</p>
-</blockquote>
-<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><p>返回一个对所有 tag 标签引用的集合</p>
-<h3 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h3><p>数组</p>
-<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>tag 为要获取的标签名称</p>
-<h1 id="设置元素样式"><a href="#设置元素样式" class="headerlink" title="设置元素样式"></a>设置元素样式</h1><h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>ele.style.styleName=styleValue</p>
-</blockquote>
-<h2 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a>功能</h2><p>设置 ele 元素的 CSS 样式</p>
-<h2 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h2><ol>
-<li><p>ele 为要设置样式的 DOM 对象</p>
-</li>
-<li><p>styleName 为要设置的样式名称，不能使用”-“连字符形式 font-size，使用驼峰命名形式 fontSize</p>
-</li>
-<li><p>styleValue 为设置的样式值</p>
-</li>
-</ol>
-<h1 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h1><h2 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>ele.innerHTML</p>
-</blockquote>
-<h3 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a>功能</h3><p>返回 ele 元素开始和结束标签之间的 HTML</p>
-<h2 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>ele.innerHTML=”html”</p>
-</blockquote>
-<h3 id="功能-4"><a href="#功能-4" class="headerlink" title="功能"></a>功能</h3><p>设置 ele 元素开始和结束标签之间的 HTML 内容为 html</p>
-<h1 id="className"><a href="#className" class="headerlink" title="className"></a>className</h1><h2 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>ele.className</p>
-</blockquote>
-<h3 id="功能-5"><a href="#功能-5" class="headerlink" title="功能"></a>功能</h3><p>返回 ele 元素的 class 属性</p>
-<h2 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>ele.className=”cls”</p>
-</blockquote>
-<h3 id="功能-6"><a href="#功能-6" class="headerlink" title="功能"></a>功能</h3><p>设置 ele 元素的 class 属性为 cls</p>
-<p>动态添加 class 替换为元素本身的 class</p>
-<h1 id="获取属性"><a href="#获取属性" class="headerlink" title="获取属性"></a>获取属性</h1><h2 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>ele.getAttribute(“attribute”);</p>
-</blockquote>
-<h2 id="功能-7"><a href="#功能-7" class="headerlink" title="功能"></a>功能</h2><p>获取 ele 元素的 attribute 属性</p>
-<h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><ol>
-<li><p>ele 是要操作的 DOM 对象</p>
-</li>
-<li><p>attribute 是要获取的 HTML 属性（如：id、type）</p>
-</li>
-<li><p>获取标签属性语法：DOM 对象.属性，如p.id</p>
-</li>
-</ol>
-<h1 id="设置属性"><a href="#设置属性" class="headerlink" title="设置属性"></a>设置属性</h1><h2 id="语法-8"><a href="#语法-8" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>ele.setAttribute(“attribute”, value);</p>
-</blockquote>
-<h2 id="功能-8"><a href="#功能-8" class="headerlink" title="功能"></a>功能</h2><p>在 ele 元素的 attribute 属性设置属性值</p>
-<h2 id="说明：-1"><a href="#说明：-1" class="headerlink" title="说明："></a>说明：</h2><ol>
-<li><p>ele 是要操作的 DOM 对象</p>
-</li>
-<li><p>attribute 是要获取的 HTML 属性（如：id、type）</p>
-</li>
-<li><p>value 为设置的 attribute 属性的值</p>
-</li>
-<li><p>如果 value 是字符串，需加引号</p>
-</li>
-</ol>
-<h1 id="删除属性"><a href="#删除属性" class="headerlink" title="删除属性"></a>删除属性</h1><h2 id="语法-9"><a href="#语法-9" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>ele.removeAttribute(“attribute”)</p>
-</blockquote>
-<h2 id="功能-9"><a href="#功能-9" class="headerlink" title="功能"></a>功能</h2><p>删除 ele 上的 attribute 属性</p>
-<h2 id="说明：-2"><a href="#说明：-2" class="headerlink" title="说明："></a>说明：</h2><ol>
-<li><p>ele 是要操作的 DOM 对象</p>
-</li>
-<li><p>attribute 是要删除的属性名称</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/JavaScript基础知识点-初识DOM/" data-id="ck2a3cddr004y4cw0qzxc2gkz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-BOM基础及window对象/" data-id="ck2ctbdvk004gfgw03r4bji76" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1495,7 +1343,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Sass/" style="font-size: 11.43px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 12.86px;">React</a> <a href="/tags/Sass/" style="font-size: 11.43px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
     </div>
   </div>
 
@@ -1517,6 +1365,14 @@
       <ul>
         
           <li>
+            <a href="/2019/10/29/React生命周期/">React生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/28/React组件三大属性/">React组件三大属性及组件交互</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/25/Sass内置函数/">Sass内置函数</a>
           </li>
         
@@ -1526,14 +1382,6 @@
         
           <li>
             <a href="/2019/10/21/ES6-promise/">ES6-promise</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/18/ES6扩展/">ES6扩展</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/17/ES6解构赋值/">ES6解构赋值</a>
           </li>
         
       </ul>

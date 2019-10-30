@@ -62,6 +62,479 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-React简介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/12/React简介/" class="article-date">
+  <time datetime="2019-10-12T04:47:36.000Z" itemprop="datePublished">2019-10-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/12/React简介/">React简介</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="什么是-React？"><a href="#什么是-React？" class="headerlink" title="什么是 React？"></a>什么是 React？</h2><ul>
+<li><p>React 是一个用于构建用户界面的 JAVASCRIPT 库。</p>
+</li>
+<li><p>React 主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。</p>
+</li>
+<li><p>React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。</p>
+</li>
+</ul>
+<h2 id="React-的特点"><a href="#React-的特点" class="headerlink" title="React 的特点"></a>React 的特点</h2><ul>
+<li><p>声名式开发</p>
+</li>
+<li><p>可以与其他框架并存</p>
+</li>
+<li><p>组件化</p>
+</li>
+<li><p>单向数据流（父组件可以直接改变子组件的数据，但子组件不能直接修改父组件的数据）</p>
+</li>
+<li><p>使用函数式编程</p>
+</li>
+</ul>
+<h3 id="清楚两个概念"><a href="#清楚两个概念" class="headerlink" title="清楚两个概念"></a>清楚两个概念</h3><ul>
+<li><p>library（库）：小而巧的库；优点是可以很方便的从一个库切换到另外的库，但是代码几乎不会改变</p>
+</li>
+<li><p>Framework（框架）：大而全的是框架；框架提供了一整套的解决方案（所以，在开发过程中想切换到另外的库，比较困难）</p>
+</li>
+</ul>
+<h2 id="前端三大主流框架"><a href="#前端三大主流框架" class="headerlink" title="前端三大主流框架"></a>前端三大主流框架</h2><ul>
+<li><p>Angular：出来较早的前端框架，学习曲线比较陡，NG1学起来比较麻烦，NG2 ~ NG5 开始，进行了一系列的改革，也提供了组件化开发的概念；从 NG2 开始，也支持使用 TS（TypeScript）进行编程</p>
+</li>
+<li><p>vue：最火的一门前端框架</p>
+</li>
+<li><p>React：最流行的一门框架，因为它的设计很优秀</p>
+</li>
+</ul>
+<h1 id="什么是JSX语法"><a href="#什么是JSX语法" class="headerlink" title="什么是JSX语法"></a>什么是JSX语法</h1><p>JSX 语法里面，有两种类型的标签</p>
+<ul>
+<li><p>普通的 HTML 标签</p>
+</li>
+<li><p>组件标签</p>
+</li>
+</ul>
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><p>组件，从概念上类似于 JavaScript 函数。它接受任意的入参（即 “props”），并返回用于描述页面展示内容的 React 元素</p>
+<p>所有 React 组件都必须像纯函数一样保护它们的 props 不被更改</p>
+<h2 id="在react中创建组件的形式有三种"><a href="#在react中创建组件的形式有三种" class="headerlink" title="在react中创建组件的形式有三种"></a>在react中创建组件的形式有三种</h2><ul>
+<li><p>纯函数式定义的无状态组件（函数组件）</p>
+</li>
+<li><p>React.createClass 定义的组件</p>
+</li>
+<li><p>Extends React.Component 定义的组件（类组件）</p>
+</li>
+</ul>
+<h3 id="Extends-React-Component-定义的组件"><a href="#Extends-React-Component-定义的组件" class="headerlink" title="Extends React.Component 定义的组件"></a>Extends React.Component 定义的组件</h3><p>React.Component是以ES6的形式来创建react的组件的，是React目前极为推荐的创建有状态组件的方式，最终会取代React.createClass形式</p>
+<h3 id="纯函数式定义的无状态组件"><a href="#纯函数式定义的无状态组件" class="headerlink" title="纯函数式定义的无状态组件"></a>纯函数式定义的无状态组件</h3><p>纯函数组件的特点:</p>
+<ul>
+<li><p>组件不会被实例化,整体渲染性能得到提升</p>
+</li>
+<li><p>组件不能访问this对象</p>
+</li>
+<li><p>组件无法访问生命周期的方法</p>
+</li>
+<li><p>无状态组件只能访问输入的props,无副作用</p>
+</li>
+</ul>
+<p>注意：因为 return 只能返回一个根节点，所以如果出现多个根节点，可以用<code>&lt;Fragemnt&gt;&lt;/Fragment&gt;</code>标签包裹</p>
+<h2 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h2><p>生命周期函数指的是组件在某一时刻会自动执行的函数</p>
+<ul>
+<li><p>constructor</p>
+</li>
+<li><p>componentWillMount（挂载前自动执行）</p>
+</li>
+<li><p>render（渲染时自动执行）（组件更新前 shouldComponentUpdate 之后会自动执行）</p>
+</li>
+<li><p>componentDidMount（挂载后自动执行）</p>
+</li>
+<li><p>shouldComponentUpdate（更新前自动执行）</p>
+</li>
+<li><p>componentWillUpdate（组件将要更新，之后执行 render）</p>
+</li>
+<li><p>componentDidUpdate（组件已经更新）</p>
+</li>
+<li><p>componentWillUnmount（组件从页面中移除前自动执行）</p>
+</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/c78534fd1fba" target="_blank" rel="noopener">详情请见此链接</a></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/14110538-96ed1615a0e16a39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1175/format/webp" alt="生命周期函数图解"></p>
+<h2 id="相关-js-库"><a href="#相关-js-库" class="headerlink" title="相关 js 库"></a>相关 js 库</h2><p>react.js：React 的核心库</p>
+<p>react-dom.js：提供操作 DOM 的 react 扩展库</p>
+<p>babel.min.js：解析 JSX 语法代码转为纯 JS 语法代码的库</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/12/React简介/" data-id="ck2ctbdxk006xfgw0oqz5241d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-bootstrap入门之全局样式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/07/bootstrap入门之全局样式/" class="article-date">
+  <time datetime="2019-10-07T02:48:20.000Z" itemprop="datePublished">2019-10-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/bootstrap/">bootstrap</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/07/bootstrap入门之全局样式/">bootstrap入门之全局样式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="什么是-bootstrap"><a href="#什么是-bootstrap" class="headerlink" title="什么是 bootstrap"></a>什么是 bootstrap</h2><ul>
+<li><p>bootstrap 是 Twitter 公司开发基于 HTML、CSS、JavaScript 的前端框架</p>
+</li>
+<li><p>为实现 web 应用程序快速开发提供的一套前端工具包</p>
+</li>
+<li><p>响应式布局</p>
+</li>
+<li><p>移动设备优先</p>
+</li>
+</ul>
+<h2 id="bootstrap-的特性"><a href="#bootstrap-的特性" class="headerlink" title="bootstrap 的特性"></a>bootstrap 的特性</h2><ul>
+<li><p>响应式设计</p>
+</li>
+<li><p>栅格布局</p>
+</li>
+<li><p>完整的类库</p>
+</li>
+<li><p>jQuery 插件</p>
+</li>
+</ul>
+<h2 id="bootstrap-全局样式的特点"><a href="#bootstrap-全局样式的特点" class="headerlink" title="bootstrap 全局样式的特点"></a>bootstrap 全局样式的特点</h2><ul>
+<li><p>代码整洁</p>
+</li>
+<li><p>风格统一</p>
+</li>
+<li><p>美观易用</p>
+</li>
+</ul>
+<p>bootstrap 提供了大量的全局样式，基本的 HTML 元素均可以通过 class 设置样式并得到增强效果</p>
+<h2 id="bootstrap-中的排版"><a href="#bootstrap-中的排版" class="headerlink" title="bootstrap 中的排版"></a>bootstrap 中的排版</h2><p>bootstrap 对默认的排版方式进行了 CSS 样式定义，使得各种基本结构套用出来的 HTML 页面更加美观</p>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><ul>
+<li><p>标题（h1 ~ h6 / .h1 ~ .h6）</p>
+<table>
+<thead>
+<tr>
+<th>标题</th>
+<th>字体大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>h1</td>
+<td>36px</td>
+</tr>
+<tr>
+<td>h2</td>
+<td>30px</td>
+</tr>
+<tr>
+<td>h3</td>
+<td>24px</td>
+</tr>
+<tr>
+<td>h4</td>
+<td>18px</td>
+</tr>
+<tr>
+<td>h5</td>
+<td>14px</td>
+</tr>
+<tr>
+<td>h6</td>
+<td>12px</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>副标题（small）</p>
+</li>
+</ul>
+<h3 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h3><ul>
+<li>段落</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p 标签</span><br><span class="line"></span><br><span class="line">默认：14px</span><br><span class="line">行高：20px</span><br><span class="line">底部外边距：10px</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>强调</li>
+</ul>
+<blockquote>
+<p><code>&lt;mark&gt;&lt;/mark&gt;</code></p>
+</blockquote>
+<ul>
+<li>删除</li>
+</ul>
+<blockquote>
+<p><code>&lt;del&gt;&lt;/del&gt;</code></p>
+</blockquote>
+<ul>
+<li>下划线</li>
+</ul>
+<blockquote>
+<p><code>&lt;ins&gt;&lt;/ins&gt;</code></p>
+</blockquote>
+<ul>
+<li>文本标记</li>
+</ul>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><ul>
+<li><p><code>.text-left</code></p>
+</li>
+<li><p><code>.text-center</code></p>
+</li>
+<li><p><code>.text-right</code></p>
+</li>
+</ul>
+<h3 id="大小写"><a href="#大小写" class="headerlink" title="大小写"></a>大小写</h3><ul>
+<li><p><code>.text-lowercase</code></p>
+</li>
+<li><p><code>.text-uppercase</code></p>
+</li>
+<li><p><code>.text-capitalize</code></p>
+</li>
+</ul>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><ul>
+<li><p>带边框的表格：<code>.table-bordered</code></p>
+</li>
+<li><p>条纹状表格：<code>.table-striped</code></p>
+</li>
+<li><p>悬停变色：<code>table-hover</code></p>
+</li>
+<li><p>紧凑风格：<code>.table-condensed</code></p>
+</li>
+</ul>
+<h3 id="表格样式"><a href="#表格样式" class="headerlink" title="表格样式"></a>表格样式</h3><table>
+<thead>
+<tr>
+<th>表格</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.table-primary</code></td>
+<td>蓝色: 指定这是一个重要的操作</td>
+</tr>
+<tr>
+<td><code>.table-success</code></td>
+<td>绿色: 指定这是一个允许执行的操作</td>
+</tr>
+<tr>
+<td><code>.table-danger</code></td>
+<td>红色: 指定这是可以危险的操作</td>
+</tr>
+<tr>
+<td><code>.table-info</code></td>
+<td>浅蓝色: 表示内容已变更</td>
+</tr>
+<tr>
+<td><code>.table-warning</code></td>
+<td>橘色: 表示需要注意的操作</td>
+</tr>
+<tr>
+<td><code>.table-active</code></td>
+<td>灰色: 用于鼠标悬停效果</td>
+</tr>
+<tr>
+<td><code>.table-secondary</code></td>
+<td>灰色: 表示内容不怎么重要</td>
+</tr>
+<tr>
+<td><code>.table-light</code></td>
+<td>浅灰色，可以是表格行的背景</td>
+</tr>
+<tr>
+<td><code>.table-dark</code></td>
+<td>深灰色，可以是表格行的背景</td>
+</tr>
+</tbody></table>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>bootstrap 给 HTML 大部分表单都设置了默认样式，我们可以给表单添加相应类名，以实现表单的水平排列，个性化定制等</p>
+<p>bootstrap 提供了下列类型的表单布局：</p>
+<ul>
+<li><p>垂直表单（默认）</p>
+</li>
+<li><p>内联表单</p>
+</li>
+<li><p>水平表单</p>
+</li>
+</ul>
+<h3 id="基本表单（垂直表单）"><a href="#基本表单（垂直表单）" class="headerlink" title="基本表单（垂直表单）"></a>基本表单（垂直表单）</h3><p>创建基本表单的步骤：</p>
+<ol>
+<li><p>向父 <code>&lt;form&gt;</code> 元素添加 <code>role=&quot;form&quot;</code>。</p>
+</li>
+<li><p>把标签和控件放在一个带有 <code>class .form-group</code> 的 <code>&lt;div&gt;</code> 中。这是获取最佳间距所必需的。</p>
+</li>
+<li><p>向所有的文本元素 <code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code> 和 <code>&lt;select&gt;</code> 添加 <code>class =&quot;form-control&quot;</code> 。</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;form role=&quot;form&quot;&gt;</span><br><span class="line">&lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;name&quot;&gt;名称&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;请输入名称&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">    &lt;label for=&quot;inputfile&quot;&gt;文件输入&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; id=&quot;inputfile&quot;&gt;</span><br><span class="line">    &lt;p class=&quot;help-block&quot;&gt;这里是块级帮助文本的实例。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;checkbox&quot;&gt;</span><br><span class="line">    &lt;label&gt;</span><br><span class="line">    &lt;input type=&quot;checkbox&quot;&gt;请打勾</span><br><span class="line">    &lt;/label&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="内联表单"><a href="#内联表单" class="headerlink" title="内联表单"></a>内联表单</h3><p>如果需要创建一个表单，它的所有元素是内联的，向左对齐的，标签是并排的，请向 <code>&lt;form&gt;</code> 标签添加 <code>class .form-inline</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;form class=&quot;form-inline&quot; role=&quot;form&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">        &lt;label class=&quot;sr-only&quot; for=&quot;name&quot;&gt;名称&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;name&quot; placeholder=&quot;请输入名称&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">        &lt;label class=&quot;sr-only&quot; for=&quot;inputfile&quot;&gt;文件输入&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;file&quot; id=&quot;inputfile&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;checkbox&quot;&gt;</span><br><span class="line">        &lt;label&gt;</span><br><span class="line">        &lt;input type=&quot;checkbox&quot;&gt;请打勾</span><br><span class="line">        &lt;/label&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li><p>默认情况下，Bootstrap 中的 <code>input``、select</code> 和 <code>textarea</code> 有 100% 宽度。在使用内联表单时，您需要在表单控件上设置一个宽度。</p>
+</li>
+<li><p>使用 <code>class .sr-only</code>，您可以隐藏内联表单的标签。</p>
+</li>
+</ul>
+<h3 id="水平表单"><a href="#水平表单" class="headerlink" title="水平表单"></a>水平表单</h3><p>水平表单与其他表单不仅标记的数量上不同，而且表单的呈现形式也不同。如需创建一个水平布局的表单，请按下面的几个步骤进行：</p>
+<ol>
+<li><p>向父 <code>&lt;form&gt;</code> 元素添加 <code>class .form-horizontal</code></p>
+</li>
+<li><p>把标签和控件放在一个带有 <code>class .form-group</code> 的 <code>&lt;div&gt;</code> 中</p>
+</li>
+<li><p>向标签添加 <code>class .control-label</code></p>
+</li>
+</ol>
+<p>实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;form class=&quot;form-horizontal&quot; role=&quot;form&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">        &lt;label for=&quot;firstname&quot; class=&quot;col-sm-2 control-label&quot;&gt;名字&lt;/label&gt;</span><br><span class="line">        &lt;div class=&quot;col-sm-10&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;firstname&quot; placeholder=&quot;请输入名字&quot;&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">        &lt;label for=&quot;lastname&quot; class=&quot;col-sm-2 control-label&quot;&gt;姓&lt;/label&gt;</span><br><span class="line">        &lt;div class=&quot;col-sm-10&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;lastname&quot; placeholder=&quot;请输入姓&quot;&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;checkbox&quot;&gt;</span><br><span class="line">            &lt;label&gt;</span><br><span class="line">            &lt;input type=&quot;checkbox&quot;&gt;请记住我</span><br><span class="line">            &lt;/label&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;col-sm-offset-2 col-sm-10&quot;&gt;</span><br><span class="line">        &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;登录&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="输入框"><a href="#输入框" class="headerlink" title="输入框"></a>输入框</h3><p>向 <code>input</code> 输入框添加以下类名可产生相应变化</p>
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.input-lg</code></td>
+<td>输入框变大</td>
+</tr>
+<tr>
+<td><code>.input-sm</code></td>
+<td>输入框变小</td>
+</tr>
+</tbody></table>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>向 <code>label</code> 标签添加以下类名可产生相应变化</p>
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.sr-only</code></td>
+<td>该标签隐藏</td>
+</tr>
+<tr>
+<td><code>.control-label</code></td>
+<td>如果上一级包含<code>.form-group</code>的<code>div</code>标签中有类似于<code>.has-success</code>的类名，改变该标签的状态</td>
+</tr>
+</tbody></table>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><p>向 <code>button</code> 标签添加以下类名可产生相应变化</p>
+<p>并不局限于 <code>button</code> 标签，比如也可以在 <code>a</code> 标签中设置</p>
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.btn</code></td>
+<td>按钮变为圆角</td>
+</tr>
+<tr>
+<td><code>.btn-default</code></td>
+<td>鼠标移入、访问会有不同效果</td>
+</tr>
+<tr>
+<td><code>.btn-success</code></td>
+<td>改变颜色。绿色</td>
+</tr>
+<tr>
+<td><code>.btn-lg</code></td>
+<td>按钮变大</td>
+</tr>
+<tr>
+<td><code>.btn-sm</code></td>
+<td>按钮变小</td>
+</tr>
+<tr>
+<td><code>.btn-block</code></td>
+<td>按钮长度和屏幕一样长</td>
+</tr>
+</tbody></table>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>.img-rounded</code></td>
+<td>圆角</td>
+</tr>
+<tr>
+<td><code>.img-circle</code></td>
+<td>圆形</td>
+</tr>
+<tr>
+<td><code>.img-thumbnail</code></td>
+<td>带有边框的圆角图形</td>
+</tr>
+<tr>
+<td><code>.img-responsive</code></td>
+<td>图片响应式 (将很好地扩展到父元素)</td>
+</tr>
+</tbody></table>
+<h2 id="辅助类"><a href="#辅助类" class="headerlink" title="辅助类"></a>辅助类</h2><p><a href="https://www.runoob.com/bootstrap/bootstrap-helper-classes.html" target="_blank" rel="noopener">请转至此链接查看</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/07/bootstrap入门之全局样式/" data-id="ck2ctbdxz007ofgw07rkce2sw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jQuery扩展之动画" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/28/jQuery扩展之动画/" class="article-date">
@@ -145,7 +618,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/28/jQuery扩展之动画/" data-id="ck2a3cdfq008e4cw0hd4gkyoy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/28/jQuery扩展之动画/" data-id="ck2ctbdy2007sfgw0e545askv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -268,7 +741,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/27/jQuery事件/" data-id="ck2a3cdf6007j4cw0koj60isc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/27/jQuery事件/" data-id="ck2ctbdyh008ifgw05rueuoj8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -460,7 +933,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/26/JavaScript进阶知识点-AJAX及JSON/" data-id="ck2a3cddy005d4cw0l5mhupkw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/26/JavaScript进阶知识点-AJAX及JSON/" data-id="ck2ctbdx30069fgw0hud97ijt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -671,7 +1144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/jQuery选择器/" data-id="ck2a3cdez00774cw0auu7p7ef" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/24/jQuery选择器/" data-id="ck2ctbdyb008afgw045ky5bgx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -784,7 +1257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/jQuery入门/" data-id="ck2a3cdey00744cw0seslwbba" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/23/jQuery入门/" data-id="ck2ctbdy4007wfgw0g63uh6zh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -1034,7 +1507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck2a3cded00604cw0ytr4c446" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck2ctbdx5006cfgw08u6g1fz7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1149,7 +1622,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck2a3cde0005g4cw0s2mbd1rk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck2ctbdxc006mfgw0m44f4b6k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1257,239 +1730,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck2a3cden006h4cw0juo3mimj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript进阶知识点-JS变量与作用域" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" class="article-date">
-  <time datetime="2019-09-13T01:49:54.000Z" itemprop="datePublished">2019-09-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/">JavaScript进阶知识点--JS变量与作用域</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="检测引用类型"><a href="#检测引用类型" class="headerlink" title="检测引用类型"></a>检测引用类型</h1><h2 id="instanceof-方法（P88）"><a href="#instanceof-方法（P88）" class="headerlink" title="instanceof 方法（P88）"></a>instanceof 方法（P88）</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(value instanceof Array)&#123;</span><br><span class="line">    // 对数组执行某些操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h1><table>
-<thead>
-<tr>
-<th>基本类型</th>
-<th>引用类型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>不可修改</td>
-<td>可以修改</td>
-</tr>
-<tr>
-<td>保存在栈内存中</td>
-<td>保存在堆内存中</td>
-</tr>
-<tr>
-<td>按值访问</td>
-<td>按引用访问</td>
-</tr>
-<tr>
-<td>比较时，值相等即相等</td>
-<td>比较时，同一引用才相等</td>
-</tr>
-<tr>
-<td>复制时，创建一个副本</td>
-<td>复制的其实是指针</td>
-</tr>
-<tr>
-<td>按值传递参数</td>
-<td>按值传递参数</td>
-</tr>
-<tr>
-<td>用 typeof 检测类型</td>
-<td>用 instanceof 检测类型</td>
-</tr>
-</tbody></table>
-<h1 id="延长作用域链（不推荐使用）（P75）"><a href="#延长作用域链（不推荐使用）（P75）" class="headerlink" title="延长作用域链（不推荐使用）（P75）"></a>延长作用域链（不推荐使用）（P75）</h1><h2 id="with-方法"><a href="#with-方法" class="headerlink" title="with 方法"></a>with 方法</h2><h2 id="try-catch-语句的-catch-块"><a href="#try-catch-语句的-catch-块" class="headerlink" title="try-catch 语句的 catch 块"></a>try-catch 语句的 catch 块</h2><h1 id="垃圾收集（P79）"><a href="#垃圾收集（P79）" class="headerlink" title="垃圾收集（P79）"></a>垃圾收集（P79）</h1><ul>
-<li><p>标识清除</p>
-</li>
-<li><p>引用计数（基本废除）</p>
-</li>
-</ul>
-<p>引用计数会在循环引用过程中出现错误</p>
-<h2 id="手动清除内存"><a href="#手动清除内存" class="headerlink" title="手动清除内存"></a>手动清除内存</h2><p>将变量设置为 null</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck2a3cde4005m4cw0q49gmsla" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点--event对象常用属性和方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" class="article-date">
-  <time datetime="2019-09-01T07:11:45.000Z" itemprop="datePublished">2019-09-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/">JavaScript基础知识点--event对象常用属性和方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="event常用属性和方法"><a href="#event常用属性和方法" class="headerlink" title="event常用属性和方法"></a>event常用属性和方法</h1><h2 id="常用属性和方法表"><a href="#常用属性和方法表" class="headerlink" title="常用属性和方法表"></a>常用属性和方法表</h2><table>
-<thead>
-<tr>
-<th>属性或方法</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>type</td>
-<td>事件的类型</td>
-</tr>
-<tr>
-<td>srcElement/target</td>
-<td>事件源，就是发生事件的元素</td>
-</tr>
-<tr>
-<td>cancelBubble</td>
-<td>布尔属性。设为 true 的时候，将停止事件进一步起泡到包容层次的元素（Ele.cancelBubble = true;相当于Ele.stopPropagation();）</td>
-</tr>
-<tr>
-<td>returnValue</td>
-<td>布尔属性。设置为 false 的时候可以阻止浏览器执行默认的事件动作（Ele.returnValue = false;相当于Ele.preventDefault();）</td>
-</tr>
-<tr>
-<td>clientX/clientY</td>
-<td>事件发生的时候，鼠标相对于浏览器窗口可视文档区域的左上角的位置</td>
-</tr>
-<tr>
-<td>offsetX/offsetY</td>
-<td>事件发生的时候，鼠标相对于事件源元素左上角的位置</td>
-</tr>
-<tr>
-<td>initEvent()</td>
-<td>初始化新创建的Event对象的属性</td>
-</tr>
-</tbody></table>
-<p>说明：event 对象的所有属性列表可以在浏览器控制台中输出查看</p>
-<h2 id="event-type"><a href="#event-type" class="headerlink" title="event.type"></a>event.type</h2><p>返回当前触发事件的类型</p>
-<h2 id="event-target"><a href="#event-target" class="headerlink" title="event.target"></a>event.target</h2><p>事件源。返回触发事件的元素</p>
-<h2 id="event-currentTarget"><a href="#event-currentTarget" class="headerlink" title="event.currentTarget"></a>event.currentTarget</h2><p>返回事件绑定的元素</p>
-<h2 id="event-preventDefault"><a href="#event-preventDefault" class="headerlink" title="event.preventDefault()"></a>event.preventDefault()</h2><p>阻止浏览器执行默认行为</p>
-<h2 id="event-stopPropagation"><a href="#event-stopPropagation" class="headerlink" title="event.stopPropagation()"></a>event.stopPropagation()</h2><p>阻止事件的捕获或冒泡</p>
-<h2 id="event-clientY"><a href="#event-clientY" class="headerlink" title="event.clientY"></a>event.clientY</h2><p>clientY 事件属性返回当事件被触发时鼠标指针距浏览器顶部底边的距离，不包括滚动条滚动的部分</p>
-<h2 id="event-pageY"><a href="#event-pageY" class="headerlink" title="event.pageY"></a>event.pageY</h2><p>pageY 事件属性返回当事件被触发时鼠标指针距浏览器顶部底边的距离，包括滚动条滚动的部分</p>
-<h2 id="event-screenY"><a href="#event-screenY" class="headerlink" title="event.screenY"></a>event.screenY</h2><p>屏幕顶端到鼠标位置</p>
-<h2 id="event-button"><a href="#event-button" class="headerlink" title="event.button"></a>event.button</h2><table>
-<thead>
-<tr>
-<th>值</th>
-<th>代表</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>鼠标左键</td>
-</tr>
-<tr>
-<td>1</td>
-<td>鼠标中键</td>
-</tr>
-<tr>
-<td>2</td>
-<td>鼠标右键</td>
-</tr>
-</tbody></table>
-<h2 id="touchcancel"><a href="#touchcancel" class="headerlink" title="touchcancel"></a>touchcancel</h2><p>当系统停止跟踪触摸时触发</p>
-<h2 id="event-touches"><a href="#event-touches" class="headerlink" title="event.touches"></a>event.touches</h2><p>当前触摸屏幕的触摸点数组</p>
-<h2 id="event-changedTouches"><a href="#event-changedTouches" class="headerlink" title="event.changedTouches"></a>event.changedTouches</h2><p>数组中只包含引起事件的触摸点信息</p>
-<h2 id="event-targetTouches"><a href="#event-targetTouches" class="headerlink" title="event.targetTouches"></a>event.targetTouches</h2><p>只包含放在元素上的触摸信息</p>
-<h2 id="IE事件独有"><a href="#IE事件独有" class="headerlink" title="IE事件独有"></a>IE事件独有</h2><h3 id="event-returnValue-false"><a href="#event-returnValue-false" class="headerlink" title="event.returnValue = false"></a>event.returnValue = false</h3><p>阻止默认行为。同 preventDefault</p>
-<h3 id="event-cancleBubble-true"><a href="#event-cancleBubble-true" class="headerlink" title="event.cancleBubble = true"></a>event.cancleBubble = true</h3><p>取消事件冒泡。同 stopPropagation</p>
-<h3 id="srcElement"><a href="#srcElement" class="headerlink" title="srcElement"></a>srcElement</h3><p>同 target</p>
-<h3 id="event-button-1"><a href="#event-button-1" class="headerlink" title="event.button"></a>event.button</h3><table>
-<thead>
-<tr>
-<th>值</th>
-<th>代表</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>没有按下按钮</td>
-</tr>
-<tr>
-<td>1</td>
-<td>按下主鼠标按钮</td>
-</tr>
-<tr>
-<td>2</td>
-<td>按下次鼠标按钮</td>
-</tr>
-<tr>
-<td>3</td>
-<td>同时按下主、次鼠标按钮</td>
-</tr>
-<tr>
-<td>4</td>
-<td>按钮中间鼠标按钮</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck2a3cdcy003i4cw0qo8h0iaj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck2ctbdwy0060fgw0hh170mka" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1536,7 +1777,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Sass/" style="font-size: 11.43px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 12.86px;">React</a> <a href="/tags/Sass/" style="font-size: 11.43px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
     </div>
   </div>
 
@@ -1558,6 +1799,14 @@
       <ul>
         
           <li>
+            <a href="/2019/10/29/React生命周期/">React生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/28/React组件三大属性/">React组件三大属性及组件交互</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/25/Sass内置函数/">Sass内置函数</a>
           </li>
         
@@ -1567,14 +1816,6 @@
         
           <li>
             <a href="/2019/10/21/ES6-promise/">ES6-promise</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/18/ES6扩展/">ES6扩展</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/17/ES6解构赋值/">ES6解构赋值</a>
           </li>
         
       </ul>

@@ -62,6 +62,272 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript基础知识点-JS语法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/21/JavaScript基础知识点-JS语法/" class="article-date">
+  <time datetime="2019-08-21T06:51:22.000Z" itemprop="datePublished">2019-08-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/21/JavaScript基础知识点-JS语法/">JavaScript基础知识点--JS语法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="JavaScript-的组成"><a href="#JavaScript-的组成" class="headerlink" title="JavaScript 的组成"></a>JavaScript 的组成</h1><p>完整的 JavaScript 是由 ECMAScript（语法）、Browser Object（DOM、BOM）（特性）组成</p>
+<h1 id="JavaScript语法规则"><a href="#JavaScript语法规则" class="headerlink" title="JavaScript语法规则"></a>JavaScript语法规则</h1><ul>
+<li><p>语句结束使用分号，如果省略，则由解析器确定语句的结尾</p>
+</li>
+<li><p>ECMAScript 中的一切（变量、函数名和操作符）都区分大小写</p>
+</li>
+</ul>
+<h2 id="JavaScript-中的标识符"><a href="#JavaScript-中的标识符" class="headerlink" title="JavaScript 中的标识符"></a>JavaScript 中的标识符</h2><ol>
+<li><p>由字母、数字、下划线或美元符号组成</p>
+</li>
+<li><p>不能以数字开头</p>
+</li>
+<li><p>不能使用关键字、保留字等作为标识符</p>
+</li>
+</ol>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>ECMAScript 的变量是松散类型</p>
+<p>松散类型：可以用来保存任何类型的数据</p>
+<p>每个变量仅仅是一个用于保存值的占位符</p>
+<p>说明：</p>
+<ol>
+<li><p>省略 var 声明的变量是全局变量</p>
+</li>
+<li><p>不推荐省略 var 操作符来定义全局变量</p>
+</li>
+</ol>
+<h1 id="JavaScript-的数据类型"><a href="#JavaScript-的数据类型" class="headerlink" title="JavaScript 的数据类型"></a>JavaScript 的数据类型</h1><h2 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h2><ul>
+<li><p>Undefined</p>
+</li>
+<li><p>Null</p>
+</li>
+<li><p>Boolean</p>
+</li>
+<li><p>Number</p>
+</li>
+<li><p>String</p>
+</li>
+</ul>
+<p>Object 是复杂类型</p>
+<p>ECMAScript6 新增了 symbol 数据类型</p>
+<h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><p>undefined 类型只有一个值，即特殊的 undefined</p>
+<h2 id="null"><a href="#null" class="headerlink" title="null"></a>null</h2><ol>
+<li><p>null 值表示一个空对象指针</p>
+</li>
+<li><p>如果定义的变量准备在将来用于保存对象，那么最好将变量初始化为 null 而表示其他值</p>
+</li>
+</ol>
+<p>说明：undefined 值是派生自 null 值的，所以 undefined == null 的返回结果是 true</p>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><p>表示整数和浮点数</p>
+<h2 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h2><p>即非数值，是一个很特殊的数值</p>
+<p>说明：</p>
+<ol>
+<li><p>任何涉及 NaN 的操作（例如NaN/10）都会返回 NaN</p>
+</li>
+<li><p>NaN 与任何值都不相等，包括 NaN 本身</p>
+</li>
+</ol>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>String 类型用于表示由零或多个16位 Unicode 字符组成的字符序列，即字符串。字符串可以用双引号(“”)或单引号(‘’)表示</p>
+<h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><p>只有两个值</p>
+<ul>
+<li><p>true：真</p>
+</li>
+<li><p>flase：假</p>
+</li>
+</ul>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>检测变量类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>语法</td>
+<td>typeof 变量或 typeof（变量）</td>
+</tr>
+<tr>
+<td>返回值</td>
+<td>string 类型，有可能是：string、number、boolean、object、undefined、function</td>
+</tr>
+</tbody></table>
+<h2 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN"></a>isNaN</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>isNaN(n)</p>
+</blockquote>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>检测 n 是否是“非数值”</p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>boolean</p>
+<p>说明：isNaN() 对接收的数值，先尝试转换为数值，再检测是否为非数值</p>
+<h2 id="String-与toString"><a href="#String-与toString" class="headerlink" title="String()与toString()"></a>String()与toString()</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>str.toString()</p>
+</blockquote>
+<p>功能：将 str 转换为字符串</p>
+<p>返回值：str 的一个副本</p>
+<p>参数：数值、布尔值、对象和字符串</p>
+<p>说明：在不知道要转换的值是不是 null 或 undefined 的情况下，还可以使用 String() 函数，它能够将任何类型的值转换为字符串</p>
+<h1 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h1><ol>
+<li><p>除 0 之外的所有数字，转换为布尔型都为 true</p>
+</li>
+<li><p>除””之外的所有字符，转换为布尔型都为 true</p>
+</li>
+<li><p>null 和 undefined 转换为布尔型为 flase</p>
+</li>
+</ol>
+<h1 id="比较操作符"><a href="#比较操作符" class="headerlink" title="比较操作符"></a>比较操作符</h1><p>==：相等，只比较值是否相等</p>
+<p>===：全等，比较值的同时比较数据类型是否相等</p>
+<p>!=: 不相等，比较值是否不相等</p>
+<p>!==: 不全等，比较值的同时比较数据类型是否不相等</p>
+<p>返回值：Boolean </p>
+<h1 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h1><p>&amp;&amp;：与</p>
+<p>||：或</p>
+<p>！：非</p>
+<h2 id="逻辑与-amp-amp"><a href="#逻辑与-amp-amp" class="headerlink" title="逻辑与(&amp;&amp;)"></a>逻辑与(&amp;&amp;)</h2><p>如果有一个操作数是 undefined / null / NaN, 另一个为其他类型，则返回 undefined / null / NaN</p>
+<p>注意：</p>
+<ol>
+<li><p>多个操作数时，当所有操作数都为真，则返回最后一个操作数。</p>
+</li>
+<li><p>两个操作数时，如果第一个操作数隐式类型转化后为true，则返回下一个操作数；如果第一个操作数隐式类型转化后为false，则返回第一个操作数。</p>
+</li>
+</ol>
+<h2 id="逻辑或"><a href="#逻辑或" class="headerlink" title="逻辑或(||)"></a>逻辑或(||)</h2><p>说明：在有一个操作数表示布尔值的情况，逻辑或操作就不一定返回布尔值，此时它遵循以下规则</p>
+<ol>
+<li><p>如果第一个操作数隐式转换后为 true，则返回第一个操作数</p>
+</li>
+<li><p>如果第一个操作数隐式转换后为 false，则返回第二个操作数</p>
+</li>
+</ol>
+<h2 id="逻辑非"><a href="#逻辑非" class="headerlink" title="逻辑非(!)"></a>逻辑非(!)</h2><p>说明：</p>
+<ol>
+<li><p>不论操作数是什么数据类型，返回值都是 Boolean</p>
+</li>
+<li><p>!!操作符可以得到操作数的布尔值</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/21/JavaScript基础知识点-JS语法/" data-id="ck2ctbdvw004yfgw0pkjcwwcc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CSS进阶知识点-动画性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/19/CSS进阶知识点-动画性能优化/" class="article-date">
+  <time datetime="2019-08-19T14:22:03.000Z" itemprop="datePublished">2019-08-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/19/CSS进阶知识点-动画性能优化/">CSS进阶知识点--动画性能优化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>增强页面渲染性能</p>
+<h2 id="CPU-和-GPU"><a href="#CPU-和-GPU" class="headerlink" title="CPU 和 GPU"></a>CPU 和 GPU</h2><p>CPU 即中央处理器，解释计算机指令以及处理计算机软件中的数据</p>
+<p>GPU 即图片处理器，专门处理和绘制图形相关的硬件。GPU 是专门执行复杂的数学和几何计算而设计的，有了它，CPU 就从图形处理的任务中解放出来，可以执行其他更多的系统任务</p>
+<h2 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h2><p>CSS 的动画、变形、渐变并不会自动的触发 GPU 加速，而是使用浏览器稍慢的软件渲染引擎。</p>
+<p>在 transition，transform 和 animation 的世界里，应该卸载进程到 GPU 以加快速度。</p>
+<p>只有 3D 变形会有自己的 layer，2D变形不会</p>
+<h2 id="translateZ-（or-translate3d-）Hack"><a href="#translateZ-（or-translate3d-）Hack" class="headerlink" title="translateZ()（or translate3d()）Hack"></a>translateZ()（or translate3d()）Hack</h2><p>为元素添加没有变化的 3D 变形，骗取浏览器触发硬件加速</p>
+<h2 id="代价"><a href="#代价" class="headerlink" title="代价"></a>代价</h2><p>这种情况通过向它自己的层叠加元素，占用 RAM 和 GPU 存储空间</p>
+<h1 id="will-change"><a href="#will-change" class="headerlink" title="will-change"></a>will-change</h1><p>提前通知浏览器元素将要做什么动画，让浏览器提前准备合适的优化设置</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<p>will-change：auto | scroll-position | contents | <code>&lt;custom-ident&gt;</code> | <code>&lt;animateable-feature&gt;</code></p>
+</blockquote>
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auto</td>
+<td>此关键字表示没有特定的意图，适用于它通常所做的任何启发式和优化</td>
+</tr>
+<tr>
+<td>scroll-position</td>
+<td>表示将要改变元素的滚动位置</td>
+</tr>
+<tr>
+<td>contents</td>
+<td>表示将要改变元素的内容</td>
+</tr>
+<tr>
+<td><code>&lt;custom-ident&gt;</code></td>
+<td>明确指定将要改变的属性与给定的名称（最重要）</td>
+</tr>
+<tr>
+<td><code>&lt;animateable-feature&gt;</code></td>
+<td>可动画的一些特征值，比如left、top、margin等</td>
+</tr>
+</tbody></table>
+<h2 id="使用注意"><a href="#使用注意" class="headerlink" title="使用注意"></a>使用注意</h2><ul>
+<li><p>不能滥用</p>
+</li>
+<li><p>提前声明</p>
+</li>
+<li><p>remove</p>
+</li>
+</ul>
+<p>尽量将 will-change 放在 hover 伪类的父元素里</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画性能优化/" data-id="ck2ctbdta001cfgw0nbph67r5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS进阶知识点-动画" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/19/CSS进阶知识点-动画/" class="article-date">
@@ -218,7 +484,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画/" data-id="ck2a3cdbq001a4cw0aua6wejw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-动画/" data-id="ck2ctbdt60017fgw0w94d4pjd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -356,7 +622,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-过渡/" data-id="ck2a3cdc0001s4cw0waoszj2m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/19/CSS进阶知识点-过渡/" data-id="ck2ctbdtq001xfgw0mu5kfqt6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -424,7 +690,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/" data-id="ck2a3cdbi00104cw06p6t5mcu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-Transform坐标系统与CSS矩阵及扩展/" data-id="ck2ctbdtl001rfgw0c528trxs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -518,7 +784,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-3D转换/" data-id="ck2a3cdbh000y4cw0vkpp0i0n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-3D转换/" data-id="ck2ctbdsk000ufgw04mjm3lnz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -648,7 +914,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-2D转换/" data-id="ck2a3cdc1001v4cw0qt0or1ga" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-2D转换/" data-id="ck2ctbdsm000yfgw0cbf05fhw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -752,7 +1018,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" data-id="ck2a3cdbs001d4cw0lr1rhrba" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" data-id="ck2ctbdte001ifgw07ei3n9cw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -875,7 +1141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-渐变/" data-id="ck2a3cdbv001j4cw0ezk2gjuf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-渐变/" data-id="ck2ctbdtg001lfgw0c85fpcgn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -959,293 +1225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-背景/" data-id="ck2a3cdbu001g4cw0wf4ctecu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS进阶知识点-CSS3边框和圆角" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/16/CSS进阶知识点-CSS3边框和圆角/" class="article-date">
-  <time datetime="2019-08-16T05:35:39.000Z" itemprop="datePublished">2019-08-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/16/CSS进阶知识点-CSS3边框和圆角/">CSS进阶知识点--CSS3边框和圆角（浏览器前缀）、盒阴影</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="CSS3圆角"><a href="#CSS3圆角" class="headerlink" title="CSS3圆角"></a>CSS3圆角</h1><h2 id="border-radius-属性"><a href="#border-radius-属性" class="headerlink" title="border-radius 属性"></a>border-radius 属性</h2><p>一个最多可指定四个 border-*-radius 属性的复合属性，这个属性允许你为元素添加圆角边框！</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>border-radius: 1-4 length|% / 1-4 length|%</p>
-</blockquote>
-<h2 id="CSS3指定每个圆角"><a href="#CSS3指定每个圆角" class="headerlink" title="CSS3指定每个圆角"></a>CSS3指定每个圆角</h2><h3 id="多值"><a href="#多值" class="headerlink" title="多值"></a>多值</h3><p>四个值：第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角</p>
-<p>三个值：第一个值为左上角，第二个值为右上角和左下角，第三个值为右下角</p>
-<p>两个值：第一个值为左上角与右下角，第二个值为右上角与左下角</p>
-<p>一个值：四个角相同</p>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>位置</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>border-top-left-radius</td>
-<td>定义左上角的弧度</td>
-</tr>
-<tr>
-<td>border-top-right-radius</td>
-<td>定义右上角的弧度</td>
-</tr>
-<tr>
-<td>border-bottom-right-radius</td>
-<td>定义右下角的弧度</td>
-</tr>
-<tr>
-<td>border-bottom-left-radius</td>
-<td>定义左下角的弧度</td>
-</tr>
-</tbody></table>
-<h1 id="CSS3-盒阴影"><a href="#CSS3-盒阴影" class="headerlink" title="CSS3 盒阴影"></a>CSS3 盒阴影</h1><h2 id="box-shadow-属性"><a href="#box-shadow-属性" class="headerlink" title="box-shadow 属性"></a>box-shadow 属性</h2><p>box-shadow 属性可以设置一个或多个下拉阴影的框</p>
-<h2 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>box-shadow：h-shadow v-shadow blur spread inset</p>
-</blockquote>
-<h2 id="属性值"><a href="#属性值" class="headerlink" title="属性值"></a>属性值</h2><ul>
-<li><p>h-shadow(水平阴影的位置。允许负值。必写)</p>
-</li>
-<li><p>v-shadow(垂直阴影的位置。允许负值。必写)</p>
-</li>
-<li><p>blur(模糊距离。可选)</p>
-</li>
-<li><p>spread(阴影的尺寸。可选)</p>
-</li>
-<li><p>color(阴影的颜色。请参阅 CSS 颜色值)</p>
-</li>
-<li><p>inset(可选。将外部阴影 (outset) 改为内部阴影)</p>
-</li>
-</ul>
-<h1 id="CSS3-边界图片"><a href="#CSS3-边界图片" class="headerlink" title="CSS3 边界图片"></a>CSS3 边界图片</h1><h2 id="border-image-属性"><a href="#border-image-属性" class="headerlink" title="border-image 属性"></a>border-image 属性</h2><p>使用 border-image-* 属性来构建美丽的可扩展按钮</p>
-<h2 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>border-image：source slice width outset repeat</p>
-</blockquote>
-<h2 id="属性值-1"><a href="#属性值-1" class="headerlink" title="属性值"></a>属性值</h2><ul>
-<li><p>source：路径</p>
-</li>
-<li><p>slice：指定图像的边界向内偏移（建议用百分比）</p>
-</li>
-<li><p>width：图像边界的宽度（建议用百分比）</p>
-</li>
-<li><p>outset：指定在边框外部绘制 border-image-area 的量</p>
-</li>
-<li><p>repeat：图像边框是否重复(repeated)、拉伸(strectched)或铺满(rounded)</p>
-<ol>
-<li><p>strectch</p>
-</li>
-<li><p>repeat</p>
-</li>
-<li><p>round</p>
-</li>
-<li><p>initial</p>
-</li>
-<li><p>inherit</p>
-</li>
-</ol>
-</li>
-</ul>
-<h1 id="浏览器前缀"><a href="#浏览器前缀" class="headerlink" title="浏览器前缀"></a>浏览器前缀</h1><table>
-<thead>
-<tr>
-<th>浏览器前缀</th>
-<th>浏览器</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-webkit-</td>
-<td>谷歌</td>
-</tr>
-<tr>
-<td>-moz-</td>
-<td>火狐</td>
-</tr>
-<tr>
-<td>-ms-</td>
-<td>IE</td>
-</tr>
-<tr>
-<td>-o-</td>
-<td>opera</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-CSS3边框和圆角/" data-id="ck2a3cdbn00174cw0t5o470ke" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS进阶知识点-CSS3伪类选择器和伪元素" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" class="article-date">
-  <time datetime="2019-08-15T13:44:22.000Z" itemprop="datePublished">2019-08-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/">CSS进阶知识点--CSS3伪类选择器和伪元素</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h1><ul>
-<li><p>动态伪类（锚点伪类、用户行为伪类）</p>
-</li>
-<li><p>UI元素状态伪类</p>
-</li>
-<li><p>CSS3结构伪类</p>
-</li>
-<li><p>否定选择器</p>
-</li>
-<li><p>伪元素</p>
-</li>
-</ul>
-<h2 id="动态伪类"><a href="#动态伪类" class="headerlink" title="动态伪类"></a>动态伪类</h2><p>这些伪类并不存在与 HTML 中，只有当用户和网站<strong>交互</strong>的时候才能体现出来</p>
-<h3 id="锚点伪类"><a href="#锚点伪类" class="headerlink" title="锚点伪类"></a>锚点伪类</h3><ul>
-<li><p>:link</p>
-</li>
-<li><p>:visited</p>
-</li>
-</ul>
-<h3 id="用户行为伪类"><a href="#用户行为伪类" class="headerlink" title="用户行为伪类"></a>用户行为伪类</h3><ul>
-<li><p>:hover</p>
-</li>
-<li><p>:active</p>
-</li>
-<li><p>:focus（获取到焦点时的样式）</p>
-</li>
-</ul>
-<h2 id="UI元素状态伪类"><a href="#UI元素状态伪类" class="headerlink" title="UI元素状态伪类"></a>UI元素状态伪类</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>我们把”<code>:enabled</code>“, “<code>:disabled</code>“, “<code>checked</code>“伪类称为UI元素状态伪类</p>
-<h2 id="CSS3结构类"><a href="#CSS3结构类" class="headerlink" title="CSS3结构类"></a>CSS3结构类</h2><h3 id="CSS3的-nth选择器"><a href="#CSS3的-nth选择器" class="headerlink" title="CSS3的:nth选择器"></a>CSS3的<code>:nth</code>选择器</h3><p>我们把CSS3的<code>:nth</code>选择器也称为CSS3结构类</p>
-<h3 id="选择方法"><a href="#选择方法" class="headerlink" title="选择方法"></a>选择方法</h3><ul>
-<li><p>:first-child</p>
-</li>
-<li><p>:last-child</p>
-</li>
-<li><p>:nth-child()</p>
-</li>
-<li><p>:nth-last-child()</p>
-</li>
-<li><p>:nth-of-type()</p>
-</li>
-<li><p>:nth-last-of-type()</p>
-</li>
-<li><p>:first-of-type</p>
-</li>
-<li><p>:last-of-type</p>
-</li>
-<li><p>only-child</p>
-</li>
-<li><p>only-of-type</p>
-</li>
-<li><p>:empty</p>
-</li>
-</ul>
-<h3 id="Element-first-child"><a href="#Element-first-child" class="headerlink" title="Element:first-child"></a>Element:first-child</h3><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的首个子元素，并为其设置样式</p>
-<h3 id="Element-last-child"><a href="#Element-last-child" class="headerlink" title="Element:last-child"></a>Element:last-child</h3><h4 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的最后一个子元素，并为其设置样式</p>
-<h3 id="Element-nth-child-N"><a href="#Element-nth-child-N" class="headerlink" title="Element:nth-child(N)"></a>Element:nth-child(N)</h3><h4 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素，不论元素的类型</p>
-<h4 id="关于参数（N）"><a href="#关于参数（N）" class="headerlink" title="关于参数（N）"></a>关于参数（N）</h4><ul>
-<li><p>odd 相当于2n+1</p>
-</li>
-<li><p>even 相当于2n</p>
-</li>
-</ul>
-<h3 id="Element-nth-last-child-N"><a href="#Element-nth-last-child-N" class="headerlink" title="Element:nth-last-child(N)"></a>Element:nth-last-child(N)</h3><h4 id="概念-4"><a href="#概念-4" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的第N个子元素的每个元素，不论元素的类型，从最后一个子元素开始计数</p>
-<h3 id="Element-nth-of-type-N"><a href="#Element-nth-of-type-N" class="headerlink" title="Element:nth-of-type(N)"></a>Element:nth-of-type(N)</h3><h4 id="概念-5"><a href="#概念-5" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素</p>
-<h3 id="Element-nth-last-of-type-N"><a href="#Element-nth-last-of-type-N" class="headerlink" title="Element:nth-last-of-type(N)"></a>Element:nth-last-of-type(N)</h3><h4 id="概念-6"><a href="#概念-6" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的第N个子元素的每个元素，从最后一个子元素开始计数</p>
-<h3 id="Element-first-of-type"><a href="#Element-first-of-type" class="headerlink" title="Element:first-of-type"></a>Element:first-of-type</h3><h4 id="概念-7"><a href="#概念-7" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的首个子元素</p>
-<h3 id="Element-last-of-type"><a href="#Element-last-of-type" class="headerlink" title="Element:last-of-type"></a>Element:last-of-type</h3><h4 id="概念-8"><a href="#概念-8" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的特定类型的最后一个子元素</p>
-<h3 id="Element-only-child"><a href="#Element-only-child" class="headerlink" title="Element:only-child"></a>Element:only-child</h3><h4 id="概念-9"><a href="#概念-9" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一子元素</p>
-<h3 id="Element-only-of-type"><a href="#Element-only-of-type" class="headerlink" title="Element:only-of-type"></a>Element:only-of-type</h3><h4 id="概念-10"><a href="#概念-10" class="headerlink" title="概念"></a>概念</h4><p>选择属于其父元素的唯一特定类型的子元素</p>
-<h3 id="Element-empty"><a href="#Element-empty" class="headerlink" title="Element:empty"></a>Element:empty</h3><h4 id="概念-11"><a href="#概念-11" class="headerlink" title="概念"></a>概念</h4><p>选择没有子元素（包括文本节点）的每个元素</p>
-<h2 id="否定选择器"><a href="#否定选择器" class="headerlink" title="否定选择器"></a>否定选择器</h2><h3 id="概念-12"><a href="#概念-12" class="headerlink" title="概念"></a>概念</h3><p>:not(Element/selector)选择器匹配非指定元素/选择器的每个元素</p>
-<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><blockquote>
-<p>父元素:not(子元素/子选择器)</p>
-</blockquote>
-<h1 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h1><p>CSS 伪元素用于向某些选择器设置特殊效果</p>
-<h2 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h2><blockquote>
-<p>元素::伪元素（Element::pseudo-element）</p>
-</blockquote>
-<h2 id="Element-first-line"><a href="#Element-first-line" class="headerlink" title="Element::first-line"></a>Element::first-line</h2><h3 id="概念-13"><a href="#概念-13" class="headerlink" title="概念"></a>概念</h3><p>根据”first-line”伪元素中的样式对 Element 元素的第一行文本进行格式化</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>“first-line”伪元素只能用于块级元素</p>
-<h2 id="Element-first-letter"><a href="#Element-first-letter" class="headerlink" title="Element::first-letter"></a>Element::first-letter</h2><h3 id="概念-14"><a href="#概念-14" class="headerlink" title="概念"></a>概念</h3><p>用于向文本的首字母设置特殊样式</p>
-<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>“first-letter”伪元素只能用于块级元素</p>
-<h2 id="Element-before"><a href="#Element-before" class="headerlink" title="Element::before"></a>Element::before</h2><h3 id="概念-15"><a href="#概念-15" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容前面插入新内容</p>
-<h3 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
-<li><p>第一个子元素</p>
-</li>
-<li><p>行级元素</p>
-</li>
-<li><p>内容通过 content 写入</p>
-</li>
-<li><p>标签中找不到对应标签，只能在浏览器开发者工具那可以找到</p>
-</li>
-</ol>
-<h2 id="Element-after"><a href="#Element-after" class="headerlink" title="Element::after"></a>Element::after</h2><h3 id="概念-16"><a href="#概念-16" class="headerlink" title="概念"></a>概念</h3><p>在元素的内容后面插入新内容</p>
-<h3 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h3><p>常配合”content”配合使用，常用于清除浮动</p>
-<h2 id="Element-selection"><a href="#Element-selection" class="headerlink" title="Element::selection"></a>Element::selection</h2><h3 id="概念-17"><a href="#概念-17" class="headerlink" title="概念"></a>概念</h3><p>用于设置在浏览器中选中文本后的背景色与前景色</p>
-<h3 id="兼容性说明"><a href="#兼容性说明" class="headerlink" title="兼容性说明"></a>兼容性说明</h3><p>::selection 在IE家族中，只有IE9+ 版本支持，在 Firefox 中需要加上其前缀”-moz”</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" data-id="ck2a3cdba000p4cw0emameat4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-背景/" data-id="ck2ctbdtc001ffgw06xt6w60m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -1292,7 +1272,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Sass/" style="font-size: 11.43px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 12.86px;">React</a> <a href="/tags/Sass/" style="font-size: 11.43px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
     </div>
   </div>
 
@@ -1314,6 +1294,14 @@
       <ul>
         
           <li>
+            <a href="/2019/10/29/React生命周期/">React生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/28/React组件三大属性/">React组件三大属性及组件交互</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/25/Sass内置函数/">Sass内置函数</a>
           </li>
         
@@ -1323,14 +1311,6 @@
         
           <li>
             <a href="/2019/10/21/ES6-promise/">ES6-promise</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/18/ES6扩展/">ES6扩展</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/17/ES6解构赋值/">ES6解构赋值</a>
           </li>
         
       </ul>
