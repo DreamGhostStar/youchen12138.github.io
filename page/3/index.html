@@ -62,6 +62,479 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript进阶知识点-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/" class="article-date">
+  <time datetime="2019-09-19T11:47:51.000Z" itemprop="datePublished">2019-09-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/19/JavaScript进阶知识点-正则表达式/">JavaScript进阶知识点--正则表达式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="什么是正则表达式"><a href="#什么是正则表达式" class="headerlink" title="什么是正则表达式"></a>什么是正则表达式</h2><p>由以下两种字符组成的文字模式</p>
+<ol>
+<li><p>普通字符（例如26个英文字母、数字、汉字、<code>_</code>、<code>,</code>，不含有特殊含义的符号等）</p>
+</li>
+<li><p>特殊字符（有特殊含义的，例如<code>.\</code>等）</p>
+</li>
+</ol>
+<p>该模式描述在查找文字主体时待匹配的一个或多个字符串。正则表达式作为一个模板，将某个字符模式与说搜索的字符串进行匹配</p>
+<p>正则表达式匹配的一定是字符串中的内容</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><p>如果找到，则返回 true</p>
+<p>如果未找到，则返回 false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;I love js&quot;;</span><br><span class="line">var pattern = /js/;</span><br><span class="line"></span><br><span class="line">console.log(pattern.test(str));</span><br></pre></td></tr></table></figure>
+
+<h3 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h3><p>如果找到，则将在字符串中找到的该字符传入一个数组中，并将该数组返回</p>
+<p>如果未找到，则返回 null</p>
+<h2 id="flags"><a href="#flags" class="headerlink" title="flags"></a>flags</h2><table>
+<thead>
+<tr>
+<th>flags</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>g</td>
+<td>表示全局(global)模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止</td>
+</tr>
+<tr>
+<td>i</td>
+<td>表示不区分(case-insensitive)模式，即在确定匹配项时忽略模式与字符串的大小写</td>
+</tr>
+<tr>
+<td>m</td>
+<td>表示多行模式，即在到达一行文本末尾时还会继续查找下一行中是否存在于模式匹配的项</td>
+</tr>
+</tbody></table>
+<h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><ul>
+<li><p>如果使用字面量的方式定义正则，一个反斜杠转义</p>
+</li>
+<li><p>如果使用构造函数方式定义正则，需要用到双重反斜杠</p>
+</li>
+</ul>
+<p>有问请查看文件中的<code>特殊字符总结</code>，<code>常用正则表达式总结</code></p>
+<table>
+<thead>
+<tr>
+<th>常用的字符类</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/./</code></td>
+<td>表示除了换行符之外的所有字符</td>
+</tr>
+<tr>
+<td><code>/\w/</code></td>
+<td>等同于<code>/[a-zA-Z0-9_]/</code></td>
+</tr>
+<tr>
+<td><code>/\W/</code></td>
+<td>等同于<code>/[^a-zA-Z0-9_]/</code></td>
+</tr>
+<tr>
+<td><code>/\d/</code></td>
+<td>等同于<code>/[0-9]/</code></td>
+</tr>
+<tr>
+<td><code>/\D/</code></td>
+<td>等同于<code>/[^0-9]/</code></td>
+</tr>
+<tr>
+<td><code>/\s/</code></td>
+<td>匹配空格和制表符之类的</td>
+</tr>
+<tr>
+<td><code>/\S/</code></td>
+<td>匹配空格和制表符之类的空白字符以外的所有字符</td>
+</tr>
+<tr>
+<td><code>/\b/</code></td>
+<td>单词的边界匹配</td>
+</tr>
+</tbody></table>
+<p>中文的 Unicode 编码为<code>\u4e00-\u9fa5</code></p>
+<h1 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h1><p>以下均为贪婪匹配</p>
+<p>代码示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 匹配n个字符 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d&#123;3&#125;/; // &#123;&#125;中表示匹配的个数</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 匹配至少n个字符 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d&#123;1,&#125;/; // 至少1个</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 匹配n个到m个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d&#123;0,1&#125;/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;1&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 匹配0个或者1个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d?/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;1&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 至少匹配1个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d+/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 至少匹配0个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d*/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;110&quot;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="非贪婪匹配"><a href="#非贪婪匹配" class="headerlink" title="非贪婪匹配"></a>非贪婪匹配</h2><p>在量词后面加<code>?</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 至少匹配1个 --&gt;</span><br><span class="line">var str = &quot;110&quot;;</span><br><span class="line">var pattern = /\d+?/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;1&quot;]</span><br></pre></td></tr></table></figure>
+
+<h1 id="选择、分组、引用"><a href="#选择、分组、引用" class="headerlink" title="选择、分组、引用"></a>选择、分组、引用</h1><h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><p>代码示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;html js&quot;;</span><br><span class="line">var pattern = /html|css|js/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;html&quot;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;ababab&quot;;</span><br><span class="line">var pattern = /(ab)+/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;ababab&quot;, &quot;ab&quot;]</span><br><span class="line"></span><br><span class="line">&lt;!-- 非捕获性分组 --&gt;</span><br><span class="line">var str = &quot;ababab&quot;;</span><br><span class="line">var pattern = /(?:ab)+/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;ababab&quot;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 捕获性分组的引用 --&gt;</span><br><span class="line">var str = &quot;ab cd ab&quot;;</span><br><span class="line">var pattern = /(ab) cd \1/; </span><br><span class="line">console.log(pattern.exec(str)); // [&quot;ab cd ab&quot;, &quot;ab&quot;]</span><br></pre></td></tr></table></figure>
+
+<h1 id="首尾匹配"><a href="#首尾匹配" class="headerlink" title="首尾匹配"></a>首尾匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 首匹配 --&gt;</span><br><span class="line">var str1 = &quot;js&quot;;</span><br><span class="line">var str2 = &quot;html js&quot;;</span><br><span class="line">var pattern = /^js/;</span><br><span class="line">console.log(pattern.exec(str1)); // [&quot;js&quot;]</span><br><span class="line">console.log(pattern.exec(str2)); // null</span><br><span class="line"></span><br><span class="line">&lt;!-- 尾匹配 --&gt;</span><br><span class="line">var str1 = &quot;js&quot;;</span><br><span class="line">var str2 = &quot;js html&quot;;</span><br><span class="line">var pattern = /js$/;</span><br><span class="line">console.log(pattern.exec(str1)); // [&quot;js&quot;]</span><br><span class="line">console.log(pattern.exec(str2)); // null</span><br></pre></td></tr></table></figure>
+
+<h1 id="前瞻性匹配"><a href="#前瞻性匹配" class="headerlink" title="前瞻性匹配"></a>前瞻性匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在这个例子中，只有java后面跟了script才会匹配成功 --&gt;</span><br><span class="line">var str = &apos;javascript&apos;;</span><br><span class="line">var pattern = /java(?=script)/;</span><br><span class="line">console.log(pattern.exec(str)); // [&quot;java&quot;]</span><br></pre></td></tr></table></figure>
+
+<h1 id="负向前瞻性匹配"><a href="#负向前瞻性匹配" class="headerlink" title="负向前瞻性匹配"></a>负向前瞻性匹配</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在这个例子中，如果java后面跟了script则不会匹配java --&gt;</span><br><span class="line">var str = &apos;javascript&apos;;</span><br><span class="line">var pattern = /java(?!script)/;</span><br><span class="line">console.log(pattern.exec(str)); // null</span><br></pre></td></tr></table></figure>
+
+<h1 id="RegExp-的实例"><a href="#RegExp-的实例" class="headerlink" title="RegExp 的实例"></a>RegExp 的实例</h1><h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>test(str)</td>
+<td>返回布尔值。判断该字符串是否有该匹配式</td>
+</tr>
+<tr>
+<td>exec(str)</td>
+<td>返回数组。找到该匹配式，将匹配成功的字符放入数组中</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>返回字符串。将匹配式转换为字面量的字符串</td>
+</tr>
+<tr>
+<td>toLocaleString()</td>
+<td>返回本地字符。其实没多大区别</td>
+</tr>
+<tr>
+<td>valueOf()</td>
+<td>返回该匹配式的字符串形式</td>
+</tr>
+</tbody></table>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ignoreCase</td>
+<td>判断 flags 是否有i</td>
+</tr>
+<tr>
+<td>global</td>
+<td>判断 flags 是否有g</td>
+</tr>
+<tr>
+<td>multiline</td>
+<td>判断flags是否有m</td>
+</tr>
+<tr>
+<td>source</td>
+<td>返回字面量形式的字符串</td>
+</tr>
+<tr>
+<td>lastIndex</td>
+<td>返回数值。每次检索完毕的最终位置</td>
+</tr>
+</tbody></table>
+<h2 id="构造函数属性"><a href="#构造函数属性" class="headerlink" title="构造函数属性"></a>构造函数属性</h2><table>
+<thead>
+<tr>
+<th>构造函数属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RegExp.input</td>
+<td>返回检索的字符串</td>
+</tr>
+<tr>
+<td>RegExp.$_</td>
+<td>和 RegExp.input 作用相同</td>
+</tr>
+<tr>
+<td>RegExp.lastMatch</td>
+<td>返回最近一次匹配的字符</td>
+</tr>
+<tr>
+<td>RegExp[‘$&amp;’]</td>
+<td>和 RegExp.lastMatch 作用相同</td>
+</tr>
+<tr>
+<td>RegExp.leftContext</td>
+<td>上一次匹配左边剩余的字符</td>
+</tr>
+<tr>
+<td>RegExp.rightContext</td>
+<td>上一次匹配右边边剩余的字符</td>
+</tr>
+<tr>
+<td>RegExp.lastParen</td>
+<td>上一次捕获的分组的字符</td>
+</tr>
+<tr>
+<td>RegExp.$1</td>
+<td>第一个分组的引用，与<code>\1</code>作用相同</td>
+</tr>
+</tbody></table>
+<h1 id="String对象中与正则表达式相关的方法"><a href="#String对象中与正则表达式相关的方法" class="headerlink" title="String对象中与正则表达式相关的方法"></a>String对象中与正则表达式相关的方法</h1><h2 id="search"><a href="#search" class="headerlink" title="search"></a>search</h2><p>返回一个 Number ，找到匹配的字符的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;html js&quot;;</span><br><span class="line">var pattern = /js/;</span><br><span class="line">console.log(str.search(pattern)); // 5</span><br></pre></td></tr></table></figure>
+
+<h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><p>和exec一样，返回的是一个类数组的对象</p>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;js js js&quot;;</span><br><span class="line">var pattern = /js/g;</span><br><span class="line">console.log(str.match(pattern)); // [&quot;js&quot;, &quot;js&quot;, &quot;js&quot;]</span><br></pre></td></tr></table></figure>
+
+<p><code>match</code>： 非全局的情况下才会返回分组中匹配到的内容，全局匹配只能匹配到所有匹配到的字符</p>
+<p><code>exec</code>：无论是否全局匹配都会返回分组中匹配到的内容，都只会返回当前匹配到的一个内容，而不是全部返回</p>
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 全部替换 --&gt;</span><br><span class="line">var str = &quot;I love js js&quot;;</span><br><span class="line">var pattern = /js/g;</span><br><span class="line">console.log(str.replace(pattern, &quot;html&quot;));</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck2j2blq1005ylgw02qjaxpcf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript进阶知识点-JS面向对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/15/JavaScript进阶知识点-JS面向对象/" class="article-date">
+  <time datetime="2019-09-15T06:41:21.000Z" itemprop="datePublished">2019-09-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/15/JavaScript进阶知识点-JS面向对象/">JavaScript进阶知识点--JS面向对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>对代码的一种抽象，对外同一提供调用接口的编程思想</p>
+<h2 id="基于原型的面向对象"><a href="#基于原型的面向对象" class="headerlink" title="基于原型的面向对象"></a>基于原型的面向对象</h2><p>基于原型的面向对象方式中，对象（object）则是依靠构造器（constructor）利用原型（prototype）构造出来的</p>
+<h2 id="JS面向对象的名词解释"><a href="#JS面向对象的名词解释" class="headerlink" title="JS面向对象的名词解释"></a>JS面向对象的名词解释</h2><ul>
+<li><p>属性：事物的特效</p>
+</li>
+<li><p>方法：事物的功能</p>
+</li>
+<li><p>对象：事物的一个实例</p>
+</li>
+<li><p>原型：JS函数中由 prototype 属性引用了一个对象，即原型对象（原型）</p>
+</li>
+</ul>
+<h2 id="JS中的闭包"><a href="#JS中的闭包" class="headerlink" title="JS中的闭包"></a>JS中的闭包</h2><p>闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数）</p>
+<h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3><ol>
+<li><p>读取函数内部变量</p>
+</li>
+<li><p>让在函数内部声明的变量的值保留在内存中</p>
+</li>
+</ol>
+<h3 id="闭包的优缺点"><a href="#闭包的优缺点" class="headerlink" title="闭包的优缺点"></a>闭包的优缺点</h3><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li><p>有利于封装</p>
+</li>
+<li><p>可以访问局部变量</p>
+</li>
+</ol>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ol>
+<li><p>内存占用浪费严重</p>
+</li>
+<li><p>内存泄漏</p>
+</li>
+</ol>
+<h3 id="分析闭包"><a href="#分析闭包" class="headerlink" title="分析闭包"></a>分析闭包</h3><ol>
+<li><p>函数嵌套函数，这是闭包的一个结构。</p>
+</li>
+<li><p>函数里的子函数被函数外部一直使用，使子函数无法释放，保持其所在作用域，形成一个封闭的作用域，称之为闭包。</p>
+</li>
+</ol>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><ol>
+<li><p>字面量（P83）</p>
+</li>
+<li><p>new 操作符后跟 Object 构造函数（P83）</p>
+</li>
+<li><p>JS中构造函数方法声明对象</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function test([参数列表])&#123;</span><br><span class="line">    this.属性 = 属性值;</span><br><span class="line">    this.方法 = function () &#123;</span><br><span class="line">        方法中代码</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = new test(参数列表);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="JS-设计模式"><a href="#JS-设计模式" class="headerlink" title="JS 设计模式"></a>JS 设计模式</h1><p>任何模式下，同种模式中的创造出来的对象都是独立存在的</p>
+<h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function createObject(name, age) &#123;</span><br><span class="line">    var obj = new Object();</span><br><span class="line">    obj.name = name;</span><br><span class="line">    obj.age = age;</span><br><span class="line">    obj.run = function() &#123;</span><br><span class="line">        return this.name + this.age + &apos;运行中...&apos;;</span><br><span class="line">    &#125;;</span><br><span class="line">    return obj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var box1 = createObject(&apos;zhangsan&apos;, 100);</span><br><span class="line">var box2 = createObject(&apos;lisi&apos;, 200);</span><br></pre></td></tr></table></figure>
+
+<h2 id="构造方式"><a href="#构造方式" class="headerlink" title="构造方式"></a>构造方式</h2><ol>
+<li><p>构造方式不会显示创建对象，将属性赋值给 this ，不需要 return 对象</p>
+</li>
+<li><p>工厂模式在方法内部创建 object 对象，返回 object 对象，属性和方法都是赋给 object 对象</p>
+</li>
+</ol>
+<h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function test() &#123;</span><br><span class="line">&#125;</span><br><span class="line">test.prototype.属性 = 属性值;</span><br><span class="line">test.prototype.属性 = 属性值;</span><br><span class="line">test.prototype.方法名称 = function() &#123;</span><br><span class="line">    执行代码;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = new test();</span><br></pre></td></tr></table></figure>
+
+<h3 id="原型模式的写法原理"><a href="#原型模式的写法原理" class="headerlink" title="原型模式的写法原理"></a>原型模式的写法原理</h3><p>函数本身声明为空内容，利用 prototype 定义一些属性及方法</p>
+<h3 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h3><p>让所有实例化的对象都拥有它包含的属性及方法</p>
+<h2 id="混合模式"><a href="#混合模式" class="headerlink" title="混合模式"></a>混合模式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function test(v1, v2, v3) &#123;</span><br><span class="line">    this.v1 = v1;</span><br><span class="line">    this.v2 = v2;</span><br><span class="line">    tihs.v3 = v3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test.prototype.方法名称 = function() &#123;</span><br><span class="line">    执行代码</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = new test(v1, v2, v3);</span><br></pre></td></tr></table></figure>
+
+<h1 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var ren = &#123;&#125;;</span><br><span class="line">ren.name = &quot;zhangsan&quot;;</span><br><span class="line">ren.age = 18;</span><br><span class="line">ren.demo = function() &#123;</span><br><span class="line">    document.write(&quot;aaaa&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for(var i in ren)&#123;</span><br><span class="line">    // alert(i);    //弹出属性和方法名称</span><br><span class="line">    alert(ren[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// i是所有的属性或方法名称</span><br></pre></td></tr></table></figure>
+
+<h1 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h1><p>封装（Encapsulation）：把对象内部数据和操作细节进行隐藏</p>
+<p>大多数面向对象的语言都支持封装的特性，提供了 private 关键字来隐藏某些属性或方法，用来限制被封装的数据或者内容的访问，只对外提供了一个对象的专门访问的接口</p>
+<p>接口一般为调用方法</p>
+<p>JavaScript中可以通过闭包实现封装</p>
+<h1 id="原型和原型链"><a href="#原型和原型链" class="headerlink" title="原型和原型链"></a>原型和原型链</h1><h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><p>是利用 prototype 添加属性和方法</p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>JS在创建对象（不论是普通对象还是函数对象）的时候，都有一个叫做_proto_的内置属性，用于指向创建它的函数对象的原型对象 prototype</p>
+<h1 id="对象冒充"><a href="#对象冒充" class="headerlink" title="对象冒充"></a>对象冒充</h1><p>将父类的属性和方法一起传给子类作为特权属性和特权方法</p>
+<p>原型属性和原型方法不属于特权属性和特权方法</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck2j2blq40064lgw0tmq7ahrf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript进阶知识点-JS函数深入" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/14/JavaScript进阶知识点-JS函数深入/" class="article-date">
+  <time datetime="2019-09-14T02:38:33.000Z" itemprop="datePublished">2019-09-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/14/JavaScript进阶知识点-JS函数深入/">JavaScript进阶知识点--JS函数深入</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h1><h2 id="创建对象（P145）"><a href="#创建对象（P145）" class="headerlink" title="创建对象（P145）"></a>创建对象（P145）</h2><ol>
+<li><p>字面量方法</p>
+</li>
+<li><p>构造函数</p>
+</li>
+<li><p><code>Object.create()</code></p>
+</li>
+</ol>
+<h2 id="删除对象属性"><a href="#删除对象属性" class="headerlink" title="删除对象属性"></a>删除对象属性</h2><blockquote>
+<p>delete obj.attributeName</p>
+</blockquote>
+<h2 id="检测属性是否在对象中"><a href="#检测属性是否在对象中" class="headerlink" title="检测属性是否在对象中"></a>检测属性是否在对象中</h2><blockquote>
+<p>attributeName in obj</p>
+</blockquote>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;</span><br><span class="line">    name: &quot;Tom&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(name in person);// true</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象枚举"><a href="#对象枚举" class="headerlink" title="对象枚举"></a>对象枚举</h2><h3 id="for-in-循环（P57）"><a href="#for-in-循环（P57）" class="headerlink" title="for in 循环（P57）"></a>for in 循环（P57）</h3><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h2><ul>
+<li><p>function 声明</p>
+</li>
+<li><p>var 赋值表达式</p>
+</li>
+</ul>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>var 赋值表达式不能写在调用之后</p>
+<p>var 赋值表达式要先定义，后调用</p>
+<h2 id="构造函数（不建议）"><a href="#构造函数（不建议）" class="headerlink" title="构造函数（不建议）"></a>构造函数（不建议）</h2><p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fun = new Function(&quot;num1&quot;, &quot;num2&quot;, &quot;return num1 + num2&quot;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="直接函数调用"><a href="#直接函数调用" class="headerlink" title="直接函数调用"></a>直接函数调用</h2><ul>
+<li><p>普通函数调用</p>
+</li>
+<li><p>匿名函数调用（不能让function打头）（也叫自执行函数）</p>
+</li>
+</ul>
+<h2 id="间接函数调用"><a href="#间接函数调用" class="headerlink" title="间接函数调用"></a>间接函数调用</h2><ul>
+<li><p>fun.call()</p>
+</li>
+<li><p>fun.apply();</p>
+</li>
+</ul>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ol>
+<li><p>第一个参数：改变this的指向</p>
+</li>
+<li><p>第二个参数：改变参数的值</p>
+<ul>
+<li><p>call：传进的参数以逗号分隔</p>
+</li>
+<li><p>apply：传进的参数以数组形式体现</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// call 方法调用</span><br><span class="line">fun.call(window, 1, 2);</span><br><span class="line"></span><br><span class="line">// apply 方法调用</span><br><span class="line">fun,apply(window, [1, 2]);</span><br></pre></td></tr></table></figure>
+
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ul>
+<li><p>如果用 alert 或 document.write 输出不是字符串的值，则该值则调用 <code>toString()</code> 方法</p>
+</li>
+<li><p>document.write 期望接收和输出字符串，当接收的参数不为字符串时，会调用参数的<code>toString</code>方法，将其转化成字符串输出</p>
+</li>
+<li><p>数组调用<code>toString()</code>后，会将其中的元素用逗号拼接起来变成字符串</p>
+</li>
+<li><p>一般的对象调用toString()后返回<code>[object Object]</code></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck2j2blpy005slgw0jwk7e9k3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaScript进阶知识点-JS变量与作用域" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" class="article-date">
@@ -139,7 +612,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck2ctehif005rogw04n7x46mm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck2j2blpz005vlgw0ynn6etg4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -282,7 +755,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck2ctehh3003wogw0moqqu0qo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck2j2blop0041lgw0wj6yu6oq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -419,7 +892,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck2ctehhs004qogw0v7ndlqa4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck2j2blp9004rlgw077eavgv8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -606,7 +1079,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck2ctehhj004fogw0m48iuihe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck2j2blp8004plgw02izp9iit" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -840,7 +1313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck2ctehhp004nogw0dxujbts8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck2j2blpc004vlgw040pf70m9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -884,7 +1357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck2ctehh5003zogw0uyj1wz1e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck2j2blox004algw0g0fka8wh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -945,358 +1418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" data-id="ck2ctehhh004cogw0oobtclfp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-BOM之history对象及方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/" class="article-date">
-  <time datetime="2019-08-26T10:35:17.000Z" itemprop="datePublished">2019-08-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/">JavaScript基础知识点--BOM之history对象及方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="history-对象"><a href="#history-对象" class="headerlink" title="history 对象"></a>history 对象</h1><p>history 对象保存了用户在浏览器中访问页面的历史记录</p>
-<h1 id="history-对象方法"><a href="#history-对象方法" class="headerlink" title="history 对象方法"></a>history 对象方法</h1><h2 id="back"><a href="#back" class="headerlink" title="back()"></a>back()</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>history.back()</p>
-</blockquote>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>回到历史记录的上一步</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>相当于使用了 history.go(-1)</p>
-<h2 id="forward"><a href="#forward" class="headerlink" title="forward()"></a>forward()</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>history.forward()</p>
-</blockquote>
-<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><p>回到历史记录的下一步</p>
-<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>相当于使用了 history.go(1)</p>
-<h2 id="go-n"><a href="#go-n" class="headerlink" title="go(-n)"></a>go(-n)</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>history.go(-n)</p>
-</blockquote>
-<h3 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a>功能</h3><p>回到历史记录的前n步</p>
-<h2 id="go-n-1"><a href="#go-n-1" class="headerlink" title="go(n)"></a>go(n)</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>history.go(n)</p>
-</blockquote>
-<h3 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a>功能</h3><p>回到历史记录的后n步</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之history对象及方法/" data-id="ck2ctehh1003rogw0vhugkcz4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-BOM之location对象及方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/" class="article-date">
-  <time datetime="2019-08-26T08:05:35.000Z" itemprop="datePublished">2019-08-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/">JavaScript基础知识点--BOM之location对象及方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="location-对象"><a href="#location-对象" class="headerlink" title="location 对象"></a>location 对象</h1><p>location 对象提供了与当前窗口中加载的文档有关的信息，还提供了一些导航的功能，它既是 window 对象的属性，也是 document 对象的属性</p>
-<h1 id="location-对象的常用属性"><a href="#location-对象的常用属性" class="headerlink" title="location 对象的常用属性"></a>location 对象的常用属性</h1><h2 id="href"><a href="#href" class="headerlink" title="href"></a>href</h2><p>#3# 语法</p>
-<blockquote>
-<p>location.href</p>
-</blockquote>
-<p>###n 功能</p>
-<p>返回当前加载页面的完整URL</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>location.href 与 window.location.href 等价</p>
-<h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>location.hash</p>
-</blockquote>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>返回 URL 中的 hash（#号后跟零或多个字符），如果不包含这返回空字符串</p>
-<h3 id="说明-1"><a href="#说明-1" class="headerlink" title="说明"></a>说明</h3><p>如果写了 location.hash=#xxx 相当于为当前对象设置锚点</p>
-<p>如果未写，相当于为当前页面返回 URL 中的 #xxx</p>
-<h2 id="host"><a href="#host" class="headerlink" title="host"></a>host</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>location.host</p>
-</blockquote>
-<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><p>返回服务器名称和端口号</p>
-<h2 id="hostname"><a href="#hostname" class="headerlink" title="hostname"></a>hostname</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>location.hostname</p>
-</blockquote>
-<h3 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a>功能</h3><p>返回不带端口号的服务器名称</p>
-<h2 id="pathname"><a href="#pathname" class="headerlink" title="pathname"></a>pathname</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>location.pathname</p>
-</blockquote>
-<h3 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a>功能</h3><p>返回 URL 中的目录和（或）文件名</p>
-<h2 id="port"><a href="#port" class="headerlink" title="port"></a>port</h2><h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>location.port</p>
-</blockquote>
-<h3 id="功能-4"><a href="#功能-4" class="headerlink" title="功能"></a>功能</h3><p>返回 URL 中指定的端口号，如果没有，返回空字符串</p>
-<h2 id="protocol"><a href="#protocol" class="headerlink" title="protocol"></a>protocol</h2><h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>location.protocol</p>
-</blockquote>
-<h3 id="功能-5"><a href="#功能-5" class="headerlink" title="功能"></a>功能</h3><p>返回页面使用的协议</p>
-<h2 id="search"><a href="#search" class="headerlink" title="search"></a>search</h2><h3 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>location.search</p>
-</blockquote>
-<h3 id="功能-6"><a href="#功能-6" class="headerlink" title="功能"></a>功能</h3><p>返回 URL 的查询字符串。这个字符串以问号开头</p>
-<h1 id="位置操作"><a href="#位置操作" class="headerlink" title="位置操作"></a>位置操作</h1><h2 id="改变浏览器位置的方法："><a href="#改变浏览器位置的方法：" class="headerlink" title="改变浏览器位置的方法："></a>改变浏览器位置的方法：</h2><p>location.href 属性</p>
-<h2 id="location-对象其他属性也可改变-URL"><a href="#location-对象其他属性也可改变-URL" class="headerlink" title="location 对象其他属性也可改变 URL"></a>location 对象其他属性也可改变 URL</h2><ul>
-<li><p>location.hash</p>
-</li>
-<li><p>location.search</p>
-</li>
-</ul>
-<h2 id="replace"><a href="#replace" class="headerlink" title="replace()"></a>replace()</h2><h3 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>location.replace(url)</p>
-</blockquote>
-<h3 id="功能-7"><a href="#功能-7" class="headerlink" title="功能"></a>功能</h3><p>重新定向 URL</p>
-<h3 id="说明-2"><a href="#说明-2" class="headerlink" title="说明"></a>说明</h3><p>使用 location.replace 不会在历史记录中生成新记录</p>
-<h2 id="reload"><a href="#reload" class="headerlink" title="reload()"></a>reload()</h2><h3 id="语法-8"><a href="#语法-8" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>location.reload()</p>
-</blockquote>
-<h3 id="功能-8"><a href="#功能-8" class="headerlink" title="功能"></a>功能</h3><p>重新加载当前显示的页面</p>
-<h3 id="说明-3"><a href="#说明-3" class="headerlink" title="说明"></a>说明</h3><ul>
-<li><p>location.reload()有可能从缓存中加载</p>
-</li>
-<li><p>location.reload(true)从服务器重新加载</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之location对象及方法/" data-id="ck2ctehh80044ogw0wzawskxw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-BOM基础及window对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/25/JavaScript基础知识点-BOM基础及window对象/" class="article-date">
-  <time datetime="2019-08-25T08:41:38.000Z" itemprop="datePublished">2019-08-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/25/JavaScript基础知识点-BOM基础及window对象/">JavaScript基础知识点--BOM基础及window对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="什么是-BOM"><a href="#什么是-BOM" class="headerlink" title="什么是 BOM"></a>什么是 BOM</h1><p>BOM（browser object model）浏览器对象模型</p>
-<h2 id="BOM-对象"><a href="#BOM-对象" class="headerlink" title="BOM 对象"></a>BOM 对象</h2><ul>
-<li><p>window</p>
-</li>
-<li><p>navigator</p>
-</li>
-<li><p>screen</p>
-</li>
-<li><p>history</p>
-</li>
-<li><p>location</p>
-</li>
-<li><p>document</p>
-</li>
-<li><p>event</p>
-</li>
-</ul>
-<h1 id="window"><a href="#window" class="headerlink" title="window"></a>window</h1><p>window 是浏览器的一个实例，在浏览器中，window 对象有双重角色，它既是通过 JavaScript访问浏览器窗口的一个接口，又是 ECMAScript 规定的 Global 对象</p>
-<p>所有全局变量和全局方法都被归在 window 对象上</p>
-<h2 id="window-对象方法"><a href="#window-对象方法" class="headerlink" title="window 对象方法"></a>window 对象方法</h2><h3 id="alert"><a href="#alert" class="headerlink" title="alert"></a>alert</h3><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><blockquote>
-<p>window.alert(“content”)</p>
-</blockquote>
-<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><p>显示带有一段消息和一个确认按钮的警告框</p>
-<h3 id="confirm"><a href="#confirm" class="headerlink" title="confirm"></a>confirm</h3><h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><blockquote>
-<p>window.confirm(“message”)</p>
-</blockquote>
-<h5 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h5><p>显示一个带有指定消息和 OK 及取消按钮的对话框</p>
-<h5 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h5><ul>
-<li><p>如果用户点击确定按钮，则 confirm()返回 true</p>
-</li>
-<li><p>如果用户点击取消按钮，则 confirm()返回 false</p>
-</li>
-</ul>
-<h3 id="prompt"><a href="#prompt" class="headerlink" title="prompt"></a>prompt</h3><h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><blockquote>
-<p>window.prompt(“text, defaultText”)</p>
-</blockquote>
-<h4 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
-<li><p>text：要在对话框中显示的纯文本（而不是 HTML 格式的文本）</p>
-</li>
-<li><p>defaultText：默认的输入文本</p>
-</li>
-</ul>
-<h4 id="返回值-1"><a href="#返回值-1" class="headerlink" title="返回值"></a>返回值</h4><ul>
-<li><p>如果用户单击提示框的取消按钮，则返回 null</p>
-</li>
-<li><p>如果用户单击确认按钮，则返回输入字段当前显示的文本</p>
-</li>
-</ul>
-<h3 id="open"><a href="#open" class="headerlink" title="open"></a>open</h3><h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><blockquote>
-<p>window.open(pageURL, name, parameters)</p>
-</blockquote>
-<h4 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a>功能</h4><p>打开一个新的浏览器窗口或查找一个已命名的窗口</p>
-<h4 id="参数说明-1"><a href="#参数说明-1" class="headerlink" title="参数说明"></a>参数说明</h4><ul>
-<li><p>pageURL：子窗口路径</p>
-</li>
-<li><p>name：子窗口句柄（name 声明了新窗口的名称，方便后期通过 name 对子窗口进行引用）</p>
-</li>
-<li><p>parameters：窗口参数（各参数用逗号分隔）</p>
-</li>
-</ul>
-<h5 id="参数parameters说明"><a href="#参数parameters说明" class="headerlink" title="参数parameters说明"></a>参数parameters说明</h5><table>
-<thead>
-<tr>
-<th>可选参数</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>width</td>
-<td>窗口宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>窗口高度</td>
-</tr>
-<tr>
-<td>left</td>
-<td>窗口X轴坐标</td>
-</tr>
-<tr>
-<td>top</td>
-<td>窗口Y轴坐标</td>
-</tr>
-<tr>
-<td>toolbar</td>
-<td>是否显示浏览器的工具栏</td>
-</tr>
-<tr>
-<td>menubar</td>
-<td>是否显示菜单栏</td>
-</tr>
-<tr>
-<td>scrollbars</td>
-<td>是否显示滚动条</td>
-</tr>
-<tr>
-<td>location</td>
-<td>是否显示地址字段</td>
-</tr>
-<tr>
-<td>status</td>
-<td>是否添加状态栏</td>
-</tr>
-</tbody></table>
-<h3 id="close"><a href="#close" class="headerlink" title="close"></a>close</h3><h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><blockquote>
-<p>window.close()</p>
-</blockquote>
-<h4 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a>功能</h4><p>关闭浏览器窗口</p>
-<h1 id="超时调用"><a href="#超时调用" class="headerlink" title="超时调用"></a>超时调用</h1><h2 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>setTimeout(code, millisec)</p>
-</blockquote>
-<h2 id="功能-4"><a href="#功能-4" class="headerlink" title="功能"></a>功能</h2><p>在指定的毫秒数后调用函数或计算表达式</p>
-<h2 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h2><ul>
-<li><p>code：要调用的函数或要执行的 JavaScript 代码串</p>
-</li>
-<li><p>millisec：在执行代码前需等待的毫秒数</p>
-</li>
-</ul>
-<h2 id="返回值-2"><a href="#返回值-2" class="headerlink" title="返回值"></a>返回值</h2><p>该方法返回一个 ID 值，通过它取消超时调用</p>
-<h1 id="清除超时调用"><a href="#清除超时调用" class="headerlink" title="清除超时调用"></a>清除超时调用</h1><h2 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>clearTimeout(id_of_settimeout)</p>
-</blockquote>
-<h2 id="功能-5"><a href="#功能-5" class="headerlink" title="功能"></a>功能</h2><p>取消由 setTimeout() 方法设置的 timeout</p>
-<h2 id="参数说明-2"><a href="#参数说明-2" class="headerlink" title="参数说明"></a>参数说明</h2><ul>
-<li>id_of_settimeout：由 setTimeout() 返回的 ID 值，该值标识要取消的延迟执行代码块</li>
-</ul>
-<h1 id="间歇调用"><a href="#间歇调用" class="headerlink" title="间歇调用"></a>间歇调用</h1><h2 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>setInterval(code, millisec)</p>
-</blockquote>
-<h2 id="功能-6"><a href="#功能-6" class="headerlink" title="功能"></a>功能</h2><p>每隔指定的时间执行一次代码</p>
-<ul>
-<li><p>code：要调用的函数或要执行的代码串</p>
-</li>
-<li><p>millsec：周期性执行或调用 code 之间的时间间隔，以毫秒计</p>
-</li>
-</ul>
-<h1 id="清除间歇调用"><a href="#清除间歇调用" class="headerlink" title="清除间歇调用"></a>清除间歇调用</h1><h2 id="语法-8"><a href="#语法-8" class="headerlink" title="语法"></a>语法</h2><blockquote>
-<p>clearInterval(id_of_setinterval)</p>
-</blockquote>
-<h2 id="功能-7"><a href="#功能-7" class="headerlink" title="功能"></a>功能</h2><p>取消 setInterval() 方法设置的 interval</p>
-<h2 id="参数说明：-1"><a href="#参数说明：-1" class="headerlink" title="参数说明："></a>参数说明：</h2><ul>
-<li>id_of_setinterval：由 setInterval() 返回的 ID 值</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/25/JavaScript基础知识点-BOM基础及window对象/" data-id="ck2ctehhb0047ogw0yxp3vebg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" data-id="ck2j2blpf0051lgw0gcve90dd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1343,7 +1465,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 12.86px;">React</a> <a href="/tags/Sass/" style="font-size: 11.43px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
     </div>
   </div>
 
@@ -1352,7 +1474,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -1365,23 +1487,23 @@
       <ul>
         
           <li>
+            <a href="/2019/11/03/react-redux/">react-redux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/02/redux/">redux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/30/React-router/">React-router</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/29/React生命周期/">React生命周期</a>
           </li>
         
           <li>
-            <a href="/2019/10/28/React组件三大属性/">React组件三大属性及组件交互</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/25/Sass内置函数/">Sass内置函数</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/23/Sass基础/">Sass基础</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/21/ES6-promise/">ES6-promise</a>
+            <a href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
           </li>
         
       </ul>

@@ -62,6 +62,332 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-react-redux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/03/react-redux/" class="article-date">
+  <time datetime="2019-11-03T10:29:29.000Z" itemprop="datePublished">2019-11-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/03/react-redux/">react-redux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ol>
+<li><p>一个 react 插件库</p>
+</li>
+<li><p>专门用来简化 react 应用中使用 redux</p>
+</li>
+</ol>
+<h2 id="React-Redux-将所有组件分成两大类"><a href="#React-Redux-将所有组件分成两大类" class="headerlink" title="React-Redux 将所有组件分成两大类"></a>React-Redux 将所有组件分成两大类</h2><h3 id="UI-组件"><a href="#UI-组件" class="headerlink" title="UI 组件"></a>UI 组件</h3><ul>
+<li><p>只负责 UI 的呈现，不带任何业务逻辑</p>
+</li>
+<li><p>通过 props 接收数据（一般数据和函数）</p>
+</li>
+<li><p>不使用任何 Redux 的 API</p>
+</li>
+<li><p>一般保存在 components 文件夹下</p>
+</li>
+</ul>
+<h3 id="容器组件"><a href="#容器组件" class="headerlink" title="容器组件"></a>容器组件</h3><ul>
+<li><p>负责管理数据和业务逻辑，不负责 UI 的呈现</p>
+</li>
+<li><p>使用 Redux 的 API</p>
+</li>
+<li><p>一般保存在 containers 文件夹下</p>
+</li>
+</ul>
+<h2 id="相关-API"><a href="#相关-API" class="headerlink" title="相关 API"></a>相关 API</h2><h3 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a>Provider</h3><p>让所有组件都可以得到 state 数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;Provider store=&#123;store&#125; &gt;</span><br><span class="line">    &lt;App /&gt;</span><br><span class="line">&lt;/Provider&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="connect"><a href="#connect" class="headerlink" title="connect()"></a>connect()</h3><p>用于包装 UI 组件生成容器组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; connect &#125; from &apos;react-redux&apos;</span><br><span class="line"></span><br><span class="line">export default connect(</span><br><span class="line">    mapStateToprops()</span><br><span class="line">    mapDispatchToprops()</span><br><span class="line">)(component)</span><br></pre></td></tr></table></figure>
+
+<h3 id="mapStateToprops"><a href="#mapStateToprops" class="headerlink" title="mapStateToprops()"></a>mapStateToprops()</h3><p>将外部的数据（即 state 对象）转换为 UI 组件的标签属性</p>
+<h3 id="mapDispatchToProps"><a href="#mapDispatchToProps" class="headerlink" title="mapDispatchToProps"></a>mapDispatchToProps</h3><p>将分发 action 的函数转换为 UI 组件的标签属性</p>
+<p>简洁语法可以直接指定为 actins 对象或包含多个 action 方法的对象</p>
+<h2 id="使用-react-redux"><a href="#使用-react-redux" class="headerlink" title="使用 react-redux"></a>使用 react-redux</h2><h3 id="下载依赖包"><a href="#下载依赖包" class="headerlink" title="下载依赖包"></a>下载依赖包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save react-redux</span><br></pre></td></tr></table></figure>
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
+<li><p>redux 默认是不能进行异步处理的</p>
+</li>
+<li><p>应用中又需要在 redux 中执行异步任务(ajax, 定时器)</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/03/react-redux/" data-id="ck2j2blr3007rlgw0fj5lwp5v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-redux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/02/redux/" class="article-date">
+  <time datetime="2019-11-02T03:13:29.000Z" itemprop="datePublished">2019-11-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/02/redux/">redux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="redux-是什么"><a href="#redux-是什么" class="headerlink" title="redux 是什么"></a>redux 是什么</h2><ol>
+<li><p>redux 是一个独立专门用于做状态管理的 JS 库（不是 react 插件库）</p>
+</li>
+<li><p>它可以用在 react，angular，Vue 等项目中，但基本与 react 配合使用</p>
+</li>
+<li><p>作用：集中式管理 react 应用中多个组件共享的状态</p>
+</li>
+</ol>
+<h3 id="谨记"><a href="#谨记" class="headerlink" title="谨记"></a>谨记</h3><p>建议在多个组件中共享的 state 才用 redux</p>
+<h2 id="下载依赖包"><a href="#下载依赖包" class="headerlink" title="下载依赖包"></a>下载依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save redux</span><br></pre></td></tr></table></figure>
+
+<h1 id="redux-的核心-API"><a href="#redux-的核心-API" class="headerlink" title="redux 的核心 API"></a>redux 的核心 API</h1><h2 id="createStore"><a href="#createStore" class="headerlink" title="createStore()"></a>createStore()</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>创建包含指定 reducer 的 store 对象</p>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore&#125; from &apos;redux&apos;</span><br><span class="line">import counter from &apos;./reducers/counter&apos;</span><br><span class="line">const store = createStore(counter)</span><br></pre></td></tr></table></figure>
+
+<h2 id="store-对象"><a href="#store-对象" class="headerlink" title="store 对象"></a>store 对象</h2><h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><p>redux 库最核心的管理对象</p>
+<h3 id="它内部维护着："><a href="#它内部维护着：" class="headerlink" title="它内部维护着："></a>它内部维护着：</h3><ul>
+<li><p>state</p>
+</li>
+<li><p>reducer</p>
+</li>
+</ul>
+<h3 id="核心方法："><a href="#核心方法：" class="headerlink" title="核心方法："></a>核心方法：</h3><ul>
+<li><p>getState()</p>
+</li>
+<li><p>dispatch(action)：更新 state 状态</p>
+</li>
+<li><p>subscribe(listener)：订阅监听（store中的状态变化了，就会自动调用进行重绘）</p>
+</li>
+</ul>
+<h3 id="编码-1"><a href="#编码-1" class="headerlink" title="编码"></a>编码</h3><ul>
+<li><p>store.getState()</p>
+</li>
+<li><p>store.dispatch({type: ‘INCREMENT’, number})</p>
+</li>
+<li><p>store.subscribe(render)</p>
+</li>
+</ul>
+<h2 id="applyMiddleware"><a href="#applyMiddleware" class="headerlink" title="applyMiddleware()"></a>applyMiddleware()</h2><h3 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h3><p>应用上基于 redux 的中间件（插件库）</p>
+<h3 id="编码-2"><a href="#编码-2" class="headerlink" title="编码"></a>编码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore, applyMiddleware&#125; from &apos;redux&apos;</span><br><span class="line">import thunk from &apos;redux-thunk&apos; // redux 异步中间件</span><br><span class="line">const store = createStore(</span><br><span class="line">    counter,</span><br><span class="line">    applyMiddleware(thunk) // 应用上异步中间件</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="combineReducers"><a href="#combineReducers" class="headerlink" title="combineReducers()"></a>combineReducers()</h2><h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><p>合并多个 reducer 函数</p>
+<h3 id="编码："><a href="#编码：" class="headerlink" title="编码："></a>编码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export default combineReducers(&#123;</span><br><span class="line">    user,</span><br><span class="line">    chatUser,</span><br><span class="line">    chat</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="redux-的三个核心概念"><a href="#redux-的三个核心概念" class="headerlink" title="redux 的三个核心概念"></a>redux 的三个核心概念</h1><h2 id="action"><a href="#action" class="headerlink" title="action"></a>action</h2><ul>
+<li><p>标识要执行行为的对象</p>
+</li>
+<li><p>包含两个方面的属性</p>
+<ul>
+<li><p>type: 标识属性，值为字符串，唯一，必要属性</p>
+</li>
+<li><p>xxx: 数据属性，值类型任意，可选属性</p>
+</li>
+</ul>
+</li>
+<li><p>Action Creator（创建 Action 的工厂函数）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const increment = (number) =&gt; (&#123;type: &apos;INCREMENT&apos;, data: number&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="reducer"><a href="#reducer" class="headerlink" title="reducer"></a>reducer</h2><ul>
+<li><p>根据老的 state 和 action，产生新的 state 的纯函数</p>
+</li>
+<li><p>样例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export default function counter(state = 0, action)&#123;</span><br><span class="line">    switch(action.type)&#123;</span><br><span class="line">        case &apos;INCREMENT&apos;:</span><br><span class="line">            return state + action.data</span><br><span class="line">        case &apos;DECREMENT&apos;</span><br><span class="line">            return state - action.data</span><br><span class="line">        default:</span><br><span class="line">            return state</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：返回一个新的状态，不要改变原来的状态</p>
+</li>
+</ul>
+<h2 id="store"><a href="#store" class="headerlink" title="store"></a>store</h2><ul>
+<li><p>将 state，action 与 reducer 联系在一起的对象</p>
+</li>
+<li><p>如何得到此对象？</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore&#125; from &apos;redux&apos;</span><br><span class="line">import reducer from &apos;./reducers&apos;</span><br><span class="line">const store = createStore(reducer)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>此对象的功能？</p>
+<ul>
+<li><p>getState(): 得到 state</p>
+</li>
+<li><p>dispatch(): 分发 action，触发 reducer 调用。产生新的 state</p>
+</li>
+<li><p>subscribe(listener): 注册监听，当产生了新的 state 时，自动调用</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/02/redux/" data-id="ck2j2bls4009jlgw0lefjkdf6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-React-router" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/30/React-router/" class="article-date">
+  <time datetime="2019-10-30T10:32:00.000Z" itemprop="datePublished">2019-10-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/30/React-router/">React-router</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="react-router-的理解"><a href="#react-router-的理解" class="headerlink" title="react-router 的理解"></a>react-router 的理解</h2><ol>
+<li><p>react 的一个插件库</p>
+</li>
+<li><p>专门用来实现一个 SPA 应用</p>
+</li>
+<li><p>基于 react 的项目基本都会用到此库</p>
+</li>
+</ol>
+<h2 id="SPA-的理解"><a href="#SPA-的理解" class="headerlink" title="SPA 的理解"></a>SPA 的理解</h2><ol>
+<li><p>单页 Web 应用（single page web application）</p>
+</li>
+<li><p>整个应用只有一个完整的页面</p>
+</li>
+<li><p>点击页面中的链接不会刷新页面，本身也不会向服务器发请求</p>
+</li>
+<li><p>当点击链接时，只会做页面的局部更新</p>
+</li>
+<li><p>数据都需要通过 ajax 请求获取，并在前端异步展现</p>
+</li>
+</ol>
+<h2 id="路由的理解"><a href="#路由的理解" class="headerlink" title="路由的理解"></a>路由的理解</h2><h3 id="什么是路由"><a href="#什么是路由" class="headerlink" title="什么是路由"></a>什么是路由</h3><ul>
+<li><p>一个路由就是一个映射关系(key: value)</p>
+</li>
+<li><p>key 为路由路径，value 可能是 function/component</p>
+</li>
+</ul>
+<h3 id="路由分类"><a href="#路由分类" class="headerlink" title="路由分类"></a>路由分类</h3><ul>
+<li><p>后台路由：node 服务器端路由，value 是function，用来处理客户端提交的请求并返回一个响应数据</p>
+</li>
+<li><p>前台路由：浏览器端路由，value 是 component，当请求的是路由 path 时，浏览器端前没有发送 HTTP 请求，但界面会更新显示对应的组件</p>
+</li>
+</ul>
+<h3 id="后台路由"><a href="#后台路由" class="headerlink" title="后台路由"></a>后台路由</h3><ul>
+<li><p>注册路由：router.get(path, function(req, res))</p>
+</li>
+<li><p>当 node 接收到一个请求时，根据请求路径找到匹配的路由，调用路由中的函数来处理请求，返回响应数据</p>
+</li>
+</ul>
+<h3 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h3><ul>
+<li><p>注册路由：<code>&lt;Route path=&#39;/about&#39; component={About}&gt;</code></p>
+</li>
+<li><p>当浏览器的 hash 变为 #about 时，当前路由组件就会变成 About 组件</p>
+</li>
+</ul>
+<h2 id="react-router-相关-API"><a href="#react-router-相关-API" class="headerlink" title="react-router 相关 API"></a>react-router 相关 API</h2><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ul>
+<li><p><code>&lt;BrowerRouter</code></p>
+</li>
+<li><p><code>&lt;HashRouter&gt;</code></p>
+</li>
+<li><p><code>&lt;Router&gt;</code></p>
+</li>
+<li><p><code>&lt;Redirect&gt;</code>：默认选中路由</p>
+</li>
+<li><p><code>&lt;Link&gt;</code></p>
+</li>
+<li><p><code>&lt;NavLink&gt;</code></p>
+</li>
+<li><p><code>&lt;Switch&gt;</code>：其中的<code>&lt;Route&gt;</code>在路径相同的情况下，只匹配第一个，这个可以避免重复匹配</p>
+</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><p>history 对象</p>
+</li>
+<li><p>match 对象</p>
+</li>
+<li><p>withRouter 函数</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/30/React-router/" data-id="ck2j2blqw007flgw03qer8k4x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-React生命周期" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/29/React生命周期/" class="article-date">
@@ -136,7 +462,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/29/React生命周期/" data-id="ck2ctehj10071ogw0znk2vnzp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/29/React生命周期/" data-id="ck2j2blqj006ulgw0keftfi9t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -148,9 +474,9 @@
 
 
   
-    <article id="post-React组件三大属性" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-React组件三大属性及组件通信" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/28/React组件三大属性/" class="article-date">
+    <a href="/2019/10/28/React组件三大属性及组件通信/" class="article-date">
   <time datetime="2019-10-28T07:28:29.000Z" itemprop="datePublished">2019-10-28</time>
 </a>
     
@@ -166,7 +492,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/28/React组件三大属性/">React组件三大属性及组件交互</a>
+      <a class="article-title" href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
     </h1>
   
 
@@ -194,11 +520,27 @@
 <h1 id="组件交互"><a href="#组件交互" class="headerlink" title="组件交互"></a>组件交互</h1><h2 id="父子组件"><a href="#父子组件" class="headerlink" title="父子组件"></a>父子组件</h2><h3 id="父组件传递给子组件"><a href="#父组件传递给子组件" class="headerlink" title="父组件传递给子组件"></a>父组件传递给子组件</h3><p>将要改变的数据传给子组件，子组件调用函数改变state</p>
 <h3 id="子组件传递给父组件"><a href="#子组件传递给父组件" class="headerlink" title="子组件传递给父组件"></a>子组件传递给父组件</h3><p>子组件不能直接改变父组件的数据！！！</p>
 <p>解决方案：父组件将要改变数据的函数传给子组件，子组件调用这个函数，进而改变父组件的数据</p>
+<h1 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h1><h2 id="方式一：通过-props-传递"><a href="#方式一：通过-props-传递" class="headerlink" title="方式一：通过 props 传递"></a>方式一：通过 props 传递</h2><ol>
+<li><p>共同的数据放在父组件上，特有的数据放在自己组件内部(state)</p>
+</li>
+<li><p>通过 props 可以传递一般数据和函数数据</p>
+</li>
+<li><p>一般数据 -&gt; 父组件传递数据给子组件 -&gt; 子组件读取数据</p>
+</li>
+<li><p>函数数据 -&gt; 子组件传递数据给父组件 -&gt; 子组件调用函数</p>
+</li>
+</ol>
+<h2 id="方式二：使用消息订阅-subscribe-发布-publish-机制"><a href="#方式二：使用消息订阅-subscribe-发布-publish-机制" class="headerlink" title="方式二：使用消息订阅(subscribe)-发布(publish)机制"></a>方式二：使用消息订阅(subscribe)-发布(publish)机制</h2><ol>
+<li><p>工具库：PubSubJS</p>
+</li>
+<li><p>下载：<code>npm install pubsub-js --save</code></p>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/28/React组件三大属性/" data-id="ck2ctehj30075ogw05633y60b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/28/React组件三大属性及组件通信/" data-id="ck2j2blrg008blgw0urszflws" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -396,7 +738,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/25/Sass内置函数/" data-id="ck2ctehiz006xogw0iiztgb9p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/25/Sass内置函数/" data-id="ck2j2blqs0078lgw0addp8zc5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
@@ -527,7 +869,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/23/Sass基础/" data-id="ck2ctehj6007dogw0sjum8adp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/23/Sass基础/" data-id="ck2j2blqu007clgw07f4xipx4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
@@ -620,7 +962,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/21/ES6-promise/" data-id="ck2ctehg4002jogw052p14ons" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/21/ES6-promise/" data-id="ck2j2blmx0021lgw04mgzdzcn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -785,7 +1127,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/18/ES6扩展/" data-id="ck2ctehkk009jogw0ak9o1aq3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/18/ES6扩展/" data-id="ck2j2bloh003qlgw0s59ipsy6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -863,443 +1205,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/17/ES6解构赋值/" data-id="ck2ctehg7002nogw06zk56xw2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/17/ES6解构赋值/" data-id="ck2j2bln3002clgw0emvifu1x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-bootstrap组件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/16/bootstrap组件/" class="article-date">
-  <time datetime="2019-10-16T08:22:17.000Z" itemprop="datePublished">2019-10-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/bootstrap/">bootstrap</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/16/bootstrap组件/">bootstrap组件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="响应式页面开发"><a href="#响应式页面开发" class="headerlink" title="响应式页面开发"></a>响应式页面开发</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (min-width: *px) and (max-width)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="栅格布局"><a href="#栅格布局" class="headerlink" title="栅格布局"></a>栅格布局</h2><p>将屏幕分成12格</p>
-<ul>
-<li><p>元素所占屏幕大小：<code>col-屏幕型号-num</code></p>
-</li>
-<li><p>元素距左侧几格：<code>col-屏幕型号-offset-num</code></p>
-</li>
-</ul>
-<h2 id="网页开发中的单位"><a href="#网页开发中的单位" class="headerlink" title="网页开发中的单位"></a>网页开发中的单位</h2><p>px：相对于屏幕分辨率的长度单位</p>
-<p>em：相对于当前文本内的字体尺寸</p>
-<p>rem 与 em 相似，相对于 HTML 根节点的字体单位</p>
-<h3 id="px"><a href="#px" class="headerlink" title="px"></a>px</h3><p>px 是相对于屏幕分辨率的单位</p>
-<p>px 的大小无法跟随屏幕放大缩小</p>
-<h3 id="em"><a href="#em" class="headerlink" title="em"></a>em</h3><p>1em = 16px（但不完全是）</p>
-<p>em 会继承父级元素的字体大小，适合手机端、平板开发</p>
-<p>IE 的部分版本不支持 em</p>
-<h3 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h3><p>rem 与 em 类似</p>
-<p>rem 会继承根元素的字体大小</p>
-<h2 id="bootstrap-组件"><a href="#bootstrap-组件" class="headerlink" title="bootstrap 组件"></a>bootstrap 组件</h2><ol>
-<li><p>role：标识普通标签，使之语义化，方便浏览器对其具体的功能进行识别</p>
-</li>
-<li><p>aria-label：当焦点落到输入框时，读屏软件就会读出输入框内容</p>
-</li>
-<li><p>tabIndex：可以设置键盘上的 tab 键在控件中进行移动</p>
-</li>
-<li><p>通过该自定义属性管理交互、效果</p>
-</li>
-</ol>
-<h3 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h3><ol>
-<li><p>glyphicon</p>
-</li>
-<li><p>glyphicon-具体图标</p>
-</li>
-</ol>
-<h3 id="下拉菜单"><a href="#下拉菜单" class="headerlink" title="下拉菜单"></a>下拉菜单</h3><ol>
-<li><p>.dropdown 控制组件为下拉</p>
-</li>
-<li><p>.dropdown-menu-right 代替 .pull-right 右对齐</p>
-</li>
-<li><p>.divider 分割线</p>
-</li>
-</ol>
-<h3 id="控件组"><a href="#控件组" class="headerlink" title="控件组"></a>控件组</h3><ol>
-<li><p>.input-group 表示控件组</p>
-</li>
-<li><p>.input-group-addon 可放置额外内容和图标</p>
-</li>
-</ol>
-<h3 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h3><ol>
-<li><p>以一个带有 class .nav 的无序列表开始</p>
-</li>
-<li><p>.nav-tabs 代表可切换的导航</p>
-</li>
-<li><p>.nav-pills 代表胶囊导航</p>
-</li>
-<li><p>.nav-justified 使导航垂直</p>
-</li>
-</ol>
-<h3 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h3><ol>
-<li><p>.pagination 在父元素中添加表示分页</p>
-</li>
-<li><p>.pager 放置在翻页区域</p>
-</li>
-<li><p>.previous 把链接向左对齐，.next 把链接向右对齐</p>
-</li>
-</ol>
-<h3 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h3><ol>
-<li><p>.progress 表示进度条</p>
-</li>
-<li><p>通过状态类改变进度条的颜色</p>
-</li>
-<li><p>.progress-bar-striped 使得进度条颜色渐变</p>
-</li>
-</ol>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><ol>
-<li><p>.list-group 代表列表组</p>
-</li>
-<li><p>.badge 代表状态数</p>
-</li>
-<li><p>.active 代表选中状态</p>
-</li>
-</ol>
-<h3 id="面板"><a href="#面板" class="headerlink" title="面板"></a>面板</h3><ol>
-<li><p>.panel 代表面板</p>
-</li>
-<li><p>.panel-body 代表面板内容</p>
-</li>
-<li><p>.panel-footer 代表面板的注脚</p>
-</li>
-</ol>
-<h2 id="Bootstrap-中的插件"><a href="#Bootstrap-中的插件" class="headerlink" title="Bootstrap 中的插件"></a>Bootstrap 中的插件</h2><ol>
-<li><p>Bootstrap 插件依赖 Bootstrap.js</p>
-</li>
-<li><p>Bootstrap.js 基于 JQuery</p>
-</li>
-</ol>
-<h3 id="data-属性"><a href="#data-属性" class="headerlink" title="data 属性"></a>data 属性</h3><ol>
-<li><p>通过 data 属性控制页面交互</p>
-</li>
-<li><p>$(document).off(‘.data-api’) 解除属性绑定</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/16/bootstrap组件/" data-id="ck2ctehj40079ogw0rlt8issj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ES6基础入门let、const" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/13/ES6基础入门let、const/" class="article-date">
-  <time datetime="2019-10-13T14:40:48.000Z" itemprop="datePublished">2019-10-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/13/ES6基础入门let、const/">ES6基础入门let、const</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><ul>
-<li><p>var</p>
-</li>
-<li><p>直接使用</p>
-</li>
-</ul>
-<h2 id="let-和-var-的主要区别"><a href="#let-和-var-的主要区别" class="headerlink" title="let 和 var 的主要区别"></a>let 和 var 的主要区别</h2><ul>
-<li><p>let 声明的变量只在当前（块级）作用域内有效</p>
-</li>
-<li><p>let 声明的变量不能重复被声明</p>
-</li>
-<li><p>不提供变量提升</p>
-</li>
-<li><p>暂存死区</p>
-</li>
-</ul>
-<h2 id="ES6-之前的作用域"><a href="#ES6-之前的作用域" class="headerlink" title="ES6 之前的作用域"></a>ES6 之前的作用域</h2><ul>
-<li><p>全局作用域</p>
-</li>
-<li><p>函数作用域</p>
-</li>
-<li><p>eval 作用域</p>
-</li>
-</ul>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>常量：不可改变的量</p>
-<h3 id="使用-const"><a href="#使用-const" class="headerlink" title="使用 const"></a>使用 const</h3><ul>
-<li><p>和声明变量一样，基本只是关键字的区别</p>
-</li>
-<li><p>常量必须在声明的时候赋值</p>
-</li>
-<li><p>使用引用类型的对象时，内部的值可以被修改，可通过 Object.freeze(obj)冻结，使其内部的值不能被修改</p>
-</li>
-</ul>
-<h3 id="与let类似的特性"><a href="#与let类似的特性" class="headerlink" title="与let类似的特性"></a>与let类似的特性</h3><ul>
-<li><p>不能重复声明</p>
-</li>
-<li><p>不存在提升</p>
-</li>
-<li><p>只在当前（块级）作用域内有效</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/13/ES6基础入门let、const/" data-id="ck2ctehg2002gogw0ta9i529p" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HTML5音视频" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/13/HTML5音视频/" class="article-date">
-  <time datetime="2019-10-13T01:44:00.000Z" itemprop="datePublished">2019-10-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/HTML5/">HTML5</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/13/HTML5音视频/">HTML5音视频</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="认识-video"><a href="#认识-video" class="headerlink" title="认识 video"></a>认识 video</h2><ul>
-<li><p>video 标签定义视频，比如电影等</p>
-</li>
-<li><p>支持的视频格式：mp4、webm、ogv</p>
-</li>
-</ul>
-<h3 id="video-的兼容性"><a href="#video-的兼容性" class="headerlink" title="video 的兼容性"></a>video 的兼容性</h3><ul>
-<li><p>Google、Firefox 和 Opera 三种格式全部支持</p>
-</li>
-<li><p>Safari 浏览器不支持 video 的 webm 和 ogv 视频格式</p>
-</li>
-<li><p>IE8 以下均不支持 video 标签</p>
-</li>
-</ul>
-<p>source 标签也可以放入 src，如果播放失败，video 会继续看下一个 source 标签，直到兼容</p>
-<h2 id="video-属性"><a href="#video-属性" class="headerlink" title="video 属性"></a>video 属性</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>src</td>
-<td>视频的资源地址</td>
-</tr>
-<tr>
-<td>width</td>
-<td>视频宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>视频高度</td>
-</tr>
-<tr>
-<td>controls</td>
-<td>播放控件</td>
-</tr>
-<tr>
-<td>autoplay</td>
-<td>自动播放</td>
-</tr>
-<tr>
-<td>loop</td>
-<td>循环播放</td>
-</tr>
-<tr>
-<td>poster</td>
-<td>视频封面，没有播放时显示的图片</td>
-</tr>
-<tr>
-<td>muted</td>
-<td>当设置该属性后，它规定视频的音频输出应该被静音</td>
-</tr>
-</tbody></table>
-<p>注意：autoplay 在Chrome上不会自动播放</p>
-<h2 id="video-API-事件"><a href="#video-API-事件" class="headerlink" title="video API 事件"></a>video API 事件</h2><table>
-<thead>
-<tr>
-<th>事件</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>play</td>
-<td>让视频播放/不在暂停时</td>
-</tr>
-<tr>
-<td>pause</td>
-<td>让视频暂停/不在播放时</td>
-</tr>
-<tr>
-<td>duration</td>
-<td>返回当前视频长度</td>
-</tr>
-<tr>
-<td>currentTime</td>
-<td>设置或返回当前视频的总长度，秒为单位</td>
-</tr>
-<tr>
-<td>src</td>
-<td>设置/返回当前视频的来源</td>
-</tr>
-<tr>
-<td>volume</td>
-<td>设置/返回当前视频的音量</td>
-</tr>
-<tr>
-<td>controls</td>
-<td>设置视频是否显示控件</td>
-</tr>
-<tr>
-<td>muted</td>
-<td>设置视频是否静音</td>
-</tr>
-<tr>
-<td>networkState</td>
-<td>返回视频的当前网络状态</td>
-</tr>
-<tr>
-<td>currentSrc</td>
-<td>返回当前音视频的URL，必须是视频加载完成时</td>
-</tr>
-<tr>
-<td>ended</td>
-<td>返回音视频的播放是否已结束</td>
-</tr>
-<tr>
-<td>loop</td>
-<td>设置或返回视频是否应在结束时重新播放</td>
-</tr>
-<tr>
-<td>playbackRate</td>
-<td>设置或返回视频播放的速度</td>
-</tr>
-<tr>
-<td>readyState</td>
-<td>属性返回视频的当前就绪状态</td>
-</tr>
-<tr>
-<td>timeupdate</td>
-<td>目前的播放位置已更改时</td>
-</tr>
-<tr>
-<td>seeked</td>
-<td>当用户已移动/跳跃到视频时的新位置时</td>
-</tr>
-<tr>
-<td>seeking</td>
-<td>当用户开始移动/跳跃到视频中的新位置时</td>
-</tr>
-<tr>
-<td>volumechange</td>
-<td>当音量已更改时</td>
-</tr>
-</tbody></table>
-<h3 id="networkState-属性值"><a href="#networkState-属性值" class="headerlink" title="networkState 属性值"></a>networkState 属性值</h3><table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>NETWORK_EMPTY - 音频/视频尚未初始化</td>
-</tr>
-<tr>
-<td>1</td>
-<td>NETWORK_IDLE - 音频/视频是活动的且已选取资源，但并未使用网络</td>
-</tr>
-<tr>
-<td>2</td>
-<td>NETWORK_LOADING - 浏览器正在下载数据</td>
-</tr>
-<tr>
-<td>3</td>
-<td>NETWORK_NO_SOURCE - 未找到音频/视频来源</td>
-</tr>
-</tbody></table>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/13/HTML5音视频/" data-id="ck2ctehgf002uogw07f38aqtl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
 
     </footer>
   </div>
@@ -1343,7 +1252,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.86px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.57px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.14px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.86px;">Git</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.86px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.43px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.86px;">QT</a> <a href="/tags/React/" style="font-size: 12.86px;">React</a> <a href="/tags/Sass/" style="font-size: 11.43px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.43px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.43px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 14.29px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
     </div>
   </div>
 
@@ -1352,7 +1261,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
     </div>
   </div>
 
@@ -1365,23 +1274,23 @@
       <ul>
         
           <li>
+            <a href="/2019/11/03/react-redux/">react-redux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/02/redux/">redux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/30/React-router/">React-router</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/29/React生命周期/">React生命周期</a>
           </li>
         
           <li>
-            <a href="/2019/10/28/React组件三大属性/">React组件三大属性及组件交互</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/25/Sass内置函数/">Sass内置函数</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/23/Sass基础/">Sass基础</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/21/ES6-promise/">ES6-promise</a>
+            <a href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
           </li>
         
       </ul>

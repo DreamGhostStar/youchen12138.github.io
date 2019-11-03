@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>redux | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="redux 是什么 redux 是一个独立专门用于做状态管理的 JS 库（不是 react 插件库）  它可以用在 react，angular，Vue 等项目中，但基本与 react 配合使用  作用：集中式管理 react 应用中多个组件共享的状态   谨记建议在多个组件中共享的 state 才用 redux 下载依赖包1npm install --save redux  redux 的核心">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redux">
+<meta property="og:url" content="http://yoursite.com/2019/11/02/redux/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="redux 是什么 redux 是一个独立专门用于做状态管理的 JS 库（不是 react 插件库）  它可以用在 react，angular，Vue 等项目中，但基本与 react 配合使用  作用：集中式管理 react 应用中多个组件共享的状态   谨记建议在多个组件中共享的 state 才用 redux 下载依赖包1npm install --save redux  redux 的核心">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-11-03T10:30:17.533Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="redux">
+<meta name="twitter:description" content="redux 是什么 redux 是一个独立专门用于做状态管理的 JS 库（不是 react 插件库）  它可以用在 react，angular，Vue 等项目中，但基本与 react 配合使用  作用：集中式管理 react 应用中多个组件共享的状态   谨记建议在多个组件中共享的 state 才用 redux 下载依赖包1npm install --save redux  redux 的核心">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-redux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/02/redux/" class="article-date">
+  <time datetime="2019-11-02T03:13:29.000Z" itemprop="datePublished">2019-11-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      redux
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="redux-是什么"><a href="#redux-是什么" class="headerlink" title="redux 是什么"></a>redux 是什么</h2><ol>
+<li><p>redux 是一个独立专门用于做状态管理的 JS 库（不是 react 插件库）</p>
+</li>
+<li><p>它可以用在 react，angular，Vue 等项目中，但基本与 react 配合使用</p>
+</li>
+<li><p>作用：集中式管理 react 应用中多个组件共享的状态</p>
+</li>
+</ol>
+<h3 id="谨记"><a href="#谨记" class="headerlink" title="谨记"></a>谨记</h3><p>建议在多个组件中共享的 state 才用 redux</p>
+<h2 id="下载依赖包"><a href="#下载依赖包" class="headerlink" title="下载依赖包"></a>下载依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save redux</span><br></pre></td></tr></table></figure>
+
+<h1 id="redux-的核心-API"><a href="#redux-的核心-API" class="headerlink" title="redux 的核心 API"></a>redux 的核心 API</h1><h2 id="createStore"><a href="#createStore" class="headerlink" title="createStore()"></a>createStore()</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>创建包含指定 reducer 的 store 对象</p>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore&#125; from &apos;redux&apos;</span><br><span class="line">import counter from &apos;./reducers/counter&apos;</span><br><span class="line">const store = createStore(counter)</span><br></pre></td></tr></table></figure>
+
+<h2 id="store-对象"><a href="#store-对象" class="headerlink" title="store 对象"></a>store 对象</h2><h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><p>redux 库最核心的管理对象</p>
+<h3 id="它内部维护着："><a href="#它内部维护着：" class="headerlink" title="它内部维护着："></a>它内部维护着：</h3><ul>
+<li><p>state</p>
+</li>
+<li><p>reducer</p>
+</li>
+</ul>
+<h3 id="核心方法："><a href="#核心方法：" class="headerlink" title="核心方法："></a>核心方法：</h3><ul>
+<li><p>getState()</p>
+</li>
+<li><p>dispatch(action)：更新 state 状态</p>
+</li>
+<li><p>subscribe(listener)：订阅监听（store中的状态变化了，就会自动调用进行重绘）</p>
+</li>
+</ul>
+<h3 id="编码-1"><a href="#编码-1" class="headerlink" title="编码"></a>编码</h3><ul>
+<li><p>store.getState()</p>
+</li>
+<li><p>store.dispatch({type: ‘INCREMENT’, number})</p>
+</li>
+<li><p>store.subscribe(render)</p>
+</li>
+</ul>
+<h2 id="applyMiddleware"><a href="#applyMiddleware" class="headerlink" title="applyMiddleware()"></a>applyMiddleware()</h2><h3 id="作用-2"><a href="#作用-2" class="headerlink" title="作用"></a>作用</h3><p>应用上基于 redux 的中间件（插件库）</p>
+<h3 id="编码-2"><a href="#编码-2" class="headerlink" title="编码"></a>编码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore, applyMiddleware&#125; from &apos;redux&apos;</span><br><span class="line">import thunk from &apos;redux-thunk&apos; // redux 异步中间件</span><br><span class="line">const store = createStore(</span><br><span class="line">    counter,</span><br><span class="line">    applyMiddleware(thunk) // 应用上异步中间件</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="combineReducers"><a href="#combineReducers" class="headerlink" title="combineReducers()"></a>combineReducers()</h2><h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><p>合并多个 reducer 函数</p>
+<h3 id="编码："><a href="#编码：" class="headerlink" title="编码："></a>编码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export default combineReducers(&#123;</span><br><span class="line">    user,</span><br><span class="line">    chatUser,</span><br><span class="line">    chat</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="redux-的三个核心概念"><a href="#redux-的三个核心概念" class="headerlink" title="redux 的三个核心概念"></a>redux 的三个核心概念</h1><h2 id="action"><a href="#action" class="headerlink" title="action"></a>action</h2><ul>
+<li><p>标识要执行行为的对象</p>
+</li>
+<li><p>包含两个方面的属性</p>
+<ul>
+<li><p>type: 标识属性，值为字符串，唯一，必要属性</p>
+</li>
+<li><p>xxx: 数据属性，值类型任意，可选属性</p>
+</li>
+</ul>
+</li>
+<li><p>Action Creator（创建 Action 的工厂函数）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const increment = (number) =&gt; (&#123;type: &apos;INCREMENT&apos;, data: number&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="reducer"><a href="#reducer" class="headerlink" title="reducer"></a>reducer</h2><ul>
+<li><p>根据老的 state 和 action，产生新的 state 的纯函数</p>
+</li>
+<li><p>样例：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export default function counter(state = 0, action)&#123;</span><br><span class="line">    switch(action.type)&#123;</span><br><span class="line">        case &apos;INCREMENT&apos;:</span><br><span class="line">            return state + action.data</span><br><span class="line">        case &apos;DECREMENT&apos;</span><br><span class="line">            return state - action.data</span><br><span class="line">        default:</span><br><span class="line">            return state</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：返回一个新的状态，不要改变原来的状态</p>
+</li>
+</ul>
+<h2 id="store"><a href="#store" class="headerlink" title="store"></a>store</h2><ul>
+<li><p>将 state，action 与 reducer 联系在一起的对象</p>
+</li>
+<li><p>如何得到此对象？</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore&#125; from &apos;redux&apos;</span><br><span class="line">import reducer from &apos;./reducers&apos;</span><br><span class="line">const store = createStore(reducer)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>此对象的功能？</p>
+<ul>
+<li><p>getState(): 得到 state</p>
+</li>
+<li><p>dispatch(): 分发 action，触发 reducer 调用。产生新的 state</p>
+</li>
+<li><p>subscribe(listener): 注册监听，当产生了新的 state 时，自动调用</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/02/redux/" data-id="ck2j2bls4009jlgw0lefjkdf6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/11/03/react-redux/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          react-redux
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/30/React-router/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">React-router</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sass/">Sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bootstrap/">bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/03/react-redux/">react-redux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/02/redux/">redux</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/30/React-router/">React-router</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/29/React生命周期/">React生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
