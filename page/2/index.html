@@ -62,6 +62,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ES6解构赋值" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/17/ES6解构赋值/" class="article-date">
+  <time datetime="2019-10-17T10:59:34.000Z" itemprop="datePublished">2019-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/17/ES6解构赋值/">ES6解构赋值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>解构赋值语法是一个 JavaScript 表达式，这使得可以将值从数组或属性从对象提取到不同的变量中</p>
+<ul>
+<li><p>数组的结构赋值</p>
+</li>
+<li><p>对象的解构赋值</p>
+</li>
+<li><p>字符串的解构赋值</p>
+</li>
+<li><p>数值与布尔值的解构赋值</p>
+</li>
+<li><p>函数参数的解构赋值</p>
+</li>
+</ul>
+<h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4];</span><br><span class="line">let [a, b, c, d] = arr; // a=1, b=2, b=3, b=4</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr = [&apos;a&apos;, &apos;b&apos;, [&apos;c&apos;, &apos;d&apos;, [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;]]];</span><br><span class="line">const [a, b] = arr; // a=&apos;a&apos;, b=&apos;b&apos;</span><br><span class="line">const [, , g] = [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;] // g=&apos;g&apos;</span><br><span class="line">const [, , [, , g]] = [&apos;c&apos;, &apos;d&apos;, [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;]]; // g=&apos;g&apos;</span><br></pre></td></tr></table></figure>
+
+<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2, 3];</span><br><span class="line">const arr2 = [&apos;a&apos;, &apos;b&apos;];</span><br><span class="line">const arr3 = [&apos;zz&apos;, 1];</span><br><span class="line">const arr4 = [...arr1, ...arr2, ...arr3]; // arr4 = [1, 2, 3, &apos;a&apos;, &apos;b&apos;, &apos;zz&apos;, 1]</span><br><span class="line"></span><br><span class="line">const arr = [1, 2, 3, 4];</span><br><span class="line">const [a, b, ...c] = arr; // c = [3, 4]</span><br></pre></td></tr></table></figure>
+
+<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, undefined, undefined];</span><br><span class="line">const [a, b = 2, c, d] = arr; // a=1, b=2, c=d=undefined</span><br></pre></td></tr></table></figure>
+
+<h4 id="交换变量"><a href="#交换变量" class="headerlink" title="交换变量"></a>交换变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[a, b] = [b, a];</span><br></pre></td></tr></table></figure>
+
+<h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><p>对象的解构赋值与数组的解构赋值相似</p>
+<p>等号左右两边都为对象结构 —— <code>const{a, b} = {a:1, b:2}</code></p>
+<p>左边的<code>{}</code>中为需要赋值的变量</p>
+<p>右边为需要解构的对象</p>
+<h4 id="对象的解构赋值的主要用途"><a href="#对象的解构赋值的主要用途" class="headerlink" title="对象的解构赋值的主要用途"></a>对象的解构赋值的主要用途</h4><ul>
+<li><p>提取对象属性</p>
+</li>
+<li><p>使用对象传入乱序的函数参数</p>
+</li>
+<li><p>获取多个函数返回值</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/17/ES6解构赋值/" data-id="ck2lwegr4002k98w01fayk316" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-bootstrap组件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/16/bootstrap组件/" class="article-date">
@@ -196,7 +274,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/16/bootstrap组件/" data-id="ck2j2dxcz007lpcw0hd9n0df9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/16/bootstrap组件/" data-id="ck2lwegty007b98w0nlb9m6c0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
@@ -280,7 +358,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/13/ES6基础入门let、const/" data-id="ck2j2dx9j0027pcw0n8gjqvoz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/13/ES6基础入门let、const/" data-id="ck2lwegr1002g98w0lssn765b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -483,7 +561,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/13/HTML5音视频/" data-id="ck2j2dxa90032pcw0mn70347n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/13/HTML5音视频/" data-id="ck2lwegsv005998w0gmmj1zl8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
@@ -614,7 +692,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/12/React简介/" data-id="ck2j2dxcp0073pcw0nxld8ujd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/12/React简介/" data-id="ck2lwegtn006n98w0vhp6i97r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -956,7 +1034,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/07/bootstrap入门之全局样式/" data-id="ck2j2dxcy007jpcw0kbopzy4v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/07/bootstrap入门之全局样式/" data-id="ck2lwegu2007j98w0btnufye6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
@@ -1051,7 +1129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/28/jQuery扩展之动画/" data-id="ck2j2dxd7007zpcw0xu8889lq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/28/jQuery扩展之动画/" data-id="ck2lweguk008i98w0aw864bvf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -1174,7 +1252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/27/jQuery事件/" data-id="ck2j2dxd3007tpcw0mp2bl96c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/27/jQuery事件/" data-id="ck2lwegu6007r98w099psnxuv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -1366,7 +1444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/26/JavaScript进阶知识点-AJAX及JSON/" data-id="ck2j2dxc0005vpcw0g5da2ja7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/26/JavaScript进阶知识点-AJAX及JSON/" data-id="ck2lwegtj006f98w0an7eit0p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1577,120 +1655,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/24/jQuery选择器/" data-id="ck2j2dxd90082pcw0an245ces" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jQuery入门" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/09/23/jQuery入门/" class="article-date">
-  <time datetime="2019-09-23T07:43:58.000Z" itemprop="datePublished">2019-09-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/23/jQuery入门/">jQuery入门¨</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="jQuery是什么"><a href="#jQuery是什么" class="headerlink" title="jQuery是什么"></a>jQuery是什么</h2><p>jQuery 是一个快速、小巧且功能丰富的 JavaScript 库。它使 HTML 文档的遍历和操作、事件处理、动画和 Ajax 等操作变得更加简单，并提供了一个易于使用的 API ，可以跨多种浏览器工作。jQuery 集多功能性和可扩展性于一身，改变了数百万人编写 JavaScript 的方式</p>
-<p>jQuery 是一个请年假的“写得少，做得多” 的 JavaScript 库</p>
-<h2 id="通过-ID-获取一个-HTML-元素"><a href="#通过-ID-获取一个-HTML-元素" class="headerlink" title="通过 ID 获取一个 HTML 元素"></a>通过 ID 获取一个 HTML 元素</h2><h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>var obj = document.getElementById(&#39;idValue&#39;)</code></p>
-<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><p><code>var obj = $(&#39;idValue)</code></p>
-<h2 id="将一个-HTML-元素隐藏"><a href="#将一个-HTML-元素隐藏" class="headerlink" title="将一个 HTML 元素隐藏"></a>将一个 HTML 元素隐藏</h2><h3 id="JavaScript-1"><a href="#JavaScript-1" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>document.getElementById(&#39;idValue&#39;).style.display = &#39;none&#39;</code></p>
-<h3 id="jQuery-1"><a href="#jQuery-1" class="headerlink" title="jQuery"></a>jQuery</h3><p><code>$(&#39;idValue&#39;).hide()</code></p>
-<h2 id="将一个-HTML-元素的宽度变成-200px"><a href="#将一个-HTML-元素的宽度变成-200px" class="headerlink" title="将一个 HTML 元素的宽度变成 200px"></a>将一个 HTML 元素的宽度变成 200px</h2><h3 id="JavaScript-2"><a href="#JavaScript-2" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>document.getElementById(&#39;idValue&#39;).style.width = &#39;200px&#39;</code></p>
-<h3 id="jQuery-2"><a href="#jQuery-2" class="headerlink" title="jQuery"></a>jQuery</h3><p><code>$(&#39;idValue&#39;).css(&#39;width&#39;, &#39;200px&#39;)</code></p>
-<h2 id="jQuery-的作用"><a href="#jQuery-的作用" class="headerlink" title="jQuery 的作用"></a>jQuery 的作用</h2><ul>
-<li><p>HTML 元素的选取</p>
-</li>
-<li><p>HTML 元素操作</p>
-</li>
-<li><p>CSS 操作</p>
-</li>
-<li><p>HTML 事件函数</p>
-</li>
-<li><p>JavaScript 特效和动画</p>
-</li>
-<li><p>HTML DOM 遍历和修改</p>
-</li>
-<li><p>AJAX</p>
-</li>
-<li><p>Utilities</p>
-</li>
-</ul>
-<h2 id="jQuery-的版本"><a href="#jQuery-的版本" class="headerlink" title="jQuery 的版本"></a>jQuery 的版本</h2><h3 id="版本分类"><a href="#版本分类" class="headerlink" title="版本分类"></a>版本分类</h3><blockquote>
-<p><code>jQuery1.x.x/jQuery2.x.x/jQuery3.x.x</code></p>
-</blockquote>
-<p>IE 6/7/8兼容最高版本为 jQuery1.9.1</p>
-<h2 id="jQuery-的优势"><a href="#jQuery-的优势" class="headerlink" title="jQuery 的优势"></a>jQuery 的优势</h2><ul>
-<li><p>轻量级</p>
-</li>
-<li><p>强大的选择器</p>
-</li>
-<li><p>出色的 DOM 操作及其封装</p>
-</li>
-<li><p>可靠的事件处理机制</p>
-</li>
-<li><p>完善的 Ajax</p>
-</li>
-<li><p>不污染顶级变量</p>
-</li>
-<li><p>出色的浏览器兼容性</p>
-</li>
-<li><p>链式操作方式</p>
-</li>
-<li><p>隐式迭代</p>
-</li>
-<li><p>行为层和结构层的分离</p>
-</li>
-<li><p>丰富的插件支持</p>
-</li>
-</ul>
-<h1 id="jQuery-使用"><a href="#jQuery-使用" class="headerlink" title="jQuery 使用"></a>jQuery 使用</h1><h2 id="jQuery-的引入"><a href="#jQuery-的引入" class="headerlink" title="jQuery 的引入"></a>jQuery 的引入</h2><ul>
-<li><p>常规引入</p>
-<p>  使用 jQuery 只需要在页面的<code>&lt;head&gt;</code>中引入 jQuery 文件即可：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;jQueryPath/jquery.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="符号"><a href="#符号" class="headerlink" title="$ 符号"></a>$ 符号</h2><ul>
-<li><p>jQuery 符号</p>
-<p>  jQuery 把所有功能全部封装在一个全局变量 jQuery 中，而 $ 也是一个合法的变量名，它是变量 jQuery 的别名</p>
-</li>
-<li><p>$ 使用</p>
-</li>
-</ul>
-<p>绝大多数时候，我们都直接用 $</p>
-<p>若 $ 变量已被占用，且不能改，就只能使用 jQuery 这个变量</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/jQuery入门/" data-id="ck2j2dxd4007wpcw0okmtfgmj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/24/jQuery选择器/" data-id="ck2lwegu7007u98w0x8aak0lf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -1759,6 +1724,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/04/redux异步编程/">redux异步编程</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/03/react-redux/">react-redux</a>
           </li>
         
@@ -1772,10 +1741,6 @@
         
           <li>
             <a href="/2019/10/29/React生命周期/">React生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
           </li>
         
       </ul>

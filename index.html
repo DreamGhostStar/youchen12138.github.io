@@ -62,6 +62,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-redux异步编程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/04/redux异步编程/" class="article-date">
+  <time datetime="2019-11-04T08:52:07.000Z" itemprop="datePublished">2019-11-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/redux异步编程/">redux异步编程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="下载-redux-插件（异步中间件）"><a href="#下载-redux-插件（异步中间件）" class="headerlink" title="下载 redux 插件（异步中间件）"></a>下载 redux 插件（异步中间件）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save redux-thunk</span><br></pre></td></tr></table></figure>
+
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a><code>index.js</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore, applyMiddleware&#125; from &apos;redux&apos;</span><br><span class="line">import thunk from &apos;redux-thunk&apos;</span><br><span class="line"></span><br><span class="line">// 根据counter函数创建store对象</span><br><span class="line">const store = createStore(</span><br><span class="line">    counter,</span><br><span class="line">    applyMiddleware(thunk) // 应用上异步中间件</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="action-js"><a href="#action-js" class="headerlink" title="action.js"></a><code>action.js</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 异步action</span><br><span class="line">// 如果想返回一个函数，必须应用上异步中间件</span><br><span class="line">export const incrementAsync = (number) =&gt; &#123;</span><br><span class="line">    return dispatch =&gt; &#123;</span><br><span class="line">        // 异步代码</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            // 一秒之后才去分发一个增加的action</span><br><span class="line">            dispatch(increment(number))</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-redux-调试工具"><a href="#使用-redux-调试工具" class="headerlink" title="使用 redux 调试工具"></a>使用 redux 调试工具</h2><h3 id="安装-Chrome-浏览器插件"><a href="#安装-Chrome-浏览器插件" class="headerlink" title="安装 Chrome 浏览器插件"></a>安装 Chrome 浏览器插件</h3><blockquote>
+<p>redux-devtools2_15_1.crx</p>
+</blockquote>
+<h3 id="下载工具依赖包"><a href="#下载工具依赖包" class="headerlink" title="下载工具依赖包"></a>下载工具依赖包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev redux-devtools-extension</span><br></pre></td></tr></table></figure>
+
+<h3 id="编码-1"><a href="#编码-1" class="headerlink" title="编码"></a>编码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; composeWithDevTools &#125; from &apos;redux-devtools-extension&apos;</span><br><span class="line"></span><br><span class="line">//生成store对象</span><br><span class="line">const store = createStore(counter,</span><br><span class="line">    composeWithDevTools(applyMiddleware(thunk)) // 应用上异步中间件</span><br><span class="line">); // 内部会第一次调用reducer函数，得到初始state</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/04/redux异步编程/" data-id="ck2lwegvd009m98w0r6oa4vvl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-react-redux" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/03/react-redux/" class="article-date">
@@ -134,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/03/react-redux/" data-id="ck2j2dxdb0085pcw0xyy2axev" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/03/react-redux/" data-id="ck2lwegub008298w0d2f21944" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -265,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/02/redux/" data-id="ck2j2dxdd0088pcw0aikpma4m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/02/redux/" data-id="ck2lwegur008q98w0iqpanro4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -376,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/30/React-router/" data-id="ck2j2dxco0071pcw0mtjrdxkp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/30/React-router/" data-id="ck2lwegtw007898w0ettgybim" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -462,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/29/React生命周期/" data-id="ck2j2dxck006vpcw0xpbov286" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/29/React生命周期/" data-id="ck2lwegtl006k98w0uo0cgoxj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -540,7 +594,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/28/React组件三大属性及组件通信/" data-id="ck2j2dxcr0077pcw0th7g7vpy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/28/React组件三大属性及组件通信/" data-id="ck2lwegue008798w0gehyie7t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -738,7 +792,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/25/Sass内置函数/" data-id="ck2j2dxcs0079pcw02upctacw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/25/Sass内置函数/" data-id="ck2lwegu9007z98w0am7jqakc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
@@ -869,7 +923,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/23/Sass基础/" data-id="ck2j2dxcu007dpcw0mo1r9kwy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/23/Sass基础/" data-id="ck2lwegtu007398w0h81k05az" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
@@ -962,7 +1016,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/21/ES6-promise/" data-id="ck2j2dx9g0024pcw0pfrhv385" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/21/ES6-promise/" data-id="ck2lwegr0002d98w0m0tp9ypd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1127,85 +1181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/18/ES6扩展/" data-id="ck2j2dxad0038pcw0g8yyn11n" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ES6解构赋值" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/17/ES6解构赋值/" class="article-date">
-  <time datetime="2019-10-17T10:59:34.000Z" itemprop="datePublished">2019-10-17</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/17/ES6解构赋值/">ES6解构赋值</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>解构赋值语法是一个 JavaScript 表达式，这使得可以将值从数组或属性从对象提取到不同的变量中</p>
-<ul>
-<li><p>数组的结构赋值</p>
-</li>
-<li><p>对象的解构赋值</p>
-</li>
-<li><p>字符串的解构赋值</p>
-</li>
-<li><p>数值与布尔值的解构赋值</p>
-</li>
-<li><p>函数参数的解构赋值</p>
-</li>
-</ul>
-<h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4];</span><br><span class="line">let [a, b, c, d] = arr; // a=1, b=2, b=3, b=4</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr = [&apos;a&apos;, &apos;b&apos;, [&apos;c&apos;, &apos;d&apos;, [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;]]];</span><br><span class="line">const [a, b] = arr; // a=&apos;a&apos;, b=&apos;b&apos;</span><br><span class="line">const [, , g] = [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;] // g=&apos;g&apos;</span><br><span class="line">const [, , [, , g]] = [&apos;c&apos;, &apos;d&apos;, [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;]]; // g=&apos;g&apos;</span><br></pre></td></tr></table></figure>
-
-<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2, 3];</span><br><span class="line">const arr2 = [&apos;a&apos;, &apos;b&apos;];</span><br><span class="line">const arr3 = [&apos;zz&apos;, 1];</span><br><span class="line">const arr4 = [...arr1, ...arr2, ...arr3]; // arr4 = [1, 2, 3, &apos;a&apos;, &apos;b&apos;, &apos;zz&apos;, 1]</span><br><span class="line"></span><br><span class="line">const arr = [1, 2, 3, 4];</span><br><span class="line">const [a, b, ...c] = arr; // c = [3, 4]</span><br></pre></td></tr></table></figure>
-
-<h4 id="默认值"><a href="#默认值" class="headerlink" title="默认值"></a>默认值</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, undefined, undefined];</span><br><span class="line">const [a, b = 2, c, d] = arr; // a=1, b=2, c=d=undefined</span><br></pre></td></tr></table></figure>
-
-<h4 id="交换变量"><a href="#交换变量" class="headerlink" title="交换变量"></a>交换变量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[a, b] = [b, a];</span><br></pre></td></tr></table></figure>
-
-<h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><p>对象的解构赋值与数组的解构赋值相似</p>
-<p>等号左右两边都为对象结构 —— <code>const{a, b} = {a:1, b:2}</code></p>
-<p>左边的<code>{}</code>中为需要赋值的变量</p>
-<p>右边为需要解构的对象</p>
-<h4 id="对象的解构赋值的主要用途"><a href="#对象的解构赋值的主要用途" class="headerlink" title="对象的解构赋值的主要用途"></a>对象的解构赋值的主要用途</h4><ul>
-<li><p>提取对象属性</p>
-</li>
-<li><p>使用对象传入乱序的函数参数</p>
-</li>
-<li><p>获取多个函数返回值</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/17/ES6解构赋值/" data-id="ck2j2dx9p002ipcw0qrmvo8ps" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/18/ES6扩展/" data-id="ck2lwegv8009f98w03hmvytom" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1274,6 +1250,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/04/redux异步编程/">redux异步编程</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/03/react-redux/">react-redux</a>
           </li>
         
@@ -1287,10 +1267,6 @@
         
           <li>
             <a href="/2019/10/29/React生命周期/">React生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
           </li>
         
       </ul>

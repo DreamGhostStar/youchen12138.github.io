@@ -62,6 +62,119 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jQuery入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/23/jQuery入门/" class="article-date">
+  <time datetime="2019-09-23T07:43:58.000Z" itemprop="datePublished">2019-09-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/23/jQuery入门/">jQuery入门¨</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="jQuery是什么"><a href="#jQuery是什么" class="headerlink" title="jQuery是什么"></a>jQuery是什么</h2><p>jQuery 是一个快速、小巧且功能丰富的 JavaScript 库。它使 HTML 文档的遍历和操作、事件处理、动画和 Ajax 等操作变得更加简单，并提供了一个易于使用的 API ，可以跨多种浏览器工作。jQuery 集多功能性和可扩展性于一身，改变了数百万人编写 JavaScript 的方式</p>
+<p>jQuery 是一个请年假的“写得少，做得多” 的 JavaScript 库</p>
+<h2 id="通过-ID-获取一个-HTML-元素"><a href="#通过-ID-获取一个-HTML-元素" class="headerlink" title="通过 ID 获取一个 HTML 元素"></a>通过 ID 获取一个 HTML 元素</h2><h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>var obj = document.getElementById(&#39;idValue&#39;)</code></p>
+<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><p><code>var obj = $(&#39;idValue)</code></p>
+<h2 id="将一个-HTML-元素隐藏"><a href="#将一个-HTML-元素隐藏" class="headerlink" title="将一个 HTML 元素隐藏"></a>将一个 HTML 元素隐藏</h2><h3 id="JavaScript-1"><a href="#JavaScript-1" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>document.getElementById(&#39;idValue&#39;).style.display = &#39;none&#39;</code></p>
+<h3 id="jQuery-1"><a href="#jQuery-1" class="headerlink" title="jQuery"></a>jQuery</h3><p><code>$(&#39;idValue&#39;).hide()</code></p>
+<h2 id="将一个-HTML-元素的宽度变成-200px"><a href="#将一个-HTML-元素的宽度变成-200px" class="headerlink" title="将一个 HTML 元素的宽度变成 200px"></a>将一个 HTML 元素的宽度变成 200px</h2><h3 id="JavaScript-2"><a href="#JavaScript-2" class="headerlink" title="JavaScript"></a>JavaScript</h3><p><code>document.getElementById(&#39;idValue&#39;).style.width = &#39;200px&#39;</code></p>
+<h3 id="jQuery-2"><a href="#jQuery-2" class="headerlink" title="jQuery"></a>jQuery</h3><p><code>$(&#39;idValue&#39;).css(&#39;width&#39;, &#39;200px&#39;)</code></p>
+<h2 id="jQuery-的作用"><a href="#jQuery-的作用" class="headerlink" title="jQuery 的作用"></a>jQuery 的作用</h2><ul>
+<li><p>HTML 元素的选取</p>
+</li>
+<li><p>HTML 元素操作</p>
+</li>
+<li><p>CSS 操作</p>
+</li>
+<li><p>HTML 事件函数</p>
+</li>
+<li><p>JavaScript 特效和动画</p>
+</li>
+<li><p>HTML DOM 遍历和修改</p>
+</li>
+<li><p>AJAX</p>
+</li>
+<li><p>Utilities</p>
+</li>
+</ul>
+<h2 id="jQuery-的版本"><a href="#jQuery-的版本" class="headerlink" title="jQuery 的版本"></a>jQuery 的版本</h2><h3 id="版本分类"><a href="#版本分类" class="headerlink" title="版本分类"></a>版本分类</h3><blockquote>
+<p><code>jQuery1.x.x/jQuery2.x.x/jQuery3.x.x</code></p>
+</blockquote>
+<p>IE 6/7/8兼容最高版本为 jQuery1.9.1</p>
+<h2 id="jQuery-的优势"><a href="#jQuery-的优势" class="headerlink" title="jQuery 的优势"></a>jQuery 的优势</h2><ul>
+<li><p>轻量级</p>
+</li>
+<li><p>强大的选择器</p>
+</li>
+<li><p>出色的 DOM 操作及其封装</p>
+</li>
+<li><p>可靠的事件处理机制</p>
+</li>
+<li><p>完善的 Ajax</p>
+</li>
+<li><p>不污染顶级变量</p>
+</li>
+<li><p>出色的浏览器兼容性</p>
+</li>
+<li><p>链式操作方式</p>
+</li>
+<li><p>隐式迭代</p>
+</li>
+<li><p>行为层和结构层的分离</p>
+</li>
+<li><p>丰富的插件支持</p>
+</li>
+</ul>
+<h1 id="jQuery-使用"><a href="#jQuery-使用" class="headerlink" title="jQuery 使用"></a>jQuery 使用</h1><h2 id="jQuery-的引入"><a href="#jQuery-的引入" class="headerlink" title="jQuery 的引入"></a>jQuery 的引入</h2><ul>
+<li><p>常规引入</p>
+<p>  使用 jQuery 只需要在页面的<code>&lt;head&gt;</code>中引入 jQuery 文件即可：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;jQueryPath/jquery.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="符号"><a href="#符号" class="headerlink" title="$ 符号"></a>$ 符号</h2><ul>
+<li><p>jQuery 符号</p>
+<p>  jQuery 把所有功能全部封装在一个全局变量 jQuery 中，而 $ 也是一个合法的变量名，它是变量 jQuery 的别名</p>
+</li>
+<li><p>$ 使用</p>
+</li>
+</ul>
+<p>绝大多数时候，我们都直接用 $</p>
+<p>若 $ 变量已被占用，且不能改，就只能使用 jQuery 这个变量</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/23/jQuery入门/" data-id="ck2lwegu4007n98w0bbeutcyn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaScript进阶知识点-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/19/JavaScript进阶知识点-正则表达式/" class="article-date">
@@ -300,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck2j2dxc8006apcw0zyjryx8m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck2lwegt5005r98w04tvmoe2a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -415,7 +528,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck2j2dxc30061pcw02lprouqj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck2lwegt4005o98w0bv5wc8vm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -523,7 +636,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck2j2dxc2005ypcw0yshi321j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck2lwegt2005l98w0m8mvbpw1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -612,7 +725,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck2j2dxc50064pcw0ek66gbrr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck2lwegt9005x98w0cbieh3mo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -755,7 +868,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck2j2dxaw0045pcw0ubc6aabz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck2lwegs5004298w02e4jtcav" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -892,7 +1005,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck2j2dxbh0051pcw0g3yx4u5k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck2lwegsd004f98w09738p8eq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1079,7 +1192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck2j2dxbe004vpcw0i2gaoidi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck2lwegs7004798w0j2gl4v7h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1313,7 +1426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck2j2dxbj0054pcw0z3o1fyd8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck2lwegsf004i98w0g1vovlk7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1357,68 +1470,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck2j2dxay0048pcw068eo7cpc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-BOM之screen对象及方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" class="article-date">
-  <time datetime="2019-08-26T11:52:36.000Z" itemprop="datePublished">2019-08-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/">JavaScript基础知识点--BOM之screen对象及方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="screen-对象"><a href="#screen-对象" class="headerlink" title="screen 对象"></a>screen 对象</h1><p>Screen 对象包含有关客户端显示屏幕的信息</p>
-<h2 id="availWidth"><a href="#availWidth" class="headerlink" title="availWidth"></a>availWidth</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>screen.availWidth</p>
-</blockquote>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>返回可用的屏幕宽度</p>
-<h2 id="availHeight"><a href="#availHeight" class="headerlink" title="availHeight"></a>availHeight</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>screen.availHeight</p>
-</blockquote>
-<h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><p>返回可用的屏幕高度</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>availHeight 获取到的是除了任务栏之外的内容</p>
-<h1 id="获取窗口属性"><a href="#获取窗口属性" class="headerlink" title="获取窗口属性"></a>获取窗口属性</h1><h2 id="innerHeight"><a href="#innerHeight" class="headerlink" title="innerHeight"></a>innerHeight</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>window.innerHeight</p>
-</blockquote>
-<h3 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a>功能</h3><p>获取窗口的高</p>
-<h2 id="innerWidth"><a href="#innerWidth" class="headerlink" title="innerWidth"></a>innerWidth</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><blockquote>
-<p>window.innerWidth</p>
-</blockquote>
-<h3 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a>功能</h3><p>获取窗口的宽</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之screen对象及方法/" data-id="ck2j2dxb6004jpcw066vocxzi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck2lwegrw003m98w0jmr2f03s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1487,6 +1539,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/04/redux异步编程/">redux异步编程</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/03/react-redux/">react-redux</a>
           </li>
         
@@ -1500,10 +1556,6 @@
         
           <li>
             <a href="/2019/10/29/React生命周期/">React生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
           </li>
         
       </ul>

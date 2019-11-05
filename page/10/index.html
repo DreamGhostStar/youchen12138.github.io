@@ -62,6 +62,128 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-HTTP请求" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/16/HTTP请求/" class="article-date">
+  <time datetime="2019-05-16T07:28:06.000Z" itemprop="datePublished">2019-05-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/16/HTTP请求/">HTTP请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是HTTP"><a href="#什么是HTTP" class="headerlink" title="什么是HTTP"></a>什么是HTTP</h2><ul>
+<li><p>http是计算机通过网络进行通信的规则。</p>
+</li>
+<li><p>主要使浏览器能够从web服务器去请求信息和服务。</p>
+</li>
+<li><p>HTTP是一种无状态的协议。无状态指的是不建立持久的连接，服务端不保留连接的一些相关信息。</p>
+</li>
+</ul>
+<h2 id="概念介绍——HTTP请求"><a href="#概念介绍——HTTP请求" class="headerlink" title="概念介绍——HTTP请求"></a>概念介绍——HTTP请求</h2><h3 id="HTTP请求通常有以下7个步骤"><a href="#HTTP请求通常有以下7个步骤" class="headerlink" title="HTTP请求通常有以下7个步骤"></a>HTTP请求通常有以下7个步骤</h3><ol>
+<li><p>建立TCP连接</p>
+</li>
+<li><p>Web浏览器向Web服务器发送请求命令</p>
+</li>
+<li><p>Web浏览器发送请求头信息</p>
+</li>
+<li><p>Web服务器应答</p>
+</li>
+<li><p>Web服务器发送应答头信息</p>
+</li>
+<li><p>Web服务器向浏览器发送数据</p>
+</li>
+<li><p>Web服务器关闭TCP连接</p>
+</li>
+</ol>
+<h3 id="HTTP请求一般由四部分组成"><a href="#HTTP请求一般由四部分组成" class="headerlink" title="HTTP请求一般由四部分组成"></a>HTTP请求一般由四部分组成</h3><ol>
+<li><p>HTTP请求的方法或动作，比如是GET还是POST请求</p>
+</li>
+<li><p>正在请求的URL，总得知道请求的地址是什么吧</p>
+</li>
+<li><p>请求头，包含一些客户端环境信息，身份验证信息等</p>
+</li>
+<li><p>请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等等</p>
+</li>
+</ol>
+<h3 id="两种请求区别"><a href="#两种请求区别" class="headerlink" title="两种请求区别"></a>两种请求区别</h3><ul>
+<li><p>GET： </p>
+<ol>
+<li><p>一般用于信息获取</p>
+</li>
+<li><p>使用URL传递参数</p>
+</li>
+<li><p>对所发送信息的数量也有限制，一般在2000个字符</p>
+</li>
+</ol>
+</li>
+<li><p>POST</p>
+<ol>
+<li><p>一般用于修改服务器上的资源</p>
+</li>
+<li><p>对所发送信息的数量无限制</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h3 id="一个HTTP响应一般由三部分组成"><a href="#一个HTTP响应一般由三部分组成" class="headerlink" title="一个HTTP响应一般由三部分组成"></a>一个HTTP响应一般由三部分组成</h3><ol>
+<li><p>一个数字和文字组成的状态码，用来显示请求成功还是失败</p>
+</li>
+<li><p>响应头，响应头也和请求头一样包含许多有用的信息，例如服务器类型、日期时间、内容类型和长度等</p>
+</li>
+<li><p>响应体，也就是响应正文</p>
+</li>
+</ol>
+<h3 id="HTTP状态码（status）"><a href="#HTTP状态码（status）" class="headerlink" title="HTTP状态码（status）"></a>HTTP状态码（status）</h3><ul>
+<li>HTTP状态码由3位数字构成，其中首位数字定义了状态码的类型</li>
+</ul>
+<blockquote>
+<p>1xx：信息类，表示收到Web浏览器请求，正在进一步的处理中</p>
+</blockquote>
+<blockquote>
+<p>2xx：成功，表示用户请求被正确接收，理解和处理例如：200 OK</p>
+</blockquote>
+<blockquote>
+<p>3xx：重定向，表示请求没有成功，客户必须采取进一步的动作</p>
+</blockquote>
+<blockquote>
+<p>4xx：客户端错误，表示客户端提交的请求有错误，例如：404 NOT Found，意味着请求中所引用的文档不存在</p>
+</blockquote>
+<blockquote>
+<p>5xx：服务器错误，表示服务器不能完成对请求的处理：如500</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="ck2lwegrp003a98w0ghxzhrzt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-运算符" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/09/运算符/" class="article-date">
@@ -144,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="ck2j2dxe5009npcw0wnlyeonp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="ck2lwegun008n98w09h8gwzsa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -262,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="ck2j2dxdj008jpcw0tnxypt0u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="ck2lwegui008f98w0bjbmigqt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -322,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="ck2j2dxaz004bpcw0612xk5w5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="ck2lwegru003k98w0vm47ui9q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -400,7 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="ck2j2dxcf006lpcw0jtnsy7j5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="ck2lwegtr006v98w09jaarf1d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -457,7 +579,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="ck2j2dx9o002fpcw0xhgqo7jk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="ck2lwegra002r98w0945cvy5h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -695,7 +817,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="ck2j2dxac0036pcw0iucf43fe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="ck2lwegva009h98w00wf7s1o1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -792,7 +914,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="ck2j2dx9t002npcw0k23228zi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="ck2lwegr5002m98w0d6rx4ahq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -861,6 +983,10 @@ q退出</code></pre><hr>
       <ul>
         
           <li>
+            <a href="/2019/11/04/redux异步编程/">redux异步编程</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/03/react-redux/">react-redux</a>
           </li>
         
@@ -874,10 +1000,6 @@ q退出</code></pre><hr>
         
           <li>
             <a href="/2019/10/29/React生命周期/">React生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
           </li>
         
       </ul>

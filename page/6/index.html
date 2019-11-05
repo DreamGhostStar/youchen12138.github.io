@@ -62,6 +62,136 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS进阶知识点-2D转换" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/18/CSS进阶知识点-2D转换/" class="article-date">
+  <time datetime="2019-08-18T06:45:24.000Z" itemprop="datePublished">2019-08-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS3/">CSS3</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/18/CSS进阶知识点-2D转换/">CSS3进阶知识点--2D转换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="变形-Transform-属性"><a href="#变形-Transform-属性" class="headerlink" title="变形(Transform)属性"></a>变形(Transform)属性</h2><p>让元素在一个坐标系统中变形。这个属性包含一系列变形函数，可以移动、旋转和缩放元素</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>transform：none（默认值） | <code>&lt;transform-function&gt;</code> [ <code>&lt;transform-function&gt;</code> ] *;</p>
+</blockquote>
+<h1 id="2D-转换"><a href="#2D-转换" class="headerlink" title="2D 转换"></a>2D 转换</h1><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rotate()</td>
+<td>旋转</td>
+</tr>
+<tr>
+<td>translate()</td>
+<td>平移</td>
+</tr>
+<tr>
+<td>scale()</td>
+<td>缩放</td>
+</tr>
+<tr>
+<td>skew()</td>
+<td>扭曲或斜切</td>
+</tr>
+</tbody></table>
+<h2 id="旋转-rotate"><a href="#旋转-rotate" class="headerlink" title="旋转 rotate"></a>旋转 rotate</h2><p>通过指定的角度参数对原元素指定一个2D rotation（2D 旋转）</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><blockquote>
+<p>transform: rotate(<code>&lt;angle&gt;</code>)</p>
+</blockquote>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p>angle 指旋转角度，正数表示顺时针旋转，负数表示逆时针旋转</p>
+<h2 id="移动-translate"><a href="#移动-translate" class="headerlink" title="移动 translate"></a>移动 translate</h2><p>根据左（X轴）和顶部（Y轴）位置给定的参数，从当前元素位置移动</p>
+<h3 id="translateX"><a href="#translateX" class="headerlink" title="translateX"></a>translateX</h3><p>通过给定一个X方向上的数目指定一个 translation</p>
+<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：translateX( value )</p>
+</blockquote>
+<h3 id="translateY"><a href="#translateY" class="headerlink" title="translateY"></a>translateY</h3><p>通过给定一个Y方向上的数目指定一个 translation</p>
+<h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：translateY( value )</p>
+</blockquote>
+<h3 id="translate"><a href="#translate" class="headerlink" title="translate"></a>translate</h3><p>通过给定一个X和Y方向上的数目指定一个 translation</p>
+<h4 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：translate( value1, [ value2 ] )</p>
+</blockquote>
+<p>如果写一个参数，代表 X 方向平移多少，而 Y 方向平移为 0 </p>
+<h2 id="缩放-scale"><a href="#缩放-scale" class="headerlink" title="缩放 scale"></a>缩放 scale</h2><p>指定对象的 2D scale（2D缩放）</p>
+<h3 id="取值说明"><a href="#取值说明" class="headerlink" title="取值说明"></a>取值说明</h3><p>只能为 数值，不能带单位</p>
+<h3 id="scaleX"><a href="#scaleX" class="headerlink" title="scaleX"></a>scaleX</h3><p>X 轴方向往中间缩放，以中线为原点线</p>
+<h4 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：scaleX( number )</p>
+</blockquote>
+<h3 id="scaleY"><a href="#scaleY" class="headerlink" title="scaleY"></a>scaleY</h3><p>Y 轴方向往中间缩放，以中线为原点线</p>
+<h4 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：scaleY( number )</p>
+</blockquote>
+<h3 id="scale"><a href="#scale" class="headerlink" title="scale"></a>scale</h3><p>X 轴和 Y 轴方向往中间缩放</p>
+<h4 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：scale( number1, [ number2 ] )</p>
+</blockquote>
+<p>如果写一个参数，代表 X 方向缩放多少，而 Y 方向和 X 方向缩放比例相同</p>
+<h2 id="扭曲-skew"><a href="#扭曲-skew" class="headerlink" title="扭曲 skew"></a>扭曲 skew</h2><p>指定对象 skew transformation（斜切扭曲）</p>
+<h3 id="skewX"><a href="#skewX" class="headerlink" title="skewX"></a>skewX</h3><p>按给定角度沿 X 轴指定一个 skew transformation（斜切变换）</p>
+<h4 id="语法-8"><a href="#语法-8" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：skewX( angle )</p>
+</blockquote>
+<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><ul>
+<li><p>正值：逆时针</p>
+</li>
+<li><p>负值：顺时针</p>
+</li>
+</ul>
+<h3 id="skewY"><a href="#skewY" class="headerlink" title="skewY"></a>skewY</h3><p>按给定角度沿 Y 轴指定一个 skew transformation（斜切变换）</p>
+<h4 id="语法-9"><a href="#语法-9" class="headerlink" title="语法"></a>语法</h4><blockquote>
+<p>transform：skewY( angle )</p>
+</blockquote>
+<h4 id="取值-1"><a href="#取值-1" class="headerlink" title="取值"></a>取值</h4><ul>
+<li><p>正值：顺时针</p>
+</li>
+<li><p>负值：逆时针</p>
+</li>
+<li><p>有效范围为-90~90，其余取值会重复</p>
+</li>
+</ul>
+<h3 id="skew"><a href="#skew" class="headerlink" title="skew"></a>skew</h3><p>综合 skewX 和 skewY 的情况</p>
+<h4 id="取值-2"><a href="#取值-2" class="headerlink" title="取值"></a>取值</h4><p>如果只有一个值，则 skewY 为0deg</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/18/CSS进阶知识点-2D转换/" data-id="ck2lwegqr002098w0sygy1gfd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS进阶知识点-文本与字体及overflow和获取特殊字符" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" class="article-date">
@@ -154,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" data-id="ck2j2dx95001mpcw05fs2sa2p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/17/CSS进阶知识点-文本与字体及overflow和获取特殊字符/" data-id="ck2lwegqi001n98w03xlo1y98" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -277,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-渐变/" data-id="ck2j2dx91001gpcw0vpiq6mbt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-渐变/" data-id="ck2lwegql001r98w0s1wi1fap" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -361,7 +491,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-背景/" data-id="ck2j2dx93001jpcw065ni7s1f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-背景/" data-id="ck2lwegqk001p98w0yxbh5r2o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -506,7 +636,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-CSS3边框和圆角/" data-id="ck2j2dx8v0017pcw0r53sykmd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/16/CSS进阶知识点-CSS3边框和圆角/" data-id="ck2lwegpn001498w0ynrmo0mu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -647,7 +777,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" data-id="ck2j2dx8p000ypcw0bfh5vyks" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/15/CSS进阶知识点-CSS3伪类选择器和伪元素/" data-id="ck2lwegpj000x98w0qxh5lw3u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -767,7 +897,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" data-id="ck2j2dx8r0011pcw0zmp3wes4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/14/CSS进阶知识点-CSS3基本选择器及属性选择器/" data-id="ck2lwegpg000u98w0jchx45vc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
@@ -945,7 +1075,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/11/HTML进阶知识点-HTML5属性变化/" data-id="ck2j2dxap003rpcw0vrc03i34" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/11/HTML进阶知识点-HTML5属性变化/" data-id="ck2lwegrl003498w0h8gpzn8b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
@@ -1242,7 +1372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/10/HTML进阶知识点-HTML5标签变化/" data-id="ck2j2dxaj003ipcw00qx820uv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/10/HTML进阶知识点-HTML5标签变化/" data-id="ck2lwegrr003e98w0azs6x17p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
@@ -1305,117 +1435,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/08/CSS基础知识点-网页布局/" data-id="ck2j2dx89000cpcw0si6qcyzl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CSS基础知识点-CSS定位-position" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/06/CSS基础知识点-CSS定位-position/" class="article-date">
-  <time datetime="2019-08-06T13:48:01.000Z" itemprop="datePublished">2019-08-06</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/06/CSS基础知识点-CSS定位-position/">CSS基础知识点--CSS定位(position)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="定位模型"><a href="#定位模型" class="headerlink" title="定位模型"></a>定位模型</h2><ul>
-<li><p>static：自然模型</p>
-</li>
-<li><p>relative：相对定位模型</p>
-</li>
-<li><p>absolute：绝对定位模型</p>
-</li>
-<li><p>fixed：固定定位模型</p>
-</li>
-<li><p>sticky：磁贴定位模型</p>
-</li>
-</ul>
-<h2 id="static模型"><a href="#static模型" class="headerlink" title="static模型"></a>static模型</h2><p>静态定位 / 常规定位 / 自然定位</p>
-<p>特点：</p>
-<ol>
-<li><p>忽略掉top、bottom、left、right 或者 z-index 声明</p>
-</li>
-<li><p>两个相邻的元素如果都设置了外边距，那么最终外边距 = 两者外边距中最大的</p>
-</li>
-<li><p>具有固定 width 和 height 值的元素，如果把左右外边距设置为 auto ，则左右外边距会自动扩大占满剩余宽度。造成的效果就是这个块居中</p>
-</li>
-</ol>
-<h2 id="relative模型和absolute模型"><a href="#relative模型和absolute模型" class="headerlink" title="relative模型和absolute模型"></a>relative模型和absolute模型</h2><p>特点：</p>
-<ol>
-<li><p>relative模型（相对定位）：不脱离常规流</p>
-</li>
-<li><p>absolute模型（绝对定位）：脱离常规流</p>
-</li>
-<li><p>若父元素是相对定位，并且子元素是绝对定位，那么子元素的绝对定位是相对父元素</p>
-</li>
-<li><p>继上一个特点情况，若是想要实现子元素的块垂直或水平居中</p>
-<ul>
-<li><p>right 为 0 ，并且 left 为 0 ，margin 为 0 auto。实现水平居中</p>
-</li>
-<li><p>top 为 0 ，并且 bottom 为 0 ，margin 为 auto 0。实现垂直居中</p>
-</li>
-<li><p>top、right、bottom、left 均为 0，margin 为auto。实现水平垂直居中 </p>
-</li>
-<li><p>若 top、right、bottom、left 均为 auto，则会变为常规流（疑似有问题）</p>
-</li>
-</ul>
-</li>
-<li><p>定位的垂直水平居中，<font color="red">必须写定位模式</font></p>
-<ul>
-<li><p>需要给元素设置 top：50%，然后再 margin-top:负本身高度的一半。实现垂直居中</p>
-</li>
-<li><p>需要给元素设置 left：50%，然后再 margin-left:负本身宽度的一半。实现水平居中</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="fix模型"><a href="#fix模型" class="headerlink" title="fix模型"></a>fix模型</h2><p>有些类似于 background-attachment 属性</p>
-<h2 id="sticky模型（CSS3）"><a href="#sticky模型（CSS3）" class="headerlink" title="sticky模型（CSS3）"></a>sticky模型（CSS3）</h2><p>磁贴定位 / 粘性定位 / 吸附定位</p>
-<p>作用：relative + fixed 的完美结合，制造出吸附效果</p>
-<p>特点：</p>
-<ol>
-<li><p>如果产生偏移，原位置还是会在常规流中</p>
-</li>
-<li><p>如果它的最近父元素有滚动，那么它的偏移标尺就是最近的父元素</p>
-</li>
-<li><p>如果最近父元素没有滚动，那么它的偏移标尺是视口</p>
-</li>
-<li><p>上下左右的偏移规则</p>
-</li>
-<li><p>top等定位属性更像是条件，而非是坐标</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/06/CSS基础知识点-CSS定位-position/" data-id="ck2j2dx7s0000pcw0bp9025sf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/08/CSS基础知识点-网页布局/" data-id="ck2lwegp4000d98w08qsc6gg5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1484,6 +1504,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/04/redux异步编程/">redux异步编程</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/03/react-redux/">react-redux</a>
           </li>
         
@@ -1497,10 +1521,6 @@
         
           <li>
             <a href="/2019/10/29/React生命周期/">React生命周期</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
           </li>
         
       </ul>

@@ -5,20 +5,20 @@
   
 
   
-  <title>CSS基础知识点 | Hexo</title>
+  <title>redux异步编程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HTML、CSS、JavaScript关系 HTML是网页内容的载体  CSS样式是表现（外观控制）  JavaScript是行为，用来实现网页特效效果   CSS导入式 @import “外部CSS样式”  @import url(外部CSS样式)   CSS使用方法区别   类别 引入方法 位置 加载    行内样式 开始标签内的style html文件内 同时   内部样式 &amp;lt;hea">
-<meta name="keywords" content="CSS">
+  <meta name="description" content="下载 redux 插件（异步中间件）1npm install --save redux-thunk  编码index.js12345678import &amp;#123;createStore, applyMiddleware&amp;#125; from &amp;apos;redux&amp;apos;import thunk from &amp;apos;redux-thunk&amp;apos;// 根据counter函数创建sto">
+<meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS基础知识点">
-<meta property="og:url" content="http://yoursite.com/2019/07/30/CSS基础知识点/index.html">
+<meta property="og:title" content="redux异步编程">
+<meta property="og:url" content="http://yoursite.com/2019/11/04/redux异步编程/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="HTML、CSS、JavaScript关系 HTML是网页内容的载体  CSS样式是表现（外观控制）  JavaScript是行为，用来实现网页特效效果   CSS导入式 @import “外部CSS样式”  @import url(外部CSS样式)   CSS使用方法区别   类别 引入方法 位置 加载    行内样式 开始标签内的style html文件内 同时   内部样式 &amp;lt;hea">
+<meta property="og:description" content="下载 redux 插件（异步中间件）1npm install --save redux-thunk  编码index.js12345678import &amp;#123;createStore, applyMiddleware&amp;#125; from &amp;apos;redux&amp;apos;import thunk from &amp;apos;redux-thunk&amp;apos;// 根据counter函数创建sto">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-31T08:41:56.073Z">
+<meta property="og:updated_time" content="2019-11-05T10:20:28.575Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS基础知识点">
-<meta name="twitter:description" content="HTML、CSS、JavaScript关系 HTML是网页内容的载体  CSS样式是表现（外观控制）  JavaScript是行为，用来实现网页特效效果   CSS导入式 @import “外部CSS样式”  @import url(外部CSS样式)   CSS使用方法区别   类别 引入方法 位置 加载    行内样式 开始标签内的style html文件内 同时   内部样式 &amp;lt;hea">
+<meta name="twitter:title" content="redux异步编程">
+<meta name="twitter:description" content="下载 redux 插件（异步中间件）1npm install --save redux-thunk  编码index.js12345678import &amp;#123;createStore, applyMiddleware&amp;#125; from &amp;apos;redux&amp;apos;import thunk from &amp;apos;redux-thunk&amp;apos;// 根据counter函数创建sto">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,14 +65,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-CSS基础知识点" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-redux异步编程" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/30/CSS基础知识点/" class="article-date">
-  <time datetime="2019-07-30T13:29:26.000Z" itemprop="datePublished">2019-07-30</time>
+    <a href="/2019/11/04/redux异步编程/" class="article-date">
+  <time datetime="2019-11-04T08:52:07.000Z" itemprop="datePublished">2019-11-04</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    <a class="article-category-link" href="/categories/React/">React</a>
   </div>
 
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CSS基础知识点
+      redux异步编程
     </h1>
   
 
@@ -92,80 +92,25 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h2 id="HTML、CSS、JavaScript关系"><a href="#HTML、CSS、JavaScript关系" class="headerlink" title="HTML、CSS、JavaScript关系"></a>HTML、CSS、JavaScript关系</h2><ul>
-<li><p>HTML是网页内容的载体</p>
-</li>
-<li><p>CSS样式是表现（外观控制）</p>
-</li>
-<li><p>JavaScript是行为，用来实现网页特效效果</p>
-</li>
-</ul>
-<h2 id="CSS导入式"><a href="#CSS导入式" class="headerlink" title="CSS导入式"></a>CSS导入式</h2><ul>
-<li><p>@import “外部CSS样式”</p>
-</li>
-<li><p>@import url(外部CSS样式)</p>
-</li>
-</ul>
-<h2 id="CSS使用方法区别"><a href="#CSS使用方法区别" class="headerlink" title="CSS使用方法区别"></a>CSS使用方法区别</h2><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>引入方法</th>
-<th>位置</th>
-<th>加载</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>行内样式</td>
-<td>开始标签内的style</td>
-<td>html文件内</td>
-<td>同时</td>
-</tr>
-<tr>
-<td>内部样式</td>
-<td><code>&lt;head&gt;</code>中<code>&lt;style&gt;</code>内</td>
-<td>html文件内</td>
-<td>同时</td>
-</tr>
-<tr>
-<td>链入外部样式</td>
-<td><code>&lt;head&gt;</code>中<code>&lt;link&gt;</code>引用</td>
-<td>CSS样式文件与html文件分离</td>
-<td>页面加载时，同时加载CSS样式</td>
-</tr>
-<tr>
-<td>导入式@import</td>
-<td>在样式代码最开始处</td>
-<td>CSS样式文件与html文件分离</td>
-<td>在读取完html文件之后加载</td>
-</tr>
-</tbody></table>
-<h3 id="使用链入外部样式的好处"><a href="#使用链入外部样式的好处" class="headerlink" title="使用链入外部样式的好处"></a>使用链入外部样式的好处</h3><ol>
-<li><p>CSS和HTML分离</p>
-</li>
-<li><p>多个文件可以使用同一个样式文件</p>
-</li>
-<li><p>多文件引用同一个CSS文件，CSS只需下载一次</p>
-</li>
-</ol>
-<h3 id="CSS使用方法优先级"><a href="#CSS使用方法优先级" class="headerlink" title="CSS使用方法优先级"></a>CSS使用方法优先级</h3><blockquote>
-<p>行内样式&gt;内部样式&gt;外部样式</p>
-</blockquote>
-<p>说明：</p>
-<ol>
-<li><p>链入外部样式表与内部样式表之间的优先级取决于所处位置的先后</p>
-</li>
-<li><p>根据样式与元素的距离而定，越接近优先级就越高（就近原则）</p>
-</li>
-</ol>
+<h2 id="下载-redux-插件（异步中间件）"><a href="#下载-redux-插件（异步中间件）" class="headerlink" title="下载 redux 插件（异步中间件）"></a>下载 redux 插件（异步中间件）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save redux-thunk</span><br></pre></td></tr></table></figure>
 
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a><code>index.js</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import &#123;createStore, applyMiddleware&#125; from &apos;redux&apos;</span><br><span class="line">import thunk from &apos;redux-thunk&apos;</span><br><span class="line"></span><br><span class="line">// 根据counter函数创建store对象</span><br><span class="line">const store = createStore(</span><br><span class="line">    counter,</span><br><span class="line">    applyMiddleware(thunk) // 应用上异步中间件</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="action-js"><a href="#action-js" class="headerlink" title="action.js"></a><code>action.js</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 异步action</span><br><span class="line">// 如果想返回一个函数，必须应用上异步中间件</span><br><span class="line">export const incrementAsync = (number) =&gt; &#123;</span><br><span class="line">    return dispatch =&gt; &#123;</span><br><span class="line">        // 异步代码</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            // 一秒之后才去分发一个增加的action</span><br><span class="line">            dispatch(increment(number))</span><br><span class="line">        &#125;, 1000)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-redux-调试工具"><a href="#使用-redux-调试工具" class="headerlink" title="使用 redux 调试工具"></a>使用 redux 调试工具</h2><h3 id="安装-Chrome-浏览器插件"><a href="#安装-Chrome-浏览器插件" class="headerlink" title="安装 Chrome 浏览器插件"></a>安装 Chrome 浏览器插件</h3><blockquote>
+<p>redux-devtools2_15_1.crx</p>
+</blockquote>
+<h3 id="下载工具依赖包"><a href="#下载工具依赖包" class="headerlink" title="下载工具依赖包"></a>下载工具依赖包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev redux-devtools-extension</span><br></pre></td></tr></table></figure>
+
+<h3 id="编码-1"><a href="#编码-1" class="headerlink" title="编码"></a>编码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; composeWithDevTools &#125; from &apos;redux-devtools-extension&apos;</span><br><span class="line"></span><br><span class="line">//生成store对象</span><br><span class="line">const store = createStore(counter,</span><br><span class="line">    composeWithDevTools(applyMiddleware(thunk)) // 应用上异步中间件</span><br><span class="line">); // 内部会第一次调用reducer函数，得到初始state</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/30/CSS基础知识点/" data-id="ck2lwegpe000r98w053o9alb7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/04/redux异步编程/" data-id="ck2lwegvd009m98w0r6oa4vvl" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
 
     </footer>
   </div>
@@ -173,19 +118,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/07/31/CSS基础知识点-选择器/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          CSS基础知识点--选择器
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/29/HTML基础知识点-div和span与块级和行内标签/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/11/03/react-redux/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">HTML基础知识点--div和span与块级和行内标签</div>
+      <div class="article-nav-title">react-redux</div>
     </a>
   
 </nav>
