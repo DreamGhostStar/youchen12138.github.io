@@ -62,6 +62,217 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jQuery选择器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/24/jQuery选择器/" class="article-date">
+  <time datetime="2019-09-24T13:35:07.000Z" itemprop="datePublished">2019-09-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/24/jQuery选择器/">jQuery选择器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><p>返回的都是 jQuery 对象</p>
+<p>类似数组，每个元素都是一个引用了 DOM 节点的对象</p>
+<p>不会返回 undefined 或者 null</p>
+<p>不必在下一行判断 if（div === undefined）</p>
+<ul>
+<li><p>基本选择器</p>
+</li>
+<li><p>多项选择器</p>
+</li>
+<li><p>层级选择器</p>
+</li>
+<li><p>属性选择器</p>
+</li>
+<li><p>过滤器</p>
+</li>
+<li><p>表单相关</p>
+</li>
+<li><p>查找和过滤</p>
+</li>
+</ul>
+<h2 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h2><ul>
+<li><p><code>#id</code>：根据给定的 ID 匹配一个元素</p>
+</li>
+<li><p><code>element</code>：根据给定的元素标签名匹配所有元素</p>
+</li>
+<li><p><code>.class</code>：根据给定的 css 类名匹配元素</p>
+</li>
+<li><p><code>*</code>：匹配所有元素</p>
+</li>
+</ul>
+<h2 id="多项选择器"><a href="#多项选择器" class="headerlink" title="多项选择器"></a>多项选择器</h2><blockquote>
+<p><code>$(&quot;selector1, selector2, selectorN&quot;);</code></p>
+</blockquote>
+<p>将每一个选择器匹配到的元素合并后一起返回</p>
+<p>可以指定任意多个选择器，并将匹配到的元素合并到一个结果内</p>
+<h2 id="层级选择器"><a href="#层级选择器" class="headerlink" title="层级选择器"></a>层级选择器</h2><blockquote>
+<p><code>$(&#39;ancestor descendant&#39;)</code></p>
+</blockquote>
+<p>在给定的祖先元素下匹配所有的后代元素</p>
+<blockquote>
+<p><code>$(&#39;parent &gt; child&#39;)</code></p>
+</blockquote>
+<p>在给定的父元素下匹配所有的子元素</p>
+<blockquote>
+<p><code>$(&#39;prev + next&#39;)</code></p>
+</blockquote>
+<p>匹配所有紧接在 prev 元素后的 next 元素</p>
+<blockquote>
+<p><code>$(&#39;prev ~ siblings&#39;)</code></p>
+</blockquote>
+<p>匹配 prev 元素之后的所有 siblings 元素</p>
+<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><ul>
+<li><p><code>[attribute]</code></p>
+</li>
+<li><p><code>[attribute = value]</code></p>
+</li>
+<li><p><code>[attribute != value]</code></p>
+</li>
+<li><p><code>[attribute ^= value]</code></p>
+</li>
+<li><p><code>[attribute $= value]</code></p>
+</li>
+<li><p><code>[attribute *= value]</code></p>
+</li>
+<li><p><code>[selector1][selector2][selectorN]</code></p>
+</li>
+</ul>
+<p><a href="https://youchen12138.github.io/2019/08/14/CSS%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86%E7%82%B9-CSS3%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%99%A8%E5%8F%8A%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8/" target="_blank" rel="noopener">请参照该链接，以便更加了解属性选择器</a></p>
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><h3 id="child-系列"><a href="#child-系列" class="headerlink" title="child 系列"></a>child 系列</h3><ul>
+<li><p><code>:first-child</code></p>
+</li>
+<li><p><code>:last-child</code></p>
+</li>
+<li><p><code>:nth-child(n | even | odd | formula)</code></p>
+</li>
+<li><p><code>:nth-last-child(n | even | odd | formula)</code></p>
+</li>
+<li><p><code>:only-child</code></p>
+</li>
+</ul>
+<h3 id="type-系列"><a href="#type-系列" class="headerlink" title="type 系列"></a>type 系列</h3><ul>
+<li><p><code>:first-type-child</code></p>
+</li>
+<li><p><code>:last-type-child</code></p>
+</li>
+<li><p><code>:nth-type-child(n | even | odd | formula)</code></p>
+</li>
+<li><p><code>:nth-type-last-child(n | even | odd | formula)</code></p>
+</li>
+<li><p><code>:only-type-child</code></p>
+</li>
+</ul>
+<h3 id="表单相关"><a href="#表单相关" class="headerlink" title="表单相关"></a>表单相关</h3><table>
+<thead>
+<tr>
+<th>快速选择表单元素</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>:input</code></td>
+<td>可以选择<code>&lt;input&gt;</code>，<code>&lt;select&gt;</code>，<code>&lt;textarea&gt;</code>和<code>&lt;button&gt;</code></td>
+</tr>
+<tr>
+<td><code>:text</code></td>
+<td>匹配所有的单行文本框，和 <code>input[type=&quot;text&quot;]</code>一样</td>
+</tr>
+<tr>
+<td>其他 input 的 type</td>
+<td><code>:passowrd/:radio/:checkbox/:image/:reset/:button/:file</code></td>
+</tr>
+</tbody></table>
+<h3 id="表单状态"><a href="#表单状态" class="headerlink" title="表单状态"></a>表单状态</h3><table>
+<thead>
+<tr>
+<th>根据表单状态选择表单元素</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>:enabled</code></td>
+<td>匹配所有可用元素</td>
+</tr>
+<tr>
+<td><code>:disabled</code></td>
+<td>匹配所有不可用元素</td>
+</tr>
+<tr>
+<td><code>:checked</code></td>
+<td>匹配所有选中的被选中元素（复选框，单选框等，select 中的 option）</td>
+</tr>
+<tr>
+<td><code>:selected</code></td>
+<td>匹配所有选中的 option 元素</td>
+</tr>
+</tbody></table>
+<h2 id="查找与过滤"><a href="#查找与过滤" class="headerlink" title="查找与过滤"></a>查找与过滤</h2><blockquote>
+<p><code>find(expr | object | element)</code></p>
+</blockquote>
+<p>搜索所有与指定表达式匹配的元素</p>
+<blockquote>
+<p><code>children([expr])</code></p>
+</blockquote>
+<p>取得一个包含匹配的元素集合中每一个元素的所有子元素的元素集合</p>
+<blockquote>
+<p><code>parent([expr])</code></p>
+</blockquote>
+<p>取得一个包含着所有匹配元素的唯一父元素的集合</p>
+<blockquote>
+<p><code>next([expr])、prev([expr])</code></p>
+</blockquote>
+<p>取得一个包含匹配的元素结合中每一个元素紧邻的后面（前面）同辈元素的元素集合</p>
+<blockquote>
+<p><code>eq(index | -index)</code></p>
+</blockquote>
+<p>获取当前链式操作中第 N 个jQuery 对象</p>
+<blockquote>
+<p><code>siblings([expr])</code></p>
+</blockquote>
+<p>取得一个包含匹配的元素集合中每一个元素的所有唯一同辈元素的元素集合</p>
+<blockquote>
+<p><code>filter(expr | object | element | fn)</code></p>
+</blockquote>
+<p>筛选出与指定表达式匹配的元素集合</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>expr：字符串值，包含供匹配当前元素集合的选择器表达式</p>
+<p>object：现有的 jQuery 对象，以匹配当前的元素</p>
+<p>element：一个用于匹配元素的 DOM 元素</p>
+<p>fn：一个函数用来作为测试元素的集合</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/24/jQuery选择器/" data-id="ck2px08tg008jt0w0k9o84gwf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jQuery入门" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/23/jQuery入门/" class="article-date">
@@ -163,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/23/jQuery入门/" data-id="ck2lwegu4007n98w0bbeutcyn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/23/jQuery入门/" data-id="ck2px08t4007zt0w01q07240b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
@@ -413,7 +624,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck2lwegt5005r98w04tvmoe2a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/19/JavaScript进阶知识点-正则表达式/" data-id="ck2px08s00066t0w0a89l4g9d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -528,7 +739,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck2lwegt4005o98w0bv5wc8vm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/15/JavaScript进阶知识点-JS面向对象/" data-id="ck2px08ry0063t0w005qhvsfh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -636,7 +847,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck2lwegt2005l98w0m8mvbpw1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/14/JavaScript进阶知识点-JS函数深入/" data-id="ck2px08st007ht0w0iqi1x0a5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -725,7 +936,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck2lwegt9005x98w0cbieh3mo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/13/JavaScript进阶知识点-JS变量与作用域/" data-id="ck2px08s4006ct0w0d9htl3qe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -868,7 +1079,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck2lwegs5004298w02e4jtcav" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/01/JavaScript基础知识点--event对象常用属性和方法/" data-id="ck2px08q4003wt0w0w327c2jm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1005,7 +1216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck2lwegsd004f98w09738p8eq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-JS事件/" data-id="ck2px08qi004kt0w0teiqqeif" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1192,7 +1403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck2lwegs7004798w0j2gl4v7h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/31/JavaScript基础知识点-DOM属性/" data-id="ck2px08qg004ht0w0cgqk3oew" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1426,51 +1637,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck2lwegsf004i98w0g1vovlk7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript基础知识点-BOM之navigator对象及方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" class="article-date">
-  <time datetime="2019-08-26T12:03:33.000Z" itemprop="datePublished">2019-08-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/">JavaScript基础知识点--BOM之navigator对象及方法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="Navigator-对象"><a href="#Navigator-对象" class="headerlink" title="Navigator 对象"></a>Navigator 对象</h1><h2 id="UserAgent"><a href="#UserAgent" class="headerlink" title="UserAgent"></a>UserAgent</h2><p>用来识别浏览器名称、版本、引擎以及操作系统等信息的内容</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-BOM之navigator对象及方法/" data-id="ck2lwegrw003m98w0jmr2f03s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/26/JavaScript基础知识点-DOM操作之节点/" data-id="ck2px08qj004nt0w0b124a190" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1497,7 +1664,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sass/">Sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bootstrap/">bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sass/">Sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bootstrap/">bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -1507,7 +1674,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
     </div>
   </div>
 
@@ -1517,7 +1684,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
     </div>
   </div>
 
@@ -1539,6 +1706,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/07/TypeScript核心语法/">TypeScript核心语法</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/04/redux异步编程/">redux异步编程</a>
           </li>
         
@@ -1552,10 +1723,6 @@
         
           <li>
             <a href="/2019/10/30/React-router/">React-router</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/29/React生命周期/">React生命周期</a>
           </li>
         
       </ul>
