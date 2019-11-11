@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="认识 FlutterFlutter 是谷歌的移动 UI 框架，可以快速在 IOS 和 Android 上构建高质量的原生用户界面。 Flutter 可以与现有的代码一起工作。在全世界，Flutter 正在被越来越多的开发者和组织使用，并且 Flutter 是完全免费、开源的 终端命令 flutter run  运行，并且显示虚拟机  r  热更新  p   第一次按下，显示标尺（表格）  再次按">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-09T13:02:33.605Z">
+<meta property="og:updated_time" content="2019-11-10T11:49:42.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter-初识篇">
 <meta name="twitter:description" content="认识 FlutterFlutter 是谷歌的移动 UI 框架，可以快速在 IOS 和 Android 上构建高质量的原生用户界面。 Flutter 可以与现有的代码一起工作。在全世界，Flutter 正在被越来越多的开发者和组织使用，并且 Flutter 是完全免费、开源的 终端命令 flutter run  运行，并且显示虚拟机  r  热更新  p   第一次按下，显示标尺（表格）  再次按">
@@ -129,11 +129,57 @@
 </blockquote>
 <p>热重启</p>
 <h3 id="热更新的另一种方法"><a href="#热更新的另一种方法" class="headerlink" title="热更新的另一种方法"></a>热更新的另一种方法</h3><p>启动 VSCode 的 Debug，等待启动后，每次想要调试的时候 <code>ctrl+s</code></p>
+<h1 id="初始-Flutter-语法"><a href="#初始-Flutter-语法" class="headerlink" title="初始 Flutter 语法"></a>初始 Flutter 语法</h1><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line"></span><br><span class="line">void main() =&gt; runApp(new MyApp());</span><br><span class="line"></span><br><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">@override</span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line">    return new MaterialApp(</span><br><span class="line">    title: &apos;Flutter Demo&apos;,</span><br><span class="line">    theme: new ThemeData(</span><br><span class="line">        primarySwatch: Colors.blue,</span><br><span class="line">    ),</span><br><span class="line">    home: new MyHomePage(title: &apos;Flutter Demo Home Page&apos;),</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MyHomePage extends StatefulWidget &#123;</span><br><span class="line">MyHomePage(&#123;Key key, this.title&#125;) : super(key: key);</span><br><span class="line">final String title;</span><br><span class="line"></span><br><span class="line">@override</span><br><span class="line">_MyHomePageState createState() =&gt; new _MyHomePageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _MyHomePageState extends State&lt;MyHomePage&gt; &#123;</span><br><span class="line">int _counter = 0;</span><br><span class="line"></span><br><span class="line">void _incrementCounter() &#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">    _counter++;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@override</span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line">    return new Scaffold(</span><br><span class="line">    appBar: new AppBar(</span><br><span class="line">        title: new Text(widget.title),</span><br><span class="line">    ),</span><br><span class="line">    body: new Center(</span><br><span class="line">        child: new Column(</span><br><span class="line">        mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">            new Text(</span><br><span class="line">            &apos;You have pushed the button this many times:&apos;,</span><br><span class="line">            ),</span><br><span class="line">            new Text(</span><br><span class="line">            &apos;$_counter&apos;,</span><br><span class="line">            style: Theme.of(context).textTheme.display1,</span><br><span class="line">            ),</span><br><span class="line">        ],</span><br><span class="line">        ),</span><br><span class="line">    ),</span><br><span class="line">    floatingActionButton: new FloatingActionButton(</span><br><span class="line">        onPressed: _incrementCounter,</span><br><span class="line">        tooltip: &apos;Increment&apos;,</span><br><span class="line">        child: new Icon(Icons.add),</span><br><span class="line">    ), // This trailing comma makes auto-formatting nicer for build methods.</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><blockquote>
+<p><code>import &#39;package:flutter/material.dart&#39;;</code></p>
+</blockquote>
+<p>此行代码作用是导入了 Material UI 组件库。Material 是一种标准的移动端和 web 端的视觉设计语言，Flutter 默认提供了一套丰富的 Material 风格的 UI 组件</p>
+<h2 id="应用入口"><a href="#应用入口" class="headerlink" title="应用入口"></a>应用入口</h2><blockquote>
+<p><code>void main() =&gt; runApp(MyApp());</code></p>
+</blockquote>
+<p>与 C/C++、java 类似，Flutter 应用中 <code>main</code> 函数为应用程序的入口。<code>main</code> 函数中调用了 <code>runApp</code> 方法，它的功能是启动 Flutter 应用。<code>runApp</code> 它接受一个 <code>Widget</code> 参数，在本示例中它是一个 <code>MyApp</code> 对象，<code>MyApp()</code> 是 Flutter 应用的根组件</p>
+<h2 id="应用结构"><a href="#应用结构" class="headerlink" title="应用结构"></a>应用结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">    @override</span><br><span class="line">    Widget build(BuildContext context) &#123;</span><br><span class="line">        return new MaterialApp(</span><br><span class="line">            //应用名称  </span><br><span class="line">            title: &apos;Flutter Demo&apos;, </span><br><span class="line">            theme: new ThemeData(</span><br><span class="line">                //蓝色主题  </span><br><span class="line">                primarySwatch: Colors.blue,</span><br><span class="line">            ),</span><br><span class="line">            //应用首页路由  </span><br><span class="line">            home: new MyHomePage(title: &apos;Flutter Demo Home Page&apos;),</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>MyApp</code> 类代表 <code>Flutter</code> 应用，它继承了 <code>StatelessWidget</code> 类，这也就意味着应用本身也是一个 widget</p>
+</li>
+<li><p>Flutter 在构建页面时，会调用组件的 <code>build</code> 方法，widget 的主要工作是提供一个 build() 方法来描述如何构建 UI 界面（通常是通过组合、拼装其它基础 widget）</p>
+</li>
+<li><p><code>MaterialApp</code> 是 Material 库中提供的 Flutter APP 框架，通过它可以设置应用的名称、主题、语言、首页及路由列表。<code>MaterialApp</code> 也是一个 widget</p>
+</li>
+<li><p><code>Scaffold</code> 是 Material 库中提供的页面脚手架，它包含导航栏和 Body 以及 <code>FloatingActionButton</code> </p>
+</li>
+</ul>
+<h2 id="StatefulWidget"><a href="#StatefulWidget" class="headerlink" title="StatefulWidget"></a>StatefulWidget</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class MyHomePage extends StatefulWidget &#123;</span><br><span class="line">    MyHomePage(&#123;Key key, this.title&#125;) : super(key: key);</span><br><span class="line">    final String title;</span><br><span class="line">    @override</span><br><span class="line">    _MyHomePageState createState() =&gt; new _MyHomePageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _MyHomePageState extends State&lt;MyHomePage&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>MyHomePage</code> 是 Flutter 应用的首页，它继承自 <code>StatefulWidget</code> 类，表示它是一个有状态的组件（Stateful widget）。</p>
+<h3 id="有状态组件-Stateful-widget-和无状态组件-Stateless-widget-的不同"><a href="#有状态组件-Stateful-widget-和无状态组件-Stateless-widget-的不同" class="headerlink" title="有状态组件(Stateful widget)和无状态组件(Stateless widget)的不同"></a>有状态组件(Stateful widget)和无状态组件(Stateless widget)的不同</h3><ol>
+<li><p>Stateful widget 可以拥有状态，这些状态在 widget 生命周期中是可以变的，而 Stateless widget 是不可变的</p>
+</li>
+<li><p>Stateful widget 至少由两个类组成</p>
+<ul>
+<li><p>一个 <code>StatefulWidget</code> 类</p>
+</li>
+<li><p>一个 <code>State</code> 类；<code>StatefulWidget</code> 类本身是不变的，但是 <code>State</code> 类中持有的状态在 widget 生命周期中可能会发生变化</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><code>_MyHomePageState</code> 类是 <code>MyHomePage</code> 类对应的状态类</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> Widget build(BuildContext context) &#123;</span><br><span class="line">    return new Scaffold(</span><br><span class="line">    appBar: new AppBar(</span><br><span class="line">        title: new Text(widget.title),</span><br><span class="line">    ),</span><br><span class="line">    body: new Center(</span><br><span class="line">        child: new Column(</span><br><span class="line">        mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">            new Text(</span><br><span class="line">            &apos;You have pushed the button this many times:&apos;,</span><br><span class="line">            ),</span><br><span class="line">            new Text(</span><br><span class="line">            &apos;$_counter&apos;,</span><br><span class="line">            style: Theme.of(context).textTheme.display1,</span><br><span class="line">            ),</span><br><span class="line">        ],</span><br><span class="line">        ),</span><br><span class="line">    ),</span><br><span class="line">    floatingActionButton: new FloatingActionButton(</span><br><span class="line">        onPressed: _incrementCounter,</span><br><span class="line">        tooltip: &apos;Increment&apos;,</span><br><span class="line">        child: new Icon(Icons.add),</span><br><span class="line">    ),</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>Scaffold</code> 是 Material 组件库中提供的一个组件，它提供了默认的导航栏、标题和包含主屏幕 widget 树（后同“组件树”或“部件树”）的 <code>body</code> 属性</p>
+</li>
+<li><p><code>body</code> 的组件树中包含了一个 <code>Center</code> 组件，<code>Center</code> 可以将其子组件树对齐到屏幕中心。此例中，<code>Center</code> 子组件是一个 <code>Column</code> 组件，<code>Column</code> 的作用是将其所有子组件沿屏幕垂直方向依次排列；此例中 <code>Column</code> 子组件是两个 <code>Text</code>，第一个 <code>Text</code> 显示固定文本，第二个 <code>Text</code> 显示 <code>_counter</code> 状态的数值</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/08/Flutter-初识篇/" data-id="ck2snb15m002oc0w0wfookxdz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/08/Flutter-初识篇/" data-id="ck2u5auj0002ec4w0r7a448hj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/">Flutter</a></li></ul>
@@ -144,11 +190,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/11/09/Flutter-Widget/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/11/09/Flutter-路由管理/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          flutter-Widget
+          flutter-路由管理
         
       </div>
     </a>
@@ -218,7 +264,7 @@
           </li>
         
           <li>
-            <a href="/2019/11/09/Flutter-Widget/">flutter-Widget</a>
+            <a href="/2019/11/09/Flutter-路由管理/">flutter-路由管理</a>
           </li>
         
           <li>

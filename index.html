@@ -140,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/Dart语言简介/" data-id="ck2snb1590022c0w0w43bdyn8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/Dart语言简介/" data-id="ck2u5auiz002bc4w0g6wd8h8b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dart/">Dart</a></li></ul>
@@ -152,9 +152,9 @@
 
 
   
-    <article id="post-Flutter-Widget" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Flutter-路由管理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/11/09/Flutter-Widget/" class="article-date">
+    <a href="/2019/11/09/Flutter-路由管理/" class="article-date">
   <time datetime="2019-11-09T07:23:51.000Z" itemprop="datePublished">2019-11-09</time>
 </a>
     
@@ -170,7 +170,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/09/Flutter-Widget/">flutter-Widget</a>
+      <a class="article-title" href="/2019/11/09/Flutter-路由管理/">flutter-路由管理</a>
     </h1>
   
 
@@ -179,34 +179,32 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h2 id="Text-Widget"><a href="#Text-Widget" class="headerlink" title="Text Widget"></a>Text Widget</h2><h3 id="TextAlign"><a href="#TextAlign" class="headerlink" title="TextAlign"></a>TextAlign</h3><ul>
-<li><p>left</p>
+<p>路由（Route）在移动开发中通常指页面（Page），这跟 web 开发中单页应用的 Route 概念意义是相同的，Route 在 Android 中通常指一个 Activity，在 iOS 中指一个 ViewController。所谓路由管理，就是管理页面之间如何跳转，通常也可被称为导航管理。Flutter 中的路由管理和原生开发类似，无论是 Android 还是 iOS，导航管理都会维护一个路由栈，路由入栈（push）操作对应打开一个新页面，路由出栈（pop）操作对应页面关闭操作，而路由管理主要是指如何来管理路由栈</p>
+<h2 id="MaterialPageRoute"><a href="#MaterialPageRoute" class="headerlink" title="MaterialPageRoute"></a>MaterialPageRoute</h2><p><code>MaterialPageRoute</code> 继承自 <code>PageRoute</code> 类是一个抽象类，表示占有整个屏幕空间的一个模态路由页面，它还定义了路由构建及切换时过渡动画的相关接口及属性。</p>
+<h3 id="MaterialPageRoute的构造函数"><a href="#MaterialPageRoute的构造函数" class="headerlink" title="MaterialPageRoute的构造函数"></a>MaterialPageRoute的构造函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MaterialPageRoute(&#123;</span><br><span class="line">    WidgetBuilder builder,</span><br><span class="line">    RouteSetting setting,</span><br><span class="line">    bool maintainState = true,</span><br><span class="line">    bool fullscreenDialog = false,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>builder</code>：是一个 <code>WidgetBuilder</code> 类型的回调函数，它的作用是构建路由页面的具体内容，返回值是一个 widget。</p>
 </li>
-<li><p>right</p>
+<li><p><code>settings</code>：包含路由的配置信息，如路由名称、是否初始路由（首页）</p>
 </li>
-<li><p>center</p>
+<li><p><code>maintainState</code>：默认情况下，当入栈一个新路由时，原来的路由仍然会被保存在内容中，如果想在路由没用的时候释放其所占用的所有资源，可以设置 <code>maintainState</code> 为 false</p>
 </li>
-<li><p>start（在开始处对齐）</p>
-</li>
-<li><p>end（在结尾处对齐）</p>
-</li>
-</ul>
-<h3 id="maxLines"><a href="#maxLines" class="headerlink" title="maxLines"></a>maxLines</h3><p>最大显示几行</p>
-<p>类型为数值</p>
-<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h3><ul>
-<li><p>clip：切除</p>
-</li>
-<li><p>ellipsis：用一个省略号代表省略的部分</p>
-</li>
-<li><p>fade：渐变。比如：从上往下慢慢变灰</p>
+<li><p><code>fullscreenDialog</code> 表示新的路由页面是否是一个全屏的模态对话框，在iOS中，如果 <code>fullscreenDialog</code> 为 true，新页面将会从屏幕底部滑入（而不是水平方向）</p>
 </li>
 </ul>
-<h3 id="style"><a href="#style" class="headerlink" title="style"></a>style</h3><p>设置样式（跟CSS差不多）</p>
+<p>如果想自定义路由切换动画，可以自己继承 <code>PageRoute</code> 来实现</p>
+<h2 id="Navigator"><a href="#Navigator" class="headerlink" title="Navigator"></a>Navigator</h2><p><code>Navigator</code> 是一个路由管理的组件，它提供了打开和退出路由页方法。<code>Navigator</code> 通过一个栈来管理活动路由集合。通常当前屏幕显示的页面就是栈顶的路由。<code>Navigator</code> 提供了一系列方法来管理路由栈</p>
+<h3 id="Future-push-BuildContext-context-Route-route"><a href="#Future-push-BuildContext-context-Route-route" class="headerlink" title="Future push(BuildContext context, Route route)"></a>Future push(BuildContext context, Route route)</h3><p>将给定的路由入栈（即打开新的页面），返回值是一个 <code>Future</code> 对象，用以接收新路由出栈（即关闭）时的返回数据</p>
+<h3 id="bool-pop-BuildContext-context-result"><a href="#bool-pop-BuildContext-context-result" class="headerlink" title="bool pop(BuildContext context, [result])"></a>bool pop(BuildContext context, [result])</h3><p>将栈顶路由出栈，<code>result</code> 为页面关闭时返回给上一个页面的数据</p>
+<h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><p><code>Navigator</code> 类中第一个参数为 context 的静态方法都对应一个 <code>Navigator</code> 的实例方法</p>
+<p>比如 <code>Navigator.push(BuildContext context, Route route)</code>等价于 <code>Navigator.of(context).push(Route route)</code></p>
+<h2 id="路由传值"><a href="#路由传值" class="headerlink" title="路由传值"></a>路由传值</h2><p>示例</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/Flutter-Widget/" data-id="ck2snb15k002jc0w0nd8az4fb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/Flutter-路由管理/" data-id="ck2u5auj4002jc4w0ebkut6rc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/">Flutter</a></li></ul>
@@ -282,11 +280,57 @@
 </blockquote>
 <p>热重启</p>
 <h3 id="热更新的另一种方法"><a href="#热更新的另一种方法" class="headerlink" title="热更新的另一种方法"></a>热更新的另一种方法</h3><p>启动 VSCode 的 Debug，等待启动后，每次想要调试的时候 <code>ctrl+s</code></p>
+<h1 id="初始-Flutter-语法"><a href="#初始-Flutter-语法" class="headerlink" title="初始 Flutter 语法"></a>初始 Flutter 语法</h1><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line"></span><br><span class="line">void main() =&gt; runApp(new MyApp());</span><br><span class="line"></span><br><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">@override</span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line">    return new MaterialApp(</span><br><span class="line">    title: &apos;Flutter Demo&apos;,</span><br><span class="line">    theme: new ThemeData(</span><br><span class="line">        primarySwatch: Colors.blue,</span><br><span class="line">    ),</span><br><span class="line">    home: new MyHomePage(title: &apos;Flutter Demo Home Page&apos;),</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class MyHomePage extends StatefulWidget &#123;</span><br><span class="line">MyHomePage(&#123;Key key, this.title&#125;) : super(key: key);</span><br><span class="line">final String title;</span><br><span class="line"></span><br><span class="line">@override</span><br><span class="line">_MyHomePageState createState() =&gt; new _MyHomePageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _MyHomePageState extends State&lt;MyHomePage&gt; &#123;</span><br><span class="line">int _counter = 0;</span><br><span class="line"></span><br><span class="line">void _incrementCounter() &#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">    _counter++;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@override</span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line">    return new Scaffold(</span><br><span class="line">    appBar: new AppBar(</span><br><span class="line">        title: new Text(widget.title),</span><br><span class="line">    ),</span><br><span class="line">    body: new Center(</span><br><span class="line">        child: new Column(</span><br><span class="line">        mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">            new Text(</span><br><span class="line">            &apos;You have pushed the button this many times:&apos;,</span><br><span class="line">            ),</span><br><span class="line">            new Text(</span><br><span class="line">            &apos;$_counter&apos;,</span><br><span class="line">            style: Theme.of(context).textTheme.display1,</span><br><span class="line">            ),</span><br><span class="line">        ],</span><br><span class="line">        ),</span><br><span class="line">    ),</span><br><span class="line">    floatingActionButton: new FloatingActionButton(</span><br><span class="line">        onPressed: _incrementCounter,</span><br><span class="line">        tooltip: &apos;Increment&apos;,</span><br><span class="line">        child: new Icon(Icons.add),</span><br><span class="line">    ), // This trailing comma makes auto-formatting nicer for build methods.</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="导入包"><a href="#导入包" class="headerlink" title="导入包"></a>导入包</h2><blockquote>
+<p><code>import &#39;package:flutter/material.dart&#39;;</code></p>
+</blockquote>
+<p>此行代码作用是导入了 Material UI 组件库。Material 是一种标准的移动端和 web 端的视觉设计语言，Flutter 默认提供了一套丰富的 Material 风格的 UI 组件</p>
+<h2 id="应用入口"><a href="#应用入口" class="headerlink" title="应用入口"></a>应用入口</h2><blockquote>
+<p><code>void main() =&gt; runApp(MyApp());</code></p>
+</blockquote>
+<p>与 C/C++、java 类似，Flutter 应用中 <code>main</code> 函数为应用程序的入口。<code>main</code> 函数中调用了 <code>runApp</code> 方法，它的功能是启动 Flutter 应用。<code>runApp</code> 它接受一个 <code>Widget</code> 参数，在本示例中它是一个 <code>MyApp</code> 对象，<code>MyApp()</code> 是 Flutter 应用的根组件</p>
+<h2 id="应用结构"><a href="#应用结构" class="headerlink" title="应用结构"></a>应用结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">    @override</span><br><span class="line">    Widget build(BuildContext context) &#123;</span><br><span class="line">        return new MaterialApp(</span><br><span class="line">            //应用名称  </span><br><span class="line">            title: &apos;Flutter Demo&apos;, </span><br><span class="line">            theme: new ThemeData(</span><br><span class="line">                //蓝色主题  </span><br><span class="line">                primarySwatch: Colors.blue,</span><br><span class="line">            ),</span><br><span class="line">            //应用首页路由  </span><br><span class="line">            home: new MyHomePage(title: &apos;Flutter Demo Home Page&apos;),</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>MyApp</code> 类代表 <code>Flutter</code> 应用，它继承了 <code>StatelessWidget</code> 类，这也就意味着应用本身也是一个 widget</p>
+</li>
+<li><p>Flutter 在构建页面时，会调用组件的 <code>build</code> 方法，widget 的主要工作是提供一个 build() 方法来描述如何构建 UI 界面（通常是通过组合、拼装其它基础 widget）</p>
+</li>
+<li><p><code>MaterialApp</code> 是 Material 库中提供的 Flutter APP 框架，通过它可以设置应用的名称、主题、语言、首页及路由列表。<code>MaterialApp</code> 也是一个 widget</p>
+</li>
+<li><p><code>Scaffold</code> 是 Material 库中提供的页面脚手架，它包含导航栏和 Body 以及 <code>FloatingActionButton</code> </p>
+</li>
+</ul>
+<h2 id="StatefulWidget"><a href="#StatefulWidget" class="headerlink" title="StatefulWidget"></a>StatefulWidget</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class MyHomePage extends StatefulWidget &#123;</span><br><span class="line">    MyHomePage(&#123;Key key, this.title&#125;) : super(key: key);</span><br><span class="line">    final String title;</span><br><span class="line">    @override</span><br><span class="line">    _MyHomePageState createState() =&gt; new _MyHomePageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _MyHomePageState extends State&lt;MyHomePage&gt; &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>MyHomePage</code> 是 Flutter 应用的首页，它继承自 <code>StatefulWidget</code> 类，表示它是一个有状态的组件（Stateful widget）。</p>
+<h3 id="有状态组件-Stateful-widget-和无状态组件-Stateless-widget-的不同"><a href="#有状态组件-Stateful-widget-和无状态组件-Stateless-widget-的不同" class="headerlink" title="有状态组件(Stateful widget)和无状态组件(Stateless widget)的不同"></a>有状态组件(Stateful widget)和无状态组件(Stateless widget)的不同</h3><ol>
+<li><p>Stateful widget 可以拥有状态，这些状态在 widget 生命周期中是可以变的，而 Stateless widget 是不可变的</p>
+</li>
+<li><p>Stateful widget 至少由两个类组成</p>
+<ul>
+<li><p>一个 <code>StatefulWidget</code> 类</p>
+</li>
+<li><p>一个 <code>State</code> 类；<code>StatefulWidget</code> 类本身是不变的，但是 <code>State</code> 类中持有的状态在 widget 生命周期中可能会发生变化</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><code>_MyHomePageState</code> 类是 <code>MyHomePage</code> 类对应的状态类</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> Widget build(BuildContext context) &#123;</span><br><span class="line">    return new Scaffold(</span><br><span class="line">    appBar: new AppBar(</span><br><span class="line">        title: new Text(widget.title),</span><br><span class="line">    ),</span><br><span class="line">    body: new Center(</span><br><span class="line">        child: new Column(</span><br><span class="line">        mainAxisAlignment: MainAxisAlignment.center,</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">            new Text(</span><br><span class="line">            &apos;You have pushed the button this many times:&apos;,</span><br><span class="line">            ),</span><br><span class="line">            new Text(</span><br><span class="line">            &apos;$_counter&apos;,</span><br><span class="line">            style: Theme.of(context).textTheme.display1,</span><br><span class="line">            ),</span><br><span class="line">        ],</span><br><span class="line">        ),</span><br><span class="line">    ),</span><br><span class="line">    floatingActionButton: new FloatingActionButton(</span><br><span class="line">        onPressed: _incrementCounter,</span><br><span class="line">        tooltip: &apos;Increment&apos;,</span><br><span class="line">        child: new Icon(Icons.add),</span><br><span class="line">    ),</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>Scaffold</code> 是 Material 组件库中提供的一个组件，它提供了默认的导航栏、标题和包含主屏幕 widget 树（后同“组件树”或“部件树”）的 <code>body</code> 属性</p>
+</li>
+<li><p><code>body</code> 的组件树中包含了一个 <code>Center</code> 组件，<code>Center</code> 可以将其子组件树对齐到屏幕中心。此例中，<code>Center</code> 子组件是一个 <code>Column</code> 组件，<code>Column</code> 的作用是将其所有子组件沿屏幕垂直方向依次排列；此例中 <code>Column</code> 子组件是两个 <code>Text</code>，第一个 <code>Text</code> 显示固定文本，第二个 <code>Text</code> 显示 <code>_counter</code> 状态的数值</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/08/Flutter-初识篇/" data-id="ck2snb15m002oc0w0wfookxdz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/08/Flutter-初识篇/" data-id="ck2u5auj0002ec4w0r7a448hj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/">Flutter</a></li></ul>
@@ -439,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/07/TypeScript核心语法/" data-id="ck2snb18v007cc0w0jmxw7bew" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/07/TypeScript核心语法/" data-id="ck2u5aumh0089c4w0cw58d5rl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -493,7 +537,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/04/redux异步编程/" data-id="ck2snb1a50099c0w0epe2d0pc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/04/redux异步编程/" data-id="ck2u5auo200amc4w03aqotl80" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -577,7 +621,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/03/react-redux/" data-id="ck2snb19r008nc0w0xea587vm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/03/react-redux/" data-id="ck2u5aumq008pc4w0sx2xq6c4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -708,7 +752,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/02/redux/" data-id="ck2snb19v008uc0w08xcxvw12" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/02/redux/" data-id="ck2u5aumx0094c4w0ouwiywje" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -819,7 +863,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/30/React-router/" data-id="ck2snb192007qc0w02arkezc8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/30/React-router/" data-id="ck2u5auls006xc4w068xsg5wp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -912,7 +956,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/29/React生命周期/" data-id="ck2snb18q0074c0w0jyio5foi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/29/React生命周期/" data-id="ck2u5auma007xc4w0gd7i5p4z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -990,7 +1034,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/28/React组件三大属性及组件通信/" data-id="ck2snb18r0076c0w0kjjud5ow" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/28/React组件三大属性及组件通信/" data-id="ck2u5aulw0075c4w03jycbnlw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -1063,7 +1107,7 @@
           </li>
         
           <li>
-            <a href="/2019/11/09/Flutter-Widget/">flutter-Widget</a>
+            <a href="/2019/11/09/Flutter-路由管理/">flutter-路由管理</a>
           </li>
         
           <li>
