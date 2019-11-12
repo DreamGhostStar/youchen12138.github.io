@@ -62,6 +62,251 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Dart-面向对象-OOP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/12/Dart-面向对象-OOP/" class="article-date">
+  <time datetime="2019-11-12T12:03:34.000Z" itemprop="datePublished">2019-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Dart/">Dart</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/Dart-面向对象-OOP/">Dart-面向对象(OOP)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>所有的类都继承自 Object</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/12/Dart-面向对象-OOP/" data-id="ck2vv0fu900269gw0u5hu9nvh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dart/">Dart</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Dart-常用数据类型" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/12/Dart-常用数据类型/" class="article-date">
+  <time datetime="2019-11-12T10:22:20.000Z" itemprop="datePublished">2019-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Dart/">Dart</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/Dart-常用数据类型/">Dart-常用数据类型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h2><ol>
+<li><p>数字</p>
+<ul>
+<li><p>num</p>
+</li>
+<li><p>int</p>
+</li>
+<li><p>double</p>
+</li>
+</ul>
+</li>
+<li><p>字符串（String）（用<code>{}</code>来计算字符串中变量的值）</p>
+</li>
+<li><p>布尔值（bool）</p>
+</li>
+<li><p>集合</p>
+<ul>
+<li><p>List</p>
+</li>
+<li><p>Map</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="数字（Number）"><a href="#数字（Number）" class="headerlink" title="数字（Number）"></a>数字（Number）</h3><p>Number 类型包括以下两类：</p>
+<ul>
+<li><p>int：整形</p>
+</li>
+<li><p>double：浮点型</p>
+</li>
+</ul>
+<p>int 和 double 都是 num 类型的子类。</p>
+<p>num 类型包括的操作有：<code>+</code>、<code>-</code>、<code>*</code>、<code>/</code>以及位移操作<code>&gt;&gt;</code></p>
+<p>num 类型包括的常用方法有：abs、ceil 和 floor</p>
+<h4 id="API"><a href="#API" class="headerlink" title="API"></a>API</h4><ul>
+<li><p>abs()：绝对值</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">num1.abs();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>toInt()：将数值转换成 int 类型</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">num1.toInt();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>toDouble</p>
+</li>
+</ul>
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>map 是将 key 和 value 相关联的对象，key 和 value 都可以是任何类型的对象，并且 key 是唯一的。如果 key 重复后面添加的 key 会替换前面的</p>
+<h3 id="map初始化"><a href="#map初始化" class="headerlink" title="map初始化"></a>map初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map names=&#123;&apos;xiaoming&apos;: &apos;小明&apos;, &apos;xiaohong&apos;: &apos;小红&apos;&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><ul>
+<li><p>forEach()</p>
+</li>
+<li><p>map()</p>
+</li>
+<li><p>for-in</p>
+</li>
+</ul>
+<p>注意：遍历时，新增或删除key都会报错，只能修改key</p>
+<h3 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h3><ul>
+<li><p>keys：key的集合</p>
+</li>
+<li><p>values：value 的集合</p>
+</li>
+<li><p>remove(key)：删除一个 key</p>
+</li>
+<li><p>removeWhere()：根据条件批量删除</p>
+</li>
+<li><p>containsKey()：是否包含 key</p>
+</li>
+<li><p>containsValue()：是否包含 value 值</p>
+</li>
+<li><p>clear()：清空 map</p>
+</li>
+<li><p>isEmpty()</p>
+</li>
+<li><p>toList()/toSet()：将结果转换成列表或者集合</p>
+</li>
+</ul>
+<h2 id="dynamic、var、Object三者的区别"><a href="#dynamic、var、Object三者的区别" class="headerlink" title="dynamic、var、Object三者的区别"></a>dynamic、var、Object三者的区别</h2><h3 id="dynamic"><a href="#dynamic" class="headerlink" title="dynamic"></a>dynamic</h3><p>在编译时并不会确定数据类型，只有在运行时根据赋值判断数据类型</p>
+<h3 id="var"><a href="#var" class="headerlink" title="var"></a>var</h3><p>var声明的变量在赋值的那一刻，就已经决定了它是什么类型。一旦被定义不能被改变其类型</p>
+<h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><p>Object 可以被赋值为任意类型，因为所有类型都派生自 Object</p>
+<h2 id="List（数组）"><a href="#List（数组）" class="headerlink" title="List（数组）"></a>List（数组）</h2><h3 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var list1 = List();// 不限定长度，不限定类型，可添加任意类型的数据</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><ul>
+<li><p>add()：添加一个元素到List末尾</p>
+</li>
+<li><p>addAll()：两个List合并</p>
+</li>
+<li><p>insert(index,element)：在指定index处插入值</p>
+</li>
+<li><p>insertAll(index,list)：在指定index处插入list 其余顺延</p>
+</li>
+<li><p>remove(obj)：删除具体的元素</p>
+</li>
+<li><p>removeAt(index)：删除索引位置元素</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/12/Dart-常用数据类型/" data-id="ck2vv0fu5001y9gw00awqkek9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dart/">Dart</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Dart概述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/12/Dart概述/" class="article-date">
+  <time datetime="2019-11-12T10:18:42.000Z" itemprop="datePublished">2019-11-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Dart/">Dart</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/12/Dart概述/">Dart概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<ul>
+<li><p>强类型语言，静态类型</p>
+<ul>
+<li>java、C#等</li>
+</ul>
+</li>
+<li><p>面向对象的语言，OOP</p>
+<ul>
+<li>Python、C++、Objective-c、java、Kotlin等</li>
+</ul>
+</li>
+<li><p>JIT &amp; AOT</p>
+<ul>
+<li><p>JIT：即即时编译，开发期间，更快编译，更快的重载</p>
+</li>
+<li><p>AOT：事前编译，release 期间，更快更流畅</p>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/12/Dart概述/" data-id="ck2vv0fu600219gw0umxm9f44" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dart/">Dart</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Dart语言简介" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/11/09/Dart语言简介/" class="article-date">
@@ -140,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/Dart语言简介/" data-id="ck2u5auiz002bc4w0g6wd8h8b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/Dart语言简介/" data-id="ck2vv0fuc002b9gw0jirkibj8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dart/">Dart</a></li></ul>
@@ -199,12 +444,13 @@
 <h3 id="bool-pop-BuildContext-context-result"><a href="#bool-pop-BuildContext-context-result" class="headerlink" title="bool pop(BuildContext context, [result])"></a>bool pop(BuildContext context, [result])</h3><p>将栈顶路由出栈，<code>result</code> 为页面关闭时返回给上一个页面的数据</p>
 <h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><p><code>Navigator</code> 类中第一个参数为 context 的静态方法都对应一个 <code>Navigator</code> 的实例方法</p>
 <p>比如 <code>Navigator.push(BuildContext context, Route route)</code>等价于 <code>Navigator.of(context).push(Route route)</code></p>
-<h2 id="路由传值"><a href="#路由传值" class="headerlink" title="路由传值"></a>路由传值</h2><p>示例</p>
+<h2 id="路由传值"><a href="#路由传值" class="headerlink" title="路由传值"></a>路由传值</h2><p>我们创建一个 <code>TipRoute</code> 路由，它接受一个提示文本参数，负责将传入它的文本显示在页面上，另外 <code>TipRoute</code> 中我们添加一个“返回”按钮，点击后在返回上一个路由的同时会带上一个返回参数</p>
+<p>示例</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/Flutter-路由管理/" data-id="ck2u5auj4002jc4w0ebkut6rc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/Flutter-路由管理/" data-id="ck2vv0fum002q9gw0vt8ivu66" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/">Flutter</a></li></ul>
@@ -330,7 +576,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/08/Flutter-初识篇/" data-id="ck2u5auj0002ec4w0r7a448hj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/08/Flutter-初识篇/" data-id="ck2vv0fuo002v9gw0cmmd40f0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/">Flutter</a></li></ul>
@@ -483,7 +729,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/07/TypeScript核心语法/" data-id="ck2u5aumh0089c4w0cw58d5rl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/07/TypeScript核心语法/" data-id="ck2vv0g1e008e9gw0b8ydqy7j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TypeScript/">TypeScript</a></li></ul>
@@ -537,7 +783,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/04/redux异步编程/" data-id="ck2u5auo200amc4w03aqotl80" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/04/redux异步编程/" data-id="ck2vv0g2i009t9gw0ejj6ediw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -621,7 +867,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/03/react-redux/" data-id="ck2u5aumq008pc4w0sx2xq6c4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/03/react-redux/" data-id="ck2vv0g2400969gw0qicrpmak" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -752,289 +998,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/02/redux/" data-id="ck2u5aumx0094c4w0ouwiywje" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-React-router" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/30/React-router/" class="article-date">
-  <time datetime="2019-10-30T10:32:00.000Z" itemprop="datePublished">2019-10-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/React/">React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/30/React-router/">React-router</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="react-router-的理解"><a href="#react-router-的理解" class="headerlink" title="react-router 的理解"></a>react-router 的理解</h2><ol>
-<li><p>react 的一个插件库</p>
-</li>
-<li><p>专门用来实现一个 SPA 应用</p>
-</li>
-<li><p>基于 react 的项目基本都会用到此库</p>
-</li>
-</ol>
-<h2 id="SPA-的理解"><a href="#SPA-的理解" class="headerlink" title="SPA 的理解"></a>SPA 的理解</h2><ol>
-<li><p>单页 Web 应用（single page web application）</p>
-</li>
-<li><p>整个应用只有一个完整的页面</p>
-</li>
-<li><p>点击页面中的链接不会刷新页面，本身也不会向服务器发请求</p>
-</li>
-<li><p>当点击链接时，只会做页面的局部更新</p>
-</li>
-<li><p>数据都需要通过 ajax 请求获取，并在前端异步展现</p>
-</li>
-</ol>
-<h2 id="路由的理解"><a href="#路由的理解" class="headerlink" title="路由的理解"></a>路由的理解</h2><h3 id="什么是路由"><a href="#什么是路由" class="headerlink" title="什么是路由"></a>什么是路由</h3><ul>
-<li><p>一个路由就是一个映射关系(key: value)</p>
-</li>
-<li><p>key 为路由路径，value 可能是 function/component</p>
-</li>
-</ul>
-<h3 id="路由分类"><a href="#路由分类" class="headerlink" title="路由分类"></a>路由分类</h3><ul>
-<li><p>后台路由：node 服务器端路由，value 是function，用来处理客户端提交的请求并返回一个响应数据</p>
-</li>
-<li><p>前台路由：浏览器端路由，value 是 component，当请求的是路由 path 时，浏览器端前没有发送 HTTP 请求，但界面会更新显示对应的组件</p>
-</li>
-</ul>
-<h3 id="后台路由"><a href="#后台路由" class="headerlink" title="后台路由"></a>后台路由</h3><ul>
-<li><p>注册路由：router.get(path, function(req, res))</p>
-</li>
-<li><p>当 node 接收到一个请求时，根据请求路径找到匹配的路由，调用路由中的函数来处理请求，返回响应数据</p>
-</li>
-</ul>
-<h3 id="前端路由"><a href="#前端路由" class="headerlink" title="前端路由"></a>前端路由</h3><ul>
-<li><p>注册路由：<code>&lt;Route path=&#39;/about&#39; component={About}&gt;</code></p>
-</li>
-<li><p>当浏览器的 hash 变为 #about 时，当前路由组件就会变成 About 组件</p>
-</li>
-</ul>
-<h2 id="react-router-相关-API"><a href="#react-router-相关-API" class="headerlink" title="react-router 相关 API"></a>react-router 相关 API</h2><h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ul>
-<li><p><code>&lt;BrowerRouter</code></p>
-</li>
-<li><p><code>&lt;HashRouter&gt;</code></p>
-</li>
-<li><p><code>&lt;Router&gt;</code></p>
-</li>
-<li><p><code>&lt;Redirect&gt;</code>：默认选中路由</p>
-</li>
-<li><p><code>&lt;Link&gt;</code></p>
-</li>
-<li><p><code>&lt;NavLink&gt;</code></p>
-</li>
-<li><p><code>&lt;Switch&gt;</code>：其中的<code>&lt;Route&gt;</code>在路径相同的情况下，只匹配第一个，这个可以避免重复匹配</p>
-</li>
-</ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li><p>history 对象</p>
-</li>
-<li><p>match 对象</p>
-</li>
-<li><p>withRouter 函数</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/30/React-router/" data-id="ck2u5auls006xc4w068xsg5wp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-React生命周期" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/29/React生命周期/" class="article-date">
-  <time datetime="2019-10-29T11:24:09.000Z" itemprop="datePublished">2019-10-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/React/">React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/29/React生命周期/">React生命周期</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="React-为每个状态都提供了钩子-hook-函数"><a href="#React-为每个状态都提供了钩子-hook-函数" class="headerlink" title="React 为每个状态都提供了钩子(hook)函数"></a>React 为每个状态都提供了钩子(hook)函数</h2><ul>
-<li><p>componentWillMount()</p>
-</li>
-<li><p>componentDidMount()</p>
-</li>
-<li><p>componentWillUpdate()</p>
-</li>
-<li><p>componentDidUpdate()</p>
-</li>
-<li><p>componentWillUnmount()</p>
-</li>
-</ul>
-<h2 id="生命周期流程"><a href="#生命周期流程" class="headerlink" title="生命周期流程"></a>生命周期流程</h2><h3 id="第一次渲染显示：ReactDOM-render"><a href="#第一次渲染显示：ReactDOM-render" class="headerlink" title="第一次渲染显示：ReactDOM.render()"></a>第一次渲染显示：ReactDOM.render()</h3><ol>
-<li><p>constructor()：创建对象初始化 state</p>
-</li>
-<li><p>componentWillMount()：将要插入回调</p>
-</li>
-<li><p>render()：用于插入虚拟 DOM 回调</p>
-</li>
-<li><p>componentDidMount()：已经插入回调</p>
-</li>
-</ol>
-<h3 id="每次更新-state-this-setState"><a href="#每次更新-state-this-setState" class="headerlink" title="每次更新 state: this.setState()"></a>每次更新 state: this.setState()</h3><ol>
-<li><p>componentWillUpdate()：将要更新回调</p>
-</li>
-<li><p>render()：更新(重新渲染)</p>
-</li>
-<li><p>componentDidUpdate()：已经更新回调</p>
-</li>
-</ol>
-<h3 id="移除组件：ReactDOM-unmountComponentAtNode-containerDom"><a href="#移除组件：ReactDOM-unmountComponentAtNode-containerDom" class="headerlink" title="移除组件：ReactDOM.unmountComponentAtNode(containerDom)"></a>移除组件：ReactDOM.unmountComponentAtNode(containerDom)</h3><ul>
-<li>componentWillUnmount()：组件将要被移除回调</li>
-</ul>
-<h2 id="重要的勾子"><a href="#重要的勾子" class="headerlink" title="重要的勾子"></a>重要的勾子</h2><ol>
-<li><p>render()：初始化渲染或更新渲染调用</p>
-</li>
-<li><p>componentDidMount()：开启监听，发送 ajax 请求</p>
-</li>
-<li><p>componentWillUnmount()：做一些收尾工作，如：清理定时器</p>
-</li>
-<li><p>componentWillReceiveProps()：</p>
-</li>
-</ol>
-<h1 id="错误边界"><a href="#错误边界" class="headerlink" title="错误边界"></a>错误边界</h1><p>如果一个 class 组件中定义了 <code>static getDerivedStateFromError()</code> 或 <code>componentDidCatch()</code> 这两个生命周期方法中的任意一个（或两个）时，那么它就变成一个错误边界。当抛出错误后，请使用 <code>static getDerivedStateFromError()</code> 渲染备用 UI ，使用 <code>componentDidCatch()</code> 打印错误信息。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class ErrorBoundary extends React.Component &#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123; hasError: false &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static getDerivedStateFromError(error) &#123;</span><br><span class="line">        // 更新 state 使下一次渲染能够显示降级后的 UI</span><br><span class="line">        return &#123; hasError: true &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidCatch(error, info) &#123;</span><br><span class="line">        // 你同样可以将错误日志上报给服务器</span><br><span class="line">        logErrorToMyService(error, info);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        if (this.state.hasError) &#123;</span><br><span class="line">        // 你可以自定义降级后的 UI 并渲染</span><br><span class="line">        return &lt;h1&gt;Something went wrong.&lt;/h1&gt;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return this.props.children; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后你可以将它作为一个常规组件去使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ErrorBoundary&gt;</span><br><span class="line">    &lt;MyWidget /&gt;</span><br><span class="line">&lt;/ErrorBoundary&gt;</span><br></pre></td></tr></table></figure>
-
-<p>注意<strong>错误边界仅可以捕获其子组件的错误</strong>，它无法捕获其自身的错误。如果一个错误边界无法渲染错误信息，则错误会冒泡至最近的上层错误边界，这也类似于 JavaScript 中 catch {} 的工作机制。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/29/React生命周期/" data-id="ck2u5auma007xc4w0gd7i5p4z" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-React组件三大属性及组件通信" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/28/React组件三大属性及组件通信/" class="article-date">
-  <time datetime="2019-10-28T07:28:29.000Z" itemprop="datePublished">2019-10-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/React/">React</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/28/React组件三大属性及组件通信/">React组件三大属性及组件通信</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="state"><a href="#state" class="headerlink" title="state"></a>state</h2><h3 id="初始化状态"><a href="#初始化状态" class="headerlink" title="初始化状态"></a>初始化状态</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">constructor(props)&#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state=&#123;</span><br><span class="line">        stateProp: value1,</span><br><span class="line">        stateProp2: value2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="读取某个状态值"><a href="#读取某个状态值" class="headerlink" title="读取某个状态值"></a>读取某个状态值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.state.statePropertyName;</span><br></pre></td></tr></table></figure>
-
-<h3 id="更新状态-–-gt-组件界面更新"><a href="#更新状态-–-gt-组件界面更新" class="headerlink" title="更新状态 –&gt; 组件界面更新"></a>更新状态 –&gt; 组件界面更新</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">this.setState(&#123;</span><br><span class="line">    stateProp1: value1,</span><br><span class="line">    stateProp2: value2</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>注意：在 JSX 的新添加的方法中，内部的 this 默认不是组件对象，而是 undefined。应该使用 bind 方法解决该问题</p>
-<h2 id="props"><a href="#props" class="headerlink" title="props"></a>props</h2><h3 id="内部读取某个属性值"><a href="#内部读取某个属性值" class="headerlink" title="内部读取某个属性值"></a>内部读取某个属性值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.props.propertyName</span><br></pre></td></tr></table></figure>
-
-<h3 id="对-props-中的属性值进行类型限制和必要性限制"><a href="#对-props-中的属性值进行类型限制和必要性限制" class="headerlink" title="对 props 中的属性值进行类型限制和必要性限制"></a>对 props 中的属性值进行类型限制和必要性限制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Person.propTypes = &#123;</span><br><span class="line">    name: React.PropTypes.string.isRequired,</span><br><span class="line">    age: React.PropTypes.number.isRequired</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="扩展属性：将对象的所有属性通过-props-传递"><a href="#扩展属性：将对象的所有属性通过-props-传递" class="headerlink" title="扩展属性：将对象的所有属性通过 props 传递"></a>扩展属性：将对象的所有属性通过 props 传递</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Person&#123;...person&#125;&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="默认属性值"><a href="#默认属性值" class="headerlink" title="默认属性值"></a>默认属性值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person.defaultProps = &#123;</span><br><span class="line">    name: &apos;Mary&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; ref=&#123;(input) =&gt; &#123;this.input = input&#125;&#125;/&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="组件交互"><a href="#组件交互" class="headerlink" title="组件交互"></a>组件交互</h1><h2 id="父子组件"><a href="#父子组件" class="headerlink" title="父子组件"></a>父子组件</h2><h3 id="父组件传递给子组件"><a href="#父组件传递给子组件" class="headerlink" title="父组件传递给子组件"></a>父组件传递给子组件</h3><p>将要改变的数据传给子组件，子组件调用函数改变state</p>
-<h3 id="子组件传递给父组件"><a href="#子组件传递给父组件" class="headerlink" title="子组件传递给父组件"></a>子组件传递给父组件</h3><p>子组件不能直接改变父组件的数据！！！</p>
-<p>解决方案：父组件将要改变数据的函数传给子组件，子组件调用这个函数，进而改变父组件的数据</p>
-<h1 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h1><h2 id="方式一：通过-props-传递"><a href="#方式一：通过-props-传递" class="headerlink" title="方式一：通过 props 传递"></a>方式一：通过 props 传递</h2><ol>
-<li><p>共同的数据放在父组件上，特有的数据放在自己组件内部(state)</p>
-</li>
-<li><p>通过 props 可以传递一般数据和函数数据</p>
-</li>
-<li><p>一般数据 -&gt; 父组件传递数据给子组件 -&gt; 子组件读取数据</p>
-</li>
-<li><p>函数数据 -&gt; 子组件传递数据给父组件 -&gt; 子组件调用函数</p>
-</li>
-</ol>
-<h2 id="方式二：使用消息订阅-subscribe-发布-publish-机制"><a href="#方式二：使用消息订阅-subscribe-发布-publish-机制" class="headerlink" title="方式二：使用消息订阅(subscribe)-发布(publish)机制"></a>方式二：使用消息订阅(subscribe)-发布(publish)机制</h2><ol>
-<li><p>工具库：PubSubJS</p>
-</li>
-<li><p>下载：<code>npm install pubsub-js --save</code></p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/28/React组件三大属性及组件通信/" data-id="ck2u5aulw0075c4w03jycbnlw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/02/redux/" data-id="ck2vv0g2c009i9gw0bnj2l96e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
@@ -1081,7 +1045,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 10px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 13.75px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
     </div>
   </div>
 
@@ -1103,23 +1067,23 @@
       <ul>
         
           <li>
+            <a href="/2019/11/12/Dart-面向对象-OOP/">Dart-面向对象(OOP)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/Dart-常用数据类型/">Dart-常用数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/Dart概述/">Dart概述</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/09/Dart语言简介/">Dart语言简介</a>
           </li>
         
           <li>
             <a href="/2019/11/09/Flutter-路由管理/">flutter-路由管理</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/08/Flutter-初识篇/">Flutter-初识篇</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/07/TypeScript核心语法/">TypeScript核心语法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/redux异步编程/">redux异步编程</a>
           </li>
         
       </ul>

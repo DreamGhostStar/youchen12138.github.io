@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="路由（Route）在移动开发中通常指页面（Page），这跟 web 开发中单页应用的 Route 概念意义是相同的，Route 在 Android 中通常指一个 Activity，在 iOS 中指一个 ViewController。所谓路由管理，就是管理页面之间如何跳转，通常也可被称为导航管理。Flutter 中的路由管理和原生开发类似，无论是 Android 还是 iOS，导航管理都会维护一个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-11-10T13:18:10.858Z">
+<meta property="og:updated_time" content="2019-11-11T08:36:22.990Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flutter-路由管理">
 <meta name="twitter:description" content="路由（Route）在移动开发中通常指页面（Page），这跟 web 开发中单页应用的 Route 概念意义是相同的，Route 在 Android 中通常指一个 Activity，在 iOS 中指一个 ViewController。所谓路由管理，就是管理页面之间如何跳转，通常也可被称为导航管理。Flutter 中的路由管理和原生开发类似，无论是 Android 还是 iOS，导航管理都会维护一个">
@@ -112,12 +112,13 @@
 <h3 id="bool-pop-BuildContext-context-result"><a href="#bool-pop-BuildContext-context-result" class="headerlink" title="bool pop(BuildContext context, [result])"></a>bool pop(BuildContext context, [result])</h3><p>将栈顶路由出栈，<code>result</code> 为页面关闭时返回给上一个页面的数据</p>
 <h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><p><code>Navigator</code> 类中第一个参数为 context 的静态方法都对应一个 <code>Navigator</code> 的实例方法</p>
 <p>比如 <code>Navigator.push(BuildContext context, Route route)</code>等价于 <code>Navigator.of(context).push(Route route)</code></p>
-<h2 id="路由传值"><a href="#路由传值" class="headerlink" title="路由传值"></a>路由传值</h2><p>示例</p>
+<h2 id="路由传值"><a href="#路由传值" class="headerlink" title="路由传值"></a>路由传值</h2><p>我们创建一个 <code>TipRoute</code> 路由，它接受一个提示文本参数，负责将传入它的文本显示在页面上，另外 <code>TipRoute</code> 中我们添加一个“返回”按钮，点击后在返回上一个路由的同时会带上一个返回参数</p>
+<p>示例</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/11/09/Flutter-路由管理/" data-id="ck2u5auj4002jc4w0ebkut6rc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/09/Flutter-路由管理/" data-id="ck2vv0fum002q9gw0vt8ivu66" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/">Flutter</a></li></ul>
@@ -176,7 +177,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 10px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 13.75px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
     </div>
   </div>
 
@@ -198,23 +199,23 @@
       <ul>
         
           <li>
+            <a href="/2019/11/12/Dart-面向对象-OOP/">Dart-面向对象(OOP)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/Dart-常用数据类型/">Dart-常用数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/Dart概述/">Dart概述</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/09/Dart语言简介/">Dart语言简介</a>
           </li>
         
           <li>
             <a href="/2019/11/09/Flutter-路由管理/">flutter-路由管理</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/08/Flutter-初识篇/">Flutter-初识篇</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/07/TypeScript核心语法/">TypeScript核心语法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/redux异步编程/">redux异步编程</a>
           </li>
         
       </ul>

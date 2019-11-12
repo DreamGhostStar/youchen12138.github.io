@@ -62,6 +62,201 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JS编写位置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/07/JS编写位置/" class="article-date">
+  <time datetime="2019-04-07T10:47:29.000Z" itemprop="datePublished">2019-04-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/JS编写位置/">JS编写位置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="button标签中的onclick"><a href="#button标签中的onclick" class="headerlink" title="button标签中的onclick"></a>button标签中的onclick</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;alert(&apos;警告框内容&apos;);&quot;&gt;按钮&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="a标签的超链接"><a href="#a标签的超链接" class="headerlink" title="a标签的超链接"></a>a标签的超链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;javascript:alert(&apos;警告框内容&apos;);&quot;&gt;超链接&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="script标签"><a href="#script标签" class="headerlink" title="script标签"></a>script标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    alert(&quot;警告框内容&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>此方法会在浏览器加载完之后马上出现。</p>
+<h2 id="外部文件"><a href="#外部文件" class="headerlink" title="外部文件"></a>外部文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;绝对路径&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>该路径下写下js文件的具体内容（推荐此方法）</p>
+<ul>
+<li>可以在不同文件内同时引用</li>
+<li>结构清晰</li>
+<li>script标签一旦用于引入外部文件，就不能再编写代码了，即使编写浏览器也会忽略</li>
+<li>如果需要，可以再创建一个script标签用于编写内部代码（执行顺序按代码位置，JS按代码从上到下执行）<blockquote>
+<h3 id="lt-script-gt-一般写在body标签下"><a href="#lt-script-gt-一般写在body标签下" class="headerlink" title="&lt;script&gt;一般写在body标签下"></a><code>&lt;script&gt;</code>一般写在body标签下</h3></blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="ck2vv0fvp00449gw04irgi2wx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-LeetCode-移位符" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/28/LeetCode-移位符/" class="article-date">
+  <time datetime="2019-03-28T06:15:37.000Z" itemprop="datePublished">2019-03-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/28/LeetCode-移位符/">LeetCode--移位符</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>不得不说，自己的算法是真的差，差的也不仅仅是算法，更多的还是自己上课期间忽略的基础知识。<br>LeetCode第29题，题目描述如下：</p>
+<blockquote>
+<p>给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。<br>返回被除数 dividend 除以除数 divisor 得到的商。</p>
+</blockquote>
+<blockquote>
+<p>示例 1:<br>输入: dividend = 10, divisor = 3<br>输出: 3<br>示例 2:<br>输入: dividend = 7, divisor = -3<br>输出: -2</p>
+</blockquote>
+<blockquote>
+<p>说明:<br>被除数和除数均为 32 位有符号整数。<br>除数不为 0。<br>假设我们的环境只能存储 32 位有符号整数，其数值范围是 [−231,  231 − 1]。本题中，如果除法结果溢出，则返回 231 − 1。</p>
+</blockquote>
+<p>看到这道题，我的第一个想法：“一个数除以另一个数，可以转化成多次减法运算”。<br>然后我的第一个骚操作来了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">soultion</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> dividend, <span class="keyword">int</span> divisor)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(dividend &gt;= divisor)&#123;</span><br><span class="line">			dividend = dividend - divisor;</span><br><span class="line">			result++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在看到这段代码，我自己都佩服我自己。（手动鼓掌）</p>
+<h3 id="其实这个想法还是没错的，错在于没考虑极端情况"><a href="#其实这个想法还是没错的，错在于没考虑极端情况" class="headerlink" title="其实这个想法还是没错的，错在于没考虑极端情况"></a>其实这个想法还是没错的，错在于没考虑极端情况</h3><p>举例子说明，比如第一组测试样例，10除以3这种“正常数字”（日常接触得到的计算量级）来说，这段代码并没有问题，可以正常运行，花费的时间也在可以接受的范围之内，但是现在问题来了：极端情况下会怎么样呢？</p>
+<p>我们给dividend取int的最大值（2的31次方-1），divisor取值1，执行这段代码需要耗时多久？<br>不难算出，while循环需要执行2的31次方-1次，也就是二十一亿多次，很明显时间上是不允许的。所以我们需要改进这个算法。</p>
+<p>在百度的帮助下，我认识了一个符号，叫移位符。好吧，这可能真的是很基础的东西，但是原谅我的菜，我真的是第一次听说这个东西。<br>简单介绍下移位符的作用：</p>
+<blockquote>
+<p>移位运算符在程序设计中，是位操作运算符的一种。移位运算符可以在二进制的基础上对数字进行平移。按照平移的方向和填充数字的规则分为三种：&lt;&lt;(左移)、&gt;&gt;(带符号右移)和&gt;&gt;&gt;(无符号右移)。</p>
+</blockquote>
+<p>拿右移<code>&gt;&gt;</code>举例子， <code>7&gt;&gt;1</code> 相当于 <code>7/2</code> <code>7&gt;&gt;2</code>相当于 <code>7/4</code>，即右移n位相当于除以2的n次方。<br>（从结果上看是这种效果）</p>
+<p>具体的运算例子 <code>11&gt;&gt;2</code></p>
+<blockquote>
+<p>11的二进制形式为：0000 0000 0000 0000 0000 0000 0000 1011，然后把低位的最后两个数字移出，因为该数字是正数，所以在高位补零。则得到的最终结果是0000 0000 0000 0000 0000 0000 0000 0010。转换为十进制是2。</p>
+</blockquote>
+<p>有了这个积累，我们再来看这道题。<br>我们现在需要做的事情，就是减少while循环的次数，怎么减少呢？当然就是每次循环多减一点啦！<br>先上代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> dividend, <span class="keyword">int</span> divisor)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> m,n;</span><br><span class="line">        m = Math.abs((<span class="keyword">long</span>)dividend);<span class="comment">//被除数的绝对值</span></span><br><span class="line">        n = Math.abs((<span class="keyword">long</span>)divisor);<span class="comment">//除数的绝对值</span></span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span> || (dividend == Integer.MIN_VALUE &amp;&amp; divisor == -<span class="number">1</span>))</span><br><span class="line">           <span class="keyword">return</span> Integer.MAX_VALUE;</span><br><span class="line">           <span class="keyword">int</span> sign = ((dividend &lt; <span class="number">0</span>) ^ (divisor &lt; <span class="number">0</span>)) ? -<span class="number">1</span> : <span class="number">1</span>;</span><br><span class="line">         <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> (<span class="keyword">int</span>)((sign&gt;<span class="number">0</span>)? m:-m);</span><br><span class="line">           <span class="keyword">long</span> result = <span class="number">0</span>;</span><br><span class="line">           <span class="keyword">while</span>(m&gt;= n)&#123;</span><br><span class="line">                <span class="keyword">long</span> temp = n;</span><br><span class="line">                <span class="keyword">long</span> count = <span class="number">1</span>;</span><br><span class="line">               <span class="keyword">while</span>(m &gt; (temp&lt;&lt;<span class="number">1</span>))&#123;</span><br><span class="line">                   temp = temp&lt;&lt;<span class="number">1</span>;</span><br><span class="line">                   count = count&lt;&lt;<span class="number">1</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               result = result + count;</span><br><span class="line">               m = m - temp;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">return</span> (<span class="keyword">int</span>)((sign&gt;<span class="number">0</span>)? result:-result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>好了，现在我来解释下这个程序。</p>
+<p>首先看内层循环 <code>while(m &gt; (temp&lt;&lt;1))</code>里面的东西，<code>temp</code>等于除数，当m（被除数的绝对值）大于两倍的除数的时候，temp乘以二，count乘以二，循环到temp的两倍大于被除数m为止。这样循环的结果是循环次数会以指数级减少。<br>我们还是拿最开始的例子，dividend = pow（2，31）-1；divisor = 1；<br>第一次进入外层循环，然后进入内层循环，内层的while执行30次后结束，此时temp = 2的30次方，count = 2的30次方。接着向下执行第18和第19两行代码，整个循环第一次结束后，m = 1。</p>
+<h3 id="对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。"><a href="#对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。" class="headerlink" title="对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。"></a>对比21亿次循环，我们的算法有了质的飞跃（为自己鼓掌）。</h3><h3 id="但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。"><a href="#但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。" class="headerlink" title="但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。"></a>但是，我的骚操作远没有结束上面放出的这段代码是我最后一次提交成功的代码。</h3><p>前面还有十几次失败经验还没总结呢。</p>
+<p>首先第一个问题，变量声明里面的 <code>long</code> 为什么要用long？<br>还是上面那个极端的例子，在判断的时候 temp&lt;&lt;1，如果用int，会发生超出int最大值的问题，然后temp会变成一个负数，然后这个循环永远结束不了，然后就超时了。。。。。。</p>
+<p>第二个是边界值问题，在这个题目中，边界情况下只有一种可能会越界，就是当被除数为int最小值，除数为-1时，得到的商会大于int的最大值，所以我们需要考虑这种情况。</p>
+<p>最后就是符号判别问题，用异或判断被除数与除数是否相同，保证输出结果符号的正确性。（当然不想用异或运算的也可以使用if写明条件判断）</p>
+<p>当然按照这个思路做完以后，我也有个问题：为什么非要用移位运算符呢？<br>count = count + count不也一样么？<br>抱着这个疑问，我又改了改程序，又跑了一次。</p>
+<h2 id="结论是：确实可以，只不过会比移位运算符慢2ms"><a href="#结论是：确实可以，只不过会比移位运算符慢2ms" class="headerlink" title="结论是：确实可以，只不过会比移位运算符慢2ms"></a>结论是：确实可以，只不过会比移位运算符慢2ms</h2><p>至于为什么会慢2ms…我给自己留个坑吧，初步猜测是计算机处理二进制会更快一些，当然这只是猜测而已，具体什么原因我有空再去验证一下……</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="ck2vv0g0x007u9gw0mqp68fm3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Git推送到项目笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/22/Git推送到项目笔记/" class="article-date">
+  <time datetime="2019-03-22T06:26:48.000Z" itemprop="datePublished">2019-03-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/22/Git推送到项目笔记/">Git推送到项目笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="首先，我们要在git-Bash里面创建版本库"><a href="#首先，我们要在git-Bash里面创建版本库" class="headerlink" title="首先，我们要在git Bash里面创建版本库"></a>首先，我们要在git Bash里面创建版本库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learngit //创建新文件夹</span><br><span class="line">$ cd learngit</span><br><span class="line">$ pwd</span><br><span class="line">/Users/michael/learngit</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>fork</code>github上仓库</li>
+<li>通过<code>git init</code>命令将该文件夹初始化</li>
+<li><code>git clone &lt;http/SSH&gt;</code>克隆远程库到本地库</li>
+<li><code>git remote add &lt;别用名&gt; &lt;http/SSH&gt;</code>关联远程库（一定要关联自己克隆的远程库）</li>
+<li>可以通过<code>git remote -v</code>来查看关联的远程库</li>
+<li><code>git checkout -b &lt;branch&gt;</code>来创建新的分支</li>
+<li><code>vim &lt;filename&gt;</code>编写文件</li>
+<li><code>git add</code> <code>git commit -m &quot;&lt;提交说明&gt;&quot;</code>将文件提交到本地库里。</li>
+<li>通过<code>git push -u &lt;别用名&gt; &lt;branch&gt;</code>将修改推送到自己克隆的远程库中</li>
+<li>在github上面的仓库上可以看到自己的修改</li>
+<li>在Comparing changes界面中点击pull request</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="ck2vv0fuw003a9gw0j5pd03nr" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Git笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/17/Git笔记/" class="article-date">
@@ -288,7 +483,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="ck2u5aunp00adc4w0uaubz1d3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="ck2vv0fzu006h9gw0df673cui" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -385,7 +580,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="ck2u5aujc002sc4w0rbji57vs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="ck2vv0fus00329gw0cfmc2k5v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -432,7 +627,7 @@ q退出</code></pre><hr>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 10px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 13.75px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
     </div>
   </div>
 
@@ -454,23 +649,23 @@ q退出</code></pre><hr>
       <ul>
         
           <li>
+            <a href="/2019/11/12/Dart-面向对象-OOP/">Dart-面向对象(OOP)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/Dart-常用数据类型/">Dart-常用数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/Dart概述/">Dart概述</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/09/Dart语言简介/">Dart语言简介</a>
           </li>
         
           <li>
             <a href="/2019/11/09/Flutter-路由管理/">flutter-路由管理</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/08/Flutter-初识篇/">Flutter-初识篇</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/07/TypeScript核心语法/">TypeScript核心语法</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/04/redux异步编程/">redux异步编程</a>
           </li>
         
       </ul>
