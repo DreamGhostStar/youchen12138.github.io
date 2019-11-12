@@ -5,20 +5,20 @@
   
 
   
-  <title>HTML5音视频 | Hexo</title>
+  <title>Dart-Mixins | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="认识 video video 标签定义视频，比如电影等  支持的视频格式：mp4、webm、ogv   video 的兼容性 Google、Firefox 和 Opera 三种格式全部支持  Safari 浏览器不支持 video 的 webm 和 ogv 视频格式  IE8 以下均不支持 video 标签   source 标签也可以放入 src，如果播放失败，video 会继续看下一个 so">
-<meta name="keywords" content="HTML5">
+  <meta name="description" content="mixins 是在多个类层次结构中重用代码的一种方式 要使用mixins，在with关键字后面跟上一个或多个mixin的名字（用逗号分隔），并且with要用在extends关键字之后 mixins的特征：实现mixin，就创建一个继承 Object 类的子类（不能继承其他类），不声明任何构造方法，不调用super">
+<meta name="keywords" content="Dart">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML5音视频">
-<meta property="og:url" content="http://yoursite.com/2019/10/13/HTML5音视频/index.html">
+<meta property="og:title" content="Dart-Mixins">
+<meta property="og:url" content="http://yoursite.com/2019/11/12/Dart-Mixins/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="认识 video video 标签定义视频，比如电影等  支持的视频格式：mp4、webm、ogv   video 的兼容性 Google、Firefox 和 Opera 三种格式全部支持  Safari 浏览器不支持 video 的 webm 和 ogv 视频格式  IE8 以下均不支持 video 标签   source 标签也可以放入 src，如果播放失败，video 会继续看下一个 so">
+<meta property="og:description" content="mixins 是在多个类层次结构中重用代码的一种方式 要使用mixins，在with关键字后面跟上一个或多个mixin的名字（用逗号分隔），并且with要用在extends关键字之后 mixins的特征：实现mixin，就创建一个继承 Object 类的子类（不能继承其他类），不声明任何构造方法，不调用super">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-13T03:27:53.297Z">
+<meta property="og:updated_time" content="2019-11-12T13:24:03.468Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML5音视频">
-<meta name="twitter:description" content="认识 video video 标签定义视频，比如电影等  支持的视频格式：mp4、webm、ogv   video 的兼容性 Google、Firefox 和 Opera 三种格式全部支持  Safari 浏览器不支持 video 的 webm 和 ogv 视频格式  IE8 以下均不支持 video 标签   source 标签也可以放入 src，如果播放失败，video 会继续看下一个 so">
+<meta name="twitter:title" content="Dart-Mixins">
+<meta name="twitter:description" content="mixins 是在多个类层次结构中重用代码的一种方式 要使用mixins，在with关键字后面跟上一个或多个mixin的名字（用逗号分隔），并且with要用在extends关键字之后 mixins的特征：实现mixin，就创建一个继承 Object 类的子类（不能继承其他类），不声明任何构造方法，不调用super">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -65,14 +65,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-HTML5音视频" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Dart-Mixins" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/13/HTML5音视频/" class="article-date">
-  <time datetime="2019-10-13T01:44:00.000Z" itemprop="datePublished">2019-10-13</time>
+    <a href="/2019/11/12/Dart-Mixins/" class="article-date">
+  <time datetime="2019-11-12T13:16:43.000Z" itemprop="datePublished">2019-11-12</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/HTML5/">HTML5</a>
+    <a class="article-category-link" href="/categories/Dart/">Dart</a>
   </div>
 
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      HTML5音视频
+      Dart-Mixins
     </h1>
   
 
@@ -92,174 +92,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<h2 id="认识-video"><a href="#认识-video" class="headerlink" title="认识 video"></a>认识 video</h2><ul>
-<li><p>video 标签定义视频，比如电影等</p>
-</li>
-<li><p>支持的视频格式：mp4、webm、ogv</p>
-</li>
-</ul>
-<h3 id="video-的兼容性"><a href="#video-的兼容性" class="headerlink" title="video 的兼容性"></a>video 的兼容性</h3><ul>
-<li><p>Google、Firefox 和 Opera 三种格式全部支持</p>
-</li>
-<li><p>Safari 浏览器不支持 video 的 webm 和 ogv 视频格式</p>
-</li>
-<li><p>IE8 以下均不支持 video 标签</p>
-</li>
-</ul>
-<p>source 标签也可以放入 src，如果播放失败，video 会继续看下一个 source 标签，直到兼容</p>
-<h2 id="video-属性"><a href="#video-属性" class="headerlink" title="video 属性"></a>video 属性</h2><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>src</td>
-<td>视频的资源地址</td>
-</tr>
-<tr>
-<td>width</td>
-<td>视频宽度</td>
-</tr>
-<tr>
-<td>height</td>
-<td>视频高度</td>
-</tr>
-<tr>
-<td>controls</td>
-<td>播放控件</td>
-</tr>
-<tr>
-<td>autoplay</td>
-<td>自动播放</td>
-</tr>
-<tr>
-<td>loop</td>
-<td>循环播放</td>
-</tr>
-<tr>
-<td>poster</td>
-<td>视频封面，没有播放时显示的图片</td>
-</tr>
-<tr>
-<td>muted</td>
-<td>当设置该属性后，它规定视频的音频输出应该被静音</td>
-</tr>
-</tbody></table>
-<p>注意：autoplay 在Chrome上不会自动播放</p>
-<h2 id="video-API-事件"><a href="#video-API-事件" class="headerlink" title="video API 事件"></a>video API 事件</h2><table>
-<thead>
-<tr>
-<th>事件</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>play</td>
-<td>让视频播放/不在暂停时</td>
-</tr>
-<tr>
-<td>pause</td>
-<td>让视频暂停/不在播放时</td>
-</tr>
-<tr>
-<td>duration</td>
-<td>返回当前视频长度</td>
-</tr>
-<tr>
-<td>currentTime</td>
-<td>设置或返回当前视频的总长度，秒为单位</td>
-</tr>
-<tr>
-<td>src</td>
-<td>设置/返回当前视频的来源</td>
-</tr>
-<tr>
-<td>volume</td>
-<td>设置/返回当前视频的音量</td>
-</tr>
-<tr>
-<td>controls</td>
-<td>设置视频是否显示控件</td>
-</tr>
-<tr>
-<td>muted</td>
-<td>设置视频是否静音</td>
-</tr>
-<tr>
-<td>networkState</td>
-<td>返回视频的当前网络状态</td>
-</tr>
-<tr>
-<td>currentSrc</td>
-<td>返回当前音视频的URL，必须是视频加载完成时</td>
-</tr>
-<tr>
-<td>ended</td>
-<td>返回音视频的播放是否已结束</td>
-</tr>
-<tr>
-<td>loop</td>
-<td>设置或返回视频是否应在结束时重新播放</td>
-</tr>
-<tr>
-<td>playbackRate</td>
-<td>设置或返回视频播放的速度</td>
-</tr>
-<tr>
-<td>readyState</td>
-<td>属性返回视频的当前就绪状态</td>
-</tr>
-<tr>
-<td>timeupdate</td>
-<td>目前的播放位置已更改时</td>
-</tr>
-<tr>
-<td>seeked</td>
-<td>当用户已移动/跳跃到视频时的新位置时</td>
-</tr>
-<tr>
-<td>seeking</td>
-<td>当用户开始移动/跳跃到视频中的新位置时</td>
-</tr>
-<tr>
-<td>volumechange</td>
-<td>当音量已更改时</td>
-</tr>
-</tbody></table>
-<h3 id="networkState-属性值"><a href="#networkState-属性值" class="headerlink" title="networkState 属性值"></a>networkState 属性值</h3><table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>NETWORK_EMPTY - 音频/视频尚未初始化</td>
-</tr>
-<tr>
-<td>1</td>
-<td>NETWORK_IDLE - 音频/视频是活动的且已选取资源，但并未使用网络</td>
-</tr>
-<tr>
-<td>2</td>
-<td>NETWORK_LOADING - 浏览器正在下载数据</td>
-</tr>
-<tr>
-<td>3</td>
-<td>NETWORK_NO_SOURCE - 未找到音频/视频来源</td>
-</tr>
-</tbody></table>
+<p>mixins 是在多个类层次结构中重用代码的一种方式</p>
+<p>要使用mixins，在with关键字后面跟上一个或多个mixin的名字（用逗号分隔），并且with要用在extends关键字之后</p>
+<p>mixins的特征：实现mixin，就创建一个继承 Object 类的子类（不能继承其他类），不声明任何构造方法，不调用super</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/13/HTML5音视频/" data-id="ck2vx05nn003e2cw0gxisamal" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/11/12/Dart-Mixins/" data-id="ck2vx05n2002j2cw0onwwjrfk" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dart/">Dart</a></li></ul>
 
     </footer>
   </div>
@@ -267,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/10/13/ES6基础入门let、const/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ES6基础入门let、const
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/12/React简介/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/11/12/Dart-面向对象-OOP/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">React简介</div>
+      <div class="article-nav-title">Dart-面向对象(OOP)</div>
     </a>
   
 </nav>

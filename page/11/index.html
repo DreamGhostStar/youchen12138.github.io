@@ -62,6 +62,124 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-类型强制转换" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/07/类型强制转换/" class="article-date">
+  <time datetime="2019-04-07T11:32:25.000Z" itemprop="datePublished">2019-04-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/类型强制转换/">类型强制转换</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="JavaScript中有六种类型"><a href="#JavaScript中有六种类型" class="headerlink" title="JavaScript中有六种类型"></a>JavaScript中有六种类型</h2><ul>
+<li><p>String 字符串</p>
+</li>
+<li><p>Number 数值</p>
+</li>
+<li><p>Boolean 布尔值</p>
+</li>
+<li><p>Null 空值</p>
+</li>
+<li><p>Undefined 未定义</p>
+</li>
+<li><p>Object 对象</p>
+</li>
+</ul>
+<blockquote>
+<p>强制类型转换只能在String，Number，Boolean三者之间转换</p>
+</blockquote>
+<h2 id="数组与字符串互转"><a href="#数组与字符串互转" class="headerlink" title="数组与字符串互转"></a>数组与字符串互转</h2><p>在开发中经常需要把字符串与数组互转</p>
+<h3 id="Array对象中的join-方法"><a href="#Array对象中的join-方法" class="headerlink" title="Array对象中的join()方法"></a>Array对象中的join()方法</h3><blockquote>
+<p>该方法可以将数组转换为多种形式的字符串</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3, 4, 5];</span><br><span class="line">a = a.join(&quot;-&quot;);</span><br><span class="line">document.write(&quot;a类型 = &quot; + typeof(a) + &quot;&lt;br/&gt;&quot;)</span><br><span class="line">document.write(&quot;a的值 = &quot; + a)</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a类型 = string</span><br><span class="line">a的值 = 1-2-3-4-5</span><br></pre></td></tr></table></figure>
+
+<p>join()方法包含一个参数，用于定义合并元素的连字符，若不提供参数，则以逗号连接每个元素</p>
+<h3 id="Array对象中的spilt-方法"><a href="#Array对象中的spilt-方法" class="headerlink" title="Array对象中的spilt()方法"></a>Array对象中的spilt()方法</h3><blockquote>
+<p>该方法可以将字符串转换为数组</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3, 4, 5];</span><br><span class="line">a = a.join(&quot;-&quot;);</span><br><span class="line">var s = a.spilt(&quot;-&quot;);</span><br><span class="line">document.write(&quot;a类型 = &quot; + typeof(a) + &quot;&lt;br/&gt;&quot;)</span><br><span class="line">document.write(&quot;a的值 = &quot; + a)</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a类型 = object</span><br><span class="line">a的值 = 1-2-3-4-5</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他类型转换为字符串"><a href="#其他类型转换为字符串" class="headerlink" title="其他类型转换为字符串"></a>其他类型转换为字符串</h2><h3 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h3><blockquote>
+<p>返回值为String类型</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 123;</span><br><span class="line">a = a.tostring();</span><br><span class="line">document.write(a);</span><br></pre></td></tr></table></figure>
+
+<p>结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Boolean和上面相同，toString()方法可以将Boolean转换为String类型</p>
+</blockquote>
+<blockquote>
+<p>注：不能将Null和Undefined类型转换为String类型</p>
+</blockquote>
+<h2 id="字符串转换为数值"><a href="#字符串转换为数值" class="headerlink" title="字符串转换为数值"></a>字符串转换为数值</h2><h3 id="parseInt-方法"><a href="#parseInt-方法" class="headerlink" title="parseInt()方法"></a>parseInt()方法</h3><blockquote>
+<p>将一个字符串转换为一个整数</p>
+</blockquote>
+<p>可以将字符串中的有效数值提取出来，比如示例，1是数值，继续；2是数值，继续；3是数值，继续；p不是数值，结束。</p>
+<p>若a=123px45，强制转换类型之后的结果为123.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;123px&quot;;</span><br><span class="line">a = parseInt(a);</span><br><span class="line">//从String转换为Number，结果为123</span><br></pre></td></tr></table></figure>
+
+<h3 id="parseFloat-方法"><a href="#parseFloat-方法" class="headerlink" title="parseFloat()方法"></a>parseFloat()方法</h3><blockquote>
+<p>将一个字符串转换为一个浮点数</p>
+</blockquote>
+<p>功能和parseInt相似，只是读取有效数值为浮点数而已。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;123.456px&quot;;</span><br><span class="line">a = parseFloat(a);</span><br><span class="line">//从String转换为Number，结果为123.456</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果对非String使用parseInt()或parseFloat()，它会将其转换为String然后再操作。</p>
+</blockquote>
+<h2 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 123;</span><br><span class="line">a = String(a);//其他的类型也可以这样转换</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>空字符串转换为数值时为0，有非数字的字符串转换为数值时为NaN</p>
+</blockquote>
+<blockquote>
+<p>true布尔值转换为数值为1，false布尔值转换为数值为0</p>
+</blockquote>
+<blockquote>
+<p>Undefined转换为数值时为NaN</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="ck2vx05sb00a02cw0gq6w2efw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JS编写位置" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/07/JS编写位置/" class="article-date">
@@ -110,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="ck2vv0fvp00449gw04irgi2wx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/07/JS编写位置/" data-id="ck2vx05o8004a2cw0s1kgtqmg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -188,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="ck2vv0g0x007u9gw0mqp68fm3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/28/LeetCode-移位符/" data-id="ck2vx05qt007w2cw0ja3etnce" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -245,7 +363,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="ck2vv0fuw003a9gw0j5pd03nr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/22/Git推送到项目笔记/" data-id="ck2vx05nj003a2cw0fbrf8d61" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -483,7 +601,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="ck2vv0fzu006h9gw0df673cui" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/17/Git笔记/" data-id="ck2vx05r300882cw0heznbl2g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -580,7 +698,7 @@ q退出</code></pre><hr>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="ck2vv0fus00329gw0cfmc2k5v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/15/Git简介/" data-id="ck2vx05np003g2cw0diltl8sf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -627,7 +745,7 @@ q退出</code></pre><hr>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 13.75px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 15px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
     </div>
   </div>
 
@@ -649,6 +767,10 @@ q退出</code></pre><hr>
       <ul>
         
           <li>
+            <a href="/2019/11/12/Dart-Mixins/">Dart-Mixins</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/12/Dart-面向对象-OOP/">Dart-面向对象(OOP)</a>
           </li>
         
@@ -662,10 +784,6 @@ q退出</code></pre><hr>
         
           <li>
             <a href="/2019/11/09/Dart语言简介/">Dart语言简介</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/09/Flutter-路由管理/">flutter-路由管理</a>
           </li>
         
       </ul>

@@ -62,6 +62,256 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CSS基础知识点-背景和样式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/05/CSS基础知识点-背景和样式/" class="article-date">
+  <time datetime="2019-08-05T08:57:43.000Z" itemprop="datePublished">2019-08-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/05/CSS基础知识点-背景和样式/">CSS基础知识点--背景和列表</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="背景样式"><a href="#背景样式" class="headerlink" title="背景样式"></a>背景样式</h2><ul>
+<li><p>background-color：设置元素的背景颜色</p>
+</li>
+<li><p>background-image：把图像设置为背景</p>
+</li>
+<li><p>background-position：设置背景图像的起始位置</p>
+</li>
+<li><p>background-attachment：背景图像是否固定或者随着页面的其余部分滚动</p>
+</li>
+<li><p>background-repeat：设置背景图像是否重复及如何重复</p>
+</li>
+<li><p>background：简写属性。作用是将背景属性设置于一个声明</p>
+</li>
+</ul>
+<h3 id="背景颜色"><a href="#背景颜色" class="headerlink" title="背景颜色"></a>背景颜色</h3><p>设置元素的背景颜色</p>
+<blockquote>
+<p>background-color：颜色 | transparent</p>
+</blockquote>
+<p>说明：</p>
+<ul>
+<li><p>transparent是全透明黑色（black）的速记法，类似rgba(0, 0, 0, 0)这样的值。</p>
+</li>
+<li><p>颜色值（颜色名 | RGB | 十六进制）</p>
+</li>
+<li><p>背景区包括内容、内边距（padding）和边框、不包括外边距（margin）</p>
+</li>
+</ul>
+<h3 id="背景图片"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片</h3><p>设置元素的背景图片</p>
+<blockquote>
+<p>background-image：URL | none</p>
+</blockquote>
+<p>说明：</p>
+<ul>
+<li><p>url地址可以是相对地址也可以是绝对地址</p>
+</li>
+<li><p>元素的背景占据了元素的全部尺寸，包括内边距和边框，但不包括外边距 </p>
+</li>
+<li><p>默认地，背景图像位于元素的左上角，并在水平和垂直方向上重复</p>
+</li>
+</ul>
+<h3 id="背景图片重复"><a href="#背景图片重复" class="headerlink" title="背景图片重复"></a>背景图片重复</h3><p>设置元素的背景图片的重复方式</p>
+<blockquote>
+<p>background-repeat：repeat | no-repeat | repeat-x | repeat-y</p>
+</blockquote>
+<h3 id="背景图片显示方式"><a href="#背景图片显示方式" class="headerlink" title="背景图片显示方式"></a>背景图片显示方式</h3><p>设置元素的背景图片的显示方式</p>
+<blockquote>
+<p>background-attachment：scroll | fixed</p>
+</blockquote>
+<p>说明：</p>
+<ul>
+<li><p>scroll：默认值，背景图片随滚动条滚动</p>
+</li>
+<li><p>fixed：当页面的其余部分滚动时，背景图片不会移动</p>
+</li>
+</ul>
+<h3 id="背景图片定位"><a href="#背景图片定位" class="headerlink" title="背景图片定位"></a>背景图片定位</h3><p>设置元素的背景图片的初始位置</p>
+<blockquote>
+<p>background-position：百分比 | 值 | top | right | bottom | left | center</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+<th>注意</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>长度值（x y）</td>
+<td>第一个值水平位置，第二个值垂直位置</td>
+<td>只写一个参数的话，第二个默认为居中</td>
+</tr>
+<tr>
+<td>百分比（x% y%）</td>
+<td>第一个时水平位置的百分比，第二个值垂直位置的百分比</td>
+<td>只写一个参数的话，第二个默认为居中</td>
+</tr>
+<tr>
+<td>top</td>
+<td>顶部显示，相当于垂直方向0</td>
+<td>只写一个参数的话，第二个默认为居中</td>
+</tr>
+<tr>
+<td>right</td>
+<td>右边显示，相当于水平方向100%</td>
+<td>只写一个参数的话，第二个默认为居中</td>
+</tr>
+<tr>
+<td>left</td>
+<td>左边显示，相当于水平方向0</td>
+<td>只写一个参数的话，第二个默认为居中</td>
+</tr>
+<tr>
+<td>bottom</td>
+<td>底边显示，相当于垂直方向100%</td>
+<td>只写一个参数的话，第二个默认为居中</td>
+</tr>
+<tr>
+<td>center</td>
+<td>居中显示，相当于水平方向50%或者垂直方向50%</td>
+<td>水平、垂直方向都居中</td>
+</tr>
+</tbody></table>
+<h3 id="背景缩写"><a href="#背景缩写" class="headerlink" title="背景缩写"></a>背景缩写</h3><blockquote>
+<p>background：[background-color] [background-image] [background-repeat] [background-attachment] [background-position]</p>
+</blockquote>
+<p>说明：</p>
+<ul>
+<li>各值之间用空格分割，不分先后顺序</li>
+</ul>
+<h2 id="列表样式"><a href="#列表样式" class="headerlink" title="列表样式"></a>列表样式</h2><ul>
+<li><p>list-style-type：设置列表项标志的类型</p>
+</li>
+<li><p>list-style-image：将图像设置为列表项标志</p>
+</li>
+<li><p>list-style-position：设置列表中列表项标志的位置</p>
+</li>
+<li><p>list-style：简写属性。用于把所有列表的属性设置于一个声明</p>
+</li>
+</ul>
+<h3 id="列表项标记"><a href="#列表项标记" class="headerlink" title="列表项标记"></a>列表项标记</h3><h4 id="设置列表项的标记样式类型"><a href="#设置列表项的标记样式类型" class="headerlink" title="设置列表项的标记样式类型"></a>设置列表项的标记样式类型</h4><blockquote>
+<p>list-style-type：关键字 | none</p>
+</blockquote>
+<p>无序列表</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>无标记</td>
+</tr>
+<tr>
+<td>disc</td>
+<td>实心的圆点</td>
+</tr>
+<tr>
+<td>circle</td>
+<td>空心的圆点</td>
+</tr>
+<tr>
+<td>square</td>
+<td>实心的方块</td>
+</tr>
+</tbody></table>
+<p>有序列表</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>无标记</td>
+</tr>
+<tr>
+<td>decimal</td>
+<td>从1开始的整数</td>
+</tr>
+<tr>
+<td>lower-roman</td>
+<td>小写罗马数字</td>
+</tr>
+<tr>
+<td>upper-roman</td>
+<td>大写罗马数字</td>
+</tr>
+<tr>
+<td>lower-alpha</td>
+<td>小写英文字母</td>
+</tr>
+<tr>
+<td>upper-alpha</td>
+<td>大写英文字母</td>
+</tr>
+</tbody></table>
+<h4 id="使用图片设置列表项的标记"><a href="#使用图片设置列表项的标记" class="headerlink" title="使用图片设置列表项的标记"></a>使用图片设置列表项的标记</h4><blockquote>
+<p>list-style-image：URL | none</p>
+</blockquote>
+<h3 id="列表项标记位置"><a href="#列表项标记位置" class="headerlink" title="列表项标记位置"></a>列表项标记位置</h3><p>设置列表项标记的位置</p>
+<blockquote>
+<p>list-style-position：inside | outside</p>
+</blockquote>
+<p>说明：</p>
+<ul>
+<li><p>inside：列表项目标记放置在文本以内，且环绕文本根据标记对齐</p>
+</li>
+<li><p>outside：默认值，列表项目标记放置在文本以外，且环绕文本不根据标记对齐</p>
+</li>
+</ul>
+<h3 id="列表样式缩写"><a href="#列表样式缩写" class="headerlink" title="列表样式缩写"></a>列表样式缩写</h3><blockquote>
+<p>list-style：list-style-type list-style-position list-style-image</p>
+</blockquote>
+<p>说明：</p>
+<ul>
+<li><p>值之间用空格分隔</p>
+</li>
+<li><p>顺序不固定</p>
+</li>
+<li><p>list-style-image会覆盖list-style-type的设置</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/05/CSS基础知识点-背景和样式/" data-id="ck2vx05lm000h2cw0bm3qwnh9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CSS基础知识点-盒子模型" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/03/CSS基础知识点-盒子模型/" class="article-date">
@@ -284,7 +534,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="ck2vv0fsq000m9gw0ic02nt3m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/03/CSS基础知识点-盒子模型/" data-id="ck2vx05ld00062cw00l5lh49x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -491,7 +741,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="ck2vv0fsl000g9gw0xzsik4af" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS字体样式/" data-id="ck2vx05kr00002cw04i1iqor3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -610,7 +860,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS文本样式/" data-id="ck2vv0fsf00069gw0tk452vks" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS文本样式/" data-id="ck2vx05lb00042cw0ms8xg5rj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -802,7 +1052,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS样式命名/" data-id="ck2vv0foy00009gw0tun9bn5p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/01/CSS基础知识点-CSS样式命名/" data-id="ck2vx05lc00052cw07riuifht" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -994,7 +1244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/31/CSS基础知识点-选择器/" data-id="ck2vv0fsu000p9gw093jfo4uf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/31/CSS基础知识点-选择器/" data-id="ck2vx05lo000k2cw03b3is3xk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1103,7 +1353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/30/CSS基础知识点/" data-id="ck2vv0fsk000d9gw09f84eixm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/30/CSS基础知识点/" data-id="ck2vx05lr000n2cw0i8f4ubdy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -1164,7 +1414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/29/HTML基础知识点-div和span与块级和行内标签/" data-id="ck2vv0fv3003d9gw0gpz8q8zz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/29/HTML基础知识点-div和span与块级和行内标签/" data-id="ck2vx05nr003k2cw0ubzsl46m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -1408,7 +1658,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/25/HTML基础知识点-表单/" data-id="ck2vv0fvb003o9gw02og8mea0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/25/HTML基础知识点-表单/" data-id="ck2vx05o0003w2cw0zkqqcb0r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -1515,124 +1765,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/24/HTML基础知识点-表格/" data-id="ck2vv0fvl003z9gw0ypphwp5g" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HTML基础知识点-图像与超链接" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/23/HTML基础知识点-图像与超链接/" class="article-date">
-  <time datetime="2019-07-23T07:39:48.000Z" itemprop="datePublished">2019-07-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/HTML/">HTML</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/23/HTML基础知识点-图像与超链接/">HTML基础知识点-图像与超链接</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="图像标签"><a href="#图像标签" class="headerlink" title="图像标签"></a>图像标签</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p><code>&lt;img src=&quot;&quot; alt=&quot;&quot;/&gt;</code></p>
-<h3 id="img属性"><a href="#img属性" class="headerlink" title="img属性"></a>img属性</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Src（必写）</td>
-<td>URL</td>
-<td>显示图像的URL</td>
-</tr>
-<tr>
-<td>alt</td>
-<td>文字</td>
-<td>图像替代文本</td>
-</tr>
-<tr>
-<td>height</td>
-<td>数值和百分比</td>
-<td>图像的高</td>
-</tr>
-<tr>
-<td>width</td>
-<td>数值和百分比</td>
-<td>图像的宽</td>
-</tr>
-</tbody></table>
-<h4 id="alt属性作用"><a href="#alt属性作用" class="headerlink" title="alt属性作用"></a>alt属性作用</h4><p>当由于：</p>
-<ul>
-<li><p>网速太慢</p>
-</li>
-<li><p>src属性中的错误</p>
-</li>
-<li><p>浏览器禁用图像</p>
-</li>
-</ul>
-<p>用户无法查看图像时，alt属性可以代替图像显示在浏览器中的内容</p>
-<h2 id="超链接标签"><a href="#超链接标签" class="headerlink" title="超链接标签"></a>超链接标签</h2><h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><p><code>&lt;a href=&quot;&quot;&gt;内容&lt;/a&gt;</code></p>
-<p><strong>href</strong>：链接地址，可以是内部链接或外部链接</p>
-<p>当链接为空时，点击链接会刷新页面</p>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>href</td>
-<td>链接地址</td>
-</tr>
-<tr>
-<td>target</td>
-<td>链接的目标窗口（_self、_blank、_top、_parent）</td>
-</tr>
-<tr>
-<td>title</td>
-<td>链接提示文字（当光标停在链接上时，提示文字将会出现）</td>
-</tr>
-<tr>
-<td>name</td>
-<td>链接命名</td>
-</tr>
-</tbody></table>
-<h2 id="锚链接"><a href="#锚链接" class="headerlink" title="锚链接"></a>锚链接</h2><h3 id="定义锚（同一页面）"><a href="#定义锚（同一页面）" class="headerlink" title="定义锚（同一页面）"></a>定义锚（同一页面）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#锚名&quot;&gt;目录1&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;...&quot; name=&quot;锚名&quot;&gt;内容&lt;/a&gt;</span><br><span class="line">    xxxxx</span><br><span class="line">    xxxxxxxxxx</span><br></pre></td></tr></table></figure>
-
-<h3 id="定义锚（不同页面）"><a href="#定义锚（不同页面）" class="headerlink" title="定义锚（不同页面）"></a>定义锚（不同页面）</h3><p>不同页面的锚链接：不仅可以跳转别的链接，而且还能找到相应的锚点位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">网页1：&lt;a href=&quot;网页名称#锚名&gt;...&lt;/a&gt;</span><br><span class="line">网页2：&lt;a href=&quot;锚名&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="电子邮件链接"><a href="#电子邮件链接" class="headerlink" title="电子邮件链接"></a>电子邮件链接</h2><h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;mailto:邮件地址&quot;&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;下载文件的地址&quot; download=&quot;下载文件的地址&quot;&gt;...&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/23/HTML基础知识点-图像与超链接/" data-id="ck2vv0fvi003x9gw0rvbulbn1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/24/HTML基础知识点-表格/" data-id="ck2vx05nx003s2cw0dhu2eiwq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
@@ -1679,7 +1812,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 13.75px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 15px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
     </div>
   </div>
 
@@ -1701,6 +1834,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/12/Dart-Mixins/">Dart-Mixins</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/12/Dart-面向对象-OOP/">Dart-面向对象(OOP)</a>
           </li>
         
@@ -1714,10 +1851,6 @@
         
           <li>
             <a href="/2019/11/09/Dart语言简介/">Dart语言简介</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/09/Flutter-路由管理/">flutter-路由管理</a>
           </li>
         
       </ul>

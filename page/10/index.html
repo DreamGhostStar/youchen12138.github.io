@@ -62,6 +62,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Qt之菜单概述" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/25/Qt之菜单概述/" class="article-date">
+  <time datetime="2019-06-25T07:18:44.000Z" itemprop="datePublished">2019-06-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/QT/">QT</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/25/Qt之菜单概述/">Qt之菜单概述</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<hr>
+<h2 id="菜单所需头文件"><a href="#菜单所需头文件" class="headerlink" title="菜单所需头文件"></a>菜单所需头文件</h2><ul>
+<li><p>QMenuBar：菜单（用于添加菜单栏）</p>
+</li>
+<li><p>QMenu：菜单（添加菜单）</p>
+</li>
+<li><p>QAction：添加菜单项（添加动作）</p>
+</li>
+<li><p>QToolBar：添加菜单项的快捷方式</p>
+</li>
+<li><p>QStatusBar：状态栏</p>
+</li>
+<li><p>QLabel：标签</p>
+</li>
+</ul>
+<hr>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//模板，创建并且指定当前窗口为父对象（实质上为构造函数）</span><br><span class="line">    头文件名 *名字 = new 头文件名(this);</span><br><span class="line"></span><br><span class="line">//创建菜单栏</span><br><span class="line">    QMenuBar *mBar = menuBar();</span><br><span class="line"></span><br><span class="line">//添加菜单项，添加动作</span><br><span class="line">    QAction *pNew = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;新建&quot;));</span><br><span class="line"></span><br><span class="line">//添加分割线</span><br><span class="line">    pFile-&gt;addSeparator();</span><br><span class="line"></span><br><span class="line">//添加工具栏，菜单项的快捷方式</span><br><span class="line">    QToolBar *toolBar = addToolBar(&quot;toolBar&quot;);</span><br><span class="line"></span><br><span class="line">//工具栏添加快捷键</span><br><span class="line">    toolBar-&gt;addAction(pNew);</span><br><span class="line"></span><br><span class="line">//新建状态栏</span><br><span class="line">    QStatusBar *statusBar = statusBar();</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="实战案例"><a href="#实战案例" class="headerlink" title="实战案例"></a>实战案例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">//菜单栏</span><br><span class="line">QMenuBar *mBar = menuBar();</span><br><span class="line"></span><br><span class="line">//添加菜单</span><br><span class="line">QMenu *pFile = mBar-&gt;addMenu(QString::fromLocal8Bit(&quot;文件&quot;));</span><br><span class="line"></span><br><span class="line">//添加菜单项，添加动作</span><br><span class="line">QAction *pNew = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;新建&quot;));</span><br><span class="line">QAction *pOpen = pFile-&gt;addAction(QString::fromLocal8Bit(&quot;打开&quot;));</span><br><span class="line"></span><br><span class="line">pFile-&gt;addSeparator();//添加分割线</span><br><span class="line"></span><br><span class="line">connect(pNew, &amp;QAction::triggered,</span><br><span class="line">        [=]()</span><br><span class="line">        &#123;</span><br><span class="line">            qDebug()&lt;&lt;QString::fromLocal8Bit(&quot;新建被按下&quot;);  //打印</span><br><span class="line">        &#125;</span><br><span class="line">       );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//工具栏，菜单项的快捷方式</span><br><span class="line">QToolBar *toolBar = addToolBar(&quot;toolBar&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//添加小控件</span><br><span class="line">QPushButton *b = new QPushButton(this);</span><br><span class="line">b-&gt;setText(&quot;^_^&quot;);</span><br><span class="line">toolBar-&gt;addWidget(b);</span><br><span class="line">connect(b, &amp;QPushButton::clicked,</span><br><span class="line">        [=]()</span><br><span class="line">        &#123;</span><br><span class="line">            b-&gt;setText(&quot;123&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line">//工具栏添加快捷键</span><br><span class="line">toolBar-&gt;addAction(pNew);</span><br><span class="line"></span><br><span class="line">//状态栏</span><br><span class="line">QStatusBar *sBar = statusBar();    //新建状态栏</span><br><span class="line">QLabel *label = new QLabel(this);</span><br><span class="line">label-&gt;setText(&quot;Normal text file&quot;);</span><br><span class="line">sBar-&gt;addWidget(label);</span><br><span class="line"></span><br><span class="line">sBar-&gt;addWidget(new QLabel(&quot;2&quot;, this));     //从左往右添加</span><br><span class="line"></span><br><span class="line">sBar-&gt;addPermanentWidget(new QLabel(&quot;2&quot;, this));    //从右往左添加</span><br><span class="line"></span><br><span class="line">//核心控件,文本编辑框</span><br><span class="line">QTextEdit *textEdit = new QTextEdit(this);</span><br><span class="line">setCentralWidget(textEdit);</span><br><span class="line"></span><br><span class="line">//浮动窗口</span><br><span class="line">QDockWidget *dock = new QDockWidget(this);</span><br><span class="line">addDockWidget(Qt::RightDockWidgetArea, dock);</span><br><span class="line"></span><br><span class="line">//给浮动窗口添加控件</span><br><span class="line">QTextEdit *textEdit1 = new QTextEdit(this);</span><br><span class="line">dock-&gt;setWidget(textEdit1);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/06/25/Qt之菜单概述/" data-id="ck2vx05qw007x2cw0g987t4l7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-QT中提示“常量中有换行符”解决办法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/25/QT中提示“常量中有换行符”解决办法/" class="article-date">
@@ -105,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="ck2vv0g0v007r9gw0w6qpe4pf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/25/QT中提示“常量中有换行符”解决办法/" data-id="ck2vx05qz00812cw00kzkyc2g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -332,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="ck2vv0g1900859gw0oxaqvc0z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/24/QT信号与槽及其附属知识点-md/" data-id="ck2vx05qy00802cw0rfafg146" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QT/">QT</a></li></ul>
@@ -383,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="ck2vv0g1t008r9gw0lmdmt8op" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/06/23/hello-world/" data-id="ck2vx05rt009d2cw0gmtqqi2y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -465,7 +527,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="ck2vv0g2n00a19gw0c6a6wyst" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/跨域-md/" data-id="ck2vx05sf00a82cw068869jlw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li></ul>
@@ -521,7 +583,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="ck2vv0g2g009q9gw0jludul9c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/25/用jQuery实现Ajax-md/" data-id="ck2vx05sr00ad2cw0unjnextu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -594,7 +656,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="ck2vv0fw2004g9gw0cgmamevb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/17/JSON格式-md/" data-id="ck2vx05o700482cw0gwhtq83m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JSON/">JSON</a></li></ul>
@@ -676,7 +738,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="ck2vv0g1i008l9gw0qkrupkk9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/XMLHttpRequest-md/" data-id="ck2vx05rh008s2cw0alpo30l9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -798,7 +860,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="ck2vv0fvz004b9gw0elth5h8c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/05/16/HTTP请求/" data-id="ck2vx05o400422cw0l28h28ap" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li></ul>
@@ -892,125 +954,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="ck2vv0g2l009y9gw0fjkpt92u" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-类型强制转换" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/07/类型强制转换/" class="article-date">
-  <time datetime="2019-04-07T11:32:25.000Z" itemprop="datePublished">2019-04-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/07/类型强制转换/">类型强制转换</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="JavaScript中有六种类型"><a href="#JavaScript中有六种类型" class="headerlink" title="JavaScript中有六种类型"></a>JavaScript中有六种类型</h2><ul>
-<li><p>String 字符串</p>
-</li>
-<li><p>Number 数值</p>
-</li>
-<li><p>Boolean 布尔值</p>
-</li>
-<li><p>Null 空值</p>
-</li>
-<li><p>Undefined 未定义</p>
-</li>
-<li><p>Object 对象</p>
-</li>
-</ul>
-<blockquote>
-<p>强制类型转换只能在String，Number，Boolean三者之间转换</p>
-</blockquote>
-<h2 id="数组与字符串互转"><a href="#数组与字符串互转" class="headerlink" title="数组与字符串互转"></a>数组与字符串互转</h2><p>在开发中经常需要把字符串与数组互转</p>
-<h3 id="Array对象中的join-方法"><a href="#Array对象中的join-方法" class="headerlink" title="Array对象中的join()方法"></a>Array对象中的join()方法</h3><blockquote>
-<p>该方法可以将数组转换为多种形式的字符串</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3, 4, 5];</span><br><span class="line">a = a.join(&quot;-&quot;);</span><br><span class="line">document.write(&quot;a类型 = &quot; + typeof(a) + &quot;&lt;br/&gt;&quot;)</span><br><span class="line">document.write(&quot;a的值 = &quot; + a)</span><br></pre></td></tr></table></figure>
-
-<p>结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a类型 = string</span><br><span class="line">a的值 = 1-2-3-4-5</span><br></pre></td></tr></table></figure>
-
-<p>join()方法包含一个参数，用于定义合并元素的连字符，若不提供参数，则以逗号连接每个元素</p>
-<h3 id="Array对象中的spilt-方法"><a href="#Array对象中的spilt-方法" class="headerlink" title="Array对象中的spilt()方法"></a>Array对象中的spilt()方法</h3><blockquote>
-<p>该方法可以将字符串转换为数组</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3, 4, 5];</span><br><span class="line">a = a.join(&quot;-&quot;);</span><br><span class="line">var s = a.spilt(&quot;-&quot;);</span><br><span class="line">document.write(&quot;a类型 = &quot; + typeof(a) + &quot;&lt;br/&gt;&quot;)</span><br><span class="line">document.write(&quot;a的值 = &quot; + a)</span><br></pre></td></tr></table></figure>
-
-<p>结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a类型 = object</span><br><span class="line">a的值 = 1-2-3-4-5</span><br></pre></td></tr></table></figure>
-
-<h2 id="其他类型转换为字符串"><a href="#其他类型转换为字符串" class="headerlink" title="其他类型转换为字符串"></a>其他类型转换为字符串</h2><h3 id="toString-方法"><a href="#toString-方法" class="headerlink" title="toString()方法"></a>toString()方法</h3><blockquote>
-<p>返回值为String类型</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 123;</span><br><span class="line">a = a.tostring();</span><br><span class="line">document.write(a);</span><br></pre></td></tr></table></figure>
-
-<p>结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Boolean和上面相同，toString()方法可以将Boolean转换为String类型</p>
-</blockquote>
-<blockquote>
-<p>注：不能将Null和Undefined类型转换为String类型</p>
-</blockquote>
-<h2 id="字符串转换为数值"><a href="#字符串转换为数值" class="headerlink" title="字符串转换为数值"></a>字符串转换为数值</h2><h3 id="parseInt-方法"><a href="#parseInt-方法" class="headerlink" title="parseInt()方法"></a>parseInt()方法</h3><blockquote>
-<p>将一个字符串转换为一个整数</p>
-</blockquote>
-<p>可以将字符串中的有效数值提取出来，比如示例，1是数值，继续；2是数值，继续；3是数值，继续；p不是数值，结束。</p>
-<p>若a=123px45，强制转换类型之后的结果为123.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;123px&quot;;</span><br><span class="line">a = parseInt(a);</span><br><span class="line">//从String转换为Number，结果为123</span><br></pre></td></tr></table></figure>
-
-<h3 id="parseFloat-方法"><a href="#parseFloat-方法" class="headerlink" title="parseFloat()方法"></a>parseFloat()方法</h3><blockquote>
-<p>将一个字符串转换为一个浮点数</p>
-</blockquote>
-<p>功能和parseInt相似，只是读取有效数值为浮点数而已。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &quot;123.456px&quot;;</span><br><span class="line">a = parseFloat(a);</span><br><span class="line">//从String转换为Number，结果为123.456</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果对非String使用parseInt()或parseFloat()，它会将其转换为String然后再操作。</p>
-</blockquote>
-<h2 id="通用方法"><a href="#通用方法" class="headerlink" title="通用方法"></a>通用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 123;</span><br><span class="line">a = String(a);//其他的类型也可以这样转换</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>空字符串转换为数值时为0，有非数字的字符串转换为数值时为NaN</p>
-</blockquote>
-<blockquote>
-<p>true布尔值转换为数值为1，false布尔值转换为数值为0</p>
-</blockquote>
-<blockquote>
-<p>Undefined转换为数值时为NaN</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/07/类型强制转换/" data-id="ck2vv0g2d009l9gw085rjx7vk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/09/运算符/" data-id="ck2vx05sd00a52cw0axgdqcpj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -1057,7 +1001,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 13.75px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
+      <a href="/tags/Ajax/" style="font-size: 12.5px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.75px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.5px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 15px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 11.25px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.5px;">Git</a> <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.5px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.25px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.5px;">QT</a> <a href="/tags/React/" style="font-size: 16.25px;">React</a> <a href="/tags/Sass/" style="font-size: 11.25px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.25px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.25px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.75px;">jQuery</a>
     </div>
   </div>
 
@@ -1079,6 +1023,10 @@
       <ul>
         
           <li>
+            <a href="/2019/11/12/Dart-Mixins/">Dart-Mixins</a>
+          </li>
+        
+          <li>
             <a href="/2019/11/12/Dart-面向对象-OOP/">Dart-面向对象(OOP)</a>
           </li>
         
@@ -1092,10 +1040,6 @@
         
           <li>
             <a href="/2019/11/09/Dart语言简介/">Dart语言简介</a>
-          </li>
-        
-          <li>
-            <a href="/2019/11/09/Flutter-路由管理/">flutter-路由管理</a>
           </li>
         
       </ul>
