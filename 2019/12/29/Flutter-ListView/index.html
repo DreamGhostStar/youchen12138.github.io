@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Flutter-ListView | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ListView是最常用的可滚动组件之一，它可以沿一个方向线性排布所有子组件，并且它也支持基于Sliver的延迟构建模型。 12345678910111213141516171819202122232425262728293031323334353637class ListViewDemoPage extends StatelessWidget &amp;#123;  Widget _listItemBu">
+<meta name="keywords" content="Flutter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter-ListView">
+<meta property="og:url" content="http://yoursite.com/2019/12/29/Flutter-ListView/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ListView是最常用的可滚动组件之一，它可以沿一个方向线性排布所有子组件，并且它也支持基于Sliver的延迟构建模型。 12345678910111213141516171819202122232425262728293031323334353637class ListViewDemoPage extends StatelessWidget &amp;#123;  Widget _listItemBu">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-29T14:26:28.335Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Flutter-ListView">
+<meta name="twitter:description" content="ListView是最常用的可滚动组件之一，它可以沿一个方向线性排布所有子组件，并且它也支持基于Sliver的延迟构建模型。 12345678910111213141516171819202122232425262728293031323334353637class ListViewDemoPage extends StatelessWidget &amp;#123;  Widget _listItemBu">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Flutter-ListView" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/29/Flutter-ListView/" class="article-date">
+  <time datetime="2019-12-29T14:22:33.000Z" itemprop="datePublished">2019-12-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Flutter/">Flutter</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Flutter-ListView
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>ListView</code>是最常用的可滚动组件之一，它可以沿一个方向线性排布所有子组件，并且它也支持基于Sliver的延迟构建模型。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">class ListViewDemoPage extends StatelessWidget &#123;</span><br><span class="line">  Widget _listItemBuilder(BuildContext context, int index)&#123;</span><br><span class="line">    return Container(</span><br><span class="line">      color: Colors.white,</span><br><span class="line">      margin: EdgeInsets.all(8),</span><br><span class="line">      child: Column(</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          Image.network(posts[index].imageUrl),</span><br><span class="line">          SizedBox(height: 16,),</span><br><span class="line">          Text(</span><br><span class="line">            posts[index].title,</span><br><span class="line">            style: Theme.of(context).textTheme.title,</span><br><span class="line">          ),</span><br><span class="line">          Text(</span><br><span class="line">            posts[index].author,</span><br><span class="line">            style: Theme.of(context).textTheme.subhead,</span><br><span class="line">          ),</span><br><span class="line">          SizedBox(height: 16,)</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">      backgroundColor: Colors.grey[200],</span><br><span class="line">      appBar: AppBar(</span><br><span class="line">        title: Text(&apos;ListView&apos;),</span><br><span class="line">      ),</span><br><span class="line">      body: ListView.builder(</span><br><span class="line">        itemCount: posts.length, // post为一个数据源</span><br><span class="line">        itemBuilder: _listItemBuilder,</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据源post"><a href="#数据源post" class="headerlink" title="数据源post"></a>数据源post</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">class Post &#123;</span><br><span class="line">  Post(&#123;</span><br><span class="line">    this.title,</span><br><span class="line">    this.author,</span><br><span class="line">    this.imageUrl,</span><br><span class="line">    this.description,</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  final String title;</span><br><span class="line">  final String author;</span><br><span class="line">  final String imageUrl;</span><br><span class="line">  final String description;</span><br><span class="line"></span><br><span class="line">  bool selected = false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">final List&lt;Post&gt; posts = [</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Candy Shop&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/candy-shop.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Childhood in a picture&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/childhood-in-a-picture.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Contained&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/contained.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Dragon&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/dragon.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Free Hugs&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/free_hugs.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Gravity Falls&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/gravity-falls.png&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Icecream Truck&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/icecreamtruck.png&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;keyclack&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/keyclack.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Overkill&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/overkill.png&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Say Hello to Barry&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/say-hello-to-barry.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Space Skull&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/space-skull.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;The Old Fashioned&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/the-old-fashioned.png&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Tornado&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/tornado.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;Undo&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/undo.jpg&apos;,</span><br><span class="line">  ),</span><br><span class="line">  Post(</span><br><span class="line">    title: &apos;White Dragon&apos;,</span><br><span class="line">    author: &apos;Mohamed Chahin&apos;,</span><br><span class="line">    description: &apos;Esse ut nulla velit reprehenderit veniam sint nostrud nulla exercitation ipsum. Officia deserunt aliquip aliquip excepteur eiusmod dolor. Elit amet ipsum labore sint occaecat dolore tempor officia irure voluptate ad. Veniam laboris deserunt aute excepteur sit deserunt dolor esse dolor velit sint nulla anim ut. Reprehenderit voluptate adipisicing culpa magna ea nulla ullamco consectetur. Cupidatat adipisicing consequat adipisicing sit consectetur dolor occaecat.&apos;,</span><br><span class="line">    imageUrl: &apos;https://resources.ninghao.org/images/white-dragon.jpg&apos;,</span><br><span class="line">  )</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/29/Flutter-ListView/" data-id="ck4r400sj009wl0w07v9givb6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flutter/">Flutter</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/12/29/Flutter-MaterialApp常用属性介绍/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Flutter-MaterialApp常用属性介绍
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/29/Flutter-AppBar/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Flutter-AppBar</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS/">CSS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/CSS3/">CSS3</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Dart/">Dart</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Flutter/">Flutter</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JSON/">JSON</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/QT/">QT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sass/">Sass</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/bootstrap/">bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS3/">CSS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dart/">Dart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flutter/">Flutter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSON/">JSON</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QT/">QT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TheKnowledgeOf/">TheKnowledgeOf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TypeScript/">TypeScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bootstrap/">bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Ajax/" style="font-size: 12.22px;">Ajax</a> <a href="/tags/CSS/" style="font-size: 18.89px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 17.78px;">CSS3</a> <a href="/tags/Dart/" style="font-size: 14.44px;">Dart</a> <a href="/tags/Flutter/" style="font-size: 16.67px;">Flutter</a> <a href="/tags/Git/" style="font-size: 12.22px;">Git</a> <a href="/tags/HTML/" style="font-size: 14.44px;">HTML</a> <a href="/tags/HTML5/" style="font-size: 12.22px;">HTML5</a> <a href="/tags/JSON/" style="font-size: 10px;">JSON</a> <a href="/tags/Java/" style="font-size: 11.11px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/tags/QT/" style="font-size: 12.22px;">QT</a> <a href="/tags/React/" style="font-size: 15.56px;">React</a> <a href="/tags/Sass/" style="font-size: 11.11px;">Sass</a> <a href="/tags/TheKnowledgeOf/" style="font-size: 11.11px;">TheKnowledgeOf</a> <a href="/tags/TypeScript/" style="font-size: 10px;">TypeScript</a> <a href="/tags/bootstrap/" style="font-size: 11.11px;">bootstrap</a> <a href="/tags/jQuery/" style="font-size: 13.33px;">jQuery</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/29/Flutter-MaterialApp常用属性介绍/">Flutter-MaterialApp常用属性介绍</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/29/Flutter-ListView/">Flutter-ListView</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/29/Flutter-AppBar/">Flutter-AppBar</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/29/Flutter-TabBar/">Flutter-TabBar</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/29/Flutter-按钮/">Flutter-按钮</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
